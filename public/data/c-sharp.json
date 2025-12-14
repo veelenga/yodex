@@ -1,0 +1,198 @@
+{
+  "id": "c-sharp",
+  "name": "C#",
+  "slug": "c-sharp-interview-questions",
+  "category": "Languages",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _C#_ and what are its key features?",
+      "options": [
+        "C# is a functional programming language created by Google for web development",
+        "C# is a scripting language used exclusively for database management",
+        "C# is an object-oriented, multi-paradigm programming language developed by Microsoft for the .NET framework, known for its type safety, simplicity, and robust development capabilities.",
+        "C# is a low-level programming language primarily used for embedded systems development"
+      ],
+      "correctIndex": 2,
+      "explanation": "C# provides a comprehensive programming environment with strong typing and support for multiple programming paradigms. It was designed to be simple yet powerful, enabling developers to create a wide range of applications from web and mobile to desktop and cloud-based solutions. The language integrates seamlessly with the .NET ecosystem, offering extensive libraries and framework support."
+    },
+    {
+      "id": 2,
+      "question": "Explain the basic structure of a _C# program_.",
+      "options": [
+        "C# programs must always start with a global configuration file",
+        "The Main method is optional and can be replaced by any other method",
+        "A C# program only requires a single method without any namespace declaration",
+        "A C# program's basic structure includes a namespace, a class, and a Main method, which serves as the entry point of the application and contains the primary program logic."
+      ],
+      "correctIndex": 3,
+      "explanation": "The program structure is crucial for organizing and executing C# code. The namespace helps prevent naming conflicts, the class provides a container for methods and properties, and the Main method is the program's starting point. Here's a basic example of a C# program structure:"
+    },
+    {
+      "id": 3,
+      "question": "What are the different types of _data types_ available in _C#_?",
+      "options": [
+        "C# uses a single universal data type for all variables",
+        "Data types in C# are dynamically typed and can change during runtime",
+        "C# data types are categorized into value types (like int, float, struct), reference types (like classes, arrays), and integral types, each serving different memory and storage purposes.",
+        "C# only supports primitive integer and string data types"
+      ],
+      "correctIndex": 2,
+      "explanation": "Understanding data types is fundamental in C#. Value types store their data directly, reference types store memory addresses, and integral types represent whole numbers. This categorization helps developers manage memory efficiently and choose appropriate data representations. Different types have specific memory allocations and behaviors in the language."
+    },
+    {
+      "id": 4,
+      "question": "What is the difference between _value types_ and _reference types_?",
+      "options": [
+        "Value types and reference types are exactly the same in C#.",
+        "Only primitive types are value types in C#.",
+        "Reference types are always faster and more memory-efficient than value types.",
+        "Value types store their data directly in memory on the stack, while reference types store a reference to data located in the managed heap."
+      ],
+      "correctIndex": 3,
+      "explanation": "Value types contain their actual data and are typically stored on the stack, which makes them more performant for small, simple data. Reference types store a memory address pointing to the actual data on the heap, allowing for more complex and dynamically sized objects. Common value types include int, float, and struct, while common reference types include classes, interfaces, and delegates. Understanding the difference is crucial for memory management and performance optimization in C#."
+    },
+    {
+      "id": 5,
+      "question": "What are _nullable types_ in _C#_?",
+      "options": [
+        "Nullable types increase memory usage without providing any additional functionality.",
+        "Nullable types always default to zero when not assigned.",
+        "Nullable types are only used for string variables in C#.",
+        "Nullable types in C# allow value types to represent an additional null state, enabling variables to have no assigned value while maintaining type safety."
+      ],
+      "correctIndex": 3,
+      "explanation": "Nullable types provide a way to represent the absence of a value for value types that traditionally cannot be null. They are particularly useful in scenarios involving database interactions, optional parameters, or when a value might not be present. The Nullable<T> struct allows you to assign null to value type variables, expanding their flexibility."
+    },
+    {
+      "id": 6,
+      "question": "Can you describe what _namespaces_ are and how they are used in _C#_?",
+      "options": [
+        "Namespaces in C# are used to organize and group related code elements, preventing naming conflicts and providing a logical structure to code.",
+        "Each file in a C# project must have a unique namespace.",
+        "Namespaces have no impact on code organization or compilation.",
+        "Namespaces are only used for creating new classes."
+      ],
+      "correctIndex": 0,
+      "explanation": "Namespaces serve as a hierarchical organizational tool in C# that helps manage and categorize code elements like classes, interfaces, and enums. They prevent naming collisions by creating unique scopes and make code more modular and easier to understand. Developers can use the 'using' directive to import namespaces and access their elements without fully qualifying type names."
+    },
+    {
+      "id": 7,
+      "question": "Explain the concept of _boxing_ and _unboxing_ in _C#_.",
+      "options": [
+        "Boxing is a method of creating new objects in memory",
+        "Unboxing is a way to compress value types into smaller memory spaces",
+        "Boxing and unboxing are used for encryption of primitive types",
+        "Boxing is the process of converting a value type to a reference type by wrapping the value inside an object, allowing value types to be treated as objects. Unboxing is the reverse process of extracting the value type from the object reference."
+      ],
+      "correctIndex": 3,
+      "explanation": "Boxing allows value types like integers or structs to be converted to reference types, enabling them to be stored in object-based collections or passed as object parameters. This conversion involves creating a new object on the heap and copying the value, which can impact performance. The process is implicit in C# but comes with a performance overhead."
+    },
+    {
+      "id": 8,
+      "question": "What is _Type Casting_ and what are its types in _C#_?",
+      "options": [
+        "Type casting is a method of creating new object types",
+        "Type casting in C# is the process of converting a value from one data type to another, which can be either implicit (automatic) or explicit (manual) depending on potential data loss risks.",
+        "Type casting is only used for converting strings to numbers",
+        "Type casting always requires manual intervention from the programmer"
+      ],
+      "correctIndex": 1,
+      "explanation": "Implicit casting occurs automatically when there is no risk of data loss, such as converting a smaller numeric type to a larger one. Explicit casting requires manual intervention and can potentially lose data, such as converting a double to an int, which truncates the decimal portion."
+    },
+    {
+      "id": 9,
+      "question": "What are _operators_ in _C#_ and can you provide examples?",
+      "options": [
+        "Operators in C# are symbols or keywords that perform operations on variables and values, including arithmetic, comparison, logical, and assignment operations.",
+        "Operators are a type of programming language syntax",
+        "Operators can only be used with specific data types",
+        "Operators are only used for mathematical calculations"
+      ],
+      "correctIndex": 0,
+      "explanation": "Operators in C# enable various types of operations, from basic arithmetic to complex logical evaluations. They help manipulate data, compare values, and perform computations. Different types of operators serve different purposes, such as mathematical calculations, value comparisons, and logical evaluations."
+    },
+    {
+      "id": 10,
+      "question": "What is the difference between `==` _operator_ and `.Equals()` _method_?",
+      "options": [
+        "`Equals()` method is only used for comparing primitive data types",
+        "The `==` operator always performs a deep comparison of object contents",
+        "`==` and `.Equals()` always work exactly the same way for all object types",
+        "The `==` operator compares object references for reference types and values for value types, while `.Equals()` method compares the actual content or value of objects based on its implementation."
+      ],
+      "correctIndex": 3,
+      "explanation": "In C#, the behavior of comparison depends on the type. For value types like int, float, and structs, both `==` and `.Equals()` compare values. For reference types, `==` checks if objects reference the same memory location, while `.Equals()` can be overridden to provide custom value comparison logic."
+    },
+    {
+      "id": 11,
+      "question": "What is the purpose of the `var` _keyword_ in _C#_?",
+      "options": [
+        "`var` is only used for creating anonymous types in LINQ queries",
+        "`var` is a way to declare weakly typed variables with reduced performance",
+        "`var` is used to create dynamic variables that can change type at runtime",
+        "The `var` keyword enables implicit type inference, allowing the compiler to automatically determine the most appropriate type for a variable based on its initialization."
+      ],
+      "correctIndex": 3,
+      "explanation": "Type inference with `var` helps write more concise code while maintaining strong typing. The compiler determines the exact type at compile-time, so there's no runtime performance penalty. It's particularly useful with complex generic types or LINQ expressions."
+    },
+    {
+      "id": 12,
+      "question": "What are the differences between `const` and `readonly` _keywords_?",
+      "options": [
+        "`const` fields can be set in the constructor like `readonly`",
+        "`readonly` fields can be modified after object creation",
+        "`const` and `readonly` are interchangeable and can be used in the same way",
+        "`const` fields are compile-time constants that must be initialized immediately and cannot be changed, while `readonly` fields can be initialized in the constructor and remain immutable after initialization."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key difference is flexibility of initialization and type support. `const` is limited to compile-time primitive types and must be initialized at declaration, whereas `readonly` can work with any type and can be set in the constructor, allowing more complex initialization scenarios."
+    },
+    {
+      "id": 13,
+      "question": "How does `checked` and `unchecked` _context_ affect arithmetic operations?",
+      "options": [
+        "The `checked` and `unchecked` keywords control how arithmetic overflow is handled in C#, with `checked` throwing an exception and `unchecked` allowing silent wrapping of numeric values.",
+        "The keywords control memory allocation for arithmetic operations in .NET runtime.",
+        "They are used to explicitly define numeric type casting in mathematical expressions.",
+        "These keywords determine compile-time type conversion rules for arithmetic operations."
+      ],
+      "correctIndex": 0,
+      "explanation": "Overflow checking is crucial for preventing unexpected behavior in numeric computations. The `checked` context ensures that any arithmetic operation that causes an overflow will immediately throw an OverflowException, providing strict type safety. Conversely, `unchecked` allows numeric values to wrap around silently, which can lead to unexpected results but may be intentional in certain scenarios.\n\nHere's an example demonstrating the difference:\ncsharp\n// Checked context will throw an exception\ntry {\n    int maxInt = int.MaxValue;\n    checked { int overflowValue = maxInt + 1; } // Throws OverflowException\n}\n\n// Unchecked context silently wraps\nunchecked {\n    int maxInt = int.MaxValue;\n    int wrappedValue = maxInt + 1; // Becomes int.MinValue\n}"
+    },
+    {
+      "id": 14,
+      "question": "What are the different ways to handle _errors_ in _C#_?",
+      "options": [
+        "C# relies solely on global error handlers and does not support granular error management.",
+        "Error handling in C# is exclusively managed through traditional exception throwing and catching.",
+        "C# supports multiple error handling mechanisms, including try-catch exception handling, logging, and modern approaches like nullable types and the Result pattern for more robust error management.",
+        "Errors are automatically resolved by the .NET runtime without developer intervention."
+      ],
+      "correctIndex": 2,
+      "explanation": "Error handling in C# has evolved to provide developers with flexible and powerful ways to manage potential runtime issues. The primary methods include traditional exception handling, which allows catching and processing specific error types, logging for tracking and diagnostic purposes, and modern patterns like nullable types and the Result pattern that provide more explicit and type-safe error management.\n\nHere's an example of a modern error handling approach:\ncsharp\npublic Result<int> DivideNumbers(int numerator, int denominator) {\n    if (denominator == 0) {\n        return Result.Failure<int>(\"Cannot divide by zero\");\n    }\n    return Result.Success(numerator / denominator);\n}"
+    },
+    {
+      "id": 15,
+      "question": "Explain the role of the _garbage collector_ in _.NET_.",
+      "options": [
+        "Developers must explicitly call the Garbage Collector to free memory in .NET applications.",
+        "The Garbage Collector manually tracks and deletes all objects created in an application.",
+        "The .NET Garbage Collector automatically manages memory by identifying and freeing objects that are no longer referenced, preventing memory leaks and simplifying memory management for developers.",
+        "Garbage Collection completely eliminates the possibility of memory-related performance issues."
+      ],
+      "correctIndex": 2,
+      "explanation": "The Garbage Collector (GC) is a critical component of .NET's memory management system, automatically handling memory allocation and deallocation. It uses generational collection, dividing objects into different generations based on their lifetime and applying different collection strategies to improve performance. The GC significantly reduces the likelihood of memory leaks and frees developers from manual memory management.\n\nHere's a simple illustration of object lifecycle:\ncsharp\npublic void CreateAndDisposeObjects() {\n    // These objects will be collected when they go out of scope\n    var tempList = new List<string>();\n    var tempObject = new SomeClass();\n    // GC will automatically reclaim memory when these are no longer referenced\n}"
+    }
+  ],
+  "processedAt": "2025-12-14T21:19:16.567Z"
+}

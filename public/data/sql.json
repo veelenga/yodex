@@ -1,0 +1,196 @@
+{
+  "id": "sql",
+  "name": "SQL",
+  "slug": "sql-interview-questions",
+  "category": "Database",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _SQL_ and what is it used for?",
+      "options": [
+        "SQL is a hardware interface for connecting computer networks",
+        "SQL is a database management system used only by large corporations",
+        "SQL (Structured Query Language) is a specialized programming language designed for managing and manipulating relational databases, enabling users to create, retrieve, update, and delete data.",
+        "SQL is a general-purpose programming language used for web development"
+      ],
+      "correctIndex": 2,
+      "explanation": "SQL serves as the standard language for relational database management, providing a consistent way to interact with database systems. It allows developers and database administrators to define database structures, insert and modify data, and perform complex queries across multiple tables. The language is essential in data-driven applications across various industries, supporting operations in finance, healthcare, technology, and many other sectors."
+    },
+    {
+      "id": 2,
+      "question": "Describe the difference between _SQL_ and _NoSQL_ databases.",
+      "options": [
+        "SQL and NoSQL are identical database technologies with no significant differences",
+        "NoSQL databases are always faster and more efficient than SQL databases",
+        "SQL databases can only store text data, while NoSQL can store complex data types",
+        "SQL and NoSQL databases differ primarily in their data model, with SQL using structured, tabular data with predefined schemas, while NoSQL supports flexible, unstructured data with dynamic schemas."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key distinction between SQL and NoSQL databases lies in their approach to data storage and management. SQL databases maintain rigid, predefined structures ideal for complex queries and transactions, while NoSQL databases offer greater flexibility and scalability for handling diverse and evolving data types. Each has unique strengths: SQL excels in complex relational data, and NoSQL shines in distributed, rapidly changing data environments."
+    },
+    {
+      "id": 3,
+      "question": "What are the different types of _SQL commands_?",
+      "options": [
+        "There are only two types of SQL commands: read and write",
+        "SQL commands are completely standardized across all database systems",
+        "SQL commands are categorized into four main types: Data Query Language (DQL), Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL), each serving distinct database management functions.",
+        "SQL commands only include SELECT and INSERT operations"
+      ],
+      "correctIndex": 2,
+      "explanation": "These SQL command categories provide comprehensive database management capabilities. DQL focuses on data retrieval, DDL handles database structure creation and modification, DML manages data manipulation like inserting and updating records, and DCL controls user access and permissions. Understanding these categories helps developers and database administrators effectively interact with and manage database systems across different platforms."
+    },
+    {
+      "id": 4,
+      "question": "Explain the purpose of the _SELECT_ statement.",
+      "options": [
+        "SELECT is a command for creating new database tables",
+        "SELECT is primarily used for deleting database records",
+        "SELECT is used to modify database table structures",
+        "The SELECT statement is a fundamental SQL command used to retrieve and query data from one or more database tables, allowing users to specify which columns they want to retrieve and apply various filtering and sorting conditions."
+      ],
+      "correctIndex": 3,
+      "explanation": "The SELECT statement is crucial for data retrieval in SQL. It allows database users to extract specific columns, filter rows using conditions, and perform transformations on data. The statement can include multiple clauses like FROM, WHERE, GROUP BY, and ORDER BY to precisely control the data output."
+    },
+    {
+      "id": 5,
+      "question": "What is the difference between _WHERE_ and _HAVING_ clauses?",
+      "options": [
+        "WHERE filters data after aggregation, while HAVING filters before grouping",
+        "HAVING is used only in Oracle databases",
+        "WHERE and HAVING are identical clauses with no functional difference",
+        "The WHERE clause filters rows before grouping, working with individual records, while the HAVING clause filters groups after aggregation and is used with aggregate functions."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key distinction between WHERE and HAVING is their position in query processing. WHERE operates on individual rows before any grouping occurs, making it suitable for non-aggregated conditions. HAVING works on grouped data, allowing filtering based on aggregate function results like SUM, COUNT, or AVG."
+    },
+    {
+      "id": 6,
+      "question": "Define what a _JOIN_ is in SQL and list its types.",
+      "options": [
+        "JOIN only works with tables that have identical structures",
+        "A JOIN in SQL is a method of combining rows from two or more tables based on a related column between them, with types including INNER JOIN, LEFT OUTER JOIN, RIGHT OUTER JOIN, FULL OUTER JOIN, CROSS JOIN, and SELF JOIN.",
+        "JOIN is a method of deleting data from multiple tables simultaneously",
+        "JOIN is exclusively used for combining identical records"
+      ],
+      "correctIndex": 1,
+      "explanation": "Joins are essential for relational database operations, enabling data combination across multiple tables. They leverage relationships between tables through common columns, typically primary and foreign keys. Different join types allow various combination strategies depending on matching records and desired result sets."
+    },
+    {
+      "id": 7,
+      "question": "What is a _primary key_ in a database?",
+      "options": [
+        "A primary key is an index that allows faster data retrieval",
+        "A primary key is a method of sorting database records alphabetically",
+        "A primary key is a unique identifier for each record in a database table that ensures each row can be distinctly identified and prevents duplicate entries.",
+        "A primary key is a column that stores the most important data in a table"
+      ],
+      "correctIndex": 2,
+      "explanation": "Primary keys are crucial for maintaining data integrity by providing a unique identifier for each record. They must be unique, non-null, and stable throughout the record's lifetime. This ensures that each row in a table can be distinctly identified and referenced, preventing duplicate or ambiguous entries."
+    },
+    {
+      "id": 8,
+      "question": "Explain what a _foreign key_ is and how it is used.",
+      "options": [
+        "A foreign key is a type of database index that speeds up queries",
+        "A foreign key is a method of creating backup copies of database tables",
+        "A foreign key is a way to encrypt sensitive database information",
+        "A foreign key is a column in a table that creates a link between two tables by referencing the primary key of another table, establishing referential integrity and defining relationships between database entities."
+      ],
+      "correctIndex": 3,
+      "explanation": "Foreign keys are essential for maintaining relationships between database tables. They ensure data consistency by creating a link between the primary key of one table and a corresponding column in another table. This mechanism prevents orphaned records and helps maintain referential integrity across related database tables."
+    },
+    {
+      "id": 9,
+      "question": "How can you prevent _SQL injections_?",
+      "options": [
+        "Using complex passwords prevents SQL injection",
+        "SQL injections can be prevented by using simple string concatenation",
+        "To prevent SQL injections, developers should use parameterized queries, implement input validation, and apply the principle of least privilege to database access.",
+        "Disabling all user input will completely stop SQL injection attacks"
+      ],
+      "correctIndex": 2,
+      "explanation": "SQL injection prevention requires a multi-layered approach. Parameterized queries separate SQL code from user input, making it impossible for malicious users to inject harmful commands. Input validation checks and sanitizes user inputs, while limiting database user privileges reduces potential attack surfaces and minimizes potential damage."
+    },
+    {
+      "id": 10,
+      "question": "What is _normalization_? Explain with examples.",
+      "options": [
+        "Normalization is a database design technique to organize data efficiently by reducing redundancy and improving data integrity through a systematic approach of breaking down tables into smaller, more focused structures.",
+        "Normalization is a method of combining multiple database tables into one large table",
+        "Normalization is a process of increasing data redundancy to improve database performance",
+        "Normalization is a technique for encrypting database information"
+      ],
+      "correctIndex": 0,
+      "explanation": "Normalization is crucial in database design as it helps eliminate data redundancy, minimize data anomalies, and ensure data consistency. The process involves dividing larger tables into smaller, more specialized tables and establishing relationships between them. By following normalization rules through different normal forms (1NF to 5NF), databases become more organized, easier to maintain, and less prone to data inconsistencies."
+    },
+    {
+      "id": 11,
+      "question": "Describe the concept of _denormalization_ and when you would use it.",
+      "options": [
+        "Denormalization always decreases database performance",
+        "Denormalization is a technique for randomizing database structure",
+        "Denormalization is a strategic database optimization technique that intentionally introduces redundancy to improve query performance by reducing complex joins and computational overhead.",
+        "Denormalization is a method of completely removing database relationships"
+      ],
+      "correctIndex": 2,
+      "explanation": "Denormalization is a performance-focused approach used when read performance becomes critical. By strategically duplicating or pre-aggregating data, database queries can execute faster by minimizing complex table joins. However, it comes with trade-offs, including increased storage requirements and potential data maintenance challenges. Developers typically use denormalization in data warehousing, reporting systems, and read-heavy applications."
+    },
+    {
+      "id": 12,
+      "question": "What are _indexes_ and how can they improve query performance?",
+      "options": [
+        "Indexes always improve database write performance",
+        "Indexes automatically generate new data entries",
+        "Indexes are database objects that improve query performance by creating a separate data structure that allows faster data retrieval, similar to a book's table of contents for quick information lookup.",
+        "Indexes are physical copies of entire database tables"
+      ],
+      "correctIndex": 2,
+      "explanation": "Database indexes work by creating a separate, efficiently organized data structure that allows rapid data location without scanning entire tables. They are particularly effective for columns frequently used in search conditions, sorting, and join operations. While indexes significantly speed up read operations, they do introduce some overhead during data modifications, as the index must also be updated. Careful index design is essential to balance query performance and write efficiency."
+    },
+    {
+      "id": 13,
+      "question": "Explain the purpose of the _GROUP BY_ clause.",
+      "options": [
+        "The GROUP BY clause consolidates rows with similar values and enables performing aggregate functions like SUM, COUNT, AVG across grouped data.",
+        "GROUP BY is used to delete duplicate rows from a table",
+        "The GROUP BY clause allows direct updates to grouped data",
+        "GROUP BY automatically sorts data in ascending order"
+      ],
+      "correctIndex": 0,
+      "explanation": "The GROUP BY clause allows SQL queries to combine rows that have the same values in specified columns, enabling summary-level analysis. It is commonly used with aggregate functions to compute totals, averages, or counts for each unique group. By grouping data, analysts can gain insights into patterns and summarize large datasets efficiently."
+    },
+    {
+      "id": 14,
+      "question": "What is a _subquery_, and when would you use one?",
+      "options": [
+        "A subquery is a nested SQL query embedded within another query that returns data to be used in the main query's filtering, comparison, or computation process.",
+        "A subquery is a physical database table stored temporarily",
+        "Subqueries are only used for joining tables",
+        "Subqueries can only return a single column of data"
+      ],
+      "correctIndex": 0,
+      "explanation": "Subqueries provide a powerful mechanism for performing complex data retrieval and manipulation by allowing one query to be nested inside another. They can return single values, multiple rows, or entire result sets and are frequently used in WHERE clauses, SELECT statements, and JOIN conditions to create more dynamic and flexible database queries."
+    },
+    {
+      "id": 15,
+      "question": "Describe the functions of the _ORDER BY_ clause.",
+      "options": [
+        "ORDER BY permanently changes the table's physical storage",
+        "The clause automatically removes duplicate rows",
+        "The ORDER BY clause sorts query results based on specified column(s) in ascending or descending order, allowing precise control over result presentation.",
+        "ORDER BY can only sort numeric columns"
+      ],
+      "correctIndex": 2,
+      "explanation": "ORDER BY provides a flexible method for organizing query results, enabling sorting by one or multiple columns in either ascending or descending sequences. It is crucial for presenting data in a meaningful and readable format, allowing analysts and applications to view information in the most appropriate order without modifying the underlying table structure."
+    }
+  ],
+  "processedAt": "2025-12-14T21:37:35.299Z"
+}

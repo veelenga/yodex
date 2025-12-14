@@ -1,0 +1,160 @@
+{
+  "id": "golang",
+  "name": "Go",
+  "slug": "golang-interview-questions",
+  "category": "Languages",
+  "totalQuestions": 12,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Go_ and why was it created?",
+      "options": [
+        "Go is a web framework designed specifically for mobile app development",
+        "Go is a machine learning library developed by Apple for AI applications",
+        "Go is an open-source programming language developed by Google in 2009 to address challenges in software development, focusing on simplicity, efficiency, and concurrent programming.",
+        "Go is a database management system created by Microsoft for cloud computing"
+      ],
+      "correctIndex": 2,
+      "explanation": "Go was created by Rob Pike, Ken Thompson, and Robert Griesemer at Google to solve real-world programming challenges. It combines the efficiency of compiled languages like C with the ease of use of dynamic languages. The language emphasizes simplicity, strong standard library, built-in concurrency support, and efficient compilation. Its design addresses common issues in large-scale software development, such as slow compilation, dependency management, and complex build processes."
+    },
+    {
+      "id": 2,
+      "question": "Explain the workspace architecture in _Go_.",
+      "options": [
+        "The Go workspace architecture consists of three primary directories: src (source code), pkg (package objects), and bin (compiled executable files), traditionally managed through the GOPATH environment variable.",
+        "Go workspace is entirely managed through cloud-based repositories",
+        "Go uses a complex multi-layer file system similar to Java's classpath",
+        "Go workspace has only two directories: code and binaries"
+      ],
+      "correctIndex": 0,
+      "explanation": "Go's workspace structure provides a standardized way to organize Go projects and dependencies. The src directory contains source code, pkg stores compiled package objects, and bin holds executable binaries. With the introduction of Go modules, the traditional GOPATH-based workflow has become less rigid, allowing more flexible project management. Developers can now initialize projects anywhere on their filesystem using module initialization."
+    },
+    {
+      "id": 3,
+      "question": "How is the `GOPATH` environment variable used?",
+      "options": [
+        "GOPATH determines the programming language version to use",
+        "GOPATH is a security token for Go package repositories",
+        "The GOPATH environment variable defines the root directory for Go workspace, specifying where source code, packages, and binaries are stored before the introduction of Go modules.",
+        "GOPATH is a configuration file for Go compiler settings"
+      ],
+      "correctIndex": 2,
+      "explanation": "Before Go modules, GOPATH was crucial for package management and code organization. It typically pointed to a directory containing src, pkg, and bin subdirectories. Developers would place their Go projects within the src directory, following a specific path structure. With Go modules (introduced in Go 1.11), GOPATH is no longer mandatory, giving developers more flexibility in project location and dependency management."
+    },
+    {
+      "id": 4,
+      "question": "What are _Go_'s key features compared to other programming languages?",
+      "options": [
+        "Go primarily focuses on web development and lacks system programming capabilities.",
+        "Go is essentially a direct clone of Python with minor syntax modifications.",
+        "Go is a complex object-oriented language with extensive inheritance models.",
+        "Go offers exceptional concurrency support through goroutines and channels, a simple and clean syntax, and strong built-in features for efficient system and network programming."
+      ],
+      "correctIndex": 3,
+      "explanation": "Go was designed by Google engineers to address limitations in existing programming languages, emphasizing simplicity, efficiency, and concurrent programming. Its key innovations include lightweight thread management (goroutines), efficient communication between concurrent processes (channels), and a minimalist approach to language design. The language compiles directly to machine code, providing performance close to C while offering modern programming conveniences."
+    },
+    {
+      "id": 5,
+      "question": "Describe how _packages_ are structured in a _Go program_.",
+      "options": [
+        "Go packages can only contain a single function or type definition.",
+        "In Go, packages are the fundamental unit of code organization, with elements starting with uppercase letters being exported and accessible outside the package, while lowercase elements remain package-private.",
+        "Packages in Go are purely decorative and have no functional significance.",
+        "Go packages are identical to Java packages with full object-oriented inheritance."
+      ],
+      "correctIndex": 1,
+      "explanation": "Packages in Go serve as crucial namespaces and modularization mechanisms. They allow developers to organize code logically, control visibility of types and functions, and manage dependencies. The export rules (uppercase vs lowercase) provide a simple yet effective way to control access without complex visibility modifiers. This approach promotes clean, intentional code structure and encourages thoughtful API design."
+    },
+    {
+      "id": 6,
+      "question": "What are _slices_ in _Go_, and how do they differ from _arrays_?",
+      "options": [
+        "Slices in Go are dynamic, reference-based data structures built on arrays that provide flexible list management with automatic resizing and efficient memory handling.",
+        "Slices in Go are completely independent of underlying arrays.",
+        "Slices can only contain elements of a single predetermined type.",
+        "Slices are static arrays with fixed memory allocation."
+      ],
+      "correctIndex": 0,
+      "explanation": "Slices provide a more flexible and powerful alternative to traditional arrays. They abstract array management, allowing dynamic resizing and efficient manipulation. Slices contain a pointer to an underlying array, a length, and a capacity, enabling powerful operations like sub-slicing and efficient memory use. They are widely used for building and manipulating collections in Go."
+    },
+    {
+      "id": 7,
+      "question": "Could you explain what a _goroutine_ is?",
+      "options": [
+        "Goroutines are lightweight concurrent functions in Go that allow independent code segments to execute concurrently, managed by the Go runtime with minimal overhead.",
+        "Goroutines are special Go functions that can only run synchronously",
+        "Goroutines are traditional operating system threads that require manual memory management",
+        "Goroutines are parallel processing units that always execute simultaneously"
+      ],
+      "correctIndex": 0,
+      "explanation": "Goroutines are a core concurrency mechanism in Go, designed to be lightweight and efficient. They are multiplexed over a small number of OS threads, making them much more memory-efficient than traditional threads. The Go runtime manages goroutine scheduling, allowing developers to create thousands of goroutines without significant performance penalties.\n\nHere's a simple example of creating and using goroutines:\n\ngo\nfunc main() {\n    go func() {\n        fmt.Println(\"Running in a goroutine\")\n    }()\n    time.Sleep(time.Second) // Wait to allow goroutine to execute\n}"
+    },
+    {
+      "id": 8,
+      "question": "How does _Go_ handle memory management?",
+      "options": [
+        "Go uses automatic garbage collection to manage memory, automatically identifying and reclaiming memory that is no longer in use, which eliminates manual memory management for developers.",
+        "Go requires manual memory allocation and deallocation like C",
+        "Go uses reference counting for memory management",
+        "Go relies on developers to explicitly free all allocated memory"
+      ],
+      "correctIndex": 0,
+      "explanation": "Go's garbage collector is a key feature that simplifies memory management. It runs concurrently with the application, periodically scanning and freeing memory that is no longer referenced. The GC is designed to minimize application pause times and work efficiently in concurrent environments.\n\nExample of memory allocation in Go:\n\ngo\nfunc createSlice() []int {\n    // Memory will be automatically managed\n    slice := make([]int, 10)\n    return slice // No explicit memory freeing required\n}"
+    },
+    {
+      "id": 9,
+      "question": "Can you list and explain the basic _data types_ in _Go_?",
+      "options": [
+        "Go uses dynamic typing for all data types",
+        "Go requires explicit type conversion for all type interactions",
+        "Go only supports primitive integer and string types",
+        "Go provides fundamental data types including numeric types (int, float), strings, booleans, and composite types like arrays, slices, and maps to support various programming needs."
+      ],
+      "correctIndex": 3,
+      "explanation": "Go's type system is statically typed, offering a range of built-in types that cover most programming requirements. Numeric types include various integer and floating-point sizes, with explicit type conversion when needed. Composite types like slices and maps provide flexible data structures.\n\nExample of Go data type usage:\n\ngo\nfunc dataTypeDemo() {\n    var intValue int = 42\n    var floatValue float64 = 3.14\n    var text string = \"Hello, Go\"\n    var isTrue bool = true\n    slice := []int{1, 2, 3}\n    mapping := map[string]int{\"key\": 100}\n}"
+    },
+    {
+      "id": 13,
+      "question": "What is a _channel_ in _Go_, and when would you use one?",
+      "options": [
+        "Channels are used exclusively for error handling in concurrent systems.",
+        "A channel in Go is a typed conduit that allows goroutines to communicate and synchronize data safely, enabling concurrent programming patterns.",
+        "A channel is a database connection method in Go programming.",
+        "A channel is a special type of array that can only store integers."
+      ],
+      "correctIndex": 1,
+      "explanation": "Channels provide a mechanism for goroutines to exchange data and synchronize their execution. They prevent race conditions by ensuring safe communication between concurrent processes. Channels can be buffered or unbuffered, allowing for different synchronization strategies. Here's a simple example of channel usage:"
+    },
+    {
+      "id": 14,
+      "question": "Explain _concurrency_ in _Go_ and how it compares to _parallelism_.",
+      "options": [
+        "Concurrency is identical to parallelism in Go, with no meaningful distinction.",
+        "Concurrency means running multiple programs at the same time in Go.",
+        "Concurrency in Go refers to the ability to run multiple tasks independently and potentially simultaneously, with goroutines enabling independent function execution, while parallelism specifically involves simultaneous execution of tasks on multiple CPU cores.",
+        "Concurrency only applies to network programming in Go."
+      ],
+      "correctIndex": 2,
+      "explanation": "Go's concurrency model is built around goroutines, which are lightweight threads managed by the Go runtime. The key difference between concurrency and parallelism is that concurrency is about dealing with multiple tasks simultaneously, while parallelism is about executing multiple tasks at the exact same time."
+    },
+    {
+      "id": 15,
+      "question": "What does the `range` keyword do?",
+      "options": [
+        "Range is a mathematical function for calculating numeric intervals.",
+        "Range is used exclusively for generating random numbers in Go.",
+        "The `range` keyword in Go provides a convenient way to iterate over elements in various data structures like slices, arrays, maps, strings, and channels, simplifying loop constructs and providing built-in safety.",
+        "Range is a method for accessing private struct fields."
+      ],
+      "correctIndex": 2,
+      "explanation": "The `range` keyword offers a clean and idiomatic way to iterate through collection types in Go. It automatically handles indexing and can be used with different data structures, reducing boilerplate code and potential errors."
+    }
+  ],
+  "processedAt": "2025-12-14T21:21:38.177Z"
+}

@@ -1,0 +1,197 @@
+{
+  "id": "python",
+  "name": "Python",
+  "slug": "python-interview-questions",
+  "category": "Languages",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What are the _key features_ of _Python_?",
+      "options": [
+        "Python is a low-level machine language used primarily for hardware programming",
+        "Python is a compiled language that requires explicit memory management",
+        "Python is a high-level, interpreted programming language known for its simplicity, readability, and extensive libraries, supporting multiple programming paradigms like object-oriented, functional, and procedural.",
+        "Python is only suitable for web development and cannot be used for general-purpose programming"
+      ],
+      "correctIndex": 2,
+      "explanation": "Python's key features include dynamic typing, automatic memory management, and a clean syntax that emphasizes code readability. Its interpreter allows for interactive coding and rapid development. Python supports multiple programming paradigms and has a vast ecosystem of libraries for various domains like data science, web development, and machine learning."
+    },
+    {
+      "id": 2,
+      "question": "How is _Python_ executed?",
+      "options": [
+        "Python requires a separate compilation process for each operating system",
+        "Python programs are interpreted line by line without any compilation step",
+        "Python code is directly compiled to machine code before execution",
+        "Python code is first compiled to bytecode, which is then interpreted by the Python Virtual Machine (PVM), allowing for platform-independent execution and dynamic type checking."
+      ],
+      "correctIndex": 3,
+      "explanation": "The Python execution process involves two main stages: compilation and interpretation. When a Python script is run, the source code is first compiled into bytecode, an intermediate representation that can be executed by the PVM. This approach provides performance benefits and cross-platform compatibility."
+    },
+    {
+      "id": 3,
+      "question": "What is _PEP 8_ and why is it important?",
+      "options": [
+        "PEP 8 is a Python library for code formatting",
+        "PEP 8 is a style guide that provides coding conventions for Python code, promoting consistency, readability, and maintainability across Python projects.",
+        "PEP 8 is a mandatory programming language specification that must be strictly followed",
+        "PEP 8 defines the core syntax of the Python language"
+      ],
+      "correctIndex": 1,
+      "explanation": "PEP 8 offers guidelines for Python code style, including recommendations for indentation, naming conventions, whitespace usage, and comments. While not a strict requirement, following PEP 8 helps create more readable and consistent code that is easier for other developers to understand."
+    },
+    {
+      "id": 4,
+      "question": "How is memory allocation and garbage collection handled in _Python_?",
+      "options": [
+        "Memory in Python is entirely managed by the operating system without any internal memory management.",
+        "Python manually manages memory through explicit allocation and deallocation by the programmer.",
+        "Python uses automatic memory management with a heap memory pool and garbage collector that handles memory allocation and deallocation dynamically.",
+        "Python uses static memory allocation with fixed memory blocks for all objects."
+      ],
+      "correctIndex": 2,
+      "explanation": "Python's memory management is handled by the Python memory manager, which uses an efficient memory allocation system called 'obmalloc' for small objects. The garbage collector automatically frees memory that is no longer in use, preventing memory leaks and reducing manual memory management overhead. This system preallocates memory blocks and uses reference counting to track object usage.\n\nHere's a simple demonstration of memory allocation:\npython\n# Python automatically manages memory allocation\nx = 10  # Memory allocated\ndel x   # Memory can be freed automatically\n"
+    },
+    {
+      "id": 5,
+      "question": "What are the _built-in data types_ in _Python_?",
+      "options": [
+        "Python supports only mutable data types that can be modified freely.",
+        "Python provides several built-in data types, including immutable types like int, float, bool, and str, and mutable types like list, dict, and set.",
+        "Python only supports primitive data types like integers and strings.",
+        "Python has no built-in data types and requires manual type definition."
+      ],
+      "correctIndex": 1,
+      "explanation": "Python's built-in data types offer a wide range of functionality for different programming needs. Immutable types like integers, floats, and strings cannot be changed after creation, while mutable types like lists and dictionaries can be modified. Each type has specific characteristics and methods that make them useful for different scenarios.\n\nHere's an example demonstrating different data types:\npython\n# Immutable types\nage = 30        # int\npi = 3.14       # float\nname = 'Alice'  # str\n\n# Mutable types\nmy_list = [1, 2, 3]    # list\nmy_dict = {'a': 1}     # dict\n"
+    },
+    {
+      "id": 6,
+      "question": "Explain the difference between a _mutable_ and _immutable_ object.",
+      "options": [
+        "Only mutable objects can be used in complex data structures.",
+        "Mutable and immutable objects are exactly the same in Python.",
+        "Immutable objects consume more memory than mutable objects.",
+        "Mutable objects can be modified after creation, while immutable objects cannot be changed once they are created, which impacts how they are used and stored in memory."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key difference between mutable and immutable objects is their ability to be modified after creation. Immutable objects like tuples and strings create a new object when 'modified', while mutable objects like lists can be changed in-place. This behavior affects performance, memory usage, and how these objects can be used in different programming contexts.\n\nHere's a code example illustrating mutability:\npython\n# Immutable example\nx = (1, 2, 3)  # tuple\n# x[0] = 4    # This would raise an error\n\n# Mutable example\ny = [1, 2, 3]  # list\ny[0] = 4       # This is allowed\n"
+    },
+    {
+      "id": 7,
+      "question": "How do you _handle exceptions_ in _Python_?",
+      "options": [
+        "Python automatically resolves all exceptions without any manual intervention.",
+        "Exception handling in Python is done by using only if-else statements to check for potential errors.",
+        "In Python, exception handling is done using try-except-finally blocks. The try block contains code that might raise an exception, except blocks catch and handle specific exceptions, and the finally block executes code regardless of whether an exception occurred.",
+        "Exception handling requires importing a special exceptions module before using try-except blocks."
+      ],
+      "correctIndex": 2,
+      "explanation": "Exception handling provides a structured way to manage and respond to runtime errors in Python. The try block allows you to test code for potential errors, except blocks specify how to handle different types of exceptions, and the finally block ensures critical cleanup code always runs. This mechanism prevents program crashes and allows graceful error management."
+    },
+    {
+      "id": 8,
+      "question": "What is the difference between _list_ and _tuple_?",
+      "options": [
+        "Lists and tuples are identical data structures in Python with no significant differences.",
+        "Lists can only store numbers, while tuples can store multiple data types.",
+        "Tuples are faster to create but lists provide more flexibility for data manipulation.",
+        "Lists are mutable, ordered sequences defined with square brackets [], while tuples are immutable, ordered sequences defined with parentheses () and cannot be changed after creation."
+      ],
+      "correctIndex": 3,
+      "explanation": "Lists and tuples are both sequence types in Python, but their key difference is mutability. Lists allow dynamic modification of elements, making them more flexible but potentially less memory-efficient. Tuples, being immutable, are typically used for storing fixed collections of items and can serve as dictionary keys."
+    },
+    {
+      "id": 9,
+      "question": "How do you create a _dictionary_ in _Python_?",
+      "options": [
+        "Dictionaries in Python are created using curly braces {} with key-value pairs, where keys are unique and values can be of any type. They can be initialized directly or using the dict() constructor.",
+        "Python dictionaries must have numeric keys in sequential order.",
+        "Dictionaries are created using square brackets [] and require explicit type declarations.",
+        "Dictionaries can only be created using the list() method and require all keys to be strings."
+      ],
+      "correctIndex": 0,
+      "explanation": "Dictionaries are powerful key-value storage data structures in Python, offering fast lookups and flexible key-value mappings. They are unordered (in versions before Python 3.7) and allow various immutable types as keys, with values being unrestricted in type."
+    },
+    {
+      "id": 10,
+      "question": "What is the difference between _==_ and _is operator_ in _Python_?",
+      "options": [
+        "'==' and 'is' are exactly the same and can be used interchangeably",
+        "'==' only works with primitive types, while 'is' works with all object types",
+        "'is' checks if two objects have the same type, while '==' compares their values",
+        "The '==' operator checks for value equality, while the 'is' operator checks for object identity by comparing memory addresses."
+      ],
+      "correctIndex": 3,
+      "explanation": "In Python, '==' compares the values of objects, while 'is' checks if two references point to the exact same object in memory. This distinction is crucial for understanding object comparison. For example, two lists with the same contents are equal ('==') but not identical ('is')."
+    },
+    {
+      "id": 11,
+      "question": "How does a _Python function_ work?",
+      "options": [
+        "Functions in Python can only be used to print values",
+        "A function is a way to create infinite loops in Python",
+        "Functions are special variables that store multiple data types",
+        "A Python function is a block of reusable code that performs a specific task, defined using the 'def' keyword and optionally returning a value."
+      ],
+      "correctIndex": 3,
+      "explanation": "Python functions allow programmers to break down complex problems into smaller, manageable pieces of code. They can accept parameters, perform operations, and return results, promoting code reusability and modular design."
+    },
+    {
+      "id": 12,
+      "question": "What is a _lambda function_, and where would you use it?",
+      "options": [
+        "Lambda functions can have multiple expressions in their body",
+        "A lambda function is a small, anonymous function defined using the 'lambda' keyword, typically used for short, one-time operations.",
+        "Lambda functions are a way to import external libraries in Python",
+        "Lambda functions are used to create complex mathematical calculations"
+      ],
+      "correctIndex": 1,
+      "explanation": "Lambda functions provide a concise way to create small, inline functions without using the full function definition syntax. They are particularly useful in functional programming contexts like sorting, mapping, and filtering."
+    },
+    {
+      "id": 13,
+      "question": "Explain _*args_ and _**kwargs_ in _Python_.",
+      "options": [
+        "*args allows passing variable positional arguments as a tuple, while **kwargs allows passing variable keyword arguments as a dictionary, enabling flexible function parameter handling.",
+        "*args and **kwargs are debugging tools for printing function arguments",
+        "*args and **kwargs are special Python data types for storing multiple values",
+        "*args and **kwargs are used to create infinite loops in Python functions"
+      ],
+      "correctIndex": 0,
+      "explanation": "Args and kwargs provide flexibility in function definitions by allowing functions to accept an unspecified number of arguments. They help create more dynamic and adaptable functions. The *args parameter collects additional positional arguments, while **kwargs collects additional keyword arguments."
+    },
+    {
+      "id": 14,
+      "question": "What are _decorators_ in _Python_?",
+      "options": [
+        "Decorators are used to generate random numbers in Python",
+        "Decorators are functions that modify other functions by wrapping them, allowing you to extend or modify their behavior without directly changing their source code.",
+        "Decorators are a method for database connection management",
+        "Decorators are a way to create new Python classes"
+      ],
+      "correctIndex": 1,
+      "explanation": "Decorators provide a clean and reusable way to modify or enhance functions dynamically. They are implemented using the '@' symbol and can add functionality like logging, timing, authentication, or input validation to existing functions without altering their core implementation."
+    },
+    {
+      "id": 15,
+      "question": "How can you create a _module_ in _Python_?",
+      "options": [
+        "A module is a special type of Python class",
+        "A Python module is a file containing Python definitions and statements, which can be imported and used in other Python scripts to organize and reuse code.",
+        "A module is a built-in Python data structure",
+        "A module is a database connection handler"
+      ],
+      "correctIndex": 1,
+      "explanation": "Modules help organize Python code by grouping related functions, classes, and variables into a single file. They promote code reusability and help manage large projects by breaking them into smaller, manageable components. Modules can be created simply by saving Python code with a .py extension."
+    }
+  ],
+  "processedAt": "2025-12-14T21:15:31.631Z"
+}

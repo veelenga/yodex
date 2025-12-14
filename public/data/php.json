@@ -1,0 +1,197 @@
+{
+  "id": "php",
+  "name": "PHP",
+  "slug": "php-interview-questions",
+  "category": "Languages",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does _PHP_ stand for and what is its main purpose?",
+      "options": [
+        "PHP is a database management system developed by Microsoft",
+        "PHP is a client-side programming language used for static website design",
+        "PHP originally stood for Personal Home Page and now means PHP: Hypertext Preprocessor. Its main purpose is server-side scripting for creating dynamic web content and interacting with databases.",
+        "PHP stands for Personal Hypertext Processing and is primarily used for graphic design"
+      ],
+      "correctIndex": 2,
+      "explanation": "PHP is a server-side scripting language designed for web development. It can generate dynamic page content, work with server-side databases, handle form submissions, and create session tracking. Its versatility allows developers to build complex web applications with server-side logic. PHP code is typically embedded within HTML and executed on the web server, generating the final HTML sent to the client."
+    },
+    {
+      "id": 2,
+      "question": "How do you execute a _PHP_ script from the _command line_?",
+      "options": [
+        "PHP scripts can only be run through a web browser",
+        "You must use a special IDE to execute PHP scripts from the command line",
+        "To execute a PHP script from the command line, use the php command followed by the script filename, such as 'php your_script.php'.",
+        "PHP scripts require a compilation step before running from the command line"
+      ],
+      "correctIndex": 2,
+      "explanation": "The PHP command-line interface (CLI) allows direct script execution without a web server. This is useful for scripting, automation, and testing. Additional CLI options include running PHP code directly with -r, checking configuration with -i, and specifying input files. Command-line execution supports passing arguments and integrating PHP scripts into shell workflows."
+    },
+    {
+      "id": 3,
+      "question": "Can you describe the differences between _PHP 5_ and _PHP 7/8_?",
+      "options": [
+        "PHP 7/8 is completely incompatible with PHP 5 code",
+        "PHP 7/8 introduced significant performance improvements, strict type declarations, return type hints, and enhanced error handling compared to PHP 5.",
+        "PHP 7/8 removed all object-oriented programming features",
+        "PHP 7/8 is primarily a cosmetic update with no functional changes"
+      ],
+      "correctIndex": 1,
+      "explanation": "The transition from PHP 5 to PHP 7/8 brought major architectural improvements. Performance nearly doubled, with reduced memory consumption. New features like scalar type declarations, return type hints, and improved error handling make code more robust. Developers needed to update legacy code to comply with stricter typing and new syntax requirements."
+    },
+    {
+      "id": 4,
+      "question": "What are the common ways to embed _PHP_ into _HTML_?",
+      "options": [
+        "PHP must be written exclusively in dedicated template files",
+        "PHP can only be embedded using HTML comment tags",
+        "PHP can be embedded into HTML using the standard `<?php ?>` tags, which is the most widely used and recommended method.",
+        "PHP requires a separate script file for all web pages"
+      ],
+      "correctIndex": 2,
+      "explanation": "PHP provides multiple ways to embed code within HTML, with the `<?php ?>` tags being the most standard and reliable method. These tags allow developers to seamlessly integrate PHP logic directly into HTML documents, enabling dynamic content generation. Short tags and ASP-style tags exist but are less recommended or deprecated in modern PHP versions."
+    },
+    {
+      "id": 5,
+      "question": "How would you create a _PHP variable_ and how are they scoped (_global_, _local_, _static_)?",
+      "options": [
+        "PHP does not support variable scoping mechanisms",
+        "Variables in PHP are always reset after each function call",
+        "PHP variables have three primary scopes: local (within a function), global (accessible throughout the script), and static (retains value between function calls).",
+        "PHP variables only have global scope by default"
+      ],
+      "correctIndex": 2,
+      "explanation": "Variable scoping in PHP determines the accessibility and lifetime of variables. Local variables are confined to function bodies, global variables can be accessed across the script using the 'global' keyword, and static variables maintain their value between function invocations. Understanding these scopes is crucial for managing data and preventing unintended variable modifications."
+    },
+    {
+      "id": 6,
+      "question": "Explain the _data types_ that are supported in _PHP_.",
+      "options": [
+        "PHP does not have a boolean data type",
+        "PHP requires explicit type declaration for all variables",
+        "PHP supports multiple core data types including integers, floating-point numbers, strings, booleans, arrays, objects, and special types like NULL.",
+        "PHP only supports string and integer data types"
+      ],
+      "correctIndex": 2,
+      "explanation": "PHP is a dynamically typed language with rich data type support. Each data type serves specific purposes in programming, allowing flexible and versatile coding. PHP can automatically convert between types (type juggling) and provides type-checking functions to verify variable types when needed."
+    },
+    {
+      "id": 7,
+      "question": "How does _PHP_ handle _error reporting_?",
+      "options": [
+        "Error reporting can only be set at the server level and cannot be changed in individual scripts",
+        "PHP only supports logging errors to a default system file",
+        "PHP handles error reporting through configuration settings in php.ini, error_reporting() function, and ini_set(), allowing developers to control which types of errors are displayed and logged.",
+        "Error reporting in PHP is automatic and cannot be customized"
+      ],
+      "correctIndex": 2,
+      "explanation": "PHP provides flexible error reporting mechanisms that allow developers to control error visibility and logging. The error_reporting() function lets you specify which error types to display, while php.ini provides global configuration options. Developers can set error reporting levels to show different types of warnings, notices, and errors during script execution, which is crucial for debugging and maintaining code quality."
+    },
+    {
+      "id": 8,
+      "question": "What is the purpose of _php.ini_ file?",
+      "options": [
+        "php.ini is responsible for managing JavaScript configurations in PHP applications",
+        "The php.ini file is automatically generated by PHP and cannot be modified",
+        "php.ini is only used for database connection settings",
+        "The php.ini file is a critical configuration file that controls PHP's global settings, allowing administrators to manage system-wide PHP behavior, extensions, and performance parameters."
+      ],
+      "correctIndex": 3,
+      "explanation": "The php.ini configuration file serves as the primary control center for PHP's runtime environment. It enables system administrators and developers to customize various aspects of PHP's behavior, including memory limits, error reporting, extension loading, security settings, and performance optimizations. Changes in this file affect all PHP scripts running on the server."
+    },
+    {
+      "id": 9,
+      "question": "How do you define a _constant_ in _PHP_?",
+      "options": [
+        "Constants can only store string values in PHP",
+        "Constants must always be defined at the global scope",
+        "In PHP, constants are defined using the define() function or the const keyword, creating immutable values that can be accessed globally throughout the script.",
+        "Constants in PHP can be changed after initial declaration"
+      ],
+      "correctIndex": 2,
+      "explanation": "PHP constants provide a way to create named values that remain unchanged throughout script execution. They are useful for storing configuration values, magic numbers, or any value that should not be modified during runtime. The define() function offers more flexibility, while the const keyword is typically used for class constants."
+    },
+    {
+      "id": 10,
+      "question": "Can you describe the lifecycle of a _PHP request_?",
+      "options": [
+        "PHP requests are processed linearly without any intermediate compilation steps",
+        "Each PHP request requires manual memory management and extension loading",
+        "A PHP request lifecycle involves processing through several stages: bootstrap initialization, script compilation to opcode, execution by the Zend Engine, and final rendering of the response.",
+        "The request lifecycle is identical to static HTML page rendering"
+      ],
+      "correctIndex": 2,
+      "explanation": "The PHP request lifecycle is a complex process managed by the Zend Engine. During processing, PHP compiles scripts into opcode for efficient execution, loads necessary extensions, and sets up internal structures. This allows for optimized performance and modular execution of web applications. The typical flow involves parsing the script, converting it to executable bytecode, and then rendering the final output."
+    },
+    {
+      "id": 11,
+      "question": "Explain the use of _sessions_ in _PHP_.",
+      "options": [
+        "PHP sessions provide a mechanism to store and persist user-specific data across multiple web pages by generating a unique session identifier for each user interaction.",
+        "Sessions are permanently stored on the client's computer",
+        "Sessions can only store primitive data types",
+        "PHP sessions require manual database configuration for each user"
+      ],
+      "correctIndex": 0,
+      "explanation": "PHP sessions enable stateful interactions by creating a unique session ID for each user. They allow developers to store and retrieve user-specific data temporarily on the server. Sessions typically use cookies to maintain user identification and can store complex data structures. Key functions like session_start() and $_SESSION superglobal facilitate session management."
+    },
+    {
+      "id": 12,
+      "question": "How does _PHP_ support _cookies_?",
+      "options": [
+        "PHP cannot delete or modify existing cookies",
+        "PHP supports cookies through built-in functions like setcookie() for creating and managing HTTP cookies that store small pieces of data on the client's browser.",
+        "Cookies in PHP can only store string values",
+        "Cookies are automatically encrypted by default"
+      ],
+      "correctIndex": 1,
+      "explanation": "Cookies in PHP are managed using functions like setcookie() and accessed via the $_COOKIE superglobal. They allow websites to store small amounts of data on the client's browser, enabling features like user preferences and tracking. Cookies can be set with various parameters including expiration time, path, and domain restrictions. Proper cookie management is crucial for maintaining user state and personalization."
+    },
+    {
+      "id": 13,
+      "question": "Describe the _$_GET, _$_POST_, and _$_REQUEST_ _superglobal arrays_.",
+      "options": [
+        "$_GET and $_POST are identical arrays for handling web form data",
+        "$_GET retrieves data from URL parameters, $_POST handles form submissions securely, and $_REQUEST combines data from GET, POST, and COOKIE sources.",
+        "These arrays are used for storing permanent database connections",
+        "Superglobal arrays are only accessible within function scopes"
+      ],
+      "correctIndex": 1,
+      "explanation": "PHP superglobal arrays provide different methods of accessing incoming web request data. $_GET is used for visible URL parameters, $_POST for secure form submissions, and $_REQUEST as a comprehensive catch-all. Each has specific security and data retrieval characteristics. Understanding their differences helps prevent potential security vulnerabilities and ensures proper data handling."
+    },
+    {
+      "id": 14,
+      "question": "How can you prevent form submission data from being injected with _malicious code_?",
+      "options": [
+        "Use md5 encryption on all form inputs",
+        "Prevent form injection by using htmlspecialchars() to escape special characters, validating input types, and sanitizing user-submitted data before processing.",
+        "Simply block all form submissions with complex JavaScript",
+        "Disable form submissions entirely to prevent attacks"
+      ],
+      "correctIndex": 1,
+      "explanation": "Cross-site scripting (XSS) prevention requires multiple layers of security. Input validation checks data structure and content, while sanitization transforms potentially dangerous characters into harmless representations. Using built-in PHP functions like htmlspecialchars() converts special characters to their HTML entity equivalents, rendering potential malicious scripts inert."
+    },
+    {
+      "id": 15,
+      "question": "What is the significance of \"htmlspecialchars\" and \"strip_tags\" in _PHP_?",
+      "options": [
+        "htmlspecialchars() and strip_tags() are identical security methods",
+        "Both functions are used exclusively for database sanitization",
+        "These functions are used for data encryption",
+        "htmlspecialchars() converts special characters to HTML entities to prevent XSS attacks, while strip_tags() removes all HTML and PHP tags from a string."
+      ],
+      "correctIndex": 3,
+      "explanation": "Security in web applications requires careful handling of user-submitted content. htmlspecialchars() transforms characters like < and > into their safe HTML representations, preventing script execution. strip_tags() provides a more aggressive approach by completely removing all HTML markup, which can be useful for cleaning raw text input."
+    }
+  ],
+  "processedAt": "2025-12-14T21:23:54.016Z"
+}

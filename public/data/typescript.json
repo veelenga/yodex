@@ -1,0 +1,196 @@
+{
+  "id": "typescript",
+  "name": "TypeScript",
+  "slug": "typescript-interview-questions",
+  "category": "Languages",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _TypeScript_ and how does it differ from _JavaScript_?",
+      "options": [
+        "TypeScript is a completely new programming language that cannot run in browsers",
+        "TypeScript is a JavaScript framework for building web applications",
+        "TypeScript is a runtime environment for executing JavaScript code",
+        "TypeScript is a statically-typed superset of JavaScript developed by Microsoft that adds optional type annotations and compiles to standard JavaScript, enhancing code maintainability and predictability."
+      ],
+      "correctIndex": 3,
+      "explanation": "TypeScript extends JavaScript by introducing a robust type system that allows developers to add type annotations to their code. This helps catch potential errors during development and provides better tooling support. The TypeScript compiler transpiles the typed code into standard JavaScript that can run in any JavaScript environment. Code example demonstrating type annotations:"
+    },
+    {
+      "id": 2,
+      "question": "Can you explain what is meant by \"_TypeScript_ is a _superset_ of _JavaScript_\"?",
+      "options": [
+        "A superset means TypeScript completely replaces JavaScript syntax",
+        "A superset indicates that TypeScript can only be used with specific JavaScript frameworks",
+        "A superset of JavaScript means that TypeScript includes all JavaScript features while adding additional capabilities like static typing, and every valid JavaScript code is also valid TypeScript code.",
+        "A superset implies that TypeScript is a completely different programming language"
+      ],
+      "correctIndex": 2,
+      "explanation": "Being a superset allows developers to gradually adopt TypeScript in existing JavaScript projects. This means you can rename .js files to .ts and start adding type annotations without breaking existing code. The TypeScript compiler will still transpile the code to standard JavaScript that works in all environments."
+    },
+    {
+      "id": 3,
+      "question": "What are the _basic types_ available in _TypeScript_?",
+      "options": [
+        "TypeScript does not support type definitions",
+        "TypeScript provides basic types including boolean, number, string, array, tuple, enum, any, void, null, and undefined, which help developers define precise data structures and catch type-related errors early.",
+        "TypeScript only supports primitive types like string and number",
+        "TypeScript types are identical to JavaScript types"
+      ],
+      "correctIndex": 1,
+      "explanation": "TypeScript's type system allows developers to create more robust and self-documenting code by specifying exact types for variables, function parameters, and return values. These type annotations are checked during compilation and provide enhanced development experience."
+    },
+    {
+      "id": 4,
+      "question": "How do you declare _variables_ in _TypeScript_?",
+      "options": [
+        "In TypeScript, variables can be declared using `var`, `let`, and `const`, with `let` and `const` being preferred in modern TypeScript for block-scoped variable declarations.",
+        "Variables in TypeScript can only be declared using the `var` keyword",
+        "TypeScript does not support variable type declarations",
+        "All variables in TypeScript must be explicitly typed with a type annotation"
+      ],
+      "correctIndex": 0,
+      "explanation": "TypeScript provides multiple ways to declare variables with type safety. The `let` keyword creates block-scoped variables, while `const` creates block-scoped constants. Type annotations can be added optionally to provide stronger type checking. Here's an example of variable declarations:"
+    },
+    {
+      "id": 5,
+      "question": "What are _Interfaces_ in _TypeScript_ and how do they work?",
+      "options": [
+        "Interfaces can only define method signatures, not properties",
+        "Interfaces in TypeScript define a contract for object structure, specifying required and optional properties with their expected types.",
+        "Interfaces are only used for creating class inheritance in TypeScript",
+        "Interfaces have no runtime impact and are completely erased during compilation"
+      ],
+      "correctIndex": 1,
+      "explanation": "Interfaces provide a way to define the shape of objects, ensuring type safety and consistency across your codebase. They can include optional properties, readonly members, and method signatures. Interfaces are a compile-time construct that helps catch type-related errors early in development."
+    },
+    {
+      "id": 6,
+      "question": "Describe the _Enum_ type and when you might use it.",
+      "options": [
+        "Enums are identical to standard JavaScript objects",
+        "Enums do not provide any type safety in TypeScript",
+        "Enums can only contain numeric values",
+        "Enums in TypeScript are a way to define a set of named constants, providing type safety and improving code readability for sets of related values."
+      ],
+      "correctIndex": 3,
+      "explanation": "Enums allow developers to create a collection of related values with meaningful names. They can be numeric or string-based and provide compile-time type checking. Enums help eliminate 'magic values' and make code more self-documenting."
+    },
+    {
+      "id": 7,
+      "question": "How do you define and use a _function_ in _TypeScript_?",
+      "options": [
+        "TypeScript requires all functions to be explicitly typed with no type inference",
+        "Functions in TypeScript are defined exactly like JavaScript with no type support",
+        "In TypeScript, functions are defined using the function keyword or arrow syntax, with optional type annotations for parameters and return values.",
+        "Functions can only be created using class methods in TypeScript"
+      ],
+      "correctIndex": 2,
+      "explanation": "TypeScript provides rich function type support, allowing developers to specify parameter types and return types for improved type safety and code clarity. Functions can be declared using traditional function syntax or arrow function notation, with optional type annotations that help catch potential errors during compilation."
+    },
+    {
+      "id": 8,
+      "question": "What does \"_type inference_\" mean in the context of _TypeScript_?",
+      "options": [
+        "Type inference in TypeScript automatically determines variable types based on their initial value, allowing type safety without explicit type annotations.",
+        "Type inference only works for primitive data types",
+        "Type inference is a manual process of declaring types for variables",
+        "Type inference means TypeScript always uses dynamic typing"
+      ],
+      "correctIndex": 0,
+      "explanation": "TypeScript's type inference analyzes the initial value or context of a variable to determine its most appropriate type. This feature enables developers to write more concise code while maintaining strong type checking, with the compiler intelligently identifying and enforcing type constraints."
+    },
+    {
+      "id": 9,
+      "question": "Explain the use of '_let_' and '_const_' in _TypeScript_.",
+      "options": [
+        "'let' and 'const' function exactly the same in TypeScript",
+        "TypeScript doesn't support 'let' and 'const' keywords",
+        "In TypeScript, 'let' declares mutable variables with block scope, while 'const' declares constants that cannot be reassigned but may have mutable internal state.",
+        "'const' makes entire objects completely immutable"
+      ],
+      "correctIndex": 2,
+      "explanation": "TypeScript adopts ES6 variable declaration keywords to provide more predictable and safer variable management. 'Let' allows block-scoped mutable variables, while 'const' prevents variable reassignment, offering improved code reliability and preventing unintended modifications."
+    },
+    {
+      "id": 10,
+      "question": "How do you compile _TypeScript_ files into _JavaScript_?",
+      "options": [
+        "Compilation requires a special IDE plugin to translate TypeScript",
+        "TypeScript files are compiled into JavaScript using the TypeScript compiler (tsc), typically configured through a tsconfig.json file and run via command-line interface.",
+        "TypeScript automatically converts to JavaScript in the browser",
+        "JavaScript can directly run TypeScript files without any compilation"
+      ],
+      "correctIndex": 1,
+      "explanation": "The TypeScript compiler (tsc) transforms TypeScript code into standard JavaScript that can run in browsers or Node.js environments. The compilation process allows developers to use TypeScript's advanced typing and features while producing compatible JavaScript output. Developers typically configure compilation options in a tsconfig.json file and use the tsc command to generate JavaScript files."
+    },
+    {
+      "id": 11,
+      "question": "Explain _classes_ in _TypeScript_. How are they different from _ES6 classes_?",
+      "options": [
+        "TypeScript classes are exactly the same as ES6 classes",
+        "TypeScript classes cannot support inheritance",
+        "TypeScript classes extend ES6 classes by adding strong type checking, access modifiers like public/private, and additional compile-time type safety features.",
+        "TypeScript classes are only used for static methods"
+      ],
+      "correctIndex": 2,
+      "explanation": "TypeScript enhances JavaScript classes with additional type safety and compile-time checks. The key differences include explicit type annotations, access modifiers, and more robust type checking during development. These features help catch potential errors earlier in the development process and provide more structured object-oriented programming capabilities."
+    },
+    {
+      "id": 12,
+      "question": "How do you implement _Inheritance_ in _TypeScript_?",
+      "options": [
+        "Inheritance can only be implemented through interfaces",
+        "In TypeScript, inheritance is implemented using the 'extends' keyword, allowing a child class to inherit properties and methods from a parent class while supporting method overriding and type checking.",
+        "TypeScript does not support classical inheritance",
+        "Inheritance in TypeScript requires manual method copying"
+      ],
+      "correctIndex": 1,
+      "explanation": "TypeScript provides robust inheritance mechanisms using ES6 class syntax with the 'extends' keyword. This allows creating hierarchical class relationships where child classes can inherit and extend the functionality of parent classes. The inheritance model supports method overriding, constructor chaining, and type-safe method implementations."
+    },
+    {
+      "id": 13,
+      "question": "What are _access modifiers_ and how do they work in _TypeScript_?",
+      "options": [
+        "Access modifiers determine the memory allocation for class members",
+        "Access modifiers are optional decorators that enhance class performance",
+        "Access modifiers in TypeScript control the visibility and accessibility of class members, providing mechanisms to manage encapsulation through public, protected, and private keywords.",
+        "Access modifiers are used to define runtime behavior of class methods"
+      ],
+      "correctIndex": 2,
+      "explanation": "Access modifiers help developers control how class members can be accessed and modified. They provide a way to implement object-oriented programming principles like encapsulation, allowing precise control over data and method exposure. By default, members are public, but developers can restrict access using protected and private modifiers."
+    },
+    {
+      "id": 14,
+      "question": "Discuss _Abstract classes_ and their purposes in _TypeScript_.",
+      "options": [
+        "Abstract classes are used only for creating interface-like structures",
+        "Abstract classes are a way to define static methods in TypeScript",
+        "Abstract classes in TypeScript are base classes that cannot be directly instantiated, providing a blueprint for other classes with potential abstract methods that must be implemented by derived classes.",
+        "Abstract classes are fully implemented classes that can be instantiated directly"
+      ],
+      "correctIndex": 2,
+      "explanation": "Abstract classes serve as templates for other classes, allowing developers to define a common structure with potential partial implementations. They enable creating methods that must be overridden by child classes, ensuring a consistent contract while providing flexibility in implementation."
+    },
+    {
+      "id": 15,
+      "question": "Can you describe the use of _Constructors_ within _TypeScript classes_?",
+      "options": [
+        "Constructors are used to define static class properties",
+        "Constructors are methods that destroy object instances",
+        "Constructors in TypeScript are special methods used for initializing new object instances, automatically called when an object is created, and can accept parameters to set initial object state.",
+        "Constructors can only be used with abstract classes"
+      ],
+      "correctIndex": 2,
+      "explanation": "Constructors provide a standardized way to set up new object instances, allowing developers to initialize properties, perform setup logic, and ensure objects are created in a consistent, controlled manner. They support parameter passing and can include access modifiers for added flexibility."
+    }
+  ],
+  "processedAt": "2025-12-14T21:27:22.332Z"
+}

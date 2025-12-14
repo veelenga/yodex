@@ -1,0 +1,197 @@
+{
+  "id": "cpp",
+  "name": "C++",
+  "slug": "cpp-interview-questions",
+  "category": "Languages",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What are the main _features_ of _C++_?",
+      "options": [
+        "C++ is a multi-paradigm programming language that extends C with object-oriented, generic, and functional programming features, providing enhanced type safety, abstraction, and resource management capabilities.",
+        "C++ is a purely object-oriented language with no support for procedural programming",
+        "C++ is simply a faster version of C with no significant additional features",
+        "C++ is primarily used only for web development and mobile applications"
+      ],
+      "correctIndex": 0,
+      "explanation": "C++ evolved from C to provide more robust programming capabilities. It introduces key features like classes, templates, exception handling, and standard library support. The language allows programmers to write efficient, high-performance code across multiple programming paradigms. Key advancements include strong type checking, memory management through smart pointers, and support for object-oriented design principles."
+    },
+    {
+      "id": 2,
+      "question": "Explain the _difference_ between _C_ and _C++_.",
+      "options": [
+        "C and C++ are exactly the same language with no meaningful differences",
+        "C is more powerful and flexible than C++",
+        "C++ is just a preprocessor for C that adds no additional functionality",
+        "C and C++ differ fundamentally in their programming paradigms, with C++ adding object-oriented programming, templates, exceptions, and a more comprehensive standard library to the procedural foundation of C."
+      ],
+      "correctIndex": 3,
+      "explanation": "While C++ maintains backward compatibility with C, it introduces significant enhancements in programming capabilities. The language extends C's procedural approach by adding object-oriented features, generic programming through templates, and more sophisticated memory management. C++ provides stronger type checking, inline functions, and a rich standard library that supports more complex programming patterns."
+    },
+    {
+      "id": 3,
+      "question": "What is _object-oriented programming_ in _C++_?",
+      "options": [
+        "Object-oriented programming is only about creating multiple classes",
+        "OOP in C++ is just a way to create complicated code structures",
+        "OOP is not supported in C++",
+        "Object-oriented programming in C++ is a programming paradigm that uses classes to encapsulate data and behavior, supporting key principles like inheritance, polymorphism, and data abstraction."
+      ],
+      "correctIndex": 3,
+      "explanation": "Object-oriented programming in C++ allows developers to create modular, reusable code by defining classes that combine data and methods. The paradigm supports key principles like encapsulation (hiding internal details), inheritance (creating hierarchical relationships between classes), and polymorphism (implementing multiple forms of methods). This approach enables more organized and maintainable code structures."
+    },
+    {
+      "id": 4,
+      "question": "What are the _access specifiers_ in _C++_ and what do they do?",
+      "options": [
+        "Access specifiers are used to create variables in a class",
+        "Access specifiers determine the memory allocation of class members",
+        "Access specifiers in C++ are keywords that control the visibility and accessibility of class members, implementing data encapsulation by defining how class members can be accessed.",
+        "Access specifiers are only used for inheritance in C++"
+      ],
+      "correctIndex": 2,
+      "explanation": "Access specifiers (public, private, protected) define the accessibility of class members. Public members are accessible from anywhere, private members are only accessible within the class, and protected members are accessible within the class and its derived classes. They are crucial for implementing encapsulation, a key principle of object-oriented programming that helps protect data integrity and control access to class internals.\n\ncpp\nclass Example {\npublic:\n    int publicMember; // Accessible everywhere\nprivate:\n    int privateMember; // Only accessible within this class\nprotected:\n    int protectedMember; // Accessible in this and derived classes\n};\n"
+    },
+    {
+      "id": 5,
+      "question": "Explain the concept of _namespaces_ in _C++_.",
+      "options": [
+        "Namespaces are a method of memory management in C++",
+        "Namespaces are a way to define new data types",
+        "Namespaces are used only for creating global variables",
+        "Namespaces in C++ are a mechanism for organizing code into logical groups and preventing naming conflicts by creating distinct scopes for identifiers."
+      ],
+      "correctIndex": 3,
+      "explanation": "Namespaces provide a way to group related code elements and avoid naming collisions in large projects. They allow developers to create logical containers for functions, classes, and variables, preventing name conflicts between different parts of a program. Developers can access namespace members using the scope resolution operator (::) or the using directive.\n\ncpp\nnamespace Mathematics {\n    double calculateArea(double radius) {\n        return 3.14159 * radius * radius;\n    }\n}\n\n// Usage\ndouble area = Mathematics::calculateArea(5.0);\n"
+    },
+    {
+      "id": 6,
+      "question": "What is the _difference_ between '_struct_' and '_class_' in _C++_?",
+      "options": [
+        "Structs cannot inherit from other types, unlike classes",
+        "Structs can only contain data members, while classes can contain methods",
+        "In C++, struct and class are both user-defined data types, but differ primarily in their default member access levels: struct members are public by default, while class members are private by default.",
+        "Structs are used only for simple data storage, classes for complex operations"
+      ],
+      "correctIndex": 2,
+      "explanation": "The primary difference between struct and class in C++ is the default access level for members. Structs are typically used for passive data objects with public access, while classes are used for more complex objects with controlled access. Despite this difference, structs can have methods, constructors, and can inherit just like classes.\n\ncpp\nstruct Point {\n    int x; // public by default\n    int y; // public by default\n};\n\nclass Rectangle {\n    int width;  // private by default\n    int height; // private by default\npublic:\n    void setDimensions(int w, int h) {\n        width = w;\n        height = h;\n    }\n};\n"
+    },
+    {
+      "id": 7,
+      "question": "What is a _constructor_ and what are its _types_ in _C++_?",
+      "options": [
+        "A constructor is a method used to copy data between objects",
+        "A constructor is a special member function that initializes an object of a class when it is created, responsible for setting up the initial state of the object.",
+        "A constructor is a static method that creates class-level variables",
+        "A constructor is a function that deletes an object from memory"
+      ],
+      "correctIndex": 1,
+      "explanation": "Constructors are crucial for object initialization in C++. They are called automatically when an object is created and can have different forms. There are several types of constructors, including default, parameterized, and copy constructors, each serving a specific purpose in object creation and initialization. A simple example demonstrates a default constructor:\n\ncpp\nclass MyClass {\npublic:\n    MyClass() {\n        // Default constructor initializes object\n        value = 0;\n    }\nprivate:\n    int value;\n};\n"
+    },
+    {
+      "id": 8,
+      "question": "Explain the concept of _destructors_ in _C++_.",
+      "options": [
+        "A destructor is a function that copies object data to another object",
+        "A destructor is a special member function called automatically when an object is destroyed, responsible for releasing resources and performing cleanup operations before an object is removed from memory.",
+        "A destructor is a method that resets object values to zero",
+        "A destructor is used to create new objects in a class"
+      ],
+      "correctIndex": 1,
+      "explanation": "Destructors are essential for managing resource allocation and deallocation in C++. They are identified by a tilde (~) before the class name and are called automatically when an object goes out of scope or is explicitly deleted. They ensure proper memory management and resource cleanup. A typical destructor looks like this:\n\ncpp\nclass Resource {\npublic:\n    ~Resource() {\n        // Cleanup code, free dynamically allocated memory\n        delete[] dynamicArray;\n    }\nprivate:\n    int* dynamicArray;\n};\n"
+    },
+    {
+      "id": 9,
+      "question": "What is _function overloading_ in _C++_?",
+      "options": [
+        "Function overloading allows multiple functions to have the same name but different parameter lists, enabling the compiler to distinguish between them based on the number, types, and order of parameters.",
+        "Function overloading means creating multiple copies of the same function",
+        "Function overloading is a way to rename existing functions",
+        "Function overloading allows changing a function's return type"
+      ],
+      "correctIndex": 0,
+      "explanation": "Function overloading provides flexibility in defining functions with similar purposes but different input requirements. The compiler resolves which function to call based on the arguments passed during the function call. This feature enhances code readability and reduces the need for multiple similar function names. Here's an example demonstrating function overloading:\n\ncpp\nclass Calculator {\npublic:\n    int add(int a, int b) { return a + b; }\n    double add(double a, double b) { return a + b; }\n    int add(int a, int b, int c) { return a + b + c; }\n};\n"
+    },
+    {
+      "id": 10,
+      "question": "What is _operator overloading_ in _C++_?",
+      "options": [
+        "Operator overloading in C++ allows developers to define custom behaviors for operators when used with user-defined types like classes and structures.",
+        "Operator overloading is a way to create new mathematical operators in C++.",
+        "Operator overloading automatically converts between different data types.",
+        "Operator overloading is a method for redefining compiler directives at runtime."
+      ],
+      "correctIndex": 0,
+      "explanation": "Operator overloading enables programmers to give special meanings to operators when working with custom classes, making code more intuitive and readable. It allows objects to respond to operators in ways that make sense for their specific type. This feature is particularly useful for creating more natural interfaces for complex data types.\n\nExample of operator overloading:\ncpp\nclass Complex {\npublic:\n    Complex operator+(const Complex& other) {\n        return Complex(real + other.real, imag + other.imag);\n    }\nprivate:\n    double real, imag;\n};\n"
+    },
+    {
+      "id": 11,
+      "question": "What is _dynamic memory allocation_ in _C++_?",
+      "options": [
+        "Dynamic memory allocation is only used for creating temporary variables in functions.",
+        "Dynamic memory allocation automatically manages all memory without programmer intervention.",
+        "Dynamic memory allocation is a method of compressing memory usage at runtime.",
+        "Dynamic memory allocation in C++ allows programmers to manually allocate and deallocate memory during program execution, using the heap to manage memory that exists beyond the scope of local variables."
+      ],
+      "correctIndex": 3,
+      "explanation": "Dynamic memory allocation provides flexibility in memory management by allowing runtime allocation of memory from the heap. It gives programmers precise control over memory lifetime and size, which is crucial for creating data structures with dynamic sizes or managing memory-intensive applications.\n\nExample of dynamic memory allocation:\ncpp\nint* dynamicArray = new int[size]; // Allocate memory\ndelete[] dynamicArray; // Properly deallocate memory\n"
+    },
+    {
+      "id": 12,
+      "question": "Explain the _difference_ between '_new_' and '_malloc()_'.",
+      "options": [
+        "The key differences between 'new' and 'malloc()' are that 'new' is a C++ language operator that calls constructors, returns typed pointers, and can be overloaded, while 'malloc()' is a C function that simply allocates raw memory bytes without object initialization.",
+        "'new' is only used for creating static memory allocations.",
+        "'malloc()' is more memory-efficient than 'new' in all C++ applications.",
+        "'new' and 'malloc()' are exactly the same and can be used interchangeably in all situations."
+      ],
+      "correctIndex": 0,
+      "explanation": "In modern C++, 'new' is preferred over 'malloc()' because it integrates better with object-oriented programming. 'New' handles object construction, supports polymorphic allocation, and works seamlessly with C++ type systems. It automatically calls constructors and can be customized through operator overloading.\n\nComparison example:\ncpp\n// Using malloc() (C-style)\nMyClass* obj1 = (MyClass*)malloc(sizeof(MyClass));\n\n// Using new (C++ style)\nMyClass* obj2 = new MyClass(); // Calls constructor\n"
+    },
+    {
+      "id": 13,
+      "question": "What is a _memory leak_ and how can it be prevented?",
+      "options": [
+        "A memory leak occurs when a program allocates memory but fails to release it, causing gradual memory consumption and potential performance issues.",
+        "Memory leaks only happen in interpreted programming languages",
+        "Memory leaks are always automatically fixed by the operating system",
+        "A memory leak is when a computer's RAM becomes physically damaged"
+      ],
+      "correctIndex": 0,
+      "explanation": "Memory leaks typically result from improper memory management, where dynamically allocated memory is not properly freed. This can happen when programmers forget to use delete or free, especially in complex data structures. To prevent memory leaks, use smart pointers, RAII (Resource Acquisition Is Initialization) principles, and careful memory management."
+    },
+    {
+      "id": 14,
+      "question": "What is a _dangling pointer_?",
+      "options": [
+        "Dangling pointers only occur in large-scale enterprise applications",
+        "Dangling pointers are a feature designed to improve memory management",
+        "A dangling pointer is a pointer that changes its value randomly",
+        "A dangling pointer is a pointer that references memory that has been deallocated or is no longer valid, potentially causing undefined behavior or program crashes."
+      ],
+      "correctIndex": 3,
+      "explanation": "Dangling pointers arise when an object is deleted or goes out of scope, but the pointer to that object remains unchanged. This can lead to serious issues like segmentation faults or unpredictable program behavior. Careful pointer management, using smart pointers, and setting pointers to nullptr after deletion can help prevent dangling pointer problems."
+    },
+    {
+      "id": 15,
+      "question": "Explain the concept of _smart pointers_ in _C++_.",
+      "options": [
+        "Smart pointers always consume more memory than regular pointers",
+        "Smart pointers completely eliminate the need for manual memory management",
+        "Smart pointers are a special type of hardware memory component",
+        "Smart pointers are objects in C++ that manage dynamic memory allocation, providing automated memory management and reducing the risk of memory-related errors."
+      ],
+      "correctIndex": 3,
+      "explanation": "Smart pointers like unique_ptr, shared_ptr, and weak_ptr provide safer memory management by automatically handling memory allocation and deallocation. They implement different ownership models and help prevent common memory management errors such as leaks, double deletion, and dangling pointers."
+    }
+  ],
+  "processedAt": "2025-12-14T21:20:27.836Z"
+}

@@ -1,0 +1,197 @@
+{
+  "id": "rust",
+  "name": "Rust",
+  "slug": "rust-interview-questions",
+  "category": "Languages",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _cargo_ and how do you create a new Rust project with it?",
+      "options": [
+        "Cargo is a version control system for Rust projects",
+        "Cargo is a Rust-specific IDE for writing code",
+        "Cargo is Rust's package manager and build system that handles dependency management, compilation, and project creation.",
+        "Cargo is a runtime environment for executing Rust programs"
+      ],
+      "correctIndex": 2,
+      "explanation": "Cargo simplifies Rust development by managing project dependencies and build processes. To create a new Rust project, use the command 'cargo new project_name', which generates a standard project structure with a Cargo.toml configuration file and src directory. Developers can easily add dependencies, compile, and run projects using Cargo commands like 'cargo build' and 'cargo run'."
+    },
+    {
+      "id": 2,
+      "question": "Describe the structure of a basic Rust program.",
+      "options": [
+        "Every Rust program needs a complex class structure",
+        "A Rust program must always have multiple source files",
+        "Rust programs require explicit memory allocation in every file",
+        "A basic Rust program typically consists of a main function in main.rs or lib.rs, with a Cargo.toml file for configuration and dependency management."
+      ],
+      "correctIndex": 3,
+      "explanation": "Rust programs follow a structured approach with a clear entry point and modular design. The main.rs file contains the primary application logic, while Cargo.toml manages project metadata and dependencies. Rust emphasizes type safety, ownership, and zero-cost abstractions in its program structure."
+    },
+    {
+      "id": 3,
+      "question": "Explain the use of `main` function in _Rust_.",
+      "options": [
+        "The `main` function must always return an integer",
+        "The `main` function is optional in Rust programs",
+        "The `main` function in Rust is the program's entry point, responsible for initiating execution and optionally handling program-wide errors through its return type.",
+        "The `main` function can only print text to the console"
+      ],
+      "correctIndex": 2,
+      "explanation": "The main function is crucial in Rust, serving as the starting point of program execution. It can return different types, including void, integers, or Result types for comprehensive error handling. The function determines how the program begins and can manage initial setup and error conditions."
+    },
+    {
+      "id": 4,
+      "question": "How does _Rust_ handle _null_ or _nil_ values?",
+      "options": [
+        "Rust has a special null keyword that can be used anywhere.",
+        "Rust handles null values using the `Option<T>` enum, where `None` represents the absence of a value and `Some(T)` represents the presence of a value of type T.",
+        "Rust uses null directly like other programming languages.",
+        "Rust handles null through a global null pointer that can be assigned to any type."
+      ],
+      "correctIndex": 1,
+      "explanation": "The `Option<T>` type provides a safe way to handle potentially missing values without the risks associated with null pointer dereferencing. It forces developers to explicitly handle cases where a value might be absent, improving code safety and reducing potential runtime errors. The enum ensures type safety and eliminates null-related exceptions."
+    },
+    {
+      "id": 5,
+      "question": "What data types does _Rust_ support for _scalar_ values?",
+      "options": [
+        "Rust supports scalar types including signed and unsigned integers, floating-point numbers, booleans, and characters, with precise bit-width specifications.",
+        "Rust only supports 32-bit integers and floating-point types.",
+        "Rust does not have native support for scalar types and requires external libraries.",
+        "Rust uses dynamic typing for all scalar values."
+      ],
+      "correctIndex": 0,
+      "explanation": "Rust's scalar types provide strong type safety and performance by allowing precise control over memory representation. The language supports a wide range of integer types (i8 to i128, u8 to u128), two floating-point types (f32 and f64), boolean, and character types, each with specific characteristics and use cases."
+    },
+    {
+      "id": 6,
+      "question": "How do you declare and use an _array_ in _Rust_?",
+      "options": [
+        "Rust uses lists instead of arrays for fixed collections.",
+        "In Rust, arrays are fixed-size collections with a type that includes both the element type and the array's length, declared using square brackets with a specific size.",
+        "Rust arrays are dynamic and can change size at runtime.",
+        "Rust arrays can only contain integers or strings."
+      ],
+      "correctIndex": 1,
+      "explanation": "Rust arrays have a fixed size known at compile-time, which allows for compile-time optimizations and memory safety. The size is part of the type, preventing out-of-bounds access and ensuring type safety. When you need a dynamically sized collection, Rust provides vectors as an alternative."
+    },
+    {
+      "id": 7,
+      "question": "Can you explain the differences between `let` and `let mut` in _Rust_?",
+      "options": [
+        "`let` always creates mutable variables in Rust",
+        "In Rust, `let` creates immutable variables by default, while `let mut` allows variables to be modified after initial assignment.",
+        "`let mut` is used only for numeric variables in Rust",
+        "`let` and `let mut` are interchangeable and have no difference in Rust"
+      ],
+      "correctIndex": 1,
+      "explanation": "Rust's approach to mutability provides strong compile-time guarantees about variable modifications. Immutability by default helps prevent unintended state changes and makes code more predictable. When you need a variable to be changeable, you explicitly use the `mut` keyword to signal that intent."
+    },
+    {
+      "id": 8,
+      "question": "What is _shadowing_ in _Rust_ and give an example of how it's used?",
+      "options": [
+        "Shadowing only works with mutable variables in Rust",
+        "Shadowing is a way to create multiple variables with different names",
+        "Shadowing in Rust allows redefining a variable name, potentially changing its type and mutability characteristics within the same scope.",
+        "Shadowing is similar to variable overloading in other programming languages"
+      ],
+      "correctIndex": 2,
+      "explanation": "Shadowing provides a unique way to transform variables without creating multiple distinct variables. It's particularly useful when you want to perform type conversions or change a variable's properties while keeping the same name."
+    },
+    {
+      "id": 9,
+      "question": "What is the purpose of `match` statements in _Rust_?",
+      "options": [
+        "Match statements are used exclusively for error handling in Rust",
+        "Match statements only work with integer comparisons",
+        "Match statements in Rust provide comprehensive pattern matching capabilities, allowing exhaustive checking of different conditions across various data types and enumerations.",
+        "Match statements are just like switch statements in other languages"
+      ],
+      "correctIndex": 2,
+      "explanation": "Rust's match statements are a powerful control flow construct that ensures all possible cases are handled. They are particularly strong with enums and provide compile-time checking to prevent unhandled scenarios."
+    },
+    {
+      "id": 10,
+      "question": "What is _ownership_ in _Rust_ and why is it important?",
+      "options": [
+        "Ownership is a way to manually allocate and deallocate memory in Rust programs.",
+        "Ownership is a design pattern for creating object-oriented classes in Rust.",
+        "Ownership in Rust is a memory management mechanism where each value has a single owner, and ownership can be transferred or borrowed with strict rules, ensuring memory safety without a garbage collector.",
+        "Ownership is a runtime mechanism that tracks memory usage dynamically."
+      ],
+      "correctIndex": 2,
+      "explanation": "Ownership is a compile-time mechanism that ensures memory safety by managing how values are allocated, used, and deallocated. Each value can only have one owner at a time, and when the owner goes out of scope, the value is automatically dropped. This prevents memory leaks and dangling pointers without runtime overhead.\n\nHere's a simple example demonstrating ownership transfer:\n\nrust\nfn main() {\n    let s1 = String::from(\"hello\");\n    let s2 = s1; // Ownership transferred, s1 is no longer valid\n    // println!(\"{}\", s1); // This would cause a compile-time error\n    println!(\"{}\", s2); // This is valid\n}\n"
+    },
+    {
+      "id": 11,
+      "question": "Explain the _borrowing rules_ in _Rust_.",
+      "options": [
+        "Borrowing is an optional memory management technique in Rust.",
+        "Borrowing is a runtime mechanism for sharing memory between threads.",
+        "Borrowing in Rust allows references to data without transferring ownership, with two key rules: you can have either one mutable reference or multiple immutable references to the same data at a time.",
+        "Borrowing allows unlimited read and write access to any variable in Rust."
+      ],
+      "correctIndex": 2,
+      "explanation": "Borrowing is a core concept in Rust that allows temporary access to data without transferring ownership. The borrow checker enforces strict rules to prevent data races and ensure memory safety. Mutable borrows are exclusive, while immutable borrows can be shared by multiple references simultaneously.\n\nHere's an example demonstrating borrowing rules:\n\nrust\nfn main() {\n    let mut x = 5;\n    let y = &x;       // Immutable borrow\n    let z = &mut x;   // This would cause a compile-time error\n    println!(\"{}\", y);\n}\n"
+    },
+    {
+      "id": 12,
+      "question": "What is a _lifetime_ and how does it relate to _references_?",
+      "options": [
+        "Lifetimes are a way to manually manage memory allocation.",
+        "Lifetimes are runtime performance optimization techniques.",
+        "Lifetimes are optional annotations used only in complex generic functions.",
+        "Lifetimes are Rust's way of tracking how long references are valid, ensuring that references do not outlive the data they point to, which prevents dangling pointer issues."
+      ],
+      "correctIndex": 3,
+      "explanation": "Lifetimes are a compile-time feature that helps the Rust compiler ensure reference safety. They explicitly define the scope for which a reference is valid, preventing scenarios where a reference might point to invalid memory. Most of the time, lifetimes are implicitly inferred, but explicit annotations can be used in complex scenarios.\n\nHere's an example of explicit lifetime annotation:\n\nrust\nfn longest<'a>(x: &'a str, y: &'a str) -> &'a str {\n    if x.len() > y.len() { x } else { y }\n}\n"
+    },
+    {
+      "id": 13,
+      "question": "How do you create a _reference_ in _Rust_?",
+      "options": [
+        "References are automatically generated by the Rust compiler without explicit syntax.",
+        "In Rust, references are created using the `&` symbol, which borrows data without transferring ownership, with options for immutable (`&T`) and mutable (`&mut T`) references.",
+        "References are created by using the `*` pointer symbol in Rust.",
+        "References are created by cloning the original data object."
+      ],
+      "correctIndex": 1,
+      "explanation": "Rust references allow borrowing data safely, enforcing strict rules about simultaneous access. They can be immutable or mutable, with the borrow checker ensuring memory safety by preventing multiple simultaneous mutable references or mutations during active borrowing. A simple reference creation example looks like this: rust let x = 5; let reference = &x; // Immutable reference let mut y = 10; let mutable_ref = &mut y; // Mutable reference"
+    },
+    {
+      "id": 14,
+      "question": "Describe the difference between a _shared reference_ and a _mutable reference_.",
+      "options": [
+        "Mutable references can coexist with multiple shared references simultaneously.",
+        "Shared references always transfer ownership of the underlying data.",
+        "Shared and mutable references are identical in Rust and can be used interchangeably.",
+        "A shared reference (`&T`) provides read-only access to data, while a mutable reference (`&mut T`) allows exclusive write access, ensuring that only one mutable reference exists at a time."
+      ],
+      "correctIndex": 3,
+      "explanation": "Rust's reference system prevents data races by enforcing strict borrowing rules. Shared references allow multiple readers but no writers, while mutable references provide exclusive write access. This design ensures thread safety and prevents simultaneous mutations. Here's a demonstration: rust let mut data = vec![1, 2, 3]; let shared_ref = &data; // Read-only let mutable_ref = &mut data; // Exclusive write access"
+    },
+    {
+      "id": 15,
+      "question": "How does the _borrow checker_ help prevent _race conditions_?",
+      "options": [
+        "The borrow checker is an optional runtime safety mechanism in Rust.",
+        "The borrow checker completely allows unrestricted concurrent mutations.",
+        "The borrow checker only checks references during runtime execution.",
+        "The borrow checker prevents race conditions by statically analyzing code at compile-time, ensuring that concurrent access to shared mutable state is prohibited or carefully controlled."
+      ],
+      "correctIndex": 3,
+      "explanation": "Rust's borrow checker is a compile-time mechanism that analyzes ownership and borrowing rules to prevent data races. It enforces that mutable references are exclusive and prevent simultaneous mutations across threads. When multiple threads attempt to mutate shared state without proper synchronization, the compiler will reject the code. A safer concurrent approach involves using thread-safe synchronization primitives like `Mutex` or `Arc`. rust use std::sync::{Arc, Mutex}; let counter = Arc::new(Mutex::new(0)); // Thread-safe shared mutable state"
+    }
+  ],
+  "processedAt": "2025-12-14T21:26:15.134Z"
+}
