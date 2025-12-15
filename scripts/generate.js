@@ -13,6 +13,8 @@ import {
   OLLAMA_MODEL,
   BATCH_SIZE,
   RATE_LIMIT_DELAY_MS,
+  MAX_RETRIES,
+  RETRY_DELAY_BASE_MS,
   ANSWER_PREVIEW_LENGTH,
   CODE_EXAMPLE_CATEGORIES,
   MARKDOWN_HEADER_PATTERN,
@@ -142,18 +144,53 @@ async function callOllama(prompt) {
 }
 
 /**
- * Calls AI provider (Anthropic or Ollama)
+ * Exponential backoff retry with jitter
  */
-async function callAI(prompt, client) {
-  if (AI_PROVIDER === 'ollama') {
-    return await callOllama(prompt);
-  } else {
-    const message = await client.messages.create({
-      model: AI_MODEL,
-      max_tokens: AI_MAX_TOKENS,
-      messages: [{ role: 'user', content: prompt }],
-    });
-    return message;
+async function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function exponentialBackoff(retryCount) {
+  // Exponential backoff: base * 2^retry + random jitter
+  const delay = RETRY_DELAY_BASE_MS * Math.pow(2, retryCount);
+  const jitter = Math.random() * 1000; // Random 0-1000ms jitter
+  await sleep(delay + jitter);
+}
+
+/**
+ * Calls AI provider (Anthropic or Ollama) with retry logic
+ */
+async function callAI(prompt, client, retryCount = 0) {
+  try {
+    if (AI_PROVIDER === 'ollama') {
+      return await callOllama(prompt);
+    } else {
+      const message = await client.messages.create({
+        model: AI_MODEL,
+        max_tokens: AI_MAX_TOKENS,
+        messages: [{ role: 'user', content: prompt }],
+      });
+      return message;
+    }
+  } catch (error) {
+    // Check if error is retryable (rate limit, network issues)
+    const isRetryable =
+      error.status === 429 || // Rate limit
+      error.status === 500 || // Server error
+      error.status === 502 || // Bad gateway
+      error.status === 503 || // Service unavailable
+      error.status === 504 || // Gateway timeout
+      error.code === 'ECONNRESET' ||
+      error.code === 'ETIMEDOUT';
+
+    if (isRetryable && retryCount < MAX_RETRIES) {
+      console.warn(`    [RETRY ${retryCount + 1}/${MAX_RETRIES}] ${error.message}`);
+      await exponentialBackoff(retryCount);
+      return callAI(prompt, client, retryCount + 1);
+    }
+
+    // If not retryable or max retries reached, throw the error
+    throw error;
   }
 }
 

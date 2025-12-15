@@ -2,7 +2,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
 import { Badge } from '../ui/badge';
-import MarkdownContent from '../MarkdownContent';
+import MarkdownContent from '../MarkdownContent.lazy';
 import AnswerOption from './AnswerOption';
 import QuizExplanation from './QuizExplanation';
 import { useAnswerOption } from './useAnswerOption';

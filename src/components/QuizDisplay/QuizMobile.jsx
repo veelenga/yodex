@@ -1,6 +1,6 @@
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
-import MarkdownContent from '../MarkdownContent';
+import MarkdownContent from '../MarkdownContent.lazy';
 import AnswerOption from './AnswerOption';
 import QuizExplanation from './QuizExplanation';
 import { useAnswerOption } from './useAnswerOption';

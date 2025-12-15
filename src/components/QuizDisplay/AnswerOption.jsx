@@ -1,5 +1,5 @@
 import { CheckCircle2, XCircle } from 'lucide-react';
-import MarkdownContent from '../MarkdownContent';
+import MarkdownContent from '../MarkdownContent.lazy';
 
 const OPTION_LABEL_CHAR_CODE_START = 65;
 

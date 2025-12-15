@@ -1,4 +1,4 @@
-import MarkdownContent from '../MarkdownContent';
+import MarkdownContent from '../MarkdownContent.lazy';
 
 export default function QuizExplanation({ explanation, className = '' }) {
   if (!explanation) return null;

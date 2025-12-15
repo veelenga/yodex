@@ -20,6 +20,8 @@ export const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'qwen2.5-coder:7b';
 
 export const BATCH_SIZE = 3;
 export const RATE_LIMIT_DELAY_MS = 1000;
+export const MAX_RETRIES = 3;
+export const RETRY_DELAY_BASE_MS = 2000;
 
 export const MIN_ANSWER_LENGTH = 50;
 export const ANSWER_PREVIEW_LENGTH = 500;
