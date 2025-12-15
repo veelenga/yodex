@@ -17,7 +17,7 @@ export function getAvailableRepositories() {
  */
 export async function loadRepositoryData(slug) {
   try {
-    const response = await fetch(`/data/${slug}.json`);
+    const response = await fetch(`${import.meta.env.BASE_URL}data/${slug}.json`);
 
     if (!response.ok) {
       throw new Error(`Failed to load ${slug}: ${response.statusText}`);
