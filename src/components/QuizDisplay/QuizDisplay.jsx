@@ -72,6 +72,7 @@ export default function QuizDisplay({ quiz, repoInfo, onReset }) {
     onAnswerSelect: handleAnswerSelect,
     onNext: handleNext,
     isLastQuestion,
+    onExit: onReset,
   };
 
   return (

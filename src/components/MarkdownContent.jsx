@@ -17,7 +17,6 @@ export default function MarkdownContent({ content, className = '' }) {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          // Code blocks
           code({ node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '');
             const language = match ? match[1] : 'javascript';
@@ -44,31 +43,32 @@ export default function MarkdownContent({ content, className = '' }) {
               </code>
             );
           },
-          // Unordered lists
           ul({ children }) {
             return <ul className="list-disc list-inside space-y-1 my-2">{children}</ul>;
           },
-          // Ordered lists
           ol({ children }) {
             return <ol className="list-decimal list-inside space-y-1 my-2">{children}</ol>;
           },
-          // List items
           li({ children }) {
             return <li className="text-sm leading-relaxed">{children}</li>;
           },
-          // Paragraphs
-          p({ children }) {
+          p({ children, node }) {
+            const hasBlockChildren = node?.children?.some(
+              child => child.type === 'element' && ['code', 'pre'].includes(child.tagName)
+            );
+
+            if (hasBlockChildren) {
+              return <>{children}</>;
+            }
+
             return <p className="my-2 leading-relaxed">{children}</p>;
           },
-          // Bold
           strong({ children }) {
             return <strong className="font-semibold text-foreground">{children}</strong>;
           },
-          // Italic
           em({ children }) {
             return <em className="italic">{children}</em>;
           },
-          // Links
           a({ href, children }) {
             return (
               <a
@@ -81,7 +81,6 @@ export default function MarkdownContent({ content, className = '' }) {
               </a>
             );
           },
-          // Headings
           h1({ children }) {
             return <h1 className="text-xl font-bold mt-4 mb-2">{children}</h1>;
           },

@@ -84,7 +84,7 @@ describe('QuizMobile', () => {
     render(<QuizMobile {...defaultProps} selectedAnswer={1} />);
 
     const optionButtons = screen.getAllByRole('button').filter(
-      btn => !btn.textContent.includes('Next') && !btn.textContent.includes('View')
+      btn => !btn.textContent.includes('Next') && !btn.textContent.includes('View') && btn.getAttribute('aria-label') !== 'Exit quiz'
     );
 
     optionButtons.forEach(btn => {

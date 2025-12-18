@@ -1,5 +1,6 @@
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
+import { ExitButton } from '../ui/exit-button';
 import MarkdownContent from '../MarkdownContent.lazy';
 import AnswerOption from './AnswerOption';
 import QuizExplanation from './QuizExplanation';
@@ -15,6 +16,7 @@ export default function QuizMobile({
   onAnswerSelect,
   onNext,
   isLastQuestion,
+  onExit,
 }) {
   const { getOptionState, getOptionClassName, getLabelClassName, isAnswered } =
     useAnswerOption(selectedAnswer, currentQuestion.correctIndex);
@@ -27,9 +29,12 @@ export default function QuizMobile({
             <span className="text-sm font-semibold text-foreground">
               Question {currentQuestionIndex + 1}/{quizLength}
             </span>
-            <span className="text-xs font-medium text-muted-foreground">
-              {Math.round(progressPercentage)}%
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-medium text-muted-foreground">
+                {Math.round(progressPercentage)}%
+              </span>
+              <ExitButton onClick={onExit} />
+            </div>
           </div>
           <Progress value={progressPercentage} className="h-1" />
         </div>

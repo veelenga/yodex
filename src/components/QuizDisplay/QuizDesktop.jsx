@@ -2,6 +2,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
 import { Badge } from '../ui/badge';
+import { ExitButton } from '../ui/exit-button';
 import MarkdownContent from '../MarkdownContent.lazy';
 import AnswerOption from './AnswerOption';
 import QuizExplanation from './QuizExplanation';
@@ -17,6 +18,7 @@ export default function QuizDesktop({
   onAnswerSelect,
   onNext,
   isLastQuestion,
+  onExit,
 }) {
   const { getOptionState, getOptionClassName, getLabelClassName, isAnswered } =
     useAnswerOption(selectedAnswer, currentQuestion.correctIndex);
@@ -29,9 +31,12 @@ export default function QuizDesktop({
             <span className="text-base font-medium text-foreground">
               Question {currentQuestionIndex + 1} of {quizLength}
             </span>
-            <Badge className="bg-primary text-white">
-              {Math.round(progressPercentage)}% Complete
-            </Badge>
+            <div className="flex items-center gap-3">
+              <Badge className="bg-primary text-white">
+                {Math.round(progressPercentage)}% Complete
+              </Badge>
+              <ExitButton onClick={onExit} />
+            </div>
           </div>
           <Progress value={progressPercentage} className="h-2.5" />
         </CardContent>
