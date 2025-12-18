@@ -2,6 +2,10 @@
 
 A curated interview question quiz platform powered by AI. Browse 30+ topics, practice with clean multiple-choice questions, and ace your technical interviews.
 
+## Content Generation
+
+All questions and answers are AI-generated based on curated Q&As sourced primarily from [devinterviews.io](https://devinterviews.io). The platform leverages AI to transform these curated interview questions into interactive multiple-choice quizzes. Additional sources may be incorporated in the future to further expand the question repository.
+
 ## Quick Start
 
 ```bash

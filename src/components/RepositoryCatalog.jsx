@@ -72,8 +72,8 @@ export default function RepositoryCatalog({ onSelectRepo }) {
       {/* Desktop: Horizontal Scrollable Badges */}
       <div className="hidden md:block">
         <div className="relative">
-          <div className="overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
-            <div className="flex gap-2 justify-center min-w-max px-4">
+          <div className="overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40 transition-all">
+            <div className="flex flex-wrap gap-2 justify-center px-4">
               {categories.map((category) => {
                 const isSelected = selectedCategory === category;
                 return (
