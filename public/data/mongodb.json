@@ -1,0 +1,196 @@
+{
+  "id": "mongodb",
+  "name": "MongoDB",
+  "slug": "mongodb-interview-questions",
+  "category": "Database",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _MongoDB_ and what are its main features?",
+      "options": [
+        "MongoDB is a graph database platform that specializes in managing interconnected data relationships using node and edge representations.",
+        "MongoDB is a document-oriented NoSQL database that provides high performance, scalability, and flexible data modeling through JSON-like documents stored in collections.",
+        "MongoDB is an in-memory key-value store designed for caching and real-time data processing with limited support for complex data structures.",
+        "MongoDB is a traditional relational database management system that uses strict table structures and supports complex SQL queries for enterprise data storage."
+      ],
+      "correctIndex": 1,
+      "explanation": "MongoDB distinguishes itself as a NoSQL database by offering a flexible document model that allows dynamic schemas and supports complex, nested data structures. Unlike traditional relational databases, it stores data in BSON format, enabling developers to work with more agile and adaptable data representations."
+    },
+    {
+      "id": 2,
+      "question": "How does _MongoDB_ differ from relational databases?",
+      "options": [
+        "MongoDB replaces relational databases by implementing a columnar storage model that requires extensive data preprocessing and transformation.",
+        "MongoDB fundamentally operates like a traditional relational database, with mandatory foreign key constraints and fully normalized data structures.",
+        "MongoDB is essentially identical to relational databases, using standard SQL queries and maintaining rigid table schemas with strict normalization rules.",
+        "MongoDB differs from relational databases by using a flexible, document-based data model that allows dynamic schemas and does not require predefined table structures or complex join operations."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key distinction is MongoDB's schema-less approach, which allows for more flexible data representation compared to rigid relational database structures. Documents can have varying fields and nested information, making it easier to adapt to changing application requirements without complex schema migrations."
+    },
+    {
+      "id": 3,
+      "question": "Can you describe the structure of data in _MongoDB_?",
+      "options": [
+        "In MongoDB, data is structured as collections containing documents, which are JSON-like BSON objects that can represent complex, nested data with dynamic field definitions.",
+        "MongoDB stores data as flat, single-level key-value pairs with no support for nested or complex data structures.",
+        "MongoDB uses a fixed-schema approach where each document must conform to a precise, predefined data template across all entries.",
+        "In MongoDB, data is organized strictly into tables with predefined columns, similar to traditional relational database management systems."
+      ],
+      "correctIndex": 0,
+      "explanation": "MongoDB's data structure provides remarkable flexibility by allowing documents within a collection to have different fields and structures. The BSON format supports rich data types and enables developers to represent complex, hierarchical information without the constraints of traditional table-based databases."
+    },
+    {
+      "id": 4,
+      "question": "What is a _Document_ in _MongoDB_?",
+      "options": [
+        "Documents in MongoDB are binary data objects that represent compressed information stored directly in memory with strict type constraints.",
+        "A MongoDB document is a graph-based data representation that connects multiple data points through relationship mappings and edge connections.",
+        "A MongoDB document is a relational database record stored in a table-like structure with fixed columns and predefined schema requirements.",
+        "In MongoDB, a document is the basic data storage unit, structured like JSON with key-value pairs that can include various data types, arrays, and nested documents."
+      ],
+      "correctIndex": 3,
+      "explanation": "Documents are fundamental to MongoDB's flexible, schema-less design. Unlike traditional relational databases, MongoDB documents can have dynamic structures, allowing different fields across documents within the same collection. Each document has a unique '_id' field that serves as its primary identifier, enabling efficient data retrieval and management."
+    },
+    {
+      "id": 5,
+      "question": "How is data stored in _collections_ in _MongoDB_?",
+      "options": [
+        "MongoDB collections are distributed cache systems that maintain synchronized data replicas across multiple network nodes with consistent schema enforcement.",
+        "In MongoDB, collections are schema-less storage containers that group related documents, providing a flexible alternative to traditional database tables with dynamic data structures.",
+        "Collections represent fixed-size memory blocks that store serialized data with uniform data type requirements and explicit indexing constraints.",
+        "Collections in MongoDB are rigid data storage structures that enforce strict column definitions and require predefined schema validation for all documents."
+      ],
+      "correctIndex": 1,
+      "explanation": "Collections represent MongoDB's primary organizational unit for storing documents. They differ from traditional relational database tables by allowing documents with varying structures, enabling more adaptable and dynamic data modeling. This flexibility allows developers to evolve database schemas without complex migration processes."
+    },
+    {
+      "id": 6,
+      "question": "Describe what a _MongoDB database_ is.",
+      "options": [
+        "A database in MongoDB represents a permanent memory cache that stores encrypted data fragments with real-time synchronization capabilities.",
+        "A MongoDB database is a high-level container that groups related collections, serving as an organizational unit for storing and managing document-based data across different application domains.",
+        "MongoDB databases are distributed computing environments that synchronize data across multiple network nodes using complex replication protocols.",
+        "A MongoDB database is a fixed-memory storage system that maintains strict data consistency through centralized transaction management and predefined schema rules."
+      ],
+      "correctIndex": 1,
+      "explanation": "In the MongoDB ecosystem, a database acts as a logical namespace containing multiple collections. It provides a comprehensive organizational structure for managing related data, supporting features like authentication, storage optimization, and scalable data management across different application contexts."
+    },
+    {
+      "id": 7,
+      "question": "What is the default _port_ on which _MongoDB_ listens?",
+      "options": [
+        "MongoDB uses port 8080 as its default connection port, which is a standard networking configuration for most database management systems.",
+        "The default port for MongoDB is 22, which aligns with standard SSH connection protocols and provides secure database access.",
+        "The default port for MongoDB is 27017, which allows client connections to the database server and can be easily configured if needed.",
+        "MongoDB listens on port 3306 by default, which is typically associated with standard database communication and network protocols."
+      ],
+      "correctIndex": 2,
+      "explanation": "Port 27017 is the standard MongoDB listening port, specifically designed for MongoDB client-server communication. While ports can be customized, this is the default configuration in most MongoDB installations. Changing the port is possible through configuration settings, but 27017 remains the standard."
+    },
+    {
+      "id": 8,
+      "question": "How does _MongoDB_ provide high availability and disaster recovery?",
+      "options": [
+        "High availability in MongoDB is achieved through distributed caching mechanisms that synchronize data across multiple memory nodes in real-time.",
+        "High availability is managed through a primary-secondary node architecture that uses round-robin load balancing to distribute database requests.",
+        "MongoDB provides high availability through replica sets, which are clusters of database nodes that automatically handle failover and maintain data redundancy across multiple servers.",
+        "MongoDB ensures high availability by implementing a centralized backup system that creates instantaneous snapshots of data across geographically distributed data centers."
+      ],
+      "correctIndex": 2,
+      "explanation": "Replica sets are fundamental to MongoDB's high availability strategy. They consist of multiple database nodes, including a primary node and secondary nodes, which automatically elect a new primary if the current one fails. This ensures continuous database operation and data integrity without manual intervention."
+    },
+    {
+      "id": 9,
+      "question": "What are _indexes_ in _MongoDB_, and why are they used?",
+      "options": [
+        "Indexes in MongoDB are data structures that improve query performance by allowing the database to quickly locate and retrieve documents without scanning entire collections.",
+        "MongoDB indexes are secondary storage mechanisms that create parallel data structures to enhance distributed database synchronization.",
+        "Indexes in MongoDB are specialized data compression techniques that reduce storage requirements and optimize memory usage during database operations.",
+        "Indexes represent metadata mapping systems in MongoDB that categorize document relationships and enable complex hierarchical data retrieval."
+      ],
+      "correctIndex": 0,
+      "explanation": "Indexes are critical for database performance, acting like a book's table of contents by providing a quick reference to document locations. Without indexes, MongoDB would perform full collection scans, which can be extremely slow for large datasets. Proper indexing significantly reduces query execution time and improves overall database efficiency."
+    },
+    {
+      "id": 10,
+      "question": "What is the role of the _id field_ in _MongoDB documents_?",
+      "options": [
+        "The _id field represents a metadata container that stores additional document attributes and helps manage collection relationships.",
+        "The _id field is a system-generated reference that tracks document creation time and provides optional indexing for large collections.",
+        "The _id field is a special attribute used for internal MongoDB routing and determines document storage location within database shards.",
+        "The _id field serves as a unique primary key in MongoDB documents, automatically creating an index and providing a guaranteed unique identifier for each document."
+      ],
+      "correctIndex": 3,
+      "explanation": "MongoDB automatically generates a unique ObjectId for the _id field if not explicitly provided. This ensures each document can be distinctly identified and quickly retrieved. The _id is indexed by default, which improves query performance and maintains document integrity across collections."
+    },
+    {
+      "id": 11,
+      "question": "How do you create a new _MongoDB collection_?",
+      "options": [
+        "Collections in MongoDB require administrative permissions and explicit size allocation before they can store any documents.",
+        "MongoDB collections are static containers that need to be configured with precise data type constraints during initial creation.",
+        "A MongoDB collection is created automatically when the first document is inserted, allowing for dynamic and schemaless data modeling without requiring explicit pre-definition.",
+        "A MongoDB collection must be manually created using schema definitions and predefined field structures before any document insertion."
+      ],
+      "correctIndex": 2,
+      "explanation": "MongoDB's flexible architecture allows collections to be created implicitly when data is first inserted. This approach supports agile development by eliminating the need for rigid, upfront schema design and enabling rapid iteration of data models."
+    },
+    {
+      "id": 12,
+      "question": "What is the syntax to insert a _document_ into a _MongoDB collection_?",
+      "options": [
+        "In MongoDB, documents can be inserted into a collection using insertOne() for single document insertion or insertMany() for multiple document insertion, both methods accepting a document or array of documents as arguments.",
+        "Inserting documents in MongoDB involves a two-step process of first defining document structure and then executing a specialized import command.",
+        "Document insertion in MongoDB is restricted to batch operations that must conform to strict type checking and predefined templates.",
+        "MongoDB document insertion requires using the create() method with predefined schema mappings for each collection entry."
+      ],
+      "correctIndex": 0,
+      "explanation": "The insertOne() and insertMany() methods provide flexible ways to add documents to collections. These methods handle type conversion, generate unique _id values if not specified, and support various document structures without requiring predefined schemas."
+    },
+    {
+      "id": 13,
+      "question": "Describe how to read data from a _MongoDB collection_.",
+      "options": [
+        "MongoDB reads data through direct database scanning, which requires iterating through all documents sequentially to retrieve matching records.",
+        "In MongoDB, you read data from a collection using the `find()` method, which allows querying documents with filter conditions and optional projection to specify returned fields.",
+        "MongoDB collection data is read using specialized query protocols that translate database requests into low-level memory access commands.",
+        "Data retrieval in MongoDB relies on creating complex index mappings that predetermine how documents can be accessed and searched."
+      ],
+      "correctIndex": 1,
+      "explanation": "The `find()` method is a core MongoDB query operation that efficiently retrieves documents based on specified criteria. It supports complex filtering, allows selective field projection, and can be optimized using indexes for performance. The method is flexible, supporting various query conditions and returning multiple documents or a subset of document fields."
+    },
+    {
+      "id": 14,
+      "question": "Explain how to update _documents_ in _MongoDB_.",
+      "options": [
+        "Document updates in MongoDB are managed through transaction logs that track incremental changes across collections.",
+        "MongoDB uses a snapshot-based update mechanism where each modification creates a new document version with complete state information.",
+        "MongoDB updates are performed by completely rewriting documents, requiring full document replacement for any field modification.",
+        "MongoDB supports document updates using methods like `updateOne()` and `updateMany()`, with operators such as `$set` for modifying specific fields without replacing the entire document."
+      ],
+      "correctIndex": 3,
+      "explanation": "Update operations in MongoDB are flexible and granular, allowing precise modifications to specific document fields. The `$set` operator enables updating individual fields without rewriting the entire document, which differs from complete document replacement. This approach provides efficiency and maintains document structure integrity during updates."
+    },
+    {
+      "id": 15,
+      "question": "What are the _MongoDB commands_ for deleting _documents_?",
+      "options": [
+        "Document deletion in MongoDB requires explicitly defining cascading removal rules across related collections.",
+        "MongoDB offers `deleteOne()` to remove a single matching document and `deleteMany()` to remove multiple documents that satisfy a given filter condition.",
+        "MongoDB deletion operations permanently erase documents from memory using low-level disk scanning techniques.",
+        "MongoDB manages deletions through a complex transaction-based removal system that logs and validates each deletion operation."
+      ],
+      "correctIndex": 1,
+      "explanation": "MongoDB's deletion methods provide precise control over document removal. `deleteOne()` removes the first document matching the filter, while `deleteMany()` removes all matching documents. These methods are atomic and support complex filtering, making document removal straightforward and efficient."
+    }
+  ],
+  "processedAt": "2025-12-18T09:53:40.363Z"
+}

@@ -1,0 +1,196 @@
+{
+  "id": "t-sql",
+  "name": "T-SQL",
+  "slug": "t-sql-interview-questions",
+  "category": "Database",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _T-SQL_ and how is it different from standard _SQL_?",
+      "options": [
+        "T-SQL is a simplified version of SQL designed specifically for small database applications with limited transactional support and reduced functionality compared to standard SQL implementations.",
+        "T-SQL is a specialized query language used exclusively for data warehousing and business intelligence reporting, with minimal support for traditional database operations found in standard SQL.",
+        "T-SQL (Transact-SQL) is Microsoft SQL Server's proprietary extension of standard SQL that adds procedural programming capabilities, local variables, error handling, and advanced database management features not found in standard SQL.",
+        "T-SQL is an open-source database programming language developed by Oracle to provide enhanced query performance and cross-platform database compatibility with standard SQL."
+      ],
+      "correctIndex": 2,
+      "explanation": "T-SQL extends standard SQL by introducing programming constructs like variables, control flow statements, error handling, and stored procedures. It allows developers to create more complex database logic directly within Microsoft SQL Server, enabling more sophisticated data manipulation and management compared to standard SQL."
+    },
+    {
+      "id": 2,
+      "question": "Explain the use of the _SELECT_ statement in _T-SQL_.",
+      "options": [
+        "The SELECT statement serves as a comprehensive data synchronization mechanism in T-SQL, facilitating real-time data transfer and replication between different database instances and platforms.",
+        "The SELECT statement is a data modification command in T-SQL that enables direct schema changes and structural transformations within database tables, supporting complex database evolution.",
+        "The SELECT statement in T-SQL is primarily used for inserting new records into database tables, providing a mechanism for data population and record management across different database systems.",
+        "The SELECT statement in T-SQL is used to retrieve and query data from database tables, allowing specification of columns, filtering conditions, grouping, sorting, and performing computations on retrieved data."
+      ],
+      "correctIndex": 3,
+      "explanation": "SELECT is fundamental in T-SQL for data retrieval, allowing precise specification of which data to extract from databases. It supports multiple clauses like WHERE, GROUP BY, and ORDER BY to filter, aggregate, and organize query results with high flexibility."
+    },
+    {
+      "id": 3,
+      "question": "What are the basic components of a _T-SQL_ query?",
+      "options": [
+        "A T-SQL query typically consists of key components including SELECT for specifying columns, FROM to define data sources, WHERE for filtering rows, GROUP BY for data aggregation, and optional clauses like HAVING and ORDER BY for further data manipulation.",
+        "A T-SQL query represents a comprehensive database management framework that directly modifies table structures and performs system-level database administration tasks.",
+        "A T-SQL query is primarily a security-oriented mechanism for controlling database access, with limited capabilities for actual data retrieval or transformation.",
+        "A T-SQL query is fundamentally a linear data transformation process involving only input and output mapping, with minimal support for complex filtering or aggregation operations."
+      ],
+      "correctIndex": 0,
+      "explanation": "T-SQL query components work together to provide a powerful and flexible method of extracting and processing database information. Each clause serves a specific purpose in filtering, selecting, grouping, and presenting data according to precise requirements."
+    },
+    {
+      "id": 4,
+      "question": "How do you write a _T-SQL_ query to _filter_ data using the _WHERE_ clause?",
+      "options": [
+        "The WHERE clause in T-SQL defines how data should be grouped and aggregated, providing a mechanism for summarizing complex database information across multiple columns.",
+        "The WHERE clause in T-SQL creates dynamic relationships between tables by establishing connection points and mapping database entity interactions.",
+        "The WHERE clause in T-SQL filters data by specifying conditions that rows must meet when selecting from a table, allowing precise data retrieval based on specific criteria.",
+        "The WHERE clause in T-SQL generates virtual table structures that allow temporary data manipulation without modifying the original table's schema or contents."
+      ],
+      "correctIndex": 2,
+      "explanation": "The WHERE clause is a fundamental SQL filtering mechanism that allows developers to select specific rows from a database table based on defined logical conditions. It acts as a conditional filter that applies to each row, returning only those that match the specified criteria. Conditions can involve comparison operators, logical operators, and can reference multiple columns or use complex boolean logic."
+    },
+    {
+      "id": 5,
+      "question": "Describe how to _sort_ data using the _ORDER BY_ clause in _T-SQL_.",
+      "options": [
+        "ORDER BY in T-SQL creates hierarchical data structures that reorganize table relationships and establish primary-secondary column dependencies.",
+        "ORDER BY in T-SQL generates computed columns that dynamically recalculate data based on specified ranking algorithms and indexing strategies.",
+        "ORDER BY in T-SQL sorts query results by specifying one or more columns in ascending or descending order, allowing precise control over result presentation.",
+        "ORDER BY in T-SQL manages data distribution by redistributing rows across predefined segments and applying complex statistical transformations."
+      ],
+      "correctIndex": 2,
+      "explanation": "The ORDER BY clause is a crucial SQL sorting mechanism that allows results to be presented in a specific sequence. It can sort by single or multiple columns, with default ascending order and optional descending specification. This feature enables developers to organize query results logically, making data more readable and meaningful."
+    },
+    {
+      "id": 6,
+      "question": "What are _JOINs_ in _T-SQL_ and can you explain the different types?",
+      "options": [
+        "Joins in T-SQL establish hierarchical data connections by recursively analyzing table dependencies and constructing multi-dimensional query representations.",
+        "Joins in T-SQL create complex data relationships by generating virtual table mappings that transform database schema interactions and metadata structures.",
+        "Joins in T-SQL combine data from multiple tables by matching rows based on related columns, with different join types determining how unmatched rows are handled.",
+        "Joins in T-SQL facilitate data synchronization by implementing advanced algorithmic strategies for resolving complex relational database inconsistencies."
+      ],
+      "correctIndex": 2,
+      "explanation": "Joins are fundamental database operations that merge data from multiple tables based on related columns. Different join types like INNER, LEFT, RIGHT, and FULL provide flexible ways to combine data, handling scenarios where rows may or may not have corresponding matches in other tables. This allows for complex data retrieval and relationship mapping across database schemas."
+    },
+    {
+      "id": 7,
+      "question": "How do you implement _paging_ in _T-SQL_ queries?",
+      "options": [
+        "Paging can be accomplished by using the TOP clause with a dynamic WHERE condition to filter and restrict the number of returned rows.",
+        "SQL Server implements paging through temporary table storage and cursor-based pagination techniques to manage large result sets.",
+        "Paging in T-SQL is achieved by using nested subqueries with ROW_NUMBER() function to limit the results from a complex query.",
+        "In SQL Server, paging results involves using the ORDER BY clause with OFFSET and FETCH to skip a specified number of rows and return a limited number of subsequent rows."
+      ],
+      "correctIndex": 3,
+      "explanation": "The OFFSET-FETCH approach provides a native and efficient method for pagination in SQL Server, allowing developers to easily control which subset of results they want to retrieve. This method is more performant and readable compared to alternative pagination techniques like using ROW_NUMBER() or complex subqueries."
+    },
+    {
+      "id": 8,
+      "question": "What is the difference between _UNION_ and _UNION ALL_?",
+      "options": [
+        "UNION combines results vertically and requires identical column types, while UNION ALL performs a horizontal join of different table structures.",
+        "UNION removes duplicate rows across SELECT statements, while UNION ALL retrieves all rows including duplicates, making UNION ALL more performant but potentially returning redundant data.",
+        "UNION performs a full outer join between result sets, whereas UNION ALL creates a simple concatenated result without additional processing.",
+        "UNION ALL is used for merging indexed columns, whereas UNION ensures data consistency by automatically normalizing result sets."
+      ],
+      "correctIndex": 1,
+      "explanation": "The key difference between UNION and UNION ALL lies in duplicate handling. UNION performs an additional distinct operation to eliminate redundant rows, which introduces computational overhead. UNION ALL is more efficient when you know the result sets contain unique data or when duplicates are acceptable."
+    },
+    {
+      "id": 9,
+      "question": "How are _aliases_ used in _T-SQL_ queries?",
+      "options": [
+        "T-SQL aliases function as data type conversion mechanisms that allow dynamic column transformation during query execution.",
+        "Aliases in SQL serve as metadata markers that enable advanced query optimization and runtime performance tracking.",
+        "Aliases in T-SQL provide temporary labels for tables, views, or columns to simplify query syntax, improve readability, and enable complex operations like self-joins.",
+        "Aliases are permanent database object renaming techniques used to standardize schema naming conventions across multiple database systems."
+      ],
+      "correctIndex": 2,
+      "explanation": "Table and column aliases are syntactical shortcuts that make queries more concise and readable. They are especially useful in scenarios involving multiple tables, complex joins, or when working with long or repetitive table names. Aliases do not modify the underlying database structure but provide a convenient way to reference database objects within a specific query context."
+    },
+    {
+      "id": 10,
+      "question": "Can you explain the _GROUP BY_ and _HAVING_ clauses in _T-SQL_?",
+      "options": [
+        "GROUP BY represents a complex indexing strategy for SQL queries, with HAVING serving as a secondary sorting mechanism for large datasets.",
+        "GROUP BY consolidates multiple table joins, and HAVING provides a secondary filtering mechanism for pre-aggregated query results.",
+        "GROUP BY is a filtering mechanism that directly reduces table rows, while HAVING creates subgroups within aggregate data sets.",
+        "GROUP BY arranges data into groups with common column values, while HAVING filters grouped data based on aggregate conditions after grouping has occurred."
+      ],
+      "correctIndex": 3,
+      "explanation": "The GROUP BY clause is used to organize rows that have the same values into summary rows, typically used with aggregate functions like COUNT or SUM. HAVING then allows filtering on these grouped and aggregated results, which is different from the WHERE clause that filters before grouping occurs. This enables more complex analytical queries by allowing conditions on calculated group-level data."
+    },
+    {
+      "id": 11,
+      "question": "What are the _T-SQL commands_ for _inserting_, _updating_, and _deleting_ data?",
+      "options": [
+        "T-SQL provides INSERT to add new rows, UPDATE to modify existing rows, and DELETE to remove rows from a table based on specified conditions.",
+        "Data modification in T-SQL involves TRANSFORM for reshaping data, MODIFY for structural changes, and REMOVE for selective row elimination.",
+        "T-SQL data modification commands include MERGE for synchronizing tables, REPLACE for substituting data, and PURGE for clearing table contents.",
+        "T-SQL supports INSERT for creating records, CHANGE for altering table structures, and EXTRACT for selective data removal."
+      ],
+      "correctIndex": 0,
+      "explanation": "Data modification commands are fundamental to database manipulation in T-SQL. INSERT adds new records to a table, UPDATE changes existing data based on specified conditions, and DELETE removes rows that match a given criteria. These commands are essential for maintaining and manipulating database contents while preserving data integrity and relationships."
+    },
+    {
+      "id": 12,
+      "question": "How do you perform a _conditional update_ in _T-SQL_?",
+      "options": [
+        "Conditional updates in T-SQL are performed using the UPDATE statement with a WHERE clause that specifies precise conditions for modifying specific rows.",
+        "Conditional updates are accomplished by using nested SELECT statements that determine eligible rows for modification.",
+        "Conditional updates in T-SQL involve creating temporary tables to stage modifications before applying changes to the primary dataset.",
+        "Conditional updates require using a CASE statement to dynamically determine which rows can be modified based on complex logical rules."
+      ],
+      "correctIndex": 0,
+      "explanation": "Conditional updates allow precise data modification by applying changes only to rows that meet specific criteria. The WHERE clause enables fine-grained control over which records are updated, making it possible to modify subsets of data based on one or multiple conditions without affecting the entire table."
+    },
+    {
+      "id": 13,
+      "question": "What is the purpose of the _COALESCE_ function?",
+      "options": [
+        "The COALESCE function performs a mathematical operation that computes the average of multiple columns, automatically excluding NULL values from calculations.",
+        "COALESCE is a specialized aggregate function that calculates the total sum of NULL-able columns across a result set, providing comprehensive data summaries.",
+        "The COALESCE function evaluates a list of arguments and returns the first non-NULL value encountered, serving as a powerful tool for handling potential NULL scenarios in SQL queries.",
+        "The COALESCE function combines multiple columns into a single output, creating a consolidated view of data by merging different table columns."
+      ],
+      "correctIndex": 2,
+      "explanation": "COALESCE provides a way to handle NULL values by selecting the first non-NULL value from a series of arguments. It is particularly useful in scenarios requiring default value assignment or data transformation where NULL values might disrupt query results. Unlike other methods, COALESCE allows multiple arguments and systematically evaluates them from left to right."
+    },
+    {
+      "id": 14,
+      "question": "Explain how to _convert data types_ in _T-SQL_.",
+      "options": [
+        "Data type conversion in T-SQL automatically occurs through a built-in translation mechanism that intelligently maps similar data types without requiring explicit intervention.",
+        "Data type conversion in T-SQL can be performed explicitly using CAST or CONVERT functions, which allow precise transformation of values from one data type to another with optional style parameters.",
+        "Data type conversion is managed by a specialized compiler directive in T-SQL that interprets and translates data types based on contextual runtime parameters.",
+        "T-SQL provides dynamic type conversion through a system-level schema that allows seamless transformation between different data representations using internal optimization techniques."
+      ],
+      "correctIndex": 1,
+      "explanation": "Type conversion is a critical operation in T-SQL that allows developers to transform data between different formats. Explicit conversions using CAST or CONVERT provide precise control over the transformation process, preventing potential data loss or unexpected results that might occur with implicit conversions."
+    },
+    {
+      "id": 15,
+      "question": "How do you handle _NULL values_ in _T-SQL_?",
+      "options": [
+        "NULL handling in T-SQL is managed through a complex memory allocation system that automatically resolves and replaces missing values during query execution.",
+        "NULL handling in T-SQL involves using IS NULL and IS NOT NULL predicates to check for missing values, and functions like COALESCE to replace NULL values with alternative defaults in queries.",
+        "T-SQL provides advanced NULL management through a specialized indexing mechanism that dynamically interprets and manages undefined data points in database tables.",
+        "NULL values in T-SQL are processed using a dynamic type inference system that automatically adjusts query logic to accommodate potential missing information."
+      ],
+      "correctIndex": 1,
+      "explanation": "Handling NULL values is crucial in database management as they represent the absence of data. T-SQL offers several methods to work with NULLs, including comparison predicates and replacement functions, which help prevent unexpected query results and maintain data integrity."
+    }
+  ],
+  "processedAt": "2025-12-18T10:34:49.268Z"
+}

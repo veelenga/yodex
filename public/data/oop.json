@@ -1,0 +1,196 @@
+{
+  "id": "oop",
+  "name": "OOP",
+  "slug": "oop-interview-questions",
+  "category": "Concepts",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Object-Oriented Programming (OOP)_?",
+      "options": [
+        "Object-Oriented Programming is a linear coding approach that prioritizes sequential function execution and minimizes data complexity in software development.",
+        "Object-Oriented Programming represents a design methodology that focuses on breaking down complex systems into smaller, independent computational units with minimal interaction.",
+        "Object-Oriented Programming is a programming technique that emphasizes strict separation between data processing and data storage to enhance computational efficiency.",
+        "Object-Oriented Programming (OOP) is a programming paradigm that organizes code into self-contained objects, which combine data and methods to create modular, flexible, and reusable software structures."
+      ],
+      "correctIndex": 3,
+      "explanation": "OOP fundamentally differs from traditional programming by treating code as a collection of objects that interact with each other. Each object contains both data and behaviors, allowing for more intuitive and maintainable software design. The approach enables better code organization, promotes reusability, and supports key principles like encapsulation, inheritance, and polymorphism."
+    },
+    {
+      "id": 2,
+      "question": "What is the difference between _procedural_ and _Object-Oriented_ programming?",
+      "options": [
+        "Procedural programming creates more efficient code by minimizing abstraction layers, contrasting with Object-Oriented Programming's extensive use of complex object interactions.",
+        "Procedural programming involves direct manipulation of data through sequential functions, while Object-Oriented Programming introduces unnecessary complexity in software architecture.",
+        "Procedural programming is a linear programming approach where functions act on global data, while Object-Oriented Programming encapsulates data and methods within objects, promoting better data integrity and modular design.",
+        "Procedural programming represents a dynamic coding methodology that emphasizes function modularity, whereas Object-Oriented Programming focuses on rigid, hierarchical code structures."
+      ],
+      "correctIndex": 2,
+      "explanation": "The key difference lies in data management and code organization. Procedural programming treats data and functions as separate entities, potentially leading to less predictable interactions. Object-Oriented Programming, by contrast, bundles data and methods together, providing better control, reducing side effects, and making code more intuitive and maintainable."
+    },
+    {
+      "id": 3,
+      "question": "What is _encapsulation_?",
+      "options": [
+        "Encapsulation is a design approach that prioritizes exposing all internal data structures to enable comprehensive external interaction and modification.",
+        "Encapsulation is an object-oriented programming principle that combines data and methods within a single unit, hiding internal implementation details and controlling access through well-defined interfaces.",
+        "Encapsulation represents a method of organizing code that emphasizes maximum transparency and direct data manipulation across different software components.",
+        "Encapsulation is a programming technique that strictly separates data processing functions from storage mechanisms to enhance computational performance."
+      ],
+      "correctIndex": 1,
+      "explanation": "Encapsulation protects an object's internal state by restricting direct access to its data. By providing controlled access through methods like getters and setters, it ensures data integrity, prevents unauthorized modifications, and allows developers to change internal implementations without affecting external code that uses the object."
+    },
+    {
+      "id": 4,
+      "question": "What is _polymorphism_? Explain _overriding_ and _overloading_.",
+      "options": [
+        "Polymorphism represents the ability of programming languages to convert one data type into another automatically during runtime operations.",
+        "Polymorphism allows objects of different types to be treated uniformly through a shared interface, enabling method flexibility and code reusability across different object types.",
+        "Polymorphism is a technique that forces all objects to implement identical methods, ensuring strict uniformity and preventing unique class behaviors.",
+        "Polymorphism describes the process of creating multiple class instances with identical structures but different memory allocations in object-oriented systems."
+      ],
+      "correctIndex": 1,
+      "explanation": "Polymorphism enables objects to respond differently to the same method call based on their specific implementation. It supports method overriding, where subclasses can provide unique method implementations, and method overloading, which allows multiple methods with the same name but different parameters within a single class."
+    },
+    {
+      "id": 5,
+      "question": "What is _inheritance_? Name some _types of inheritance_.",
+      "options": [
+        "Inheritance is an object-oriented programming mechanism that allows new classes to be created based on existing classes, establishing an 'is-a' relationship where derived classes inherit properties and behaviors from parent classes.",
+        "Inheritance represents a programming technique where classes are dynamically generated at runtime to optimize memory allocation and reduce code redundancy.",
+        "Inheritance is a design pattern that enables complete duplication of parent class functionality without allowing any modifications in child classes.",
+        "Inheritance describes the process of creating independent class structures that share minimal computational resources and maintain strict encapsulation boundaries."
+      ],
+      "correctIndex": 0,
+      "explanation": "Inheritance promotes code reuse and establishes hierarchical relationships between classes. It allows derived classes to extend or modify behavior inherited from parent classes, supporting specialized implementations while maintaining a common interface and reducing code duplication."
+    },
+    {
+      "id": 6,
+      "question": "What is an _abstraction_? Name some _abstraction techniques_.",
+      "options": [
+        "Abstraction describes the process of generating multiple object representations with identical structural properties but varying computational complexities.",
+        "Abstraction represents a programming technique that directly exposes all internal class mechanisms, ensuring complete transparency and unrestricted access to object internals.",
+        "Abstraction is an object-oriented programming concept that focuses on essential characteristics while hiding unnecessary implementation details, promoting code modularity, maintainability, and simplified interaction with complex systems.",
+        "Abstraction is a design approach that eliminates all potential variations between different class implementations, creating uniformly structured object hierarchies."
+      ],
+      "correctIndex": 2,
+      "explanation": "Abstraction allows developers to define high-level interfaces that separate core functionalities from specific implementation details. By using abstract classes and interfaces, programmers can create flexible and modular code structures that can be easily extended and modified without affecting the overall system architecture."
+    },
+    {
+      "id": 7,
+      "question": "What is a _class_ in OOP?",
+      "options": [
+        "A class represents a collection of pre-defined functions that can be instantiated dynamically to generate program logic. It serves as a container for organizing computational processes.",
+        "A class represents a runtime interface for managing object interactions and defining abstract protocols within a software system. It provides a mechanism for defining complex computational structures.",
+        "A class in Object-Oriented Programming is a blueprint that defines the structure and behavior for creating objects. It encapsulates data attributes and methods that describe the characteristics and actions of objects derived from that class.",
+        "A class is a static template in programming that defines global variables and shared methods across an entire application. It acts as a central configuration mechanism for software design."
+      ],
+      "correctIndex": 2,
+      "explanation": "Classes are fundamental to object-oriented programming, providing a structured way to create objects with consistent properties and behaviors. They act as templates that define how objects will be constructed, what data they will contain, and what actions they can perform. By encapsulating data and methods, classes enable code reusability, modularity, and organized software design."
+    },
+    {
+      "id": 8,
+      "question": "What is an _object_ in OOP?",
+      "options": [
+        "An object functions as a communication protocol between different system modules, enabling data exchange and method invocation across various programming contexts.",
+        "An object is a programmatic construct that defines abstract interactions between different software components. It provides a layer of computational abstraction.",
+        "An object is a specific instance of a class that represents a concrete implementation with unique state and behavior. It contains actual data values and can perform methods defined by its parent class.",
+        "An object represents a dynamic memory allocation mechanism that manages runtime computational resources. It serves as a container for temporary data processing."
+      ],
+      "correctIndex": 2,
+      "explanation": "Objects are concrete instances created from class blueprints, embodying specific data and capabilities. Each object has its own unique state and can invoke methods defined in its class. Objects enable practical implementation of object-oriented principles by allowing multiple, distinct representations of a class with individual characteristics."
+    },
+    {
+      "id": 9,
+      "question": "How do _access specifiers_ work and what are they typically?",
+      "options": [
+        "Access specifiers are runtime security mechanisms that prevent unauthorized code execution within a software system. They manage computational permissions.",
+        "Access specifiers define interface boundaries between different programming modules, controlling inter-component communication protocols.",
+        "Access specifiers are compilation-time directives that optimize memory allocation and manage resource distribution across program components.",
+        "Access specifiers are keywords that control the visibility and accessibility of class members, determining how and where class attributes and methods can be used or modified."
+      ],
+      "correctIndex": 3,
+      "explanation": "Access specifiers provide critical encapsulation and information hiding in object-oriented programming. They protect data integrity by controlling member visibility, allowing developers to define precise boundaries for class interactions. Different access levels like public, private, and protected help manage code complexity and maintain clean, secure software architectures."
+    },
+    {
+      "id": 10,
+      "question": "Name some ways to _overload_ a _method_.",
+      "options": [
+        "Method overloading involves creating identical method signatures in multiple classes to enable dynamic method dispatching at runtime.",
+        "Method overloading can be achieved by changing parameter number, altering parameter types, or changing parameter order within the same class, allowing multiple methods with the same name but different signatures.",
+        "Method overloading is a technique where methods are duplicated across different classes to provide multiple implementation paths for similar functionality.",
+        "Method overloading occurs when a method is renamed in subclasses to provide polymorphic behavior and extend the original method's capabilities."
+      ],
+      "correctIndex": 1,
+      "explanation": "Method overloading allows a class to define multiple methods with the same name but different parameter lists. The compiler determines which method to invoke based on the arguments passed during method call. This provides flexibility in method usage without creating entirely new method names, enhancing code readability and reducing complexity."
+    },
+    {
+      "id": 11,
+      "question": "What is _cohesion_ in OOP?",
+      "options": [
+        "Cohesion is a measure of how many external libraries and frameworks a class depends on to perform its primary functionality.",
+        "Cohesion in OOP refers to the degree to which methods and data within a class are meaningfully related, focusing on a single, well-defined responsibility to improve code maintainability and clarity.",
+        "Cohesion describes the process of separating class implementations into multiple smaller interfaces to reduce dependency between components.",
+        "Cohesion represents the total number of interactions between different classes in a software system, measuring the complexity of object relationships."
+      ],
+      "correctIndex": 1,
+      "explanation": "High cohesion means a class is focused and performs a specific set of related tasks, making the code more organized, easier to understand, and simpler to maintain. Low cohesion indicates a class with scattered, unrelated responsibilities that can lead to complex and difficult-to-modify code."
+    },
+    {
+      "id": 12,
+      "question": "What is _coupling_ in OOP?",
+      "options": [
+        "Coupling describes the level of interdependence between software modules or classes, with loose coupling being desirable as it reduces dependencies and increases system flexibility and maintainability.",
+        "Coupling represents the total number of inheritance relationships between classes in a software architecture, measuring object-oriented design complexity.",
+        "Coupling is a technique for dynamically linking software components at runtime to enable more flexible system configurations.",
+        "Coupling describes the process of extracting common functionality from multiple classes to create more generalized, reusable code structures."
+      ],
+      "correctIndex": 0,
+      "explanation": "Coupling measures how much one software component knows about or relies on another. Low coupling means components are more independent, which makes the system easier to modify, test, and maintain. High coupling creates rigid systems where changes in one component require extensive modifications across multiple interconnected parts."
+    },
+    {
+      "id": 13,
+      "question": "What is a _constructor_ and how is it used?",
+      "options": [
+        "A constructor is a static method that manages object memory allocation and defines the default blueprint for object interactions within a programming environment.",
+        "A constructor is a special method in object-oriented programming used for initializing objects when they are created, ensuring they are set up with appropriate initial state and required resources.",
+        "A constructor is a predefined method that creates multiple instances of a class simultaneously, allowing developers to duplicate object configurations quickly and efficiently.",
+        "A constructor is an advanced programming technique that validates object parameters before instantiation, preventing invalid object creation during runtime."
+      ],
+      "correctIndex": 1,
+      "explanation": "Constructors play a crucial role in object initialization by setting initial values for object attributes and ensuring that new objects are created in a consistent and valid state. They are automatically called when an object is created and help enforce proper object setup by providing a standardized way to configure object properties upon instantiation."
+    },
+    {
+      "id": 14,
+      "question": "Describe the concept of _destructor_ or _finalizer_ in OOP.",
+      "options": [
+        "Destructors are advanced error-handling mechanisms that intercept and manage unexpected object termination scenarios during application runtime.",
+        "Destructors are programming constructs that permanently delete object instances and reset their associated memory allocations to prevent system resource accumulation.",
+        "Destructors are specialized methods that prevent memory leaks by automatically tracking and removing unused object references during program execution.",
+        "Destructors or finalizers are methods used in object-oriented programming to perform cleanup actions and release resources before an object is destroyed, typically managed differently across programming languages."
+      ],
+      "correctIndex": 3,
+      "explanation": "Destructors serve as cleanup mechanisms for objects, allowing programming languages to release system resources, close connections, or perform final processing before an object is completely removed from memory. Different programming languages handle object destruction through various approaches, including explicit destructor methods or automatic garbage collection."
+    },
+    {
+      "id": 15,
+      "question": "Compare _inheritance_ vs. _mixin_ vs. _composition_.",
+      "options": [
+        "Inheritance, mixins, and composition are design patterns that represent different strategies for managing object interactions, focusing on encapsulation and polymorphic behavior in software architecture.",
+        "Inheritance, mixins, and composition are advanced object modeling techniques that define how classes can dynamically modify their structure and behavior during runtime.",
+        "Inheritance, mixins, and composition are object-oriented programming techniques for code reuse, with inheritance establishing an 'is-a' relationship, mixins providing horizontal code sharing, and composition creating 'has-a' relationships between objects.",
+        "Inheritance, mixins, and composition are programming mechanisms for creating complex object hierarchies and managing interdependent class relationships in object-oriented systems."
+      ],
+      "correctIndex": 2,
+      "explanation": "These techniques represent different approaches to structuring and reusing code in object-oriented programming. Inheritance creates vertical hierarchical relationships, mixins enable horizontal code sharing without strict hierarchical constraints, and composition allows objects to be built by combining smaller, more focused components."
+    }
+  ],
+  "processedAt": "2025-12-18T10:00:18.792Z"
+}

@@ -16,182 +16,182 @@
       "id": 1,
       "question": "What are the _data types_ present in JavaScript?",
       "options": [
-        "JavaScript has primitive types (Number, String, Boolean) and reference types (Class, Interface, Struct).",
-        "JavaScript only has three data types: Number, String, and Object.",
-        "JavaScript has primitive data types (Boolean, Null, Undefined, Number, BigInt, String, Symbol) and composite data types (Object, Array, Function).",
-        "JavaScript has six data types: Integer, Float, String, Boolean, Array, and Object."
+        "JavaScript has primitive and composite data types. Primitive types include Boolean, Null, Undefined, Number, BigInt, Symbol, and String, while composite types are Objects and Arrays.",
+        "JavaScript primarily uses dynamic typing with only three core data types: Numbers, Strings, and Objects. These types can be freely interchanged during runtime without explicit type declarations.",
+        "JavaScript supports six fundamental data types categorized into primitive and reference types, with the primary distinction being how they are stored and referenced in memory.",
+        "JavaScript's data types are classified into two main categories: simple types like integers and complex types like nested structures, which determine how data is processed and manipulated."
       ],
-      "correctIndex": 2,
-      "explanation": "JavaScript categorizes data types into two main groups: primitive and composite. Primitive types include Boolean (true/false values), Null (intentional absence of value), Undefined (declared but unassigned variables), Number (integers and floats), BigInt (arbitrary precision integers), String (character sequences), and Symbol (unique identifiers). Composite types include Objects, Arrays, and Functions, which can hold collections of values and more complex data structures. Understanding these types is fundamental to working with JavaScript effectively.\n\njavascript\n// Primitive types\nlet bool = true;\nlet num = 42;\nlet str = \"hello\";\nlet nothing = null;\nlet notDefined;\n\n// Composite types\nlet obj = { name: \"John\" };\nlet arr = [1, 2, 3];\nlet func = function() { return \"Hi\"; };\n"
+      "correctIndex": 0,
+      "explanation": "JavaScript distinguishes between primitive and composite data types, with primitive types being immutable and directly representing fundamental values. Primitive types are passed by value, while composite types (like objects and arrays) are passed by reference. Each type serves a specific purpose in programming, enabling flexible and dynamic type handling.\n\nExample of different data types:\n```javascript\nlet primitiveNumber = 42;         // Number\nlet primitiveString = 'Hello';    // String\nlet primitiveBoolean = true;      // Boolean\nlet objectExample = { key: 'value' }; // Object\n```"
     },
     {
       "id": 2,
       "question": "What is the difference between _null_ and _undefined_?",
       "options": [
-        "null is automatically assigned by JavaScript to uninitialized variables, while undefined must be explicitly set by the developer.",
-        "null and undefined are exactly the same and can be used interchangeably in JavaScript.",
-        "undefined is for objects that don't exist, while null is for primitive values that haven't been set.",
-        "null is an intentional assignment representing the absence of a value, while undefined means a variable has been declared but not yet assigned a value."
+        "Null represents a temporary placeholder for future object assignment, whereas undefined specifically denotes uninitialized global variables.",
+        "Null represents an intentional absence of any object value, while undefined indicates a variable that has been declared but not assigned a value or a non-existent property.",
+        "Null and undefined are interchangeable type markers in JavaScript, both signaling that a variable contains no meaningful data during program execution.",
+        "In JavaScript, null indicates a runtime error condition, and undefined represents a deliberate programming construct for optional parameters."
       ],
-      "correctIndex": 3,
-      "explanation": "While both null and undefined represent 'no value' in JavaScript, they serve different purposes. null is typically used by developers to explicitly indicate that a variable should have no value or that an object is intentionally absent (for example, when an API call returns no data). undefined, on the other hand, is JavaScript's default value for variables that have been declared but not initialized, or for object properties that don't exist. The typeof operator returns 'object' for null (a known JavaScript quirk) and 'undefined' for undefined.\n\njavascript\nlet intentionallyEmpty = null; // Developer sets this\nlet notYetAssigned; // JavaScript sets this to undefined\n\nconsole.log(intentionallyEmpty); // null\nconsole.log(notYetAssigned); // undefined\nconsole.log(typeof null); // 'object' (historical bug)\nconsole.log(typeof undefined); // 'undefined'\n"
+      "correctIndex": 1,
+      "explanation": "The key difference between null and undefined lies in their semantic meaning and origin. Null is an intentional assignment of 'no value', while undefined occurs automatically when a variable is declared without initialization. They are distinct types with different behaviors in type checking and comparisons.\n\nDemonstration of null and undefined:\n```javascript\nlet explicitlyEmpty = null;       // Intentionally empty\nlet unassignedVar;                // Undefined by default\nconsole.log(typeof null);         // 'object'\nconsole.log(typeof undefined);    // 'undefined'\n```"
     },
     {
       "id": 3,
       "question": "How does JavaScript handle _type coercion_?",
       "options": [
-        "Type coercion is a compile-time error that occurs when you try to mix different data types in JavaScript.",
-        "Type coercion is JavaScript's way of preventing any type conversions to maintain strict type safety.",
-        "Type coercion is the automatic or explicit conversion of values from one data type to another, occurring implicitly during operations or explicitly through methods like Number() or String().",
-        "Type coercion only happens when using the typeof operator to check variable types."
+        "Type coercion represents a dynamic typing strategy where the interpreter automatically resolves type conflicts during complex computational operations.",
+        "Type coercion is a JavaScript optimization technique that automatically transforms data types to maintain consistent memory usage and improve runtime performance.",
+        "JavaScript's type coercion mechanism allows seamless conversion between primitive types, primarily used to standardize data representations across different computational contexts.",
+        "Type coercion in JavaScript is the automatic conversion of values between different types during operations, occurring both explicitly through methods like Number() and implicitly during comparisons and arithmetic."
       ],
-      "correctIndex": 2,
-      "explanation": "Type coercion in JavaScript refers to the automatic or manual conversion of values between different data types. Explicit coercion is performed using methods like parseInt(), Number(), String(), and Boolean(). Implicit coercion happens automatically during operations—for example, when you use the + operator with a string and a number, JavaScript converts the number to a string. In comparisons, the == operator performs type coercion, while === does not. Understanding coercion is crucial for avoiding unexpected behavior in your code.\n\njavascript\n// Implicit coercion\nconsole.log('5' + 3); // '53' (number coerced to string)\nconsole.log('5' - 3); // 2 (string coerced to number)\nconsole.log(true + 1); // 2 (boolean coerced to number)\n\n// Explicit coercion\nconsole.log(Number('42')); // 42\nconsole.log(String(100)); // '100'\nconsole.log(Boolean(0)); // false\n\n// Comparison coercion\nconsole.log(5 == '5'); // true (with coercion)\nconsole.log(5 === '5'); // false (without coercion)\n"
+      "correctIndex": 3,
+      "explanation": "Type coercion enables JavaScript to flexibly handle different data types by automatically converting them. This can lead to unexpected results if not understood correctly. Implicit coercion happens during operations like comparisons and arithmetic, while explicit coercion involves intentional type conversion methods.\n\nExample of type coercion:\n```javascript\nconsole.log('5' + 3);    // Produces '53' (string concatenation)\nconsole.log('5' - 3);    // Produces 2 (numeric subtraction)\nconsole.log(Boolean(''))  // false\n```"
     },
     {
       "id": 4,
       "question": "Explain the concept of _hoisting_ in JavaScript.",
       "options": [
-        "Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their scope during the compilation phase, while assignments remain in their original position.",
-        "Hoisting means that all variables and functions are executed first before any other code runs.",
-        "Hoisting only applies to arrow functions and const declarations, not to var or regular functions.",
-        "Hoisting is when JavaScript automatically moves all code to the global scope for better performance."
+        "Hoisting is a compilation strategy that allows JavaScript to preemptively allocate memory for variables by moving their declarations to the beginning of their respective function or global scope.",
+        "Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during the compile phase, though their assignments remain in their original position.",
+        "Hoisting is a runtime optimization technique that automatically relocates variable references to improve memory management and prevent potential memory leaks in JavaScript programs.",
+        "Hoisting represents a dynamic binding process where JavaScript preprocesses code to rearrange variable declarations based on current execution context and performance requirements."
       ],
-      "correctIndex": 0,
-      "explanation": "Hoisting is a JavaScript mechanism where variable and function declarations are conceptually moved to the top of their containing scope during the compile phase, before code execution. However, only the declarations are hoisted, not the initializations. Variables declared with var are hoisted and initialized with undefined, while let and const are hoisted but remain in a 'temporal dead zone' until their declaration is reached. Function declarations are fully hoisted, meaning you can call them before they appear in the code. Function expressions and arrow functions are not hoisted in the same way.\n\njavascript\n// Function hoisting\nconsole.log(myFunction()); // Works! Output: 'Hello'\nfunction myFunction() {\n  return 'Hello';\n}\n\n// Variable hoisting with var\nconsole.log(myVar); // undefined (not an error)\nvar myVar = 5;\nconsole.log(myVar); // 5\n\n// let and const are not initialized when hoisted\nconsole.log(myLet); // ReferenceError: Cannot access before initialization\nlet myLet = 10;\n"
+      "correctIndex": 1,
+      "explanation": "Hoisting occurs during the creation phase of JavaScript execution, where the JavaScript engine moves declarations to the top of their scope before code execution. This means that regardless of where variables and functions are declared, they are processed as if they were declared at the beginning of their scope. Variables declared with 'var' are initialized with 'undefined', while function declarations are fully moved."
     },
     {
       "id": 5,
       "question": "What is the _scope_ in JavaScript?",
       "options": [
-        "JavaScript has only one type of scope called universal scope where all variables are accessible from anywhere.",
-        "Scope in JavaScript only refers to whether a variable is public or private within a class.",
-        "Scope defines the accessibility and lifetime of variables in JavaScript, with main types being global scope (accessible everywhere), function scope (accessible within a function), and block scope (accessible within a block using let/const).",
-        "Scope determines the data type of a variable and whether it can be changed after declaration."
+        "Scope represents the hierarchical organization of variable visibility and access rules within different execution environments in JavaScript programming.",
+        "Scope is a JavaScript mechanism for isolating variable references and preventing unintended interactions between different parts of a program's execution context.",
+        "Scope determines how variables are allocated and managed across different function and block-level contexts in JavaScript's runtime environment.",
+        "Scope in JavaScript defines the accessibility and lifetime of variables, with two primary types being global scope (variables declared outside functions) and local scope (variables declared within functions)."
       ],
-      "correctIndex": 2,
-      "explanation": "Scope in JavaScript determines where variables can be accessed and how long they exist in memory. Global scope refers to variables declared outside any function, accessible from anywhere in the code. Function scope (or local scope) applies to variables declared within a function using var, let, or const—these are only accessible within that function. Block scope, introduced with ES6's let and const, restricts variable access to the block (enclosed by curly braces) in which they're declared. Variables declared with var are function-scoped, while let and const are block-scoped.\n\njavascript\nlet globalVar = 'I am global';\n\nfunction testScope() {\n  let functionVar = 'I am function-scoped';\n  \n  if (true) {\n    let blockVar = 'I am block-scoped';\n    var functionVar2 = 'I am function-scoped too';\n    console.log(globalVar); // Accessible\n    console.log(blockVar); // Accessible\n  }\n  \n  console.log(functionVar2); // Accessible (var is function-scoped)\n  console.log(blockVar); // ReferenceError (let is block-scoped)\n}\n\nconsole.log(functionVar); // ReferenceError (not in global scope)\n"
+      "correctIndex": 3,
+      "explanation": "JavaScript scope controls variable accessibility and lifetime. Global scope variables are accessible everywhere in the code, while local scope variables are confined to their specific function or block. Modern JavaScript (ES6+) introduced block scope with 'let' and 'const', providing more granular control over variable visibility compared to the function-level scope of 'var'."
     },
     {
       "id": 6,
       "question": "What is the difference between `==` and `===`?",
       "options": [
-        "== is strict equality that compares both value and type, while === is abstract equality that performs type coercion.",
-        "=== is faster but less accurate, while == is slower but more precise in comparisons.",
-        "=== is strict equality that compares both value and type, while == is abstract equality that performs type coercion before comparison.",
-        "There is no difference; both operators perform the same comparison in modern JavaScript."
+        "The equality operators (`==` and `===`) represent different strategies for comparing complex data structures and primitive types in JavaScript's type system.",
+        "Strict and abstract equality are JavaScript comparison operators that evaluate object references and primitive values using different internal type checking mechanisms.",
+        "The strict equality operator (`===`) compares both value and type without type coercion, while the abstract equality operator (`==`) performs type conversion before comparison, potentially leading to unexpected results.",
+        "Equality operators in JavaScript provide flexible comparison methods that accommodate different type conversion scenarios during runtime type evaluation."
       ],
       "correctIndex": 2,
-      "explanation": "Strict equality (===) requires both the value and type to match, making it more predictable and reducing unexpected results. Abstract equality (==) performs type coercion, which can lead to counterintuitive outcomes. For example, 5 == '5' evaluates to true because the string '5' is coerced to the number 5, but 5 === '5' evaluates to false because the types (number vs string) don't match. Using === is generally recommended to avoid bugs caused by unexpected type coercion.\n\njavascript\n5 == '5'   // true (type coercion occurs)\n5 === '5'  // false (different types)\n0 == false // true (type coercion)\n0 === false // false (different types)\n"
+      "explanation": "The key difference between `==` and `===` lies in type coercion. The abstract equality operator (`==`) attempts to convert operands to the same type before comparison, which can produce surprising outcomes. The strict equality operator (`===`) requires both value and type to match exactly, providing more predictable comparison results."
     },
     {
       "id": 7,
       "question": "Describe _closure_ in JavaScript. Can you give an example?",
       "options": [
-        "A closure is a built-in JavaScript method that closes database connections after operations complete.",
-        "A closure is a special JavaScript keyword that prevents memory leaks by closing access to unused variables.",
-        "A closure is when you use curly braces {} to close a function block and return a value.",
-        "A closure is a function that retains access to variables from its outer (enclosing) scope, even after the outer function has finished executing."
+        "A closure represents a synchronization technique in JavaScript where inner functions can dynamically modify the scope chain of their parent functions during runtime.",
+        "A closure is a method of creating private variables by wrapping functions inside objects, which prevents direct access to internal state and creates a protective barrier.",
+        "A closure is a function that retains access to variables from its outer (enclosing) scope even after the outer function has completed execution, enabling data privacy and encapsulation in JavaScript.",
+        "Closures are JavaScript's mechanism for creating temporary memory snapshots that preserve function execution context across multiple invocations of nested function definitions."
       ],
-      "correctIndex": 3,
-      "explanation": "Closures enable functions to access variables from their outer scope even after the parent function has completed execution. This mechanism provides powerful tools for data encapsulation and privacy. When a function is defined within another function, it maintains a reference to the variables from the outer function's scope, creating a closure. This is commonly used in callbacks, event handlers, and to create private variables.\n\njavascript\nfunction outer() {\n  const privateVar = 'I am private';\n  \n  return function inner() {\n    console.log(privateVar); // Can still access privateVar\n  };\n}\n\nconst closure = outer();\nclosure(); // Outputs: 'I am private'\n"
+      "correctIndex": 2,
+      "explanation": "Closures are fundamental to JavaScript's functional programming capabilities. They allow functions to 'remember' the environment in which they were created, maintaining access to variables that would typically be out of scope. This enables powerful patterns like data privacy and function factories.\n\n```javascript\nfunction createCounter() {\n  let count = 0;\n  return function() {\n    return ++count;\n  };\n}\nconst counter = createCounter();\nconsole.log(counter()); // 1\nconsole.log(counter()); // 2\n```\n\nIn this example, the inner function maintains access to the `count` variable even after `createCounter()` has finished executing."
     },
     {
       "id": 8,
       "question": "What is the '_this_ keyword' and how does its context change?",
       "options": [
-        "The 'this' keyword always refers to the global window object regardless of where it's used.",
-        "The 'this' keyword can only be used in class constructors and has no meaning in regular functions.",
-        "The 'this' keyword refers to the execution context (typically the object) that owns or invokes the current function, and its value changes based on how and where the function is called.",
-        "The 'this' keyword is a constant that refers to the current file or module being executed."
+        "'this' represents a pointer to the current function's lexical scope, allowing dynamic access to internal object properties and facilitating complex object-oriented programming patterns.",
+        "The 'this' keyword in JavaScript refers to the current execution context, dynamically changing its value based on how a function is called, such as being a method, standalone function, or using arrow function syntax.",
+        "In JavaScript, 'this' is a reserved identifier that creates a temporary binding between function execution contexts, enabling runtime method resolution and scope manipulation.",
+        "The 'this' keyword is a static reference to the global object that provides context for method invocations and maintains a consistent scope across different function execution environments."
       ],
-      "correctIndex": 2,
-      "explanation": "In JavaScript, 'this' refers to the execution context and its value depends on how a function is invoked. In the global scope (non-strict mode), 'this' refers to the window object; in strict mode, it's undefined. For regular functions, when invoked as a method of an object, 'this' is that object. When invoked alone, 'this' is the global object (or undefined in strict mode). Arrow functions don't have their own 'this' binding and inherit it from the enclosing scope.\n\njavascript\nconst obj = {\n  name: 'John',\n  regularFunc: function() {\n    console.log(this.name); // 'John' - this is obj\n  },\n  arrowFunc: () => {\n    console.log(this.name); // undefined - this is from outer scope\n  }\n};\n\nobj.regularFunc(); // 'John'\nobj.arrowFunc();   // undefined\n"
+      "correctIndex": 1,
+      "explanation": "The behavior of 'this' varies depending on how a function is invoked. Its value can change dynamically, which can sometimes lead to unexpected results. Arrow functions handle 'this' differently by lexically binding the context.\n\n```javascript\nconst obj = {\n  name: 'Object',\n  regularMethod: function() {\n    console.log(this.name); // 'Object'\n  },\n  arrowMethod: () => {\n    console.log(this.name); // undefined\n  }\n};\n```\n\nThis example demonstrates how 'this' behaves differently in regular and arrow functions."
     },
     {
       "id": 9,
       "question": "What are _arrow functions_ and how do they differ from regular functions?",
       "options": [
-        "Arrow functions can only return primitive values, while regular functions can return objects and arrays.",
-        "Arrow functions have concise syntax, implicit return for single expressions, and lexically bind 'this' from their enclosing scope, unlike regular functions which have their own 'this' binding.",
-        "Arrow functions automatically bind all variables to the global scope, making them accessible everywhere.",
-        "Arrow functions are faster and use less memory, but otherwise behave identically to regular functions including 'this' binding."
+        "Arrow functions are a concise function syntax in JavaScript that provide lexical 'this' binding, implicit returns for single expressions, and a more compact way of writing function expressions.",
+        "Arrow functions are a syntactic sugar that transforms traditional function definitions into more memory-efficient callback mechanisms with enhanced scope management.",
+        "Arrow functions represent a new class of function declarations that enable improved type checking and provide enhanced static typing capabilities in JavaScript.",
+        "Arrow functions are a modern JavaScript feature that automatically optimize function performance by reducing memory overhead and implementing compile-time function inlining."
       ],
-      "correctIndex": 1,
-      "explanation": "Arrow functions offer several key advantages: concise syntax (especially for one-liners), no need for the 'function' keyword, and automatic return of single expressions without braces. Most importantly, arrow functions do not have their own 'this' binding—they inherit 'this' from the enclosing lexical scope. This makes them ideal for callbacks and methods where you want to preserve the outer context. However, they cannot be used as constructors and don't have their own 'arguments' object.\n\njavascript\n// Regular function\nconst regular = function(x) {\n  return x * 2;\n};\n\n// Arrow function with implicit return\nconst arrow = x => x * 2;\n\n// 'this' behavior difference\nconst obj = {\n  value: 42,\n  regular: function() { setTimeout(function() { console.log(this.value); }, 100); },\n  arrow: function() { setTimeout(() => { console.log(this.value); }, 100); }\n};\n\nobj.regular(); // undefined (this is not obj)\nobj.arrow();   // 42 (this is obj)\n"
+      "correctIndex": 0,
+      "explanation": "Arrow functions introduced in ES6 offer a more concise syntax and different behavior compared to traditional function declarations. They are particularly useful for short, inline functions and callbacks.\n\n```javascript\n// Traditional function\nconst traditional = function(x) {\n  return x * 2;\n};\n\n// Arrow function equivalent\nconst arrow = x => x * 2;\n```\n\nNotice the simplified syntax, implicit return, and lexical 'this' binding that distinguishes arrow functions from regular function expressions."
     },
     {
       "id": 10,
       "question": "What are _template literals_ in JavaScript?",
       "options": [
-        "Template literals are a CSS feature that JavaScript adopted for styling text within console.log statements.",
-        "Template literals are strings enclosed in backticks (`) that support multiline text and embedded expressions using ${} syntax for string interpolation.",
-        "Template literals are pre-compiled string functions that run faster than regular strings but have the same syntax.",
-        "Template literals are special HTML templates that can be inserted directly into JavaScript code without quotes."
+        "Template literals are a way to define stringent type constraints for string variables in modern JavaScript development environments.",
+        "Template literals represent a specialized string manipulation method for creating complex regular expression patterns in JavaScript.",
+        "Template literals are advanced string compression techniques in JavaScript that allow dynamic text encoding and performance optimization.",
+        "Template literals are a modern JavaScript string syntax that support multiline text and string interpolation using backticks (`) and ${} expression embedding."
       ],
-      "correctIndex": 1,
-      "explanation": "Template literals, introduced in ES6, provide a more flexible way to work with strings. They are enclosed in backticks (`) instead of single or double quotes. Key features include support for multiline strings without escape characters, and string interpolation using ${expression} to embed JavaScript expressions directly within the string. This makes code more readable and eliminates the need for string concatenation with the + operator.\n\njavascript\n// Multiline strings\nconst multiline = `This is line one\nThis is line two\nThis is line three`;\n\n// String interpolation\nconst name = 'Alice';\nconst age = 30;\nconst greeting = `Hello, my name is ${name} and I am ${age} years old.`;\n\n// Expressions in template literals\nconst a = 5;\nconst b = 10;\nconsole.log(`Sum: ${a + b}, Product: ${a * b}`);\n// Output: Sum: 15, Product: 50\n"
+      "correctIndex": 3,
+      "explanation": "Template literals provide enhanced string capabilities in JavaScript, allowing developers to create more readable and flexible string declarations. They solve common string concatenation and multiline challenges by using backticks and embedded expressions. The key benefits include easier string formatting and the ability to include JavaScript expressions directly within strings."
     },
     {
       "id": 11,
       "question": "What is a _higher-order function_ in JavaScript?",
       "options": [
-        "A higher-order function is a function that can only be called once and then destroys itself to prevent memory leaks.",
-        "A higher-order function is a function that executes before all other functions in the call stack due to its elevated priority level.",
-        "A higher-order function is a function that can take other functions as arguments or return functions as results, enabling functional programming paradigms like map, reduce, and filter.",
-        "A higher-order function is a function declared at the top of a JavaScript file that has global scope and can access all variables."
+        "A higher-order function is a technique for managing asynchronous code execution and creating complex event handling mechanisms.",
+        "A higher-order function in JavaScript is a function that can accept other functions as arguments or return functions, enabling advanced functional programming techniques.",
+        "A higher-order function is an advanced JavaScript method for optimizing memory allocation and managing complex object inheritance patterns.",
+        "Higher-order functions represent a specialized approach to creating recursive algorithm implementations in JavaScript programming."
       ],
-      "correctIndex": 2,
-      "explanation": "Higher-order functions leverage JavaScript's first-class function feature, where functions are treated as legitimate data types. This allows functions to accept other functions as parameters or return them as values, providing versatility and modularity. Common examples include array methods like map, filter, and reduce, which take callback functions as arguments to transform or process data. This pattern enables more streamlined, efficient code by promoting reusability and declarative programming styles.\n\njavascript\n// Example of a higher-order function\nconst numbers = [1, 2, 3, 4, 5];\n\n// map is a higher-order function that takes a function as an argument\nconst doubled = numbers.map(function(num) {\n  return num * 2;\n});\n\nconsole.log(doubled); // [2, 4, 6, 8, 10]\n"
+      "correctIndex": 1,
+      "explanation": "Higher-order functions are a fundamental concept in functional programming, allowing functions to be treated as first-class citizens. They provide powerful ways to abstract and compose functionality, enabling more flexible and modular code design. Common examples include array methods like map, filter, and reduce."
     },
     {
       "id": 12,
       "question": "Can functions be assigned as values to variables in JavaScript?",
       "options": [
-        "Yes, but only arrow functions can be assigned to variables; regular function declarations cannot be treated as values.",
-        "No, functions in JavaScript must be declared with the function keyword and cannot be assigned to variables like primitive values.",
-        "No, while functions can be passed as arguments, they cannot be stored in variables due to memory management restrictions.",
-        "Yes, JavaScript supports first-class functions, meaning functions can be assigned to variables, passed as arguments to other functions, and returned from functions."
+        "JavaScript functions cannot be assigned to variables, as they are strictly defined as independent executable blocks with fixed memory references.",
+        "Functions in JavaScript can only be assigned to variables within specific scope constraints defined by complex compilation mechanisms.",
+        "Variable function assignment in JavaScript is limited to specific data types and requires explicit type conversion mechanisms.",
+        "In JavaScript, functions can indeed be assigned as values to variables, demonstrating the language's support for first-class functions and functional programming paradigms."
       ],
       "correctIndex": 3,
-      "explanation": "JavaScript treats functions as first-class citizens, allowing them to be manipulated like any other value. Both regular functions and arrow functions can be assigned to variables, making them flexible and powerful. This capability is fundamental to functional programming in JavaScript and enables patterns like callbacks, higher-order functions, and closures.\n\njavascript\n// Define a function\nfunction greet() {\n  console.log('Hello!');\n}\n\n// Assign the function to a variable\nlet sayHello = greet;\n\n// Call the function through the variable\nsayHello(); // Output: Hello!\n\n// Arrow function assigned to a variable\nconst add = (a, b) => a + b;\nconsole.log(add(2, 3)); // Output: 5\n"
+      "explanation": "First-class functions are a powerful feature in JavaScript, allowing functions to be treated like any other value. This means they can be assigned to variables, passed as arguments, and returned from other functions. This capability is fundamental to functional programming techniques and enables more dynamic and flexible code structures."
     },
     {
       "id": 13,
       "question": "How do _functional programming_ concepts apply in JavaScript?",
       "options": [
-        "Functional programming concepts only apply to arrow functions in JavaScript; regular functions follow object-oriented principles exclusively.",
-        "Functional programming in JavaScript requires using special FP libraries since the language doesn't natively support functional concepts.",
-        "Functional programming concepts in JavaScript leverage first-class functions to implement principles like immutability, pure functions, higher-order functions, and declarative programming style.",
-        "Functional programming in JavaScript means avoiding all functions and using only class methods with the 'functional' keyword."
+        "Functional programming in JavaScript is primarily about using arrow functions and reducing code complexity by minimizing explicit loop structures and maximizing method chaining.",
+        "Functional programming transforms JavaScript into a strictly typed language, requiring all functions to have explicit return types and eliminating mutable state through comprehensive compile-time checks.",
+        "Functional programming in JavaScript is a paradigm that exclusively uses recursive methods and eliminates all imperative programming constructs, forcing every computation to be a pure mathematical transformation.",
+        "Functional programming in JavaScript leverages first-class functions, enabling developers to create pure functions, use immutable data, and employ a declarative programming style that focuses on transformations rather than step-by-step instructions."
       ],
-      "correctIndex": 2,
-      "explanation": "JavaScript's first-class functions make it well-suited for functional programming. Key FP principles include: using pure functions that don't have side effects and always return the same output for the same input; maintaining immutability by avoiding data mutation; utilizing higher-order functions for abstraction; and adopting a declarative style that describes what to do rather than how to do it. Array methods like map, filter, and reduce are prime examples of functional programming in JavaScript.\n\njavascript\n// Pure function example\nconst add = (a, b) => a + b;\n\n// Higher-order function with immutability\nconst numbers = [1, 2, 3, 4, 5];\nconst doubled = numbers.map(num => num * 2); // Original array unchanged\n\n// Function composition\nconst multiply = x => x * 2;\nconst addTen = x => x + 10;\nconst composed = x => addTen(multiply(x));\nconsole.log(composed(5)); // Output: 20\n"
+      "correctIndex": 3,
+      "explanation": "Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions. In JavaScript, this is achieved through first-class functions, which can be assigned to variables, passed as arguments, and returned from other functions. Key principles include avoiding side effects, using pure functions, and treating data as immutable."
     },
     {
       "id": 14,
       "question": "What are _IIFEs_ (Immediately Invoked Function Expressions)?",
       "options": [
-        "An IIFE is a function expression that can only be invoked once per page load and is cached in browser memory.",
-        "An IIFE is a special type of async function that invokes itself when all promises in the code have resolved.",
-        "An IIFE (Immediately Invoked Function Expression) is a function that is executed immediately after it's defined, typically used to create a private scope and avoid polluting the global namespace.",
-        "An IIFE is a function that automatically runs at intervals throughout the program's execution lifecycle."
+        "An IIFE is a design pattern in JavaScript that allows dynamic function generation at runtime, enabling complex metaprogramming techniques through immediate execution contexts.",
+        "An IIFE (Immediately Invoked Function Expression) is a JavaScript function that is defined and immediately executed, typically used to create a private scope and prevent global namespace pollution.",
+        "An IIFE is a compiler-optimized function declaration that ensures immediate memory allocation and preemptive execution of nested function definitions in JavaScript.",
+        "An IIFE represents a specialized callback mechanism in JavaScript that automatically triggers function execution before the main thread completes its initial rendering cycle."
       ],
-      "correctIndex": 2,
-      "explanation": "The IIFE pattern uses an anonymous (or named) function wrapped in parentheses and immediately followed by another set of parentheses to invoke it. This creates a local scope for variables, preventing them from leaking into the global scope. IIFEs were particularly popular before the introduction of block-scoped variables (let and const) for creating private scopes and modules.\n\njavascript\n// Basic IIFE syntax\n(function(){\n    var foo = 'bar';\n    console.log(foo); // Output: bar\n})();\n\n// foo is not accessible here\n// console.log(foo); // ReferenceError\n\n// IIFE with parameters\n(function(name){\n    console.log('Hello, ' + name);\n})('World'); // Output: Hello, World\n\n// IIFE with return value\nvar result = (function(){\n    return 42;\n})();\nconsole.log(result); // Output: 42\n"
+      "correctIndex": 1,
+      "explanation": "IIFEs provide a way to create a separate scope and avoid variable name conflicts in the global namespace. By wrapping a function in parentheses and immediately invoking it, developers can encapsulate variables and prevent them from leaking into the global scope."
     },
     {
       "id": 15,
       "question": "How do you create _private variables_ in JavaScript?",
       "options": [
-        "Private variables are automatically created when you use var instead of let or const within a function.",
-        "Private variables in JavaScript can be created using closures, where an inner function retains access to variables in its outer function's scope, even after the outer function has finished executing.",
-        "Private variables are created by prefixing variable names with an underscore, which prevents them from being accessed outside the object.",
-        "Private variables can only be created using the 'private' keyword before the variable declaration in class constructors."
+        "Private variables are achieved by using the 'private' keyword in class definitions, which creates a protected scope for internal state management in object-oriented programming.",
+        "Private variables in JavaScript are generated through proxy objects that intercept and validate all access attempts, creating a strict encapsulation mechanism at the language level.",
+        "Private variables in JavaScript are created using closures, which allow an inner function to retain access to the lexical environment of its outer function, effectively hiding variables from external scope.",
+        "Private variables in JavaScript are implemented through specialized accessor methods that use runtime type checking to restrict direct variable access and modification."
       ],
-      "correctIndex": 1,
-      "explanation": "Closures enable private variables by allowing inner functions to access the lexical environment where they were defined. When a function is returned or passed out of its original scope, it maintains access to the variables from that scope, creating a private state that cannot be directly accessed from outside. This pattern is commonly used to create modules with encapsulated data.\n\njavascript\n// Creating private variables with closures\nfunction createCounter() {\n    let count = 0; // Private variable\n    \n    return {\n        increment: function() {\n            count++;\n            return count;\n        },\n        decrement: function() {\n            count--;\n            return count;\n        },\n        getCount: function() {\n            return count;\n        }\n    };\n}\n\nconst counter = createCounter();\nconsole.log(counter.increment()); // 1\nconsole.log(counter.increment()); // 2\nconsole.log(counter.getCount());  // 2\n// console.log(counter.count); // undefined - count is private\n"
+      "correctIndex": 2,
+      "explanation": "Closures enable data privacy by creating a function environment where inner functions can access outer function variables, even after the outer function has completed execution. This creates a mechanism for maintaining private state that cannot be directly accessed from outside the closure."
     }
   ],
-  "processedAt": "2025-12-14T21:01:51.151Z"
+  "processedAt": "2025-12-18T09:37:17.592Z"
 }

@@ -1,0 +1,198 @@
+{
+  "id": "cryptography",
+  "name": "Cryptography",
+  "slug": "cryptography-interview-questions",
+  "category": "Security",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _cryptography_, and what are its main goals?",
+      "options": [
+        "Cryptography represents a systematic approach to encoding information using specialized software tools that create unique transformation patterns between different data states.",
+        "Cryptography is an interdisciplinary field that secures data by converting plain-text into encrypted cipher-text, protecting information during transmission and storage through advanced mathematical techniques.",
+        "Cryptography is a computer science discipline focused on developing complex algorithms that transform digital data into abstract mathematical representations for computational security.",
+        "Cryptography is a technical method of data obfuscation that uses randomized computational processes to generate alternative representations of original information sources."
+      ],
+      "correctIndex": 1,
+      "explanation": "Cryptography fundamentally aims to protect data confidentiality, integrity, and authenticity. It involves converting readable information into an unreadable format using mathematical algorithms, ensuring that only authorized parties can access the original content. The field encompasses encryption techniques, key management, and secure communication protocols across various digital platforms."
+    },
+    {
+      "id": 2,
+      "question": "Explain the difference between _symmetric_ and _asymmetric cryptography_.",
+      "options": [
+        "Symmetric cryptography generates unique encryption patterns through dynamic key generation, while asymmetric cryptography creates static encryption environments.",
+        "Symmetric cryptography uses a single shared secret key for both encryption and decryption, while asymmetric cryptography employs a public-private key pair with different keys for each process.",
+        "Symmetric cryptography relies on complex mathematical transformations across multiple keys, whereas asymmetric cryptography uses a single computational algorithm for data encoding.",
+        "Symmetric cryptography operates through distributed computational networks, while asymmetric cryptography manages encryption through centralized mathematical frameworks."
+      ],
+      "correctIndex": 1,
+      "explanation": "The primary distinction between symmetric and asymmetric cryptography lies in key management and computational complexity. Symmetric encryption is faster and more efficient for large data volumes, using a single shared key. Asymmetric encryption provides enhanced security through separate public and private keys, enabling more complex authentication and secure key exchange mechanisms."
+    },
+    {
+      "id": 3,
+      "question": "What is a _cryptographic hash function_, and what properties must it have?",
+      "options": [
+        "A cryptographic hash function transforms input data into a fixed-size string of characters, producing a unique representation that is one-way, collision-resistant, and computationally infeasible to reverse.",
+        "A cryptographic hash function creates complex mathematical models that translate digital information into alternative computational representations.",
+        "A cryptographic hash function generates dynamic data representations through sequential computational transformations that map input sequences to variable output patterns.",
+        "A cryptographic hash function produces randomized data mappings using iterative algorithmic processes to generate unique informational signatures."
+      ],
+      "correctIndex": 0,
+      "explanation": "Cryptographic hash functions are essential for data integrity, digital signatures, and password storage. They must be deterministic (same input always produces same output), one-way (impossible to reconstruct original input), and resistant to collision (extremely unlikely for different inputs to generate same hash). These properties make them crucial for security applications across digital systems."
+    },
+    {
+      "id": 4,
+      "question": "Describe the concept of _public key infrastructure (PKI)_.",
+      "options": [
+        "Public Key Infrastructure is a network protocol that encrypts data transmission between servers using complex mathematical algorithms and distributed key management systems.",
+        "Public Key Infrastructure is a standardized method for generating symmetric encryption keys that ensures secure communication through centralized key distribution centers.",
+        "Public Key Infrastructure (PKI) is a comprehensive system for managing public-key encryption, involving Certificate Authorities (CAs) that issue and validate digital certificates to enable secure digital communication and authentication.",
+        "PKI represents a decentralized network security framework that uses blockchain technology to validate and distribute cryptographic keys across multiple independent nodes."
+      ],
+      "correctIndex": 2,
+      "explanation": "PKI provides a systematic approach to creating, distributing, and managing digital certificates and public-private key pairs. It establishes a trust framework where Certificate Authorities verify the authenticity of public keys, enabling secure digital interactions by ensuring the identity of participants and protecting data integrity."
+    },
+    {
+      "id": 5,
+      "question": "What is a _digital signature_, and how does it work?",
+      "options": [
+        "A digital signature is an encryption technique that randomly generates secure hash values to validate electronic communications across distributed network systems.",
+        "Digital signatures represent a method of encoding data using complex mathematical transformations that prevent unauthorized access to digital communications.",
+        "A digital signature is a cryptographic mechanism that uses a private key to create a unique, verifiable electronic signature which ensures the authenticity, integrity, and non-repudiation of digital documents or messages.",
+        "A digital signature is a secure authentication protocol that uses biometric data and mathematical algorithms to verify the origin of electronic transactions."
+      ],
+      "correctIndex": 2,
+      "explanation": "Digital signatures provide a way to verify the identity of the sender and ensure that the content of a message or document has not been altered. By using asymmetric cryptography, digital signatures create a unique fingerprint that can be verified using the sender's public key, thus preventing forgery and ensuring message integrity."
+    },
+    {
+      "id": 6,
+      "question": "Can you explain what a _nonce_ is and how it's used in _cryptography_?",
+      "options": [
+        "A nonce is a mathematical technique used to create unpredictable sequence numbers in secure communication protocols.",
+        "A nonce represents a cryptographic method of randomly generating temporary access keys to prevent unauthorized network intrusions.",
+        "A nonce is a specialized encryption algorithm that generates secure communication tokens for distributed network authentication processes.",
+        "A nonce is a unique, randomly generated value used once in cryptographic protocols to prevent replay attacks and ensure the freshness and uniqueness of network communications."
+      ],
+      "correctIndex": 3,
+      "explanation": "Nonces are critical in preventing various cryptographic attacks by ensuring that each communication or transaction uses a unique value that cannot be reused. They are particularly important in protocols like TLS, where they help prevent replay attacks by making each network interaction unique and time-sensitive."
+    },
+    {
+      "id": 7,
+      "question": "What does it mean for a _cryptographic algorithm_ to be \"computationally secure\"?",
+      "options": [
+        "Computational security means an algorithm can withstand attacks for a predetermined time period before becoming vulnerable to advanced computational techniques.",
+        "Computational security refers to an algorithm's ability to generate random encryption keys that are mathematically impossible to predict or reverse-engineer.",
+        "A computationally secure cryptographic algorithm remains resistant to attacks within reasonable computational resource constraints, recognizing that absolute theoretical security is impractical.",
+        "A computationally secure algorithm guarantees complete protection against all potential attackers by using infinite computational power to prevent any potential breach."
+      ],
+      "correctIndex": 2,
+      "explanation": "Computational security acknowledges the practical limitations of cryptographic systems. While no system is perfectly unbreakable, the goal is to make breaking the encryption computationally infeasible with current technology. This approach balances security needs with practical computational constraints, recognizing that absolute security is theoretically impossible but strategic resistance is achievable."
+    },
+    {
+      "id": 8,
+      "question": "Describe the concept of _perfect secrecy_ and name an _encryption system_ that achieves it.",
+      "options": [
+        "Perfect secrecy describes an encryption technique where each plaintext character is transformed using multiple complex mathematical operations.",
+        "Perfect secrecy refers to an encryption system that generates unique keys for every single transmission, ensuring maximum unpredictability.",
+        "Perfect secrecy is a cryptographic property where the ciphertext reveals absolutely no information about the plaintext, even with unlimited computational resources.",
+        "Perfect secrecy is an encryption method that completely randomizes all message contents, making it impossible to reconstruct the original communication."
+      ],
+      "correctIndex": 2,
+      "explanation": "Perfect secrecy is a theoretical cryptographic ideal where the encrypted message provides no statistical information about the original message. This concept, introduced by Claude Shannon, requires that the probability of a plaintext remaining unchanged after encryption is independent of the ciphertext. While challenging to implement in practice, it represents the gold standard of information-theoretic security."
+    },
+    {
+      "id": 9,
+      "question": "What are _substitution_ and _permutation_ in the context of _encryption algorithms_?",
+      "options": [
+        "Substitution and permutation are advanced cryptographic methods that transform data by introducing complex mathematical transformations to obscure original message content.",
+        "Substitution and permutation are fundamental encryption techniques where substitution replaces characters according to a rule, while permutation rearranges the order of characters in a message.",
+        "Substitution and permutation represent two-stage encryption processes where data is first encoded and then randomly redistributed across multiple computational layers.",
+        "Substitution and permutation are complementary cryptographic strategies that use probabilistic algorithms to scramble message contents through non-linear transformations."
+      ],
+      "correctIndex": 1,
+      "explanation": "Substitution and permutation are core principles in symmetric encryption design. Substitution involves replacing individual characters or bits with alternative representations, while permutation focuses on rearranging the message's structural components. Together, these techniques create the foundational complexity that makes encryption algorithms challenging to reverse-engineer."
+    },
+    {
+      "id": 10,
+      "question": "Explain the basic principle behind the _AES encryption algorithm_.",
+      "options": [
+        "AES is a symmetric block cipher that uses a substitution-permutation network with multiple rounds of transformations to encrypt fixed-size data blocks. It replaces the older DES standard and provides robust security through complex key scheduling and data mixing.",
+        "AES is a quantum-resistant cryptographic method that employs multiple parallel encryption pathways to distribute potential cryptographic vulnerabilities. It uses non-linear transformation matrices to obscure data patterns.",
+        "AES is a stream cipher designed for high-speed network communications that randomly permutes data bits using a continuous keystream generation process. It focuses on minimal computational overhead during encryption.",
+        "AES is an asymmetric encryption algorithm that uses prime number factorization to secure data transmissions across public networks. It operates by creating complex mathematical relationships between encryption and decryption keys."
+      ],
+      "correctIndex": 0,
+      "explanation": "AES (Advanced Encryption Standard) was selected by NIST in 2001 to replace DES. It supports 128, 192, and 256-bit key lengths and performs multiple transformation rounds including substitution, permutation, and key addition to create a complex encryption process. Its design makes it resistant to various cryptographic attacks and suitable for both software and hardware implementations."
+    },
+    {
+      "id": 11,
+      "question": "What is the _Data Encryption Standard (DES)_, and why is it considered insecure today?",
+      "options": [
+        "DES is a quantum encryption method that uses probabilistic key generation to create secure communication channels between distributed network nodes. Its complexity prevents traditional decryption techniques.",
+        "DES is an older symmetric encryption algorithm with a 56-bit key length that became insecure due to its short key size, making it vulnerable to brute-force attacks. Modern computational power can now break DES encryption relatively quickly.",
+        "DES is an asymmetric cryptographic standard that relies on elliptic curve mathematics to generate encryption keys with exponential complexity. It provides robust security through advanced mathematical transformations.",
+        "DES is a hybrid encryption algorithm combining block and stream cipher techniques to create multi-layered data protection. It uses dynamic key rotation to enhance cryptographic resilience."
+      ],
+      "correctIndex": 1,
+      "explanation": "Data Encryption Standard (DES) was developed by IBM in the 1970s and standardized by NIST. Its 56-bit key length became its primary weakness, allowing computational attacks as processing power increased. Triple DES was developed as an interim solution, but ultimately AES replaced it as the standard symmetric encryption algorithm."
+    },
+    {
+      "id": 12,
+      "question": "Describe the differences between _RSA_ and _ECC (Elliptic Curve Cryptography)_.",
+      "options": [
+        "RSA and ECC are symmetric encryption algorithms that use identical mathematical principles for key generation and data transformation. Both rely on complex polynomial equations to secure data transmissions.",
+        "RSA and ECC are hardware-level encryption standards designed for embedded systems, with RSA focusing on computational complexity and ECC emphasizing minimal resource consumption during encryption processes.",
+        "RSA uses large prime number factorization for public-key encryption and requires much longer keys, while ECC uses elliptic curve mathematics to achieve equivalent security with significantly shorter key lengths. ECC provides better performance and smaller key sizes compared to RSA.",
+        "RSA operates as a quantum-resistant cryptographic method using distributed key generation, while ECC focuses on linear transformation matrices for encryption. They represent complementary approaches to secure communication."
+      ],
+      "correctIndex": 2,
+      "explanation": "RSA and ECC are both public-key cryptosystems but use fundamentally different mathematical approaches. RSA relies on the difficulty of factoring large prime numbers, while ECC uses the mathematics of elliptic curves. ECC provides comparable security with much smaller key sizes, making it more efficient for mobile and resource-constrained environments."
+    },
+    {
+      "id": 13,
+      "question": "How does a _stream cipher_ differ from a _block cipher_?",
+      "options": [
+        "Stream ciphers use symmetric keys and transform data through linear permutations, while block ciphers rely on complex substitution networks with multiple encryption rounds.",
+        "Stream ciphers operate exclusively on digital signals and require pre-established cryptographic keys, whereas block ciphers can work with analog and digital data transformation methods.",
+        "Stream ciphers generate pseudo-random encryption patterns using seed values, while block ciphers apply deterministic mathematical transformations on entire data segments.",
+        "Stream ciphers process data bit by bit or byte by byte in real-time, while block ciphers encrypt fixed-size data blocks sequentially and require complete block availability before processing."
+      ],
+      "correctIndex": 3,
+      "explanation": "The fundamental difference between stream and block ciphers lies in their data processing approach. Stream ciphers work continuously on individual data units, making them suitable for real-time encryption scenarios like secure communications. Block ciphers, in contrast, process fixed-size data blocks, which introduces slight latency but provides more complex transformation mechanisms."
+    },
+    {
+      "id": 14,
+      "question": "Can you describe the _Feistel cipher structure_?",
+      "options": [
+        "Feistel cipher structures utilize asymmetric key generation methods to create complex encryption patterns through multi-stage computational transformations.",
+        "A Feistel cipher structure divides input blocks into two halves, applying iterative transformations where one half undergoes a substitution function and is XORed with the other half across multiple rounds.",
+        "Feistel ciphers implement recursive encryption techniques by splitting data into quadrants and applying non-linear mathematical permutations through progressive computational stages.",
+        "Feistel ciphers employ parallel processing techniques to encrypt data segments by simultaneously applying cryptographic functions across different input regions."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Feistel structure is a symmetric encryption technique that enables secure data transformation through a balanced, reversible process. By dividing data and applying consistent mathematical operations, it creates a flexible framework that can be adapted to various encryption requirements while maintaining strong cryptographic properties."
+    },
+    {
+      "id": 15,
+      "question": "What are the key differences between _DES_ and _3DES_?",
+      "options": [
+        "3DES improves upon DES by using multiple keys and applying the DES algorithm three times, increasing the key length to 112 or 168 bits and providing enhanced cryptographic security compared to the original 56-bit DES.",
+        "3DES enhances DES encryption by incorporating parallel processing techniques and implementing variable-length key generation mechanisms for improved computational complexity.",
+        "3DES extends the original DES framework by integrating quantum-resistant encryption methods and implementing dynamic key rotation strategies during the encryption process.",
+        "3DES modifies the original DES algorithm by introducing non-linear key expansion techniques and implementing advanced mathematical permutations across multiple encryption stages."
+      ],
+      "correctIndex": 0,
+      "explanation": "Triple DES (3DES) was developed as a direct response to the security limitations of the original Data Encryption Standard. By applying the DES algorithm three times with different keys, 3DES significantly increases the complexity and resistance to brute-force attacks, making it a more robust encryption method during its operational period."
+    }
+  ],
+  "processedAt": "2025-12-18T09:04:18.302Z"
+}

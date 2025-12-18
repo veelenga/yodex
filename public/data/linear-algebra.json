@@ -1,0 +1,195 @@
+{
+  "id": "linear-algebra",
+  "name": "Linear Algebra",
+  "slug": "linear-algebra-interview-questions",
+  "category": "Concepts",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a _vector_ and how is it used in _machine learning_?",
+      "options": [
+        "A vector represents a graphical representation of computational pathways, encoding algorithmic instructions for data processing and transformation.",
+        "A vector is a mathematical object representing a collection of numerical values with direction and magnitude, used in machine learning to represent data points, features, or transformations across multi-dimensional spaces.",
+        "A vector is a computational tool that describes single-dimensional numeric relationships, primarily used for tracking linear progressions in statistical modeling.",
+        "A vector is a geometric construct measuring spatial relationships between discrete data points, serving as a foundational element in computational visualization techniques."
+      ],
+      "correctIndex": 1,
+      "explanation": "Vectors are fundamental mathematical constructs that capture both magnitude and direction. In machine learning and linear algebra, they represent complex data as ordered collections of numeric values, enabling mathematical operations and transformations across multi-dimensional spaces. Their versatility allows representation of everything from feature sets to weight parameters in computational models."
+    },
+    {
+      "id": 2,
+      "question": "Explain the difference between a _scalar_ and a _vector_.",
+      "options": [
+        "A scalar functions as a baseline numeric measurement providing fundamental computational context for mathematical operations.",
+        "A scalar is a dynamic mathematical construct encoding multidimensional information through singular numeric transformations.",
+        "A scalar represents a complex numerical representation with embedded computational properties, distinguishing it from linear numeric representations.",
+        "A scalar is a single numerical value without direction, representing magnitude only, while a vector contains multiple components with both magnitude and directional information."
+      ],
+      "correctIndex": 3,
+      "explanation": "Scalars and vectors differ fundamentally in dimensionality and information representation. Scalars are single-value quantities like temperature or mass, while vectors capture more complex information through multiple components. This distinction is crucial in understanding mathematical operations and data representations across scientific and computational domains."
+    },
+    {
+      "id": 3,
+      "question": "What is a _matrix_ and why is it central to _linear algebra_?",
+      "options": [
+        "A matrix functions as a dynamic computational construct for translating abstract mathematical relationships into quantifiable representations.",
+        "A matrix is a rectangular array of numerical values arranged in rows and columns, serving as a powerful tool for representing linear transformations, solving systems of equations, and encoding complex mathematical relationships.",
+        "A matrix represents a structured framework for mapping geometric relationships between discrete numerical components.",
+        "A matrix is a computational grid encoding algorithmic instructions for processing multi-dimensional data sets and computational pathways."
+      ],
+      "correctIndex": 1,
+      "explanation": "Matrices are fundamental mathematical structures that organize numerical data systematically. They enable complex mathematical operations like linear transformations, solving simultaneous equations, and representing intricate relationships between variables. In fields ranging from physics to machine learning, matrices provide a powerful abstract representation of computational and mathematical processes."
+    },
+    {
+      "id": 4,
+      "question": "Explain the concept of a _tensor_ in the context of _machine learning_.",
+      "options": [
+        "In machine learning, a tensor is a generalized data structure representing multi-dimensional arrays that can represent scalars, vectors, matrices, and higher-dimensional data across computational frameworks.",
+        "In machine learning, tensors are quantum-inspired data structures that enable probabilistic computation and non-linear transformations.",
+        "Tensors are specialized mathematical objects used exclusively for encoding image pixel representations in deep learning models.",
+        "A tensor is a computational graph representing neural network connections and processing stages in machine learning algorithms."
+      ],
+      "correctIndex": 0,
+      "explanation": "Tensors are fundamental multi-dimensional arrays used to represent and manipulate data in machine learning. They extend beyond traditional scalar, vector, and matrix representations, allowing frameworks like TensorFlow and PyTorch to handle complex, multi-dimensional data efficiently across various computational tasks."
+    },
+    {
+      "id": 5,
+      "question": "How do you perform _matrix addition_ and _subtraction_?",
+      "options": [
+        "Matrix addition requires element-wise multiplication of corresponding matrix entries, creating a transformed linear representation of the original data structures.",
+        "Matrix addition is a process of combining matrices by aligning their diagonal elements and generating a new matrix based on specific algebraic transformations.",
+        "Matrix addition involves scaling each matrix by its determinant and then computing a weighted combination of their respective elements.",
+        "Matrix addition involves adding corresponding elements of two matrices with identical dimensions, resulting in a new matrix where each element is the sum of the matching input matrix elements."
+      ],
+      "correctIndex": 3,
+      "explanation": "Matrix addition is a straightforward linear algebra operation where matrices of the same dimensions are added element by element. This operation preserves the matrix structure and is fundamental to many mathematical and computational processes in linear algebra and machine learning."
+    },
+    {
+      "id": 6,
+      "question": "What are the properties of _matrix multiplication_?",
+      "options": [
+        "Matrix multiplication involves randomly pairing matrix elements and generating a new matrix based on probabilistic transformation rules.",
+        "Matrix multiplication is a process of scaling matrices by their respective eigenvalues and reconstructing their structural relationships.",
+        "Matrix multiplication requires the number of columns in the first matrix to match the number of rows in the second matrix, producing a new matrix through systematic row-column dot product calculations.",
+        "Matrix multiplication combines matrices by interleaving their elements according to specific positional transformation algorithms."
+      ],
+      "correctIndex": 2,
+      "explanation": "Matrix multiplication is a structured linear algebra operation where matrices are combined through specific computational rules. It requires compatible matrix dimensions and involves computing dot products between rows and columns, creating a new matrix that represents a linear transformation of the original matrices."
+    },
+    {
+      "id": 7,
+      "question": "Define the _transpose_ of a _matrix_.",
+      "options": [
+        "The transpose of a matrix is calculated by multiplying each element by its corresponding row and column index. This process creates a new matrix with modified dimensional properties and rearranged element values.",
+        "The transpose operation in matrix algebra involves creating a mirror image of the original matrix by reflecting its elements across a diagonal axis, fundamentally altering its structural composition.",
+        "The transpose of a matrix is obtained by interchanging its rows and columns. For a matrix A with elements aij, the transpose A^T has elements aji, effectively swapping the row and column indices.",
+        "A matrix transpose involves rotating the matrix 90 degrees and then inverting its elements to create a new representational structure. This transformation preserves the original matrix's mathematical characteristics."
+      ],
+      "correctIndex": 2,
+      "explanation": "Matrix transposition is a fundamental linear algebra operation that switches rows and columns. This transformation changes a matrix's dimensions and is crucial in various mathematical and computational applications, such as solving systems of linear equations, computing matrix inverses, and performing linear transformations."
+    },
+    {
+      "id": 8,
+      "question": "Explain the _dot product_ of two _vectors_ and its significance in _machine learning_.",
+      "options": [
+        "The dot product is a mathematical operation that evaluates the cumulative magnitude of two vectors by integrating their individual component strengths and directional characteristics.",
+        "The dot product is a scalar value calculated by multiplying corresponding elements of two vectors and summing the results. It provides insight into vector alignment, measuring the projection of one vector onto another.",
+        "The dot product represents the geometric intersection of two vectors, calculated by determining the angular displacement between their directional components. It provides a measure of spatial relationship.",
+        "Dot product is a vector multiplication technique that combines the magnitudes and directions of two vectors to produce a new directional vector. It reveals complex spatial interactions between vector spaces."
+      ],
+      "correctIndex": 1,
+      "explanation": "Dot product is a fundamental vector operation that quantifies the relationship between two vectors. It reveals how much two vectors align, with values indicating whether vectors are parallel, perpendicular, or at an angle. This concept is crucial in machine learning, physics, and geometric computations."
+    },
+    {
+      "id": 9,
+      "question": "What is the _cross product_ of _vectors_ and when is it used?",
+      "options": [
+        "Cross product is a vector multiplication technique that determines the geometric intersection of two vectors in multidimensional space. It provides insights into directional relationships.",
+        "The cross product is a mathematical transformation that generates a new vector by combining the rotational properties of two input vectors. It reveals complex spatial interactions between vector components.",
+        "The cross product is a vector operation in three-dimensional space that produces a vector perpendicular to both input vectors. It is calculated using the magnitudes and angles between the original vectors.",
+        "The cross product represents a computational method for synthesizing vector characteristics by evaluating their collective directional and magnitudinal properties in three-dimensional space."
+      ],
+      "correctIndex": 2,
+      "explanation": "Cross product is a unique vector operation specific to three-dimensional space that generates a new vector perpendicular to the original two. It is widely used in physics for calculating moments, torques, and normal vectors, and in computer graphics for determining surface orientations and geometric transformations."
+    },
+    {
+      "id": 10,
+      "question": "How do you calculate the _norm_ of a _vector_ and what does it represent?",
+      "options": [
+        "The vector norm is a statistical measure of vector dispersion, computed by aggregating the variance of each vector component across multiple dimensional spaces.",
+        "The vector norm represents the angular displacement of a vector from its origin, calculated by measuring the rotational distance between its initial and terminal points.",
+        "The vector norm quantifies the length or magnitude of a vector, with the Euclidean norm (L2 norm) calculated as the square root of the sum of squared vector components.",
+        "A vector norm is a linear transformation that maps a vector to its projective representation, determined by its coordinate transformations in multi-dimensional space."
+      ],
+      "correctIndex": 2,
+      "explanation": "The vector norm provides a way to measure vector magnitude, with the most common method being the Euclidean norm. This involves calculating the square root of the sum of squared components, which gives the direct length of the vector in n-dimensional space. The norm is crucial in understanding vector properties, distance calculations, and various mathematical and computational applications."
+    },
+    {
+      "id": 11,
+      "question": "Define the concept of _orthogonality_ in _linear algebra_.",
+      "options": [
+        "Two vectors are orthogonal if their dot product is zero, indicating they are perpendicular to each other and form a 90-degree angle in the vector space.",
+        "Orthogonal vectors are vectors that share a common point of origin and have identical directional components across their dimensional representation.",
+        "Orthogonality in linear algebra describes vectors with complementary magnitude relationships, where their combined length follows a specific geometric progression.",
+        "Orthogonal vectors are defined by their symmetrical alignment within a coordinate system, characterized by equal projective transformations."
+      ],
+      "correctIndex": 0,
+      "explanation": "Orthogonality is a fundamental concept in linear algebra that describes the perpendicularity of vectors. When two vectors are orthogonal, their dot product equals zero, which means they are geometrically at right angles to each other. This property is critical in many mathematical and computational applications, including coordinate transformations, machine learning, and geometric calculations."
+    },
+    {
+      "id": 12,
+      "question": "What is the _determinant_ of a _matrix_ and what information does it provide?",
+      "options": [
+        "A matrix determinant measures the rotational symmetry of linear transformations across different coordinate systems.",
+        "The determinant represents the cumulative eigenvalue distribution of a matrix, indicating its spectral decomposition characteristics.",
+        "The determinant is a statistical metric that quantifies the dimensional complexity of matrix interactions in multi-dimensional spaces.",
+        "The determinant of a matrix is a scalar value that provides crucial information about the matrix's linear transformations, including invertibility and scaling properties."
+      ],
+      "correctIndex": 3,
+      "explanation": "The determinant is a fundamental scalar value associated with square matrices that reveals important properties about the matrix's behavior. It indicates whether a matrix is invertible (non-zero determinant), provides information about linear transformations, and helps determine the scaling factor of geometric transformations. Mathematically, it captures essential characteristics of the matrix's structure and potential geometric interpretations."
+    },
+    {
+      "id": 13,
+      "question": "Can you explain what an _eigenvector_ and _eigenvalue_ are?",
+      "options": [
+        "Eigenvectors are special vectors that randomly change direction and magnitude when transformed, indicating complex matrix behaviors.",
+        "An eigenvector is a unique vector that defines the primary axis of rotation for a linear transformation, independent of its scaling properties.",
+        "An eigenvector is a vector that completely disappears when multiplied by a matrix, representing zero-scaling transformations in linear systems.",
+        "An eigenvector is a non-zero vector that, when transformed by a linear transformation, only changes in magnitude but not direction. Its corresponding eigenvalue represents the scalar factor by which the vector is scaled during this transformation."
+      ],
+      "correctIndex": 3,
+      "explanation": "Eigenvectors and eigenvalues are critical concepts in linear algebra that describe how linear transformations impact specific vectors. The key characteristic is that an eigenvector maintains its fundamental direction while being scaled by its corresponding eigenvalue, making them powerful tools for understanding matrix behavior in various mathematical and applied contexts."
+    },
+    {
+      "id": 14,
+      "question": "How is the _trace_ of a _matrix_ defined and what is its relevance?",
+      "options": [
+        "Matrix trace is a measure of the matrix's complexity, computed by multiplying the diagonal elements and normalizing their geometric mean.",
+        "The trace of a matrix is the sum of its diagonal elements, calculated by adding the values along the main diagonal from the top left to bottom right of a square matrix.",
+        "The trace indicates the cumulative transformational potential of a matrix, derived by averaging its diagonal entries across different computational dimensions.",
+        "The trace represents the total determinant of a matrix, calculated by summing all possible matrix permutations and their associated signs."
+      ],
+      "correctIndex": 1,
+      "explanation": "The trace provides a simple yet powerful scalar representation of a matrix, offering insights into its fundamental properties. It has important applications in linear algebra, including characterizing matrix similarity, computing matrix invariants, and simplifying complex linear transformations."
+    },
+    {
+      "id": 15,
+      "question": "What is a _diagonal matrix_ and how is it used in _linear algebra_?",
+      "options": [
+        "A diagonal matrix is a sparse matrix representation where only non-consecutive diagonal elements contain significant computational information.",
+        "A diagonal matrix is a square matrix where all non-diagonal elements are zero, with only the main diagonal containing non-zero values. These matrices are particularly useful in simplifying linear transformations and eigenvalue computations.",
+        "A diagonal matrix is a rectangular matrix where elements are strictly positioned along alternating diagonals, representing complex linear relationships.",
+        "Diagonal matrices are symmetric matrices where elements decrease exponentially from the main diagonal, creating a specialized computational structure."
+      ],
+      "correctIndex": 1,
+      "explanation": "Diagonal matrices are fundamental in linear algebra, offering simplified representations of linear transformations. They play crucial roles in eigenvalue decomposition, matrix diagonalization, and understanding linear system behaviors by providing a clean, structured approach to matrix operations."
+    }
+  ],
+  "processedAt": "2025-12-18T09:43:49.978Z"
+}

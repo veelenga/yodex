@@ -1,0 +1,197 @@
+{
+  "id": "ruby-on-rails",
+  "name": "Ruby on Rails",
+  "slug": "ruby-on-rails-interview-questions",
+  "category": "Backend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Ruby on Rails_, and why is it popular for _web development_?",
+      "options": [
+        "Ruby on Rails is a microservices architecture framework that enables distributed computing and cloud-native application development. It focuses on modular, scalable system design.",
+        "Ruby on Rails is a server-side programming language designed specifically for enterprise web applications with complex data modeling capabilities. It provides a comprehensive suite of tools for high-performance computing.",
+        "Ruby on Rails is a front-end JavaScript framework that provides reactive components and real-time data binding for creating dynamic single-page applications with minimal configuration.",
+        "Ruby on Rails is a web application framework built on Ruby that emphasizes convention over configuration and follows the MVC architectural pattern. It simplifies web development by providing built-in tools and structures that reduce the amount of code developers need to write."
+      ],
+      "correctIndex": 3,
+      "explanation": "Ruby on Rails is a full-stack web framework that leverages Ruby's elegant syntax and provides developers with powerful tools out of the box. Its core philosophy of 'convention over configuration' means developers can build web applications faster by following standardized patterns. The framework includes everything needed to create database-backed web applications, from routing to database migrations. A basic Rails application structure typically looks like this: ```ruby\nrails new my_project\ncd my_project\nrails generate controller Home index\n```"
+    },
+    {
+      "id": 2,
+      "question": "Describe the _MVC_ architecture in _Rails_.",
+      "options": [
+        "MVC in Rails is an advanced caching strategy that optimizes database queries and reduces computational overhead by implementing intelligent data retrieval mechanisms.",
+        "MVC in Rails is a design methodology that focuses on creating modular microservices with independent data processing layers. It emphasizes decoupling different application components for enhanced scalability.",
+        "MVC in Rails represents a comprehensive testing framework for ensuring code quality and performance across different application layers. It provides robust mechanisms for unit and integration testing.",
+        "MVC in Rails is an architectural pattern that divides an application into Model (data logic), View (user interface), and Controller (request handling), promoting separation of concerns and organized code structure. Each component has a distinct responsibility in managing application functionality."
+      ],
+      "correctIndex": 3,
+      "explanation": "The Model-View-Controller pattern is fundamental to Rails architecture. Models handle data and business logic, Views render user interfaces, and Controllers manage the interaction between Models and Views. This separation allows developers to modify one component without significantly impacting others. A typical Rails MVC interaction might look like: ```ruby\n# app/controllers/users_controller.rb\nclass UsersController < ApplicationController\n  def index\n    @users = User.all\n  end\nend\n```"
+    },
+    {
+      "id": 3,
+      "question": "What are _Gems_ and how do you use them in a _Rails_ project?",
+      "options": [
+        "Gems in Rails are pre-built, reusable packages that extend application functionality, managed by RubyGems and easily integrated through the Gemfile. They allow developers to quickly add complex features without writing everything from scratch.",
+        "Gems in Rails are specialized database abstraction layers that provide advanced querying mechanisms and support for complex relational and non-relational data structures.",
+        "Gems in Rails represent a modular encryption framework for securing network communications and implementing advanced authentication protocols across distributed systems.",
+        "Gems in Rails are low-level system libraries that provide direct hardware interaction and performance optimization for web applications. They enable fine-grained system resource management."
+      ],
+      "correctIndex": 0,
+      "explanation": "Gems simplify Ruby on Rails development by offering pre-packaged solutions for common tasks. They are added to a project's Gemfile and installed via bundler. A typical Gemfile might look like: ```ruby\ngem 'devise', '~> 4.7'\ngem 'pundit'\ngem 'sidekiq'\n``` This example includes authentication (devise), authorization (pundit), and background job processing (sidekiq) gems."
+    },
+    {
+      "id": 4,
+      "question": "What is the purpose of the _Gemfile_ in a _Rails_ application?",
+      "options": [
+        "The Gemfile is a dependency management system that compiles all external libraries and preprocesses them before application startup in a Rails project.",
+        "The Gemfile is a special Ruby script that automatically generates database migrations and initializes project-wide settings for Ruby on Rails applications.",
+        "The Gemfile is a manifest of all required gems for a Rails project, serving as the foundation for the Bundler tool which manages and versions gem dependencies across different environments.",
+        "The Gemfile is a configuration file that defines the primary routing structure for a Rails application, determining how different components interact and communicate."
+      ],
+      "correctIndex": 2,
+      "explanation": "Bundler uses the Gemfile to track and install specific gem versions, ensuring consistent library management across development environments. When you run 'bundle install', Bundler reads the Gemfile and downloads the exact versions of gems specified, creating a locked version in Gemfile.lock. This prevents version conflicts and ensures reproducibility.\n\nExample Gemfile structure:\n```ruby\nsource 'https://rubygems.org'\ngem 'rails', '~> 6.1.0'\ngem 'pg'\ngem 'puma'\n```"
+    },
+    {
+      "id": 5,
+      "question": "How do you install a _Ruby gem_?",
+      "options": [
+        "Ruby gems are installed through the Rails generator using 'rails generate gem' command, which automatically downloads and configures the specified library for project use.",
+        "Gem installation requires using the Bundler package manager with 'bundle add gem_name', which integrates the library directly into the current Ruby environment.",
+        "Installing Ruby gems involves accessing the gem repository through the RubyMine IDE's package management interface, selecting and downloading libraries graphically.",
+        "To install a Ruby gem, use the command 'gem install gem_name' directly from RubyGems.org, with optional version specification using the '--version' flag or installing from a local file path."
+      ],
+      "correctIndex": 3,
+      "explanation": "Gem installation can be performed globally or within a project's context. The 'gem install' command adds the library to your system Ruby environment, while 'bundle install' manages project-specific dependencies. Version control is crucial to maintain consistent library versions across different development environments.\n\nExample gem installation commands:\n```bash\n# Global installation\ngem install rails\n\n# Version-specific installation\ngem install rails --version 6.1.0\n```"
+    },
+    {
+      "id": 6,
+      "question": "Explain how to generate a new _Rails_ application.",
+      "options": [
+        "Generating a Rails application involves using the 'rails create' command with mandatory environment and database configuration flags to establish the project framework.",
+        "A new Rails application is created by configuring a comprehensive setup wizard that interactively defines project parameters and generates the initial codebase.",
+        "Creating a new Rails application requires using the Rails scaffolding tool 'rails generate project' with specific template parameters to initialize the project structure.",
+        "To generate a new Rails application, use the 'rails new myapp' command in a terminal, which creates a complete project structure with essential configurations and default files."
+      ],
+      "correctIndex": 3,
+      "explanation": "The 'rails new' command sets up a complete Rails project skeleton, including default directories, configuration files, and initial gems. It provides various flags to customize the initial setup, such as specifying the database or including specific features.\n\nExample project generation:\n```bash\n# Basic Rails application\nrails new myproject\n\n# With PostgreSQL and skip test framework\nrails new myproject -d postgresql --skip-test\n```"
+    },
+    {
+      "id": 7,
+      "question": "What is the _convention over configuration_ principle?",
+      "options": [
+        "Convention over Configuration is a testing strategy in Rails that automatically configures test environments by generating default mock objects and standardized testing protocols.",
+        "Convention over Configuration is a programming approach that automatically generates code configurations based on predefined templates, reducing manual setup and increasing development speed.",
+        "Convention over Configuration is a design principle in Ruby on Rails that minimizes explicit configuration by establishing sensible default patterns and standardized naming conventions, allowing developers to focus on unique application logic.",
+        "Convention over Configuration is a Rails methodology that requires strict adherence to predefined architectural patterns, mandating specific structural rules for every application component."
+      ],
+      "correctIndex": 2,
+      "explanation": "Rails implements Convention over Configuration by establishing default behaviors like automatic model-database mappings, standard directory structures, and predictable naming conventions. This approach reduces boilerplate code and provides a consistent framework. For example, a model named 'User' automatically maps to a 'users' database table, and controllers follow predictable naming patterns like 'UsersController' handling 'User' model operations."
+    },
+    {
+      "id": 8,
+      "question": "How do you define a _route_ in _Rails_?",
+      "options": [
+        "Routes in Rails are middleware components that intercept and validate incoming HTTP requests before redirecting them to predefined system endpoints.",
+        "Routes represent a Rails networking protocol that manages server-side request routing and translates external URLs into internal application states.",
+        "Routes are configuration files that dynamically generate API endpoints based on database schema and model relationships in a Rails application.",
+        "In Rails, routes are defined in the config/routes.rb file using methods like get, post, and resources to map HTTP requests to specific controller actions and specify the URL structure of an application."
+      ],
+      "correctIndex": 3,
+      "explanation": "Rails routes connect incoming web requests to controller actions, providing a mapping between URLs and application logic. They can be defined using explicit methods or resourceful routing. A typical route might look like: `get '/users', to: 'users#index'`, which maps GET requests to the index action of the UsersController."
+    },
+    {
+      "id": 9,
+      "question": "Explain the use of _yield_ in _Rails_ layouts.",
+      "options": [
+        "Yield represents a Rails view inheritance strategy that recursively processes and merges content from multiple template layers.",
+        "Yield in Rails layouts creates a placeholder for view-specific content, allowing dynamic injection of content into a consistent layout template using content_for blocks or default page content.",
+        "Yield is a Rails rendering mechanism that automatically generates placeholder content based on predefined template rules and application context.",
+        "Yield is a template compilation technique in Rails that preprocesses view content and generates static HTML representations."
+      ],
+      "correctIndex": 1,
+      "explanation": "The yield method allows layouts to define flexible content areas where views can inject specific content. A layout might use multiple yield points for different content regions. Example:\n\n```erb\n<html>\n  <head><%= yield :head %></head>\n  <body>\n    <%= yield %> <!-- Main content -->\n  </body>\n</html>\n```"
+    },
+    {
+      "id": 10,
+      "question": "What is _CRUD_, and how is it implemented in _Rails_?",
+      "options": [
+        "CRUD in Ruby on Rails is a design pattern that mandates separate service objects for each database operation, with strict separation between data access and business logic.",
+        "Rails CRUD operations are primarily handled through REST APIs, which require explicit routing and manual mapping of HTTP verbs to specific controller actions.",
+        "In Ruby on Rails, CRUD represents Create, Read, Update, and Delete operations that are seamlessly implemented through Active Record methods in models, allowing direct database interactions with minimal code.",
+        "CRUD in Rails is a complex framework of database interactions that requires custom implementation for each model, using extensive configuration and manual query writing."
+      ],
+      "correctIndex": 2,
+      "explanation": "CRUD operations in Rails leverage Active Record, an Object-Relational Mapping (ORM) system that provides intuitive methods for database interactions. These methods abstract away complex SQL queries, allowing developers to interact with databases using Ruby syntax. For example, creating a new record is as simple as using the create method: ```ruby user = User.create(name: 'John', email: 'john@example.com')```. Each CRUD operation maps directly to standard database actions: create (INSERT), read (SELECT), update (UPDATE), and delete (DELETE)."
+    },
+    {
+      "id": 11,
+      "question": "What is the purpose of a _controller_ in _Rails_?",
+      "options": [
+        "The primary purpose of a Rails controller is to handle authentication and security middleware, intercepting requests before they reach the application's core logic.",
+        "Rails controllers function as a standalone layer that generates data independently, without relying on models or requiring interaction with the view layer.",
+        "Controllers in Rails are primarily responsible for rendering static views and managing application-wide configuration settings without direct interaction with models.",
+        "A Rails controller acts as an intermediary between models and views, processing user requests, managing application logic, and coordinating data flow within the Model-View-Controller (MVC) architectural pattern."
+      ],
+      "correctIndex": 3,
+      "explanation": "Controllers in Rails serve as the central processing unit of web requests. They receive incoming HTTP requests, interact with models to fetch or manipulate data, and then pass that data to views for rendering. A typical controller action might look like: ```ruby def show @user = User.find(params[:id]) end```, which retrieves a specific user and makes the data available to the corresponding view template."
+    },
+    {
+      "id": 12,
+      "question": "How do you pass data from a _controller_ to a _view_?",
+      "options": [
+        "Data transfer between controllers and views in Rails requires explicit serialization using JSON or XML, with complex mapping configurations for each data type.",
+        "View data in Rails is transferred through a complex dependency injection system that requires defining explicit data transfer interfaces for each controller action.",
+        "In Ruby on Rails, data is passed from controllers to views using instance variables, which are prefixed with @ and automatically become available in the corresponding view template for rendering.",
+        "Rails controllers communicate with views exclusively through global session variables, which must be manually initialized and managed in each request cycle."
+      ],
+      "correctIndex": 2,
+      "explanation": "Instance variables in Rails controllers provide a simple and intuitive mechanism for data sharing. When an instance variable is set in a controller action, it becomes automatically accessible in the corresponding view. For example: ```ruby def index @articles = Article.all end``` would make @articles available in the index.html.erb view, allowing direct rendering like ```<% @articles.each do |article| %>```. This approach simplifies data passing and promotes clean, readable code across the MVC architecture."
+    },
+    {
+      "id": 13,
+      "question": "Explain the _Rails controller action lifecycle_.",
+      "options": [
+        "The controller action lifecycle primarily involves creating a new database connection, parsing incoming parameters, and generating a view template without additional processing.",
+        "The controller action lifecycle is a straightforward process of receiving a request, immediately invoking the corresponding method, and sending back raw data without additional middleware.",
+        "The Rails controller action lifecycle includes routing the request to the appropriate controller, initializing the controller, executing before actions, rendering the action, and returning a response.",
+        "Rails controller actions follow a simple request-response cycle that directly maps URL paths to database queries with minimal intermediate steps."
+      ],
+      "correctIndex": 2,
+      "explanation": "The controller action lifecycle is a critical process in Rails that manages how web requests are handled. It provides a structured approach to processing incoming HTTP requests, allowing developers to intercept, modify, and respond to requests at various stages. Before actions can perform authentication, set up instance variables, or validate parameters before the main action is executed."
+    },
+    {
+      "id": 14,
+      "question": "How do you handle _parameters_ in a _controller action_?",
+      "options": [
+        "Rails automatically filters and sanitizes all incoming parameters without requiring explicit declaration or permission settings.",
+        "Controllers in Rails process parameters by directly mapping them to model attributes without any additional security checks or permissions.",
+        "In Rails, parameters are handled through strong parameters, which require explicit parameter whitelisting and provide a secure way to permit specific attributes for mass assignment.",
+        "Parameter handling in Rails is managed entirely by the ORM, which automatically validates and processes all incoming request data."
+      ],
+      "correctIndex": 2,
+      "explanation": "Strong parameters are a security mechanism in Rails that prevents mass-assignment vulnerabilities by requiring explicit declaration of permitted parameters. This approach gives developers granular control over which parameters can be accepted and processed, protecting against potential security risks."
+    },
+    {
+      "id": 15,
+      "question": "What _filters_ are available in _Rails controllers_ and how do you use them?",
+      "options": [
+        "Rails controllers support filters like before_action, after_action, and around_action, which allow developers to run code before, after, or around specific controller actions.",
+        "Controller filters in Rails are limited to pre-defined system hooks that automatically handle request authentication without custom implementation.",
+        "Controller filters in Rails only support global, application-wide interceptors that cannot be conditionally applied to specific actions.",
+        "Rails filters are primarily used for database query optimization and cannot be customized for specific controller logic."
+      ],
+      "correctIndex": 0,
+      "explanation": "Filters provide a powerful mechanism for intercepting and modifying controller behavior. They can be used for various purposes like authentication, setting up instance variables, logging, or performing preliminary checks before an action is executed. Filters can be applied to specific actions or entire controllers."
+    }
+  ],
+  "processedAt": "2025-12-18T10:19:09.809Z"
+}

@@ -1,0 +1,198 @@
+{
+  "id": "software-architecture",
+  "name": "Software Architecture",
+  "slug": "software-architecture-interview-questions",
+  "category": "Architecture",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the difference between _software architecture_ and _software design_?",
+      "options": [
+        "Software architecture represents the visual blueprint of a system's user interface, whereas software design handles backend logic and technical implementation details.",
+        "Software architecture focuses exclusively on programming language selection and technical frameworks, while software design manages individual module interactions and component specifications.",
+        "Software architecture is primarily concerned with writing code that meets immediate project requirements, while software design manages long-term system scalability and performance metrics.",
+        "Software architecture defines the high-level structure and strategic decisions of a system, focusing on global constraints and overall system organization, while software design deals with specific implementation details and component-level solutions."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key distinction is that software architecture operates at a macro level, establishing system-wide constraints, communication patterns, and strategic technical decisions. It provides a comprehensive view of how different system components will interact, ensuring alignment with business goals and technical requirements. Software design, in contrast, drills down into specific implementation strategies and detailed component design."
+    },
+    {
+      "id": 2,
+      "question": "Explain _separation of concerns_ in _software architecture_.",
+      "options": [
+        "Separation of Concerns is an approach to maximizing system performance by combining related functionalities into tightly coupled architectural components.",
+        "Separation of Concerns represents a technique for integrating different software components by creating complex interdependencies between system modules and functions.",
+        "Separation of Concerns is a design methodology that consolidates multiple system functions into unified modules to streamline computational efficiency and reduce code redundancy.",
+        "Separation of Concerns is an architectural principle that divides a system into distinct sections, each addressing a specific set of functionalities, to reduce complexity and improve maintainability of software systems."
+      ],
+      "correctIndex": 3,
+      "explanation": "The principle fundamentally aims to break down complex systems into more manageable, independent parts. By ensuring that each module or component has a single, well-defined responsibility, developers can create more modular, flexible, and easier to maintain software systems. This approach reduces complexity, facilitates easier debugging, and allows for more independent development and testing of system components."
+    },
+    {
+      "id": 3,
+      "question": "Define a _system quality attribute_ and its importance in _software architecture_.",
+      "options": [
+        "System quality attributes are performance metrics used exclusively for measuring code efficiency during runtime and evaluating developer productivity.",
+        "System quality attributes represent a set of predefined technical constraints that limit software implementation and dictate specific coding standards.",
+        "System quality attributes are diagnostic tools used to analyze post-deployment system interactions and generate comprehensive technical reports.",
+        "System quality attributes are non-functional requirements that define critical system characteristics like performance, reliability, and scalability, which fundamentally shape architectural decisions and overall system behavior."
+      ],
+      "correctIndex": 3,
+      "explanation": "Quality attributes provide a crucial framework for evaluating and designing software beyond its core functional requirements. They help architects and developers understand how a system will perform under various conditions, ensuring that the software meets not just functional needs but also critical operational expectations like security, maintainability, and user experience."
+    },
+    {
+      "id": 4,
+      "question": "Describe the concept of a _software architectural pattern_.",
+      "options": [
+        "A software architectural pattern represents a comprehensive set of coding standards that dictate the exact implementation details of software systems across different programming languages.",
+        "A software architectural pattern is a proprietary design methodology used exclusively by large technology companies to standardize their software development processes.",
+        "A software architectural pattern is a reusable solution to common design problems in software systems, providing a structured approach to organizing components and their interactions.",
+        "A software architectural pattern is a theoretical framework for predicting potential software failures and identifying optimization strategies in complex computing environments."
+      ],
+      "correctIndex": 2,
+      "explanation": "Software architectural patterns are essential templates that solve recurring design challenges. They offer developers a proven approach to structuring software systems, ensuring scalability, maintainability, and efficiency. These patterns provide a common language and best practices for solving complex design problems across different types of software applications."
+    },
+    {
+      "id": 5,
+      "question": "What is the _layered architectural pattern_?",
+      "options": [
+        "The layered architectural pattern is a performance optimization technique that automatically redistributes software components based on runtime computational requirements.",
+        "The layered architectural pattern represents a vertical integration strategy where software components are strictly hierarchically arranged with mandatory top-down communication.",
+        "The layered architectural pattern is a dynamic system configuration that allows unrestricted communication between all software components regardless of their functional boundaries.",
+        "The layered architectural pattern is a design approach that organizes software components into horizontal layers, each with a specific responsibility and restricted interactions with adjacent layers."
+      ],
+      "correctIndex": 3,
+      "explanation": "Layered architecture provides a structured method for organizing software systems by separating concerns and creating clear boundaries between different functional components. This approach enhances modularity, makes systems easier to understand, and facilitates more straightforward maintenance and potential future modifications."
+    },
+    {
+      "id": 6,
+      "question": "What are the elements of a good _software architecture_?",
+      "options": [
+        "Good software architecture is primarily achieved through strict adherence to a single, universal design methodology regardless of specific project requirements.",
+        "Good software architecture comprises well-designed software components, effective connectors between those components, and clear constraints that guide system design and implementation.",
+        "Good software architecture focuses exclusively on minimizing resource consumption without considering system flexibility or future scalability.",
+        "Good software architecture is solely determined by the complexity and number of programming languages used in the system's implementation."
+      ],
+      "correctIndex": 1,
+      "explanation": "Effective software architecture is about creating a balanced, flexible system that can evolve over time. It requires careful consideration of component interactions, system constraints, and potential future modifications while maintaining clear structural principles that support overall system goals."
+    },
+    {
+      "id": 7,
+      "question": "Define \"_modularity_\" in _software architecture_.",
+      "options": [
+        "Modularity is the design principle of breaking software systems into independent, functional modules that can be developed, tested, and maintained separately, promoting flexibility and reducing complexity.",
+        "Modularity refers to the process of integrating all system components into a single, monolithic architecture that ensures complete system interconnectivity.",
+        "Modularity describes the method of organizing software code to maximize direct dependencies between different system components and enhance runtime efficiency.",
+        "Modularity is a programming technique that focuses on creating multiple identical code segments to maximize system performance and reduce memory usage."
+      ],
+      "correctIndex": 0,
+      "explanation": "Modularity is a fundamental software architecture principle that emphasizes creating loosely coupled, independent components. By breaking systems into discrete, manageable modules, developers can improve code maintainability, facilitate easier updates, enable parallel development, and enhance overall system flexibility. The key benefits include easier debugging, better code reusability, and simplified system modifications."
+    },
+    {
+      "id": 8,
+      "question": "Discuss the concepts of _coupling_ and _cohesion_.",
+      "options": [
+        "Coupling represents the total number of interactions between system modules, with high coupling indicating a more integrated and efficient software design.",
+        "Cohesion measures the external dependencies of a software module, with low cohesion suggesting better system performance and scalability.",
+        "Coupling measures the degree of interdependence between software modules, with low coupling being ideal, while cohesion evaluates how closely related the elements within a single module are, with high cohesion being desirable.",
+        "Coupling and cohesion are metrics that determine a system's runtime memory allocation and computational complexity in software architectures."
+      ],
+      "correctIndex": 2,
+      "explanation": "Coupling and cohesion are critical concepts in software design that help assess the quality of system architecture. Low coupling means modules have minimal dependencies, making the system more flexible and easier to modify. High cohesion indicates that a module's internal elements are closely related and focused on a single, well-defined purpose, which improves code maintainability and understandability."
+    },
+    {
+      "id": 9,
+      "question": "What is the _principle of least knowledge (Law of Demeter)_ in _architecture_?",
+      "options": [
+        "The Law of Demeter mandates that all software modules must have direct communication channels with every other module in the system to ensure comprehensive information exchange.",
+        "The Law of Demeter suggests that a module should only communicate with its immediate neighbors and should avoid accessing internal details of other objects, thereby reducing unnecessary dependencies and improving system modularity.",
+        "The Law of Demeter is a design principle requiring modules to expose all internal states and methods to maximize transparency and system-wide accessibility.",
+        "The Law of Demeter recommends creating extensive object hierarchies that enable deep, multi-level interactions between different system components."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Law of Demeter promotes loose coupling and better encapsulation in object-oriented design. By limiting interactions to immediate, known objects, it reduces the complexity of dependencies and makes systems more maintainable. The principle encourages designing modules that are more independent, easier to understand, and less prone to cascading changes when modifications are required."
+    },
+    {
+      "id": 10,
+      "question": "How are _cross-cutting concerns_ addressed in _software architecture_?",
+      "options": [
+        "Cross-cutting concerns are primarily handled by creating monolithic service classes that centralize all peripheral functionalities, reducing complexity by consolidating multiple responsibilities.",
+        "Cross-cutting concerns are resolved by embedding all secondary functionalities directly into each module, ensuring tight integration and immediate access to common services across the application.",
+        "Cross-cutting concerns are addressed through architectural techniques like aspect-oriented programming (AOP), middleware, and design patterns that separate transversal functionalities from core business logic, enabling modular and maintainable software systems.",
+        "Cross-cutting concerns are managed through extensive inheritance hierarchies that propagate shared behaviors vertically through class structures, minimizing redundant implementation."
+      ],
+      "correctIndex": 2,
+      "explanation": "Cross-cutting concerns like logging, security, and transaction management frequently span multiple modules and cannot be cleanly encapsulated using traditional object-oriented techniques. Techniques such as aspect-oriented programming allow developers to modularize these concerns, keeping core business logic clean and focused. By separating these transversal functionalities, software architectures become more flexible, maintainable, and easier to modify without disrupting existing implementations."
+    },
+    {
+      "id": 11,
+      "question": "Describe the _Model-View-Controller (MVC)_ architectural pattern.",
+      "options": [
+        "The Model-View-Controller (MVC) pattern separates an application into three interconnected components: Model (data logic), View (user interface), and Controller (handles user interactions and updates), promoting loose coupling and improved maintainability.",
+        "MVC is an architectural approach where user interfaces are generated dynamically by tightly coupling data models with rendering logic, eliminating the need for separate presentation layers.",
+        "The Model-View-Controller pattern represents a design methodology where controllers act as primary data managers, directly manipulating both model and view components without intermediate interactions.",
+        "The Model-View-Controller pattern combines all application logic into a single layer, enabling direct communication between data structures and presentation components for maximum performance."
+      ],
+      "correctIndex": 0,
+      "explanation": "MVC architecture fundamentally addresses the complexity of user interface design by creating clear boundaries between data management, user interaction, and visual representation. This separation allows developers to modify individual components independently, enhancing code reusability and making applications more scalable. The pattern enables parallel development, where designers can work on views while developers implement models and controllers simultaneously."
+    },
+    {
+      "id": 12,
+      "question": "Explain the _Publish-Subscribe_ pattern and its applications.",
+      "options": [
+        "Publish-Subscribe is an architectural approach where all participants must pre-register communication protocols, creating a rigid messaging framework with predetermined interaction rules.",
+        "The Publish-Subscribe pattern enables decoupled communication where publishers broadcast messages to multiple subscribers without direct knowledge of receiver implementations, allowing flexible and scalable event-driven architectures.",
+        "The Publish-Subscribe pattern requires direct communication channels between message senders and specific receivers, ensuring precise and controlled information transmission.",
+        "The Publish-Subscribe pattern mandates synchronous message processing, where publishers wait for confirmation from all subscribers before considering a message successfully transmitted."
+      ],
+      "correctIndex": 1,
+      "explanation": "Publish-Subscribe represents a powerful messaging paradigm that fundamentally decouples communication participants. By eliminating direct dependencies between message sources and destinations, this pattern enables more flexible, extensible systems. Subscribers can dynamically register and unregister interest in specific message types, while publishers remain unaware of their audience, promoting loose coupling and system scalability."
+    },
+    {
+      "id": 13,
+      "question": "Define _Microservices architecture_ and contrast it with _Monolithic architecture_.",
+      "options": [
+        "Monolithic architecture allows individual services to be developed and scaled independently, with each component operating as a separate microservice within the overall system.",
+        "Microservices represent a modular approach where every component is embedded within a single executable, minimizing external dependencies and streamlining deployment processes.",
+        "Microservices architecture breaks down an application into small, independently deployable services that communicate via lightweight protocols, while monolithic architecture builds the entire application as a single, tightly coupled unit.",
+        "Microservices architecture combines all application components into a single service layer, enabling more complex integrations and reducing network communication overhead."
+      ],
+      "correctIndex": 2,
+      "explanation": "Microservices promote flexibility, scalability, and independent development by decomposing applications into smaller, loosely coupled services. Each service runs its own process, can be deployed independently, and communicates through well-defined APIs. In contrast, monolithic architectures require the entire application to be modified, rebuilt, and redeployed for any changes, making them less adaptable to evolving business requirements."
+    },
+    {
+      "id": 14,
+      "question": "What are the _SOLID principles_ of object-oriented design?",
+      "options": [
+        "SOLID principles are a set of performance optimization techniques designed to reduce computational overhead and improve runtime efficiency in object-oriented programming.",
+        "SOLID principles are architectural patterns that define how different software modules should interact and communicate within a complex enterprise application framework.",
+        "SOLID principles represent a standardized approach to creating statically typed interfaces that enforce strict type checking and reduce runtime errors in software systems.",
+        "SOLID principles are object-oriented design guidelines that aim to make software designs more understandable, flexible, and maintainable by promoting loose coupling and high cohesion between software components."
+      ],
+      "correctIndex": 3,
+      "explanation": "The SOLID principles provide a structured approach to object-oriented design by focusing on creating more modular, adaptable code. Each principle addresses a specific aspect of software design, such as ensuring classes have single responsibilities, allowing for easy extension without modification, and promoting loose coupling between software components."
+    },
+    {
+      "id": 15,
+      "question": "When should the _Singleton pattern_ be applied and what are its drawbacks?",
+      "options": [
+        "The Singleton pattern should be used sparingly, primarily for managing global state or resources that must have exactly one instance, such as configuration managers or connection pools, while being mindful of potential threading and testing challenges.",
+        "Singleton patterns are most effective when implementing complex object creation mechanisms that require dynamic instantiation and frequent state modifications.",
+        "The Singleton pattern is an ideal approach for creating multiple instances of critical system resources, providing flexible instantiation strategies across different application contexts.",
+        "The Singleton pattern represents a comprehensive solution for managing distributed system configurations, enabling complex multi-threaded resource allocation strategies."
+      ],
+      "correctIndex": 0,
+      "explanation": "While the Singleton pattern can solve specific design challenges, it introduces potential issues like tight coupling, reduced testability, and potential threading complications. Modern dependency injection frameworks often provide more flexible and testable alternatives for managing global state and shared resources."
+    }
+  ],
+  "processedAt": "2025-12-18T10:25:53.162Z"
+}

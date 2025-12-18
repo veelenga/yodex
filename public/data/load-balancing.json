@@ -1,0 +1,197 @@
+{
+  "id": "load-balancing",
+  "name": "Load Balancing",
+  "slug": "load-balancing-interview-questions",
+  "category": "Concepts",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "Define _load balancing_ in the context of modern web services.",
+      "options": [
+        "Load balancing is an advanced networking strategy that prioritizes critical traffic flows and dynamically allocates bandwidth to essential service endpoints.",
+        "Load balancing is the process of evenly distributing incoming network traffic across multiple backend servers to optimize system performance, reliability, and resource utilization.",
+        "Load balancing represents a method of clustering servers to create a unified computational environment that synchronizes data across multiple physical machines.",
+        "Load balancing is a network security technique that prevents unauthorized access by filtering incoming traffic through multiple firewall checkpoints before reaching server resources."
+      ],
+      "correctIndex": 1,
+      "explanation": "Load balancing ensures that no single server bears too much computational burden by intelligently distributing incoming requests. It prevents server overload, reduces response times, and increases overall system availability by spreading network traffic across multiple servers. The goal is to maximize resource efficiency and provide seamless, uninterrupted service to end-users."
+    },
+    {
+      "id": 2,
+      "question": "What are the primary objectives of implementing _load balancing_?",
+      "options": [
+        "The primary objectives of load balancing focus on consolidating server resources, reducing operational costs, and creating a centralized management interface for network infrastructure.",
+        "The primary objectives of load balancing include minimizing network security risks, standardizing server configurations, and creating redundant communication pathways between distributed computing nodes.",
+        "The primary objectives of load balancing center on streamlining data synchronization, implementing advanced caching mechanisms, and providing real-time performance monitoring across server clusters.",
+        "The primary objectives of load balancing are to optimize resource utilization, enhance system reliability, and improve overall performance by evenly distributing network traffic across multiple servers."
+      ],
+      "correctIndex": 3,
+      "explanation": "Load balancing serves critical infrastructure needs by preventing any single server from becoming a bottleneck. By distributing incoming traffic intelligently, it ensures high availability, prevents system overload, and maintains consistent performance even during peak usage periods. The strategy allows organizations to scale their network infrastructure efficiently and maintain responsive services."
+    },
+    {
+      "id": 3,
+      "question": "Explain the difference between _hardware_ and _software load balancers_.",
+      "options": [
+        "Hardware load balancers are dedicated physical devices with specialized processing capabilities, while software load balancers are application-based solutions that distribute traffic using algorithmic methods implemented through software.",
+        "Hardware load balancers operate using cloud-based virtualization techniques, whereas software load balancers rely on direct server-to-server communication protocols for traffic management.",
+        "Hardware load balancers utilize machine learning algorithms for intelligent traffic routing, whereas software load balancers depend on predefined static configuration rules for distribution.",
+        "Hardware load balancers represent distributed network appliances that integrate directly with server infrastructure, while software load balancers function as middleware communication layers between network components."
+      ],
+      "correctIndex": 0,
+      "explanation": "The distinction between hardware and software load balancers lies in their implementation and performance characteristics. Hardware load balancers offer high-performance, dedicated processing with lower latency, while software load balancers provide more flexibility and are often more cost-effective. Each approach has specific advantages depending on the organization's infrastructure requirements and scalability needs."
+    },
+    {
+      "id": 4,
+      "question": "Can you list some common _load balancing algorithms_ and briefly describe how they work?",
+      "options": [
+        "Load balancing algorithms use machine learning techniques to predict server load and proactively redistribute network requests across infrastructure segments.",
+        "Load balancing algorithms distribute network traffic across multiple servers using methods like round robin, least connections, and weighted distribution to optimize server resource utilization and performance.",
+        "Load balancing algorithms randomly assign network traffic to servers based on current computational power and available memory to ensure dynamic resource allocation.",
+        "Load balancing algorithms prioritize servers with the lowest current connection count, automatically rerouting traffic to maintain consistent network performance."
+      ],
+      "correctIndex": 1,
+      "explanation": "Load balancing algorithms aim to evenly distribute incoming network traffic across multiple servers to prevent any single server from becoming a bottleneck. Different algorithms like round robin, least connections, and weighted distribution help optimize resource usage, improve response times, and enhance overall system reliability by intelligently routing requests."
+    },
+    {
+      "id": 5,
+      "question": "Describe the term \"_sticky session_\" in _load balancing_.",
+      "options": [
+        "A sticky session represents a security mechanism that locks network connections to specific server nodes to prevent unauthorized traffic redirection.",
+        "A sticky session ensures that a client's subsequent requests are consistently routed to the same server that initially handled their first request, maintaining session state and user context.",
+        "A sticky session prevents network traffic from being distributed across multiple servers by forcing all requests through a single designated server endpoint.",
+        "A sticky session is a load balancing technique that temporarily suspends server communication when detecting potential network instability or performance issues."
+      ],
+      "correctIndex": 1,
+      "explanation": "Sticky sessions are crucial in web applications where user-specific data or session information must be maintained consistently. By ensuring that a user's requests always reach the same server, these sessions prevent complications with stateful applications that rely on local server memory or session-specific data storage."
+    },
+    {
+      "id": 6,
+      "question": "How does _load balancing_ improve _application reliability_?",
+      "options": [
+        "Load balancing improves application reliability by distributing traffic across multiple servers, providing redundancy, preventing single points of failure, and ensuring continuous service availability.",
+        "Load balancing increases application reliability by dynamically reducing server resources during low-traffic periods to minimize operational costs.",
+        "Load balancing enhances application reliability by implementing complex network filtering mechanisms that automatically detect and isolate potential system vulnerabilities.",
+        "Load balancing improves application reliability through constant server monitoring and immediate disconnection of servers experiencing performance degradation."
+      ],
+      "correctIndex": 0,
+      "explanation": "Application reliability is significantly enhanced through load balancing by creating a robust, fault-tolerant infrastructure. By distributing traffic across multiple servers, load balancing ensures that if one server fails, other servers can seamlessly handle incoming requests, minimizing downtime and maintaining consistent service performance."
+    },
+    {
+      "id": 7,
+      "question": "How do _load balancers_ perform _health checks_ on _backend servers_?",
+      "options": [
+        "Load balancers perform health checks by periodically sending test requests to backend servers and evaluating their responses, marking servers as healthy or unhealthy based on predefined criteria like response time and status code.",
+        "Load balancers assess server health by analyzing historical traffic patterns and predictive machine learning algorithms to determine potential server performance risks.",
+        "Load balancers conduct health checks by tracking server CPU and memory usage, automatically removing servers that exceed predetermined resource consumption thresholds.",
+        "Health checks are performed through continuous network ping requests, with servers automatically excluded from the pool if they fail to respond within a millisecond interval."
+      ],
+      "correctIndex": 0,
+      "explanation": "Health checks are crucial for maintaining system reliability and ensuring that traffic is only routed to operational servers. Active checks involve direct testing where the load balancer sends probe requests and expects specific responses. These checks help prevent routing traffic to failed or unresponsive servers, which could disrupt service availability and user experience."
+    },
+    {
+      "id": 8,
+      "question": "What are the advantages and disadvantages of _round-robin load balancing_?",
+      "options": [
+        "Round-robin load balancing assigns network traffic by randomly selecting servers from a predefined pool, preventing predictable request patterns.",
+        "Round-robin load balancing dynamically adjusts traffic distribution based on real-time server performance metrics, prioritizing servers with lower current computational load.",
+        "This method allocates server requests using a weighted algorithm that considers server hardware capabilities and historical processing capabilities.",
+        "Round-robin load balancing distributes incoming network traffic sequentially across backend servers, ensuring an even allocation of requests without considering individual server load or performance characteristics."
+      ],
+      "correctIndex": 3,
+      "explanation": "Round-robin load balancing is a simple yet effective traffic distribution method that cycles through available servers in a systematic order. While straightforward, it lacks advanced intelligence about server capacity or current load. This approach works best in environments with homogeneous server configurations where computational capabilities are relatively consistent."
+    },
+    {
+      "id": 9,
+      "question": "In _load balancing_, what is the significance of the _least connections_ method?",
+      "options": [
+        "Least connections load balancing prioritizes servers with the most available memory, dynamically redirecting traffic to maximize overall system resource utilization.",
+        "The least connections method routes new network requests to the server currently managing the fewest active connections, helping balance workload and prevent server overload during high-traffic scenarios.",
+        "This method continuously tracks server processing speed and redirects incoming requests to the fastest available server in the network pool.",
+        "Least connections load balancing uses predictive algorithms to estimate future server load and preemptively distribute traffic across potential connection endpoints."
+      ],
+      "correctIndex": 1,
+      "explanation": "Least connections load balancing is an intelligent traffic distribution strategy that considers current server workload. By directing new requests to servers with fewer active connections, it helps prevent individual servers from becoming bottlenecks. This method is particularly effective in environments with varying request processing times and uneven computational demands."
+    },
+    {
+      "id": 10,
+      "question": "Explain how a _load balancer_ might handle _failure_ in one of the _servers_ it manages.",
+      "options": [
+        "The load balancer creates a duplicate server instance for every active server, instantly switching traffic to the backup when the primary server experiences issues.",
+        "Load balancers use predictive algorithms to anticipate server failures and preemptively redistribute traffic before any actual server breakdown occurs.",
+        "Load balancers automatically restart failed servers and maintain a complete backup system to ensure immediate server replacement without interrupting service.",
+        "When a server fails, the load balancer stops routing traffic to it and redirects requests to healthy servers, using continuous health checks to detect and respond to server unavailability."
+      ],
+      "correctIndex": 3,
+      "explanation": "Load balancers monitor server health through periodic checks, removing unresponsive servers from the server pool. This ensures high availability and fault tolerance by automatically redirecting traffic to functioning servers. Health checks typically involve sending periodic ping requests or checking specific application endpoints to verify server responsiveness."
+    },
+    {
+      "id": 11,
+      "question": "How does a _load balancer_ distribute traffic in a _stateless_ vs _stateful_ scenario?",
+      "options": [
+        "In stateless scenarios, load balancers distribute traffic using algorithms like round-robin, while stateful scenarios require maintaining client connection continuity through techniques like session persistence.",
+        "Load balancers in stateful scenarios completely disable traffic distribution, requiring manual intervention to route client requests between servers.",
+        "Stateless and stateful load balancing are identical processes, with load balancers using the same distribution method regardless of application connection requirements.",
+        "Stateless load balancing uses complex machine learning algorithms to predict server load, while stateful load balancing relies on basic random distribution methods."
+      ],
+      "correctIndex": 0,
+      "explanation": "The key difference between stateless and stateful load balancing is how client connections are managed. Stateless load balancing treats each request independently, allowing flexible distribution across servers, while stateful load balancing ensures a single client remains connected to the same server throughout their session."
+    },
+    {
+      "id": 12,
+      "question": "What is the concept of _session persistence_, and why is it important?",
+      "options": [
+        "Session persistence automatically distributes client sessions across multiple servers to maximize resource utilization and prevent individual server overload.",
+        "Session persistence is a load balancing technique that randomly assigns servers to minimize potential connection bottlenecks during high-traffic periods.",
+        "Session persistence ensures that a client's subsequent requests are consistently routed to the same server, maintaining critical state information like shopping cart contents or user authentication.",
+        "Session persistence prevents any server-side communication, isolating each server to improve overall system security and performance."
+      ],
+      "correctIndex": 2,
+      "explanation": "Session persistence is crucial for applications requiring consistent user experiences that depend on maintaining session state. By directing a client's requests to the same server, it preserves context-specific data and prevents potential inconsistencies that could arise from distributing requests across multiple servers."
+    },
+    {
+      "id": 13,
+      "question": "Discuss the role of _DNS_ in _load balancing_.",
+      "options": [
+        "Domain Name System (DNS) supports load balancing through techniques like Round Robin and Weighted Round Robin, enabling traffic distribution across multiple server IP addresses.",
+        "DNS primarily acts as a global routing mechanism that randomly assigns server connections without considering server performance or capacity.",
+        "Load balancing through DNS requires specialized hardware and can only be implemented in enterprise-level network configurations.",
+        "DNS load balancing is a sophisticated technique that exclusively prioritizes geographic proximity of servers when distributing network traffic."
+      ],
+      "correctIndex": 0,
+      "explanation": "DNS load balancing is a fundamental method of distributing network traffic by mapping multiple IP addresses to a single domain name. Round Robin DNS cycles through available server addresses, while Weighted Round Robin allows proportional traffic allocation based on server capabilities. Though simple, this method provides basic load distribution without requiring complex infrastructure."
+    },
+    {
+      "id": 14,
+      "question": "In what scenarios would you use _weighted load balancing_?",
+      "options": [
+        "Weighted load balancing exclusively prioritizes older servers in an infrastructure to maintain legacy system performance.",
+        "Weighted load balancing is primarily used to penalize underperforming servers by reducing their traffic allocation arbitrarily.",
+        "Weighted load balancing randomly assigns traffic percentages to servers with no correlation to their actual processing capabilities.",
+        "Weighted load balancing optimizes traffic distribution by allocating server resources proportionally based on server capabilities, performance metrics, and current infrastructure capacity."
+      ],
+      "correctIndex": 3,
+      "explanation": "Weighted load balancing allows administrators to strategically distribute network traffic across servers by assigning specific weight or priority values. This approach enables precise control over resource utilization, ensuring that more powerful servers handle increased workloads while preventing resource exhaustion on less capable systems."
+    },
+    {
+      "id": 15,
+      "question": "How can _load balancers_ help mitigate _DDoS attacks_?",
+      "options": [
+        "DDoS mitigation through load balancers relies entirely on geographic IP restrictions and manual intervention.",
+        "Load balancers mitigate DDoS attacks by distributing incoming traffic across multiple servers, implementing rate limiting, and filtering malicious connection attempts before they overwhelm system resources.",
+        "Load balancers exclusively detect DDoS attacks by blocking all incoming traffic when unusual network patterns are identified.",
+        "Load balancers prevent DDoS attacks by completely isolating potentially compromised network segments from legitimate traffic."
+      ],
+      "correctIndex": 1,
+      "explanation": "DDoS attack mitigation is a critical function of modern load balancers. By spreading potential malicious traffic across multiple servers, load balancers prevent single points of failure. Advanced load balancers use sophisticated algorithms to identify and filter suspicious traffic patterns, protecting infrastructure from overwhelming network attacks."
+    }
+  ],
+  "processedAt": "2025-12-18T09:48:45.724Z"
+}

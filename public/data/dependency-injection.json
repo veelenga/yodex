@@ -1,0 +1,197 @@
+{
+  "id": "dependency-injection",
+  "name": "Dependency Injection",
+  "slug": "dependency-injection-interview-questions",
+  "category": "Concepts",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Dependency Injection_ and why is it used in modern software development?",
+      "options": [
+        "Dependency Injection is a programming technique where objects directly manage and instantiate their own dependencies, creating tightly integrated software components with increased complexity.",
+        "Dependency Injection is an architectural approach that mandates all software components be statically linked and resolved at compile-time to ensure maximum system reliability.",
+        "Dependency Injection represents a method of hardcoding external service connections directly within class constructors to improve runtime performance and reduce abstraction overhead.",
+        "Dependency Injection is a design pattern that allows components to receive their dependencies from external sources instead of creating them internally, promoting loose coupling and enhanced modularity in software systems."
+      ],
+      "correctIndex": 3,
+      "explanation": "The core principle of Dependency Injection is to remove direct dependency creation within a class, instead allowing dependencies to be provided from external sources. This approach increases flexibility, makes testing easier, and follows the Inversion of Control principle by shifting object creation and binding to external configurations or frameworks."
+    },
+    {
+      "id": 2,
+      "question": "Explain the concept of _Inversion of Control (IoC)_ and how it relates to _Dependency Injection_.",
+      "options": [
+        "Inversion of Control is a design principle where control of object creation and lifecycle management is transferred from the application code to an external framework or container, enabling more flexible and decoupled software architectures.",
+        "Inversion of Control is a programming technique that requires developers to manually manage all object instantiation and dependency resolution within each individual class implementation.",
+        "Inversion of Control represents a method of tightly coupling software components by centralizing all system control mechanisms within a single monolithic management class.",
+        "Inversion of Control is an approach where runtime dependencies are predetermined and statically compiled into the application's core infrastructure, reducing runtime flexibility."
+      ],
+      "correctIndex": 0,
+      "explanation": "Inversion of Control fundamentally shifts the responsibility of managing component lifecycles and dependencies away from individual classes. By allowing external frameworks to handle object creation and binding, software becomes more modular, testable, and adaptable to changing requirements."
+    },
+    {
+      "id": 3,
+      "question": "What are the main advantages of using _Dependency Injection_ in a software project?",
+      "options": [
+        "Dependency Injection introduces substantial runtime overhead, increases memory consumption, and creates unnecessary complexity in software design and component management.",
+        "Dependency Injection provides limited benefits by forcing developers to implement complex configuration mechanisms that reduce overall system performance and readability.",
+        "Dependency Injection offers significant advantages including improved code modularity, easier unit testing, reduced system complexity, and enhanced flexibility in managing component interactions and dependencies.",
+        "Dependency Injection primarily serves as a theoretical design concept with minimal practical application in modern software development methodologies."
+      ],
+      "correctIndex": 2,
+      "explanation": "The primary benefits of Dependency Injection stem from its ability to decouple software components, making them more independent and easier to modify. By allowing external configuration of dependencies, developers can create more maintainable, testable, and adaptable software systems that adhere to SOLID design principles."
+    },
+    {
+      "id": 4,
+      "question": "Describe the impact of _Dependency Injection_ on the maintainability of code.",
+      "options": [
+        "Dependency Injection increases code complexity by introducing multiple layers of abstraction, which can make the system harder to debug and understand for developers.",
+        "Dependency Injection improves maintainability by creating loosely-coupled code that separates concerns, making systems more modular, easier to understand, and simpler to modify or extend.",
+        "Dependency Injection primarily serves as a performance optimization technique that reduces memory consumption and improves runtime efficiency of object creation.",
+        "Dependency Injection is a design pattern that centralizes object creation, making the codebase more tightly coupled and reducing the flexibility of individual components."
+      ],
+      "correctIndex": 1,
+      "explanation": "Dependency Injection promotes a modular design by removing direct dependencies between classes. By allowing external configuration of dependencies, it enables easier testing, more flexible code structure, and simpler maintenance. The principle allows components to be replaced or modified without changing the dependent class, which significantly enhances code adaptability and reusability."
+    },
+    {
+      "id": 5,
+      "question": "Can you explain the _Dependency Inversion Principle_ and how it differs from _Dependency Injection_?",
+      "options": [
+        "The Dependency Inversion Principle and Dependency Injection are identical concepts, both focusing on creating direct dependencies between high-level and low-level modules.",
+        "The Dependency Inversion Principle requires high-level modules to depend on abstractions rather than concrete implementations, while Dependency Injection is a specific technique for implementing this principle by managing object dependencies.",
+        "Dependency Inversion Principle represents a coding pattern for creating tight coupling between modules, while Dependency Injection promotes independent component design.",
+        "Dependency Inversion Principle is a runtime mechanism for dynamically resolving object dependencies, whereas Dependency Injection is a static compilation-time design strategy."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Dependency Inversion Principle is a design guideline that suggests inverting traditional dependency relationships, ensuring that high-level modules depend on abstractions. Dependency Injection is a practical implementation of this principle, providing a mechanism to introduce dependencies externally, thereby reducing direct class-to-class dependencies and increasing system flexibility."
+    },
+    {
+      "id": 6,
+      "question": "Compare and contrast _constructor injection_ versus _setter injection_.",
+      "options": [
+        "Constructor injection is less flexible than setter injection, as it requires all dependencies to be provided simultaneously, making object creation more complex and rigid.",
+        "Constructor injection ensures dependencies are provided during object creation, promoting immutability and guaranteeing that an object is fully initialized before use, while setter injection allows optional or changeable dependencies after object instantiation.",
+        "Setter injection is primarily used for creating immutable objects, while constructor injection allows for dynamic dependency modification during an object's lifecycle.",
+        "Constructor injection and setter injection are identical approaches to dependency management, with no meaningful differences in how dependencies are introduced to a class."
+      ],
+      "correctIndex": 1,
+      "explanation": "Constructor injection and setter injection represent different strategies for managing object dependencies. Constructor injection provides a way to ensure that critical dependencies are present during object creation, promoting a more robust initialization process. Setter injection offers more flexibility by allowing dependencies to be added or modified after the object is created, which can be useful in scenarios requiring optional or changeable dependencies."
+    },
+    {
+      "id": 7,
+      "question": "When would you use _method injection_ instead of _constructor injection_?",
+      "options": [
+        "Method injection is ideal when a dependency is optional or only needed for specific method executions, providing more flexibility compared to constructor injection's mandatory approach.",
+        "Method injection becomes preferable when you want to implement lazy loading strategies and minimize initial object creation complexity.",
+        "Method injection is primarily used for reducing memory overhead by allowing dependencies to be loaded only when absolutely necessary during runtime.",
+        "Method injection is recommended for complex enterprise applications where dynamic dependency resolution requires more granular control over object interactions."
+      ],
+      "correctIndex": 0,
+      "explanation": "Method injection offers greater flexibility in dependency management by allowing optional dependencies to be passed into specific methods rather than requiring them during object instantiation. This approach is particularly useful when dependencies are not always required or when you want to maintain a more dynamic and adaptable object structure, enabling more modular and less tightly coupled design patterns."
+    },
+    {
+      "id": 8,
+      "question": "Can mixing different types of injection in the same class lead to issues? If so, what kind?",
+      "options": [
+        "Mixing injection types provides advanced developers with more sophisticated dependency management strategies that enhance code flexibility and runtime adaptability.",
+        "Mixing different injection types in a single class can lead to code complexity, reduced maintainability, and potential initialization challenges that make the overall system design less clear and more difficult to understand.",
+        "Multiple injection types in a single class can optimize performance by allowing more granular control over dependency resolution and object creation mechanisms.",
+        "Combining different injection approaches enables more dynamic dependency management and supports complex architectural requirements in large-scale applications."
+      ],
+      "correctIndex": 1,
+      "explanation": "While technically possible, mixing multiple dependency injection types within a single class introduces significant architectural challenges. The practice can create code that is harder to read, test, and maintain, potentially leading to unexpected initialization behaviors and increased complexity in understanding the object's dependency graph."
+    },
+    {
+      "id": 9,
+      "question": "Is there a preferred type of _dependency injection_ when working with _immutable objects_? Please explain.",
+      "options": [
+        "Setter injection works best with immutable objects because it allows progressive configuration of dependencies after initial object instantiation.",
+        "Interface injection provides the most flexible approach for managing dependencies in immutable object scenarios, enabling runtime adaptation.",
+        "Constructor injection is the preferred method for immutable objects, as it ensures all mandatory dependencies are provided during object creation and supports the immutability principle by establishing a complete object state upfront.",
+        "Field injection is recommended for immutable objects as it allows more dynamic dependency resolution without disturbing the object's core construction process."
+      ],
+      "correctIndex": 2,
+      "explanation": "Constructor injection aligns perfectly with immutable object design by requiring all essential dependencies to be provided during object instantiation. This approach guarantees that the object is fully initialized and in a consistent state from the moment of creation, which is fundamental to maintaining immutability and preventing unexpected state changes throughout the object's lifecycle."
+    },
+    {
+      "id": 10,
+      "question": "How does each type of _dependency injection_ affect the ease of _unit testing_?",
+      "options": [
+        "Constructor injection complicates unit testing by requiring complex setup of all dependencies, potentially increasing test complexity and reducing test coverage.",
+        "Constructor injection ensures objects are fully initialized at creation, making dependencies explicit and promoting immutability. This approach simplifies unit testing by making dependencies clear and easily mockable during test setup.",
+        "Constructor injection creates tight coupling between classes, making unit testing more challenging and requiring extensive mocking frameworks to manage dependencies.",
+        "Constructor injection allows dynamic dependency replacement during runtime, making it more flexible for complex testing scenarios and runtime configuration changes."
+      ],
+      "correctIndex": 1,
+      "explanation": "Constructor injection provides a robust method for dependency management by ensuring all required dependencies are provided at object creation. It promotes clear object initialization, makes dependencies transparent, and facilitates easier unit testing by allowing straightforward mock object injection during test preparation."
+    },
+    {
+      "id": 11,
+      "question": "What is a _Dependency Injection container_ and what are its responsibilities?",
+      "options": [
+        "A Dependency Injection container serves as a security middleware that validates and controls object interactions and dependency permissions within an application.",
+        "A Dependency Injection container acts as a centralized performance optimization tool that pre-compiles and caches object relationships to improve runtime efficiency.",
+        "A Dependency Injection container is primarily responsible for generating runtime proxies that intercept and modify object method calls dynamically.",
+        "A Dependency Injection container manages object creation and lifecycle, automatically resolving and injecting dependencies based on predefined configurations and reducing manual object management."
+      ],
+      "correctIndex": 3,
+      "explanation": "Dependency Injection containers abstract the complexity of object creation and dependency management. They centralize configuration, reduce boilerplate code, and provide a flexible mechanism for managing object lifecycles and interdependencies across an application."
+    },
+    {
+      "id": 12,
+      "question": "Can you list some popular _Dependency Injection frameworks_ and their distinctive features?",
+      "options": [
+        "Dependency Injection frameworks like Spring provide comprehensive dependency management with annotation-based configuration, supporting multiple injection strategies and offering extensive ecosystem support for enterprise applications.",
+        "Dependency Injection frameworks are primarily low-level memory management tools that optimize object allocation and garbage collection strategies.",
+        "Dependency Injection frameworks focus on providing runtime code generation capabilities for creating dynamic proxy implementations of complex interfaces.",
+        "Dependency Injection frameworks are specialized debugging tools that help track and visualize object relationship graphs during application execution."
+      ],
+      "correctIndex": 0,
+      "explanation": "Dependency Injection frameworks simplify complex application architectures by providing standardized mechanisms for managing object dependencies. They reduce manual configuration, promote loose coupling, and enable more modular, testable software designs across various programming environments."
+    },
+    {
+      "id": 13,
+      "question": "What is the difference between a _Dependency Injection container_ and a _service locator_?",
+      "options": [
+        "Service locators are more advanced than DI containers, offering more flexible dependency resolution through dynamic runtime service discovery and complex configuration mechanisms.",
+        "DI containers are only used in enterprise applications, while service locators provide a lightweight alternative for smaller projects with simpler dependency management requirements.",
+        "A DI container and service locator are essentially the same, with both managing object creation and dependency management in an application. They primarily differ in naming conventions used by different frameworks.",
+        "A DI container automatically resolves and injects dependencies based on configuration, while a service locator requires manual retrieval of dependencies from a central registry. DI containers promote loose coupling and easier testing, whereas service locators can create more tightly coupled code."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key distinction lies in the mechanism of dependency management. DI containers automatically inject dependencies based on predefined rules, promoting inversion of control and making code more modular. Service locators require explicit retrieval of dependencies, which can lead to more tightly coupled code and makes unit testing more challenging. The DI approach is generally preferred in modern software design for its ability to create more flexible and maintainable systems."
+    },
+    {
+      "id": 14,
+      "question": "How do you configure dependencies within a _DI container_ typically?",
+      "options": [
+        "DI containers configure dependencies by creating a comprehensive graph of object relationships during compile-time, which eliminates the need for runtime dependency resolution.",
+        "Dependency configuration in DI containers relies primarily on external configuration files that map abstract interfaces to concrete implementations through complex inheritance hierarchies.",
+        "DI containers configure dependencies exclusively through runtime code generation, creating complex proxy objects that dynamically resolve service relationships at application startup.",
+        "Dependencies in a DI container are typically configured through annotations, XML configuration, or programmatic service descriptors that define how objects should be instantiated and linked. The container uses reflection to understand and manage these dependency relationships."
+      ],
+      "correctIndex": 3,
+      "explanation": "Dependency configuration methods vary across frameworks but typically involve declaring how objects should be created and connected. Annotations provide a declarative approach, allowing developers to mark classes and methods for dependency injection. XML and programmatic configuration offer more explicit control over dependency creation, enabling complex initialization scenarios and supporting different scoping strategies."
+    },
+    {
+      "id": 15,
+      "question": "Describe a situation where you should opt for a lightweight _DI container_ over a full-fledged framework.",
+      "options": [
+        "Lightweight DI containers are only suitable for academic projects or simple proof-of-concept applications, lacking the robust features required for production-grade software development.",
+        "Lightweight DI containers are primarily used in microservices architectures, where minimal overhead and quick startup times are critical for scalable distributed systems.",
+        "A lightweight DI container is ideal for small to medium projects with fewer dependencies, providing essential dependency management without the overhead of full-featured frameworks. It offers simplified configuration and reduced complexity for rapid prototyping and focused applications.",
+        "Full-featured DI frameworks are always preferable, as lightweight containers cannot handle complex dependency graphs or provide advanced lifecycle management capabilities."
+      ],
+      "correctIndex": 2,
+      "explanation": "Choosing a lightweight DI container depends on project complexity and specific requirements. These containers provide a minimalist approach to dependency injection, reducing unnecessary complexity and performance overhead. They are particularly useful in scenarios where a full framework would introduce excessive configuration and runtime complexity, allowing developers to maintain clean, modular code without significant architectural burden."
+    }
+  ],
+  "processedAt": "2025-12-18T09:10:49.684Z"
+}

@@ -1,0 +1,198 @@
+{
+  "id": "angular-js",
+  "name": "AngularJS",
+  "slug": "angular-js-interview-questions",
+  "category": "Frontend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _AngularJS_ and what are its core features?",
+      "options": [
+        "AngularJS is an open-source front-end web framework by Google designed to simplify single-page application development through modular architecture and powerful features like two-way data binding and dependency injection.",
+        "AngularJS is a mobile-first framework exclusively designed for developing cross-platform mobile applications with native performance and seamless platform integration.",
+        "AngularJS represents a client-side visualization library primarily used for creating interactive data visualization components and charting systems with minimal JavaScript intervention.",
+        "AngularJS is a server-side rendering framework that focuses on creating complex database interactions and provides robust backend routing capabilities for enterprise applications."
+      ],
+      "correctIndex": 0,
+      "explanation": "AngularJS fundamentally transforms web application development by introducing a component-based approach that separates concerns and enables dynamic, responsive user interfaces. It extends standard HTML with custom attributes and expressions, allowing developers to create more interactive and data-driven web experiences. The framework's core strengths include automatic data synchronization, reduced boilerplate code, and built-in dependency management."
+    },
+    {
+      "id": 2,
+      "question": "Explain the concept of _two-way data binding_ in AngularJS.",
+      "options": [
+        "Two-way data binding represents a unidirectional data flow where only view modifications can trigger model updates, ensuring strict control over data propagation and preventing unexpected state changes.",
+        "Two-way data binding in AngularJS is a synchronization mechanism where changes in the model automatically update the view, and user interface modifications instantly reflect back in the underlying data model.",
+        "Two-way data binding is a performance optimization technique in AngularJS that caches DOM mutations and minimizes rendering overhead by selectively updating only changed elements.",
+        "Two-way data binding is a security mechanism that validates and sanitizes user input before allowing any data model modifications, preventing potential injection vulnerabilities."
+      ],
+      "correctIndex": 1,
+      "explanation": "Two-way data binding eliminates manual DOM manipulation by automatically synchronizing the model and view. This means developers no longer need to write explicit code to update the UI when data changes. A practical example demonstrates this mechanism:"
+    },
+    {
+      "id": 3,
+      "question": "What are _directives_ in AngularJS? Give some examples.",
+      "options": [
+        "Directives are low-level JavaScript functions that generate static HTML templates and provide compile-time type checking for web application structures.",
+        "Directives represent a security middleware in AngularJS that intercepts and validates DOM interactions, preventing unauthorized script execution and potential cross-site scripting attacks.",
+        "Directives are event-driven communication protocols that manage inter-component messaging and establish standardized data exchange mechanisms between different parts of an application.",
+        "Directives in AngularJS are special markers or attributes that extend HTML's capabilities, allowing developers to create reusable components, manipulate the DOM, and add dynamic behavior to web applications."
+      ],
+      "correctIndex": 3,
+      "explanation": "Directives allow developers to create custom HTML elements and attributes with specialized behaviors. They can transform plain HTML into dynamic, interactive components. A typical directive might look like this example:"
+    },
+    {
+      "id": 4,
+      "question": "How does the _AngularJS digest cycle_ work for data binding?",
+      "options": [
+        "The AngularJS Digest Cycle is a manual process where developers must explicitly update the view by calling specific synchronization methods. It relies on manual comparisons of model data to trigger view updates.",
+        "The Digest Cycle is a one-time initialization process that sets up data bindings when an AngularJS application first loads. Once established, it does not continuously monitor or update the view-model relationship.",
+        "The Digest Cycle is an internal rendering mechanism that optimizes DOM manipulation by batching view updates and reducing rendering overhead through a complex caching algorithm.",
+        "The AngularJS Digest Cycle manages two-way data binding by continuously checking for changes in the model and updating the view accordingly. It uses watchers to track model changes and performs dirty-checking to compare current and previous data states."
+      ],
+      "correctIndex": 3,
+      "explanation": "The Digest Cycle is a core mechanism in AngularJS that ensures data synchronization between the model and view. It works by creating watchers on model properties and periodically checking for changes. When a change is detected, Angular automatically updates the view. This process happens automatically but can be manually triggered using $apply() method. A typical digest cycle involves checking all registered watchers and updating the view if any model values have changed."
+    },
+    {
+      "id": 5,
+      "question": "What is _scope_ in AngularJS, and how is it different from the _JavaScript scope_?",
+      "options": [
+        "AngularJS scope is a global data container that stores all application-wide variables and can be directly accessed from any part of the application without any inheritance limitations.",
+        "The AngularJS scope is a lightweight wrapper around the JavaScript window object, designed to provide minimal additional functionality beyond standard JavaScript scope management.",
+        "Scope in AngularJS is a read-only reference object that provides a static snapshot of the application's data model at the time of initialization, preventing any dynamic updates.",
+        "In AngularJS, scope is a specialized object that acts as a context for expressions, provides data binding between controller and view, and creates a hierarchical structure for data inheritance between different components."
+      ],
+      "correctIndex": 3,
+      "explanation": "Scope in AngularJS is more complex than traditional JavaScript scope. It creates a hierarchical data model that allows inheritance between parent and child scopes, enabling powerful data sharing mechanisms. Scopes provide context for expressions, manage data binding, and facilitate communication between different parts of an AngularJS application. Unlike JavaScript scope, AngularJS scope is dynamic and can be modified during runtime."
+    },
+    {
+      "id": 6,
+      "question": "Define what a _controller_ is in AngularJS.",
+      "options": [
+        "Controllers are purely decorative components in AngularJS that provide visual styling and layout information for different views without any actual data management capabilities.",
+        "In AngularJS, controllers are responsible for direct DOM manipulation and serve as the primary mechanism for creating complex user interface interactions independent of the model.",
+        "In AngularJS, a controller is a JavaScript function that defines the initial state of the $scope, manages data interactions, and handles user events by binding the model to the view and defining business logic.",
+        "A controller in AngularJS is a static configuration object that pre-defines application routes and determines the overall structure of the application without handling runtime interactions."
+      ],
+      "correctIndex": 2,
+      "explanation": "Controllers are fundamental to AngularJS architecture, serving as the bridge between the view and the model. They initialize $scope, define methods and properties available to the view, and handle user interactions. A typical controller sets up initial data, defines methods for user events, and prepares the data for presentation. Controllers should remain lean and focused on view-model logic, delegating complex business logic to services."
+    },
+    {
+      "id": 7,
+      "question": "Can you explain what a _service_ is in AngularJS?",
+      "options": [
+        "Services represent UI components in AngularJS that handle rendering and styling of complex application interfaces, providing a centralized approach to visual design.",
+        "Services are dynamic components in AngularJS that create multiple instances for each controller, allowing for flexible data manipulation and independent processing.",
+        "Services are dependency injection mechanisms that automatically create new object instances for each component, ensuring complete isolation between different parts of the application.",
+        "Services in AngularJS are singleton objects that provide a way to organize and share code across an application, typically used for tasks like data management, server communication, and maintaining application state."
+      ],
+      "correctIndex": 3,
+      "explanation": "AngularJS services are crucial for maintaining clean, modular code by providing a centralized way to share functionality. They are created using the .service() or .factory() methods and are instantiated only once per application, making them ideal for sharing data and logic across different controllers and components. Services leverage dependency injection, allowing them to be easily injected into other parts of the application."
+    },
+    {
+      "id": 8,
+      "question": "How do you share data between _controllers_ in AngularJS?",
+      "options": [
+        "Data sharing between controllers is primarily managed through event broadcasting, where each controller subscribes to specific communication channels.",
+        "AngularJS mandates using complex middleware layers to facilitate data exchange between controllers, ensuring strict separation of concerns.",
+        "Controllers in AngularJS can only share data through direct inheritance, requiring complex parent-child component structures to maintain data consistency.",
+        "In AngularJS, data can be shared between controllers using services, parent-child relationships, $rootScope, or by passing data through route parameters depending on the specific application architecture."
+      ],
+      "correctIndex": 3,
+      "explanation": "Data sharing in AngularJS is flexible and can be achieved through multiple mechanisms. Services are the most recommended approach as they provide a clean, singleton-based method of maintaining shared state. Parent-child relationships allow direct data passing, while $rootScope can be used for global data, though it's generally discouraged for maintaining clean architecture."
+    },
+    {
+      "id": 9,
+      "question": "What is the purpose of the _ng-app directive_?",
+      "options": [
+        "The ng-app directive initializes an AngularJS application by defining the root element and automatically bootstrapping the specified Angular module, marking the entry point of the application.",
+        "The ng-app directive serves as a configuration manager that preprocesses HTML templates and determines the application's initial rendering strategy.",
+        "The ng-app directive is responsible for handling dependency injection and creating a centralized event management system for the entire application.",
+        "The ng-app directive manages component lifecycle and dynamically renders all HTML elements within its scope, creating a virtual DOM representation."
+      ],
+      "correctIndex": 0,
+      "explanation": "The ng-app directive is essential for starting an AngularJS application. It tells Angular which DOM element represents the application's root and which module should be used for initialization. When Angular encounters this directive, it automatically starts the application by compiling and linking the specified module."
+    },
+    {
+      "id": 10,
+      "question": "Explain how _ng-model directive_ works in AngularJS.",
+      "options": [
+        "The ng-model directive represents a validation mechanism that checks form inputs against predefined rules before allowing model updates.",
+        "The ng-model directive creates a unidirectional data flow from the view to the controller, preventing direct model manipulation by user inputs.",
+        "The ng-model directive is a one-way binding mechanism that captures user input and stores it temporarily in component memory without direct model interaction.",
+        "The ng-model directive enables two-way data binding in AngularJS, automatically synchronizing form input values with the underlying model and updating the view in real-time."
+      ],
+      "correctIndex": 3,
+      "explanation": "The ng-model directive is core to AngularJS's data binding strategy, creating a live connection between form elements and the model. It automatically updates the model when input changes and reflects model changes in the view instantly. This creates a seamless two-way synchronization that eliminates manual update logic. Developers can use ng-model on inputs, selects, and textareas to enable real-time data tracking."
+    },
+    {
+      "id": 11,
+      "question": "What is the role of _$scope_ in AngularJS?",
+      "options": [
+        "$scope is a performance optimization technique that manages memory allocation and garbage collection in Angular components.",
+        "$scope is a core object in AngularJS that acts as a glue between controllers and views, providing a context for data and behaviors to be shared and synchronized.",
+        "$scope is a dependency injection mechanism that manages service instantiation and component lifecycle in AngularJS applications.",
+        "$scope represents a communication protocol for handling asynchronous data transfers between different application layers."
+      ],
+      "correctIndex": 1,
+      "explanation": "$scope serves as a fundamental bridge in AngularJS's architecture, allowing data and methods to be accessible between controllers and views. It creates a context where models can be defined, methods can be attached, and two-way data binding can occur. The $scope object is hierarchical, meaning child scopes inherit properties from parent scopes, enabling complex data sharing mechanisms."
+    },
+    {
+      "id": 12,
+      "question": "How would you use _$rootScope_ in AngularJS?",
+      "options": [
+        "$rootScope is the top-level scope in an AngularJS application, providing a global context for sharing data across different controllers and components, though its use should be minimized.",
+        "$rootScope is a service responsible for handling dependency injection and managing application-level service instantiation.",
+        "$rootScope is a configuration object that defines global application settings and manages initial component loading in AngularJS.",
+        "$rootScope represents a centralized event bus for managing cross-component communication and application-wide state management."
+      ],
+      "correctIndex": 0,
+      "explanation": "$rootScope exists at the top of the scope hierarchy and can be used to share data globally, but overusing it can lead to tightly coupled code and make application state harder to manage. While it provides a convenient way to share data, best practices recommend using services for global state management to maintain cleaner, more maintainable code."
+    },
+    {
+      "id": 13,
+      "question": "Can you explain the concept of _scope hierarchy_ in AngularJS?",
+      "options": [
+        "Scope hierarchy is a linear system of data management where each scope operates independently without inheritance or parent-child relationships in AngularJS applications.",
+        "In AngularJS, scope hierarchy is a mechanism for creating isolated scopes that prevent data sharing and maintain strict separation between different parts of the application.",
+        "Scope hierarchy in AngularJS represents the nested structure of scopes in an application, where each scope is responsible for a specific DOM segment and inherits properties from its parent scope.",
+        "Scope hierarchy refers to the way AngularJS manages global variables across different controllers, creating a cascading system of shared data and event propagation."
+      ],
+      "correctIndex": 2,
+      "explanation": "Scope hierarchy is fundamental to AngularJS's data management. It creates a tree-like structure where child scopes inherit properties from parent scopes, allowing for efficient data sharing and propagation. Each controller typically has its own scope, which can access and modify data from parent scopes. This inheritance model enables powerful data binding and communication between different parts of an application. A typical example demonstrates how child scopes can access parent scope properties:"
+    },
+    {
+      "id": 14,
+      "question": "What is the role of a _controller_ in AngularJS?",
+      "options": [
+        "Controllers in AngularJS are purely presentational components that manage the visual rendering of HTML templates without any direct interaction with the data model.",
+        "A controller serves as a central routing mechanism in AngularJS, primarily responsible for managing navigation and page transitions between different application states.",
+        "In AngularJS, controllers are static utility classes that provide global methods and configurations for the entire application without direct connection to specific views.",
+        "A controller in AngularJS is responsible for defining the application's logic, initializing the data model, and connecting the view with the underlying data through two-way data binding."
+      ],
+      "correctIndex": 3,
+      "explanation": "Controllers are core components in the AngularJS MVC architecture that define the behavior and initial state of a view. They create a bridge between the view and the model, allowing dynamic data manipulation and interaction. Controllers use $scope to expose methods and properties to the view, enabling two-way data binding. A typical controller demonstrates how it initializes and manipulates data:"
+    },
+    {
+      "id": 15,
+      "question": "How do you define a _controller's method_ in AngularJS?",
+      "options": [
+        "In AngularJS, controller methods are typically defined directly on the $scope object within the controller function, allowing them to be accessible in the corresponding view for interaction and data manipulation.",
+        "Controller methods are defined as external service providers that must be explicitly registered and cannot be directly attached to the controller's immediate scope.",
+        "Controller methods in AngularJS are exclusively defined as static methods on the controller class, which can only be called through explicit service injection.",
+        "Methods in AngularJS controllers are created using a global method registry that separates method definition from the controller's scope and data context."
+      ],
+      "correctIndex": 0,
+      "explanation": "Defining methods on the $scope allows direct interaction between the controller and the view. These methods can manipulate data, trigger actions, and respond to user interactions. The method becomes immediately available to the view's expressions and directives. Here's a typical example of defining a method on $scope:"
+    }
+  ],
+  "processedAt": "2025-12-18T08:37:35.652Z"
+}

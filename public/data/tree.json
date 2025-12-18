@@ -1,0 +1,196 @@
+{
+  "id": "tree",
+  "name": "Tree",
+  "slug": "tree-data-structure-interview-questions",
+  "category": "Data Structures",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a _Tree Data Structure_?",
+      "options": [
+        "A tree data structure is a recursive computational model that represents mathematical relationships and hierarchical computations using node-based connectivity patterns.",
+        "A tree data structure is a linear collection of interconnected nodes that can be traversed in multiple directions, representing complex network relationships between data elements.",
+        "A tree data structure is a non-linear storage mechanism that allows random access and parallel processing of interconnected data points across multiple levels.",
+        "A tree data structure is a hierarchical collection of nodes organized in a parent-child relationship, typically starting from a root node and branching out to other nodes with a clear hierarchical structure."
+      ],
+      "correctIndex": 3,
+      "explanation": "Trees are fundamental data structures that represent hierarchical relationships. Unlike linear data structures like arrays or linked lists, trees allow each node to have multiple child nodes. The hierarchical nature enables efficient organization, searching, and representation of complex relationships in various domains like file systems, organizational structures, and computational algorithms."
+    },
+    {
+      "id": 2,
+      "question": "What is a _Binary Tree_?",
+      "options": [
+        "A binary tree is a specialized tree structure where each node can have at most two children, typically referred to as the left child and right child, creating a hierarchical data organization with binary branching.",
+        "A binary tree is a computational model where nodes are connected through bidirectional links, allowing multiple traversal paths and supporting complex data mapping techniques.",
+        "A binary tree is a recursive data structure that represents mathematical relationships using two-way node connections and symmetric branching patterns.",
+        "A binary tree is a hierarchical representation that enables parallel processing of data elements through balanced, symmetrical node distributions."
+      ],
+      "correctIndex": 0,
+      "explanation": "Binary trees are specialized tree structures with strict node connectivity rules. Each node can have zero, one, or two children, but never more than two. This constraint makes binary trees particularly useful for efficient searching, sorting, and hierarchical data representation in computer science and algorithmic implementations."
+    },
+    {
+      "id": 3,
+      "question": "Explain _Height_ and _Depths_ in the context of a _Tree_.",
+      "options": [
+        "Height and depth represent the total number of nodes in vertical and horizontal traversals, providing a comprehensive measure of tree complexity.",
+        "Height and depth are recursive mathematical properties that quantify the structural complexity and connectivity of nodes in tree-based data representations.",
+        "Height and depth in tree structures are interchangeable metrics that measure the vertical distance between nodes using different computational algorithms.",
+        "In tree structures, height represents the number of edges in the longest path from a node to a leaf, while depth measures the number of edges from the root node to a specific node."
+      ],
+      "correctIndex": 3,
+      "explanation": "Height and depth are fundamental measurements in tree structures that help understand the tree's geometry and complexity. Height focuses on the longest path from a node downward, while depth measures the distance from the root. These metrics are crucial for analyzing tree balance, performance, and computational efficiency in various algorithmic contexts."
+    },
+    {
+      "id": 4,
+      "question": "What is the difference between a _Tree_ and a _Graph_?",
+      "options": [
+        "A tree is a type of graph with additional constraints on node connectivity, characterized by its ability to represent hierarchical relationships through branching structures.",
+        "A tree is a directional network of nodes that allows bidirectional connections, whereas a graph is a more rigid and structured representation of node relationships.",
+        "A tree is a hierarchical data structure with a single root and no cycles, while a graph is a more general network of interconnected nodes that can have multiple connections and potential cycles.",
+        "Trees and graphs are fundamentally identical data structures, with the primary difference being the labeling convention used in computational modeling and representation."
+      ],
+      "correctIndex": 2,
+      "explanation": "The key distinction between trees and graphs lies in their structural properties. Trees have a strict hierarchical organization with a single root, no cycles, and each node (except the root) having exactly one parent. Graphs are more flexible, allowing multiple connections between nodes, potential cycles, and no mandatory hierarchical structure."
+    },
+    {
+      "id": 5,
+      "question": "Define _Leaf_ and _Internal_ nodes in a _Tree_.",
+      "options": [
+        "Leaf nodes are terminal nodes without any children in a tree, while internal nodes are nodes that have at least one child and are not located at the tree's outer edges.",
+        "Leaf nodes are nodes with multiple potential connections, and internal nodes represent the foundational elements of tree-based data representations.",
+        "Leaf nodes are the primary decision points in a tree structure, whereas internal nodes serve as transitional connection points between different tree levels.",
+        "Leaf nodes are intermediate nodes with partial connections, while internal nodes represent the primary structural elements of a tree's topology."
+      ],
+      "correctIndex": 0,
+      "explanation": "In tree data structures, leaf nodes are the endpoints without any descendant nodes, typically found at the bottom of the tree. Internal nodes, conversely, are intermediate nodes that have one or more child nodes and play a crucial role in maintaining the tree's hierarchical structure and connectivity."
+    },
+    {
+      "id": 6,
+      "question": "What is a _Rooted Tree_, and how does it differ from an _Unrooted Tree_?",
+      "options": [
+        "Rooted trees have strict hierarchical constraints, and unrooted trees provide more flexible node interaction and relationship modeling.",
+        "Rooted trees are static structures with predetermined node relationships, whereas unrooted trees allow dynamic reconfiguration of node connections.",
+        "A rooted tree represents a linear progression of nodes, while an unrooted tree enables multiple potential traversal paths without a central reference point.",
+        "A rooted tree has a designated starting point (root) from which all nodes are reachable, while an unrooted tree lacks a specific starting node and can be viewed from multiple perspectives."
+      ],
+      "correctIndex": 3,
+      "explanation": "The primary difference between rooted and unrooted trees is the presence or absence of a central reference node. Rooted trees have a clear top-down orientation with a single root, making hierarchical relationships explicit. Unrooted trees lack this structured approach, allowing multiple potential interpretations of node relationships."
+    },
+    {
+      "id": 7,
+      "question": "What is a _N-ary Tree_, and how does it generalize a binary tree?",
+      "options": [
+        "An N-ary Tree is a computational model representing multiple branching paths with a fixed maximum number of potential divergences from each node.",
+        "An N-ary Tree is a specialized graph structure where nodes are interconnected with exactly N possible connections, representing a complex network topology.",
+        "An N-ary Tree is a tree data structure where each node can have up to N children, allowing for more flexible hierarchical structures beyond the binary tree's two-child constraint.",
+        "An N-ary Tree is a recursive data structure that allows nodes to have a predefined, static number of child branches in a symmetrical configuration."
+      ],
+      "correctIndex": 2,
+      "explanation": "An N-ary Tree fundamentally differs from binary trees by permitting nodes to have more than two children. This flexibility enables more complex hierarchical representations, useful in scenarios like file systems, organizational structures, and parsing expressions where nodes naturally require multiple child relationships."
+    },
+    {
+      "id": 8,
+      "question": "Discuss the properties of a _Full Binary Tree_.",
+      "options": [
+        "A Full Binary Tree is a tree where every node has either zero or two children, ensuring each internal node is precisely connected to two child nodes in a symmetrical structure.",
+        "A Full Binary Tree is a balanced tree where nodes are distributed evenly across all levels, maintaining a perfect logarithmic height relationship.",
+        "A Full Binary Tree is a hierarchical model where each node's children are constrained by specific mathematical properties of node distribution.",
+        "A Full Binary Tree represents a data structure where nodes can have multiple potential connection points but maintain strict symmetry in their branching."
+      ],
+      "correctIndex": 0,
+      "explanation": "The Full Binary Tree's distinctive characteristic is its strict two-child rule: every internal node must have exactly two children, while leaf nodes have none. This creates a highly structured and predictable tree configuration, essential in certain algorithmic and computational modeling scenarios."
+    },
+    {
+      "id": 9,
+      "question": "What is the significance of the _degree of a node_ in a tree?",
+      "options": [
+        "The degree of a node indicates the node's potential connectivity and interaction probability with other elements in a tree-based system.",
+        "The degree of a node represents the depth and hierarchical position of a node within its computational graph representation.",
+        "The degree of a node represents the total number of children connected to that node, providing a measure of a node's branching complexity within a tree structure.",
+        "The degree of a node measures the node's recursive potential and its capacity for generating subsidiary branches."
+      ],
+      "correctIndex": 2,
+      "explanation": "Node degree is a fundamental tree metric that quantifies a node's direct connections. It helps understand structural complexity, with leaf nodes having zero degree and internal nodes potentially having multiple children. This concept is crucial in analyzing tree traversal, balanced tree properties, and computational complexity."
+    },
+    {
+      "id": 10,
+      "question": "Explain the concept of a _Path_ in a tree.",
+      "options": [
+        "A path in a tree represents the potential connection between nodes, calculated by measuring the total number of edges required to link different points in the tree's overall framework.",
+        "A path in a tree is a computational method for tracking node interactions, demonstrating the potential routes and connectivity patterns within a hierarchical data structure.",
+        "A path in a tree is a linear representation of node relationships that indicates the hierarchical distance between elements, measuring the vertical or horizontal connections within the tree's topology.",
+        "A path in a tree is a sequence of connected nodes representing a traversal between two nodes, which can be directed from the root or undirected, showing the route connecting different points in the tree structure."
+      ],
+      "correctIndex": 3,
+      "explanation": "A path represents the connection between nodes in a tree, showing how nodes are linked. It can be a route from the root to a specific node or between any two nodes. The path's significance lies in understanding node relationships, traversal routes, and structural connections within the tree."
+    },
+    {
+      "id": 11,
+      "question": "What is a _Binary Search Tree_ (BST)?",
+      "options": [
+        "A Binary Search Tree is a tree-based structure designed to manage data relationships by creating balanced node distributions across multiple levels of the tree.",
+        "A Binary Search Tree (BST) is a binary tree where each node's left subtree contains smaller values and its right subtree contains larger values, enabling efficient searching and sorting operations.",
+        "A Binary Search Tree represents a hierarchical data organization where nodes are strategically positioned to optimize memory allocation and computational efficiency.",
+        "A Binary Search Tree is a data structure where nodes are organized to facilitate quick recursive traversal, with each level representing a potential sorting mechanism for data elements."
+      ],
+      "correctIndex": 1,
+      "explanation": "Binary Search Trees provide an efficient way to store and retrieve data by maintaining a strict ordering property. By ensuring that left subtrees contain smaller values and right subtrees contain larger values, BSTs enable fast search, insertion, and deletion operations with an average time complexity of O(log n)."
+    },
+    {
+      "id": 12,
+      "question": "Explain the difference between a _Binary Tree_ and a _Binary Search Tree_ (BST).",
+      "options": [
+        "A Binary Tree is a tree structure where each node can have at most two children, without any specific ordering constraints, while a Binary Search Tree maintains a specific value ordering between parent and child nodes.",
+        "A Binary Tree and Binary Search Tree are computational models that define node relationships through specific structural and organizational principles.",
+        "A Binary Tree and Binary Search Tree are identical structures differentiated only by their complexity of node arrangement and potential data storage mechanisms.",
+        "A Binary Tree represents a more generalized data structure, while a Binary Search Tree demonstrates a specialized approach to node connectivity and hierarchical representation."
+      ],
+      "correctIndex": 0,
+      "explanation": "The key difference between Binary Trees and Binary Search Trees lies in their node ordering. Binary Trees have no specific rules about node values, allowing flexible child node placement. In contrast, Binary Search Trees enforce a strict ordering where left subtree values are smaller and right subtree values are larger than the parent node, enabling more efficient searching."
+    },
+    {
+      "id": 13,
+      "question": "What is a _Complete Binary Tree_?",
+      "options": [
+        "A Complete Binary Tree is a binary tree where internal nodes have a specific weight distribution, with leaf nodes positioned to optimize computational complexity.",
+        "A Complete Binary Tree is characterized by nodes that are distributed across levels with equal spacing, ensuring maximum height-to-width ratio and minimal node gaps.",
+        "A Complete Binary Tree (CBT) is a binary tree where all levels are fully filled except possibly the last, with nodes positioned as far left as possible, making it ideal for efficient array-based representations.",
+        "A Complete Binary Tree is a tree where every level is perfectly symmetric, with each node having exactly two children and maintaining a balanced geometric structure."
+      ],
+      "correctIndex": 2,
+      "explanation": "Complete Binary Trees ensure efficient data storage and manipulation by maintaining a consistent left-aligned structure. Their predictable arrangement allows for straightforward array-based implementations and simplifies various tree-related algorithms. The key distinction is the left-oriented node placement and near-complete level filling."
+    },
+    {
+      "id": 14,
+      "question": "Define a _Perfect Binary Tree_ and its characteristics.",
+      "options": [
+        "A Perfect Binary Tree is characterized by strict node connectivity rules, where each node's children are precisely positioned to maximize geometric efficiency.",
+        "A Perfect Binary Tree is a binary tree where every internal node has exactly two children, and all leaf nodes exist at the same level, with total nodes calculated by the formula 2^(h+1) - 1.",
+        "A Perfect Binary Tree is a binary tree with nodes distributed to minimize computational complexity and maximize structural uniformity across all levels.",
+        "A Perfect Binary Tree is a binary tree where nodes are distributed symmetrically, with each level containing an exponential number of nodes and maintaining balanced height-to-width proportions."
+      ],
+      "correctIndex": 1,
+      "explanation": "Perfect Binary Trees represent an idealized tree structure with complete level filling and consistent node distribution. The mathematical precision of their node count and level arrangement makes them valuable in theoretical computer science and algorithmic design."
+    },
+    {
+      "id": 15,
+      "question": "Explain what a _Degenerate (or Pathological) Tree_ is and its impact on operations.",
+      "options": [
+        "A Degenerate Tree represents a binary structure where nodes are deliberately spaced to minimize memory consumption and optimize traversal algorithms.",
+        "A Degenerate Tree is a binary tree where each parent node has only one child, effectively transforming the tree into a linear structure similar to a linked list, which significantly impacts traversal efficiency.",
+        "A Degenerate Tree is a binary tree configuration that prioritizes vertical node alignment and minimizes horizontal node expansion.",
+        "A Degenerate Tree is a binary tree with nodes that have asymmetric child distributions, creating complex pathways and non-linear computational characteristics."
+      ],
+      "correctIndex": 1,
+      "explanation": "Degenerate Trees represent a worst-case scenario in tree structures, where the tree loses its branching capabilities and becomes essentially a linear data structure. This configuration drastically reduces the typical performance advantages of tree-based algorithms."
+    }
+  ],
+  "processedAt": "2025-12-18T10:36:00.879Z"
+}

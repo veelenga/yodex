@@ -1,0 +1,197 @@
+{
+  "id": "docker",
+  "name": "Docker",
+  "slug": "docker-interview-questions",
+  "category": "Cloud & DevOps",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Docker_, and how is it different from _virtual machines_?",
+      "options": [
+        "Docker is a cloud computing service that virtualizes entire server infrastructures, allowing seamless migration of complex enterprise applications between data centers.",
+        "Docker is a distributed computing framework that manages application microservices through advanced orchestration and network segmentation technologies.",
+        "Docker is an open-source programming language designed to simplify cross-platform software development and deployment through standardized runtime environments.",
+        "Docker is a containerization platform that packages applications with their dependencies into portable, lightweight containers, enabling consistent deployment across different computing environments."
+      ],
+      "correctIndex": 3,
+      "explanation": "Docker revolutionizes software deployment by creating lightweight, isolated containers that include all necessary components to run an application. Unlike virtual machines that virtualize entire operating systems, Docker containers share the host system's kernel, making them more efficient and faster to start. This approach ensures applications run consistently across different computing environments, solving the traditional 'it works on my machine' problem."
+    },
+    {
+      "id": 2,
+      "question": "Can you explain what a _Docker image_ is?",
+      "options": [
+        "A Docker image is a metadata-driven template that orchestrates application deployment strategies and manages inter-container communication protocols.",
+        "A Docker image is a comprehensive software blueprint that defines network configurations and system-level security protocols for containerized applications.",
+        "A Docker image is a runtime environment that dynamically generates executable code packages for distributed computing systems across multiple cloud platforms.",
+        "A Docker image is a read-only template containing a set of instructions for creating a Docker container, which includes the application code, runtime, libraries, environment variables, and configuration files."
+      ],
+      "correctIndex": 3,
+      "explanation": "Docker images serve as blueprints for containers, capturing everything needed to run an application in a consistent and reproducible manner. They are immutable, meaning once created, they remain unchanged, which ensures predictable deployment across different environments. Each image is composed of multiple layers, allowing for efficient storage and quick container creation."
+    },
+    {
+      "id": 3,
+      "question": "How does a _Docker container_ differ from a _Docker image_?",
+      "options": [
+        "A Docker container is a computational framework that defines and manages application deployment strategies across heterogeneous infrastructure environments.",
+        "A Docker container is a running instance of a Docker image, representing an executable package of software that includes everything needed to run an application, including the code, runtime, system tools, and settings.",
+        "A Docker container is a dynamic system abstraction layer that generates runtime configurations for scalable microservices architecture.",
+        "A Docker container is a virtualized network environment that manages complex distributed computing resources and maintains inter-service communication protocols."
+      ],
+      "correctIndex": 1,
+      "explanation": "Docker containers are lightweight, standalone executable packages that encapsulate an application and its dependencies. Unlike images, which are static templates, containers are running instances that can be started, stopped, moved, and deleted. They provide isolation between applications while sharing the host system's kernel, making them more resource-efficient than traditional virtual machines."
+    },
+    {
+      "id": 4,
+      "question": "What is the _Docker Hub_, and what is it used for?",
+      "options": [
+        "Docker Hub is a built-in virtualization platform that creates and manages container networks across multiple cloud infrastructure providers.",
+        "Docker Hub is a container runtime environment that manages local Docker installations and provides deployment services for enterprise applications.",
+        "Docker Hub is a development tool that automatically compiles and builds container images directly from source code repositories.",
+        "Docker Hub is a cloud-based registry service where developers can find, share, and manage Docker container images. It serves as a central repository for Docker images, enabling version control and easy distribution of containerized applications."
+      ],
+      "correctIndex": 3,
+      "explanation": "Docker Hub provides a centralized platform for storing and sharing Docker images. It allows developers to publish public and private container images, collaborate with team members, and access a vast library of pre-built images. The service integrates with version control systems and supports automated builds, making it an essential resource for container management and distribution."
+    },
+    {
+      "id": 5,
+      "question": "Explain the _Dockerfile_ and its significance in _Docker_.",
+      "options": [
+        "A Dockerfile is a text-based script that contains instructions for building a Docker image, specifying the base image, environment configuration, dependencies, and application setup in an automated and reproducible manner.",
+        "A Dockerfile is a runtime specification that determines how containers interact with host system resources and manage memory allocation.",
+        "A Dockerfile is a deployment template that automatically generates container instances across distributed cloud infrastructure.",
+        "A Dockerfile is a configuration management tool that defines container networking rules and security policies for deployment environments."
+      ],
+      "correctIndex": 0,
+      "explanation": "Dockerfiles are fundamental to container development, providing a standardized way to define container images. They allow developers to create consistent, repeatable build processes by specifying exact steps for image creation. Each instruction in a Dockerfile creates a new layer in the image, enabling efficient storage and version tracking of container configurations."
+    },
+    {
+      "id": 6,
+      "question": "How does _Docker_ use _layers_ to build images?",
+      "options": [
+        "Docker layers are dynamic memory allocation units that manage container resource consumption and optimize runtime performance.",
+        "Docker layers are encryption mechanisms that protect container images during storage and transmission across distributed systems.",
+        "Docker layers represent isolated network segments that control inter-container communication and security boundaries.",
+        "Docker uses a layered file system where each image is composed of multiple read-only layers stacked together, allowing efficient storage, faster builds, and the ability to reuse common image components across different containers."
+      ],
+      "correctIndex": 3,
+      "explanation": "The layered file system is a key innovation in Docker's architecture. Each layer represents a set of filesystem changes, enabling efficient image storage and transfer. When an image is built or pulled, Docker can reuse existing layers, reducing storage requirements and download times. This approach also supports version control and makes container images more modular and manageable."
+    },
+    {
+      "id": 7,
+      "question": "What's the difference between the `COPY` and `ADD` commands in a _Dockerfile_?",
+      "options": [
+        "COPY and ADD are identical Docker commands used for transferring files, with no meaningful differences in their functionality or implementation within Dockerfiles.",
+        "ADD is primarily used for copying local files, while COPY is specifically designed for remote file transfers and network-based resource acquisition in Docker images.",
+        "COPY is a simple file copying command for straightforward file transfers, while ADD provides additional capabilities like URI support and automatic tar extraction, making it more powerful but less recommended for basic file copying.",
+        "COPY is a legacy command that has been deprecated, with ADD being the modern, preferred method for file management in Docker build contexts."
+      ],
+      "correctIndex": 2,
+      "explanation": "The COPY command is the standard, recommended method for copying files during Docker image builds. ADD offers extra features like URL downloading and automatic tar extraction, but these capabilities can often be achieved through alternative methods. Docker recommends using COPY for most file transfer scenarios to maintain simplicity and predictability in image builds."
+    },
+    {
+      "id": 8,
+      "question": "What’s the purpose of the `.dockerignore` file?",
+      "options": [
+        "A .dockerignore file is used to map additional resource dependencies that Docker should include during the image build process, expanding the available build context.",
+        "The .dockerignore file allows developers to specify files and directories that should be excluded from the Docker build context, reducing image size and build time by preventing unnecessary files from being transferred.",
+        "The .dockerignore file is a security mechanism that prevents sensitive files from being accessed during container runtime, blocking potential unauthorized file exposures.",
+        "The .dockerignore file is an optional configuration that provides metadata about the Docker image's build environment and source code structure."
+      ],
+      "correctIndex": 1,
+      "explanation": "The .dockerignore file functions similarly to .gitignore, providing a way to exclude specific files and directories from the Docker build context. By carefully defining ignore patterns, developers can significantly reduce image size, improve build performance, and prevent unnecessary files from being packaged into the final Docker image."
+    },
+    {
+      "id": 9,
+      "question": "How would you go about creating a _Docker image_ from an existing _container_?",
+      "options": [
+        "Container commitment is a complex process that requires manual intervention from Docker administrators and cannot be performed through standard command-line interfaces.",
+        "Docker images can only be created through Dockerfiles, with container commit being an unsupported method for generating new image snapshots.",
+        "Using the docker container commit command, you can create a new Docker image from an existing container by capturing its current state, allowing you to save modifications made during container runtime.",
+        "The docker container commit process is exclusively used for rolling back container changes and does not support creating new images from running containers."
+      ],
+      "correctIndex": 2,
+      "explanation": "The docker container commit method provides a quick way to create images from running containers, capturing the current filesystem state and allowing developers to save modifications. While Dockerfiles remain the recommended approach for reproducible image creation, container commit offers flexibility for experimental or temporary image generation scenarios."
+    },
+    {
+      "id": 10,
+      "question": "In practice, how do you reduce the size of _Docker images_?",
+      "options": [
+        "Reduce Docker image sizes by using multi-stage builds, which separate build and runtime environments, and only include necessary dependencies in the final image.",
+        "Minimize Docker image sizes by compressing the entire filesystem and using complex compression algorithms to pack more content into the image.",
+        "Decrease Docker image sizes by using larger base images with pre-installed libraries and keeping all intermediate build artifacts in the final container.",
+        "Reduce Docker image sizes by increasing the base image complexity and adding multiple layers of unnecessary dependencies and build tools."
+      ],
+      "correctIndex": 0,
+      "explanation": "Multi-stage builds are an effective technique for creating smaller Docker images. By separating the build environment from the runtime environment, developers can compile and build applications in one stage, then copy only the essential artifacts to the final image. This approach eliminates unnecessary build tools, intermediate files, and dependencies, resulting in significantly reduced image sizes and improved container efficiency."
+    },
+    {
+      "id": 11,
+      "question": "What command is used to run a _Docker container_ from an _image_?",
+      "options": [
+        "Use the `docker run` command to create and start a new container from a Docker image, which automatically handles container initialization and resource allocation.",
+        "Utilize the `docker start` command to launch a pre-configured container, ensuring all network and storage configurations are properly set up.",
+        "Use the `docker create` command to instantiate a container, which prepares the container environment without immediately starting the process.",
+        "Employ the `docker exec` command to run a container, which allows direct interaction with an existing container's runtime environment."
+      ],
+      "correctIndex": 0,
+      "explanation": "The `docker run` command is a comprehensive operation that combines multiple steps in container management. It pulls the specified image if not already local, creates a new container, sets up the necessary network and resource configurations, and immediately starts the container's main process. This single command simplifies the container deployment workflow by handling initialization, networking, and execution in one step."
+    },
+    {
+      "id": 12,
+      "question": "Can you explain what a _Docker namespace_ is and its benefits?",
+      "options": [
+        "Docker namespaces serve as a tagging mechanism to categorize and organize containers based on their runtime characteristics and resource consumption.",
+        "Docker namespaces function as a security layer that encrypts container communications and prevents unauthorized access between different container instances.",
+        "Docker namespaces provide process, network, and filesystem isolation, enabling secure and independent container environments with unique resource scopes.",
+        "Docker namespaces are global identifiers that track container metadata and help manage container relationships across different system environments."
+      ],
+      "correctIndex": 2,
+      "explanation": "Namespaces are a fundamental Linux kernel feature that Docker leverages to create lightweight, isolated container environments. Each namespace provides a separate view of system resources, ensuring that processes, network interfaces, and filesystem mounts are contained within their specific context. This isolation prevents interference between containers, enhances security, and allows multiple containers to coexist on the same host without conflicts."
+    },
+    {
+      "id": 13,
+      "question": "What is a _Docker volume_, and when would you use it?",
+      "options": [
+        "A Docker volume is an internal container mechanism that compresses and encrypts data to optimize storage usage and prevent unauthorized access.",
+        "A Docker volume is a network-attached storage mechanism that synchronizes container data across multiple Docker hosts in real-time.",
+        "A Docker volume is a temporary file system created within a container to store runtime configuration data that gets automatically deleted when the container stops.",
+        "A Docker volume is a persistent storage mechanism that exists independently of container lifecycles, allowing data to be preserved and shared between containers even after they are deleted."
+      ],
+      "correctIndex": 3,
+      "explanation": "Docker volumes solve the problem of data persistence in containerized environments. Unlike container-specific storage, volumes are managed by Docker and can exist separately from any specific container. They provide a way to store and share data, making them crucial for databases, configuration files, and stateful applications that require data preservation across container restarts or deletions."
+    },
+    {
+      "id": 14,
+      "question": "Explain the use and significance of the `docker-compose` tool.",
+      "options": [
+        "Docker Compose is a monitoring and logging framework that tracks container performance and generates comprehensive infrastructure reports.",
+        "Docker Compose is a container orchestration tool that automatically scales and distributes containers across multiple cloud providers and infrastructure environments.",
+        "Docker Compose is a tool for defining and running multi-container Docker applications, using a YAML configuration file to describe the entire application's services, networks, and volumes in a single, manageable specification.",
+        "Docker Compose is a development utility that generates container blueprints and automatically creates deployment scripts for microservices architectures."
+      ],
+      "correctIndex": 2,
+      "explanation": "Docker Compose simplifies the complex task of managing multi-container applications by allowing developers to define entire application stacks in a single, declarative YAML file. It eliminates the need to manually start and configure each container, enabling developers to launch entire application environments with a single command, which is particularly useful in development, testing, and staging scenarios."
+    },
+    {
+      "id": 15,
+      "question": "Can _Docker containers_ running on the same _host_ communicate with each other by default? If so, how?",
+      "options": [
+        "Docker containers require a separate container orchestration platform to enable inter-container communication, as direct networking is not supported.",
+        "Docker containers can only communicate through explicitly defined external networks, requiring manual network configuration for each container interaction.",
+        "Docker containers running on the same host can communicate by default through an internal bridge network, which allows containers to interact using their assigned IP addresses and exposed ports.",
+        "Docker containers communicate exclusively through shared volumes, with network communication being disabled by default for security reasons."
+      ],
+      "correctIndex": 2,
+      "explanation": "Docker's default networking configuration uses a bridge network that automatically enables communication between containers on the same host. Each container receives a unique IP address within this network, allowing them to interact seamlessly without additional configuration. This built-in networking capability simplifies container interconnectivity and supports microservices architectures."
+    }
+  ],
+  "processedAt": "2025-12-18T09:16:09.076Z"
+}

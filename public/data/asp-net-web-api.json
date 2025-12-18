@@ -1,0 +1,197 @@
+{
+  "id": "asp-net-web-api",
+  "name": "ASP.NET Web API",
+  "slug": "asp-net-web-api-interview-questions",
+  "category": "Backend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _ASP.NET Web API_ and what is it used for?",
+      "options": [
+        "ASP.NET Web API is a specialized communication protocol that primarily focuses on internal microservice architecture and provides advanced message encryption for secure enterprise communications.",
+        "ASP.NET Web API is a client-side rendering framework that facilitates real-time data synchronization and supports complex UI interactions through advanced JavaScript integration.",
+        "ASP.NET Web API is a lightweight framework for creating RESTful HTTP services that enables developers to build scalable web APIs targeting a broad range of clients, including browsers, mobile devices, and other web services.",
+        "ASP.NET Web API is a comprehensive server-side framework designed exclusively for enterprise-level database management and complex transaction processing across multiple network environments."
+      ],
+      "correctIndex": 2,
+      "explanation": "ASP.NET Web API is part of the .NET framework specifically designed for creating HTTP services. It supports RESTful design principles and enables developers to create services that can be consumed by a wide variety of clients. The framework provides robust routing, model binding, and content negotiation capabilities. A simple example of a Web API controller might look like this:\n\n```csharp\npublic class ProductsController : ApiController\n{\n    public IHttpActionResult GetProducts()\n    {\n        var products = new List<Product>();\n        // Retrieve products logic\n        return Ok(products);\n    }\n}\n```"
+    },
+    {
+      "id": 2,
+      "question": "How does _ASP.NET Web API_ differ from _WCF_ and _ASP.NET MVC_?",
+      "options": [
+        "ASP.NET Web API is fundamentally identical to WCF and ASP.NET MVC, sharing the exact same architectural principles and providing interchangeable service communication mechanisms across all three frameworks.",
+        "ASP.NET Web API differs from WCF and ASP.NET MVC by focusing specifically on lightweight HTTP services, offering more flexible routing and better support for RESTful service design compared to the more protocol-heavy WCF and page-centric MVC approaches.",
+        "ASP.NET Web API is primarily a legacy framework that has been deprecated in favor of more modern WCF and ASP.NET MVC communication protocols for web service implementation.",
+        "ASP.NET Web API represents a more complex and feature-rich alternative to WCF and ASP.NET MVC, requiring advanced configuration and specialized infrastructure for enterprise-level application development."
+      ],
+      "correctIndex": 1,
+      "explanation": "The key distinctions between Web API, WCF, and MVC lie in their design philosophies and primary use cases. Web API is optimized for HTTP services, WCF supports multiple communication protocols, and MVC focuses on server-side rendered web applications. Web API provides more intuitive RESTful service creation with lightweight HTTP-specific features. A comparison example might illustrate routing differences:\n\n```csharp\n// Web API Routing (attribute-based)\n[Route('api/products')]\npublic class ProductController : ApiController { }\n\n// MVC Routing (more traditional)\npublic class ProductController : Controller\n{\n    public ActionResult Index() { }\n}\n```"
+    },
+    {
+      "id": 3,
+      "question": "Explain _RESTful services_ and how they relate to _ASP.NET Web API_.",
+      "options": [
+        "RESTful services in ASP.NET Web API are exclusively client-side rendering techniques that manage data synchronization through continuous background polling mechanisms.",
+        "RESTful services represent a deprecated communication model that has been replaced by more advanced microservice architectures in modern web application development frameworks.",
+        "RESTful services in ASP.NET Web API represent a design approach that uses standard HTTP methods to perform CRUD operations on resources, emphasizing stateless communication and uniform interface principles for web service interactions.",
+        "RESTful services in ASP.NET Web API are complex proprietary communication protocols that require extensive configuration and specialized server-side infrastructure for message processing."
+      ],
+      "correctIndex": 2,
+      "explanation": "RESTful services use standard HTTP methods to interact with resources, promoting a stateless, client-server architecture. In ASP.NET Web API, this is implemented through attribute routing and action methods that correspond to HTTP verbs. A typical implementation might look like:\n\n```csharp\npublic class ProductsController : ApiController\n{\n    [HttpGet]\n    public IHttpActionResult Get() { } // Retrieves all products\n\n    [HttpPost]\n    public IHttpActionResult Post(Product product) { } // Creates new product\n\n    [HttpPut]\n    public IHttpActionResult Put(int id, Product product) { } // Updates existing product\n\n    [HttpDelete]\n    public IHttpActionResult Delete(int id) { } // Deletes specific product\n}\n```"
+    },
+    {
+      "id": 4,
+      "question": "What are _HTTP verbs_ and how are they used in _Web API_?",
+      "options": [
+        "HTTP Verbs are programming directives that specify how web services handle incoming requests, managing cache strategies and defining response compression techniques.",
+        "HTTP Verbs are security mechanisms in web APIs that control access to resources by defining permission levels and authentication requirements for different endpoint interactions.",
+        "HTTP Verbs are standard methods that define the action to be performed on a web resource, mapping to CRUD operations like GET (retrieve), POST (create), PUT (update), PATCH (partial update), and DELETE (remove).",
+        "HTTP Verbs are network protocols that define communication standards between client and server applications, establishing connection parameters and data transfer mechanisms."
+      ],
+      "correctIndex": 2,
+      "explanation": "HTTP Verbs are fundamental to RESTful web service design, providing a standardized way to interact with resources. Each verb has a specific semantic meaning that guides how clients can manipulate data. The most common verbs include GET for retrieving data, POST for creating new resources, PUT for full updates, PATCH for partial updates, and DELETE for removing resources. When designing Web APIs, developers use these verbs to create intuitive and predictable interfaces.\n\nExample of verb usage:\n```csharp\n[HttpGet]\npublic IHttpActionResult GetProduct(int id) {\n    var product = _repository.Find(id);\n    return Ok(product);\n}\n\n[HttpPost]\npublic IHttpActionResult CreateProduct(Product product) {\n    _repository.Add(product);\n    return Created($\"api/products/{product.Id}\", product);\n}"
+    },
+    {
+      "id": 5,
+      "question": "How do you create a basic _Web API controller_?",
+      "options": [
+        "A Web API controller is a configuration object that defines endpoint behavior, managing dependency injection and service registration for web application infrastructure.",
+        "A Web API controller is a middleware component that intercepts and transforms network requests, providing routing and authentication services for web service architectures.",
+        "A Web API controller is a class decorated with the `ApiController` attribute that inherits from `ApiController` and contains methods mapped to HTTP verbs to handle different types of requests to specific resources.",
+        "A Web API controller is a data transfer mechanism that manages communication protocols between different system components, defining interface contracts and serialization strategies."
+      ],
+      "correctIndex": 2,
+      "explanation": "Web API controllers are crucial in ASP.NET for handling HTTP requests and generating appropriate responses. They act as intermediaries between client requests and server-side logic, routing incoming HTTP methods to specific action methods. The `ApiController` base class provides built-in functionality for model binding, content negotiation, and response generation.\n\nExample of a basic Web API controller:\n```csharp\n[RoutePrefix(\"api/users\")]\npublic class UsersController : ApiController {\n    [HttpGet]\n    public IHttpActionResult GetAllUsers() {\n        var users = _userService.GetUsers();\n        return Ok(users);\n    }\n\n    [HttpPost]\n    public IHttpActionResult CreateUser(UserDto user) {\n        var createdUser = _userService.Create(user);\n        return Created($\"api/users/{createdUser.Id}\", createdUser);\n    }\n}"
+    },
+    {
+      "id": 6,
+      "question": "Describe _routing_ in _ASP.NET Web API_.",
+      "options": [
+        "Web API routing maps incoming HTTP requests to specific controller actions using configuration rules, typically defined in `WebApiConfig.cs`, which can use convention-based or attribute-based routing strategies.",
+        "Web API routing is a performance optimization technique that manages request caching, load balancing, and dynamic endpoint discovery in distributed systems.",
+        "Web API routing is a security mechanism that validates and filters incoming requests based on predefined access control rules and authentication tokens.",
+        "Web API routing is a data transformation process that translates client requests into internal service representations, managing serialization and deserialization."
+      ],
+      "correctIndex": 0,
+      "explanation": "Routing in ASP.NET Web API determines how HTTP requests are mapped to specific controller actions. It supports two primary routing approaches: convention-based routing (defined in `WebApiConfig.cs`) and attribute-based routing. Attribute routing provides more granular control by allowing route specifications directly on controller methods.\n\nExample of routing configurations:\n```csharp\n// Convention-based routing\npublic static class WebApiConfig {\n    public static void Register(HttpConfiguration config) {\n        config.Routes.MapHttpRoute(\n            name: \"DefaultApi\",\n            routeTemplate: \"api/{controller}/{id}\",\n            defaults: new { id = RouteParameter.Optional }\n        );\n    }\n}\n\n// Attribute-based routing\n[Route(\"api/products/{id}\")]\npublic IHttpActionResult GetProduct(int id) { }\n```"
+    },
+    {
+      "id": 7,
+      "question": "How are requests mapped to actions in _Web API_?",
+      "options": [
+        "Request mapping in Web API is determined solely by matching the controller name to the URL segment, with action selection based on predefined naming conventions for methods.",
+        "ASP.NET Web API maps requests to actions exclusively through attribute routing, which requires explicit method-level configuration for each possible HTTP verb and endpoint.",
+        "Web API uses a complex pattern-matching algorithm that analyzes the entire request payload to dynamically route incoming requests to the most appropriate controller action.",
+        "In ASP.NET Web API, requests are mapped to actions through a combination of the HTTP method and request URL, using a two-stage routing process that first identifies the resource and then selects the specific action."
+      ],
+      "correctIndex": 3,
+      "explanation": "The routing mechanism in Web API follows a RESTful approach, using both the URL and HTTP method to precisely target specific controller actions. This allows for intuitive and flexible API endpoint design. The process involves first matching the URL to a resource (controller) and then selecting the specific action based on the HTTP verb. A typical example of this routing would involve a method like this:\n\n```csharp\n[HttpGet]\npublic IHttpActionResult GetUser(int id)\n{\n    // Matches GET requests to /api/users/{id}\n}\n\n[HttpPost]\npublic IHttpActionResult CreateUser(User user)\n{\n    // Matches POST requests to /api/users\n}\n```"
+    },
+    {
+      "id": 8,
+      "question": "What is _content negotiation_ in the context of _Web API_?",
+      "options": [
+        "Content negotiation in Web API allows the API to serve multiple response formats based on client preferences, using media type formatters to serialize data according to the requested content type.",
+        "Content negotiation in Web API is a security mechanism that validates incoming request formats and prevents unauthorized data transmission between different application layers.",
+        "The content negotiation process in Web API automatically transforms incoming request data into a standardized internal representation, regardless of the original client-specified format.",
+        "Content negotiation is a performance optimization technique in Web API that selects the most efficient data serialization method based on server-side configuration and client capabilities."
+      ],
+      "correctIndex": 0,
+      "explanation": "Content negotiation enables APIs to provide flexible response formats, allowing clients to specify their preferred data representation. This is typically achieved through Accept headers or media type formatters. Web API includes built-in support for JSON and XML, with the ability to add custom formatters. Here's an example of configuring media type formatters:\n\n```csharp\npublic static class WebApiConfig\n{\n    public static void Register(HttpConfiguration config)\n    {\n        // Configure formatters\n        config.Formatters.Clear();\n        config.Formatters.Add(new JsonMediaTypeFormatter());\n        config.Formatters.Add(new XmlMediaTypeFormatter());\n    }\n}"
+    },
+    {
+      "id": 9,
+      "question": "What data formats does _Web API_ support by default for response data?",
+      "options": [
+        "ASP.NET Web API exclusively supports JSON as its primary data format, with XML support requiring additional third-party library configurations.",
+        "ASP.NET Web API natively supports JSON and XML as default response data formats, with JSON being the more prevalent choice due to its lightweight nature and widespread adoption.",
+        "Web API's data format support is restricted to binary serialization formats, requiring manual conversion for JSON and XML representations of complex objects.",
+        "The default data formats in Web API are determined dynamically based on the client's application type, with support limited to JSON, Protocol Buffers, and YAML."
+      ],
+      "correctIndex": 1,
+      "explanation": "Web API provides built-in support for both JSON and XML, making it versatile for different client requirements. The framework uses media type formatters to handle serialization and deserialization. JSON is typically the default due to its simplicity and performance. An example of how different formatters handle data:\n\n```csharp\n// JSON serialization\npublic class User\n{\n    public int Id { get; set; }\n    public string Name { get; set; }\n}\n\n// This object can be automatically serialized to JSON or XML\nvar user = new User { Id = 1, Name = \"John Doe\" };"
+    },
+    {
+      "id": 10,
+      "question": "How do you secure a _Web API_?",
+      "options": [
+        "Web API security relies exclusively on encrypting the entire database and using complex password policies for client applications attempting to access endpoints.",
+        "Web API can be secured through multiple authentication methods like JWT token authentication, implementing HTTPS, using authorization filters, and adding role-based access controls to restrict unauthorized access.",
+        "Web API security is primarily achieved by disabling all external connections and implementing complex firewall rules that block potential unauthorized requests.",
+        "Web API can be secured by manually verifying each incoming request through a custom middleware that checks connection origins and validates client credentials."
+      ],
+      "correctIndex": 1,
+      "explanation": "Web API security is a multi-layered approach involving authentication, authorization, and secure communication protocols. JWT tokens provide stateless authentication where each request contains an encrypted token verifying user identity and permissions. Authentication can be implemented using built-in ASP.NET Core authentication middleware like [Authorize] attributes or custom authentication handlers.\n\nExample of JWT token authentication configuration:\n```csharp\npublic void ConfigureServices(IServiceCollection services)\n{\n    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)\n        .AddJwtBearer(options => {\n            options.TokenValidationParameters = new TokenValidationParameters\n            {\n                ValidateIssuer = true,\n                ValidateAudience = true,\n                ValidateLifetime = true\n            };\n        });\n}"
+    },
+    {
+      "id": 11,
+      "question": "How can you host an _ASP.NET Web API_ application?",
+      "options": [
+        "Web API hosting is exclusively managed through Visual Studio's built-in deployment wizard, which requires specific server configurations and manual intervention for each environment.",
+        "ASP.NET Web API can be hosted on Internet Information Services (IIS), self-hosted using Kestrel, or deployed on cloud platforms like Azure App Service with various configuration options.",
+        "ASP.NET Web API can only be hosted on Windows servers using dedicated enterprise-level infrastructure with complex network configurations and manual deployment processes.",
+        "ASP.NET Web API hosting is limited to local development environments and cannot be effectively deployed to production servers without specialized third-party hosting solutions."
+      ],
+      "correctIndex": 1,
+      "explanation": "Web API hosting offers flexibility across different platforms and environments. IIS provides integrated Windows authentication and easy management, while self-hosting with Kestrel enables cross-platform deployment. Cloud platforms like Azure offer scalable hosting with built-in features for monitoring and managing web applications.\n\nExample of self-hosting configuration:\n```csharp\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        CreateHostBuilder(args).Build().Run();\n    }\n\n    public static IHostBuilder CreateHostBuilder(string[] args) =>\n        Host.CreateDefaultBuilder(args)\n            .ConfigureWebHostDefaults(webBuilder =>\n            {\n                webBuilder.UseKestrel();\n                webBuilder.UseStartup<Startup>();\n            });\n}"
+    },
+    {
+      "id": 12,
+      "question": "What is _OWIN_ and how does it relate to _Web API_?",
+      "options": [
+        "OWIN is an advanced networking protocol that defines strict communication standards between server components, requiring specialized hardware and complex configuration mechanisms.",
+        "OWIN (Open Web Interface for .NET) is a standard that defines a decoupled interface between web servers and web applications, enabling modular middleware and cross-platform hosting capabilities.",
+        "OWIN represents a comprehensive web application architecture that requires complete reimplementation of existing web hosting infrastructures and server communication protocols.",
+        "OWIN is a proprietary Microsoft framework exclusively designed for creating tightly coupled web server implementations with limited cross-platform compatibility."
+      ],
+      "correctIndex": 1,
+      "explanation": "OWIN provides a standard abstraction layer that separates web server implementations from application code, allowing more flexible and modular web hosting. The Katana project from Microsoft implements OWIN specifications, enabling developers to create middleware pipelines that can run across different hosting environments.\n\nExample of simple OWIN middleware:\n```csharp\npublic class Startup\n{\n    public void Configuration(IAppBuilder app)\n    {\n        app.Use(async (context, next) => {\n            // Custom middleware logic\n            await next.Invoke();\n        });\n    }\n}"
+    },
+    {
+      "id": 13,
+      "question": "Explain the difference between _self-hosting_ and _IIS hosting_ in _Web API_.",
+      "options": [
+        "Self-hosting is a deprecated method of Web API deployment that only works on Windows servers with limited configuration options and reduced performance compared to IIS hosting.",
+        "Self-hosting in Web API allows running the API through a custom process without IIS, providing platform independence and complete control over the hosting environment. IIS hosting, in contrast, uses Internet Information Services as the hosting platform with built-in management features.",
+        "Self-hosting requires manual network configuration and socket management, while IIS hosting automatically handles all network communication and security protocols for Web API applications.",
+        "IIS hosting and self-hosting are essentially identical approaches to Web API deployment, with no meaningful differences in configuration or performance characteristics."
+      ],
+      "correctIndex": 1,
+      "explanation": "Self-hosting provides more flexibility for developers by allowing direct programmatic control over the Web API hosting environment. It enables running Web API in console applications, Windows services, or custom hosts. The key advantage is the ability to host outside traditional web server environments. An example of self-hosting configuration would involve using HttpSelfHostServer to create a custom hosting mechanism."
+    },
+    {
+      "id": 14,
+      "question": "How do you configure _CORS_ in _Web API_?",
+      "options": [
+        "CORS in Web API is managed exclusively through web.config file settings, requiring manual XML configuration for each allowed origin and HTTP method.",
+        "CORS in Web API is configured by installing the Microsoft.AspNet.WebApi.Cors NuGet package, enabling cross-origin resource sharing through configuration in the WebApiConfig or directly within controllers using EnableCors attribute.",
+        "CORS configuration is handled automatically by the .NET framework without any additional package or configuration steps for Web API applications.",
+        "Web API CORS is implemented by creating a custom middleware that intercepts and validates cross-origin requests before they reach the server."
+      ],
+      "correctIndex": 1,
+      "explanation": "CORS enables secure cross-origin requests by defining which domains can interact with your Web API. The configuration process involves adding the CORS package and specifying allowed origins, methods, and headers. A typical implementation includes using the [EnableCors] attribute on controllers or methods. Example configuration:"
+    },
+    {
+      "id": 15,
+      "question": "What is _attribute routing_ and how does it improve the _Web API_?",
+      "options": [
+        "Attribute routing completely replaces convention-based routing and requires rewriting all existing route definitions in Web API applications.",
+        "Attribute routing is a performance-intensive method of route configuration that significantly increases application startup time and reduces overall Web API performance.",
+        "Attribute routing in Web API allows defining routes directly on controller actions using attributes, providing more granular and readable route configuration compared to traditional convention-based routing.",
+        "Attribute routing is primarily used for creating complex, nested API endpoints with multiple hierarchical route definitions."
+      ],
+      "correctIndex": 2,
+      "explanation": "Attribute routing gives developers more precise control over API endpoint mapping by allowing route definitions directly on action methods. This approach simplifies route management and makes the routing logic more explicit. It supports complex routing scenarios like route constraints and optional parameters. Example implementation:"
+    }
+  ],
+  "processedAt": "2025-12-18T08:44:33.034Z"
+}

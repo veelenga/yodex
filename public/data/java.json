@@ -3,7 +3,7 @@
   "name": "Java",
   "slug": "java-interview-questions",
   "category": "Languages",
-  "totalQuestions": 12,
+  "totalQuestions": 15,
   "topics": [
     "advanced",
     "basics",
@@ -15,146 +15,182 @@
       "id": 1,
       "question": "Explain the main idea behind _Java_ and the concept of _Write Once, Run Anywhere_.",
       "options": [
-        "Java can only run on Windows operating systems",
-        "Java requires recompiling code for each different platform",
-        "Java is a low-level language primarily used for system programming",
-        "Java is a platform-independent, object-oriented programming language designed to enable developers to write code that can run on any device or operating system through the Java Virtual Machine (JVM)."
+        "Java is a high-level, object-oriented programming language designed to achieve platform independence through its Java Virtual Machine (JVM), enabling developers to write code once and run it on any device or operating system without modification.",
+        "Java is a low-level programming language specifically designed for web development, using a unique compiler that translates code directly into machine-specific instructions for each platform.",
+        "Java is a functional programming language created to optimize system-level programming, with a complex compilation process that requires separate compilation for each target operating system.",
+        "Java is a scripting language developed to provide rapid application development with platform-specific optimizations that require manual porting between different computing environments."
       ],
-      "correctIndex": 3,
-      "explanation": "Java achieves platform independence by compiling source code into bytecode, which can be executed by the JVM on any system. The JVM acts as an intermediary layer, translating bytecode into machine-specific instructions. This approach eliminates the need for recompilation across different platforms, making Java truly portable. The compilation process transforms Java source code (.java files) into bytecode (.class files) that can run on any device with a compatible JVM."
+      "correctIndex": 0,
+      "explanation": "The 'Write Once, Run Anywhere' principle is fundamental to Java's design. The Java Virtual Machine (JVM) acts as an intermediary layer that abstracts hardware and operating system differences. When Java code is compiled, it's converted to bytecode, which can be executed on any device with a compatible JVM. This approach eliminates the need for platform-specific compilation and allows for true cross-platform compatibility.\n\nExample of platform-independent Java code:\n```java\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"This code will run on Windows, Mac, Linux, etc.\");\n    }\n}\n```"
     },
     {
       "id": 2,
       "question": "What are the _main features_ of _Java_?",
       "options": [
-        "Java's main features include platform independence, object-oriented programming, strong typing, automatic memory management, and robust security mechanisms.",
-        "Java is a procedural language with limited object-oriented support",
-        "Java does not provide any built-in security features",
-        "Java has weak type checking and allows unrestricted memory access"
+        "Java's primary features include direct hardware manipulation, manual memory allocation, extensive use of pointer arithmetic, and low-level system programming capabilities.",
+        "Java's main features include platform independence through the Java Virtual Machine, robust object-oriented programming support, strong type checking, automatic memory management via garbage collection, and built-in security mechanisms.",
+        "Java is characterized by its complex compilation process, limited object-oriented support, weak type checking, and manual memory management techniques.",
+        "Java's key features involve interpreted execution, minimal security controls, weak object-oriented principles, and platform-specific compilation requirements."
       ],
-      "correctIndex": 0,
-      "explanation": "Java's features make it a powerful and flexible programming language. Platform independence is achieved through the JVM, while object-oriented principles allow for modular and reusable code. Strong typing helps catch type-related errors during compilation, and automatic memory management (garbage collection) reduces memory management complexity. Security features like the bytecode verifier and security manager help protect against malicious code execution. These characteristics make Java suitable for a wide range of applications, from web services to enterprise software."
+      "correctIndex": 1,
+      "explanation": "These features make Java a powerful and versatile programming language. Platform independence allows code to run on multiple systems, while object-oriented principles promote modular and reusable code. Strong typing helps catch errors at compile-time, and garbage collection simplifies memory management. Security features are built into the language to prevent common programming vulnerabilities.\n\nExample demonstrating type safety:\n```java\npublic class TypeSafetyDemo {\n    public static void main(String[] args) {\n        // Compile-time type checking prevents incorrect assignments\n        int number = 42; // This is valid\n        // number = \"Hello\"; // This would cause a compile-time error\n    }\n}\n```"
     },
     {
       "id": 3,
       "question": "Can you list some _non-object-oriented_ features of _Java_?",
       "options": [
-        "Java is purely functional and does not support any object-oriented concepts",
-        "Java supports non-object-oriented features like primitive data types and static methods, which provide performance optimization and utility functions that don't require object instantiation.",
-        "Static methods can only be used in utility classes",
-        "Primitive data types in Java are treated exactly like objects"
+        "Java completely eliminates non-object-oriented programming techniques, requiring all code to be implemented strictly through object-oriented design patterns and class-based structures.",
+        "Java includes non-object-oriented features like primitive data types, static methods and variables, and procedural programming constructs that allow for more flexible and efficient coding approaches outside strict object-oriented paradigms.",
+        "Java provides minimal support for non-object-oriented programming, with primitive types being the only deviation from its purely object-oriented design principles.",
+        "Java's non-object-oriented features are limited to complex functional programming interfaces that require extensive generic type implementations and lambda expressions."
       ],
       "correctIndex": 1,
-      "explanation": "While Java is fundamentally object-oriented, it incorporates elements from other programming paradigms. Primitive data types like int, boolean, and char are stored directly in memory, offering better performance than their object counterparts. Static methods and variables belong to the class itself, allowing them to be called without creating an object instance. This flexibility enables more efficient and straightforward implementation of utility functions and shared resources."
+      "explanation": "While Java is primarily an object-oriented language, it provides flexibility through non-object-oriented elements. Primitive types allow direct value storage without object overhead, and static members enable class-level functionality without instantiation. This approach balances object-oriented principles with practical programming needs.\n\nExample of primitive and static usage:\n```java\npublic class NonOODemo {\n    // Static variable\n    public static int counter = 0;\n    \n    // Primitive type method\n    public static void incrementCounter(int value) {\n        counter += value;\n    }\n}\n```"
+    },
+    {
+      "id": 4,
+      "question": "Describe the difference between _JDK_, _JRE_, and _JVM_.",
+      "options": [
+        "The JDK is a network protocol for Java applications, the JRE is a security framework, and the JVM is an integrated development environment for writing Java code.",
+        "The JDK is a runtime environment for executing Java programs, while the JRE contains compilation tools, and the JVM is a physical computer that runs Java applications directly.",
+        "JDK is a programming language, JRE is a compiler, and JVM is a database management system specifically designed for processing Java-related data storage and retrieval.",
+        "The JDK (Java Development Kit) is a software development environment that includes the JRE and development tools, while the JRE (Java Runtime Environment) provides the runtime environment to execute Java programs. The JVM is an abstract machine within the JRE that actually runs the Java bytecode."
+      ],
+      "correctIndex": 3,
+      "explanation": "The Java ecosystem consists of three key components that work together to develop and run Java applications. The JDK provides developers with tools to create Java applications, including compilers, debuggers, and other development utilities. The JRE contains the libraries and other files that JVM uses at runtime. The JVM is responsible for converting bytecode into machine-specific instructions and providing a runtime environment.\n\nExample of JDK usage:\n```java\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Developed using JDK, runs on JRE, executed by JVM\");\n    }\n}\n```"
+    },
+    {
+      "id": 5,
+      "question": "What is the role of the _ClassLoader_?",
+      "options": [
+        "The ClassLoader is a security mechanism that prevents unauthorized access to Java classes by encrypting and decrypting class files during runtime.",
+        "The ClassLoader is responsible for loading Java classes and interfaces into the Java Virtual Machine dynamically, converting the class file into machine-readable bytecode during program execution.",
+        "The ClassLoader is a memory management tool that optimizes application performance by pre-loading and caching frequently used Java classes.",
+        "The ClassLoader is an interface for managing database connections and handling object-relational mapping in Java applications."
+      ],
+      "correctIndex": 1,
+      "explanation": "ClassLoaders are part of the Java Runtime Environment's core mechanism for loading classes. They work hierarchically, with three main types: Bootstrap, Extension, and Application ClassLoaders. Each ClassLoader is responsible for finding and loading class files from different sources, ensuring that classes are loaded into memory as needed.\n\nExample of ClassLoader hierarchy:\n```java\npublic class ClassLoaderDemo {\n    public static void main(String[] args) {\n        ClassLoader loader = ClassLoaderDemo.class.getClassLoader();\n        System.out.println(\"Current ClassLoader: \" + loader);\n    }\n}\n```"
+    },
+    {
+      "id": 6,
+      "question": "What is the difference between a _path_ and a _classpath_ in _Java_?",
+      "options": [
+        "The classpath is a parameter that specifies the location of user-defined classes and packages, while the path is a system-wide environment variable that defines the location of executable programs.",
+        "The classpath is a security mechanism for restricting class access, while the path is a Java-specific method for defining file system hierarchies.",
+        "The classpath is a compilation directive that determines how Java source files are processed, while the path is a runtime configuration for memory allocation.",
+        "The classpath is a network configuration that defines internet connectivity for Java applications, while the path determines file system access permissions."
+      ],
+      "correctIndex": 0,
+      "explanation": "The classpath is crucial for Java's class loading mechanism, allowing the Java Virtual Machine to locate and load required classes during program execution. It can include directories, JAR files, and ZIP archives. Developers can set the classpath using environment variables or command-line arguments.\n\nExample of setting classpath:\n```bash\n# Setting classpath in command line\njava -cp /path/to/classes MyApplication\n```"
     },
     {
       "id": 7,
       "question": "Can you explain the difference between an _int_ and an _Integer_ in _Java_?",
       "options": [
-        "Int is only used for floating-point numbers, while Integer is for whole numbers",
-        "Integer is just a more complex version of int that can store larger numbers",
-        "Int and Integer are exactly the same type in Java with no differences",
-        "An int is a primitive data type representing whole numbers, while Integer is a wrapper class that allows int to be used as an object with additional methods."
+        "The int and Integer types in Java are differentiated by their memory allocation, with int storing values directly and Integer using a more complex object-oriented storage mechanism.",
+        "Integer is an advanced version of int that provides enhanced numerical operations and more robust number handling in Java's type system.",
+        "In Java, int is a primitive data type representing whole numbers, while Integer is a wrapper class that allows int to be used as an object with additional methods and utility functions.",
+        "In Java, int and Integer are the same type of data representation, with Integer being a simplified version of the primitive int type used in modern programming."
       ],
-      "correctIndex": 3,
-      "explanation": "The int primitive is a basic number type stored directly in memory, providing efficient performance for numerical operations. The Integer wrapper class encapsulates the int primitive, offering object-oriented capabilities like null handling, conversion methods, and compatibility with generics. This allows int values to be used in collections and other object-based contexts. A typical use case demonstrates the difference: collections like ArrayList require object types, so Integer must be used instead of int."
+      "correctIndex": 2,
+      "explanation": "The key difference between int and Integer lies in their fundamental nature. Int is a primitive type that stores raw numerical values directly in memory, while Integer is a wrapper class that encapsulates the int primitive, providing object-oriented functionality. This allows for additional methods like conversion, parsing, and use in generic collections.\n\nExample of usage:\n```java\nint primitiveNumber = 42; // Primitive type\nInteger objectNumber = Integer.valueOf(42); // Wrapper class\n\n// Integer offers additional methods\nString binaryRepresentation = Integer.toBinaryString(primitiveNumber);\n```\n\nWrapper classes like Integer are crucial when working with collections, generics, or when you need to convert between different representations of numbers."
     },
     {
       "id": 8,
       "question": "What are _wrapper classes_ in _Java_?",
       "options": [
-        "Wrapper classes are a way to slow down Java program performance",
-        "Wrapper classes are used only for mathematical calculations in Java",
-        "Wrapper classes in Java are object representations of primitive data types, allowing primitives to be used in object-oriented contexts and providing additional utility methods.",
-        "Wrapper classes completely replace primitive data types"
+        "Wrapper classes are specialized object types that replace primitive data types with more advanced, feature-rich numeric representations in Java.",
+        "Wrapper classes in Java are alternative data type implementations that provide enhanced performance and memory optimization for primitive data types.",
+        "Wrapper classes serve as a low-level memory management mechanism in Java, allowing more efficient storage of primitive values in complex data structures.",
+        "Wrapper classes in Java are object representations of primitive data types, allowing primitives to be used in object-oriented contexts and providing additional utility methods for type conversion and manipulation."
       ],
-      "correctIndex": 2,
-      "explanation": "Wrapper classes bridge the gap between primitive types and object-oriented programming by converting primitives into full-fledged objects. They enable primitives to be used in generic collections, support null values, and provide helpful conversion and utility methods. A common example illustrates their use in collections and type conversion:\n\njava\nInteger num = 42; // Autoboxing\nList<Integer> numbers = new ArrayList<>();\nnumbers.add(num); // Requires object type\n"
+      "correctIndex": 3,
+      "explanation": "Wrapper classes bridge the gap between primitive types and object-oriented programming in Java. They transform primitives like int, char, and boolean into full-fledged objects, enabling use in generics, collections, and providing utility methods.\n\nExample of wrapper class usage:\n```java\nList<Integer> numbers = new ArrayList<>(); // Cannot use primitive int in generics\nInteger num = 42; // Autoboxing\nint primitive = num.intValue(); // Unboxing\n```\n\nKey benefits include supporting generics, providing conversion methods, and offering static utility functions like parsing and type conversion."
     },
     {
       "id": 9,
       "question": "What does it mean that _Java_ is a _statically typed_ language?",
       "options": [
-        "Static typing is a method of memory allocation in Java",
-        "Static typing in Java means variable types are explicitly declared and checked at compile-time, ensuring type safety and allowing early detection of type-related errors.",
-        "Static typing only applies to class variables, not local variables",
-        "Static typing means variables cannot change their value after declaration"
+        "Static typing in Java refers to the language's ability to automatically assign and modify variable types during program compilation based on contextual usage.",
+        "Static typing is a Java mechanism that allows variables to maintain consistent memory allocation throughout the program's runtime execution.",
+        "Static typing ensures that variable types are determined and locked at runtime, preventing dynamic type changes during program execution.",
+        "Static typing in Java means that variable types are explicitly declared and checked at compile-time, ensuring type safety and allowing the compiler to catch type-related errors before program execution."
       ],
-      "correctIndex": 1,
-      "explanation": "Java's static typing provides compile-time type checking, which helps prevent type-related errors before the program runs. This approach ensures that variables are used consistently and correctly throughout the code, with types determined before execution. It allows for early error detection and enables compiler optimizations. A simple example shows how static typing works:\n\njava\nint count = 5; // Type explicitly declared\ncount = \"hello\"; // Compile-time error\n"
+      "correctIndex": 3,
+      "explanation": "Static typing is a compile-time type checking mechanism that requires explicit type declarations. This approach provides several advantages, including early error detection, improved performance, and enhanced code readability.\n\nExample of static typing:\n```java\nint number = 42; // Type must be explicitly declared\nnumber = \"Hello\"; // Compile-time error\n```\n\nThe key benefit is catching type-related errors during compilation, which prevents runtime type conversion errors and supports more robust code development. This differs from dynamically typed languages like Python, where type checking occurs at runtime."
     },
     {
       "id": 10,
       "question": "Is _Java_ a pure _object-oriented language_? Why or why not?",
       "options": [
-        "Primitive types in Java are considered objects internally.",
-        "Java only supports object-oriented programming and no other paradigms.",
-        "Java is a pure object-oriented language with no non-object elements.",
-        "Java is not a pure object-oriented language because it contains primitive data types and static methods, which are not part of objects."
+        "Java is considered a pure object-oriented language since it supports encapsulation, inheritance, and polymorphism through its comprehensive class-based design.",
+        "Java achieves pure object-oriented status by converting all primitive types to wrapper classes during runtime, thus maintaining object-oriented integrity.",
+        "Java is a pure object-oriented language because every operation requires an object and all code must be written inside class definitions, making it fully object-oriented.",
+        "Java is not a pure object-oriented language because it includes primitive data types and static methods that exist outside of object contexts, which breaks strict object-oriented principles."
       ],
       "correctIndex": 3,
-      "explanation": "While Java strongly supports object-oriented programming, it retains some procedural programming characteristics. Primitive types like int, char, and boolean are not objects, and static methods can be called without creating an object instance. Pure object-oriented languages require all elements to be objects. Java provides wrapper classes for primitives to allow object-like interactions, but this doesn't make them true objects.\n\nExample of non-object elements:\njava\npublic class Example {\n    public static void main(String[] args) {\n        // Static method call without object\n        int number = Math.max(5, 10);\n        \n        // Primitive type, not an object\n        int x = 5;\n    }\n}"
+      "explanation": "While Java strongly supports object-oriented programming, it deviates from pure object-oriented languages like Smalltalk. Primitive types like int, char, and boolean are not objects, and static methods can be called without object instantiation. This hybrid approach provides performance benefits and practical flexibility. The language allows both object-oriented and procedural programming paradigms, which distinguishes it from strictly object-oriented languages."
     },
     {
       "id": 11,
       "question": "What is _bytecode_ in the context of _Java_?",
       "options": [
-        "Bytecode is the raw machine code directly executed by computer hardware.",
-        "Bytecode is an intermediate, platform-independent representation of Java code compiled from source code, which can be executed by the Java Virtual Machine (JVM) on any compatible system.",
-        "Bytecode is a proprietary file format used only by Java compilers.",
-        "Bytecode is the same as source code written in Java."
+        "Bytecode is a compressed version of Java source code that requires full recompilation before each program execution.",
+        "Bytecode is a low-level machine language specific to Java processors, directly translated from source code for immediate hardware execution.",
+        "Bytecode is an intermediate, platform-independent representation of Java code compiled from source files, which can be executed by the Java Virtual Machine on any compatible system.",
+        "Bytecode represents the raw binary instructions that are specific to a particular computer architecture and operating system."
       ],
-      "correctIndex": 1,
-      "explanation": "Bytecode serves as a critical intermediate step in Java's compilation process, enabling platform independence. When a Java program is compiled, source code is transformed into bytecode, a low-level, highly optimized set of instructions that can be interpreted by any JVM, regardless of the underlying hardware or operating system. This approach allows Java's famous 'Write Once, Run Anywhere' principle.\n\nExample of compilation process:\njava\n// Source Code (.java)\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}\n\n// Compiled to Bytecode (.class)\n// Executable by JVM on any platform"
+      "correctIndex": 2,
+      "explanation": "Bytecode serves as a critical abstraction layer in Java's compilation process. The Java compiler converts source code (.java files) into bytecode (.class files), which contains instructions readable by the JVM. This intermediate format enables Java's famous 'Write Once, Run Anywhere' principle by allowing the same bytecode to run on different platforms. A JVM interprets or just-in-time compiles this bytecode into native machine instructions."
     },
     {
       "id": 12,
       "question": "How does _garbage collection_ work in _Java_?",
       "options": [
-        "Garbage collection in Java is an automatic memory management process where the JVM automatically identifies and removes objects that are no longer reachable or in use by the program.",
-        "Garbage collection completely prevents memory leaks in Java programs.",
-        "Garbage collection manually requires developers to delete unused objects.",
-        "Garbage collection immediately removes all unused objects as soon as they are created."
+        "Garbage collection in Java requires developers to manually mark objects for deletion using specific memory management methods during runtime.",
+        "Java's garbage collection pauses program execution completely to scan and remove unused memory, causing significant performance overhead.",
+        "Garbage collection in Java is a deterministic process that immediately removes objects as soon as they become unreferenced, ensuring instant memory reclamation.",
+        "Java's garbage collection automatically identifies and removes objects that are no longer referenced by the program, managing memory allocation and preventing memory leaks without manual intervention."
       ],
-      "correctIndex": 0,
-      "explanation": "Java's garbage collection automatically handles memory management, reducing the risk of memory leaks and manual memory allocation errors. The process works by tracking object references and periodically identifying objects that are no longer accessible from the program's root set. While highly effective, garbage collection is not instantaneous and can introduce slight performance overhead.\n\nExample of object reachability:\njava\npublic class GarbageCollectionDemo {\n    public void demonstrateReachability() {\n        // Object becomes eligible for garbage collection\n        String temp = new String(\"Temporary\");\n        temp = null; // No longer reachable\n    }\n}"
+      "correctIndex": 3,
+      "explanation": "Java's garbage collection is a sophisticated memory management mechanism that runs automatically in the background. It uses various algorithms like mark-and-sweep, copying, and generational collection to efficiently identify and reclaim unused memory. The process is non-deterministic, meaning developers cannot predict exactly when garbage collection will occur. Modern JVMs have advanced GC algorithms that minimize performance impact."
     },
     {
       "id": 13,
       "question": "What is the purpose of the _'final'_ keyword?",
       "options": [
-        "A method to define constant mathematical values",
-        "A special access modifier for private class members",
-        "A keyword used only for creating static methods",
-        "The 'final' keyword in Java restricts modifications by making classes unextendable, methods non-overridable, and variables immutable."
+        "The 'final' keyword in Java provides immutability and prevents modifications. It can be applied to classes, methods, and variables to restrict inheritance, overriding, and reassignment.",
+        "The 'final' keyword represents a special memory management technique that helps the Java runtime optimize memory allocation for critical system resources.",
+        "The 'final' keyword is primarily used for exception handling and creating specific error conditions in Java programming and method declarations.",
+        "The 'final' keyword is a performance optimization technique that helps the Java compiler generate more efficient bytecode by marking certain elements as unchangeable."
       ],
-      "correctIndex": 3,
-      "explanation": "The final keyword provides immutability and prevents unexpected modifications in Java. When applied to a class, it prevents inheritance; to a method, it prevents overriding; and to a variable, it creates a constant value. This helps in creating more secure and predictable code by restricting runtime changes."
+      "correctIndex": 0,
+      "explanation": "The 'final' keyword has multiple use cases in Java. When applied to a class, it prevents inheritance. For methods, it prevents overriding. For variables, it creates a constant value for primitives or a constant reference for objects. This ensures data integrity and helps create more predictable code structures.\n\nExample:\n```java\npublic final class ImmutableClass { // Cannot be inherited\n    private final int constantValue; // Cannot be changed after initialization\n    \n    public void finalMethod() { // Cannot be overridden in child classes\n        // Method implementation\n    }\n}\n```"
     },
     {
       "id": 14,
       "question": "Can we _overload_ or _override_ _static methods_ in _Java_?",
       "options": [
-        "Only non-static methods can be overloaded",
-        "Static methods can be freely overridden in subclasses",
-        "Static methods cannot be overridden, but they can be overloaded in Java, as overloading depends on method signature, not method type.",
-        "Static methods cannot be overloaded or overridden"
+        "Static methods cannot be overridden in Java, though they can be redefined in a subclass. Method overloading is possible for static methods, but method overriding is not supported.",
+        "Static methods cannot be overloaded and are strictly bound to their declaring class, preventing any form of method signature modification.",
+        "Static methods can be fully overridden in Java, with child classes able to completely replace the parent class method implementation through inheritance mechanisms.",
+        "Static methods in Java follow special polymorphic rules that allow dynamic method dispatch and runtime method resolution similar to instance methods."
       ],
-      "correctIndex": 2,
-      "explanation": "Static methods belong to the class, not instances, so they cannot be overridden in the traditional sense. However, you can define multiple static methods with the same name but different parameters, which is method overloading. If a subclass defines a static method with the same signature as a parent class, it hides the parent method, rather than truly overriding it."
+      "correctIndex": 0,
+      "explanation": "Static methods belong to the class rather than an instance, so they cannot be truly overridden. When a subclass defines a method with the same signature as a parent class static method, it actually creates a new method that hides the parent method.\n\nExample:\n```java\npublic class ParentClass {\n    public static void staticMethod() {\n        System.out.println(\"Parent static method\");\n    }\n}\n\npublic class ChildClass extends ParentClass {\n    public static void staticMethod() { // This hides, not overrides\n        System.out.println(\"Child static method\");\n    }\n}\n```"
     },
     {
       "id": 15,
       "question": "What is the significance of _'this'_ keyword in _Java_?",
       "options": [
-        "'this' is a special method for constructor chaining",
-        "The 'this' keyword references the current object instance, helping to distinguish between instance variables and local variables with the same name.",
-        "'this' is a keyword for importing external classes",
-        "'this' is used to create new object instances"
+        "The 'this' keyword is a memory management technique in Java that helps optimize object creation and manages object lifecycle references within complex inheritance structures.",
+        "The 'this' keyword serves as a special compiler directive that enables advanced reflection and introspection capabilities for object-oriented programming in Java.",
+        "The 'this' keyword is primarily used for creating dependency injection mechanisms and managing object state transitions in complex class hierarchies.",
+        "The 'this' keyword in Java is a reference to the current object instance, primarily used to distinguish between instance variables and local variables with the same name, and to explicitly refer to the current object's methods and constructors."
       ],
-      "correctIndex": 1,
-      "explanation": "The 'this' keyword is a reference to the current object within an instance method or constructor. It's particularly useful when method parameters have the same name as instance variables, allowing explicit differentiation between them. It can also be used to call other constructors, pass the current object as a parameter, or return the current object instance."
+      "correctIndex": 3,
+      "explanation": "The 'this' keyword helps resolve naming conflicts between instance variables and method parameters, and allows explicit reference to the current object's context. It's particularly useful in constructors and methods where variable names might be identical.\n\nExample:\n```java\npublic class Person {\n    private String name;\n    \n    public Person(String name) {\n        this.name = name; // Distinguishes instance variable from parameter\n    }\n    \n    public void updateName(String name) {\n        this.name = name; // Same usage in method\n    }\n}\n```"
     }
   ],
-  "processedAt": "2025-12-14T21:22:46.620Z"
+  "processedAt": "2025-12-18T09:35:45.735Z"
 }

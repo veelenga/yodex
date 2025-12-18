@@ -1,0 +1,195 @@
+{
+  "id": "stack",
+  "name": "Stack",
+  "slug": "stack-data-structure-interview-questions",
+  "category": "Data Structures",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a _Stack_?",
+      "options": [
+        "A stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle, where elements are added and removed from the same end, typically called the top of the stack.",
+        "A stack is a hierarchical data structure that permits multiple entry and exit points, with elements distributed across different levels of access.",
+        "A stack is a complex data structure that follows a First-In, First-Out (FIFO) principle, where elements are processed from both ends simultaneously.",
+        "A stack is a non-linear data structure that allows random access to elements and maintains no specific order of insertion or removal."
+      ],
+      "correctIndex": 0,
+      "explanation": "The stack's LIFO mechanism ensures that the most recently added element is always the first to be removed. This makes stacks particularly useful for tracking function calls, managing undo operations, and implementing depth-first algorithms where the most recent item needs immediate access."
+    },
+    {
+      "id": 2,
+      "question": "Why _Stack_ is considered a _Recursive_ data structure?",
+      "options": [
+        "A stack is considered a recursive data structure because it enables complex computational operations through nested method calls and references.",
+        "A stack is considered a recursive data structure because it can dynamically change its size and store multiple data types in a single collection.",
+        "A stack is considered a recursive data structure because its definition is inherently self-referential, where each stack can be defined as a top element combined with another stack beneath it.",
+        "A stack is considered a recursive data structure because it allows elements to reference and interact with each other through multiple levels of abstraction."
+      ],
+      "correctIndex": 2,
+      "explanation": "The recursive nature of a stack stems from its ability to be defined in terms of itself. Each operation maintains the stack's fundamental structure, where removing the top element reveals another valid stack, demonstrating the self-similar characteristic inherent in recursive data structures."
+    },
+    {
+      "id": 3,
+      "question": "What are the primary operations performed on a _Stack_ and their time complexities?",
+      "options": [
+        "The primary stack operations are push (adding an element to the top) and pop (removing the top element), both of which operate in O(1) time complexity, alongside peek (viewing the top element) and isEmpty (checking if the stack is empty).",
+        "The primary stack operations are insert, delete, and modify, which require linear time complexity and support bidirectional element access.",
+        "The primary stack operations involve complex traversal methods with varied time complexities, including searching, sorting, and multi-level element manipulation.",
+        "The primary stack operations include rotation, transformation, and redistribution of elements with dynamic time complexity based on stack size."
+      ],
+      "correctIndex": 0,
+      "explanation": "Stack operations are designed for efficiency, focusing on constant-time access to the top element. This design makes stacks ideal for scenarios requiring quick insertion and removal, such as managing function call histories, parsing expressions, and implementing algorithmic backtracking mechanisms."
+    },
+    {
+      "id": 4,
+      "question": "When should I use _Stack_ or _Queue_ data structures instead of _Arrays/Lists_?",
+      "options": [
+        "Stacks and Queues are less efficient data structures compared to Arrays and should only be used in specialized academic scenarios. They introduce unnecessary complexity in most programming implementations.",
+        "Arrays are more flexible and can always replace Stacks and Queues through custom implementation techniques. The additional data structures are mostly redundant in modern programming languages.",
+        "Stacks and Queues provide structured data management with specific access patterns that Arrays cannot efficiently support. They excel in scenarios requiring strict order of insertion and removal, such as task scheduling, traversal algorithms, and memory management.",
+        "Stacks and Queues are primarily theoretical constructs with limited practical application in real-world software development. Arrays remain the most versatile and performant data storage mechanism."
+      ],
+      "correctIndex": 2,
+      "explanation": "The key difference between Stacks/Queues and Arrays lies in their access patterns. Stacks follow Last-In-First-Out (LIFO) principles, while Queues follow First-In-First-Out (FIFO). These specialized structures provide guaranteed time complexity and semantics for specific algorithmic operations like depth-first search, breadth-first search, and task management."
+    },
+    {
+      "id": 5,
+      "question": "What are _Infix_, _Prefix_, and _Postfix_ notations?",
+      "options": [
+        "Infix, prefix, and postfix notations represent different ways of expressing mathematical expressions based on the placement of operators relative to operands. Each notation has specific use cases in parsing, evaluation, and computational processing of mathematical expressions.",
+        "Prefix, infix, and postfix notations are experimental representation methods used exclusively in academic computer science research with no real-world application in practical software development.",
+        "These notations represent historical methods of mathematical notation that have been superseded by modern computational techniques. They hold minimal relevance in contemporary programming and mathematical computation.",
+        "Infix, prefix, and postfix notations are alternative mathematical writing systems with no practical computational significance. They are primarily linguistic variations without meaningful algorithmic implications."
+      ],
+      "correctIndex": 0,
+      "explanation": "Different notation systems determine how mathematical expressions are parsed and evaluated. Infix notation (operators between operands) is human-readable, while prefix and postfix notations enable more straightforward algorithmic parsing and stack-based computation, making them valuable in compiler design and expression evaluation."
+    },
+    {
+      "id": 6,
+      "question": "Explain how _Stacks_ are used in _Function Call management_ in programming languages.",
+      "options": [
+        "Function call management uses a call stack to track active function executions, tracking memory allocation, local variables, and return addresses. When a function is called, it's pushed onto the stack; when completed, it's removed, allowing precise control of program execution flow.",
+        "Function call management primarily relies on static memory allocation and does not dynamically track execution contexts. The process is fundamentally a simple transfer of computational control.",
+        "Function call management is a linear process of sequential execution without complex tracking mechanisms. Each function call simply transfers control without maintaining comprehensive execution context.",
+        "Call stacks are inefficient memory management techniques that introduce unnecessary overhead in modern programming languages. Most contemporary systems use more streamlined execution tracking methods."
+      ],
+      "correctIndex": 0,
+      "explanation": "The call stack is a critical runtime mechanism that enables recursive function calls, maintains local variable scopes, and manages memory for function executions. It provides a structured approach to tracking program state, supporting complex control flows and enabling features like error backtracing and dynamic memory management."
+    },
+    {
+      "id": 7,
+      "question": "Describe an application where _Stacks_ are naturally suited over other data structures.",
+      "options": [
+        "Stacks are naturally suited in text editors for implementing undo and redo functionalities, where they track user actions in a last-in-first-out manner, allowing easy reversal and restoration of previous states.",
+        "Stacks are particularly effective in compilers for parsing programming languages, tracking syntax trees and managing complex nested code structure transformations.",
+        "Stacks provide optimal performance in database transaction logs, managing concurrent write operations and ensuring sequential data integrity across distributed systems.",
+        "Stacks excel in network routing protocols, where they manage packet transmission sequences and handle complex network connection hierarchies with efficient memory management."
+      ],
+      "correctIndex": 0,
+      "explanation": "Stacks are ideal for scenarios requiring sequential state tracking and reversal. Their last-in-first-out nature makes them perfect for action history management, like undo/redo functionality. The key characteristic is maintaining a chronological order of actions that can be easily traversed backwards or forwards."
+    },
+    {
+      "id": 8,
+      "question": "Compare _Array-based_ vs _Linked List_ stack implementations.",
+      "options": [
+        "Linked list stacks are inherently more memory-efficient, providing better cache performance and allowing more complex data manipulation compared to array-based implementations.",
+        "Array-based stacks provide superior performance with direct memory access and constant-time operations, while linked list stacks offer more flexibility in dynamic memory allocation and easier structural modifications.",
+        "Array-based stacks consume significantly less memory overhead and provide better parallel processing capabilities for concurrent stack operations.",
+        "Linked list stack implementations are more thread-safe and provide better synchronization mechanisms for multi-threaded programming environments."
+      ],
+      "correctIndex": 1,
+      "explanation": "Stack implementations differ primarily in memory management and performance characteristics. Array-based stacks leverage contiguous memory and provide faster access, while linked list stacks allow more dynamic resizing and structural changes. The choice depends on specific use case requirements like memory constraints, expected stack size, and operation frequency."
+    },
+    {
+      "id": 9,
+      "question": "Implement a _Dynamic Stack_ that automatically resizes itself.",
+      "options": [
+        "A dynamic stack automatically resizes itself by doubling its capacity when full and halving when significantly under-utilized, ensuring efficient memory usage and amortized constant-time operations.",
+        "Dynamic stacks use complex memory allocation strategies involving exponential growth algorithms and sophisticated memory fragmentation prevention mechanisms.",
+        "A dynamic stack manages memory by using reference counting and intelligent garbage collection techniques to optimize stack performance and reduce memory overhead.",
+        "Dynamic stacks implement advanced memory management through predictive sizing algorithms that anticipate future stack growth based on historical usage patterns."
+      ],
+      "correctIndex": 0,
+      "explanation": "Dynamic stack implementation focuses on efficient memory management through strategic resizing. By doubling capacity when full and halving when sparse, the stack maintains optimal memory utilization. This approach provides amortized O(1) time complexity for push and pop operations while minimizing unnecessary memory allocation."
+    },
+    {
+      "id": 10,
+      "question": "What are the performance implications of a _Fixed-size Array Stack Implementation_?",
+      "options": [
+        "Fixed-size array stacks offer predictable performance and memory allocation but have limited capacity and potential memory waste due to pre-allocating the entire array.",
+        "Fixed-size array stacks consume less memory by automatically shrinking and expanding based on current stack usage and runtime requirements.",
+        "Fixed-size array stacks provide dynamic memory allocation and unlimited scalability with minimal overhead in complex data processing scenarios.",
+        "Fixed-size array stacks guarantee optimal memory efficiency through just-in-time allocation strategies and adaptive memory management techniques."
+      ],
+      "correctIndex": 0,
+      "explanation": "Fixed-size array stacks allocate a predetermined amount of memory upfront, which limits their flexibility. While they offer fast access and consistent performance, they cannot dynamically grow beyond their initial size, potentially leading to overflow or underutilized memory. The trade-off is between predictability and flexibility, making them suitable for scenarios with known, stable stack sizes."
+    },
+    {
+      "id": 11,
+      "question": "Design a _Stack_ that supports _Retrieving_ the min element in _O(1)_.",
+      "options": [
+        "Create a custom stack class with a separate tracking mechanism that calculates minimum values through iterative searching during each retrieval operation.",
+        "Design a stack with two synchronized stacks: a main stack for elements and an auxiliary stack tracking minimum values, enabling O(1) minimum element retrieval.",
+        "Implement a min-tracking algorithm that uses complex mathematical transformations to maintain a running minimum value alongside standard stack operations.",
+        "Develop a self-balancing stack structure that dynamically reorganizes elements to maintain constant-time minimum value access through specialized indexing."
+      ],
+      "correctIndex": 1,
+      "explanation": "The two-stack approach allows constant-time minimum element retrieval by maintaining a parallel stack that always contains the current minimum value. Each push and pop operation updates the auxiliary stack, ensuring that the top element always represents the minimum value at that point in the stack's state."
+    },
+    {
+      "id": 12,
+      "question": "How can you design a _Stack_ to be thread-safe?",
+      "options": [
+        "Design a stack with complex distributed synchronization protocols that introduce additional overhead to manage inter-thread communication.",
+        "Achieve thread safety by implementing a global locking mechanism that completely serializes all stack operations, preventing any parallel execution.",
+        "Create a thread-safe stack by implementing extensive error checking and manual synchronization at each method invocation point.",
+        "Implement thread safety in a stack by using synchronization mechanisms like mutex locks, concurrent data structures, or atomic operations to prevent race conditions and ensure safe concurrent access."
+      ],
+      "correctIndex": 3,
+      "explanation": "Thread-safe stack implementations protect against concurrent access issues by controlling how multiple threads interact with the stack. Techniques like synchronized methods, locks, and atomic operations prevent race conditions and data corruption while maintaining acceptable performance. The specific approach depends on the expected concurrency level and performance requirements."
+    },
+    {
+      "id": 13,
+      "question": "Implement a _Stack_ with a _Find-Middle_ operation in _O(1)_ time.",
+      "options": [
+        "Implement the stack using a doubly linked list with a middle pointer, where each node tracks its position. Maintain a separate pointer to the middle node and update it during push and pop operations to ensure O(1) middle element access.",
+        "Implement a skip list data structure that maintains multiple levels of references to simulate constant-time middle element retrieval.",
+        "Create a circular buffer with two pointers tracking the middle, dynamically resizing the underlying array to keep midpoint calculation efficient.",
+        "Use a binary search tree with a rotating root to track the middle element, rebalancing the tree after each insertion to maintain constant time complexity."
+      ],
+      "correctIndex": 0,
+      "explanation": "The stack with find-middle operation requires a specialized data structure that can track the middle element dynamically. By using a doubly linked list with an explicit middle pointer, we can update the middle reference during push and pop operations without additional computational overhead, ensuring true O(1) complexity."
+    },
+    {
+      "id": 14,
+      "question": "Implement a _Linked List_ using _Stack_.",
+      "options": [
+        "Create two stacks where one stack represents the linked list nodes and another serves as a temporary storage for traversal and manipulation operations, using stack operations to simulate linked list behavior.",
+        "Implement the linked list by nesting stack containers within each other, using recursive stack frame management to track node connections.",
+        "Design a stack-based linked list by maintaining parallel stacks for data and next-node references, synchronizing them during modifications.",
+        "Use a single stack with embedded metadata markers to distinguish between list nodes and transition points during list operations."
+      ],
+      "correctIndex": 0,
+      "explanation": "Implementing a linked list using stacks requires carefully managing data storage and retrieval. By leveraging stack's last-in-first-out properties and using auxiliary storage, we can simulate linked list operations while maintaining the fundamental stack interface."
+    },
+    {
+      "id": 15,
+      "question": "Implement Doubly Linked List using Stacks with min complexity.",
+      "options": [
+        "Utilize two synchronized stacks - one for forward traversal and another for backward traversal - where each stack maintains elements and their relative positions to simulate doubly linked list functionality.",
+        "Design a multi-level stack mechanism where each stack represents a different view of the linked list's structural relationships.",
+        "Implement the doubly linked list using a single stack with complex index tracking and recursive element rearrangement during insertions.",
+        "Create a stack-based doubly linked list by embedding bidirectional references within each stack element's internal metadata."
+      ],
+      "correctIndex": 0,
+      "explanation": "A stack-based doubly linked list implementation requires careful synchronization between forward and backward traversal mechanisms. By maintaining parallel stacks and managing their interactions, we can effectively simulate the bidirectional navigation of a traditional doubly linked list."
+    }
+  ],
+  "processedAt": "2025-12-18T10:31:04.854Z"
+}

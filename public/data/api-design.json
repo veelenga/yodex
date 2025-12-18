@@ -1,0 +1,198 @@
+{
+  "id": "api-design",
+  "name": "API Design",
+  "slug": "api-design-interview-questions",
+  "category": "Architecture",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is an _API_ and what are its main purposes?",
+      "options": [
+        "An API is a network security mechanism that validates and manages communication channels between distributed computing environments and external software platforms.",
+        "An API represents a comprehensive programming language design that standardizes how different software components interact through predefined communication protocols.",
+        "An API (Application Programming Interface) is a set of rules and protocols that enables different software applications to communicate, allowing developers to access specific features or data from another system without understanding its internal complexity.",
+        "An API is a software framework that directly connects two applications by creating a permanent link between their internal systems and sharing complete database access."
+      ],
+      "correctIndex": 2,
+      "explanation": "APIs act as intermediary tools that abstract complex system interactions. They provide a standardized way for different software applications to request and exchange data without exposing internal implementation details. By defining clear communication protocols, APIs enable seamless integration between diverse software systems while maintaining modularity and separation of concerns."
+    },
+    {
+      "id": 2,
+      "question": "Can you explain the difference between an _API_ and a _Web service_?",
+      "options": [
+        "An API differs from a web service in that APIs can operate across various communication protocols and platforms, while web services specifically use HTTP and XML/JSON for internet-based interactions between systems.",
+        "Web services are more comprehensive communication tools that include APIs as a subset, offering broader network integration capabilities across multiple software environments.",
+        "Web services are exclusively used for enterprise-level communication, whereas APIs are limited to simple data exchange between basic software applications.",
+        "APIs represent a more advanced technology compared to web services, providing deeper system-level integration and more complex communication mechanisms."
+      ],
+      "correctIndex": 0,
+      "explanation": "While both APIs and web services facilitate software communication, they have distinct characteristics. Web services are typically XML-based, network-specific protocols, whereas APIs can operate across different communication methods and are more flexible in design and implementation."
+    },
+    {
+      "id": 3,
+      "question": "What are the principles of a _RESTful API_?",
+      "options": [
+        "RESTful APIs are primarily characterized by complex authentication mechanisms, multi-layer encryption protocols, and comprehensive network security implementations.",
+        "RESTful APIs follow key principles including statelessness, client-server separation, a uniform interface, and the ability to cache responses, enabling scalable and flexible web service design.",
+        "RESTful APIs focus on creating permanent connections between client and server systems with robust real-time synchronization capabilities.",
+        "RESTful APIs represent a comprehensive software architecture that requires continuous server-side state management and complex transactional processing."
+      ],
+      "correctIndex": 1,
+      "explanation": "REST (Representational State Transfer) provides a lightweight, standardized approach to designing networked applications. Its principles emphasize stateless communication, clear resource-based interactions, and a uniform interface that allows independent evolution of client and server components."
+    },
+    {
+      "id": 4,
+      "question": "How does a _SOAP API_ differ from a _REST API_?",
+      "options": [
+        "SOAP APIs use XML for data exchange and strictly defined protocols with comprehensive security, while REST APIs use lightweight JSON, are more flexible, and rely on standard HTTP methods for communication.",
+        "REST APIs are primarily designed for internal microservice communication and use complex binary protocols, whereas SOAP focuses on web-based data exchanges.",
+        "SOAP and REST APIs are fundamentally identical, both supporting identical data exchange mechanisms and utilizing the same communication standards across web services.",
+        "REST APIs exclusively use complex XML schemas for data transmission, with highly structured communication protocols designed for enterprise-level integration."
+      ],
+      "correctIndex": 0,
+      "explanation": "SOAP (Simple Object Access Protocol) and REST (Representational State Transfer) represent different architectural approaches to web services. SOAP is protocol-heavy with strong typing and extensive security, typically using XML, while REST is more lightweight, uses standard HTTP methods, and commonly uses JSON for data exchange. The key differences lie in their communication style, data format, and underlying design philosophy."
+    },
+    {
+      "id": 5,
+      "question": "What is an _API endpoint_?",
+      "options": [
+        "An API endpoint represents a complex network routing mechanism that dynamically maps internal server configurations to external communication protocols.",
+        "An endpoint is a comprehensive server infrastructure that handles multiple simultaneous communication channels and manages complex data transformations.",
+        "An API endpoint is a specific URL that allows client applications to access a particular service or resource within an API, functioning as a communication interface for data exchange.",
+        "API endpoints are specialized software components that manage authentication and encryption for web service interactions across distributed systems."
+      ],
+      "correctIndex": 2,
+      "explanation": "API endpoints serve as precise access points for specific resources or services within a web API. They provide a standardized way for different software applications to communicate, request data, and perform specific actions using unique URLs that correspond to particular functionalities or data sets."
+    },
+    {
+      "id": 6,
+      "question": "What are the common methods (_HTTP verbs_) used in a _REST API_, and what does each method do?",
+      "options": [
+        "REST APIs utilize a complex set of proprietary methods that abstract HTTP protocols, using custom communication techniques for data manipulation and retrieval.",
+        "REST API methods are standardized globally by an international consortium, with strict rules governing their implementation and communication protocols.",
+        "REST APIs use GET to retrieve data, POST to create resources, PUT to update existing resources, DELETE to remove resources, and PATCH to perform partial updates on specific resource attributes.",
+        "HTTP verbs in REST APIs are primarily used for establishing secure communication channels, with minimal focus on actual data manipulation or resource management."
+      ],
+      "correctIndex": 2,
+      "explanation": "HTTP methods in REST APIs define how clients interact with server resources. Each verb represents a specific type of operation: GET retrieves data, POST creates new resources, PUT updates entire resources, DELETE removes resources, and PATCH allows partial updates. These methods provide a standardized, intuitive way to perform CRUD (Create, Read, Update, Delete) operations."
+    },
+    {
+      "id": 7,
+      "question": "How do you version an _API_?",
+      "options": [
+        "API versioning requires maintaining complete historical implementations of every past API version within a single monolithic codebase for comprehensive compatibility.",
+        "API versioning involves creating multiple parallel codebases for each version of the service, which allows complex feature management and total isolation.",
+        "API versioning is achieved through dynamic runtime type checking that allows different client requests to be routed to corresponding implementation versions.",
+        "API versioning ensures backward compatibility while evolving the interface. Common strategies include URI versioning (embedding version in URL), header versioning, and query parameter versioning."
+      ],
+      "correctIndex": 3,
+      "explanation": "API versioning is critical for managing changes in web services while preventing breaking changes for existing clients. By providing clear mechanisms to distinguish between different API iterations, developers can introduce new features or improvements without disrupting existing integrations. The goal is to create a predictable, manageable approach to API evolution that minimizes client-side refactoring."
+    },
+    {
+      "id": 8,
+      "question": "What is _idempotence_ in the context of _API design_, and why is it important?",
+      "options": [
+        "Idempotence describes an API design approach where each request is independently validated and transformed before potential execution.",
+        "Idempotence is a mechanism for compressing API request payloads to reduce network transmission overhead and improve performance.",
+        "Idempotence ensures that making the same request multiple times produces the same result without additional side effects, which is crucial for reliable network operations and error recovery.",
+        "Idempotence represents a design pattern where API calls automatically generate unique transaction identifiers to prevent duplicate processing of requests."
+      ],
+      "correctIndex": 2,
+      "explanation": "Idempotent operations are fundamental in distributed systems and network communications. They provide a safety mechanism that allows clients to retry requests without risking unintended duplications or state changes, which is especially important in scenarios with unreliable network conditions."
+    },
+    {
+      "id": 9,
+      "question": "Can you explain what _API rate limiting_ is and give an example of why it might be used?",
+      "options": [
+        "API rate limiting is a security mechanism that encrypts request metadata to prevent unauthorized access and ensure request authenticity.",
+        "API rate limiting automatically scales server resources based on incoming request volumes to maintain consistent performance across dynamic workloads.",
+        "API rate limiting controls the number of requests a client can make within a specific timeframe to prevent server overload, manage resource consumption, and protect against potential denial-of-service attacks.",
+        "API rate limiting dynamically adjusts connection pools and thread allocations to optimize server-side request processing efficiency."
+      ],
+      "correctIndex": 2,
+      "explanation": "Rate limiting is a critical technique for managing API health and preventing potential abuse. By establishing clear boundaries on request frequency, service providers can ensure fair usage, maintain system stability, and protect infrastructure from unexpected high-load scenarios."
+    },
+    {
+      "id": 10,
+      "question": "Describe the concept of _OAuth_ in relation to _API security_.",
+      "options": [
+        "OAuth is a web security framework that requires users to manually approve each data access request through multi-factor authentication and explicit permission workflows.",
+        "OAuth is a centralized authentication system where a single master server validates and logs all cross-application user interactions, maintaining a comprehensive access control database.",
+        "OAuth is an open authorization standard that enables secure, limited access to user data across different applications without sharing personal credentials, using tokens to grant controlled resource access.",
+        "OAuth is a cryptographic protocol that encrypts user credentials and prevents unauthorized access by generating complex mathematical authentication keys for each application interaction."
+      ],
+      "correctIndex": 2,
+      "explanation": "OAuth provides a secure delegation protocol where applications can request limited access to user resources without exposing login credentials. It uses authorization tokens that represent specific permission scopes, allowing controlled data sharing between services while maintaining user privacy and security."
+    },
+    {
+      "id": 11,
+      "question": "What strategies would you use to ensure the _backward compatibility_ of an _API_?",
+      "options": [
+        "Backward compatibility is guaranteed by freezing API designs permanently and preventing any modifications to existing interfaces, regardless of technological advancements.",
+        "Backward compatibility requires implementing complex middleware that dynamically translates between different API versions, creating adaptive request-response transformation layers.",
+        "Backward compatibility is achieved by completely rebuilding the API architecture annually, ensuring that all legacy systems are systematically replaced with modern implementation strategies.",
+        "Backward compatibility can be maintained by versioning APIs, using flexible data structures, avoiding removal of existing endpoints, and providing clear migration paths for developers when introducing changes."
+      ],
+      "correctIndex": 3,
+      "explanation": "Maintaining backward compatibility ensures that existing API consumers can continue using the service without requiring immediate updates. This approach minimizes disruption, allows gradual migration, and demonstrates respect for developer ecosystems by providing stable, predictable interfaces."
+    },
+    {
+      "id": 12,
+      "question": "What are some common _response codes_ that an _API_ might return, and what do they signify?",
+      "options": [
+        "HTTP status codes represent a complex network communication protocol that encodes detailed system state information using proprietary numerical classification systems.",
+        "HTTP status codes function as comprehensive error management mechanisms that dynamically negotiate communication protocols between distributed computing environments.",
+        "HTTP status codes are machine-generated diagnostic signals that provide low-level technical metadata about internal server processing and network transmission conditions.",
+        "HTTP status codes communicate the outcome of API requests, providing standardized ways to indicate successful operations (2xx), client errors (4xx), and server errors (5xx), helping developers understand request processing results."
+      ],
+      "correctIndex": 3,
+      "explanation": "Status codes provide a universal language for web services to communicate request outcomes. They allow clients to quickly understand whether a request succeeded, failed due to client issues, or encountered server-side problems, facilitating more robust and responsive application design."
+    },
+    {
+      "id": 13,
+      "question": "How can you design an _API_ to be easily consumable by _clients_?",
+      "options": [
+        "Focus on implementing maximum functionality in each endpoint, prioritizing comprehensive data delivery over simplicity and readability.",
+        "Create an API with complex nested endpoints and custom HTTP methods to demonstrate advanced technical complexity and challenge client developers.",
+        "Develop unique response structures for each endpoint to maximize flexibility and allow clients to adapt to different data presentation styles.",
+        "Design an easily consumable API by maintaining consistent HTTP method usage, implementing intuitive endpoint structures, and providing clear, predictable response formats that follow RESTful principles."
+      ],
+      "correctIndex": 3,
+      "explanation": "API design requires prioritizing developer experience through clear, standardized interactions. Consistent patterns help reduce learning curves, improve integration speed, and minimize potential implementation errors. Well-designed APIs abstract complexity and provide straightforward mechanisms for data retrieval and manipulation."
+    },
+    {
+      "id": 14,
+      "question": "When designing an _API_, how would you document it for _end-users_?",
+      "options": [
+        "Develop separate PDF documentation that requires manual updates and provides static information about API endpoints and interactions.",
+        "Create comprehensive API documentation using tools like Swagger or OpenAPI, which provide interactive documentation, clear endpoint descriptions, request/response examples, and detailed parameter explanations.",
+        "Use email communication and support tickets as the primary method for explaining API functionality to interested developers.",
+        "Rely on minimal inline code comments within the API codebase as the primary documentation strategy for developers to understand implementation details."
+      ],
+      "correctIndex": 1,
+      "explanation": "Effective API documentation serves as a critical interface between developers and the API itself. Interactive documentation tools enable real-time exploration, reduce onboarding complexity, and provide clear, up-to-date guidance for integration. Good documentation dramatically improves developer adoption and reduces support overhead."
+    },
+    {
+      "id": 15,
+      "question": "What considerations might influence how you paginate _API responses_?",
+      "options": [
+        "Select pagination strategies based on dataset size, performance requirements, and client needs, considering techniques like offset-based pagination for smaller datasets and cursor-based pagination for larger, more dynamic collections.",
+        "Avoid pagination entirely and return complete datasets, allowing clients to manage data retrieval and filtering on their own infrastructure.",
+        "Implement a single pagination approach across all endpoints, regardless of data volume or update frequency, to maintain consistent client interaction patterns.",
+        "Design custom pagination mechanisms that require complex client-side calculations and multiple API calls to retrieve complete result sets."
+      ],
+      "correctIndex": 0,
+      "explanation": "Pagination is crucial for managing large datasets and ensuring efficient data transfer. Different strategies suit various use cases, with performance and usability being key considerations. The right approach balances server load, client experience, and data retrieval efficiency."
+    }
+  ],
+  "processedAt": "2025-12-18T08:40:14.527Z"
+}

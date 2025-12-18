@@ -1,0 +1,197 @@
+{
+  "id": "aws",
+  "name": "AWS",
+  "slug": "aws-interview-questions",
+  "category": "Cloud & DevOps",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Amazon Web Services (AWS)_ and what are its key features?",
+      "options": [
+        "AWS is a digital marketing and e-commerce solution that enables businesses to manage online sales, customer interactions, and cloud-based advertising campaigns globally.",
+        "Amazon Web Services is a proprietary software development platform designed to help companies build and deploy enterprise-level applications using cloud-based microservices architecture.",
+        "Amazon Web Services represents a network security and data protection ecosystem that provides advanced cybersecurity tools and compliance management for large-scale enterprise environments.",
+        "Amazon Web Services (AWS) is a comprehensive cloud computing platform that provides scalable, flexible infrastructure services including computing power, storage, databases, and networking tools for businesses of all sizes."
+      ],
+      "correctIndex": 3,
+      "explanation": "AWS is a cloud computing platform launched by Amazon in 2006 that allows organizations to access scalable computing resources without significant upfront infrastructure investments. It offers over 200 services across computing, storage, databases, networking, analytics, and machine learning, enabling businesses to quickly deploy and manage technology infrastructure with global reach and flexibility."
+    },
+    {
+      "id": 2,
+      "question": "Explain the concept of _Regions_ and _Availability Zones_ in AWS.",
+      "options": [
+        "A Region in AWS represents a specialized computing zone that aggregates server resources and manages cross-platform application deployment for enterprise cloud environments.",
+        "In AWS, a Region is a geographic area containing multiple isolated Availability Zones, which are distinct data centers within that Region designed to provide high availability and fault tolerance for cloud infrastructure.",
+        "AWS Regions are centralized data processing centers that manage global network routing and provide unified cloud resource allocation across different geographical networks.",
+        "AWS Regions are dedicated network segments that coordinate security protocols and manage inter-cloud communication channels for distributed computing infrastructure."
+      ],
+      "correctIndex": 1,
+      "explanation": "Regions and Availability Zones are critical architectural components of AWS's global infrastructure. Each Region is a separate geographic area with multiple isolated data centers (Availability Zones) that can operate independently. This design ensures high availability, fault tolerance, and low-latency access by allowing resources to be distributed across physically separate locations, minimizing the impact of potential failures."
+    },
+    {
+      "id": 3,
+      "question": "What is an _Amazon Machine Image (AMI)_ and how is it used?",
+      "options": [
+        "An Amazon Machine Image is a cloud-based deployment framework that manages application lifecycle management and provides standardized infrastructure configuration protocols.",
+        "An Amazon Machine Image (AMI) is a pre-configured template that contains the software configuration, operating system, and data needed to launch an Amazon EC2 instance, serving as a blueprint for creating virtual servers.",
+        "An Amazon Machine Image is a comprehensive network security template designed to establish consistent access controls and compliance standards for cloud-based infrastructure.",
+        "AMI represents a dynamic resource allocation mechanism that enables automatic scaling and real-time optimization of cloud computing environments across multiple platforms."
+      ],
+      "correctIndex": 1,
+      "explanation": "AMIs are foundational to AWS EC2 instances, allowing users to quickly launch virtual servers with pre-configured settings. They can be created from existing EC2 instances, purchased from the AWS Marketplace, or provided by AWS, and include specifications like operating system, storage configurations, and launch permissions, enabling rapid and consistent server deployment."
+    },
+    {
+      "id": 4,
+      "question": "Describe the difference between _Elastic IP_ and _Public IP_ in AWS.",
+      "options": [
+        "Public IPs are permanent addresses assigned by AWS, while Elastic IPs require manual configuration and have additional monthly charges for unused resources.",
+        "In AWS, a Public IP is dynamically assigned and changes when an instance stops, while an Elastic IP is a static, persistent IP address that can be reassigned between instances as needed.",
+        "Public IPs and Elastic IPs are essentially the same, with both providing consistent internet connectivity for EC2 instances across different availability zones.",
+        "An Elastic IP is a premium service that allows multiple public IP addresses to be simultaneously attached to a single EC2 instance for enhanced network performance."
+      ],
+      "correctIndex": 1,
+      "explanation": "Public IPs are temporary addresses assigned to EC2 instances that change when the instance stops, making them unsuitable for consistent external access. Elastic IPs provide a static IP address that can be manually associated with an instance, ensuring consistent network identification and allowing easy remapping between instances without changing the public-facing address."
+    },
+    {
+      "id": 5,
+      "question": "What is the role of the _AWS Management Console_?",
+      "options": [
+        "AWS Management Console is a command-line interface designed for developers to automate complex cloud infrastructure tasks and deployments.",
+        "The AWS Management Console is a web-based graphical interface that allows users to access, configure, and manage AWS cloud services and resources through a centralized dashboard.",
+        "The Management Console is a specialized security tool that monitors and logs all AWS resource interactions across an organization's cloud environment.",
+        "The AWS Management Console is a desktop application that provides secure access to cloud infrastructure with advanced monitoring and deployment tools."
+      ],
+      "correctIndex": 1,
+      "explanation": "The AWS Management Console serves as the primary web-based interface for interacting with AWS services. It provides an intuitive, visual way to manage cloud resources, configure services, monitor performance, and handle account settings without requiring deep technical expertise or command-line knowledge."
+    },
+    {
+      "id": 6,
+      "question": "Explain the concept of _Elastic Computing_ in AWS.",
+      "options": [
+        "Elastic Computing is a pricing model that allows users to purchase computing resources in bulk with flexible, long-term commitment discounts.",
+        "Elastic Computing refers to AWS's network infrastructure that automatically balances computational loads across multiple regions for enhanced reliability.",
+        "Elastic Computing in AWS enables dynamic scaling of computing resources to match workload demands, allowing businesses to adjust computational capacity instantly and pay only for the resources they consume.",
+        "Elastic Computing represents AWS's ability to automatically distribute computing tasks across global data centers to optimize performance and reduce latency."
+      ],
+      "correctIndex": 2,
+      "explanation": "Elastic Computing is a core AWS feature that provides flexibility in managing computational resources. It allows organizations to scale computing capacity up or down rapidly in response to changing workloads, ensuring optimal performance and cost-efficiency by eliminating the need for overprovisioning or underutilizing infrastructure."
+    },
+    {
+      "id": 7,
+      "question": "What is _AWS Identity and Access Management (IAM)_ and why is it important?",
+      "options": [
+        "IAM is an AWS monitoring tool that tracks user activities and generates comprehensive security reports for enterprise cloud environments.",
+        "AWS Identity and Access Management (IAM) is a free AWS service that enables secure control of access to AWS resources by managing authentication and authorization for users, groups, and roles.",
+        "AWS IAM is a compliance management platform that automatically assigns security permissions based on predefined organizational hierarchies and access levels.",
+        "AWS IAM is a paid security service that encrypts all cloud resources and prevents unauthorized network access through complex firewall configurations."
+      ],
+      "correctIndex": 1,
+      "explanation": "IAM is a critical AWS security service that allows precise control over who can access specific AWS resources and what actions they can perform. It provides granular permission management through users, groups, and roles, enabling organizations to implement the principle of least privilege and maintain robust security controls across their cloud infrastructure."
+    },
+    {
+      "id": 8,
+      "question": "Describe the _AWS Shared Responsibility Model_.",
+      "options": [
+        "The Shared Responsibility Model is a contractual agreement that defines financial liabilities for security breaches in cloud computing environments.",
+        "The AWS Shared Responsibility Model defines security responsibilities between AWS and customers, with AWS responsible for security of the cloud infrastructure and customers responsible for security within their cloud environment.",
+        "The AWS Shared Responsibility Model is a comprehensive compliance framework that equally distributes security tasks between cloud providers and customers in a 50/50 partnership.",
+        "AWS Shared Responsibility Model is a standardized security protocol that automatically synchronizes security settings across all cloud services and customer accounts."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Shared Responsibility Model is fundamental to understanding cloud security. AWS manages the security of the underlying infrastructure, including hardware, global data centers, and networking, while customers are responsible for securing their data, managing access controls, configuring network settings, and protecting their specific cloud resources."
+    },
+    {
+      "id": 9,
+      "question": "What is the difference between _Vertical Scaling_ and _Horizontal Scaling_ in AWS?",
+      "options": [
+        "Vertical scaling increases the resources of a single machine by adding more CPU, RAM, or storage, while horizontal scaling adds more machines to distribute workload across multiple servers.",
+        "Vertical scaling dynamically adjusts server resources based on real-time performance metrics, while horizontal scaling creates redundant server clusters for high availability.",
+        "Vertical scaling replaces entire server systems with more powerful hardware, while horizontal scaling redistributes computational tasks through software load balancing.",
+        "Vertical scaling involves adding parallel processing units to improve computational efficiency, while horizontal scaling focuses on network-level resource optimization."
+      ],
+      "correctIndex": 0,
+      "explanation": "Scaling strategies are critical for managing application performance and resource allocation. Vertical scaling (scaling up) is limited by hardware constraints and can cause downtime during upgrades. Horizontal scaling (scaling out) offers better flexibility, improved fault tolerance, and easier management of increased computational demands."
+    },
+    {
+      "id": 10,
+      "question": "Explain the concept of _High Availability_ in AWS.",
+      "options": [
+        "High Availability (HA) in AWS ensures that applications and services remain operational and accessible by distributing resources across multiple Availability Zones, providing automatic failover and minimizing potential downtime during infrastructure failures.",
+        "High Availability is an AWS infrastructure design that guarantees 100% uptime by using advanced predictive monitoring systems and instant system reconfiguration capabilities.",
+        "High Availability in AWS is a strategy of running multiple identical servers in a single data center to create instant backup and immediate system recovery when hardware components fail.",
+        "High Availability refers to maintaining constant network connectivity through redundant internet connections and load balancing between different AWS regional endpoints."
+      ],
+      "correctIndex": 0,
+      "explanation": "High Availability is a critical cloud computing concept that ensures service reliability through strategic resource distribution. In AWS, this is achieved by deploying applications across multiple Availability Zones within a region, which are physically separate data centers with independent power, cooling, and networking infrastructure. This approach allows automatic failover and prevents single points of failure, ensuring that if one zone experiences an issue, traffic can be seamlessly redirected to healthy zones."
+    },
+    {
+      "id": 11,
+      "question": "What is _Amazon Elastic Compute Cloud (EC2)_ and what are its key features?",
+      "options": [
+        "Amazon Elastic Compute Cloud (EC2) is a network optimization service that provides advanced routing and traffic management for complex cloud infrastructure deployments.",
+        "Amazon Elastic Compute Cloud (EC2) is a cloud storage platform that enables developers to create and manage distributed database systems with automatic replication and global data synchronization.",
+        "Amazon Elastic Compute Cloud (EC2) is a serverless computing environment that automatically scales computational workloads without requiring manual instance management or configuration.",
+        "Amazon Elastic Compute Cloud (EC2) is a web service that provides scalable compute capacity in the cloud, allowing users to quickly launch and manage virtual servers with flexible configuration options for computing resources."
+      ],
+      "correctIndex": 3,
+      "explanation": "EC2 is a core AWS service that provides virtual computing environments known as instances. These instances allow users to run applications in the cloud with complete control over computing resources. Users can select instance types based on their specific performance, memory, and storage requirements, and can quickly scale their infrastructure up or down as needed."
+    },
+    {
+      "id": 12,
+      "question": "Describe the different _EC2 instance types_ and their use cases.",
+      "options": [
+        "EC2 instance types are pre-configured virtual machines that simulate different hardware environments, allowing developers to test application compatibility across multiple theoretical computing architectures.",
+        "EC2 instance types are dynamic cloud computing templates that automatically adjust their computational capabilities based on real-time machine learning algorithms and workload predictions.",
+        "EC2 instance types are standardized server configurations that provide uniform computational resources across all AWS regions, designed to ensure consistent performance regardless of application complexity.",
+        "EC2 instance types are specialized computing configurations optimized for different workloads, categorized into General Purpose, Compute Optimized, Memory Optimized, Storage Optimized, and Accelerated Computing types to meet diverse application performance requirements."
+      ],
+      "correctIndex": 3,
+      "explanation": "EC2 instance types are designed to provide specialized computing environments tailored to specific use cases. Each category offers unique characteristics: General Purpose instances balance compute, memory, and networking resources; Compute Optimized instances deliver high-performance processors for compute-intensive tasks; Memory Optimized instances are ideal for memory-heavy applications; Storage Optimized instances provide high I/O performance; and Accelerated Computing instances leverage hardware accelerators for specialized workloads."
+    },
+    {
+      "id": 13,
+      "question": "What is _Amazon Elastic Container Service (ECS)_ and how does it work?",
+      "options": [
+        "Amazon Elastic Container Service is a networking platform that provides secure container-to-container communication protocols for distributed microservices architectures.",
+        "Amazon Elastic Container Service (ECS) is a fully managed container orchestration service that enables users to run Docker containers on AWS infrastructure, supporting deployment on Amazon EC2 instances or using serverless AWS Fargate.",
+        "Amazon Elastic Container Service is a monitoring tool designed to track container performance and resource utilization across multiple cloud environments and deployment platforms.",
+        "Amazon Elastic Container Service is a container storage solution that allows developers to store and manage Docker images directly in cloud-based repositories with automatic versioning."
+      ],
+      "correctIndex": 1,
+      "explanation": "ECS simplifies container management by providing a comprehensive platform for deploying, managing, and scaling containerized applications. It supports two launch types: EC2, where you manage the underlying infrastructure, and Fargate, which provides a fully serverless container execution environment. The service integrates with other AWS tools like IAM, VPC, and CloudWatch for comprehensive container management."
+    },
+    {
+      "id": 14,
+      "question": "Explain the difference between _Amazon EC2_ and _AWS Lambda_.",
+      "options": [
+        "Amazon EC2 is a container orchestration service that deploys microservices, while AWS Lambda provides static website hosting and content delivery capabilities.",
+        "Amazon EC2 is a serverless compute platform that automatically scales application code, while AWS Lambda manages virtual machine instances with predefined resource configurations.",
+        "Amazon EC2 is a machine learning inference service that processes computational workloads, while AWS Lambda manages distributed database replication and synchronization.",
+        "Amazon EC2 provides virtual servers with configurable computing resources where users have full control over the operating system, while AWS Lambda is a serverless compute service that automatically runs code in response to events without managing server infrastructure."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key difference between EC2 and Lambda lies in their compute models. EC2 offers Infrastructure as a Service (IaaS) with complete control over server configuration, ideal for long-running applications and specific performance requirements. Lambda provides Function as a Service (FaaS), automatically scaling and charging only for actual compute time used, making it perfect for event-driven, sporadic workloads."
+    },
+    {
+      "id": 15,
+      "question": "What is _AWS Elastic Beanstalk_ and when would you use it?",
+      "options": [
+        "AWS Elastic Beanstalk is a containerization platform that packages applications into portable Docker images for consistent deployment across different cloud environments.",
+        "AWS Elastic Beanstalk is a Platform as a Service (PaaS) that automates application deployment and infrastructure management, supporting multiple programming languages and allowing developers to focus on code rather than server configuration.",
+        "AWS Elastic Beanstalk is a network security service that manages firewall rules and provides advanced threat detection for cloud-based applications.",
+        "AWS Elastic Beanstalk is a monitoring and logging service that provides comprehensive visibility into application performance and resource utilization."
+      ],
+      "correctIndex": 1,
+      "explanation": "Elastic Beanstalk abstracts the complexity of infrastructure management by automatically handling capacity provisioning, load balancing, auto-scaling, and application health monitoring. It supports applications written in various programming languages and frameworks, reducing operational overhead and allowing developers to quickly deploy and scale web applications without deep infrastructure expertise."
+    }
+  ],
+  "processedAt": "2025-12-18T08:48:45.246Z"
+}

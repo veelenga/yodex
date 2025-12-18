@@ -1,0 +1,198 @@
+{
+  "id": "availability-and-reliability",
+  "name": "Availability & Reliability",
+  "slug": "availability-and-reliability-interview-questions",
+  "category": "Concepts",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the difference between _availability_ and _reliability_ in the context of a software system?",
+      "options": [
+        "Availability represents the total number of successful system interactions, whereas reliability calculates the total potential operational hours of a system's infrastructure.",
+        "Availability refers to the percentage of time a system is operational and can respond to requests, while reliability measures the system's consistency and ability to perform without unexpected failures or errors.",
+        "Availability is a technical measurement of a system's hardware components, while reliability describes the software's programming efficiency and error handling capabilities.",
+        "Availability measures the system's response time and performance metrics, while reliability tracks the frequency of system updates and maintenance cycles."
+      ],
+      "correctIndex": 1,
+      "explanation": "The key distinction lies in their focus: availability is about accessibility and uptime, measuring how often a system is ready to use, while reliability concentrates on the system's consistent performance and ability to function without unexpected interruptions. Availability is typically expressed as a percentage of operational time, and reliability is often represented as a probability of successful operation."
+    },
+    {
+      "id": 2,
+      "question": "How do you define system _availability_ and what are the key components to measure it?",
+      "options": [
+        "System availability measures the comprehensive diagnostic capabilities of a system's monitoring and self-repair mechanisms during active operations.",
+        "System availability represents the total computational resources allocated to maintaining a system's infrastructure and preventing potential service disruptions.",
+        "System availability tracks the cumulative performance metrics and response times across multiple system interactions and service requests.",
+        "System availability quantifies the proportion of time a system is operational and capable of performing its intended functions, typically calculated by comparing total operational time against total potential time."
+      ],
+      "correctIndex": 3,
+      "explanation": "The availability metric provides insight into a system's dependability by measuring the percentage of time it remains functional. Key components like Mean Time Between Failures (MTBF) and Mean Time To Repair (MTTR) help calculate this metric, offering a clear picture of a system's operational reliability and potential downtime."
+    },
+    {
+      "id": 3,
+      "question": "Can you explain the concept of \"_Five Nines_\" and how it relates to system _availability_?",
+      "options": [
+        "'Five Nines' is an industry benchmark measuring a system's ability to maintain optimal performance across multiple simultaneous operational scenarios.",
+        "'Five Nines' indicates a system's capacity to handle peak load conditions with minimal performance degradation and maximum resource optimization.",
+        "'Five Nines' refers to 99.999% availability, which represents an extremely high standard of system reliability, allowing only approximately 5.26 minutes of total downtime annually.",
+        "'Five Nines' represents a comprehensive system certification that requires multiple layers of redundant infrastructure and continuous monitoring protocols."
+      ],
+      "correctIndex": 2,
+      "explanation": "The 'Five Nines' standard is a gold standard in system reliability, demonstrating exceptional operational consistency. This level of availability means a system is functional 99.999% of the time, which translates to an incredibly short annual downtime of just about 5 minutes, making it crucial for mission-critical and high-performance systems."
+    },
+    {
+      "id": 4,
+      "question": "How does _redundancy_ contribute to the _reliability_ of a system?",
+      "options": [
+        "Redundancy increases system complexity by adding multiple layers of unnecessary components that compete for system resources and potentially create additional points of failure.",
+        "Redundancy is a cost-effective method of improving system performance by creating parallel processing paths that can distribute computational workloads more efficiently.",
+        "Redundancy enhances system reliability by providing backup components or processes that can seamlessly take over if primary systems fail, ensuring continuous operation and minimizing potential downtime.",
+        "Redundancy serves primarily as a monitoring mechanism that tracks system components and logs potential failure points without actually preventing system interruptions."
+      ],
+      "correctIndex": 2,
+      "explanation": "Redundancy is a critical reliability strategy that introduces duplicate components or systems to prevent complete system failure. By having backup systems ready to take over, organizations can maintain operational continuity even when primary systems experience issues. Different types of redundancy include component-level, system-level, and data redundancy, each providing specific protection against potential failures."
+    },
+    {
+      "id": 5,
+      "question": "What is a _single point of failure (SPOF)_, and how can it be mitigated?",
+      "options": [
+        "A Single Point of Failure is a temporary system state where multiple components are experiencing marginal performance degradation simultaneously.",
+        "Single Points of Failure are intentional design elements that help isolate potential system problems by concentrating risk in a specific, easily replaceable component.",
+        "A Single Point of Failure (SPOF) is a system component whose failure can cause the entire system to stop functioning, making it a critical vulnerability that can completely disrupt operations.",
+        "A Single Point of Failure represents a system's most critical performance bottleneck that temporarily reduces operational efficiency without causing complete system shutdown."
+      ],
+      "correctIndex": 2,
+      "explanation": "Single Points of Failure represent significant system design risks where a lone component's malfunction can trigger total system collapse. Identifying and eliminating SPOFs is crucial in designing resilient systems, typically achieved through redundancy, load balancing, and distributed system architectures that prevent any single component from becoming a critical bottleneck."
+    },
+    {
+      "id": 6,
+      "question": "Discuss the significance of _Mean Time Between Failures (MTBF)_ in _reliability engineering_.",
+      "options": [
+        "Mean Time Between Failures represents the cumulative time spent on system maintenance and repair activities, indicating overall system management effectiveness.",
+        "Mean Time Between Failures quantifies the average duration of individual system failures, providing insight into recovery time and operational resilience.",
+        "MTBF is a diagnostic tool that measures the frequency of system updates and software patch implementations across an entire technological infrastructure.",
+        "Mean Time Between Failures (MTBF) is a reliability metric that calculates the average time a system operates before experiencing a failure, helping organizations predict and plan for potential system interruptions."
+      ],
+      "correctIndex": 3,
+      "explanation": "MTBF is a fundamental reliability engineering concept that helps predict system performance and potential failure rates. By calculating the average operational time between failures, organizations can make informed decisions about maintenance schedules, replacement strategies, and overall system reliability. A higher MTBF indicates more robust and dependable system design."
+    },
+    {
+      "id": 7,
+      "question": "What is the role of _Mean Time to Repair (MTTR)_ in maintaining system _availability_?",
+      "options": [
+        "Mean Time to Repair (MTTR) represents the total operational time of a system across multiple maintenance cycles, providing insights into overall system efficiency and reliability.",
+        "Mean Time to Repair (MTTR) is a diagnostic tool used to predict potential system failures before they occur, helping proactively manage system performance and reliability.",
+        "Mean Time to Repair (MTTR) is a critical metric that measures the average time required to diagnose and restore a system after a failure, directly impacting system availability by minimizing downtime and recovery periods.",
+        "Mean Time to Repair (MTTR) calculates the average time between scheduled maintenance intervals, ensuring systematic approach to preventive system management."
+      ],
+      "correctIndex": 2,
+      "explanation": "MTTR is a key reliability metric that quantifies the efficiency of repair processes. A lower MTTR indicates faster system recovery, which directly improves system availability by reducing total downtime. By measuring the time from failure detection to system restoration, organizations can optimize their maintenance and support strategies to minimize service interruptions."
+    },
+    {
+      "id": 8,
+      "question": "Can you differentiate between _high availability (HA)_ and _fault tolerance (FT)_?",
+      "options": [
+        "High availability (HA) is primarily concerned with maximizing system performance during peak load conditions, while fault tolerance (FT) manages system resources during normal operational states.",
+        "High availability (HA) ensures consistent system performance across distributed networks, while fault tolerance (FT) manages data replication and synchronization processes.",
+        "High availability (HA) deals with predictive maintenance scheduling, whereas fault tolerance (FT) concentrates on preventing potential system degradation through proactive monitoring.",
+        "High availability (HA) focuses on ensuring continuous service with minimal downtime through redundant systems and failover mechanisms, while fault tolerance (FT) enables a system to continue operating correctly even when specific component failures occur."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key distinction between high availability and fault tolerance lies in their approach to system resilience. HA aims to minimize downtime through redundancy and quick recovery, while FT focuses on maintaining system functionality even when components fail. Both strategies are crucial for building robust, reliable systems that can withstand various operational challenges."
+    },
+    {
+      "id": 9,
+      "question": "How would you architect a system for _high availability_?",
+      "options": [
+        "Architecting a high availability system involves implementing redundant components, distributed load balancing, failover mechanisms, and designing stateless applications that can seamlessly redistribute workloads across multiple independent servers.",
+        "High availability architecture concentrates on developing adaptive resource allocation mechanisms that dynamically adjust computational resources based on real-time performance metrics.",
+        "Designing high availability systems requires creating comprehensive network segmentation strategies and implementing advanced encryption protocols to ensure continuous secure operations.",
+        "High availability system architecture primarily focuses on implementing complex monitoring tools and developing predictive maintenance algorithms to prevent potential system failures."
+      ],
+      "correctIndex": 0,
+      "explanation": "High availability system design requires a holistic approach that eliminates single points of failure. Key strategies include creating redundant infrastructure, implementing automatic failover mechanisms, using distributed computing models, and ensuring that applications can be quickly and seamlessly redistributed across available resources without service interruption."
+    },
+    {
+      "id": 10,
+      "question": "What design patterns are commonly used to improve system _availability_?",
+      "options": [
+        "Decorator and Factory patterns primarily enhance system availability by providing flexible object creation mechanisms and runtime object modification strategies.",
+        "Proxy and Adapter patterns contribute to system availability by creating abstraction layers that manage complex interactions and provide fallback mechanisms.",
+        "Implementing Strategy and Observer patterns can improve system availability through dynamic behavior switching and event-driven communication between system components.",
+        "Design patterns like Singleton, Circuit Breaker, and Retry can improve system availability by managing resource allocation, preventing cascading failures, and handling transient errors gracefully."
+      ],
+      "correctIndex": 3,
+      "explanation": "Design patterns play a crucial role in system availability by providing structured approaches to managing system reliability. Singleton prevents multiple resource instantiations, Circuit Breaker stops system cascading failures by detecting and isolating problematic components, and Retry mechanisms handle temporary failures by automatically attempting operation reexecution."
+    },
+    {
+      "id": 11,
+      "question": "How can _load balancing_ improve system availability, and what are some of its potential pitfalls?",
+      "options": [
+        "Load balancing optimizes system performance by dynamically reallocating computational resources and predicting potential bottlenecks before they occur.",
+        "Load balancing improves system availability by distributing network traffic across multiple servers, preventing single points of failure and ensuring continuous service even if individual components become unavailable.",
+        "Load balancing increases system scalability by automatically creating and destroying server instances based on predicted workload variations.",
+        "Load balancing enhances system security by creating multiple defense layers and randomly routing traffic to prevent potential network intrusions and attacks."
+      ],
+      "correctIndex": 1,
+      "explanation": "Load balancing is a critical technique for maintaining high availability by spreading incoming network requests across multiple servers. This approach prevents individual server overload, provides fault tolerance, and ensures consistent service performance by intelligently routing traffic to the most available and least busy server instances."
+    },
+    {
+      "id": 12,
+      "question": "Explain the role of _health checks_ in maintaining an available system.",
+      "options": [
+        "Health checks analyze system performance metrics to generate predictive models that anticipate potential future architectural challenges and recommend preemptive upgrades.",
+        "Health checks monitor system components continuously, detecting potential failures before they impact overall system performance and enabling proactive maintenance and automatic recovery mechanisms.",
+        "Health checks validate incoming network requests and authenticate communication protocols to prevent unauthorized system interactions.",
+        "Health checks track resource utilization and dynamically adjust system configurations to optimize computational efficiency across distributed environments."
+      ],
+      "correctIndex": 1,
+      "explanation": "Health checks are essential monitoring techniques that regularly assess the status and performance of system components. By continuously evaluating individual system elements, health checks enable rapid detection of potential failures, trigger automatic recovery processes, and maintain overall system reliability and availability."
+    },
+    {
+      "id": 13,
+      "question": "What is the purpose of a _circuit breaker pattern_ in a distributed system?",
+      "options": [
+        "The Circuit Breaker Pattern enhances system performance by dynamically routing traffic between multiple server instances to optimize load distribution and reduce individual server strain.",
+        "The Circuit Breaker Pattern manages request throttling by implementing strict rate limiting rules to control the number of concurrent connections to a specific service endpoint.",
+        "The Circuit Breaker Pattern is a network security mechanism that prevents unauthorized access by detecting and blocking potential intrusion attempts in distributed architectures.",
+        "The Circuit Breaker Pattern prevents system cascading failures by monitoring request success rates and automatically blocking requests to a service experiencing issues, allowing the system to recover without additional load."
+      ],
+      "correctIndex": 3,
+      "explanation": "Circuit Breaker is a resilience design pattern that detects system failures by tracking error rates. When failure threshold is exceeded, it 'trips' and stops sending requests, preventing system overload. This allows the problematic service time to recover and maintains overall system stability by stopping cascading failures."
+    },
+    {
+      "id": 14,
+      "question": "What are some key indicators you would monitor to ensure system _reliability_?",
+      "options": [
+        "System reliability is best measured through network bandwidth utilization, CPU processing speeds, memory allocation efficiency, and total number of connected devices in the infrastructure.",
+        "Key system reliability indicators include Mean Time Between Failures (MTBF), Mean Time To Repair (MTTR), system uptime percentage, error rates, and performance latency metrics that collectively measure system dependability and operational consistency.",
+        "Key reliability indicators include server hardware temperature, network connection stability, software version compatibility, and frequency of system configuration changes.",
+        "Reliability metrics primarily focus on tracking system resource consumption, including storage capacity, network packet transmission rates, and computational complexity of running processes."
+      ],
+      "correctIndex": 1,
+      "explanation": "System reliability metrics provide comprehensive insights into operational health by quantifying system performance and stability. MTBF indicates average operational time between failures, while MTTR measures recovery speed. These metrics help organizations understand system resilience, predict potential issues, and develop proactive maintenance strategies."
+    },
+    {
+      "id": 15,
+      "question": "How do you implement a monitoring system that accurately reflects system _availability_?",
+      "options": [
+        "A monitoring system for availability focuses on collecting hardware performance metrics, tracking server resource utilization, and generating detailed infrastructure capacity reports.",
+        "An effective monitoring system for availability requires implementing real-time health checks, tracking uptime percentage, configuring automatic alerts for service disruptions, and maintaining comprehensive logging across all system components.",
+        "Availability monitoring involves implementing complex network packet inspection, analyzing traffic patterns, and creating comprehensive security audit trails for compliance purposes.",
+        "An effective monitoring approach centers on continuous software version tracking, managing system dependency updates, and maintaining detailed configuration management documentation."
+      ],
+      "correctIndex": 1,
+      "explanation": "Monitoring system availability requires multi-layered tracking of operational status. Real-time health checks continuously validate system functionality, while uptime calculations provide quantitative performance metrics. Automatic alerting ensures immediate notification of potential issues, enabling rapid response and minimizing potential service disruptions."
+    }
+  ],
+  "processedAt": "2025-12-18T08:47:29.118Z"
+}

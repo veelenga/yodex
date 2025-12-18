@@ -1,0 +1,198 @@
+{
+  "id": "entity-framework",
+  "name": "Entity Framework",
+  "slug": "entity-framework-interview-questions",
+  "category": "Tools",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is an ORM and how does _Entity Framework_ function as one?",
+      "options": [
+        "Object-Relational Mapping (ORM) bridges the gap between object-oriented programming and relational databases by translating database tables into programmatic classes and enabling database operations through object manipulation.",
+        "ORM represents a programming technique that creates direct memory mappings between database records and in-memory object representations, eliminating the need for traditional database queries.",
+        "Object-Relational Mapping is a design pattern that directly connects database schemas to application interfaces, allowing seamless data transformation without intermediate layers.",
+        "Object-Relational Mapping is a software architectural approach that automatically synchronizes database structures with application object models through runtime code generation."
+      ],
+      "correctIndex": 0,
+      "explanation": "Entity Framework serves as an ORM by providing an abstraction layer that allows developers to interact with databases using .NET objects. It handles complex mapping between database tables and programming classes, manages database connections, and provides querying capabilities without requiring direct SQL interaction."
+    },
+    {
+      "id": 2,
+      "question": "Can you explain the architecture of _Entity Framework_?",
+      "options": [
+        "The architecture of Entity Framework relies on runtime code generation and dynamic proxy creation to facilitate seamless database interactions and object persistence.",
+        "Entity Framework's core architecture involves creating tight coupling between application models and database schemas through compile-time type mapping and direct schema translation.",
+        "Entity Framework's architecture is built around a monolithic data access layer that directly translates programming objects into database operations without intermediate abstraction.",
+        "Entity Framework's architecture consists of a multilayered framework with core components including the DbContext, which manages database connections, and entity classes that represent database tables and relationships."
+      ],
+      "correctIndex": 3,
+      "explanation": "The Entity Framework architecture provides an abstraction over database operations, enabling developers to work with strongly-typed .NET objects. It supports multiple database providers, offers change tracking, and allows different approaches like Database First, Model First, and Code First development strategies."
+    },
+    {
+      "id": 3,
+      "question": "What are the main differences between _Entity Framework_ and _LINQ to SQL_?",
+      "options": [
+        "LINQ to SQL offers more advanced database mapping capabilities compared to Entity Framework, with deeper integration into .NET's query language and more flexible object-relational translation.",
+        "Entity Framework and LINQ to SQL are essentially identical technologies, with only minor implementation differences in how they handle database connection and query generation.",
+        "Entity Framework is a comprehensive ORM framework with broad database support, visual designers, and advanced code generation capabilities, while LINQ to SQL is a more lightweight, SQL Server-specific mapping technology.",
+        "LINQ to SQL provides a more comprehensive ORM solution with broader database provider support and more robust code generation compared to Entity Framework's limited functionality."
+      ],
+      "correctIndex": 2,
+      "explanation": "The key differences between Entity Framework and LINQ to SQL include scope, flexibility, and database support. Entity Framework supports multiple database providers and offers more complex mapping scenarios, while LINQ to SQL is specifically designed for SQL Server with a simpler, more direct mapping approach."
+    },
+    {
+      "id": 4,
+      "question": "What is _DbContext_ and how is it used in _EF_?",
+      "options": [
+        "DbContext represents a direct connection to a physical database, creating a one-to-one mapping between database tables and application objects with strict data translation rules.",
+        "DbContext is a crucial component in Entity Framework that serves as an intelligent database session manager, providing an abstraction layer between the application and the database for tracking, querying, and managing database operations.",
+        "DbContext functions as a data access layer that generates SQL queries dynamically by interpreting object-oriented code and translating it into direct database commands.",
+        "DbContext is a lightweight interface that primarily handles connection strings and provides basic CRUD operations without advanced tracking or change management capabilities."
+      ],
+      "correctIndex": 1,
+      "explanation": "Entity Framework's DbContext is more than a simple database connection. It manages database sessions, tracks entity changes, supports LINQ queries, and provides an object-relational mapping interface. The context enables developers to work with database data using .NET objects while abstracting away complex database interaction details."
+    },
+    {
+      "id": 5,
+      "question": "What is the purpose of _DbSet_ in _Entity Framework_?",
+      "options": [
+        "DbSet is a lightweight container for storing in-memory data collections that can be synchronized with a database through manual synchronization processes.",
+        "DbSet functions as a database schema definition mechanism that maps object properties to database column structures without supporting runtime query capabilities.",
+        "DbSet is a read-only collection that provides direct access to database records without supporting modification tracking or complex querying mechanisms.",
+        "DbSet represents a collection of entities in Entity Framework, serving as a queryable representation of a database table that allows developers to perform LINQ queries, track changes, and manage database operations for a specific entity type."
+      ],
+      "correctIndex": 3,
+      "explanation": "DbSet is a fundamental part of Entity Framework that enables object-relational mapping. It allows developers to interact with database tables using strongly-typed collections, supports complex LINQ queries, and provides built-in change tracking for entities. The abstraction simplifies database interactions by treating database tables as queryable object collections."
+    },
+    {
+      "id": 6,
+      "question": "Can you describe the concept of _migrations_ in _EF_?",
+      "options": [
+        "Migrations represent a static mapping between application models and database schemas, preventing runtime modifications and requiring complete redeployment for structural changes.",
+        "Migrations are a legacy database synchronization technique that relies on external tools to compare and apply schema differences between application models and database structures.",
+        "Entity Framework migrations are a code-based approach to managing database schema changes, enabling developers to version control, track, and automatically update database structures as the application's data model evolves.",
+        "Migrations are manual scripts that require developers to write explicit SQL commands for every database schema modification without providing automated change tracking."
+      ],
+      "correctIndex": 2,
+      "explanation": "Migrations in Entity Framework provide a powerful, programmatic way to manage database schema evolution. They allow incremental, reversible changes to database structures, support version control, and enable collaborative development by treating schema modifications as code. This approach eliminates manual SQL script management and provides a more flexible, maintainable database development process."
+    },
+    {
+      "id": 7,
+      "question": "How does _EF_ implement _code-first_, _database-first_, and _model-first_ approaches?",
+      "options": [
+        "Entity Framework approaches are defined by XML configuration files that map database schemas to object models through complex translation layers and runtime metadata.",
+        "The design approaches involve creating separate data access layers where Code-First represents object-oriented design, Database-First represents stored procedure mapping, and Model-First represents interface-driven development.",
+        "Entity Framework's design methodologies are primarily distinguished by their data binding strategies, with each approach using different mechanisms for connecting application logic to persistent data storage.",
+        "Entity Framework implements three design approaches: Code-First generates models programmatically, Database-First creates models from existing databases, and Model-First uses visual designers to create conceptual models."
+      ],
+      "correctIndex": 3,
+      "explanation": "Entity Framework provides flexible strategies for creating data models. Code-First allows developers to define models in code, which are then used to generate database schemas. Database-First starts with an existing database and generates corresponding model classes. Model-First uses visual designers to create conceptual models that can be translated into database schemas and code."
+    },
+    {
+      "id": 8,
+      "question": "What is the role of the _EdmGen_ tool in _EF_?",
+      "options": [
+        "EdmGen functions as a runtime translation layer that dynamically converts object-relational mappings between different database management systems.",
+        "EdmGen is a database optimization tool that preprocesses SQL queries and generates performance-enhanced database access methods for Entity Framework applications.",
+        "The EdmGen tool is a command-line utility that generates Entity Framework model files, including conceptual (.csdl), storage (.ssdl), and mapping (.msl) schema definitions used in database interaction.",
+        "The EdmGen utility manages entity relationships by creating complex object mapping configurations and resolving inheritance hierarchies in data models."
+      ],
+      "correctIndex": 2,
+      "explanation": "EdmGen is a Microsoft-provided tool that helps developers generate and manage Entity Framework model files. It creates essential schema definition files that describe how database tables map to application object models, facilitating seamless data access and transformation."
+    },
+    {
+      "id": 9,
+      "question": "Can you describe the _Entity Data Model (EDM)_ in _EF_?",
+      "options": [
+        "The Entity Data Model provides a comprehensive strategy for managing database connections, implementing caching mechanisms, and optimizing data retrieval processes.",
+        "EDM is a metadata management system that handles complex object-relational mappings through advanced reflection and dependency injection techniques.",
+        "The Entity Data Model (EDM) is a conceptual framework in Entity Framework that defines how data entities are structured, mapped, and interrelated across application and database layers.",
+        "The Entity Data Model represents a runtime abstraction layer that dynamically translates object-oriented programming constructs into database-specific query execution plans."
+      ],
+      "correctIndex": 2,
+      "explanation": "The Entity Data Model serves as a critical abstraction in Entity Framework, allowing developers to work with data as a set of entities and relationships. It decouples the logical data model from the physical database schema, providing a flexible and consistent approach to data access and manipulation."
+    },
+    {
+      "id": 10,
+      "question": "How does _lazy loading_ work in _EF_?",
+      "options": [
+        "Lazy loading is a configuration setting in Entity Framework that automatically generates SQL queries to eagerly fetch all potential related data before object instantiation.",
+        "Lazy loading in Entity Framework allows related objects to be fetched from the database only when they are accessed, using proxy generation and runtime interception to dynamically load data.",
+        "Lazy loading is a caching mechanism in Entity Framework that stores recently accessed objects in memory to minimize database roundtrips and improve performance.",
+        "Lazy loading in Entity Framework preloads all related objects into memory during initial database connection to optimize subsequent data retrieval and reduce query overhead."
+      ],
+      "correctIndex": 1,
+      "explanation": "Lazy loading is a performance optimization technique where related entities are not immediately loaded from the database. Instead, they are retrieved only when a navigation property is explicitly accessed. This approach reduces initial memory consumption and database load by deferring data retrieval until necessary. The mechanism relies on dynamic proxy generation, which intercepts property access and triggers background queries transparently."
+    },
+    {
+      "id": 11,
+      "question": "How do you install or upgrade _Entity Framework_ in a _.NET_ project?",
+      "options": [
+        "To install Entity Framework, developers must manually download the framework binaries from Microsoft's official website and add direct references to their project's configuration files.",
+        "To install Entity Framework in a .NET project, use NuGet Package Manager in Visual Studio or the Command Line Interface, searching for and installing the EntityFramework package.",
+        "Entity Framework installation requires compiling the framework from source code and registering specific assembly dependencies through the project's machine configuration.",
+        "Installing Entity Framework involves downloading the .NET SDK, configuring runtime environments, and manually registering database provider extensions through project settings."
+      ],
+      "correctIndex": 1,
+      "explanation": "Installing Entity Framework is streamlined through NuGet, Microsoft's package management system. The process allows developers to easily add the ORM framework to their .NET projects with minimal configuration. NuGet handles dependency management, version compatibility, and provides a straightforward mechanism for keeping the framework updated across different project types."
+    },
+    {
+      "id": 12,
+      "question": "What is the difference between _local_ and _global configuration_ in _EF_?",
+      "options": [
+        "Global configurations represent runtime database connection settings, while local configurations manage temporary in-memory data transformation rules.",
+        "Local and global configurations in Entity Framework represent different levels of data mapping strategy, with global configurations establishing primary mapping logic and local configurations providing granular, overridable control.",
+        "Local configurations in Entity Framework are advanced security settings that control database access permissions, while global configurations manage connection pooling.",
+        "Local and global configurations in Entity Framework are identical processes that define database schema relationships through parallel mapping techniques."
+      ],
+      "correctIndex": 1,
+      "explanation": "Configuration in Entity Framework operates on two primary levels. Global configurations define the foundational mapping between domain models and database schemas, typically established during initial model creation. Local configurations offer more specific, sometimes overriding rules that provide developers fine-grained control over how individual entities are mapped and processed."
+    },
+    {
+      "id": 13,
+      "question": "What is the purpose of the _Entity Framework connection string_?",
+      "options": [
+        "The Entity Framework connection string manages caching strategies and provides optimization rules for database query performance and resource allocation.",
+        "The Entity Framework connection string establishes the communication pathway between an application and its database, defining essential connection parameters like server location, database name, and authentication credentials.",
+        "The Entity Framework connection string is a security mechanism that encrypts database transactions and prevents unauthorized access to application data models.",
+        "The Entity Framework connection string serves as a configuration template for generating database schema and mapping entity relationships dynamically."
+      ],
+      "correctIndex": 1,
+      "explanation": "Connection strings in Entity Framework are crucial configuration elements that specify how an application connects to a specific database. They include critical information like data source, initial catalog, authentication method, and other connection-specific parameters. By centralizing connection details, developers can easily modify database connections without changing application code."
+    },
+    {
+      "id": 14,
+      "question": "How do you switch between different _databases_ using _EF_?",
+      "options": [
+        "In Entity Framework, developers can switch databases by modifying the connection string in configuration files or dynamically selecting database contexts at runtime based on specific application requirements.",
+        "Database switching in Entity Framework is accomplished by creating multiple inheritance-based context classes that inherit from a base database configuration.",
+        "Entity Framework supports database switching through integrated database migration scripts that automatically transfer schema and data between different database systems.",
+        "Switching databases in Entity Framework requires rebuilding the entire data model and regenerating entity classes for each new database connection."
+      ],
+      "correctIndex": 0,
+      "explanation": "Database switching in Entity Framework offers flexibility through configuration changes. Developers can modify connection strings to point to different databases or use runtime database context selection. This approach allows applications to adapt to varying database environments without significant code restructuring."
+    },
+    {
+      "id": 15,
+      "question": "Can you configure the _pluralization_ and _singularization conventions_ in _EF_?",
+      "options": [
+        "PluralizationService in Entity Framework automatically generates complex database relationships by analyzing table naming conventions and inferring potential connections.",
+        "Entity Framework's PluralizationService allows developers to customize singular-to-plural and plural-to-singular naming conventions for database entities, enabling more natural and contextually appropriate naming strategies.",
+        "PluralizationService is responsible for generating database migration scripts that maintain consistent naming standards across different database management systems.",
+        "The PluralizationService manages internationalization of database entity names, translating naming conventions across different language contexts and character sets."
+      ],
+      "correctIndex": 1,
+      "explanation": "PluralizationService provides a flexible mechanism for managing naming conventions in Entity Framework. It applies rules for converting between singular and plural forms of entity names, helping developers maintain consistent and semantically meaningful database model representations."
+    }
+  ],
+  "processedAt": "2025-12-18T09:19:54.333Z"
+}

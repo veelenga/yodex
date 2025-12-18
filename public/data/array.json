@@ -1,0 +1,196 @@
+{
+  "id": "array",
+  "name": "Array",
+  "slug": "array-data-structure-interview-questions",
+  "category": "Data Structures",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is an _Array_?",
+      "options": [
+        "An array is a data structure that stores multiple elements of the same type in contiguous memory locations, allowing efficient indexed access to its elements.",
+        "An array is a complex data structure that represents a hierarchical collection of elements with nested indexing and multiple dimensional storage capabilities.",
+        "An array is a memory optimization technique that compresses data by storing only unique elements in a compact, non-sequential memory representation.",
+        "An array is a dynamic memory allocation technique that allows random placement of elements with flexible memory management and variable typing."
+      ],
+      "correctIndex": 0,
+      "explanation": "Arrays provide a fundamental way to store and access multiple elements efficiently. They guarantee constant-time access through indexing, maintain type consistency, and ensure elements are stored in adjacent memory locations. Unlike other data structures, arrays have a fixed size and require pre-allocation of memory, making them fast but less flexible than dynamic collections."
+    },
+    {
+      "id": 2,
+      "question": "What are _Dynamic Arrays_?",
+      "options": [
+        "Dynamic arrays are adaptive data structures that can change their internal element representation and storage mechanism during program execution.",
+        "Dynamic arrays are specialized containers that automatically optimize memory usage by compressing and reorganizing elements based on access patterns.",
+        "Dynamic arrays are memory management techniques that dynamically allocate memory segments based on runtime computational requirements and memory pressure.",
+        "Dynamic arrays are flexible data structures that automatically resize themselves when the number of elements exceeds their initial capacity, typically by allocating a larger memory block and copying existing elements."
+      ],
+      "correctIndex": 3,
+      "explanation": "Dynamic arrays solve the limitation of fixed-size arrays by providing automatic resizing. When the array reaches its capacity, it creates a new, larger memory block and transfers existing elements, typically doubling the previous size. This approach ensures efficient memory usage and allows developers to add elements without manually managing memory allocation."
+    },
+    {
+      "id": 3,
+      "question": "What is an _Associative Array_ (Dictionary)?",
+      "options": [
+        "An associative array is a specialized collection that maintains relationships between elements through hierarchical key-based transformations.",
+        "An associative array is a data structure that stores key-value pairs, allowing direct access to values through unique keys and supporting dynamic resizing with flexible key types.",
+        "An associative array is a memory mapping technique that creates indirect references between data elements using complex indexing algorithms.",
+        "An associative array is a computational method for organizing data with nested, multi-dimensional key structures and adaptive storage mechanisms."
+      ],
+      "correctIndex": 1,
+      "explanation": "Associative arrays, also known as dictionaries or maps, provide a powerful way to store and retrieve data using unique keys. Unlike traditional arrays that use numeric indices, these structures allow any valid key type, enabling more intuitive and flexible data organization. They are typically implemented using hash tables, which provide near-constant time complexity for insertions, deletions, and lookups."
+    },
+    {
+      "id": 4,
+      "question": "What defines the _Dimensionality_ of an array?",
+      "options": [
+        "Array dimensionality indicates the total number of elements an array can potentially contain, defining its maximum storage capacity.",
+        "Array dimensionality represents the total memory allocation for an array, indicating its potential storage capacity and computational complexity.",
+        "Array dimensionality refers to the number of indices required to select an element, which determines how data is organized and accessed within the array structure.",
+        "Dimensionality describes the physical memory layout of an array, measuring how tightly packed its elements are in computer memory."
+      ],
+      "correctIndex": 2,
+      "explanation": "Dimensionality is fundamentally about how many coordinate indices are needed to uniquely identify an array element. A one-dimensional array uses a single index, a two-dimensional array requires row and column indices, and multi-dimensional arrays extend this concept further. The concept is critical for understanding how data is structured and accessed in different computational contexts."
+    },
+    {
+      "id": 5,
+      "question": "Name some _Advantages_ and _Disadvantages_ of arrays.",
+      "options": [
+        "Arrays enable complex data structures by supporting nested element storage and providing automatic memory management for large-scale computational tasks.",
+        "Arrays offer comprehensive memory segmentation capabilities, allowing efficient runtime memory reallocation and advanced data manipulation strategies.",
+        "Arrays provide dynamic memory management with flexible allocation strategies and support complex data transformations through built-in memory optimization techniques.",
+        "Arrays offer fast element access with O(1) time complexity and excellent cache performance due to contiguous memory allocation, but are limited by fixed size and inflexible resizing."
+      ],
+      "correctIndex": 3,
+      "explanation": "Arrays are fundamental data structures with distinct performance characteristics. Their strength lies in direct memory access and predictable performance, but they lack the flexibility of dynamic data structures like linked lists. The contiguous memory layout enables fast indexing but makes resizing computationally expensive."
+    },
+    {
+      "id": 6,
+      "question": "Explain _Sparse_ and _Dense_ arrays.",
+      "options": [
+        "Sparse arrays represent complex multi-dimensional data structures with advanced memory compression techniques, while dense arrays provide standardized memory allocation models.",
+        "Sparse arrays use specialized indexing mechanisms to manage memory allocation, while dense arrays provide uniform data storage across different computational environments.",
+        "Dense arrays enable high-performance computational operations, whereas sparse arrays are specialized data representations for specific mathematical computations.",
+        "Sparse arrays store only non-default values to optimize memory usage, while dense arrays allocate memory for every element regardless of its value, making sparse arrays more memory-efficient for data with many default elements."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key difference between sparse and dense arrays is memory efficiency. Sparse arrays are particularly useful in scenarios with large datasets containing many zero or null values, such as in scientific computing, machine learning, and certain mathematical modeling applications. By storing only non-default values, they significantly reduce memory overhead."
+    },
+    {
+      "id": 7,
+      "question": "What are advantages and disadvantages of _Sorted Arrays_?",
+      "options": [
+        "Sorted arrays are optimized for search operations like binary search with O(log n) complexity, but have slower insertion and deletion times due to maintaining sorted order.",
+        "Sorted arrays minimize memory consumption by compressing data and eliminating redundant storage overhead through advanced memory management techniques.",
+        "Sorted arrays enable constant-time access to the median element and provide seamless parallel processing capabilities across all data elements.",
+        "Sorted arrays guarantee perfect data organization by automatically rearranging elements during each modification, making them ideal for dynamic data structures."
+      ],
+      "correctIndex": 0,
+      "explanation": "A sorted array maintains elements in a predetermined sequence, typically ascending or descending order. While enabling efficient search algorithms like binary search, the requirement to maintain order means insertions and deletions are computationally expensive, as they require shifting multiple elements to preserve the sorted structure."
+    },
+    {
+      "id": 8,
+      "question": "What are the advantages of _Heaps_ over _Sorted Arrays_?",
+      "options": [
+        "Heaps provide complete data sorting and guarantee a fully organized data structure with immediate access to all elements in sequential order.",
+        "Heaps are superior to sorted arrays for dynamic data scenarios, offering efficient O(log n) insertions and deletions while maintaining a partial ordering that supports quick retrieval of extreme values.",
+        "Heaps optimize memory allocation by implementing complex compression algorithms that reduce overall storage requirements for large datasets.",
+        "Heaps enable constant-time random access and support bidirectional data traversal with minimal computational overhead."
+      ],
+      "correctIndex": 1,
+      "explanation": "Heaps excel in scenarios requiring frequent dynamic operations, particularly when quickly accessing minimum or maximum elements. Unlike sorted arrays, heaps maintain a partial order that allows efficient insertions and deletions, making them ideal for priority queue implementations and algorithms needing rapid extreme value retrieval."
+    },
+    {
+      "id": 9,
+      "question": "How does _Indexing_ work in arrays?",
+      "options": [
+        "Array indexing creates dynamic memory mappings that automatically adjust element locations based on runtime computational requirements.",
+        "Array indexing allows direct memory access to elements using zero-based indices, with element location calculated through a base address plus offset multiplied by element size.",
+        "Array indexing generates unique memory signatures for each element, enabling advanced caching and predictive memory pre-loading strategies.",
+        "Array indexing implements complex pointer arithmetic that randomizes memory allocation to enhance data security and prevent linear access patterns."
+      ],
+      "correctIndex": 1,
+      "explanation": "Indexing in arrays provides constant-time random access by leveraging contiguous memory allocation. Each element's memory address is precisely calculated using a simple formula: base address plus (index * element size), enabling efficient and predictable data retrieval across the entire array structure."
+    },
+    {
+      "id": 10,
+      "question": "_Merge_ two _Sorted Arrays_ into one _Sorted Array_.",
+      "options": [
+        "Combine sorted arrays by first sorting the elements again using a quadratic sorting algorithm, then removing any duplicate elements during the merge process.",
+        "Merge sorted arrays by creating a hash map of elements and then reconstructing the array based on the mapped values, ensuring unique element preservation.",
+        "Merge sorted arrays by splitting each array into halves, recursively sorting sub-arrays, and then performing a complex multi-step comparison mechanism.",
+        "Merge two sorted arrays by comparing elements from both arrays and selecting the smaller one, creating a new sorted array while iterating through the original arrays efficiently."
+      ],
+      "correctIndex": 3,
+      "explanation": "The merge process is a fundamental array manipulation technique that combines two pre-sorted arrays into a single sorted array. The key strategy involves comparing elements from both arrays sequentially, always selecting the smaller element to maintain sorted order. This approach is efficient, typically achieving O(n+m) time complexity where n and m are the lengths of the input arrays."
+    },
+    {
+      "id": 11,
+      "question": "Implement three _Stacks_ with one _Array_.",
+      "options": [
+        "Create three stacks in a single array by implementing a complex hash-based allocation system that dynamically redistributes memory based on stack usage patterns.",
+        "Implement stack allocation by maintaining a global stack pointer and using bitwise operations to segregate stack regions within the shared array space.",
+        "Implement three stacks in a single array by dividing the array into three equal sections, with separate pointers tracking the top of each stack and allowing dynamic growth within their allocated spaces.",
+        "Manage three stacks by using a circular buffer approach with overlapping memory regions and sophisticated boundary detection mechanisms."
+      ],
+      "correctIndex": 2,
+      "explanation": "The challenge of implementing multiple stacks in a single array requires careful memory management and tracking. The core strategy involves logically dividing the array into equal segments, each representing a stack, with independent pointers to manage push and pop operations. This approach allows efficient space utilization while preventing stack overflow between different stack instances."
+    },
+    {
+      "id": 12,
+      "question": "How do you perform _Array Rotation_ and what are its applications?",
+      "options": [
+        "Perform array rotation through a memory-intensive process of creating temporary array copies and reconstructing elements using advanced mapping techniques.",
+        "Array rotation involves complex index remapping using mathematical transformations, creating non-linear element displacement patterns across the array.",
+        "Array rotation shifts elements in an array cyclically, with left rotation moving elements to the left and right rotation moving elements to the right, useful for data manipulation and algorithmic problems.",
+        "Rotate arrays by implementing a recursive element swapping mechanism that progressively modifies array structure based on predefined transformation rules."
+      ],
+      "correctIndex": 2,
+      "explanation": "Array rotation is a fundamental array manipulation technique that involves cyclically shifting elements. It has practical applications in various algorithmic scenarios, including cryptography, data obfuscation, and solving complex array-based problems. The primary methods include naive shifting and more efficient algorithmic approaches like reversal techniques."
+    },
+    {
+      "id": 13,
+      "question": "_Reverse_ an _Array_ in place.",
+      "options": [
+        "Reverse an array by recursively splitting the array into halves and reconstructing the elements in a reversed sequence through multiple passes.",
+        "Reverse an array in-place by using two pointers at the start and end, systematically swapping elements while moving pointers towards the center until they meet.",
+        "Reverse an array by iterating through each element and shifting them progressively to new positions using a complex rotation mechanism.",
+        "Reverse an array by creating a new temporary array and copying elements in reverse order from the original array to maintain memory allocation."
+      ],
+      "correctIndex": 1,
+      "explanation": "The in-place array reversal uses two pointer technique to minimize space complexity. By swapping elements from opposite ends and moving inward, the entire array can be efficiently reversed without requiring additional memory allocation or complex algorithmic steps."
+    },
+    {
+      "id": 14,
+      "question": "_Remove Duplicates_ from a sorted array without using extra space.",
+      "options": [
+        "Remove duplicates by iteratively comparing each element with subsequent elements and marking duplicates for later removal using a separate tracking array.",
+        "Remove duplicates by sorting the array again and then eliminating adjacent repeated elements through a single pass mechanism.",
+        "Remove duplicates by creating a hash set to track unique elements and then reconstructing the array with those unique values in their original order.",
+        "Remove duplicates from a sorted array by using a two-pointer technique where a slow pointer tracks unique elements and a fast pointer scans the array, overwriting duplicates."
+      ],
+      "correctIndex": 3,
+      "explanation": "The two-pointer method efficiently handles duplicate removal in a sorted array by leveraging the array's inherent order. The technique minimizes space complexity by modifying the array in-place and ensures linear time complexity."
+    },
+    {
+      "id": 15,
+      "question": "Implement a _Queue_ using an array.",
+      "options": [
+        "Implement a queue by maintaining multiple parallel tracking arrays to manage insertion, deletion, and element tracking simultaneously.",
+        "Implement a queue using an array by dynamically expanding the array's size with each insertion and performing a full array copy to maintain element order.",
+        "Implement a queue using an array by maintaining front and rear indices, with enqueue adding elements at the rear and dequeue removing elements from the front while tracking available space.",
+        "Implement a queue by using a circular buffer approach where elements wrap around the array's boundaries without actually shifting memory positions."
+      ],
+      "correctIndex": 2,
+      "explanation": "A queue implemented via an array requires careful management of front and rear indices to simulate first-in-first-out behavior. The implementation must handle edge cases like array fullness and maintain efficient element access."
+    }
+  ],
+  "processedAt": "2025-12-18T08:41:25.696Z"
+}

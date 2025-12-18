@@ -1,0 +1,196 @@
+{
+  "id": "express",
+  "name": "Express",
+  "slug": "express-interview-questions",
+  "category": "Backend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Express.js_, and how does it relate to _Node.js_?",
+      "options": [
+        "Express.js is a minimalist web application framework for Node.js that simplifies the process of building web applications and APIs by providing robust routing, middleware support, and HTTP utility methods.",
+        "Express.js is a database abstraction layer for Node.js that provides advanced ORM capabilities and manages database connections across multiple server environments.",
+        "Express.js is a server-side rendering library for Node.js that focuses exclusively on generating HTML templates and managing client-side interactions through a proprietary templating engine.",
+        "Express.js is a full-stack JavaScript framework that replaces Node.js and provides a complete solution for building complex web applications with integrated front-end and back-end components."
+      ],
+      "correctIndex": 0,
+      "explanation": "Express.js extends Node.js's core HTTP capabilities by offering a lightweight and flexible framework for web and API development. It allows developers to quickly create server-side applications with minimal boilerplate code. The framework's key strength is its middleware architecture, which enables easy addition of request processing layers. A typical Express application can be created in just a few lines of code, demonstrating its simplicity and power."
+    },
+    {
+      "id": 2,
+      "question": "Explain the concept of _middleware_ in _Express.js_.",
+      "options": [
+        "Middleware in Express.js are pre-configured server plugins that automatically handle database connections and manage application-level security configurations without developer intervention.",
+        "Middleware in Express.js are functions that have access to the request and response objects, can modify these objects, end the request-response cycle, or call the next middleware function in the application's request-processing pipeline.",
+        "Middleware in Express.js are background processing functions that handle asynchronous tasks and manage parallel request execution across distributed server environments.",
+        "Middleware in Express.js are specialized routing mechanisms that intercept and redirect HTTP requests based on complex pattern matching and authentication protocols."
+      ],
+      "correctIndex": 1,
+      "explanation": "Middleware functions are a core concept in Express.js that allow developers to process and modify HTTP requests before they reach the final route handler. These functions can perform tasks like parsing request bodies, logging, authentication, and error handling. They are executed in the order they are defined and can either pass control to the next middleware or terminate the request-response cycle."
+    },
+    {
+      "id": 3,
+      "question": "How would you set up a basic _Express.js_ application?",
+      "options": [
+        "To set up a basic Express.js application, install Express via npm, create a main JavaScript file, require the Express module, create an app instance, define routes, and start the server by listening on a specified port.",
+        "To set up a basic Express.js application, use a CLI tool to generate a full-stack project template, configure multi-environment settings, and integrate advanced build processes.",
+        "To set up a basic Express.js application, configure a complex project structure with multiple configuration files, initialize a global server context, and implement a comprehensive dependency injection system.",
+        "To set up a basic Express.js application, require multiple server frameworks, implement a custom protocol handler, and establish a comprehensive microservices architecture."
+      ],
+      "correctIndex": 0,
+      "explanation": "Setting up an Express.js application is straightforward and requires minimal configuration. The process involves installing the Express package, creating a main application file, and defining routes and server behavior. Express's design philosophy emphasizes simplicity and flexibility, allowing developers to incrementally add complexity as needed."
+    },
+    {
+      "id": 4,
+      "question": "What is the purpose of the `app.use()` function?",
+      "options": [
+        "The `app.use()` function serves as a request validation middleware that checks and sanitizes incoming data before allowing it to be processed by route-specific handlers.",
+        "`app.use()` is primarily responsible for error handling and creating custom request interceptors that modify incoming HTTP traffic before it reaches specific route handlers.",
+        "The `app.use()` function is a middleware management method in Express.js that allows global or route-specific middleware to process HTTP requests and responses, enabling data preparation and custom request handling.",
+        "The `app.use()` function is a routing mechanism in Express.js that defines application-wide configuration settings and determines how different endpoints will be mapped and processed."
+      ],
+      "correctIndex": 2,
+      "explanation": "Express's `app.use()` is a versatile middleware method that can apply processing to all routes or specific paths. Middleware functions have access to the request and response objects, and can perform tasks like parsing data, authentication, logging, or modifying request/response streams. Global middleware (without a specified path) runs for every incoming request, while path-specific middleware only triggers for matching routes.\n\n```javascript\n// Global middleware\napp.use((req, res, next) => {\n  console.log('Request received');\n  next();\n});\n\n// Path-specific middleware\napp.use('/user', userMiddleware);\n```"
+    },
+    {
+      "id": 5,
+      "question": "How do you serve _static files_ using _Express.js_?",
+      "options": [
+        "`express.static()` is a file compression utility in Express.js that optimizes and minifies static web assets before delivering them to the client's browser.",
+        "The `express.static()` middleware is a security feature in Express.js that prevents unauthorized access to server-side resources by creating a protective file serving barrier.",
+        "Express's `express.static()` middleware manages server-side file caching and implements performance optimization strategies for delivering web application assets.",
+        "In Express.js, `express.static()` middleware serves static files like HTML, CSS, images, and client-side JavaScript from a specified directory, making these assets publicly accessible to web clients."
+      ],
+      "correctIndex": 3,
+      "explanation": "The `express.static()` middleware allows developers to easily expose a directory's contents to web clients, which is crucial for serving frontend assets. By specifying a directory, all files within that directory become accessible via HTTP requests. This is typically used to serve client-side files that browsers need to render and interact with web applications.\n\n```javascript\n// Serve static files from 'public' directory\napp.use(express.static('public'));\n\n// Now files like '/public/styles.css' are accessible\n// at 'http://yoursite.com/styles.css'\n```"
+    },
+    {
+      "id": 6,
+      "question": "Discuss the difference between `app.get()` and `app.post()` in _Express.js_.",
+      "options": [
+        "`app.get()` handles retrieving data via HTTP GET requests, typically used for fetching resources, while `app.post()` handles data submission and creation, sending data to the server to be processed or stored.",
+        "`app.get()` represents read-only database operations, and `app.post()` handles complex server-side computation and data transformation processes.",
+        "`app.get()` is used for rendering dynamic web pages, while `app.post()` manages server-side template rendering and view management in Express.js applications.",
+        "`app.get()` and `app.post()` are identical methods that can be used interchangeably for handling different types of HTTP request processing and route management."
+      ],
+      "correctIndex": 0,
+      "explanation": "HTTP methods `app.get()` and `app.post()` serve distinct purposes in web applications. GET requests are designed to retrieve data without modifying server state, making them idempotent and safe for repeated calls. POST requests are used to submit data, typically creating new resources or triggering server-side state changes.\n\n```javascript\n// GET request to retrieve user data\napp.get('/users', (req, res) => {\n  res.json(users);\n});\n\n// POST request to create a new user\napp.post('/users', (req, res) => {\n  const newUser = req.body;\n  users.push(newUser);\n  res.status(201).json(newUser);\n});\n```"
+    },
+    {
+      "id": 7,
+      "question": "How do you retrieve the _URL parameters_ from a _GET request_ in _Express.js_?",
+      "options": [
+        "Express provides the req.body object to capture URL parameters, allowing developers to extract route-specific values directly from incoming requests.",
+        "URL parameters in Express can be accessed through the req.query object, which is specifically designed to handle dynamic route segments.",
+        "URL parameters are retrieved by using the req.path method, which returns an array of route segments for parsing and manipulation.",
+        "In Express.js, URL parameters are retrieved using the req.params object, which captures dynamic segments of the route defined with a colon (:) prefix."
+      ],
+      "correctIndex": 3,
+      "explanation": "Express.js uses route parameters to create flexible and dynamic routing. When defining a route with a parameter like '/users/:id', the ':id' segment becomes a variable that can be accessed via req.params. This allows for dynamic routing and easy extraction of route-specific values."
+    },
+    {
+      "id": 8,
+      "question": "What are _route handlers_, and how would you implement them?",
+      "options": [
+        "Route handlers are event listeners that capture incoming network requests and redirect them to appropriate service modules.",
+        "Route handlers are static configuration objects that map URL patterns to predefined response templates in Express.js applications.",
+        "Route handlers in Express.js are middleware functions that process requests for specific routes, defining how the server responds to different HTTP methods and endpoints.",
+        "Route handlers are background processes that manage connection pooling and request optimization in Express.js server architectures."
+      ],
+      "correctIndex": 2,
+      "explanation": "Route handlers are fundamental to Express.js routing, allowing developers to define precise behaviors for different HTTP methods and URL paths. They receive request and response objects, enabling complex logic, data processing, and response generation."
+    },
+    {
+      "id": 9,
+      "question": "How do you enable _CORS_ in an _Express.js_ application?",
+      "options": [
+        "Express provides a built-in CORS module that automatically manages cross-origin permissions without additional package installations.",
+        "CORS in Express.js can be enabled using the 'cors' middleware package, which simplifies cross-origin resource sharing configuration with customizable options.",
+        "CORS configuration in Express requires manual header manipulation using the express.router middleware to enable cross-origin requests.",
+        "CORS is implemented in Express by configuring network-level firewall rules within the server's security settings."
+      ],
+      "correctIndex": 1,
+      "explanation": "The 'cors' package provides an easy way to handle cross-origin resource sharing in Express applications. It allows developers to specify allowed origins, methods, and headers, ensuring secure and flexible cross-origin communication."
+    },
+    {
+      "id": 10,
+      "question": "Explain the use of `next()` in _Express.js middleware_.",
+      "options": [
+        "In Express.js, `next()` is responsible for generating unique identifiers for each middleware function and tracking their execution order.",
+        "`next()` is a method that creates a new middleware stack and resets the request handling process for each incoming HTTP request.",
+        "The `next()` function is used to terminate the current request processing and immediately send a response back to the client in Express.js middleware.",
+        "The `next()` function in Express.js middleware allows a middleware function to pass control to the next middleware in the request-response cycle, enabling sequential processing of request and response objects."
+      ],
+      "correctIndex": 3,
+      "explanation": "Middleware in Express.js operates as a series of functions that can modify the request and response objects. The `next()` function is crucial for moving between these middleware functions, allowing each middleware to perform its specific task before passing control to the next one. Without calling `next()`, the request would be left hanging and never complete.\n\nHere's a simple example of middleware chaining:\n```javascript\napp.use((req, res, next) => {\n  console.log('First middleware');\n  next(); // Passes control to the next middleware\n});\n\napp.use((req, res, next) => {\n  console.log('Second middleware');\n  next();\n});\n```"
+    },
+    {
+      "id": 11,
+      "question": "What is the role of the `express.Router` class?",
+      "options": [
+        "The `express.Router` class is responsible for automatically generating RESTful API endpoints based on predefined schema definitions in Express applications.",
+        "`express.Router` serves as a global configuration manager that handles all routing logic and centralizes application-wide routing strategies.",
+        "The `express.Router` class is primarily used for implementing advanced authentication mechanisms and managing user session middleware in Express applications.",
+        "The `express.Router` class provides a modular way to create route handlers, allowing developers to group related routes and middleware into separate modules for better code organization and maintainability."
+      ],
+      "correctIndex": 3,
+      "explanation": "Router in Express enables developers to create modular, reusable route handling components. It works similarly to the main Express app but can be mounted on specific path prefixes. This approach helps in breaking down complex routing logic into more manageable pieces.\n\nHere's a typical Router usage example:\n```javascript\nconst router = express.Router();\n\nrouter.get('/users', (req, res) => {\n  // Handle user listing\n});\n\nrouter.post('/users', (req, res) => {\n  // Handle user creation\n});\n\napp.use('/api', router);\n```"
+    },
+    {
+      "id": 12,
+      "question": "How do you handle _404 errors_ in _Express.js_?",
+      "options": [
+        "Express.js manages 404 errors through a centralized error tracking service that logs and reports unmatched routes without interrupting the application's request processing.",
+        "In Express.js, 404 errors are typically handled by creating a middleware function placed at the end of the middleware chain that catches any unmatched routes and sends an appropriate error response.",
+        "404 errors in Express.js are automatically managed by the framework's built-in error handling system, which dynamically generates error pages without requiring explicit middleware.",
+        "Handling 404 errors involves implementing a global interceptor that redirects unresolved requests to a predefined fallback route in the application configuration."
+      ],
+      "correctIndex": 1,
+      "explanation": "Handling 404 errors is crucial for providing a good user experience and proper error management. The middleware is typically placed after all other routes to ensure it only catches requests that haven't been matched by previous route handlers.\n\nHere's a standard 404 error handling implementation:\n```javascript\n// After all other routes\napp.use((req, res, next) => {\n  res.status(404).send('Route not found');\n});\n\n// Or with a custom error page\napp.use((req, res, next) => {\n  res.status(404).render('404', { url: req.originalUrl });\n});\n```"
+    },
+    {
+      "id": 13,
+      "question": "What are the differences between `req.query` and `req.params`?",
+      "options": [
+        "In Express.js, `req.query` is used to access query string parameters from GET requests, while `req.params` captures dynamic parameters defined directly in the URL path.",
+        "`req.query` and `req.params` are interchangeable methods for accessing URL-based parameters in Express routing, with no significant difference between them.",
+        "`req.query` is exclusively used for POST requests, while `req.params` is limited to retrieving parameters from static URL routes in Express applications.",
+        "`req.params` handles all HTTP request types and extracts complex nested parameters, whereas `req.query` only works with simple key-value string parameters."
+      ],
+      "correctIndex": 0,
+      "explanation": "Query parameters and route parameters serve different purposes in Express routing. Query parameters (accessed via `req.query`) are optional key-value pairs appended to a URL after a question mark, like `/users?filter=active`. Route parameters (accessed via `req.params`) are part of the URL path itself, such as `/users/:id` where `:id` is a dynamic segment. A typical example demonstrates their usage: `app.get('/users/:id', (req, res) => { console.log(req.params.id); console.log(req.query.filter); });`"
+    },
+    {
+      "id": 14,
+      "question": "Describe the purpose of `req.body` and how you would access it.",
+      "options": [
+        "`req.body` stores metadata about the current HTTP request and cannot be used to access actual request payload information in Express.",
+        "`req.body` is a built-in Express method for generating request payloads automatically without requiring any additional middleware configuration.",
+        "`req.body` contains data submitted through HTTP POST requests, and requires middleware like `express.json()` or `express.urlencoded()` to parse incoming request body data.",
+        "`req.body` is only accessible in GET requests and requires manual parsing using custom middleware functions in Express applications."
+      ],
+      "correctIndex": 2,
+      "explanation": "The `req.body` property allows access to parsed request body data, but it requires explicit middleware configuration. Typically, developers use `express.json()` for JSON payloads and `express.urlencoded()` for form data. Here's a basic setup demonstrating body parsing: ```javascript\nconst express = require('express');\nconst app = express();\n\napp.use(express.json());\napp.use(express.urlencoded({ extended: true }));\n\napp.post('/submit', (req, res) => {\n  console.log(req.body); // Parsed request body\n});\n```"
+    },
+    {
+      "id": 15,
+      "question": "How do you create a _middleware_ that logs the _request method_ and _URL_ for every request?",
+      "options": [
+        "Request logging is automatically handled by Express core modules and does not require manual middleware implementation.",
+        "To create a middleware logging request method and URL, define a function that uses `req.method` and `req.url`, then apply it using `app.use()` to intercept all incoming requests.",
+        "Logging middleware can only be implemented using third-party libraries and requires complex configuration in Express routing systems.",
+        "Middleware for logging request details must be attached to specific routes individually and cannot be applied globally in Express applications."
+      ],
+      "correctIndex": 1,
+      "explanation": "Express middleware functions have access to request and response objects, allowing custom logging across all routes. A typical logging middleware intercepts requests before they reach route handlers. Here's an implementation: ```javascript\napp.use((req, res, next) => {\n  console.log(`${req.method} ${req.url}`);\n  next(); // Continue to next middleware/route handler\n});\n```"
+    }
+  ],
+  "processedAt": "2025-12-18T09:21:22.204Z"
+}

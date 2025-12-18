@@ -3,7 +3,7 @@
   "name": "Ruby",
   "slug": "ruby-interview-questions",
   "category": "Languages",
-  "totalQuestions": 15,
+  "totalQuestions": 12,
   "topics": [
     "advanced",
     "basics",
@@ -15,182 +15,146 @@
       "id": 1,
       "question": "What is _Ruby_, and why is it popular for web development?",
       "options": [
-        "Ruby is a functional programming language primarily used for data science and machine learning applications. Its primary strength lies in its robust type system and parallel processing capabilities.",
-        "Ruby is a scripting language focused on system administration and network automation. It provides low-level system access and is widely used for writing complex shell scripts and network management tools.",
-        "Ruby is a low-level systems programming language designed for high-performance computing and backend infrastructure. Its strict typing and compile-time checks make it ideal for developing complex enterprise software solutions.",
-        "Ruby is a dynamic, object-oriented programming language renowned for its elegant syntax and developer productivity. Its popularity in web development stems from Ruby on Rails, a powerful framework that revolutionized web application development through convention over configuration."
+        "Ruby is a low-level systems programming language primarily used for embedded systems and hardware interactions, offering granular control over computer resources.",
+        "Ruby is a dynamic, object-oriented programming language renowned for its elegant syntax and developer productivity, particularly through the Ruby on Rails web framework which revolutionized web application development.",
+        "Ruby is a compiled programming language designed specifically for enterprise software development, known for its complex syntax and rigorous type checking system.",
+        "Ruby is a functional programming language focused on mathematical computations and scientific computing, with strong emphasis on immutable data structures."
       ],
-      "correctIndex": 3,
-      "explanation": "Ruby stands out for its readable, expressive syntax and object-oriented design. Created by Yukihiro Matsumoto in 1995, Ruby emphasizes the principle of 'developer happiness' by providing intuitive and flexible language constructs. The Ruby on Rails framework, created by David Heinemeier Hansson, dramatically simplified web application development by introducing conventions that reduce boilerplate code and increase development speed."
+      "correctIndex": 1,
+      "explanation": "Ruby was created by Yukihiro Matsumoto in 1995 with the philosophy of making programming enjoyable and productive. Its dynamic typing, object-oriented nature, and clean syntax allow developers to write expressive code quickly. The Ruby on Rails framework, created by David Heinemeier Hansson, significantly popularized Ruby by providing a robust, convention-over-configuration approach to web development.\n\nExample of Ruby's elegant syntax:\n```ruby\n# Ruby method definition\ndef greet(name)\n  \"Hello, #{name}!\"\nend\n\nputs greet('Developer')  # Outputs: Hello, Developer!\n```"
     },
     {
       "id": 2,
       "question": "How do you create a _Ruby script file_ and execute it on a _command line_?",
       "options": [
-        "Ruby scripts are typically run through web servers or containerized environments, requiring extensive configuration and deployment infrastructure.",
-        "To create and execute a Ruby script, save your code in a file with a .rb extension and run it using the ruby command in the terminal, such as 'ruby my_script.rb'.",
-        "Ruby scripts are compiled into binary executables using a specialized Ruby compiler, which requires setting complex build configurations and linking external libraries.",
-        "Ruby scripts can only be executed through integrated development environments that provide specific runtime environments and compilation tools."
+        "To create and execute a Ruby script, compile the code using a Ruby compiler, generate a binary executable, and then run the compiled program through a special runtime environment.",
+        "To create and execute a Ruby script, you must first register the script with a Ruby development server and then deploy it through a specialized web interface.",
+        "To create and execute a Ruby script, write the code in an integrated development environment and use a graphical runner that translates Ruby into machine instructions.",
+        "To create and execute a Ruby script, save your code in a .rb file and use the 'ruby' command followed by the filename in the command line, which will interpret and run the script."
       ],
-      "correctIndex": 1,
-      "explanation": "Ruby provides a straightforward script execution process. Scripts are plain text files interpreted directly by the Ruby interpreter. When you run 'ruby filename.rb', the interpreter reads and executes the code line by line. Example of a simple script:\n\n```ruby\n# hello_world.rb\nputs \"Hello, Ruby World!\"\n```"
+      "correctIndex": 3,
+      "explanation": "Ruby scripts are text files with .rb extensions that can be directly executed by the Ruby interpreter. The ruby command reads and immediately executes the script without a separate compilation step. This interpreted nature allows for quick development and testing.\n\nExample of creating and running a script:\n```ruby\n# my_script.rb\nputs \"Welcome to Ruby!\"\n\n# Command line execution\n# $ ruby my_script.rb\n```"
     },
     {
       "id": 3,
       "question": "What are the basic _data types_ in _Ruby_?",
       "options": [
-        "Ruby uses a unique data type system based on compile-time type inference, with strict type checking and limited dynamic type conversion.",
-        "Ruby's data types are primarily designed for low-level memory manipulation, with complex type casting and direct memory access capabilities.",
-        "Ruby features several core data types, including integers (which can be of arbitrary size), floating-point numbers, booleans (true/false), symbols, and strings, with every value treated as an object.",
-        "Ruby supports only strictly typed primitive data types with fixed memory allocations, including 32-bit integers, fixed-precision floats, and immutable character arrays."
+        "Ruby's data types are primarily focused on functional programming paradigms, with complex algebraic data types and pattern matching as its primary type system.",
+        "Ruby features several core data types including integers (of arbitrary size), floating-point numbers, booleans (true/false), symbols, and treats everything as an object with methods and properties.",
+        "Ruby implements a unique data type system where all values are references to complex object graphs, requiring explicit memory management and type conversion.",
+        "Ruby uses strictly typed numeric data types with fixed memory allocations, supporting only 32-bit integers and double-precision floating-point numbers with explicit type declarations."
       ],
-      "correctIndex": 2,
-      "explanation": "Ruby's type system is dynamic and flexible, allowing implicit type conversions and treating everything as an object. This approach provides great flexibility and expressiveness. Example of type interactions:\n\n```ruby\nnum = 42         # Integer\nfloat = 3.14     # Float\nstring = 'Ruby'  # String\nsymbol = :name   # Symbol\n```"
+      "correctIndex": 1,
+      "explanation": "Ruby's flexible type system allows dynamic typing and treats everything as an object. This means even primitive types like integers have methods and can be extended. Symbols are unique, immutable identifiers often used as hash keys for efficient lookups.\n\nExample demonstrating Ruby's type flexibility:\n```ruby\n# Integers can be of arbitrary size\nbig_number = 123456789012345678901234567890\n\n# Methods on primitive types\nputs 42.even?  # true\nputs :symbol.class  # Symbol\n```"
     },
     {
       "id": 4,
       "question": "Explain the difference between _symbols_ and _strings_ in _Ruby_.",
       "options": [
-        "Symbols are a specialized string variant in Ruby that automatically convert between text and numeric representations for enhanced data handling flexibility.",
-        "Symbols and strings in Ruby are essentially identical, primarily distinguished by their capitalization and used interchangeably in most programming scenarios.",
-        "Ruby symbols represent primitive data types that function as lightweight string alternatives, primarily used for system-level memory optimization and performance gains.",
-        "In Ruby, symbols and strings differ fundamentally: symbols are immutable, unique objects stored once in memory, while strings are mutable, dynamic text containers that can be modified and recreated."
+        "Ruby symbols are mutable string-like objects that can be modified and are primarily used for creating lightweight, reusable text identifiers with minimal memory overhead and quick comparisons.",
+        "Symbols in Ruby are complex object types that represent dynamic text transformations, allowing for more flexible string manipulation compared to standard string objects with enhanced memory management capabilities.",
+        "In Ruby, symbols are immutable, unique identifiers stored once in memory, while strings are mutable text objects that can be changed and duplicated. Symbols are typically used as hash keys or for efficiency, whereas strings are used for text manipulation and dynamic content.",
+        "Symbols and strings in Ruby are essentially the same, with symbols being a specialized version of strings used for performance optimization in specific scenarios like method naming and internal object references."
       ],
-      "correctIndex": 3,
-      "explanation": "Symbols (:symbol) are unique, immutable identifiers typically used as hash keys or for referencing, while strings are dynamic text objects. Symbols are memory-efficient because they're stored only once, making them faster for repeated use. A code example illustrates their difference: \n```ruby\nhash = { :name => 'Alice', 'name' => 'Bob' }  # Different keys\nname_symbol = :name  # Memory-efficient identifier\n```"
+      "correctIndex": 2,
+      "explanation": "Symbols in Ruby are unique, immutable identifiers that are stored only once in memory, making them more memory-efficient and faster for lookups compared to strings. They are typically used as hash keys, method names, or in situations where you need a constant, unchangeable identifier. While strings can be modified and take up new memory with each creation, symbols remain constant and are referenced by the same memory address.\n\nHere's an example demonstrating symbol characteristics:\n```ruby\n# Symbol creation and comparison\nhash = { :name => 'Alice', :age => 30 }\nputs hash[:name]  # Efficient lookup\n\n# Compare object IDs to show uniqueness\nputs :example.object_id == :example.object_id  # true\nputs 'example'.object_id == 'example'.object_id  # false\n```"
     },
     {
       "id": 5,
       "question": "How are _constants_ declared and what is their _scope_ in _Ruby_?",
       "options": [
-        "Ruby constants are declared using uppercase letters and are lexically scoped, meaning their visibility depends on where they are defined, with a warning generated if they are reassigned.",
-        "Constants in Ruby are global variables that can be freely modified without restrictions, and are typically used for storing configuration and system-wide settings.",
-        "Constants are special Ruby objects that maintain strict type enforcement, preventing any modifications after initial declaration and providing compile-time type safety.",
-        "Ruby constants represent immutable system-level configurations that are automatically frozen and cannot be referenced outside their original declaration context."
+        "Ruby constants are dynamically scoped variables that can be redefined at runtime without restrictions, providing flexible global state management across different program contexts.",
+        "Constants in Ruby are strictly immutable global variables that cannot be modified under any circumstances and are automatically frozen when declared to prevent any potential changes.",
+        "Constants in Ruby are special class-level variables that are inherited by subclasses and can only be defined within class or module definitions, with strict access control mechanisms.",
+        "In Ruby, constants are declared using uppercase letters and are lexically scoped, meaning their visibility is determined by where they are defined. While technically reassignable, changing a constant's value triggers a warning and is considered bad practice."
       ],
-      "correctIndex": 0,
-      "explanation": "Constants in Ruby provide a way to declare values that should remain relatively stable. While technically modifiable, reassignment triggers a warning. They follow lexical scoping rules and are commonly used for configuration and fixed values. Here's an example of constant declaration and usage:\n```ruby\nMAX_CONNECTIONS = 100  # Constant declaration\nclass NetworkManager\n  def initialize\n    @current_connections = MAX_CONNECTIONS\n  end\nend\n```"
+      "correctIndex": 3,
+      "explanation": "Constants in Ruby provide a way to define values that are meant to remain stable throughout a program's execution. They are typically used for configuration values, configuration settings, or any values that should not change. While technically reassignable, doing so generates a warning, signaling potential misuse.\n\nHere's an example of constant declaration and usage:\n```ruby\n# Constant declaration\nMAX_USERS = 100\nCONFIG = { database: 'production', timeout: 30 }\n\n# Class-level constant\nclass UserManager\n  MAX_CONNECTIONS = 50\nend\n```"
     },
     {
       "id": 6,
       "question": "Explain the use of '_require_' and '_include_' in _Ruby_.",
       "options": [
-        "Ruby's 'require' and 'include' are primarily used for managing object inheritance and creating complex metaprogramming structures within class definitions.",
-        "In Ruby, 'require' loads external libraries and modules, ensuring they are loaded only once per runtime, while 'include' mixes module methods directly into a class's instance methods.",
-        "Ruby's 'require' and 'include' are interchangeable methods for importing external code, with no significant distinction between their functional behaviors.",
-        "The 'require' method in Ruby dynamically generates class methods, while 'include' provides runtime dependency injection for complex library integrations."
+        "In Ruby, 'require' is a low-level file system method for accessing external resources, and 'include' is a high-level metaprogramming technique for dynamically extending class capabilities.",
+        "Ruby's 'require' and 'include' are interchangeable methods for importing external code, with 'require' primarily used for adding module functionality and 'include' for loading library files.",
+        "In Ruby, 'require' is used to load external libraries and files, ensuring they are loaded only once per program execution, while 'include' is used to mix module methods into a class's instance methods.",
+        "The 'require' method in Ruby dynamically generates new classes at runtime, while 'include' provides a mechanism for creating temporary code references across different modules."
       ],
-      "correctIndex": 1,
-      "explanation": "The 'require' method is used to load external files and libraries, preventing duplicate loading, while 'include' allows mixing module methods into a class. Here's a practical demonstration:\n```ruby\nrequire 'json'  # Loads external library\n\nmodule Loggable\n  def log(message)\n    puts message\n  end\nend\n\nclass MyClass\n  include Loggable  # Adds log method to instance\nend\n```"
+      "correctIndex": 2,
+      "explanation": "The 'require' method in Ruby is crucial for loading external libraries and files, preventing multiple loads of the same library. It searches the Ruby load path and ensures that a file is loaded only once during program execution. In contrast, 'include' is used to mix module methods into a class, allowing for horizontal code reuse and composition.\n\nHere's an example demonstrating their usage:\n```ruby\n# Requiring an external library\nrequire 'json'\n\n# Including a module in a class\nmodule Printable\n  def print_details\n    puts 'Printing details...'\n  end\nend\n\nclass User\n  include Printable\nend\n\nuser = User.new\nuser.print_details  # Module method now available\n```"
     },
     {
       "id": 7,
       "question": "What are _Ruby iterators_ and how do they work?",
       "options": [
-        "Iterators in Ruby represent internal object methods that create dynamic memory mappings between collection elements, facilitating advanced algorithmic transformations.",
-        "Ruby iterators are methods that traverse through collections, allowing developers to perform operations on each element without explicitly managing loop counters, with 'each' being the most fundamental iterator.",
-        "Ruby iterators are high-performance loop replacements that compile collection traversal into optimized machine code, providing near-native execution speeds for data processing.",
-        "Ruby iterators are specialized data structures that automatically transform collection elements through predefined computational processes, enabling complex data manipulation workflows."
+        "Ruby iterators represent a design pattern where collection elements are processed through a complex callback mechanism, allowing advanced functional programming techniques with significant memory overhead.",
+        "Ruby iterators are specialized loops that require explicit index management and provide minimal performance benefits for data processing. They are primarily used for basic sequential traversal of linear collections.",
+        "Ruby iterators are methods that traverse through collections, allowing developers to perform operations on each element without explicitly managing loop counters. They provide a clean, functional approach to data manipulation across various data structures like arrays, ranges, and hashes.",
+        "Iterators in Ruby are advanced control structures that automatically compile collection processing into lower-level machine code, enabling highly optimized data transformation with minimal developer intervention."
       ],
-      "correctIndex": 1,
-      "explanation": "Iterators in Ruby provide a clean, functional approach to working with collections. They abstract away traditional loop mechanics, making code more readable and concise. The 'each' method is the most common iterator, allowing developers to perform actions on each element without managing explicit index tracking. An example demonstrates its simplicity:"
+      "correctIndex": 2,
+      "explanation": "Iterators in Ruby are powerful methods that simplify collection traversal. The most common iterator is 'each', which allows seamless element processing without manual loop management. Ruby's iterator methods are part of its functional programming capabilities, enabling concise and readable code. Here's a typical example of using an iterator:"
     },
     {
       "id": 8,
       "question": "How are _errors_ handled in _Ruby_?",
       "options": [
-        "Ruby's error management system uses a complex middleware architecture that intercepts and translates system-level exceptions into programmable error events with contextual metadata.",
-        "Ruby implements error management through a multi-layered reflection system that dynamically reconstructs program state when unexpected conditions interrupt normal execution flow.",
-        "Error handling in Ruby relies on a dynamic type-inference mechanism that automatically detects and neutralizes potential runtime anomalies before they manifest as exceptions.",
-        "Ruby handles errors through an exception hierarchy, using 'begin/rescue' blocks to catch and manage different types of errors, with StandardError serving as the primary base class for most runtime exceptions."
+        "Ruby's error management relies on a complex middleware system that automatically translates system-level exceptions into user-friendly messages without requiring explicit error catching strategies.",
+        "Error handling in Ruby is implemented through a meta-programming approach where runtime errors are dynamically transformed and rerouted based on predefined configuration parameters.",
+        "Ruby handles errors through an exception hierarchy where developers can catch and manage different types of errors using begin-rescue blocks, allowing for graceful error handling and preventing program termination.",
+        "Error handling in Ruby is primarily managed through global error tracking mechanisms that intercept runtime exceptions and redirect them to a centralized logging system with minimal developer intervention."
       ],
-      "correctIndex": 3,
-      "explanation": "Exception handling in Ruby provides a robust mechanism for gracefully managing runtime errors. The 'begin/rescue' construct allows developers to catch specific or generic exceptions, preventing program crashes and enabling elegant error recovery. Here's a practical example of error handling:"
+      "correctIndex": 2,
+      "explanation": "Ruby's exception handling provides a robust mechanism for managing runtime errors. The begin-rescue-end structure allows developers to catch specific or generic exceptions, providing fine-grained control over error management. Developers can specify exact error types or use broader exception classes."
     },
     {
       "id": 9,
       "question": "Describe the difference between _local_, _instance_, and _class variables_.",
       "options": [
-        "Ruby variables have distinct scopes: local variables are confined to their definition block, instance variables are unique to object instances (prefixed with @), and class variables are shared across all instances of a class (prefixed with @@).",
-        "Ruby implements a multi-dimensional variable resolution mechanism where scope is negotiated through intricate metadata mapping and computational context analysis.",
-        "Variable types in Ruby represent contextual execution environments that dynamically adapt their accessibility based on complex object-oriented inheritance hierarchies.",
-        "Ruby's variable system uses a complex memory allocation strategy where variable scope is determined by dynamic runtime type inference and memory address resolution."
+        "Variable types in Ruby are determined by complex inheritance patterns, where local variables represent static contexts, instance variables reflect object state, and class variables manage metaprogramming capabilities.",
+        "In Ruby, local variables have block-level scope, instance variables are specific to object instances and prefixed with '@', and class variables shared across all instances of a class are prefixed with '@@'.",
+        "Ruby's variable system uses a hierarchical resolution mechanism where local variables represent compilation-time constants, instance variables track object lifecycle, and class variables enable dynamic type inference.",
+        "Ruby variables are distinguished by their scope enforcement, with local variables being globally accessible, instance variables restricted to method calls, and class variables dynamically reassigned during runtime."
       ],
-      "correctIndex": 0,
-      "explanation": "Understanding variable scope is crucial in Ruby. Local variables have limited visibility, instance variables belong to specific objects, and class variables are shared across all instances. Here's a demonstration of their differences:"
+      "correctIndex": 1,
+      "explanation": "Ruby's variable scoping is crucial for understanding object-oriented and functional programming paradigms. Local variables are limited to their immediate scope, instance variables persist within object instances, and class variables are shared across all instances of a class."
     },
     {
       "id": 10,
       "question": "What are _Ruby's accessor methods_?",
       "options": [
-        "Ruby's accessor methods are attr_reader (getter), attr_writer (setter), and attr_accessor (both getter and setter), which automatically generate methods for accessing and modifying object attributes.",
-        "Ruby's accessor methods are inherited methods from the Object class that provide default mechanisms for managing instance variables through reflection techniques.",
-        "Ruby's accessor methods are specialized functions that control data encapsulation by manually defining custom getter and setter methods for class variables.",
-        "Ruby's accessor methods are meta-programming techniques that dynamically create instance-level data management strategies based on runtime object configurations."
+        "Accessor methods in Ruby are metaprogramming techniques that dynamically create method wrappers around object properties, allowing controlled internal state management.",
+        "Ruby's accessor methods are compilation-time directives that generate runtime method proxies for intercepting and managing object attribute interactions.",
+        "Ruby's accessor methods are predefined class-level methods that automatically generate instance variables with specific naming conventions for object-oriented programming design patterns.",
+        "Ruby's accessor methods are special methods that control attribute access: attr_reader generates a getter, attr_writer creates a setter, and attr_accessor provides both reading and writing capabilities for object attributes."
       ],
-      "correctIndex": 0,
-      "explanation": "Accessor methods in Ruby simplify attribute management by generating methods automatically. They reduce boilerplate code and provide a clean way to control attribute access. The attr_reader creates a getter, attr_writer creates a setter, and attr_accessor creates both. For example:\n\n```ruby\nclass Person\n  attr_accessor :name\nend\n\nperson = Person.new\nperson.name = 'Alice'  # setter\nprint person.name      # getter\n```"
+      "correctIndex": 3,
+      "explanation": "Accessor methods in Ruby provide a convenient way to define attribute access without manually writing getter and setter methods. They reduce boilerplate code and provide a standard mechanism for managing object attributes. The three types (attr_reader, attr_writer, attr_accessor) offer different levels of attribute manipulation."
     },
     {
       "id": 11,
       "question": "How does _garbage collection_ work in _Ruby_?",
       "options": [
-        "Ruby's garbage collection employs a reference counting mechanism that tracks object usage and immediately deallocates memory when reference counts reach zero.",
-        "Ruby's garbage collection is a complex memory management system that uses parallel threading to simultaneously track and release unused memory resources.",
-        "Ruby's garbage collection uses a Mark-and-Sweep algorithm to automatically manage memory by identifying and reclaiming unreferenced objects, with a generational approach to optimize performance.",
-        "Ruby's garbage collection relies on static memory allocation strategies that predefine memory regions for different object types during runtime initialization."
+        "The Ruby garbage collector uses a generational approach that segments memory into young and old generations, prioritizing collection of recently created objects.",
+        "Ruby's garbage collection uses a mark-and-sweep algorithm that identifies and reclaims unused memory by first marking all reachable objects from the root references, then sweeping and freeing unmarked memory.",
+        "Ruby's memory management relies on a concurrent garbage collection strategy that runs parallel to the main application thread, minimizing performance interruptions.",
+        "Ruby's garbage collection employs a reference counting mechanism that tracks object usage and immediately deallocates memory when reference counts drop to zero."
       ],
-      "correctIndex": 2,
-      "explanation": "Garbage collection in Ruby automatically manages memory to prevent memory leaks. The Mark-and-Sweep algorithm works by first marking all reachable objects, then sweeping and freeing unmarked objects. Modern Ruby versions use generational garbage collection for improved efficiency, which focuses more frequently on recently created objects.\n\n```ruby\n# Example of object becoming unreferenced\ndef create_temporary_object\n  temp_object = Object.new\n  # object becomes unreachable after method ends\nend\n```"
+      "correctIndex": 1,
+      "explanation": "Garbage collection in Ruby automatically manages memory allocation and deallocation. The mark-and-sweep approach ensures efficient memory management by identifying and removing unreferenced objects. Modern Ruby versions have sophisticated garbage collection algorithms that optimize memory usage and application performance."
     },
     {
       "id": 12,
       "question": "Explain the difference between '_gets.chomp_' and '_gets.strip_'.",
       "options": [
-        "gets.chomp is a platform-specific method for handling input, whereas gets.strip is a cross-platform solution for standardizing string inputs.",
-        "gets.chomp removes only the trailing newline character, while gets.strip removes both leading and trailing whitespace, making strip more comprehensive for cleaning user input.",
-        "gets.chomp preserves all whitespace characters, while gets.strip completely removes all spaces, making strip more aggressive in input processing.",
-        "gets.chomp and gets.strip are identical methods that handle input sanitization by removing all non-alphanumeric characters from user-provided strings."
+        "gets.chomp is a system-level input method that preserves whitespace, whereas gets.strip is a high-level string processing method for user input.",
+        "gets.chomp and gets.strip are identical methods used for input sanitization, with no meaningful difference in their string manipulation behavior.",
+        "gets.chomp removes only the trailing newline character, while gets.strip eliminates both leading and trailing whitespace, providing a more comprehensive input cleaning method.",
+        "gets.chomp operates on console input streams, while gets.strip is primarily used for parsing formatted text files and removing peripheral whitespace."
       ],
-      "correctIndex": 1,
-      "explanation": "The methods get.chomp and gets.strip serve different input cleaning purposes. Chomp specifically targets the trailing newline, while strip removes both leading and trailing whitespace. This makes strip more comprehensive for cleaning user input.\n\n```ruby\ninput1 = gets.chomp   # Removes only trailing newline\ninput2 = gets.strip   # Removes leading/trailing whitespace\n```"
-    },
-    {
-      "id": 13,
-      "question": "What is the role of '_self_' in _Ruby_?",
-      "options": [
-        "In Ruby, `self` dynamically represents the current context, switching between the instance of an object in instance methods and the class itself in class methods, allowing for flexible and context-aware programming.",
-        "`self` is a static reference point in Ruby that represents the global execution context and cannot change during program runtime.",
-        "`self` is a keyword that always refers to the parent class and provides inheritance context for method calls and object interactions.",
-        "`self` is a special variable used exclusively for creating immutable object references and preventing method overriding in Ruby classes."
-      ],
-      "correctIndex": 0,
-      "explanation": "The concept of `self` in Ruby is fundamental to understanding object-oriented programming in the language. It dynamically changes based on the current context, enabling developers to reference the current object or class with flexibility. In instance methods, `self` points to the specific object instance, while in class methods, it refers to the class itself. This allows for powerful metaprogramming techniques and context-aware method implementations.\n\nExample of `self` usage:\n```ruby\nclass Example\n  def instance_method\n    puts self  # Outputs the specific object instance\n  end\n\n  def self.class_method\n    puts self  # Outputs the class name\n  end\nend\n```"
-    },
-    {
-      "id": 14,
-      "question": "Explain the principle of '_Convention over Configuration_' in the context of _Ruby_.",
-      "options": [
-        "Convention over Configuration is a performance optimization technique in Ruby that automatically generates efficient code structures based on predefined algorithmic patterns.",
-        "Convention over Configuration is a design principle in Ruby that reduces developer decision-making by providing sensible default structures and behaviors, allowing developers to focus on unique application logic instead of repetitive configuration.",
-        "Convention over Configuration is a strict set of programming rules that mandate specific implementation patterns and limit developer flexibility in Ruby applications.",
-        "Convention over Configuration is a design methodology that enforces uniform code organization through mandatory naming conventions and standardized class structures."
-      ],
-      "correctIndex": 1,
-      "explanation": "The Convention over Configuration principle simplifies software development by establishing standard practices and reducing boilerplate configuration. In Ruby frameworks like Ruby on Rails, this means automatic assumptions about project structure, database naming, and default behaviors. By providing intelligent defaults, developers can rapidly build applications with less manual setup and more consistent code organization.\n\nExample in Ruby on Rails:\n```ruby\n# Automatic model-database mapping\nclass User < ApplicationRecord\n  # No explicit configuration needed for database interactions\nend\n```"
-    },
-    {
-      "id": 15,
-      "question": "How does _Ruby_ support _metaprogramming_?",
-      "options": [
-        "Ruby's metaprogramming is limited to static method generation at compile-time and requires explicit type declarations for dynamic behavior.",
-        "Metaprogramming in Ruby is primarily achieved through complex reflection APIs that provide minimal runtime code modification capabilities.",
-        "Ruby implements metaprogramming strictly through inheritance hierarchies and predefined interface contracts between classes and objects.",
-        "Ruby supports metaprogramming through dynamic method definition, runtime method invocation using `send`, and the ability to modify classes and objects dynamically during program execution, enabling highly flexible and adaptable code structures."
-      ],
-      "correctIndex": 3,
-      "explanation": "Metaprogramming in Ruby allows programs to modify themselves during runtime, creating incredibly flexible and adaptable code structures. Key techniques include dynamic method definition with `define_method`, runtime method invocation using `send`, and the ability to open and modify classes after their initial definition. This approach enables developers to create more abstract and generative programming patterns.\n\nExample of metaprogramming:\n```ruby\nclass Example\n  define_method :dynamic_method do |arg|\n    puts \"Called with #{arg}\"\n  end\nend\n\nobj = Example.new\nobj.dynamic_method(\"hello\")  # Dynamically created method\n```"
+      "correctIndex": 2,
+      "explanation": "The primary difference between gets.chomp and gets.strip is their approach to whitespace removal. While gets.chomp focuses on newline character removal, gets.strip provides a more comprehensive whitespace cleaning solution for input processing."
     }
   ],
-  "processedAt": "2025-12-15T07:58:05.767Z"
+  "processedAt": "2025-12-18T10:20:40.579Z"
 }

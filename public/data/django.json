@@ -1,0 +1,162 @@
+{
+  "id": "django",
+  "name": "Django",
+  "slug": "django-interview-questions",
+  "category": "Backend",
+  "totalQuestions": 12,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 4,
+      "question": "Describe the purpose of the _settings.py_ file in a _Django project_.",
+      "options": [
+        "Settings.py serves as the primary security configuration file, handling authentication mechanisms and access control for the entire Django project.",
+        "The settings.py file is a template for creating dynamic view configurations and routing rules for different application endpoints.",
+        "The settings.py file is responsible for managing database migrations and tracking changes in model structures across different development environments.",
+        "The settings.py file is the central configuration file for a Django project, managing global settings like installed apps, middleware, database configurations, and other project-wide parameters."
+      ],
+      "correctIndex": 3,
+      "explanation": "The settings.py file is essential for configuring a Django project's environment and behavior. It contains critical parameters that control how the project operates, including database connections, installed applications, middleware, secret key, and other global settings. Django reads this file to understand the project's configuration and set up the necessary components during initialization.\n\nExample configuration:\n```python\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'myapp.apps.MyAppConfig'\n]\n\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3'\n    }\n}\n```"
+    },
+    {
+      "id": 5,
+      "question": "What is the role of the _urls.py_ file in a _Django project_?",
+      "options": [
+        "The urls.py file in Django manages URL routing by mapping URL patterns to specific view functions, allowing the framework to determine which view should handle incoming HTTP requests.",
+        "Urls.py is a configuration file that handles authentication and permission management for different user roles in a Django application.",
+        "The urls.py file controls middleware interactions and defines the sequence of request/response processing in a Django project.",
+        "The urls.py file is responsible for managing database connections and defining query parameters for different application endpoints."
+      ],
+      "correctIndex": 0,
+      "explanation": "The urls.py file is crucial in Django's routing mechanism, defining how different URLs are connected to specific view functions. It uses path() or re_path() methods to create URL patterns that map web addresses to the appropriate views. This modular approach allows for flexible and organized routing across different apps in a Django project.\n\nExample URL configuration:\n```python\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('users/', include('users.urls')),\n    path('posts/<int:post_id>/', views.post_detail)\n]\n```"
+    },
+    {
+      "id": 6,
+      "question": "Explain the concept of _Django's ORM (Object-Relational Mapping)_.",
+      "options": [
+        "Django's ORM is an abstraction layer that allows developers to interact with databases using Python classes and methods instead of writing raw SQL queries, providing a high-level, database-agnostic approach to data manipulation.",
+        "The ORM serves as a security layer that encrypts database communications and prevents unauthorized data access in Django applications.",
+        "Django's ORM is a translation tool that converts Python data types into standardized database schema definitions automatically.",
+        "Django's ORM is a caching mechanism that optimizes database queries by creating in-memory representations of complex data structures."
+      ],
+      "correctIndex": 0,
+      "explanation": "Django's Object-Relational Mapping (ORM) transforms database interactions into Pythonic operations, allowing developers to work with database records as Python objects. This abstraction simplifies database operations, supports multiple database backends, and provides powerful querying capabilities without requiring direct SQL knowledge.\n\nExample model and query:\n```python\nclass User(models.Model):\n    username = models.CharField(max_length=100)\n    email = models.EmailField()\n\n# ORM query\nactive_users = User.objects.filter(is_active=True)\n```"
+    },
+    {
+      "id": 7,
+      "question": "What is a _Django model_ and how is it defined?",
+      "options": [
+        "A Django model is a middleware component that manages database connection protocols and translates Python objects into database query structures.",
+        "A Django model is a web template configuration that defines how database interactions are rendered, with attributes representing display parameters and layout specifications.",
+        "A Django model is a Python class that represents a database table, inheriting from django.db.models.Model, with each attribute defining a database field representing a specific column and its data characteristics.",
+        "A Django model is a data validation class that provides runtime type checking and data transformation mechanisms for database input operations."
+      ],
+      "correctIndex": 2,
+      "explanation": "Django models are the core representation of database tables in Django's Object-Relational Mapping (ORM) system. They define the structure, relationships, and behaviors of database entities. Models allow developers to interact with databases using Python code instead of writing raw SQL queries. A typical model defines fields, relationships, and can include custom methods for data manipulation."
+    },
+    {
+      "id": 8,
+      "question": "Describe the purpose of _Django's admin interface_.",
+      "options": [
+        "Django's admin interface is a data synchronization tool that automatically maps database models to external administrative platforms and services.",
+        "Django's admin interface is a template rendering system that dynamically generates administrative dashboards based on application configuration settings.",
+        "Django's admin interface is a security middleware that controls user authentication and manages access permissions across different application endpoints.",
+        "Django's admin interface is an automatic administrative management tool that provides a pre-built, customizable web interface for managing application models, enabling CRUD operations with minimal configuration."
+      ],
+      "correctIndex": 3,
+      "explanation": "The Django admin interface is a powerful built-in feature that automatically generates an administrative control panel for managing application data. It introspects model definitions and creates a professional, functional interface for performing database operations. Developers can customize the admin interface by registering models and defining display settings."
+    },
+    {
+      "id": 9,
+      "question": "What is a _Django view_ and how is it created?",
+      "options": [
+        "A Django view is a Python function or class that receives web requests, processes them by interacting with models, and returns HTTP responses, serving as the core logic layer between URL routing and template rendering.",
+        "A Django view is a database query optimization component that manages complex data retrieval and caching mechanisms for web applications.",
+        "A Django view is a request preprocessing middleware that transforms incoming HTTP requests into standardized internal communication protocols.",
+        "A Django view is a template inheritance mechanism that defines how different page components are dynamically assembled and rendered."
+      ],
+      "correctIndex": 0,
+      "explanation": "Django views act as request handlers that determine how specific URL patterns are processed. They can be implemented as function-based views (simple functions) or class-based views (more structured approach). Views typically interact with models to retrieve or manipulate data and then render responses using templates or return data directly."
+    },
+    {
+      "id": 10,
+      "question": "Explain the concept of _URL patterns_ in _Django_.",
+      "options": [
+        "URL patterns are middleware components in Django that intercept incoming requests and transform them into standardized communication protocols for server-side processing.",
+        "URL patterns are Django's internal routing mechanism that automatically generates web pages based on predefined templates without requiring explicit view definition.",
+        "URL patterns represent a database mapping system in Django that connects database models directly to web endpoints using ORM-based routing strategies.",
+        "URL patterns in Django direct web requests to the appropriate view by mapping URL paths to specific view functions. They are defined in the `urls.py` file and can use simple string matching or more complex regular expression patterns."
+      ],
+      "correctIndex": 3,
+      "explanation": "Django's URL patterns are a crucial part of the routing system that connects incoming HTTP requests to the appropriate view functions. They allow developers to create clean, readable URL structures and map specific URL paths to Python functions that generate web responses. URL patterns can be defined using simple path matching or more complex regular expressions, providing flexibility in handling different types of web requests."
+    },
+    {
+      "id": 11,
+      "question": "What is a _database migration_ in _Django_ and why is it important?",
+      "options": [
+        "Database migrations in Django are automated methods for systematically tracking and applying changes to database schemas, allowing developers to version control and incrementally update database structures as models evolve.",
+        "Database migrations are a security feature in Django that encrypts database schema changes and prevents unauthorized structural modifications to database tables.",
+        "Database migrations are Django's internal caching mechanism for storing temporary database snapshots and managing query performance across different application states.",
+        "Database migrations represent a method of synchronizing data between multiple database instances using Django's built-in replication protocols."
+      ],
+      "correctIndex": 0,
+      "explanation": "Migrations are essential for maintaining database consistency as Django models change over time. They provide a structured approach to evolving database schemas, allowing developers to track, apply, and rollback database structural changes. Migrations are typically created using Django management commands like `python manage.py makemigrations` and applied with `python manage.py migrate`.\n\n```python\n# Example migration workflow\nclass CreateUserProfile(migrations.Migration):\n    dependencies = [\n        ('users', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='UserProfile',\n            fields=[\n                ('id', models.AutoField(primary_key=True)),\n                ('bio', models.TextField()),\n            ],\n        ),\n    ]\n```"
+    },
+    {
+      "id": 12,
+      "question": "Explain the difference between a _ForeignKey_ and a _ManyToManyField_ in _Django models_.",
+      "options": [
+        "A ForeignKey establishes a many-to-one relationship between models, where multiple records in one model can reference a single record in another model, creating a hierarchical database relationship.",
+        "A ForeignKey is a performance optimization technique in Django that caches related model instances to reduce database query overhead.",
+        "A ForeignKey is a Django database constraint that prevents duplicate entries by enforcing unique references across multiple database tables.",
+        "A ForeignKey represents a bidirectional data linking mechanism that automatically synchronizes data between two related database models in real-time."
+      ],
+      "correctIndex": 0,
+      "explanation": "ForeignKeys are fundamental to creating relational database structures in Django models. They allow establishing clear relationships between different models, enabling efficient data querying and maintaining referential integrity. When a ForeignKey is defined, Django automatically creates the necessary database constraints and provides convenient methods for accessing related objects.\n\n```python\nclass Book(models.Model):\n    title = models.CharField(max_length=200)\n    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)\n\n# This allows accessing the related publisher for a book\nbook = Book.objects.get(id=1)\nprint(book.publisher.name)  # Accesses the related publisher\n```"
+    },
+    {
+      "id": 13,
+      "question": "How do you define a custom _model field_ in _Django_?",
+      "options": [
+        "To define a custom model field in Django, create a subclass of `models.Field` and override methods like `__init__`, `from_db_value`, `to_python`, and `get_prep_value` to implement custom data handling and validation.",
+        "Custom model fields are defined by adding extra validation methods to the model's Meta class and implementing a custom field type through Django's field registry.",
+        "A custom model field is implemented by creating a new database backend that overrides the default field serialization methods in Django's ORM.",
+        "Custom model fields in Django are created by extending the base model class and adding special decorators to modify database storage behavior."
+      ],
+      "correctIndex": 0,
+      "explanation": "Creating a custom model field allows developers to extend Django's ORM with specialized data types and behaviors. The process involves subclassing `models.Field` and implementing key methods that control how data is converted between Python and database representations. This provides flexibility for handling complex data types, implementing custom validation, or integrating with specific data storage requirements."
+    },
+    {
+      "id": 14,
+      "question": "What is a _QuerySet_ in _Django_ and how is it used?",
+      "options": [
+        "A QuerySet in Django is a lazy database query collection that allows you to filter, retrieve, and manipulate database records efficiently using method chaining without immediately executing the database query.",
+        "A QuerySet represents a static collection of model instances that must be explicitly loaded and cannot be further modified after initial retrieval.",
+        "QuerySets in Django are raw SQL query containers that require manual compilation and execution through the database connection manager.",
+        "QuerySets are pre-compiled database query objects that instantly fetch all matching records and store them in memory for immediate processing."
+      ],
+      "correctIndex": 0,
+      "explanation": "QuerySets provide a powerful and flexible way to interact with database records in Django. They support lazy evaluation, meaning the actual database query is only executed when the data is actually needed. This approach allows for efficient query construction, including complex filtering, ordering, and data transformation without immediate performance overhead."
+    },
+    {
+      "id": 15,
+      "question": "Describe the concept of _model inheritance_ in _Django_.",
+      "options": [
+        "Model inheritance in Django is primarily achieved through direct table cloning, where child models create exact copies of parent model structures in the database.",
+        "Model inheritance is implemented by generating database views that dynamically map relationships between parent and child model instances.",
+        "Model inheritance in Django supports three primary strategies: abstract base classes (for shared fields without database table), multi-table inheritance (creating separate tables for each model), and proxy models (for modifying model behavior without changing the database schema).",
+        "Django model inheritance only supports single-inheritance patterns, with strict limitations on creating complex model hierarchies and relationships."
+      ],
+      "correctIndex": 2,
+      "explanation": "Django's model inheritance provides flexible approaches to code reuse and data modeling. Abstract base classes allow sharing common fields and methods, multi-table inheritance creates separate database tables with implicit relationships, and proxy models enable runtime behavior modifications without altering database structure."
+    }
+  ],
+  "processedAt": "2025-12-18T09:14:55.216Z"
+}

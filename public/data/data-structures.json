@@ -15,182 +15,182 @@
       "id": 1,
       "question": "Explain how you would reverse an array in place.",
       "options": [
-        "Recursively swap elements from the middle outwards",
-        "Create a new array and copy elements in reverse order",
-        "Use a built-in reverse function without manually swapping",
-        "In-place array reversal involves swapping elements from the start and end of the array, moving towards the center until the entire array is reversed."
+        "Reversing an array involves recursively splitting the array into halves and interchanging their positions, which provides an elegant algorithmic solution to element reordering.",
+        "Array reversal requires creating a new array and copying elements in reverse order, which ensures preservation of the original data structure during the transformation process.",
+        "To reverse an array, iterate through each element and shift its position using a temporary tracking mechanism that repositions elements systematically across the array's length.",
+        "To reverse an array in-place, use a two-pointer approach starting from the array's ends, swapping elements as they converge towards the center, which modifies the original array without requiring additional memory."
       ],
       "correctIndex": 3,
-      "explanation": "The in-place reversal technique modifies the original array without requiring additional memory. By using two pointers at the beginning and end of the array, elements are systematically swapped until the entire array is reversed. This method is memory-efficient and works for arrays of any size."
+      "explanation": "In-place array reversal is an efficient technique that manipulates the original array by swapping elements from opposite ends. By using two pointers that move towards each other, the algorithm achieves reversal without consuming extra space. The approach works by exchanging elements symmetrically until the pointers meet in the middle, effectively transforming the array's order."
     },
     {
       "id": 2,
       "question": "What is the difference between an _array_ and a _linked list_?",
       "options": [
-        "Arrays and linked lists are essentially the same data structure",
-        "Linked lists always have faster access times than arrays",
-        "Arrays are contiguous memory blocks with fixed size and direct index access, while linked lists are non-contiguous data structures with dynamic memory allocation and element connections through pointers.",
-        "Arrays can dynamically resize like linked lists"
+        "Arrays and linked lists are fundamentally identical data structures, with both utilizing sequential memory allocation and providing similar performance characteristics for element retrieval.",
+        "Arrays differ from linked lists primarily in their allocation strategy, with linked lists requiring more complex memory management and additional overhead for maintaining interconnected elements.",
+        "Linked lists maintain a strict memory layout similar to arrays, with each element occupying a predetermined memory location and supporting constant-time random access operations.",
+        "Arrays have fixed, contiguous memory allocation with direct index-based access, while linked lists use dynamic, scattered memory with elements connected through references, allowing more flexible memory management and easier insertion/deletion."
       ],
-      "correctIndex": 2,
-      "explanation": "The key distinction between arrays and linked lists lies in their memory organization and access patterns. Arrays provide constant-time random access and require contiguous memory, while linked lists offer dynamic memory allocation with sequential access through node connections. Each structure has unique advantages depending on the specific use case and performance requirements."
+      "correctIndex": 3,
+      "explanation": "The primary distinction between arrays and linked lists lies in their memory organization and access patterns. Arrays provide constant-time random access and require contiguous memory, while linked lists offer dynamic memory allocation with elements connected through pointers. This fundamental difference impacts performance, memory efficiency, and operational complexity for various data manipulation tasks."
     },
     {
       "id": 3,
       "question": "How would you check for duplicates in an array without using extra space?",
       "options": [
-        "To check for duplicates without extra space, use a nested loop that compares each element with every subsequent element in the array.",
-        "Implement a binary search to find duplicates",
-        "Sort the array first and then check adjacent elements",
-        "Use a hash set to track unique elements"
+        "To check for duplicates without extra space, use a sorting approach that arranges the array and then linearly scans for adjacent identical elements, identifying duplicates through sequential comparisons.",
+        "Duplicate detection can be accomplished by implementing a recursive algorithm that systematically compares each element against potential matching values within the array.",
+        "Detecting duplicates requires transforming the array into a mathematical sequence and applying number theory principles to identify repeated elements through computational analysis.",
+        "To find duplicates, utilize an in-place marking technique that modifies array elements to track potential repetitions without introducing additional memory structures."
       ],
       "correctIndex": 0,
-      "explanation": "The brute force method for detecting duplicates involves comparing each element with every other element in the array. While this approach has a quadratic time complexity, it accomplishes the task without using additional memory. The technique systematically checks each element against all others to identify any repeated values."
+      "explanation": "Checking for duplicates without using extra space involves strategically manipulating the existing array. The sorting approach allows efficient comparison by arranging elements sequentially, which enables identifying repeated values through simple linear traversal. This method trades time complexity for space efficiency, making it suitable for memory-constrained environments."
     },
     {
       "id": 4,
       "question": "Can you explain how to perform a _binary search_ on a sorted array?",
       "options": [
-        "Binary search can only be used on unsorted arrays with unique elements.",
-        "Binary search requires scanning every element in the array sequentially.",
-        "Binary search works by repeatedly dividing a sorted array in half, comparing the middle element with the target, and eliminating the half that cannot contain the target.",
-        "Binary search works by randomly selecting elements until the target is found."
+        "Binary search is a recursive algorithm that explores all possible subarrays simultaneously, using a complex branching method to locate the desired element in a sorted collection.",
+        "Binary search is an efficient algorithm for searching sorted arrays by repeatedly dividing the search interval in half, comparing the target value with the middle element to eliminate half the remaining elements in each iteration.",
+        "Binary search functions by randomly sampling elements from the array and gradually narrowing down the potential location through probabilistic elimination techniques.",
+        "Binary search works by linearly scanning the entire array and comparing each element sequentially until the target is found, which ensures a comprehensive search approach."
       ],
-      "correctIndex": 2,
-      "explanation": "Binary search is an efficient algorithm for finding an element in a sorted array. It leverages the sorted nature of the array to eliminate half of the remaining search space in each iteration. The algorithm compares the target value with the middle element and narrows down the search range, reducing time complexity to O(log n) compared to linear search's O(n)."
+      "correctIndex": 1,
+      "explanation": "Binary search is a highly efficient searching technique that works only on sorted arrays. The algorithm begins with the entire array and repeatedly divides the search space in half by comparing the target with the middle element. This allows it to eliminate half the remaining elements in each step, resulting in a logarithmic time complexity of O(log n), which is significantly faster than linear search methods."
     },
     {
       "id": 5,
       "question": "How would you rotate a two-dimensional _array_ by 90 degrees?",
       "options": [
-        "To rotate an array, you must manually swap each element's position using multiple nested loops.",
-        "90-degree rotation can only be done by rotating each element individually around a central point.",
-        "Rotating a 2D array requires creating a completely new matrix with copied elements.",
-        "To rotate a 2D array 90 degrees, first transpose the matrix (swap elements across the main diagonal) and then reverse either the rows or columns depending on the rotation direction."
+        "A 90-degree array rotation can be achieved by systematically shifting each element clockwise through a series of temporary storage and sequential replacement operations.",
+        "To rotate a 2D array 90 degrees, first transpose the matrix by swapping elements across the main diagonal, then reverse either the rows or columns depending on the desired rotation direction.",
+        "Rotating a 2D array requires creating a completely new matrix and mapping each original element to its rotated coordinates using complex trigonometric transformations.",
+        "To rotate a 2D array, you must recursively break down the matrix into smaller sub-matrices and apply a complex set of element-wise swapping rules."
       ],
-      "correctIndex": 3,
-      "explanation": "Matrix rotation is an in-place transformation that efficiently changes the orientation of a 2D array. By first transposing the matrix (swapping rows and columns) and then reversing rows or columns, you can achieve a 90-degree rotation with minimal additional space. This method works for square matrices and maintains the original spatial relationships between elements."
+      "correctIndex": 1,
+      "explanation": "Matrix rotation is a common array manipulation technique that can be accomplished through two primary steps. Transposing involves swapping elements across the main diagonal, effectively flipping the matrix. After transposition, reversing rows or columns completes the 90-degree rotation. This method is efficient because it modifies the matrix in-place, avoiding the need for additional memory allocation."
     },
     {
       "id": 6,
       "question": "Describe an algorithm to compress a string such as \"_aabbccc_\" to \"_a2b2c3_\".",
       "options": [
-        "String compression involves iterating through the string, counting consecutive character occurrences, and building a new string with characters followed by their count.",
-        "Compression can only be done by removing duplicate characters completely.",
-        "String compression requires converting each character to its ASCII value first.",
-        "String compression works best when using a complex hashing algorithm."
+        "String compression involves iterating through the input string, counting consecutive character occurrences, and generating a new string that represents each character followed by its consecutive count.",
+        "String compression is achieved by creating a frequency map of all characters and then reconstructing the string using a complex encoding algorithm that minimizes character repetition.",
+        "Compression works by identifying unique character sequences and replacing them with a variable-length encoding scheme that reduces overall string complexity.",
+        "String compression involves splitting the input into fixed-length segments and applying a statistical mapping technique to represent character distributions."
       ],
       "correctIndex": 0,
-      "explanation": "String compression is a technique to reduce string length by representing consecutive character runs with a character and its count. This method is particularly useful for strings with repeated characters, creating a more compact representation. The algorithm typically involves tracking the current character, maintaining a running count, and building a new compressed string as it iterates through the input."
+      "explanation": "String compression is a technique used to reduce the length of a string by replacing consecutive character repetitions with a compact representation. The process involves tracking the current character and its consecutive count, then generating a new string that shows each unique character followed by its occurrence count. This method is particularly useful for reducing memory usage and can be implemented with a single pass through the input string."
     },
     {
       "id": 7,
       "question": "What is an _array slice_ and how is it implemented in programming languages?",
       "options": [
-        "An array slice is a view or subset of an existing array that references a continuous section of the original array, allowing efficient data access and manipulation without copying the entire array.",
-        "An array slice is a method of sorting array elements in ascending order.",
-        "An array slice is a complete copy of an entire array with a new memory allocation.",
-        "An array slice is a data structure that only contains unique elements from the original array."
+        "An array slice is a data structure that creates a complete duplicate of an array with a separate memory allocation for more flexible data management.",
+        "An array slice is a temporary computational method for compressing array data by removing redundant elements and creating a more compact representation.",
+        "An array slice is a view of a continuous section of an existing array, allowing efficient access and manipulation of array segments without creating a full copy of the original data.",
+        "An array slice represents a non-continuous subset of array elements that can be randomly accessed and modified independently of the original array structure."
       ],
-      "correctIndex": 0,
-      "explanation": "Array slices provide a lightweight way to work with portions of an existing array, referencing the same underlying memory. They are memory-efficient because they don't create a full copy of the data, instead creating a view that can be used to access or modify a segment of the original array. Languages like Python, Rust, and Go implement array slices as a powerful and performant way to handle array subsets."
+      "correctIndex": 2,
+      "explanation": "Array slices provide a lightweight reference to a portion of an array, enabling efficient memory usage and quick data manipulation. They are supported in many modern programming languages like Python, Rust, and Go, allowing developers to work with array segments without additional memory overhead or complex copying operations."
     },
     {
       "id": 8,
       "question": "Can you discuss the _time complexity_ of _array insertion_ and _deletion_?",
       "options": [
-        "Array operations are instantaneous and never require element movement.",
-        "Insertion and deletion time complexity depends entirely on the array's initial size.",
-        "Array insertion and deletion always have O(1) time complexity.",
-        "Array insertion and deletion typically have O(n) time complexity because they often require shifting elements to maintain the array's structure, with some exceptions like appending to the end of the array."
+        "Array insertion and deletion operations are logarithmic O(log n) due to advanced indexing algorithms that minimize data movement during modifications.",
+        "Array insertion and deletion have quadratic O(n²) complexity because each modification requires comprehensive array restructuring and element reallocation.",
+        "Array insertion and deletion operations typically have O(n) time complexity because they often require shifting elements to maintain the array's contiguous memory structure.",
+        "Array insertion and deletion have constant O(1) time complexity because modern memory management techniques optimize element rearrangement automatically."
       ],
-      "correctIndex": 3,
-      "explanation": "The time complexity of array operations is primarily influenced by the need to potentially shift elements. Inserting or deleting elements from the middle of an array requires moving subsequent elements, which results in a linear time complexity. Appending to the end of an array is typically constant time, but may involve dynamic resizing in some implementations. The computational cost increases with the array's size, making these operations less efficient for large data sets."
+      "correctIndex": 2,
+      "explanation": "The time complexity of array insertions and deletions depends on the operation's location within the array. Inserting or removing elements from the beginning or middle requires shifting subsequent elements, which creates a linear time complexity. Operations at the end are typically more efficient, often achieving near-constant time complexity."
     },
     {
       "id": 9,
       "question": "What are some ways to merge two sorted _arrays_ into one sorted _array_?",
       "options": [
-        "Merging two sorted arrays can be accomplished by using a two-pointer approach, comparing elements from both arrays and building a new sorted array in linear time complexity O(n+m).",
-        "Sorted arrays can only be merged by converting them to sets first.",
-        "Merging sorted arrays always requires sorting the entire combined array from scratch.",
-        "Merging sorted arrays is impossible without using a complex sorting algorithm."
+        "Merging two sorted arrays can be efficiently accomplished by using a two-pointer approach that compares and selects the smallest element from both arrays in a single pass.",
+        "Sorted arrays can be merged by recursively splitting and comparing individual elements, which ensures a comprehensive but computationally expensive integration process.",
+        "Merging sorted arrays requires first converting the arrays to hash tables and then reconstructing a new sorted array through complex computational mapping.",
+        "Merging sorted arrays involves using a priority queue to systematically redistribute elements across multiple intermediate data structures before final arrangement."
       ],
       "correctIndex": 0,
-      "explanation": "The most efficient method of merging sorted arrays involves using two pointers to compare elements from each array, systematically building a new sorted array. This approach takes advantage of the arrays' existing sorted state, allowing for a single-pass merge with optimal time complexity. The technique is particularly useful in scenarios like merge sort and combining ordered data sets, providing a straightforward and performant solution to array merging."
+      "explanation": "The two-pointer method for merging sorted arrays is an efficient algorithm that minimizes computational complexity by linearly traversing both input arrays. This approach ensures O(n+m) time complexity, where n and m represent the lengths of the input arrays, making it a standard technique in sorting and data manipulation."
     },
     {
       "id": 10,
       "question": "How do you find the _kth largest element_ in an unsorted _array_?",
       "options": [
-        "Sort the entire array in descending order and return the kth index.",
-        "Use a max heap to extract the kth largest element by repeatedly removing the maximum.",
-        "To find the kth largest element in an unsorted array, use the Quickselect algorithm, which partitions the array and selectively searches the appropriate subarray to find the desired element.",
-        "Iterate through the array k times, removing the largest element each iteration."
+        "Implement a binary search approach that divides the array and estimates the kth largest element by comparing partition values and adjusting search boundaries.",
+        "Utilize a max-heap data structure to extract the kth largest element, maintaining the entire heap and removing elements until the desired rank is reached.",
+        "To find the kth largest element, use the Quickselect algorithm, which partitions the array around a pivot and recursively searches the appropriate subarray until the kth element is found.",
+        "Sort the entire array in descending order and select the kth index, which provides a simple but less efficient O(n log n) solution for finding the largest element."
       ],
       "correctIndex": 2,
-      "explanation": "The Quickselect algorithm is an efficient approach that leverages the partitioning technique from quicksort. By recursively dividing the array and focusing on the appropriate subarray, it can find the kth largest element with an average time complexity of O(n). The key is to strategically reduce the search space by eliminating unnecessary portions of the array."
+      "explanation": "The Quickselect algorithm is an efficient method for finding the kth largest element with an average time complexity of O(n). It works by repeatedly partitioning the array and narrowing the search space, which is more efficient than fully sorting the array. The key is strategic pivoting and recursive subdivision to quickly locate the desired element."
     },
     {
       "id": 11,
       "question": "Explain how a _singly linked list_ differs from a _doubly linked list_.",
       "options": [
-        "A singly linked list contains nodes that point only to the next node, while a doubly linked list has nodes with pointers to both the previous and next nodes, allowing bidirectional traversal.",
-        "Doubly linked lists are always sorted, whereas singly linked lists are unordered.",
-        "Singly linked lists can store more data per node, while doubly linked lists are more memory-efficient.",
-        "Singly linked lists can only be traversed forward, but doubly linked lists can be traversed in both directions."
+        "Singly linked lists store additional metadata in each node, whereas doubly linked lists maintain a more compact node structure with minimal overhead.",
+        "A singly linked list contains nodes that only point to the next node, while a doubly linked list allows nodes to reference both the previous and next nodes, enabling bidirectional traversal.",
+        "Singly linked lists use a single pointer mechanism for node connection, compared to doubly linked lists which implement a more complex pointer management system.",
+        "Doubly linked lists are optimized for random access and allow faster element removal, while singly linked lists are more memory-efficient but less flexible."
       ],
-      "correctIndex": 0,
-      "explanation": "The primary difference between singly and doubly linked lists is the node structure. Singly linked lists have a simpler implementation with a single pointer to the next node, making them memory-efficient but limiting traversal to one direction. Doubly linked lists provide more flexibility with bidirectional navigation but require additional memory to store the extra pointer."
+      "correctIndex": 1,
+      "explanation": "The primary difference between singly and doubly linked lists is their node connectivity. Singly linked lists can only traverse forward, while doubly linked lists support bidirectional movement. This architectural difference impacts traversal efficiency, memory usage, and insertion/deletion operations in different scenarios."
     },
     {
       "id": 12,
       "question": "How would you detect a _cycle_ in a _linked list_?",
       "options": [
-        "Count the number of nodes and compare it with the list's expected length.",
-        "To detect a cycle in a linked list, use Floyd's Cycle Detection Algorithm (Tortoise and Hare), which employs two pointers moving at different speeds to identify if the list contains a cycle.",
-        "Reverse the linked list and check if the original structure is maintained.",
-        "Use a hash set to track visited nodes and check for duplicates."
+        "A recursive approach can detect cycles by maintaining a hash set of node references and checking for repeated entries during traversal.",
+        "Implementing a depth-first search strategy allows cycle detection by tracking node paths and identifying repeated node encounters.",
+        "Floyd's Cycle Detection Algorithm (Tortoise and Hare) uses two pointers moving at different speeds to detect cycles in a linked list, with the pointers eventually meeting if a cycle exists.",
+        "Cycle detection can be achieved by marking each visited node and checking for repeated references during a single traversal of the linked list."
       ],
-      "correctIndex": 1,
-      "explanation": "Floyd's Cycle Detection Algorithm is an elegant solution that uses two pointers moving at different speeds. The 'tortoise' moves one step at a time, while the 'hare' moves two steps. If a cycle exists, the pointers will eventually meet at the same node. This method is efficient, with O(n) time complexity and O(1) space complexity, making it superior to other cycle detection techniques."
+      "correctIndex": 2,
+      "explanation": "Floyd's Cycle Detection Algorithm is an elegant solution that uses two pointers moving at different speeds (one step vs. two steps) to identify cycles in a linked list. If a cycle exists, the pointers will inevitably meet at a common node, indicating the presence of a circular reference."
     },
     {
       "id": 13,
       "question": "What are the major operations you can perform on a _linked list_, and their _time complexities_?",
       "options": [
-        "Linked lists only support linear traversal with O(n) complexity for all operations",
-        "Major linked list operations include insertion (O(1) at head/tail, O(n) at arbitrary position), deletion (O(1) at head/tail, O(n) at arbitrary position), and search (O(n)).",
-        "Linked lists can be randomly accessed in O(1) time like arrays",
-        "Linked lists have constant time O(1) complexity for all insert and delete operations"
+        "Linked list operations are fundamentally O(n²) in complexity, requiring recursive traversal and extensive memory reallocation for each modification to the list's structure.",
+        "Linked lists are optimized for parallel processing, with operations like insertion and deletion requiring multi-threaded synchronization and achieving near-constant time complexity through advanced caching mechanisms.",
+        "A linked list supports key operations like insertion, deletion, and search. These typically have O(1) time complexity at the head, O(n) for random access or tail operations, requiring traversal through the list.",
+        "A linked list primarily supports random memory access and complex sorting algorithms, with most operations requiring O(log n) complexity and specialized memory management techniques."
       ],
-      "correctIndex": 1,
-      "explanation": "Linked lists provide flexible insertion and deletion with varied time complexities based on position. While head and tail operations are constant time, middle operations require traversing the list, resulting in linear O(n) complexity. Search operations also require scanning the entire list, making them O(n)."
+      "correctIndex": 2,
+      "explanation": "Linked lists are linear data structures where elements are stored in nodes with references to the next node. Their performance characteristics depend on the position of operation, with head operations being fastest and tail or random access requiring linear traversal time."
     },
     {
       "id": 14,
       "question": "Can you describe an _in-place algorithm_ to reverse a _linked list_?",
       "options": [
-        "To reverse a linked list in-place, iterate through the list, redirecting each node's next pointer to the previous node while tracking three key references: previous, current, and next nodes.",
-        "In-place reversal is not possible with constant extra space",
-        "In-place reversal requires creating a completely new linked list",
-        "Reversing a linked list can only be done by copying all elements to a new data structure"
+        "An in-place linked list reversal algorithm uses three pointers to track the current, previous, and next nodes, systematically redirecting node references to reverse the list's direction without additional memory allocation.",
+        "Reversing a linked list requires creating a complete duplicate list in memory, using recursive function calls to systematically track and transfer node references between the original and mirrored structures.",
+        "Linked list reversal is accomplished by maintaining a parallel shadow list that captures the inverse order, then synchronizing references through a multi-pass algorithmic approach.",
+        "In-place linked list reversal involves complex memory swapping techniques that dynamically reallocate node memory addresses, requiring advanced pointer manipulation and temporary storage buffers."
       ],
       "correctIndex": 0,
-      "explanation": "In-place reversal modifies the original list structure by changing pointer references without requiring additional memory allocation. The algorithm manipulates existing node connections, ensuring O(1) space complexity and O(n) time complexity by traversing the list once."
+      "explanation": "Reversing a linked list efficiently requires manipulating node references in-place, which means changing the direction of pointers without requiring significant additional memory. The key is carefully managing node connections during traversal."
     },
     {
       "id": 15,
       "question": "Explain how you would find the _middle element_ of a _linked list_ in one pass.",
       "options": [
-        "The middle can only be found by traversing the list multiple times",
-        "Finding the middle requires storing all elements in an auxiliary array",
-        "You must count total list elements first, then traverse to the middle",
-        "To find the middle element of a linked list in one pass, use the two-pointer technique with a slow pointer moving one step and a fast pointer moving two steps simultaneously."
+        "The middle element can be determined by implementing a multi-pass algorithm that first identifies node distribution patterns and then uses probabilistic sampling techniques to estimate the central node.",
+        "Linked list middle element discovery involves creating a parallel shadow list that tracks relative positioning, using advanced memory mapping and synchronization techniques to identify the central node.",
+        "Finding the middle element requires pre-calculating the list's length, then using a recursive traversal method that incrementally tracks the midpoint through complex mathematical computations.",
+        "The two-pointer technique finds a linked list's middle element by using a slow pointer moving one step and a fast pointer moving two steps simultaneously, ensuring the slow pointer reaches the middle when the fast pointer completes traversal."
       ],
       "correctIndex": 3,
-      "explanation": "The two-pointer technique efficiently locates the middle element by leveraging different traversal speeds. When the fast pointer reaches the list's end, the slow pointer will be positioned at the middle, allowing a single-pass O(n) solution with O(1) extra space."
+      "explanation": "The two-pointer method is an elegant solution that leverages differential movement speeds to efficiently locate the middle element without requiring multiple list traversals or pre-computing the total list length."
     }
   ],
-  "processedAt": "2025-12-14T21:35:33.955Z"
+  "processedAt": "2025-12-18T09:08:14.839Z"
 }

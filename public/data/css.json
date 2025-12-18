@@ -1,0 +1,195 @@
+{
+  "id": "css",
+  "name": "CSS",
+  "slug": "css-interview-questions",
+  "category": "Frontend",
+  "totalQuestions": 15,
+  "topics": [
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does _CSS_ stand for and what is its primary use?",
+      "options": [
+        "Cascading Style Sheets (CSS) is a programming language used to create interactive web applications and handle server-side rendering of web content and user interfaces.",
+        "Cascading Style Sheets (CSS) is a markup language that provides a standardized way of embedding multimedia content and defining document structure within web browsers.",
+        "Cascading Style Sheets (CSS) is a styling language designed to separate web page content from its visual presentation, allowing developers to control the layout, design, and display of HTML elements across multiple web pages.",
+        "Cascading Style Sheets (CSS) is a database management system that helps organize and structure web content by defining relationships between different HTML elements and their visual representations."
+      ],
+      "correctIndex": 2,
+      "explanation": "CSS is a fundamental web technology that allows web developers to define visual styles and layouts for HTML elements. It works by selecting HTML elements and applying properties like color, size, positioning, and responsive design. The 'cascading' part refers to the way styles can inherit and override each other based on specificity and order of declaration. Understanding CSS is crucial for creating visually appealing and responsive web designs.\n\nExample of basic CSS syntax:\n```css\nbody {\n  font-family: Arial, sans-serif;\n  background-color: #f4f4f4;\n}\n\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n}\n```"
+    },
+    {
+      "id": 2,
+      "question": "How do you include _CSS_ in your _HTML document_?",
+      "options": [
+        "HTML documents support CSS integration only through XML namespaces and specialized meta tags that define style contexts and rendering parameters.",
+        "There are three primary methods to include CSS in an HTML document: inline styles within HTML tags, embedded styles in the HTML document's <head> section, and external style sheets linked through the <link> tag.",
+        "CSS inclusion is limited to server-side preprocessing methods, where style definitions are compiled and transformed before being sent to the client's web browser as pre-rendered stylesheets.",
+        "CSS can be integrated into HTML documents exclusively through JavaScript-based style manipulation, using dynamic rendering techniques and client-side scripting to apply visual styles."
+      ],
+      "correctIndex": 1,
+      "explanation": "CSS integration offers flexibility in how styles are applied to web pages. Inline styles are direct and specific but less maintainable. Embedded styles work well for single-page designs, while external style sheets are recommended for larger projects as they promote better code organization and reusability.\n\nExample of CSS integration methods:\n```html\n<!-- Inline Style -->\n<div style='color: blue;'>Inline Styled Text</div>\n\n<!-- Embedded Style -->\n<head>\n  <style>\n    .blue-text { color: blue; }\n  </style>\n</head>\n\n<!-- External Stylesheet -->\n<head>\n  <link rel='stylesheet' href='styles.css'>\n</head>\n```"
+    },
+    {
+      "id": 3,
+      "question": "Can you explain the difference between _class_ and _ID selectors_?",
+      "options": [
+        "ID selectors are primarily used for creating complex animation sequences, while class selectors manage basic element grouping and minimal styling configurations.",
+        "Class and ID selectors are interchangeable mechanisms for styling web elements, with no fundamental differences in their application or specificity within CSS styling strategies.",
+        "Class selectors can be applied to multiple HTML elements and are defined with a dot prefix (.), while ID selectors target unique elements and are defined with a hash prefix (#), allowing for more specific and precise styling.",
+        "Class selectors represent global styling configurations, and ID selectors are exclusively used for JavaScript event handling and dynamic content manipulation."
+      ],
+      "correctIndex": 2,
+      "explanation": "The key difference between class and ID selectors lies in their specificity and reusability. Classes can be applied to multiple elements, making them ideal for consistent styling across a website. IDs are unique identifiers meant for single, specific elements and have higher specificity in CSS selector hierarchy.\n\nExample demonstrating class and ID selectors:\n```css\n/* Class Selector */\n.button {\n  background-color: blue;\n  color: white;\n}\n\n/* ID Selector */\n#main-header {\n  font-size: 24px;\n  font-weight: bold;\n}\n```"
+    },
+    {
+      "id": 4,
+      "question": "What are _pseudo-classes_ in _CSS_?",
+      "options": [
+        "Pseudo-classes are JavaScript-like extensions in CSS that provide conditional styling mechanisms through runtime evaluation of element properties.",
+        "Pseudo-classes are preprocessor directives in CSS that transform selector matching rules during the compilation of stylesheets.",
+        "Pseudo-classes are special CSS keywords that allow styling elements based on their state, position, or user interaction without adding additional classes or modifying HTML.",
+        "Pseudo-classes are custom CSS functions that dynamically generate element styles by interpreting complex selector patterns and browser rendering contexts."
+      ],
+      "correctIndex": 2,
+      "explanation": "Pseudo-classes provide powerful ways to style elements conditionally. They can target specific states like hover, active, or first-child without manually adding classes. Common examples include `:hover`, `:first-child`, and `:checked`. They are built into CSS and supported across modern browsers, allowing dynamic styling based on element conditions."
+    },
+    {
+      "id": 5,
+      "question": "Describe how to implement a _CSS reset_ and why it is useful.",
+      "options": [
+        "A CSS reset represents a set of predefined design tokens that normalize visual presentation and establish baseline typography rules for web applications.",
+        "A CSS reset neutralizes browser-specific default styles by standardizing element styling, ensuring consistent rendering across different web browsers and platforms.",
+        "A CSS reset is a browser compatibility layer that intercepts and transforms rendering instructions to maintain visual consistency across different rendering engines.",
+        "A CSS reset is a comprehensive stylesheet that preemptively applies global styling rules to prevent potential layout inconsistencies during cross-browser development."
+      ],
+      "correctIndex": 1,
+      "explanation": "CSS resets are crucial for web development because browsers apply different default styles to HTML elements. By resetting these defaults, developers create a uniform starting point for custom styling. Popular reset approaches include using normalized CSS libraries or creating custom reset stylesheets."
+    },
+    {
+      "id": 6,
+      "question": "How do you select elements by _attribute_ in _CSS_?",
+      "options": [
+        "CSS attribute selectors are preprocessor-level directives that transform element matching rules during stylesheet compilation.",
+        "CSS attribute selectors are advanced query mechanisms that dynamically evaluate element properties at runtime to apply conditional styling strategies.",
+        "CSS attribute selectors allow targeting HTML elements based on their specific attribute values, enabling precise and flexible element selection without additional classes.",
+        "CSS attribute selectors represent a specialized syntax for mapping complex relationships between HTML attributes and styling configurations."
+      ],
+      "correctIndex": 2,
+      "explanation": "Attribute selectors provide powerful ways to select elements based on their attributes. They support exact matches, partial matches, and complex condition evaluation. This enables more dynamic and semantic styling without requiring additional class names."
+    },
+    {
+      "id": 7,
+      "question": "What is a _pseudo-element_, and what are they used for?",
+      "options": [
+        "Pseudo-elements are hidden HTML tags that create additional elements within the DOM, allowing for advanced structural manipulation and rendering of web page components.",
+        "Pseudo-elements are virtual elements that allow styling specific parts of an HTML element without additional markup, enabling developers to insert or style content dynamically using CSS.",
+        "Pseudo-elements are specialized CSS classes that automatically generate additional styling layers for HTML elements, enhancing visual complexity without manual intervention.",
+        "Pseudo-elements are CSS selectors that target specific states of an element, providing a way to dynamically change an element's appearance based on user interactions."
+      ],
+      "correctIndex": 1,
+      "explanation": "Pseudo-elements like ::before and ::after are powerful CSS tools that create virtual elements attached to existing HTML elements. They can insert content, style specific parts of an element, and modify visual presentation without requiring additional HTML markup. For example, you can use ::before to add decorative icons or ::after to create complex layout effects."
+    },
+    {
+      "id": 8,
+      "question": "Explain the difference between the _child combinator_ and the _descendant combinator_.",
+      "options": [
+        "The child combinator is a deprecated CSS selector used for older browsers, with the descendant combinator serving as its modern replacement for element targeting.",
+        "The child combinator and descendant combinator are identical CSS selector techniques that target nested elements with identical specificity and selection behavior.",
+        "The child combinator (>) selects only direct children of an element, while the descendant combinator (space) selects all nested descendants regardless of their depth in the HTML hierarchy.",
+        "The child combinator represents nested elements within a single level, while the descendant combinator marks elements that share a partial class or attribute relationship."
+      ],
+      "correctIndex": 2,
+      "explanation": "Understanding the difference between child and descendant combinators is crucial for precise CSS selection. The child combinator (>) strictly selects immediate children, while the descendant combinator (space) allows selection of any nested elements, regardless of their depth in the document tree."
+    },
+    {
+      "id": 9,
+      "question": "How would you select all direct _children elements_ of a particular type?",
+      "options": [
+        "Direct child element selection is achieved through recursive CSS rules that progressively narrow down element matching based on nested relationships.",
+        "Selecting direct children involves using the universal selector (*) with additional filtering mechanisms to isolate immediate descendant elements.",
+        "To select all direct children elements of a specific type, use the child selector (>) combined with the element type, which targets only immediate child elements matching the specified selector.",
+        "Direct child selection requires using multiple class selectors and complex attribute matching to identify and target specific element hierarchies."
+      ],
+      "correctIndex": 2,
+      "explanation": "The child selector (>) provides a straightforward method to target only direct children of a specific type. It allows precise selection without affecting nested or indirect descendant elements, making it valuable for creating targeted styling rules."
+    },
+    {
+      "id": 10,
+      "question": "What are the _universal selector_ and the _sibling combinator_, and when would you use them?",
+      "options": [
+        "The universal selector (*) targets all elements in a specified container, allowing for global style resets or normalization of CSS properties across an entire document or specific parent element.",
+        "The universal selector creates a cascading inheritance model that automatically applies base styles to child elements, reducing the need for explicit CSS declarations across different element types.",
+        "The universal selector is a dynamic binding mechanism that connects all DOM elements through a shared prototype, enabling automatic style propagation and inheritance patterns.",
+        "The universal selector is a performance-optimizing tool that automatically prioritizes rendering of the most critical page elements by applying a global processing algorithm to DOM elements."
+      ],
+      "correctIndex": 0,
+      "explanation": "The universal selector is a powerful CSS tool that allows developers to apply styles to every element within a specified scope. While extremely useful for global resets, it should be used sparingly to avoid performance overhead. Overuse can significantly impact rendering performance, as the browser must process the selector for every single element on the page.\n\nExample of universal selector usage:\n```css\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n```"
+    },
+    {
+      "id": 11,
+      "question": "What is the _CSS Box Model_?",
+      "options": [
+        "The CSS Box Model represents a hierarchical layout system that maps element relationships and spatial interactions, providing a framework for dynamic content positioning and responsive design.",
+        "The CSS Box Model describes how elements are structured, consisting of content, padding, border, and margin, which collectively determine an element's total space and layout in a document.",
+        "The CSS Box Model is a computational approach to element rendering that translates abstract layout instructions into precise pixel-based geometric representations.",
+        "The CSS Box Model is a rendering mechanism that defines how browser engines calculate and allocate visual space for elements, using complex algorithms to determine element dimensions and positioning."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Box Model is fundamental to understanding how elements are sized and spaced in CSS. By default, the total width of an element is calculated by adding content width, padding, border, and margin. This can be modified using the 'box-sizing' property to control how these dimensions are calculated.\n\nExample demonstrating box model calculation:\n```css\n.box {\n  width: 300px;          /* content width */\n  padding: 20px;         /* adds to total width */\n  border: 5px solid black; /* adds to total width */\n  margin: 10px;          /* creates space outside element */\n}\n```"
+    },
+    {
+      "id": 12,
+      "question": "Explain _margin collapsing_.",
+      "options": [
+        "Margin collapsing is a computational method for dynamically reconciling conflicting margin declarations by applying a priority-based spacing algorithm.",
+        "Margin collapsing occurs when vertical margins of adjacent block-level elements are combined, with the larger margin determining the final spacing between elements.",
+        "Margin collapsing is a rendering optimization technique where browsers dynamically adjust element spacing to minimize layout complexity and improve rendering performance.",
+        "Margin collapsing represents a cascading layout mechanism that automatically resolves potential spacing conflicts between adjacent elements using intelligent margin negotiation."
+      ],
+      "correctIndex": 1,
+      "explanation": "Margin collapsing is a unique CSS behavior that can be counterintuitive. It primarily affects vertically adjacent block-level elements, where instead of adding margins together, the larger margin is selected. This can lead to unexpected layout results if not understood properly.\n\nExample demonstrating margin collapsing:\n```css\n.element1 { margin-bottom: 20px; }\n.element2 { margin-top: 30px; }\n/* The space between these elements will be 30px, not 50px */\n```"
+    },
+    {
+      "id": 13,
+      "question": "What are the different values for the _box-sizing_ property and what do they do?",
+      "options": [
+        "The `box-sizing` property has three values: content-box (default, width/height only includes content), border-box (width/height includes content and padding), and padding-box (deprecated in modern CSS).",
+        "The `box-sizing` property manages element visibility and interaction, with values controlling how elements respond to user interactions and display modes.",
+        "The `box-sizing` property controls how elements are positioned on a webpage, with values determining layout alignment and spacing between elements.",
+        "The `box-sizing` property defines element rendering modes, including static, relative, and absolute positioning strategies for web page layouts."
+      ],
+      "correctIndex": 0,
+      "explanation": "The box-sizing property fundamentally changes how an element's total width and height are calculated. In content-box (default), padding and border are added to the specified width/height, while border-box includes padding and border within the specified dimensions. This can significantly impact layout and spacing calculations in CSS."
+    },
+    {
+      "id": 14,
+      "question": "How do you center a _block element_ with _CSS_?",
+      "options": [
+        "Block elements are centered by manipulating their `float` property and using `clear: both;` to ensure proper alignment within their container.",
+        "Horizontal centering is achieved by using `position: absolute;` and calculating precise percentage-based translations to align the element.",
+        "Block elements can be centered by applying `text-align: center;` and setting a specific width to control their horizontal positioning.",
+        "To center a block element horizontally, use either `margin: 0 auto;` for block elements with a defined width, or flexbox with `display: flex; justify-content: center;` for more flexible centering."
+      ],
+      "correctIndex": 3,
+      "explanation": "Centering block elements depends on the specific layout requirements. The margin auto technique works for block elements with a defined width, while flexbox provides a more modern and flexible approach. Grid layout can also be used for more complex centering scenarios."
+    },
+    {
+      "id": 15,
+      "question": "What is the difference between _block_, _inline_, and _inline-block elements_?",
+      "options": [
+        "Block elements control page structure, inline elements manage text flow, and inline-block elements handle advanced positioning and layout interactions.",
+        "Block elements are dynamic containers that adapt to content size, inline elements are fixed-width components, and inline-block elements represent transitional display modes.",
+        "Block elements represent structural page layouts, inline elements are text-based decorative components, and inline-block elements manage complex rendering scenarios.",
+        "Block elements stack vertically and take full width by default, inline elements flow horizontally and cannot have width/height set, while inline-block elements combine both characteristics, allowing width/height modifications and horizontal flow."
+      ],
+      "correctIndex": 3,
+      "explanation": "Display types fundamentally change how elements behave in the document flow. Block elements create distinct vertical sections, inline elements flow with text, and inline-block provides a hybrid approach allowing both horizontal placement and dimensional control. Understanding these differences is crucial for effective CSS layout design."
+    }
+  ],
+  "processedAt": "2025-12-18T09:05:44.040Z"
+}

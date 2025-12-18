@@ -1,0 +1,197 @@
+{
+  "id": "spring",
+  "name": "Spring",
+  "slug": "spring-interview-questions",
+  "category": "Backend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the _Spring Framework_ and what are its core features?",
+      "options": [
+        "The Spring Framework is an Object-Relational Mapping (ORM) tool designed to simplify database interactions and provide advanced query optimization techniques.",
+        "The Spring Framework is a standalone dependency injection container that primarily manages XML-based configuration and component scanning for Java applications.",
+        "The Spring Framework is a comprehensive Java application framework that provides infrastructure support for developing enterprise-level applications, emphasizing dependency injection, modularity, and simplified configuration.",
+        "The Spring Framework is a lightweight web development library focused exclusively on creating RESTful microservices with minimal configuration requirements."
+      ],
+      "correctIndex": 2,
+      "explanation": "Spring provides a powerful, modular approach to Java development by enabling loose coupling between application components through dependency injection. Its core container manages object lifecycles and configurations, allowing developers to focus on business logic rather than infrastructure concerns. The framework supports multiple configuration styles, including Java-based, XML, and annotation-based approaches, making it highly flexible for different project requirements.\n\nExample of basic Spring configuration:\n```java\n@Configuration\npublic class AppConfig {\n    @Bean\n    public UserService userService() {\n        return new UserServiceImpl();\n    }\n}\n```"
+    },
+    {
+      "id": 2,
+      "question": "How do you create a simple _Spring_ application?",
+      "options": [
+        "Creating a simple Spring application involves setting up project dependencies, configuring the application context, defining beans or components, and creating entry points like controllers or services using annotations or XML configurations.",
+        "Creating a simple Spring application focuses primarily on developing microservices architectures, implementing distributed transaction management, and integrating multiple external service endpoints.",
+        "Creating a simple Spring application involves extensive manual classpath scanning, implementing custom classloader mechanisms, and developing complex proxy-based interaction models.",
+        "Creating a simple Spring application requires manually implementing complex dependency injection mechanisms, writing extensive XML configuration files, and defining intricate bean lifecycle management strategies."
+      ],
+      "correctIndex": 0,
+      "explanation": "Spring simplifies application development through its comprehensive ecosystem and intuitive configuration mechanisms. By leveraging annotations like @Component, @Service, and @Controller, developers can quickly bootstrap applications with minimal boilerplate code. Dependency management tools like Maven or Gradle further streamline the setup process.\n\nExample of a basic Spring Boot application:\n```java\n@SpringBootApplication\npublic class MyApplication {\n    public static void main(String[] args) {\n        SpringApplication.run(MyApplication.class, args);\n    }\n}\n```"
+    },
+    {
+      "id": 3,
+      "question": "What is _Inversion of Control (IoC)_? How does _Spring_ facilitate _IoC_?",
+      "options": [
+        "Inversion of Control is a programming paradigm focused on creating static factory methods that centralize object instantiation and manage complex class hierarchies through reflection.",
+        "Inversion of Control represents a method of implementing runtime polymorphism by dynamically generating proxy classes that intercept method invocations and modify object behaviors.",
+        "Inversion of Control (IoC) is a design principle where object creation and lifecycle management are delegated to an external framework, enabling loose coupling and easier dependency management through techniques like dependency injection.",
+        "Inversion of Control is an advanced caching mechanism that preemptively creates and manages object instances to optimize memory usage and reduce runtime object allocation overhead."
+      ],
+      "correctIndex": 2,
+      "explanation": "IoC shifts control of object lifecycles from application code to a container or framework, promoting modular and decoupled design. Spring's IoC container manages bean creation, configuration, and destruction, allowing developers to focus on implementing business logic rather than managing object dependencies.\n\nExample of IoC with dependency injection:\n```java\n@Service\npublic class UserService {\n    private final UserRepository repository;\n    \n    @Autowired\n    public UserService(UserRepository repository) {\n        this.repository = repository;\n    }\n}\n```"
+    },
+    {
+      "id": 4,
+      "question": "What is the _ApplicationContext_ in _Spring_?",
+      "options": [
+        "The ApplicationContext is a specialized bean factory that exclusively handles database connection pooling and transaction management within Spring's enterprise ecosystem.",
+        "The ApplicationContext is a lightweight component designed to manage static resource loading and provide internationalization support for web-based Spring applications.",
+        "The ApplicationContext is a configuration management system that tracks method execution and provides runtime dependency resolution for Spring applications, enabling advanced proxy mechanisms.",
+        "The ApplicationContext is a sophisticated Spring container responsible for managing and configuring application beans through dependency injection and lifecycle management, serving as the central interface for accessing application components and configuration."
+      ],
+      "correctIndex": 3,
+      "explanation": "The ApplicationContext extends the BeanFactory interface and provides additional enterprise-specific functionality like easier integration with Spring's AOP features, message resource handling, and event publication. It supports multiple configuration sources including XML, Java annotations, and programmatic configuration. A typical usage demonstrates its core capabilities through bean retrieval and configuration management.\n\n```java\n@Configuration\npublic class AppConfig {\n    @Bean\n    public MyService myService() {\n        return new MyServiceImpl();\n    }\n}\n\n// Accessing beans through ApplicationContext\nApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);\nMyService service = context.getBean(MyService.class);\n```"
+    },
+    {
+      "id": 5,
+      "question": "Explain _Dependency Injection_ and its types in the _Spring_ context.",
+      "options": [
+        "Dependency Injection is a programming approach that enables automatic serialization and deserialization of complex object graphs across distributed system architectures.",
+        "Dependency Injection represents a technique for dynamically resolving system-wide resource allocations and managing component lifecycle through centralized dependency management.",
+        "Dependency Injection (DI) is a design pattern where objects receive their dependencies from an external source rather than creating them internally, promoting loose coupling and easier testing of components.",
+        "Dependency Injection is an advanced object creation mechanism that automatically generates proxy classes to manage complex object interactions and runtime method interception."
+      ],
+      "correctIndex": 2,
+      "explanation": "Dependency Injection allows developers to create more modular and testable code by removing direct object creation responsibilities from classes. Spring supports three primary injection types: constructor, setter, and field injection. The primary goal is to reduce tight coupling between classes and improve overall system flexibility.\n\n```java\n// Constructor Injection\n@Service\npublic class UserService {\n    private final UserRepository repository;\n    \n    @Autowired\n    public UserService(UserRepository repository) {\n        this.repository = repository;\n    }\n}\n```"
+    },
+    {
+      "id": 6,
+      "question": "What are _Bean Scopes_ in _Spring_? Name them.",
+      "options": [
+        "Bean Scopes are advanced configuration techniques that enable automatic dependency resolution and runtime optimization of object creation strategies across different application layers.",
+        "Bean Scopes are configuration mechanisms that define how Spring manages object persistence, including distributed caching strategies and memory allocation patterns for application components.",
+        "Bean Scopes define the lifecycle and visibility of Spring beans, with Singleton (default) creating one instance per container, Prototype generating a new instance on each request, and web-specific scopes like Request creating instances per HTTP request.",
+        "Bean Scopes represent a runtime mechanism for dynamically adjusting bean visibility and access permissions based on complex system-wide configuration rules."
+      ],
+      "correctIndex": 2,
+      "explanation": "Spring provides multiple bean scopes to manage object lifecycle and instantiation strategies. The most common scopes are Singleton (one instance per container), Prototype (new instance each time), Request (one per HTTP request), Session (one per HTTP session), and Application (one per web application).\n\n```java\n@Component\n@Scope(\"prototype\")\npublic class PrototypeBean {\n    // Each request creates a new instance\n}\n\n@Component\n@Scope(\"singleton\")\npublic class SingletonBean {\n    // Single instance shared across the application\n}\n```"
+    },
+    {
+      "id": 7,
+      "question": "How do you configure a _bean_ in _Spring_?",
+      "options": [
+        "Spring beans are lightweight Java objects created dynamically at runtime using reflection and automatically registered through component scanning without explicit configuration.",
+        "Bean configuration in Spring is primarily achieved through programmatic interfaces that define object creation and lifecycle management using factory pattern implementations.",
+        "Spring beans are statically defined database connection objects that represent persistent configurations within the application context and managed by the Spring framework.",
+        "In Spring, beans are objects managed by the Spring IoC Container and can be configured using annotations, XML, or Java-based configuration methods. Configuration involves specifying the bean's class, scope, dependencies, and other essential properties."
+      ],
+      "correctIndex": 3,
+      "explanation": "Bean configuration is a fundamental aspect of Spring's dependency injection mechanism. The IoC container creates and manages bean instances, controlling their lifecycle and dependencies. Developers can configure beans using three primary approaches: XML configuration, Java-based configuration (@Configuration), and annotation-based configuration (@Component, @Bean).\n\nExample of Java-based bean configuration:\n```java\n@Configuration\npublic class AppConfig {\n    @Bean\n    public DataSource dataSource() {\n        return new DriverManagerDataSource();\n    }\n}\n```"
+    },
+    {
+      "id": 8,
+      "question": "Describe the role of the _Spring Core container_.",
+      "options": [
+        "The Spring Core container provides the fundamental infrastructure for dependency injection and IoC, managing object creation, configuration, and lifecycle management within a Spring application.",
+        "The Spring Core container is responsible for handling database connections and managing transaction boundaries between different application modules.",
+        "Spring Core container serves as a runtime compiler that transforms annotated classes into executable bytecode and manages application-wide service registrations.",
+        "The Core container primarily handles network communication and provides an abstraction layer for distributed computing across microservices architectures."
+      ],
+      "correctIndex": 0,
+      "explanation": "The Spring Core container is the central component of the Spring Framework, implementing the Inversion of Control (IoC) principle. It manages bean instantiation, configuration, and lifecycle through dependency injection. The container reads configuration metadata and creates fully configured system instances.\n\nExample of dependency injection:\n```java\npublic class UserService {\n    private final UserRepository repository;\n    \n    @Autowired\n    public UserService(UserRepository repository) {\n        this.repository = repository;\n    }\n}\n```"
+    },
+    {
+      "id": 9,
+      "question": "What is a _Spring configuration file_?",
+      "options": [
+        "Spring configuration files serve as metadata repositories for tracking application performance metrics and generating diagnostic reports during runtime.",
+        "Spring configuration files are security descriptor documents that define authentication mechanisms and access control policies for enterprise applications.",
+        "Configuration files in Spring are low-level system resource mappings that establish runtime communication protocols between different application components.",
+        "Spring configuration files define bean definitions, module configurations, and application context settings, typically using XML, Java-based configurations, or annotation-based approaches."
+      ],
+      "correctIndex": 3,
+      "explanation": "Configuration files are crucial for defining the structure and dependencies of a Spring application. They can specify bean definitions, import other configuration resources, and set up application context parameters. Modern Spring applications increasingly favor annotation-based and Java-based configurations over traditional XML.\n\nExample of XML configuration:\n```xml\n<bean id=\"dataSource\" class=\"org.apache.commons.dbcp.BasicDataSource\">\n    <property name=\"driverClassName\" value=\"com.mysql.jdbc.Driver\"/>\n    <property name=\"url\" value=\"jdbc:mysql://localhost:3306/mydb\"/>\n</bean>\n```"
+    },
+    {
+      "id": 10,
+      "question": "How do you create an _ApplicationContext_ in a _Spring_ application?",
+      "options": [
+        "An ApplicationContext can be created using different implementations like ClassPathXmlApplicationContext or FileSystemXmlApplicationContext, which load Spring configuration from XML files in the classpath or filesystem respectively.",
+        "An ApplicationContext is instantiated by defining a @Configuration class and using the AnnotationConfigApplicationContext constructor to load bean definitions.",
+        "ApplicationContext is automatically created by Spring Boot and does not require manual initialization in most modern Spring applications.",
+        "The ApplicationContext is a static singleton managed by the Spring framework and cannot be directly created by developers in a standard application."
+      ],
+      "correctIndex": 0,
+      "explanation": "The ApplicationContext is the central interface for accessing the Spring IoC container, responsible for managing bean lifecycles and dependencies. Different implementations support various configuration sources, with ClassPathXmlApplicationContext and FileSystemXmlApplicationContext being common ways to load XML-based configurations.\n\nExample of creating an ApplicationContext:\n```java\n// Loading from classpath\nApplicationContext context = new ClassPathXmlApplicationContext(\"applicationContext.xml\");\n\n// Loading from filesystem\nApplicationContext context = new FileSystemXmlApplicationContext(\"/path/to/applicationContext.xml\");\n```"
+    },
+    {
+      "id": 11,
+      "question": "What is _Aspect-Oriented Programming (AOP)_?",
+      "options": [
+        "Aspect-Oriented Programming (AOP) is a programming paradigm that allows cross-cutting concerns to be modularized by intercepting and modifying program execution at specific join points without modifying the original code.",
+        "AOP is a design pattern that enables developers to create abstract interfaces for implementing complex system architectures with multiple layers of abstraction.",
+        "Aspect-Oriented Programming is a technique for dynamically generating code at runtime to optimize performance and reduce computational complexity.",
+        "AOP is a methodology for creating loosely coupled microservices that can communicate through well-defined interfaces and messaging protocols."
+      ],
+      "correctIndex": 0,
+      "explanation": "AOP provides a way to apply common functionality across multiple modules without duplicating code or modifying existing classes. It works by defining aspects that can intercept method calls, modify behavior, and add functionality like logging, security, or transaction management.\n\nExample of an AOP aspect in Spring:\n```java\n@Aspect\npublic class LoggingAspect {\n    @Before(\"execution(* com.example.service.*.*(..))\"))\n    public void logBeforeMethodExecution(JoinPoint joinPoint) {\n        // Logging logic before method execution\n    }\n}"
+    },
+    {
+      "id": 12,
+      "question": "How does _Spring_ support _AOP_?",
+      "options": [
+        "Spring implements AOP by generating bytecode at compile-time, which replaces the original method implementations with enhanced versions containing additional functionality.",
+        "AOP in Spring is achieved through a reflection-based mechanism that scans classes at startup and dynamically rewrites method implementations to include cross-cutting concerns.",
+        "Spring supports AOP through proxies, creating dynamic proxy objects that intercept method calls and apply aspects at runtime, allowing developers to add behavior to existing methods without modifying their source code.",
+        "Spring's AOP framework uses compile-time weaving to integrate aspects directly into class bytecode, ensuring minimal runtime performance overhead."
+      ],
+      "correctIndex": 2,
+      "explanation": "Spring's AOP implementation primarily uses JDK dynamic proxies or CGLIB proxies to intercept method calls. When an advised method is called, the proxy intercepts the call, applies the aspect's logic, and then proceeds with the original method execution.\n\nExample demonstrating proxy-based AOP:\n```java\n@Aspect\npublic class SecurityAspect {\n    @Before(\"execution(* com.example.service.UserService.*(..))\")\n    public void checkAuthorization() {\n        // Authorization check before method execution\n    }\n}"
+    },
+    {
+      "id": 13,
+      "question": "Can you explain a _Pointcut_ and an _Advice_ in _Spring AOP_?",
+      "options": [
+        "A Pointcut in Spring AOP defines the specific join points where advice will be applied, serving as a predicate that identifies method executions, field references, or other program locations for cross-cutting concerns.",
+        "A Pointcut represents the actual implementation of an advice method that intercepts and modifies program execution at runtime, determining the specific logic to be injected.",
+        "A Pointcut is a configuration mechanism in Spring that defines transaction boundaries and manages the scope of method invocations within an application's architectural layers.",
+        "A Pointcut is a design pattern in AOP that creates proxy objects to dynamically route method calls through interceptor classes, managing aspect-oriented behavior."
+      ],
+      "correctIndex": 0,
+      "explanation": "Pointcuts are crucial in Aspect-Oriented Programming as they provide a declarative way to specify where and when advice should be applied. They act as selectors that match specific join points in the code, enabling developers to modularize cross-cutting concerns like logging, security, or transaction management.\n\nExample of a pointcut definition in Spring:\n```java\n@Pointcut(\"execution(* com.example.service.*.*(..))\") \nprivate void serviceLayerMethods() { }\n```\n\nIn this example, the pointcut matches all methods in the service layer, allowing advice to be applied consistently across those methods."
+    },
+    {
+      "id": 14,
+      "question": "What is a _Join Point_ in _Spring AOP_?",
+      "options": [
+        "A Join Point is a configuration mechanism that determines how method invocations are routed and processed within the application's execution context.",
+        "A Join Point is a design pattern in Spring that defines the contract for intercepting and transforming method executions through dynamic proxy mechanisms.",
+        "A Join Point in Spring AOP represents a specific point during program execution where additional behavior can be intercepted and modified, such as method calls, constructor invocations, or field access.",
+        "A Join Point represents a transaction boundary in an application where aspect-oriented behaviors are coordinated and managed across different architectural layers."
+      ],
+      "correctIndex": 2,
+      "explanation": "Join Points are fundamental to Aspect-Oriented Programming, providing precise locations where aspects can be applied. In Spring AOP, they are typically method executions, but can also include other program points like constructor calls or field modifications. They enable developers to insert cross-cutting concerns without modifying the original method implementation.\n\nExample of intercepting a join point:\n```java\n@Around(\"execution(* com.example.service.*.*(..))\") \npublic Object logMethodExecution(ProceedingJoinPoint joinPoint) throws Throwable {\n    // Log method details before execution\n    Object result = joinPoint.proceed();\n    // Log method details after execution\n    return result;\n}"
+    },
+    {
+      "id": 15,
+      "question": "What is the difference between a _Concern_ and a _Cross-cutting Concern_ in _Spring AOP_?",
+      "options": [
+        "A Concern is a technical configuration that determines method execution paths, while a Cross-cutting Concern manages the transactional boundaries between different application layers.",
+        "A Concern represents a specific functionality or requirement in software, while a Cross-cutting Concern is an aspect that affects multiple modules and cannot be cleanly encapsulated within a single component of the application.",
+        "A Concern is a design pattern that defines modular architectural boundaries, while a Cross-cutting Concern represents the implementation strategy for managing complex system interactions.",
+        "A Concern represents the primary business logic of an application, while a Cross-cutting Concern defines the infrastructure-level mechanisms for managing system resources."
+      ],
+      "correctIndex": 1,
+      "explanation": "Concerns and Cross-cutting Concerns are essential concepts in software design and Aspect-Oriented Programming. A standard concern relates to a specific functional requirement, while cross-cutting concerns like logging, security, and transaction management span multiple modules and cannot be neatly organized using traditional object-oriented approaches.\n\nExample demonstrating cross-cutting concern:\n```java\n@Aspect\npublic class LoggingAspect {\n    @Before(\"execution(* com.example.service.*.*(..))\") \n    public void logMethodCall(JoinPoint joinPoint) {\n        // Logging logic applied across multiple service methods\n    }\n}"
+    }
+  ],
+  "processedAt": "2025-12-18T10:28:35.456Z"
+}

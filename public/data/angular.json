@@ -1,0 +1,198 @@
+{
+  "id": "angular",
+  "name": "Angular",
+  "slug": "angular-interview-questions",
+  "category": "Frontend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Angular_ and what are its key features?",
+      "options": [
+        "Angular is a comprehensive web development platform that combines server-side rendering with client-side templating, designed to streamline enterprise application development.",
+        "Angular is a TypeScript-based open-source web application framework developed by Google for building dynamic single-page applications with robust component-based architecture and powerful features.",
+        "Angular is a modular framework for developing cross-platform mobile and web applications, focusing on dependency injection and real-time data synchronization.",
+        "Angular is a client-side JavaScript library primarily used for creating interactive user interfaces with a focus on reactive programming and virtual DOM manipulation."
+      ],
+      "correctIndex": 1,
+      "explanation": "Angular is a powerful front-end framework that provides developers with a structured approach to building web applications. It offers a component-based architecture where each component manages its own template, logic, and styling. The framework leverages TypeScript, which adds strong typing and object-oriented programming features to JavaScript. Key advantages include two-way data binding, dependency injection, and comprehensive tooling support through Angular CLI.\n\nExample of a basic Angular component:\n```typescript\n@Component({\n  selector: 'app-example',\n  template: '<h1>{{title}}</h1>'\n})\nexport class ExampleComponent {\n  title = 'My Angular App';\n}\n```"
+    },
+    {
+      "id": 2,
+      "question": "Explain _data-binding_ in Angular. What are the different types?",
+      "options": [
+        "Data binding is a one-way communication method in Angular that exclusively transfers data from backend services to front-end components without two-way interaction.",
+        "Data binding represents the process of manually mapping component properties to DOM elements through complex configuration and explicit transformation rules.",
+        "Data binding in Angular represents the synchronization mechanism between component properties and the DOM, allowing automatic updates and interaction between the model and view.",
+        "Data binding in Angular is a rendering technique that creates static connections between HTML elements and component templates, preventing dynamic content updates."
+      ],
+      "correctIndex": 2,
+      "explanation": "Data binding is a core feature of Angular that simplifies the synchronization of data between the component and the view. Angular supports multiple binding types: interpolation, property binding, event binding, and two-way data binding. This approach reduces boilerplate code and makes data management more intuitive.\n\nExample of different data binding types:\n```typescript\n// Interpolation\n<p>{{username}}</p>\n\n// Property Binding\n<img [src]='imageUrl'>\n\n// Event Binding\n<button (click)='saveData()'>\n\n// Two-Way Binding\n<input [(ngModel)]='username'>\n```"
+    },
+    {
+      "id": 3,
+      "question": "Describe the _Angular application architecture_.",
+      "options": [
+        "The Angular application architecture focuses on client-side rendering through a purely functional programming model with stateless components and immutable data structures.",
+        "The Angular application architecture is structured around modules, components, services, and routing, emphasizing modularity, dependency injection, and separation of concerns.",
+        "The Angular application architecture relies primarily on monolithic design patterns with tightly coupled components and centralized state management.",
+        "Angular's architecture is fundamentally based on a microservices approach, where each component operates as an independent network service with minimal framework integration."
+      ],
+      "correctIndex": 1,
+      "explanation": "Angular's architecture promotes a modular and scalable approach to web application development. Modules organize related functionality, components manage specific UI sections, services handle data and business logic, and routing enables navigation between different views. Dependency injection is a key mechanism that allows efficient management of component dependencies and promotes loose coupling.\n\nExample of a basic Angular module structure:\n```typescript\n@NgModule({\n  declarations: [AppComponent, UserComponent],\n  imports: [BrowserModule, RouterModule],\n  providers: [UserService],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n```"
+    },
+    {
+      "id": 4,
+      "question": "What is a _component_ in Angular and how is it used?",
+      "options": [
+        "An Angular component is a fundamental building block of UI that encapsulates data, logic, and template, representing a specific part of the user interface with its own class, template, and styles.",
+        "A component in Angular is a data binding mechanism that connects HTML elements with TypeScript logic through complex inheritance patterns and event propagation systems.",
+        "An Angular component represents a static template container that manages global application state and provides dependency injection for inter-module communication.",
+        "Components are specialized HTML wrappers that dynamically generate JavaScript functions to handle rendering and manipulate browser DOM elements at runtime."
+      ],
+      "correctIndex": 0,
+      "explanation": "Components are crucial to Angular's architecture, combining TypeScript logic with HTML templates and CSS styles. They create modular, reusable UI elements that can be composed into complex applications. A typical component includes a selector, template, and class definition that controls its behavior and data management."
+    },
+    {
+      "id": 5,
+      "question": "What are _directives_ in Angular and can you name a few commonly used ones?",
+      "options": [
+        "Angular directives represent middleware functions that intercept and modify template rendering processes before final DOM construction and component initialization.",
+        "Directives in Angular are advanced styling mechanisms that transform DOM elements through complex rendering algorithms and event-driven mutation strategies.",
+        "Angular directives are special markers in templates that extend HTML's capabilities by attaching custom behavior to elements, with three primary types: component, structural, and attribute directives.",
+        "Directives are specialized decorators that provide dependency injection and runtime type checking for template-based user interface interactions."
+      ],
+      "correctIndex": 2,
+      "explanation": "Directives allow developers to create dynamic, interactive web applications by extending HTML's native capabilities. Common examples include *ngIf for conditional rendering, *ngFor for list iterations, and attribute directives like ngClass for dynamic styling. They provide powerful template manipulation techniques without writing complex JavaScript."
+    },
+    {
+      "id": 6,
+      "question": "How do you create a _service_ in Angular and why would you use one?",
+      "options": [
+        "An Angular service is a reusable class that encapsulates business logic, data retrieval, and cross-component functionality, typically injected using Angular's dependency injection system.",
+        "An Angular service represents a centralized configuration management system that handles runtime dependency resolution and inter-module communication patterns.",
+        "Services in Angular are static utility classes that manage global application state through complex middleware communication protocols and event broadcasting.",
+        "Services are specialized design patterns in Angular that provide advanced dependency tracking and automated state synchronization across application components."
+      ],
+      "correctIndex": 0,
+      "explanation": "Services promote separation of concerns and code reusability by extracting shared logic from components. They are typically created using the @Injectable decorator and can be easily injected into components, making data sharing and complex operations more manageable. A common use case is creating HTTP service for API interactions."
+    },
+    {
+      "id": 7,
+      "question": "Can you explain what _dependency injection_ is in Angular?",
+      "options": [
+        "Dependency Injection is a process of loading external libraries and frameworks directly into Angular components, creating complex interconnected object relationships.",
+        "Dependency Injection (DI) is a design pattern where Angular automatically provides dependencies for components and services, allowing for more modular and testable code by managing object creation and lifecycle.",
+        "Dependency Injection is a technique where developers manually create and pass dependencies between different parts of an Angular application, ensuring tight coupling between components.",
+        "Dependency Injection represents Angular's method of statically linking services and components at compile-time, preventing runtime modifications to component relationships."
+      ],
+      "correctIndex": 1,
+      "explanation": "Dependency Injection is a core Angular mechanism that allows components to receive their dependencies without creating them directly. It promotes loose coupling, improves code reusability, and simplifies testing by managing object creation and lifecycle. In practice, this means services and dependencies can be easily injected into components using constructor injection.\n\n```typescript\n@Injectable()\nclass UserService {\n  getUsers() { /* logic */ }\n}\n\n@Component({\n  selector: 'user-list',\n})\nclass UserListComponent {\n  constructor(private userService: UserService) {}\n}\n```"
+    },
+    {
+      "id": 8,
+      "question": "What is a _module_ in Angular and what is its purpose?",
+      "options": [
+        "Angular modules are configuration files that define global settings and environmental parameters for the entire application, controlling how different components interact.",
+        "In Angular, a module is a mechanism for organizing and encapsulating related components, services, directives, and pipes into cohesive functional units that define the application's structure and dependencies.",
+        "Modules represent Angular's internal compilation strategy for transforming TypeScript code into executable JavaScript, managing the build and deployment process.",
+        "A module in Angular is a runtime container that dynamically loads and unloads application components, providing a flexible way to manage application resources during execution."
+      ],
+      "correctIndex": 1,
+      "explanation": "Angular modules serve as organizational containers that group related functionality. They help manage dependencies, control complexity, and provide a clear structure for application components. Modules are defined using the @NgModule decorator and can import other modules, declare components, and provide services.\n\n```typescript\n@NgModule({\n  declarations: [UserComponent, ProfileComponent],\n  imports: [CommonModule, RouterModule],\n  providers: [UserService]\n})\nexport class UserModule { }\n```"
+    },
+    {
+      "id": 9,
+      "question": "How do you handle _events_ in Angular?",
+      "options": [
+        "Event handling in Angular involves using event binding syntax in templates, where DOM events are captured using parentheses () and bound to component methods that respond to user interactions.",
+        "Angular's event system uses reactive programming patterns where all user interactions are transformed into observable streams that components can subscribe to and process.",
+        "Angular event handling requires creating custom event listeners through complex JavaScript methods that manually track DOM interactions and trigger component updates.",
+        "Event handling in Angular is managed through a centralized event bus that routes all user interactions through a global middleware before reaching individual components."
+      ],
+      "correctIndex": 0,
+      "explanation": "Event binding in Angular provides a declarative way to respond to user interactions directly in templates. The framework simplifies connecting DOM events to component methods, making interaction handling more intuitive and readable.\n\n```html\n<button (click)=\"handleClick($event)\">Click me</button>\n```\n\n```typescript\nclass MyComponent {\n  handleClick(event: MouseEvent) {\n    // Handle click event\n  }\n}\n```"
+    },
+    {
+      "id": 10,
+      "question": "What is _two-way binding_ and how do you implement it in Angular?",
+      "options": [
+        "Two-way binding is a one-directional data flow mechanism that updates the view based on predefined model changes without real-time synchronization.",
+        "Two-way binding is an Angular technique that creates static references between component properties, preventing dynamic data updates.",
+        "Two-way binding synchronizes data between the data model and the view in both directions, automatically reflecting changes in either the model or the view using the [(ngModel)] directive.",
+        "Two-way binding connects backend services to frontend components, allowing automatic data transmission between server-side and client-side resources."
+      ],
+      "correctIndex": 2,
+      "explanation": "Two-way binding allows seamless data synchronization between the component's data model and the template. To implement it, you must import FormsModule and use the [(ngModel)] directive. This enables real-time updates in both the model and view without manual intervention. A typical implementation looks like this: ```html <input [(ngModel)]='username'> ```"
+    },
+    {
+      "id": 11,
+      "question": "Explain the difference between an Angular _component_ and a _directive_.",
+      "options": [
+        "Components are self-contained UI building blocks with a template, logic, and styling, representing entire sections of an application, while directives modify element behavior or manipulate the DOM without creating a full UI component.",
+        "Components are low-level DOM manipulation tools that directly modify HTML elements, whereas directives are complex UI rendering mechanisms with comprehensive template management.",
+        "Components are backend service connectors that manage data flow, and directives are responsible for creating visual representations of application data.",
+        "Components represent static view containers without logic, while directives are dynamic event-handling mechanisms that control application state and user interactions."
+      ],
+      "correctIndex": 0,
+      "explanation": "Components and directives serve different purposes in Angular's architecture. Components are comprehensive units with their own template, logic, and styling, acting as the primary building blocks of an application. Directives, by contrast, are more focused on modifying element behavior. A typical component might look like: ```typescript @Component({ selector: 'app-example', template: '<div>Hello World</div>' }) ```"
+    },
+    {
+      "id": 12,
+      "question": "What are _Pipes_ in Angular and where would you use them?",
+      "options": [
+        "Pipes in Angular transform displayed values in templates, allowing you to format strings, dates, numbers, and perform data transformations without altering the original data.",
+        "Pipes are complex data binding strategies that create reactive connections between component properties and template elements.",
+        "Pipes are data validation mechanisms in Angular that enforce strict type checking and prevent incorrect data rendering in templates.",
+        "Pipes are background processing tools that manage asynchronous data operations and optimize template rendering performance."
+      ],
+      "correctIndex": 0,
+      "explanation": "Pipes provide a clean, declarative way to transform data directly in Angular templates. They can handle various transformations without modifying the original data source. Common use cases include formatting dates, converting text case, and number formatting. Example usage: ```html <p>{{ username | uppercase }}</p> ```"
+    },
+    {
+      "id": 13,
+      "question": "How do you handle _form submissions_ in Angular?",
+      "options": [
+        "Angular supports form submissions only through manual event binding and custom validation implemented directly in component classes.",
+        "Angular form submissions can be handled using either Template-Driven Forms or Reactive Forms, with Reactive Forms providing more advanced features and flexibility for complex form interactions.",
+        "Form submissions in Angular are exclusively managed through HttpClient, which captures form data and sends it to the server using predefined HTTP methods.",
+        "Form submissions are handled by converting form data into observable streams and processing them through RxJS operators in the component."
+      ],
+      "correctIndex": 1,
+      "explanation": "Angular provides two primary approaches to form handling. Template-Driven Forms are simpler and use two-way data binding, while Reactive Forms offer more programmatic control and are better suited for complex validation scenarios. To use forms effectively, developers must import either FormsModule or ReactiveFormsModule and configure form controls appropriately. \n\nExample of a basic Reactive Form setup:\n```typescript\nthis.myForm = this.formBuilder.group({\n  username: ['', Validators.required],\n  email: ['', [Validators.required, Validators.email]]\n});\n```"
+    },
+    {
+      "id": 14,
+      "question": "What is _Angular CLI_ and what can it be used for?",
+      "options": [
+        "Angular CLI is a visual development environment that provides drag-and-drop interface for creating Angular application components and managing project structures.",
+        "Angular CLI is a command-line tool that helps developers create, develop, scaffold, and manage Angular projects efficiently, providing commands for generating components, services, and performing build and deployment tasks.",
+        "Angular CLI is a backend service that handles server-side rendering and automatic code optimization for Angular applications.",
+        "Angular CLI is a testing framework specifically designed for automated component and service testing in Angular projects."
+      ],
+      "correctIndex": 1,
+      "explanation": "Angular CLI simplifies Angular development by automating repetitive tasks. It offers a standard project structure, code generation, and built-in tools for development, testing, and deployment. Developers can use commands like `ng new`, `ng generate`, and `ng serve` to quickly bootstrap and manage Angular applications.\n\nExample of common CLI commands:\n```bash\n# Create new project\nng new my-angular-app\n\n# Generate a component\nng generate component user-profile\n\n# Start development server\nng serve\n```"
+    },
+    {
+      "id": 15,
+      "question": "Describe how to make _HTTP requests_ in Angular using _HttpClient_.",
+      "options": [
+        "In Angular, HTTP requests are made using HttpClient from @angular/common/http, which provides methods like get(), post(), put(), and delete() for performing various types of API interactions with observables.",
+        "HTTP requests are implemented using Angular's built-in fetch API wrapper, which provides a simplified interface for network communication.",
+        "Angular's HTTP requests are processed through a custom network interceptor that manages all communication between the client and server automatically.",
+        "HTTP requests in Angular are handled exclusively through RxJS observables without using HttpClient, requiring manual stream management for each API call."
+      ],
+      "correctIndex": 0,
+      "explanation": "HttpClient is the recommended method for making HTTP requests in Angular, offering a powerful and flexible approach to server communication. It returns observables, supports typed requests, and includes features like interceptors and easy error handling.\n\nExample of a typical HTTP GET request:\n```typescript\ngetUsers() {\n  return this.http.get<User[]>('api/users');\n}\n```"
+    }
+  ],
+  "processedAt": "2025-12-18T08:38:58.906Z"
+}

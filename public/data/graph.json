@@ -1,0 +1,195 @@
+{
+  "id": "graph",
+  "name": "Graph",
+  "slug": "graph-data-structure-interview-questions",
+  "category": "Data Structures",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a _Graph_?",
+      "options": [
+        "A graph is a computational model that describes algorithmic pathways between computational nodes, primarily used for solving optimization and routing problems.",
+        "A graph is a hierarchical data representation where nodes are systematically organized with predetermined connection rules and strict directional constraints.",
+        "A graph is a data structure consisting of nodes (vertices) connected by edges, representing relationships between data points and enabling complex network modeling across various domains.",
+        "A graph is a mathematical visualization technique that represents statistical data through interconnected visual elements, mapping numerical relationships in spatial arrangements."
+      ],
+      "correctIndex": 2,
+      "explanation": "Graphs are fundamental data structures that model complex relationships between entities. They differ from trees by allowing more flexible connections, enabling representation of networks like social connections, transportation routes, or computer networks. Nodes represent individual entities, while edges represent the connections or relationships between those entities."
+    },
+    {
+      "id": 2,
+      "question": "What are some common _Types_ and _Categories_ of _Graphs_?",
+      "options": [
+        "Graphs are classified based on their computational complexity, with types determined by the number of nodes and potential traversal algorithms used in their construction.",
+        "Graphs represent different structural paradigms where connection types are defined by their memory allocation strategies and computational efficiency.",
+        "Graphs are distinguished by their topological characteristics, primarily focusing on the mathematical symmetry and interconnection density between nodes.",
+        "Graphs can be categorized as undirected (bidirectional connections) or directed (one-way connections), with edges representing the relationship and potential traversal between nodes."
+      ],
+      "correctIndex": 3,
+      "explanation": "Graph categorization helps understand the nature of relationships between nodes. Undirected graphs allow movement in both directions between connected nodes, while directed graphs have specific, one-way connections. This distinction is crucial for modeling real-world scenarios like social networks, transportation systems, and computer network architectures."
+    },
+    {
+      "id": 3,
+      "question": "What is the difference between a _Tree_ and a _Graph_?",
+      "options": [
+        "A tree is a graphical representation of data flow, characterized by multiple potential entry points and flexible connection strategies between computational nodes.",
+        "A tree is a data structure that represents recursive algorithmic processes, with nodes serving as computational decision points in a networked environment.",
+        "A tree is a specialized graph with a hierarchical structure, having a single root node, no cycles, and a strict parent-child relationship, while graphs allow more complex, non-hierarchical connections.",
+        "A tree is an advanced graph variant that implements strict mathematical constraints on node relationships and connection probabilities."
+      ],
+      "correctIndex": 2,
+      "explanation": "Trees and graphs represent different approaches to modeling relationships. Trees have a strict, hierarchical organization with a single root and no cycles, making them ideal for representing organizational structures or file systems. Graphs, in contrast, offer more flexibility, allowing multiple connection types and complex network representations."
+    },
+    {
+      "id": 4,
+      "question": "How can you determine the _Minimum number of edges_ for a graph to remain connected?",
+      "options": [
+        "The minimum number of edges is calculated by multiplying the total vertices by two, which guarantees connectivity across all graph structures.",
+        "The minimum number of edges for a connected graph is determined by the vertex with the lowest degree, ensuring each vertex has at least one connection to keep the graph linked.",
+        "The edge count for connectivity depends on the total number of vertices squared, representing a comprehensive interconnection strategy.",
+        "Graph connectivity requires a complete graph where each vertex connects to every other vertex, maximizing potential edge relationships."
+      ],
+      "correctIndex": 1,
+      "explanation": "Edge connectivity ensures a graph remains connected by maintaining a minimum number of edges. The key principle is that each vertex must have at least one connection to prevent isolation, which is mathematically represented by the minimum vertex degree. The formula ensures that no vertex becomes disconnected from the graph's main structure."
+    },
+    {
+      "id": 5,
+      "question": "Define _Euler Path_ and _Euler Circuit_ in the context of graph theory.",
+      "options": [
+        "An Euler Path is a traversal that connects all vertices through unique routes, prioritizing complete vertex coverage without repeated edge restrictions.",
+        "An Euler Path involves systematically mapping graph connections by minimizing edge crossings and maximizing vertex interactions.",
+        "Euler Circuits represent graph traversals where each vertex is visited multiple times, emphasizing comprehensive network exploration strategies.",
+        "An Euler Path visits every edge exactly once, requiring exactly two vertices with odd degree, while an Euler Circuit visits all edges once and returns to the starting point with all vertices having even degree."
+      ],
+      "correctIndex": 3,
+      "explanation": "Euler Paths and Circuits are specialized graph traversal techniques that define specific conditions for edge and vertex visitation. The critical distinction lies in the degree of vertices: Euler Paths allow two odd-degree vertices, while Euler Circuits require all vertices to have even degrees, enabling a complete circuit without repeating edges."
+    },
+    {
+      "id": 6,
+      "question": "Compare _Adjacency Lists_ and _Adjacency Matrices_ for graph representation.",
+      "options": [
+        "Adjacency Lists use memory efficiently by storing only existing edges, providing O(V + E) space complexity, while Adjacency Matrices use a fixed N x N grid requiring O(N²) space regardless of graph density.",
+        "Adjacency Lists consume more memory by creating complex nested data structures that duplicate vertex connection information.",
+        "Adjacency Matrices are more memory-efficient by compressing graph connections into a single, compact two-dimensional representation of vertex relationships.",
+        "Graph representations fundamentally depend on matrix multiplication techniques to optimize storage and retrieval of interconnected vertex data."
+      ],
+      "correctIndex": 0,
+      "explanation": "Graph representation methods differ significantly in space and time complexity. Adjacency Lists are memory-efficient for sparse graphs, storing only existing edges, while Adjacency Matrices provide constant-time edge lookup at the cost of increased memory usage. The choice depends on the specific graph's characteristics and computational requirements."
+    },
+    {
+      "id": 7,
+      "question": "What is an _Incidence Matrix_, and when would you use it?",
+      "options": [
+        "An incidence matrix is a dynamic graph storage technique that uses weighted entries to represent complex network relationships between multiple interconnected nodes.",
+        "An incidence matrix is a binary graph representation mapping vertices to edges, using a matrix where rows represent vertices, columns represent edges, and cells indicate connectivity. It's particularly useful for directed and multigraphs.",
+        "An incidence matrix is a computational method for tracking vertex interactions in graph algorithms, utilizing a grid-based approach to map potential connection pathways.",
+        "An incidence matrix represents graph connections through a probabilistic mapping technique that assigns numerical weights to potential vertex-edge relationships."
+      ],
+      "correctIndex": 1,
+      "explanation": "Incidence matrices provide a compact way to represent graph structures by explicitly showing which vertices are connected to which edges. Unlike adjacency matrices, they can handle directed and multigraphs more effectively by clearly indicating the relationship between vertices and edges through binary representations."
+    },
+    {
+      "id": 8,
+      "question": "Discuss _Edge List_ as a graph representation and its use cases.",
+      "options": [
+        "An edge list is a computational method for representing network topologies by cataloging potential interaction pathways between graph elements.",
+        "An edge list is a simple graph representation where each edge is stored as a tuple of connected vertices, making it efficient for dense graphs and providing quick access to edge information.",
+        "An edge list represents graph structures through a sequential encoding technique that captures potential vertex relationships.",
+        "An edge list is a dynamic graph storage mechanism that tracks potential vertex connections through probabilistic edge mapping techniques."
+      ],
+      "correctIndex": 1,
+      "explanation": "Edge lists offer a straightforward approach to graph representation by storing edges as direct connections between vertices. They are particularly useful for graphs with many edges and provide a flexible way to track and query graph connections without complex matrix structures."
+    },
+    {
+      "id": 9,
+      "question": "Explain how to save space while storing a graph using _Compressed Sparse Row_ (CSR).",
+      "options": [
+        "Compressed Sparse Row represents graph structures through a sophisticated compression algorithm that reduces data redundancy in network mappings.",
+        "Compressed Sparse Row (CSR) is a memory-efficient graph representation using three arrays to store graph structure, significantly reducing memory usage for sparse graphs by compactly encoding vertex and edge relationships.",
+        "Compressed Sparse Row is a computational method for dynamically mapping vertex interactions through multi-dimensional array compression.",
+        "Compressed Sparse Row is a graph optimization technique that uses probabilistic encoding to minimize memory consumption in complex network representations."
+      ],
+      "correctIndex": 1,
+      "explanation": "CSR is a sophisticated graph storage technique designed to minimize memory overhead for sparse graphs. By using three interconnected arrays, it efficiently encodes graph structure without storing unnecessary zero-value connections, making it ideal for large, sparse networks with limited connectivity."
+    },
+    {
+      "id": 10,
+      "question": "Explain the _Breadth-First Search_ (BFS) traversing method.",
+      "options": [
+        "BFS is a graph algorithm that randomly selects neighboring nodes to explore, prioritizing unvisited vertices and dynamically adjusting its search pattern based on graph complexity.",
+        "Breadth-First Search (BFS) is a graph traversal method that explores nodes level by level, using a queue to systematically visit each node's neighbors before moving to the next level, ensuring all adjacent nodes are explored before going deeper.",
+        "Breadth-First Search traverses a graph by creating a minimal spanning tree, connecting nodes through the most efficient path and minimizing the total distance between vertices.",
+        "Breadth-First Search is a recursive graph traversal technique that explores nodes by following the deepest possible path first, using a stack to track unexplored branches and potential routes."
+      ],
+      "correctIndex": 1,
+      "explanation": "BFS systematically explores a graph by visiting all immediate neighbors of a node before moving to the next level. It guarantees the shortest path in unweighted graphs and uses a queue to manage the exploration order, ensuring each level is completely examined before proceeding deeper."
+    },
+    {
+      "id": 11,
+      "question": "Explain the _Depth-First Search_ (DFS) algorithm.",
+      "options": [
+        "Depth-First Search systematically identifies cycles in a graph by tracking node relationships and preventing repeated vertex exploration through a complex marking mechanism.",
+        "Depth-First Search (DFS) is a graph traversal algorithm that explores as far as possible along each branch before backtracking, typically implemented using recursion or a stack to track the path and explore deeper vertices first.",
+        "Depth-First Search is a graph exploration method that prioritizes breadth by examining all neighboring nodes simultaneously and creating a comprehensive level-based mapping of connections.",
+        "DFS is a graph traversal technique that randomly selects paths through a graph, attempting to find the most efficient route between disconnected vertices using probabilistic exploration."
+      ],
+      "correctIndex": 1,
+      "explanation": "DFS explores graph vertices by going as deep as possible along each branch before backtracking. It's memory-efficient compared to breadth-first search and is particularly useful for tasks like detecting cycles, topological sorting, and path finding in graph structures."
+    },
+    {
+      "id": 12,
+      "question": "What are the key differences between _BFS_ and _DFS_?",
+      "options": [
+        "BFS and DFS are identical graph traversal methods, distinguished only by their implementation details and minimal variations in node exploration sequence.",
+        "BFS and DFS are complementary graph algorithms that always produce identical results, with their differences being purely theoretical and inconsequential in practical applications.",
+        "BFS and DFS differ primarily in their traversal strategy, with BFS exploring nodes level by level using a queue, while DFS goes deep into branches using a stack or recursion, resulting in different path discovery and memory usage patterns.",
+        "The primary difference between BFS and DFS is their memory allocation strategy, with BFS using complex multi-threaded exploration and DFS relying on linear sequential processing."
+      ],
+      "correctIndex": 2,
+      "explanation": "The key distinctions between BFS and DFS lie in their exploration approach. BFS explores nodes level by level, ensuring the shortest path in unweighted graphs, while DFS goes deep into branches first, which can be more memory-efficient and useful for specific graph analysis tasks."
+    },
+    {
+      "id": 13,
+      "question": "Implement a method to check if there is a _Path between two vertices_ in a graph.",
+      "options": [
+        "To check if a path exists between two vertices, use Depth-First Search (DFS) by recursively exploring adjacent unvisited vertices and tracking whether the destination is reached.",
+        "Path finding requires using Breadth-First Search (BFS) to systematically explore graph vertices and check connectivity through level-wise traversal.",
+        "Determine path existence by maintaining a separate adjacency matrix and performing a linear search through potential connection routes between source and destination.",
+        "Graph path detection can be accomplished by using a disjoint set data structure to track vertex connectivity and potential reachability."
+      ],
+      "correctIndex": 0,
+      "explanation": "DFS is an efficient graph traversal algorithm that explores paths by going as deep as possible before backtracking. By recursively visiting adjacent vertices and marking them as visited, the algorithm can determine if a path exists between two points in the graph. The key is to systematically explore connections while preventing infinite loops through proper visited node tracking."
+    },
+    {
+      "id": 14,
+      "question": "Solve the problem of printing all _Paths from a source to destination_ in a Directed Graph with BFS or DFS.",
+      "options": [
+        "Path discovery in directed graphs can be achieved through a matrix-based approach that computes potential routes using adjacency representation and systematic elimination.",
+        "Finding multiple paths involves constructing a comprehensive graph traversal algorithm that generates connectivity matrices and explores potential vertex relationships.",
+        "To find all paths between source and destination in a directed graph, use recursive Depth-First Search with backtracking, maintaining a visited list to prevent cycles and track unique paths.",
+        "Identifying all graph paths requires implementing a breadth-first traversal that generates path permutations by exploring vertices at each level of connectivity."
+      ],
+      "correctIndex": 2,
+      "explanation": "Recursive DFS with backtracking is particularly effective for finding all paths in a graph because it systematically explores every possible route from source to destination. By maintaining a visited list, the algorithm prevents infinite loops caused by cycles and ensures each unique path is discovered precisely once."
+    },
+    {
+      "id": 15,
+      "question": "What is a _Bipartite Graph_? How to detect one?",
+      "options": [
+        "A bipartite graph is a graph whose vertices can be divided into two disjoint sets such that every edge connects vertices from different sets, which can be detected using color-based graph coloring or two-color BFS traversal.",
+        "Bipartite graphs are defined by a unique vertex arrangement where connections follow a predetermined topological relationship between distinct vertex classifications.",
+        "Bipartite graphs represent complex network structures where vertices are interconnected based on symmetric connectivity patterns and mutual exclusivity.",
+        "A bipartite graph is characterized by vertices that can be partitioned into subgroups with specific edge connectivity constraints and balanced distribution."
+      ],
+      "correctIndex": 0,
+      "explanation": "Bipartite graph detection involves determining whether a graph can be divided into two sets without any intra-set connections. The key challenge is ensuring no two vertices within the same set are directly connected, which can be efficiently verified using graph coloring techniques or breadth-first search algorithms."
+    }
+  ],
+  "processedAt": "2025-12-18T09:27:46.449Z"
+}

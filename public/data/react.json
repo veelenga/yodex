@@ -1,0 +1,198 @@
+{
+  "id": "react",
+  "name": "React",
+  "slug": "react-interview-questions",
+  "category": "Frontend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _React_ and why is it used?",
+      "options": [
+        "React is a comprehensive web framework designed to handle full-stack development with built-in server-side rendering and complete application management capabilities.",
+        "React is a state management library that enables developers to create complex application flows using declarative programming patterns and reactive data streams.",
+        "React is a client-side templating engine that provides direct DOM manipulation with high-performance rendering techniques for single-page applications.",
+        "React is a popular open-source JavaScript library for building interactive user interfaces, focusing on component-based architecture and efficient rendering through its Virtual DOM mechanism."
+      ],
+      "correctIndex": 3,
+      "explanation": "React simplifies UI development by breaking interfaces into reusable components and using a Virtual DOM to optimize rendering performance. Its core philosophy emphasizes declarative UI creation and efficient updates. Developers can create modular, maintainable interfaces by composing smaller, independent components that handle their own rendering and state management."
+    },
+    {
+      "id": 2,
+      "question": "How is _React_ different from _Angular_ or _Vue_?",
+      "options": [
+        "React provides a more opinionated and strict development approach compared to Angular and Vue, with extensive built-in tooling and mandatory architectural constraints.",
+        "React is fundamentally identical to Angular and Vue, offering equivalent feature sets and using the same component rendering strategies across all three frameworks.",
+        "React differs from Angular and Vue by being a lightweight library focused specifically on UI components, requiring additional libraries for comprehensive application development.",
+        "React is primarily designed for enterprise-level applications, offering more complex state management and integrated backend communication compared to Angular and Vue."
+      ],
+      "correctIndex": 2,
+      "explanation": "While React, Angular, and Vue are all modern JavaScript UI libraries/frameworks, they have distinct philosophies. React is intentionally minimalist, providing core UI rendering capabilities and encouraging developers to integrate additional libraries for routing, state management, and other application needs. This approach offers maximum flexibility but requires more deliberate architectural decisions."
+    },
+    {
+      "id": 3,
+      "question": "What is a _React component_?",
+      "options": [
+        "A React component is a reusable, modular piece of UI that can be a function or class, encapsulating both visual rendering and application logic in a self-contained unit.",
+        "A React component is an abstract data structure that defines communication protocols between different parts of a web application's rendering pipeline.",
+        "A React component is a static template mechanism that generates HTML markup without supporting dynamic interactions or state management capabilities.",
+        "A React component represents a complete microservice architecture pattern for building distributed user interface modules across multiple application layers."
+      ],
+      "correctIndex": 0,
+      "explanation": "React components are fundamental building blocks that promote code reusability and separation of concerns. They can manage their own state, receive props, and define how they should be rendered. Components can be created as simple functions or more complex class-based structures, allowing developers to choose the most appropriate approach for their specific use case."
+    },
+    {
+      "id": 4,
+      "question": "How do you create a _component_ in _React_?",
+      "options": [
+        "React components are JavaScript objects that inherit from a base UI class and implement complex rendering strategies using predefined lifecycle methods and inheritance patterns.",
+        "React components are created by defining either a functional or class-based component that returns JSX or renders a UI element. Functional components use arrow functions or regular functions, while class components extend React.Component and implement a render method.",
+        "Components in React are created by importing the React library and defining a render function that generates dynamic HTML content through a specialized component constructor method.",
+        "React components are XML-like structures that define user interface templates using custom HTML-like syntax with predefined rendering rules and state management capabilities."
+      ],
+      "correctIndex": 1,
+      "explanation": "Creating React components involves understanding two primary approaches: functional and class-based components. Functional components are simpler and more modern, using hooks for state and lifecycle management. Class components provide more explicit lifecycle methods and were the standard before React 16.8. The key is defining a function or class that returns JSX representing the component's UI structure."
+    },
+    {
+      "id": 5,
+      "question": "What is _JSX_ and why do we use it in _React_?",
+      "options": [
+        "JSX is a preprocessor transformation that converts HTML templates into optimized React rendering instructions, providing enhanced performance and component abstraction.",
+        "JSX is a React-specific templating language that provides advanced markup transformation capabilities and enables seamless integration of styling and component logic.",
+        "JSX is a syntax extension for JavaScript that allows writing HTML-like code within React components, enabling more readable and intuitive component rendering by directly embedding markup and JavaScript expressions.",
+        "JSX represents a domain-specific language in React that compiles HTML-like syntax into complex JavaScript object structures for more efficient UI rendering."
+      ],
+      "correctIndex": 2,
+      "explanation": "JSX bridges the gap between JavaScript and HTML, allowing developers to write markup directly within JavaScript code. It gets transpiled by Babel into standard JavaScript function calls, specifically React.createElement(). This approach simplifies component creation and makes the code more declarative and easier to understand."
+    },
+    {
+      "id": 6,
+      "question": "Can you explain the _virtual DOM_ in _React_?",
+      "options": [
+        "The Virtual DOM is an in-memory lightweight representation of the actual DOM that React uses to optimize rendering performance by minimizing direct manipulation of the browser's DOM and efficiently updating only changed elements.",
+        "Virtual DOM represents a parallel rendering strategy where React maintains a synchronized copy of the DOM to predict and optimize rendering sequences.",
+        "The Virtual DOM is an abstraction layer that enables React to manage complex UI updates through a specialized memory-based rendering technique.",
+        "The Virtual DOM is a caching mechanism in React that stores rendered component states and provides advanced memoization techniques for improving application responsiveness."
+      ],
+      "correctIndex": 0,
+      "explanation": "The Virtual DOM acts as a performance optimization technique in React. When state changes occur, React first updates this lightweight JavaScript representation, then efficiently calculates the minimum number of changes needed in the actual DOM. This approach reduces expensive DOM manipulations and significantly improves rendering performance."
+    },
+    {
+      "id": 7,
+      "question": "What are the differences between a _class component_ and a _functional component_?",
+      "options": [
+        "Class components utilize inheritance for component creation, whereas functional components rely on composition and are more memory-efficient in modern React architectures.",
+        "Class components represent complex object-oriented design patterns, and functional components are lightweight wrapper functions that primarily handle data transformation.",
+        "Class components use the class keyword and can manage state and lifecycle methods, while functional components are simpler ES6 functions traditionally used for rendering UI and now support state/lifecycle via React Hooks.",
+        "Class components are older React components that only render static content, while functional components handle complex state management and event processing dynamically."
+      ],
+      "correctIndex": 2,
+      "explanation": "The key difference between class and functional components is their syntax and capabilities. Before React 16.8, functional components were stateless and limited, but with the introduction of Hooks, they can now manage state and lifecycle events. Class components use the 'class' keyword and extend React.Component, while functional components are simple JavaScript functions. Hooks like useState and useEffect have made functional components more powerful and preferred in modern React development."
+    },
+    {
+      "id": 8,
+      "question": "How do you handle _events_ in _React_?",
+      "options": [
+        "React handles events using synthetic events which provide a consistent, cross-browser event interface, and events are typically bound using camelCase naming conventions like onClick instead of onclick.",
+        "Event handling in React requires manually registering event listeners for each component using a proprietary event mapping technique defined in the React framework.",
+        "React events are managed directly by the browser's native event system, with each component having its own event listener attached to individual DOM elements.",
+        "React manages events through a global event delegation system that preprocesses all DOM interactions at the root component level before distributing them to child components."
+      ],
+      "correctIndex": 0,
+      "explanation": "React's synthetic event system abstracts browser-specific event implementations, providing a uniform event handling mechanism across different browsers. Event names use camelCase (onClick instead of onclick) and are passed as functions. Events in React are typically defined inline within component render methods or class methods."
+    },
+    {
+      "id": 9,
+      "question": "What are _state_ and _props_ in _React_?",
+      "options": [
+        "Props are read-only data passed from parent to child components, while state is mutable data managed within a component that can trigger re-renders when modified.",
+        "Props represent static configuration settings for components, while state manages dynamic rendering logic and component-internal transformations.",
+        "Props are used for complex data modeling, while state handles simple UI rendering and component interaction patterns.",
+        "Props are immutable global values shared across all components, and state represents local component-specific data that cannot be modified externally."
+      ],
+      "correctIndex": 0,
+      "explanation": "Props and state are fundamental to React's data management. Props are passed down from parent components and cannot be directly modified by the child, ensuring unidirectional data flow. State, managed internally within a component using setState() or Hooks, allows components to create and update their own data. When state changes, React automatically re-renders the component."
+    },
+    {
+      "id": 10,
+      "question": "How do you pass _data_ between _components_ in _React_?",
+      "options": [
+        "In React, data can be passed between components using props for top-down data flow, and callback functions to transmit data from child to parent components.",
+        "Data communication in React happens exclusively through context providers, which allow nested components to access shared state without explicit prop drilling.",
+        "React components can only exchange data through complex event emitter systems that create indirect communication channels between different component hierarchies.",
+        "React components share data through global state management libraries like Redux, which create a centralized data store accessible by all components."
+      ],
+      "correctIndex": 0,
+      "explanation": "Props allow parent components to pass data downward, while callback functions enable child components to send data back up the component tree. This creates a flexible, unidirectional data flow that keeps component interactions predictable and manageable."
+    },
+    {
+      "id": 11,
+      "question": "What is a _stateful component_?",
+      "options": [
+        "A stateful component is a React component designed to exclusively manage external API connections and handle complex network communication patterns.",
+        "Stateful components are React class components that implement advanced lifecycle methods for tracking component rendering performance and optimization.",
+        "A stateful component is a specialized React component that exclusively handles server-side rendering and manages complex data fetching mechanisms.",
+        "A stateful component is a React component that manages and maintains its own internal state, allowing dynamic rendering and response to user interactions through state changes."
+      ],
+      "correctIndex": 3,
+      "explanation": "Stateful components use internal state to create dynamic, interactive user interfaces. They can update their rendering based on state changes, making them crucial for creating responsive and adaptive React applications."
+    },
+    {
+      "id": 12,
+      "question": "Can you explain how _useState_ works?",
+      "options": [
+        "useState is a method for creating static component properties that define initial rendering configurations in React functional components.",
+        "useState is a complex state management technique that synchronizes component states across multiple rendering cycles using advanced memoization strategies.",
+        "useState is a React utility for generating immutable state objects that prevent direct modifications to component internal data structures.",
+        "useState is a React Hook that allows function components to manage state by returning an array with the current state value and a function to update that state."
+      ],
+      "correctIndex": 3,
+      "explanation": "The useState Hook provides a simple way to add state to functional components without converting them to class components. It returns a tuple with the current state and a setter function that triggers component re-rendering when called."
+    },
+    {
+      "id": 13,
+      "question": "How do you update the _state_ of a _parent component_ from a _child component_?",
+      "options": [
+        "To update a parent component's state from a child, pass a callback function as a prop that allows the child to trigger a state change in the parent component's context.",
+        "State can be directly modified by importing the parent component's state management function and calling it directly from the child component.",
+        "Child components can update parent state by accessing global state management through a shared Redux store that connects all components.",
+        "React allows child components to use the `setState()` method of parent components through special inheritance mechanisms built into React's component system."
+      ],
+      "correctIndex": 0,
+      "explanation": "The callback method leverages React's unidirectional data flow by passing a function from parent to child as a prop. This function enables the child to request state changes while maintaining proper component encapsulation. A typical implementation involves passing a method like `handleStateChange` from the parent that can modify its own state when invoked by the child."
+    },
+    {
+      "id": 14,
+      "question": "What is _lifting state up_ in _React_?",
+      "options": [
+        "Lifting state up is a React pattern where state is moved to a common ancestor component to share and synchronize data across multiple child components.",
+        "Lifting state up involves creating a global state management system that allows all components to directly access and modify shared data.",
+        "Lifting state up refers to the process of moving complex state logic from child components to more specialized state management libraries like Redux.",
+        "Lifting state up is a technique for creating independent component state containers that can be selectively shared between different parts of an application."
+      ],
+      "correctIndex": 0,
+      "explanation": "By moving state to a higher-level component, React developers can create a single source of truth for related data. This approach simplifies state management, reduces redundancy, and ensures that multiple components can share and react to the same data changes."
+    },
+    {
+      "id": 15,
+      "question": "When do you use _Redux_ or _Context API_ for state management?",
+      "options": [
+        "Context API should be used for all state management, as it provides more performance and easier implementation compared to Redux.",
+        "Redux is primarily for synchronous state updates, whereas Context API supports both synchronous and asynchronous state management strategies.",
+        "Use Redux for complex global state management with multiple reducers and middleware, and Context API for simpler, more localized state sharing across a limited component tree.",
+        "Redux is exclusively for large applications, while Context API works best for small, single-page applications with minimal state complexity."
+      ],
+      "correctIndex": 2,
+      "explanation": "The choice between Redux and Context API depends on application complexity, performance needs, and state management requirements. Redux offers more robust tools for complex state management, while Context API provides a lighter-weight solution for sharing state across components."
+    }
+  ],
+  "processedAt": "2025-12-18T10:11:19.372Z"
+}

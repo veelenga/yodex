@@ -1,0 +1,197 @@
+{
+  "id": "asp-net-mvc",
+  "name": "ASP.NET MVC",
+  "slug": "asp-net-mvc-interview-questions",
+  "category": "Backend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _ASP.NET MVC_ and how does it differ from _WebForms_?",
+      "options": [
+        "ASP.NET MVC is a server-side rendering technology that replaces traditional web development approaches with a more complex routing mechanism and enhanced JavaScript integration.",
+        "ASP.NET MVC is an enterprise-level web development framework focused on enhancing database interaction and reducing the overhead of traditional web application design patterns.",
+        "ASP.NET MVC is a lightweight framework designed primarily for microservices architecture, providing streamlined communication between client-side and server-side components.",
+        "ASP.NET MVC is a web application framework that uses the Model-View-Controller architectural pattern, promoting a clean separation of concerns and allowing more control over HTML rendering compared to WebForms."
+      ],
+      "correctIndex": 3,
+      "explanation": "ASP.NET MVC fundamentally changes web application development by separating application logic into three interconnected components: Model (data and business logic), View (user interface), and Controller (request handling). This approach allows developers to create more maintainable and testable web applications with greater control over HTML rendering and application flow. The framework supports clean URL routing, supports multiple view engines, and integrates seamlessly with modern web development practices."
+    },
+    {
+      "id": 2,
+      "question": "Explain the _MVC architectural pattern_.",
+      "options": [
+        "The MVC architectural pattern is a design approach that separates an application into three interconnected components: Model (data logic), View (user interface), and Controller (request processing), promoting modular and maintainable software design.",
+        "The MVC architectural pattern is an advanced programming paradigm that enhances application scalability by implementing dynamic component interaction and state management.",
+        "The MVC architectural pattern represents a client-server communication strategy that optimizes data transmission and reduces network latency in distributed computing environments.",
+        "The MVC architectural pattern is a comprehensive software design methodology that focuses on creating parallel processing systems with advanced data synchronization mechanisms."
+      ],
+      "correctIndex": 0,
+      "explanation": "The Model-View-Controller (MVC) pattern provides a clear separation of concerns in software design. The Model manages data and business logic, the View handles presentation and user interface, and the Controller acts as an intermediary, processing user input and coordinating interactions between Model and View. This approach enhances code maintainability, allows for easier testing, and supports more flexible application design. A typical example of MVC implementation might look like:"
+    },
+    {
+      "id": 3,
+      "question": "What are the main components of _ASP.NET MVC_?",
+      "options": [
+        "The main components of ASP.NET MVC are Database Connector, Render Engine, and Request Handler, which collectively manage application data flow and user interaction.",
+        "The main components of ASP.NET MVC are Model (representing data and business logic), View (user interface rendering), and Controller (handling user requests and coordinating interactions between Model and View).",
+        "The main components of ASP.NET MVC are Authentication Module, Data Mapper, and Routing Mechanism, focusing on secure and efficient web application development.",
+        "The main components of ASP.NET MVC are Service Layer, Presentation Tier, and Communication Protocol, designed to optimize web application performance and scalability."
+      ],
+      "correctIndex": 1,
+      "explanation": "In ASP.NET MVC, each component plays a crucial role in application architecture. The Model defines the data structure and business rules, the View presents information to users, and the Controller processes incoming requests, retrieves necessary data from the Model, and selects the appropriate View. This design promotes clean, maintainable code and allows for easier unit testing and separation of concerns. A simple example of these components might look like:"
+    },
+    {
+      "id": 4,
+      "question": "How does the _routing mechanism_ work in _ASP.NET MVC_?",
+      "options": [
+        "Routing in ASP.NET MVC is a process of dynamically generating URLs based on current application state and converting controller methods into web endpoints.",
+        "In ASP.NET MVC, routing maps URLs to specific controller actions by parsing the incoming request URL and matching it against predefined route templates stored in the RouteConfig.",
+        "The routing mechanism in ASP.NET MVC uses attribute-based mapping to directly translate browser requests into specific database query operations.",
+        "ASP.NET MVC routing works by creating a complex middleware layer that intercepts and transforms HTTP requests before they reach the controller logic."
+      ],
+      "correctIndex": 1,
+      "explanation": "Routing is a critical component in ASP.NET MVC that enables clean, readable URL mapping. The RouteConfig class defines route templates that match incoming URLs to specific controller actions. When a request arrives, the routing system examines the URL and determines the appropriate controller and action method to handle the request.\n\nA typical route configuration might look like this:\n```csharp\npublic class RouteConfig\n{\n    public static void RegisterRoutes(RouteCollection routes)\n    {\n        routes.MapRoute(\n            name: \"Default\",\n            url: \"{controller}/{action}/{id}\",\n            defaults: new { controller = \"Home\", action = \"Index\", id = UrlParameter.Optional }\n        );\n    }\n}"
+    },
+    {
+      "id": 5,
+      "question": "What is the role of the _Controller_ in _ASP.NET MVC_?",
+      "options": [
+        "The Controller in ASP.NET MVC primarily manages database connections and handles low-level data transformation between different application layers.",
+        "In ASP.NET MVC, the Controller acts as an intermediary between the user input and the application's model and view, processing requests, manipulating data, and selecting the appropriate view to render.",
+        "In the MVC architecture, controllers are responsible for rendering UI components and directly managing client-side rendering logic and state management.",
+        "Controllers serve as the central authentication mechanism in ASP.NET MVC, managing user sessions and enforcing security protocols for incoming requests."
+      ],
+      "correctIndex": 1,
+      "explanation": "Controllers are fundamental to the MVC design pattern, responsible for handling user interactions, processing input, and coordinating between the Model and View. They receive user requests, perform necessary data operations, and determine which view should be displayed.\n\nA simple controller example demonstrates its core responsibilities:\n```csharp\npublic class UserController : Controller\n{\n    public ActionResult Profile(int userId)\n    {\n        var user = _userService.GetUserById(userId);\n        return View(user);\n    }\n}"
+    },
+    {
+      "id": 6,
+      "question": "Can you describe the lifecycle of an _ASP.NET MVC request_?",
+      "options": [
+        "The MVC request lifecycle involves multiple layers of middleware that transform and encrypt each incoming request before processing it through a series of complex validation checks.",
+        "The request lifecycle manages the complete state management and persistent connection between client and server, maintaining a continuous communication channel.",
+        "In ASP.NET MVC, the request lifecycle is a recursive process where each request spawns multiple parallel threads to handle different aspects of request processing simultaneously.",
+        "The ASP.NET MVC request lifecycle is a sequential process where an incoming request is routed to a specific controller action, processed, and then rendered into a view that is sent back to the client."
+      ],
+      "correctIndex": 3,
+      "explanation": "The request lifecycle in ASP.NET MVC is a well-defined sequence of events that begins when a request is received and ends when a response is sent back. Key stages include routing, controller initialization, action method execution, and view rendering.\n\nA typical lifecycle flow can be illustrated with pipeline interceptors:\n```csharp\npublic class CustomActionFilter : IActionFilter\n{\n    public void OnActionExecuting(ActionExecutingContext filterContext)\n    {\n        // Perform operations before action method execution\n    }\n\n    public void OnActionExecuted(ActionExecutedContext filterContext)\n    {\n        // Perform operations after action method execution\n    }\n}"
+    },
+    {
+      "id": 7,
+      "question": "What are _Actions_ in _ASP.NET MVC_?",
+      "options": [
+        "Actions in ASP.NET MVC are methods within controllers that handle user requests, process input, and prepare responses by executing specific logic and returning views or data.",
+        "Actions represent middleware components in ASP.NET MVC that intercept HTTP requests and transform them into standardized communication protocols.",
+        "Actions are predefined event handlers that manage background processing and asynchronous communication between web service endpoints in MVC frameworks.",
+        "Actions are database queries that automatically generate controller routes and manage web application transaction workflows in MVC architectures."
+      ],
+      "correctIndex": 0,
+      "explanation": "Action methods are fundamental to ASP.NET MVC's request processing model. They are responsible for receiving HTTP requests, processing user input, interacting with models, and determining which view to render or data to return. Each action is typically decorated with HTTP method attributes like [HttpGet] or [HttpPost] to specify its behavior. A typical action method might look like this:\n\n```csharp\npublic ActionResult Details(int id)\n{\n    var model = _repository.GetById(id);\n    return View(model);\n}\n```"
+    },
+    {
+      "id": 8,
+      "question": "What is _Razor View Engine_?",
+      "options": [
+        "Razor View Engine is a lightweight templating engine in ASP.NET that allows developers to embed server-side code directly into HTML using a concise syntax, enabling dynamic web page generation.",
+        "Razor View Engine is a middleware component that abstracts HTML rendering by transforming markup into optimized client-side JavaScript components.",
+        "Razor View Engine is a preprocessing tool that converts static HTML templates into dynamic web service endpoints with built-in caching mechanisms.",
+        "Razor View Engine is a server-side rendering framework that compiles HTML templates into executable bytecode for enhanced performance and security."
+      ],
+      "correctIndex": 0,
+      "explanation": "Razor simplifies view creation by providing a clean, intuitive syntax for embedding C# code within HTML. Its primary advantages include minimal syntax overhead and seamless integration with ASP.NET MVC. A typical Razor view demonstrates its inline code capabilities:\n\n```cshtml\n@model User\n<h1>Welcome, @Model.Name!</h1>\n@if (Model.IsAdmin) {\n    <p>You have administrator privileges.</p>\n}\n```"
+    },
+    {
+      "id": 9,
+      "question": "How do you pass data from a _Controller_ to a _View_?",
+      "options": [
+        "Controllers pass data to Views using internal caching mechanisms and serialization techniques that encrypt information between application layers.",
+        "Data transfer from Controllers to Views is managed through complex message queuing systems that abstract communication using dependency injection patterns.",
+        "Data transmission between Controllers and Views occurs through specialized communication protocols that map object properties to rendering contexts.",
+        "Data can be passed from a Controller to a View using ViewData, ViewBag, or strongly-typed models, which allow developers to transfer information for rendering dynamic web pages."
+      ],
+      "correctIndex": 3,
+      "explanation": "ASP.NET MVC provides multiple mechanisms for transferring data between Controllers and Views. ViewData and ViewBag are dynamic dictionaries, while strongly-typed models offer type safety. Here's an example demonstrating data transfer:\n\n```csharp\npublic ActionResult Index()\n{\n    // Using ViewData\n    ViewData[\"Title\"] = \"Welcome\";\n    \n    // Using ViewBag\n    ViewBag.Message = \"Hello, World!\";\n    \n    // Using strongly-typed model\n    var model = new UserViewModel { Name = \"John\" };\n    return View(model);\n}\n```"
+    },
+    {
+      "id": 10,
+      "question": "What are the different ways to manage _sessions_ in _ASP.NET MVC_?",
+      "options": [
+        "The framework supports only in-memory session storage, which keeps all session data within the web application's application pool and cannot be shared between server instances.",
+        "ASP.NET MVC sessions are managed exclusively through distributed caching mechanisms that automatically synchronize user state across multiple web servers in real-time.",
+        "In ASP.NET MVC, session management can be achieved through several providers including InProc (memory-based), StateServer (separate process), and SQLServer (database-stored), each offering different performance and persistence characteristics.",
+        "Session management in ASP.NET MVC is primarily handled through client-side cookies that store all user data directly in the browser's local storage for maximum performance."
+      ],
+      "correctIndex": 2,
+      "explanation": "Session management in ASP.NET MVC provides multiple strategies for maintaining user state across web requests. The InProc provider stores session data in web server memory, which is fast but not scalable. StateServer uses a separate Windows process for session storage, allowing better resource management. SQLServer provider offers the most persistent solution by storing session data in a database, enabling state preservation across multiple web servers. Developers can configure session providers in the web.config file to match their specific application requirements."
+    },
+    {
+      "id": 11,
+      "question": "Explain the concept of _TempData_, _ViewBag_, and _ViewData_.",
+      "options": [
+        "TempData functions as a static container that preserves data throughout the entire application lifecycle, enabling global state sharing between different controllers and request contexts.",
+        "TempData is a short-lived storage mechanism in ASP.NET MVC that persists data for the duration of a single redirect, allowing data to be passed between controller actions before being automatically cleared.",
+        "TempData is a permanent storage mechanism in ASP.NET MVC that maintains data across multiple user sessions and provides long-term state management for complex web applications.",
+        "TempData is a client-side storage mechanism that uses browser local storage to maintain persistent data between page reloads and navigation events in ASP.NET MVC applications."
+      ],
+      "correctIndex": 1,
+      "explanation": "TempData serves as a unique data transfer mechanism in ASP.NET MVC, bridging the gap between controller actions during redirects. It leverages session state or temporary storage to pass data that is needed only for the next request. When using TempData, developers can easily transfer model state, error messages, or temporary information between actions without explicitly managing complex state storage. An example of its usage might look like this: ```csharp public ActionResult Create() { TempData['Message'] = 'Item successfully created!'; return RedirectToAction('Index'); }```"
+    },
+    {
+      "id": 12,
+      "question": "What are _HTML Helpers_ in _ASP.NET MVC_?",
+      "options": [
+        "HTML Helpers are server-side rendering components that automatically convert complex business objects into static HTML markup without requiring explicit view logic.",
+        "HTML Helpers in ASP.NET MVC are extension methods that generate HTML markup, providing a type-safe and convenient way to create form elements, links, and other UI components directly within Razor views.",
+        "HTML Helpers represent a client-side JavaScript library that dynamically generates interactive web components based on predefined template configurations.",
+        "HTML Helpers are pre-compiled HTML templates that are embedded directly into the ASP.NET MVC view engine, allowing rapid UI generation without runtime overhead."
+      ],
+      "correctIndex": 1,
+      "explanation": "HTML Helpers simplify view rendering by providing strongly-typed methods that generate HTML elements. They can be built-in (like Html.TextBox()) or custom-created to meet specific application needs. These helpers reduce repetitive HTML writing and provide compile-time type checking. A typical example of an HTML Helper usage is: ```csharp @Html.TextBoxFor(m => m.Username, new { @class = 'form-control' })``` This creates a text input bound to a model property with a CSS class, demonstrating the helper's type-safe and flexible nature."
+    },
+    {
+      "id": 13,
+      "question": "How does _Model Binding_ work in _ASP.NET MVC_?",
+      "options": [
+        "Model Binding in ASP.NET MVC automates the transfer of data between HTTP requests and model objects by matching form data or query-string parameters to object properties using predefined conventions and value providers.",
+        "Model Binding is a routing strategy in ASP.NET MVC that dynamically generates model classes based on incoming HTTP request parameters and predefined schemas.",
+        "Model Binding is a server-side mechanism in ASP.NET MVC that manually maps form inputs to controller action parameters through complex reflection and type conversion processes.",
+        "Model Binding is a client-side data synchronization technique that uses JavaScript to transfer form data between web pages and server-side model representations."
+      ],
+      "correctIndex": 0,
+      "explanation": "Model Binding is a crucial aspect of ASP.NET MVC that simplifies data transfer between web forms and business objects. Value providers extract data from various sources like form fields, query strings, and route data. The default model binder uses type conversion and naming conventions to match request data to model properties. Developers can customize this process by creating custom model binders or using attributes like [Bind].\n\nExample of a simple model binding scenario:\n```csharp\npublic ActionResult Create(UserViewModel model)\n{\n    if (ModelState.IsValid)\n    {\n        // Model is automatically populated from request data\n        _userService.CreateUser(model);\n        return RedirectToAction(\"Index\");\n    }\n    return View(model);\n}\n```"
+    },
+    {
+      "id": 14,
+      "question": "What is the purpose of the _ViewStart file_ in _ASP.NET MVC_?",
+      "options": [
+        "The ViewStart file in ASP.NET MVC allows developers to define global view settings like default layout pages, which are automatically applied to all views within a specific directory or project.",
+        "The ViewStart file provides a centralized location for declaring global view-level dependency injections and service configurations in ASP.NET MVC.",
+        "The ViewStart file is a configuration mechanism that handles dynamic view rendering and manages client-side template caching in ASP.NET MVC applications.",
+        "ViewStart is a specialized routing component in ASP.NET MVC that pre-compiles view templates and optimizes view resolution for complex web applications."
+      ],
+      "correctIndex": 0,
+      "explanation": "The ViewStart.cshtml file is typically located in the Views folder and provides a way to set default view-level configurations. It is particularly useful for setting a consistent layout across multiple views without repeating code. When multiple ViewStart files exist in nested directories, they are applied hierarchically, allowing for more granular configurations.\n\nExample of a typical ViewStart file:\n```csharp\n@{\n    Layout = \"~/Views/Shared/_DefaultLayout.cshtml\";\n}\n```"
+    },
+    {
+      "id": 15,
+      "question": "What are _Partial Views_ and how are they different from _View Components_?",
+      "options": [
+        "Partial Views are server-side rendering components that replace traditional view templates, while View Components are legacy rendering techniques used in older ASP.NET frameworks.",
+        "Partial Views and View Components are identical rendering techniques in ASP.NET MVC, with no significant architectural or functional differences.",
+        "View Components are dynamic view fragments that can only be rendered by controllers, whereas Partial Views are static HTML templates embedded directly in master pages.",
+        "Partial Views are reusable view fragments rendered within a parent view, while View Components are more complex, independent UI elements that can be rendered independently and support more advanced rendering scenarios."
+      ],
+      "correctIndex": 3,
+      "explanation": "Partial Views and View Components serve different rendering purposes in ASP.NET MVC. Partial Views are simpler and typically used for small, reusable UI fragments, while View Components offer more flexibility and can include complex logic. View Components can have their own model, logic, and async rendering capabilities.\n\nExample of a Partial View:\n```csharp\n@await Html.PartialAsync(\"_UserProfilePartial\", userModel)\n\n// View Component Example\n@await Component.InvokeAsync(\"ShoppingCart\")\n```"
+    }
+  ],
+  "processedAt": "2025-12-18T08:42:55.761Z"
+}

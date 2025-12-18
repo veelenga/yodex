@@ -1,0 +1,196 @@
+{
+  "id": "greedy",
+  "name": "Greedy",
+  "slug": "greedy-algorithms-interview-questions",
+  "category": "Algorithms",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a _Greedy Algorithm_?",
+      "options": [
+        "A greedy algorithm systematically explores all possible solution paths simultaneously to guarantee the absolute best outcome in complex computational scenarios.",
+        "A greedy algorithm is a problem-solving technique that always selects the most complex solution at each step to maximize computational efficiency.",
+        "A greedy algorithm is a recursive problem-solving method that breaks down complex problems into the smallest possible sub-problems before attempting resolution.",
+        "A greedy algorithm is an optimization problem-solving approach that makes the locally optimal choice at each step, with the goal of finding a global optimum solution."
+      ],
+      "correctIndex": 3,
+      "explanation": "Greedy algorithms work by making the most immediately advantageous choice at each stage, hoping this will lead to an overall optimal solution. While they are often efficient and easy to implement, they do not guarantee the best possible outcome in all problem types. The key characteristic is making locally optimal decisions without reconsidering previous choices."
+    },
+    {
+      "id": 2,
+      "question": "What are _Greedy Algorithms_ used for?",
+      "options": [
+        "Greedy algorithms represent a comprehensive approach to solving distributed computing problems by evaluating multiple potential solution paths simultaneously.",
+        "Greedy algorithms are specialized computational techniques designed exclusively for solving complex mathematical proofs and theoretical computer science challenges.",
+        "Greedy algorithms are primarily used for optimization problems where incremental local decisions can potentially lead to a globally optimal solution, such as finding shortest paths or minimum spanning trees.",
+        "Greedy algorithms are primarily implemented in machine learning scenarios to explore complex decision trees and probabilistic outcome prediction."
+      ],
+      "correctIndex": 2,
+      "explanation": "These algorithms excel in scenarios where making the best immediate choice can contribute to an overall efficient solution. They are particularly effective in graph-based problems like network routing, scheduling, and resource allocation. While powerful, they are not universally applicable and require careful problem analysis to ensure their effectiveness."
+    },
+    {
+      "id": 3,
+      "question": "List some characteristics that are often present in problems that are solvable by _greedy algorithms_.",
+      "options": [
+        "Problems solvable by greedy algorithms typically exhibit optimum substructure, where locally optimal choices can lead to a globally optimal solution without requiring backtracking or re-evaluation of previous decisions.",
+        "Greedy algorithm problems are identified by their need for exhaustive search strategies and comprehensive state space exploration before making any decision.",
+        "Problems suitable for greedy algorithms are characterized by high computational complexity and require extensive memory management and parallel processing capabilities.",
+        "Problems solved by greedy algorithms must demonstrate complete predictability and have no inherent randomness or variability in potential solution paths."
+      ],
+      "correctIndex": 0,
+      "explanation": "The key characteristics include the ability to make sequential decisions without reconsidering past choices and having a clear path from local optimums to a global solution. Not all optimization problems can be solved greedily, so understanding the problem's structure is crucial. The algorithm must be able to make locally optimal choices that do not compromise the overall solution quality."
+    },
+    {
+      "id": 4,
+      "question": "What is the difference between _Greedy_ and _Heuristic_ algorithms?",
+      "options": [
+        "Heuristic and greedy algorithms are essentially the same, with both focusing on finding quick approximations to complex problems through simplified decision-making processes.",
+        "While every greedy algorithm is a heuristic, not every heuristic is a greedy algorithm. Greedy algorithms make locally optimal choices at each step, whereas heuristics are broader problem-solving strategies that may not always choose the most immediate optimal solution.",
+        "Heuristic and greedy algorithms differ primarily in their computational complexity, with greedy algorithms being more mathematically rigorous and deterministic in their approach.",
+        "Greedy algorithms are a subset of heuristics that always guarantee the most optimal solution by systematically selecting the best possible option at each decision point."
+      ],
+      "correctIndex": 1,
+      "explanation": "The key distinction lies in the decision-making approach. Greedy algorithms always choose the most immediately advantageous option, while heuristics are more flexible problem-solving techniques that may use rules of thumb or approximate methods. Not all heuristics follow the strict local optimization principle of greedy algorithms."
+    },
+    {
+      "id": 5,
+      "question": "Compare _Greedy_ vs _Divide & Conquer_ vs _Dynamic Programming_ algorithms.",
+      "options": [
+        "Each algorithm represents a unique approach to problem-solving, with Greedy focusing on probabilistic solutions, Divide & Conquer on parallel processing, and Dynamic Programming on sequential optimization.",
+        "These algorithm types primarily differ in their memory allocation techniques, with Greedy using minimal memory, Divide & Conquer using moderate memory, and Dynamic Programming requiring extensive memory resources.",
+        "Greedy, Divide & Conquer, and Dynamic Programming are all identical algorithmic strategies that recursively solve problems by breaking them down into smaller, more manageable components.",
+        "Greedy algorithms select the locally optimal choice at each step, Divide & Conquer breaks problems into smaller subproblems, and Dynamic Programming stores and reuses intermediate results to optimize overall solution efficiency."
+      ],
+      "correctIndex": 3,
+      "explanation": "Each algorithmic approach has distinct characteristics. Greedy algorithms make immediate best choices without backtracking, Divide & Conquer recursively breaks problems into smaller instances, and Dynamic Programming stores and reuses computed results to avoid redundant calculations."
+    },
+    {
+      "id": 6,
+      "question": "Is _Dijkstra's algorithm_ a _Greedy_ or _Dynamic Programming_ algorithm?",
+      "options": [
+        "Dijkstra's algorithm is primarily a Dynamic Programming technique that systematically explores all possible paths simultaneously to determine the most efficient route.",
+        "Dijkstra's algorithm is a pure Dynamic Programming solution that retrospectively adjusts path calculations based on accumulated path information.",
+        "The algorithm represents a hybrid approach between breadth-first search and dynamic optimization, not strictly adhering to greedy or dynamic programming paradigms.",
+        "Dijkstra's algorithm is fundamentally a greedy algorithm that finds the shortest path in a graph by always selecting the minimum-distance vertex at each iteration."
+      ],
+      "correctIndex": 3,
+      "explanation": "The algorithm's core mechanism involves repeatedly selecting the unvisited vertex with the smallest known distance, which is the quintessential characteristic of a greedy approach. It makes locally optimal choices at each step without reconsidering previous decisions."
+    },
+    {
+      "id": 7,
+      "question": "Is there a way to _Mathematically Prove_ that a _Greedy Algorithm_ will yield the _Optimal Solution_?",
+      "options": [
+        "A greedy algorithm can be mathematically proven optimal through demonstrating two key properties: the Greedy Choice Property and Optimal Substructure, which ensure local optimal choices lead to a global optimum solution.",
+        "Greedy algorithms are inherently optimal because they systematically evaluate all possible solution paths before selecting the most efficient route through a problem space.",
+        "A greedy algorithm is always mathematically proven optimal by using complex computational models that predict optimal outcomes through recursive problem decomposition.",
+        "Mathematical proof of a greedy algorithm's optimality is achieved by constructing an inductive argument that assumes each local decision is statistically most likely to produce a global solution."
+      ],
+      "correctIndex": 0,
+      "explanation": "Proving a greedy algorithm's optimality requires rigorously establishing that making locally optimal choices will consistently result in a globally optimal solution. Not all problems have greedy algorithms that guarantee optimal results, so mathematical proof involves carefully analyzing the problem's structural characteristics and demonstrating how the algorithm's approach systematically captures the most efficient solution path."
+    },
+    {
+      "id": 8,
+      "question": "Explain the _Greedy Choice Property_ and its significance in _greedy algorithms_.",
+      "options": [
+        "Greedy Choice Property describes an approach where algorithms prioritize immediate efficiency by selecting the most apparent solution at each decision point without comprehensive analysis.",
+        "The Greedy Choice Property is a fundamental principle where an algorithm makes locally optimal decisions at each step, with the expectation that these choices will collectively lead to a globally optimal solution.",
+        "The Greedy Choice Property represents an algorithmic strategy where decisions are made sequentially based on immediate resource constraints and anticipated future optimization potential.",
+        "The Greedy Choice Property is a computational technique that selects the most promising immediate option while maintaining flexibility for potential future adjustments."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Greedy Choice Property is critical in algorithm design, representing a strategy where each step's decision is made based on what seems best at that moment. This approach works effectively in problems where local optimal choices can be combined to create a global solution, but it requires careful verification to ensure the algorithm's overall effectiveness."
+    },
+    {
+      "id": 9,
+      "question": "Design a _greedy algorithm_ for making change using the fewest coins possible.",
+      "options": [
+        "The coin change algorithm evaluates all possible coin combinations simultaneously, generating a comprehensive set of potential solutions before selecting the most statistically probable arrangement.",
+        "The coin change greedy algorithm systematically selects the largest possible coin denomination at each step, repeatedly subtracting its value from the total amount until the target is precisely reached.",
+        "Solving coin change involves recursively testing each coin denomination against the remaining amount, progressively eliminating less efficient combination strategies.",
+        "The coin change solution uses a dynamic partitioning approach that proportionally distributes coin values across the target amount to minimize total coin count."
+      ],
+      "correctIndex": 1,
+      "explanation": "The coin change problem demonstrates a classic greedy algorithm where the strategy involves repeatedly selecting the largest possible coin to minimize the total number of coins used. This approach works perfectly for standard coin denominations like US currency, but may not be optimal for all possible coin systems, highlighting the importance of understanding an algorithm's specific constraints and applicability."
+    },
+    {
+      "id": 10,
+      "question": "Describe a greedy strategy for scheduling events that use the fewest number of resources.",
+      "options": [
+        "A greedy strategy for scheduling events minimizes resource use by selecting the earliest-starting tasks that don't conflict, prioritizing tasks with the earliest finish times to maximize non-overlapping activities.",
+        "Resource optimization in event scheduling requires selecting the longest tasks first to maximize overall task completion and minimize potential idle time between activities.",
+        "Event scheduling should prioritize tasks with the most complex requirements, selecting activities that demand the highest resource allocation to ensure comprehensive coverage.",
+        "The most effective greedy approach for event scheduling involves randomly selecting tasks and gradually replacing them with more efficient alternatives to reduce resource conflicts."
+      ],
+      "correctIndex": 0,
+      "explanation": "The greedy approach for event scheduling works by sorting activities based on their finish times and systematically selecting non-overlapping tasks. By choosing tasks with the earliest finish times, the algorithm ensures maximum activity selection while minimizing resource conflicts. This method is similar to the Maximum Independent Set problem in graph theory, where the goal is to select the maximum number of non-adjacent vertices."
+    },
+    {
+      "id": 11,
+      "question": "Explain how to apply a greedy approach to minimize the total waiting time for a given set of queries.",
+      "options": [
+        "Minimizing query waiting time is best achieved by implementing a parallel processing model that simultaneously handles tasks of varying complexity and duration.",
+        "A greedy strategy for query management involves randomly selecting and executing queries to prevent system bottlenecks and maintain balanced resource allocation.",
+        "To minimize waiting time for queries, a greedy approach prioritizes shorter tasks by sorting queries in increasing order of duration and processing them sequentially to reduce overall waiting time.",
+        "Query waiting time optimization requires processing the most complex queries first to establish a baseline performance metric and distribute computational resources efficiently."
+      ],
+      "correctIndex": 2,
+      "explanation": "The greedy method for query waiting time optimization focuses on reducing total waiting time by processing shorter tasks first. By sorting queries according to their duration and executing them sequentially, the algorithm minimizes the cumulative waiting time for all queries. This approach ensures that shorter, less complex tasks are completed quickly, reducing overall system latency."
+    },
+    {
+      "id": 12,
+      "question": "Develop a _greedy algorithm_ for the _activity selection problem_ to maximize the number of activities.",
+      "options": [
+        "The Activity Selection Problem is solved by prioritizing activities with the longest duration and gradually eliminating overlapping tasks through a recursive elimination process.",
+        "Optimal activity selection requires a random sampling approach that iteratively replaces conflicting activities to maximize potential task combinations.",
+        "The greedy algorithm for the Activity Selection Problem selects the maximum set of mutually compatible activities by sorting them according to finish times and systematically choosing non-overlapping activities with the earliest finish times.",
+        "The greedy strategy for activity selection involves identifying activities with the most complex constraints and progressively building a compatible set of tasks."
+      ],
+      "correctIndex": 2,
+      "explanation": "The Activity Selection Problem is solved using a greedy approach that focuses on maximizing the number of non-overlapping activities. By sorting activities based on their finish times and selecting tasks with the earliest completion, the algorithm ensures the largest possible set of compatible activities. This method systematically builds an optimal solution by making locally optimal choices at each step."
+    },
+    {
+      "id": 13,
+      "question": "How can you establish the correctness of a _greedy algorithm_?",
+      "options": [
+        "Greedy algorithm correctness relies on empirical testing and random sampling to verify that the algorithm produces acceptable results across multiple problem instances.",
+        "Greedy algorithm correctness can be confirmed by comparing the solution against all possible combinations, which demonstrates the algorithm's optimal decision-making process.",
+        "Greedy algorithm correctness is established through mathematical techniques like monotonicity and exchange arguments, which prove that locally optimal choices lead to a globally optimal solution.",
+        "Greedy algorithm correctness is determined by the algorithm's ability to minimize computational complexity and reduce problem-solving steps efficiently."
+      ],
+      "correctIndex": 2,
+      "explanation": "Proving greedy algorithm correctness requires rigorous mathematical techniques. Monotonicity ensures that local choices can be consistently aggregated into a global solution, while exchange arguments demonstrate that the greedy choice can be modified without losing optimality. These techniques provide formal proof mechanisms beyond simple empirical testing."
+    },
+    {
+      "id": 14,
+      "question": "What is the role of _sorting_ in many _greedy algorithms_, and why is it often necessary?",
+      "options": [
+        "Sorting is crucial in greedy algorithms because it helps organize input data, enables systematic selection of optimal elements, and provides a structured approach to making locally optimal choices.",
+        "Sorting is essential in greedy algorithms because it randomizes input data and prevents computational bias during solution generation.",
+        "Sorting plays a critical role in greedy algorithms by creating hierarchical relationships between problem elements and reducing computational overhead.",
+        "Sorting is fundamental to greedy algorithms as it allows for parallel processing of elements and enhances algorithm scalability."
+      ],
+      "correctIndex": 0,
+      "explanation": "Sorting transforms unstructured input into an ordered sequence, which allows greedy algorithms to systematically evaluate and select optimal elements. By arranging data in a specific order, algorithms can make consistent, informed choices that potentially lead to global optimization."
+    },
+    {
+      "id": 15,
+      "question": "Can _greedy algorithms_ be used to solve _optimization problems_? Give an example.",
+      "options": [
+        "Optimization problems are resolved through greedy algorithms by introducing randomized selection techniques that probabilistically converge on optimal solutions.",
+        "Greedy algorithms can solve optimization problems by making sequentially optimal local choices that aim to construct a globally optimal solution, as demonstrated in the Activity Selection Problem.",
+        "Greedy algorithms address optimization problems by implementing recursive backtracking strategies that systematically eliminate suboptimal choices.",
+        "Greedy algorithms solve optimization problems by exhaustively exploring all possible solution combinations and selecting the most statistically probable outcome."
+      ],
+      "correctIndex": 1,
+      "explanation": "In optimization problems, greedy algorithms make locally optimal choices at each step, assuming these choices will collectively lead to a global optimum. The Activity Selection Problem illustrates this approach by selecting non-overlapping activities to maximize total activity count, demonstrating how sequential best choices can solve complex optimization challenges."
+    }
+  ],
+  "processedAt": "2025-12-18T09:30:18.785Z"
+}

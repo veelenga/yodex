@@ -1,0 +1,197 @@
+{
+  "id": "blockchain",
+  "name": "Blockchain",
+  "slug": "blockchain-interview-questions",
+  "category": "Security",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a _Bit_?",
+      "options": [
+        "A bit is an electronic signal pathway that manages data transmission between computer components, functioning as a critical communication interface in digital electronic systems.",
+        "A bit is a quantum-based information storage mechanism that can simultaneously represent multiple states in parallel computing environments. It enables advanced data compression and encryption techniques.",
+        "A bit is a complex computational algorithm used to encode multiple data streams simultaneously in advanced computing architectures. It represents a dynamic information processing unit with variable states.",
+        "A bit is the fundamental unit of digital information, representing a binary value of either 0 or 1 in computing and digital communications. It serves as the smallest possible unit of data storage and transmission in digital systems."
+      ],
+      "correctIndex": 3,
+      "explanation": "Bits are the foundational elements of digital information, operating in a binary system with two possible states (0 or 1). They form the basis of all digital data representation, from simple computations to complex digital communications. The binary system allows computers to process information using these discrete states, enabling efficient digital processing and storage of information."
+    },
+    {
+      "id": 2,
+      "question": "What is a _Byte_?",
+      "options": [
+        "A byte is an electronic signal transmission unit that manages data flow between different computer components, facilitating inter-system communication protocols.",
+        "A byte is a complex data encoding mechanism that represents multiple information layers in advanced computational systems, allowing for sophisticated data compression techniques.",
+        "A byte is a quantum information storage module that can simultaneously represent multiple states in advanced computing architectures, enabling parallel data processing.",
+        "A byte is a fundamental data unit in computing, consisting of 8 bits and capable of representing 256 unique values ranging from 0 to 255. It serves as a standard measurement of digital information storage and transmission."
+      ],
+      "correctIndex": 3,
+      "explanation": "Bytes are critical units of digital information, composed of 8 bits that can represent 256 different values. They are fundamental to data storage, processing, and transmission in computer systems. The byte provides a standardized way to represent characters, small numbers, and other basic data elements across various computing platforms."
+    },
+    {
+      "id": 3,
+      "question": "Explain what is a _Bitwise Operation_.",
+      "options": [
+        "Bitwise operations are advanced computational algorithms that reconstruct digital signals by analyzing their quantum-level information transmission characteristics.",
+        "Bitwise operations are computational techniques that perform logical manipulations directly on individual bits of binary numbers, enabling efficient low-level data processing and manipulation in computer systems.",
+        "Bitwise operations are specialized data encryption techniques that transform binary information through complex mathematical transformations at the signal level.",
+        "Bitwise operations are electronic routing mechanisms that manage data transmission between different computational components using binary signal pathways."
+      ],
+      "correctIndex": 1,
+      "explanation": "Bitwise operations allow direct manipulation of individual bits within binary numbers, providing a low-level method of data processing. These operations are exceptionally fast and memory-efficient, making them valuable in scenarios requiring precise, performance-critical data handling. They are commonly used in areas like system programming, cryptography, and optimization of computational processes."
+    },
+    {
+      "id": 4,
+      "question": "What are some real-world applications of _Bitwise Operators_?",
+      "options": [
+        "Bitwise operators represent a sophisticated method of converting complex data structures into compressed binary formats for enhanced computational efficiency and storage optimization.",
+        "Bitwise operators are primarily used for mathematical calculations involving binary numbers, allowing complex computational transformations through direct binary manipulation techniques.",
+        "Bitwise operators are crucial in data compression, cryptography, and embedded systems, enabling efficient manipulation of data at the bit level by performing operations directly on binary representations.",
+        "Bitwise operators provide advanced memory management capabilities by allowing direct low-level access to computer hardware and system-level memory allocation strategies."
+      ],
+      "correctIndex": 2,
+      "explanation": "Bitwise operators work at the individual bit level, allowing precise and efficient manipulation of binary data. They are particularly valuable in scenarios requiring compact data representation, performance-critical operations, and low-level system interactions. Their ability to process data directly in binary form makes them essential in fields like computer graphics, network protocols, and embedded programming."
+    },
+    {
+      "id": 5,
+      "question": "What is a _bitwise AND_ operation and how can it be used to check if a number is _odd_ or _even_?",
+      "options": [
+        "Bitwise AND provides a method for converting decimal numbers into their binary equivalents by systematically comparing bit patterns across different numeric representations.",
+        "Bitwise AND is a complex mathematical operation used to generate random number sequences by comparing binary representations of numerical values.",
+        "Bitwise AND serves as a computational technique for analyzing numeric relationships by performing comparative binary transformations on input values.",
+        "Bitwise AND can determine a number's parity by checking the least significant bit: if the result of (number & 1) is zero, the number is even; otherwise, it's odd."
+      ],
+      "correctIndex": 3,
+      "explanation": "The bitwise AND operation compares corresponding bits of two numbers, providing a way to extract specific bit information. For determining number parity, it leverages the fact that odd numbers always have their least significant bit set to 1, while even numbers have it set to 0, allowing for a simple, efficient method of checking number type."
+    },
+    {
+      "id": 6,
+      "question": "Explain the _bitwise OR_ operation with an example.",
+      "options": [
+        "Bitwise OR is a complex binary transformation technique used for encoding advanced cryptographic algorithms and generating secure data representations.",
+        "The bitwise OR operation combines two binary numbers by producing a new number where a bit is 1 if at least one of the corresponding input bits is 1, effectively merging binary representations.",
+        "Bitwise OR enables sophisticated data compression strategies by systematically mapping and transforming binary information across different computational contexts.",
+        "Bitwise OR represents a computational method of comparing binary sequences to identify potential overlap or similarity between different numeric values."
+      ],
+      "correctIndex": 1,
+      "explanation": "Bitwise OR is a fundamental binary operation that combines two numbers at the bit level. When performed, it creates a new number where any position that has a 1 in either input results in a 1 in the output, making it useful for combining binary flags, setting specific bits, or performing bitwise merging operations."
+    },
+    {
+      "id": 7,
+      "question": "How does the _bitwise XOR_ operation work, and what is it commonly used for?",
+      "options": [
+        "The bitwise XOR operator merges two integers by comparing their most significant bits and generating a result based on complex bit manipulation rules. It is often applied in advanced computational algorithms.",
+        "The bitwise XOR operator compares each bit of two integers, setting the resulting bit to 1 only when the input bits differ. It is commonly used for data encryption, error checking, and inverting elements.",
+        "The bitwise XOR operator combines two integers by adding their binary representations and shifting the result to create a new numeric value. It is primarily used for mathematical transformations.",
+        "The bitwise XOR operator creates a new binary representation by multiplying the corresponding bits of two integers and applying a complex logarithmic conversion. It is useful in signal processing and data compression."
+      ],
+      "correctIndex": 1,
+      "explanation": "XOR (exclusive OR) is a fundamental bitwise operation that provides unique properties like being commutative and easily reversible. Its key characteristics include creating a result where bits are different, making it valuable for cryptographic and computational techniques that require selective bit manipulation."
+    },
+    {
+      "id": 8,
+      "question": "Demonstrate how to set, toggle, and clear a _specific bit_ in a number using _bitwise operators_.",
+      "options": [
+        "Bit manipulation requires complex mathematical transformations that reorder binary digits through recursive computational techniques. These methods enable advanced numeric transformations.",
+        "Bit manipulation involves creating specialized binary masks that modify numeric representations through sequential logic gates and algorithmic processing techniques.",
+        "Bit manipulation uses advanced computational strategies to transform binary data by analyzing and restructuring bit patterns through sophisticated mathematical operations.",
+        "Bit manipulation involves setting, toggling, and clearing specific bits using bitwise operators like AND, OR, and XOR with carefully constructed masks. These operations allow precise control over individual bits within a binary number."
+      ],
+      "correctIndex": 3,
+      "explanation": "Bit manipulation provides low-level control over binary data by allowing programmers to modify individual bits precisely. These techniques are crucial in scenarios requiring efficient memory usage, performance optimization, and specific binary transformations."
+    },
+    {
+      "id": 9,
+      "question": "What is _bit masking_, and how would you create a _mask_ to isolate the _nth bit_?",
+      "options": [
+        "Bit masking is a method of generating binary sequences by applying logarithmic transformations to numeric values using specialized computational algorithms.",
+        "Bit masking involves creating complex binary patterns that transform numeric representations through advanced computational filtering techniques.",
+        "Bit masking is a technique using bitwise operations to isolate specific bits in a binary number by creating a mask with zeros and a single one at the desired bit position. This allows selective extraction or modification of individual bits.",
+        "Bit masking represents a technique for restructuring binary data through sequential bit replacement and advanced mathematical processing strategies."
+      ],
+      "correctIndex": 2,
+      "explanation": "Bit masking provides a precise method for manipulating binary data by using strategically constructed binary masks. This technique is fundamental in low-level programming, allowing developers to extract, modify, or examine specific bits within numeric representations efficiently."
+    },
+    {
+      "id": 10,
+      "question": "Explain how _left_ and _right shifts_ (_<<_ and _>>_) work in bit manipulation.",
+      "options": [
+        "Bit shifts operate as bitwise operators that reposition bits within a numeric value, fundamentally altering the number's binary composition and computational representation.",
+        "Left shifts (<<) move bits to the left, effectively multiplying the number by 2^n, while right shifts (>>) move bits to the right, typically preserving the sign bit for signed integers.",
+        "Shifting bits changes the numerical value by redistributing binary digits across the integer's memory space, creating intricate mathematical transformations.",
+        "Left and right shifts manipulate binary representations by rotating bits around the integer's internal memory structure, creating complex numerical transformations."
+      ],
+      "correctIndex": 1,
+      "explanation": "Bit shifts are fundamental bitwise operations that move binary digits left or right within an integer's bit representation. The left shift multiplies a number by powers of 2, while right shifts divide or preserve sign depending on the integer type. Understanding these operations is crucial for low-level bit manipulation and efficient numeric computations."
+    },
+    {
+      "id": 11,
+      "question": "What is the difference between _>>_ and _>>>_ operators?",
+      "options": [
+        "Shift operators transform numeric values by repositioning bits according to specific bitwise manipulation rules and computational requirements.",
+        "The right shift operators manipulate binary representations differently based on the programming language's specific bit manipulation protocols.",
+        "The right shift (>>) preserves the sign bit when shifting, while the unsigned right shift (>>>) always fills leftmost bits with zeros, regardless of the number's sign.",
+        "Right shift operators modify integer values by redistributing binary digits across the number's memory representation in complex computational patterns."
+      ],
+      "correctIndex": 2,
+      "explanation": "The key distinction between >> and >>> lies in how they handle the leftmost bits during shifting. The signed right shift (>>) maintains the original sign bit, which is crucial for preserving negative numbers' representation, while the unsigned right shift (>>>) always introduces zeros, treating the number as an unsigned value."
+    },
+    {
+      "id": 12,
+      "question": "Explain how to perform _left_ and _right bit rotations_.",
+      "options": [
+        "Rotational bit operations modify numeric representations by complex algorithmic transformations of binary digit placement.",
+        "Bit rotations transform numeric values by recursively repositioning binary digits across the integer's internal memory structure.",
+        "Bit rotations move bits to the left or right, with bits that fall off one end being reintroduced at the opposite end, creating a circular bit movement.",
+        "Bit rotations manipulate binary values through intricate repositioning mechanisms that alter the number's fundamental computational representation."
+      ],
+      "correctIndex": 2,
+      "explanation": "Bit rotations differ from standard shifts by ensuring no bits are lost during the operation. When a bit is shifted beyond the number's bit width, it cycles back to the opposite end, creating a continuous, circular movement of bits. This technique is useful in cryptography, random number generation, and low-level bit manipulation."
+    },
+    {
+      "id": 13,
+      "question": "Write a function that counts the number of _set bits_ (1s) in an _integer_.",
+      "options": [
+        "Iterate through each bit of the integer using bitwise AND with a shifting mask, incrementing a counter for each set bit encountered.",
+        "Use bit manipulation by performing a population count instruction or a lookup table to determine the total set bits quickly.",
+        "Use Brian Kernighan's algorithm, which iteratively clears the rightmost set bit by performing x & (x-1), counting the number of iterations until the number becomes zero.",
+        "Convert the integer to a binary string and count the number of '1' characters in the resulting representation."
+      ],
+      "correctIndex": 2,
+      "explanation": "Brian Kernighan's algorithm is an efficient method for counting set bits with linear time complexity relative to the number of set bits. It reduces computational steps by directly manipulating the bits, avoiding full bit scanning or conversion overhead."
+    },
+    {
+      "id": 14,
+      "question": "Determine if a number is a _power of two_ using _bit manipulation_.",
+      "options": [
+        "Use a bitwise right shift operation to count the number of shifts required to reduce the number to 1.",
+        "Repeatedly divide the number by 2 and check if the final result is exactly 1 with no remainder.",
+        "Calculate the logarithm base 2 of the number and verify if it results in a whole number without any fractional component.",
+        "Check if the number has exactly one bit set by performing a bitwise AND between the number and (number - 1), which should result in zero for powers of two."
+      ],
+      "correctIndex": 3,
+      "explanation": "The bit manipulation technique leverages the unique binary representation of powers of two, where only a single bit is set. By removing the rightmost set bit and comparing with zero, we can efficiently determine whether a number is a power of two."
+    },
+    {
+      "id": 15,
+      "question": "Design a function that adds two numbers without using the '+' operator.",
+      "options": [
+        "Use bit manipulation to increment one number repeatedly while decrementing the other until reaching the target sum.",
+        "Use bitwise XOR for adding without carry, then use bitwise AND with left shift to handle carry propagation, recursively or iteratively combining these operations.",
+        "Simulate addition by converting numbers to binary strings, performing manual digit-by-digit addition, and reconstructing the result.",
+        "Implement a full adder circuit logic using cascading bitwise operations to simulate electronic addition principles."
+      ],
+      "correctIndex": 1,
+      "explanation": "Bitwise addition without the '+' operator involves separate handling of sum (XOR) and carry (AND with left shift) components. This method mimics electronic circuit addition by manipulating individual bits without standard arithmetic operations."
+    }
+  ],
+  "processedAt": "2025-12-18T08:55:02.805Z"
+}

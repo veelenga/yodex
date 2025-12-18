@@ -1,0 +1,198 @@
+{
+  "id": "git",
+  "name": "Git",
+  "slug": "git-interview-questions",
+  "category": "Tools",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Git_ and why is it used?",
+      "options": [
+        "Git is a centralized repository management system that allows developers to store and synchronize code across multiple servers and network environments.",
+        "Git is a cloud-based programming platform that provides automated code deployment and real-time collaboration tools for software development teams.",
+        "Git is an integrated development environment (IDE) that offers comprehensive version tracking and code management features for software projects.",
+        "Git is a decentralized version control system that helps developers manage source code, track changes, and collaborate effectively across different projects and teams."
+      ],
+      "correctIndex": 3,
+      "explanation": "Git is fundamentally a distributed version control system that allows developers to track code changes, create branches, merge modifications, and maintain a complete history of project development. Unlike centralized systems, Git enables developers to work offline, provides robust backup mechanisms, and ensures code integrity through unique hash identifications."
+    },
+    {
+      "id": 2,
+      "question": "How does _Git_ differ from other version control systems (_VCS_)?",
+      "options": [
+        "Git functions like other version control systems by requiring constant network connectivity and maintaining a master-slave repository architecture.",
+        "Git represents a traditional version control approach with linear commit histories and strict access control mechanisms for code management.",
+        "Git differs from other version control systems by offering a fully distributed model where every developer has a complete repository history, enabling offline work and providing more flexibility in collaboration.",
+        "Git is similar to other version control systems by maintaining a single centralized server that manages all code repositories and tracks incremental changes."
+      ],
+      "correctIndex": 2,
+      "explanation": "The key distinction of Git lies in its distributed architecture, which allows developers to have full repository copies, work independently, and synchronize changes without constant network access. This approach contrasts with centralized version control systems that depend on a single server and require continuous connectivity."
+    },
+    {
+      "id": 3,
+      "question": "What is the difference between _Git_ and _GitHub_?",
+      "options": [
+        "Git is a feature of GitHub that allows developers to synchronize code across different cloud-based development environments.",
+        "GitHub is a proprietary version control system developed by Microsoft to compete with traditional Git repositories.",
+        "Git is a version control system for managing code, while GitHub is a web-based hosting platform that provides additional collaboration tools and repository management services built on top of Git.",
+        "Git and GitHub are essentially the same technology, with GitHub being a complete replacement for the Git version control system."
+      ],
+      "correctIndex": 2,
+      "explanation": "While Git is an open-source version control system focused on tracking code changes, GitHub is a web-based platform that offers additional services like repository hosting, collaborative features, issue tracking, and social coding capabilities. GitHub uses Git as its underlying version control technology but provides extra tools and infrastructure for software development teams."
+    },
+    {
+      "id": 4,
+      "question": "What is a _repository_ in _Git_?",
+      "options": [
+        "A Git repository is a storage location containing all version-controlled files and their complete history, consisting of the working tree and the hidden .git directory where Git stores repository metadata.",
+        "A Git repository is a cloud-based storage system that automatically syncs all project files and tracks changes through remote server connections.",
+        "A Git repository is a collaborative workspace where developers can share code, with each commit representing a separate project instance managed by version control.",
+        "A Git repository is a centralized database that compresses and archives project files, providing a single source of truth for all project-related information."
+      ],
+      "correctIndex": 0,
+      "explanation": "Git repositories are fundamental to version control, allowing developers to track changes, collaborate, and maintain a comprehensive history of project development. The repository contains not just files, but the entire tracking mechanism for those files, including all previous versions, branches, and metadata about changes."
+    },
+    {
+      "id": 5,
+      "question": "Explain the concept of a _commit_ in _Git_.",
+      "options": [
+        "A Git commit is a temporary storage checkpoint that allows developers to pause and resume work on a specific section of code without permanently saving changes.",
+        "A Git commit is a computational reference point that groups related code changes and prepares them for potential integration into the main project branch.",
+        "A Git commit is a collaborative marker that indicates which team members have reviewed and approved specific code modifications in a shared project.",
+        "A Git commit represents a snapshot of a project at a specific point in time, recording changes made, the author, and serving as a unique identifier within the project's version history."
+      ],
+      "correctIndex": 3,
+      "explanation": "Commits are the fundamental building blocks of Git's version control system, capturing the state of a project at a specific moment. Each commit creates an immutable snapshot that can be referenced, rolled back to, or compared with other project states, enabling comprehensive tracking of project evolution."
+    },
+    {
+      "id": 6,
+      "question": "What is the difference between a _working directory_, _staging area_, and _repository_ in _Git_?",
+      "options": [
+        "In Git's architecture, the working directory manages file permissions, the staging area handles conflict resolution, and the repository coordinates network synchronization.",
+        "In Git's architecture, the working directory is where files are edited, the staging area (or index) prepares changes for commit, and the repository stores the complete history of all committed changes.",
+        "In Git's architecture, the working directory stores temporary files, the staging area manages branch configurations, and the repository tracks user authentication.",
+        "In Git's architecture, the working directory handles code compilation, the staging area manages dependency tracking, and the repository maintains project documentation."
+      ],
+      "correctIndex": 1,
+      "explanation": "Git's three-tier system provides a structured approach to version control, allowing developers to manipulate files, selectively stage changes, and maintain a comprehensive project history. Each component serves a distinct purpose in managing and tracking software development processes."
+    },
+    {
+      "id": 7,
+      "question": "Define _branching_ in _Git_ and its importance.",
+      "options": [
+        "Branching represents a synchronization method in Git where code changes are automatically distributed across different project versions, ensuring consistent development environments.",
+        "Branching is a Git mechanism for creating temporary snapshots of code that automatically merge changes based on predefined algorithmic rules and project configurations.",
+        "Branching in Git is a complex file storage technique that segments repository data into multiple isolated containers, preventing direct modifications to the primary project structure.",
+        "Branching in Git is a version control mechanism that allows developers to create independent lines of development, enabling parallel work on different features or experiments without affecting the main codebase."
+      ],
+      "correctIndex": 3,
+      "explanation": "Branching allows developers to create separate work streams from the main project. It provides isolation for new features, bug fixes, or experimental changes. Each branch can be developed independently and later merged back into the main branch, supporting collaborative and flexible software development workflows."
+    },
+    {
+      "id": 8,
+      "question": "What is a `HEAD` in _Git_?",
+      "options": [
+        "HEAD is a computational index that aggregates repository metadata, tracking the hierarchical relationships between different commit states and project versions.",
+        "In Git, HEAD is a reference pointer that indicates the current commit in the active branch, representing the most recent snapshot of the project's state in the local repository.",
+        "HEAD represents a centralized configuration marker in Git that defines the primary routing rules for code integration and version management processes.",
+        "HEAD in Git is a system-level tracking mechanism that monitors file modifications and manages version synchronization across different development environments."
+      ],
+      "correctIndex": 1,
+      "explanation": "The HEAD reference is crucial in Git's version control system. It always points to the latest commit in the current branch, allowing developers to understand their current working context. This pointer helps Git track which version of the project is currently being viewed or modified."
+    },
+    {
+      "id": 9,
+      "question": "What does the 'clone' operation in _Git_ do?",
+      "options": [
+        "Git clone is a replication mechanism that selectively copies specific project components, creating a lightweight reference point for collaborative code management.",
+        "Git clone is a network synchronization process that creates a temporary mirror of a remote repository, designed to facilitate rapid code distribution across distributed development teams.",
+        "Git clone generates a structured backup of project files, establishing a read-only snapshot that preserves the original repository's metadata and structural configurations.",
+        "Git clone creates a complete local copy of a remote repository, downloading the entire project history, branches, and enabling independent local development and version tracking."
+      ],
+      "correctIndex": 3,
+      "explanation": "Cloning is a fundamental Git operation that duplicates an entire repository to a local machine. This process includes not just the current files, but the complete commit history, allowing developers to work independently, create branches, and contribute to the project without affecting the original repository."
+    },
+    {
+      "id": 10,
+      "question": "How does _Git_ store information?",
+      "options": [
+        "Git stores information exclusively in a filesystem-based model, using sequential file snapshots that capture each commit as a complete file set across different directories.",
+        "Git manages information through a centralized repository model where changes are linearly tracked and stored in compressed archive files with incremental update mechanisms.",
+        "Git stores information using three main components: the local working copy, the staging area (index), and the local repository, which track files, prepare changes, and maintain the complete version history.",
+        "Git uses a distributed database structure where each commit is stored as a separate binary object, with references mapped through complex hash tables and network connections."
+      ],
+      "correctIndex": 2,
+      "explanation": "Git's storage model is unique because it tracks changes as snapshots rather than file differences. The local working copy is where developers interact with files, the staging area prepares changes for commit, and the local repository maintains the complete version history, allowing for efficient version control and distributed collaboration."
+    },
+    {
+      "id": 11,
+      "question": "How do you initialize a new _Git_ repository?",
+      "options": [
+        "Initializing a Git repository involves generating cryptographic keys, establishing network protocols, and registering the project with a centralized version control management system.",
+        "To initialize a new Git repository, navigate to your project directory in the terminal and run the command 'git init', which creates a new .git subdirectory and enables version tracking for that project.",
+        "Git repository initialization requires downloading a template repository from an official Git server and configuring local project settings through a complex configuration management process.",
+        "To initialize a Git repository, developers must first create a remote server connection and then use a specialized initialization script that configures project-wide version tracking parameters."
+      ],
+      "correctIndex": 1,
+      "explanation": "The 'git init' command transforms an ordinary directory into a Git repository by creating a hidden .git subdirectory that contains all necessary metadata and version tracking information. This process is simple, local, and does not require immediate connection to any remote server."
+    },
+    {
+      "id": 12,
+      "question": "Explain the purpose of the `git status` command.",
+      "options": [
+        "Git status is a diagnostic command that scans the entire repository for potential security vulnerabilities and checks the integrity of file permissions and network configurations.",
+        "Git status creates a comprehensive log of all network interactions and remote repository synchronization attempts within the current project environment.",
+        "The 'git status' command provides a comprehensive overview of the current state of a Git repository, showing which files have been modified, staged, or are untracked in the working directory.",
+        "The status command generates a detailed performance report of repository operations, tracking computational resources used during commit and merge processes."
+      ],
+      "correctIndex": 2,
+      "explanation": "Git status is a crucial diagnostic tool for developers, offering real-time insights into the current state of a repository. It helps track changes, understand which files are ready to be committed, and identify untracked or modified files without executing any destructive actions."
+    },
+    {
+      "id": 13,
+      "question": "What does the `git add` command do?",
+      "options": [
+        "Git add creates a permanent record of file modifications, instantly saving all changes to the project's version history and preventing any future modifications.",
+        "Git add is the first step in tracking changes by moving modified or new files to the staging area, preparing them for the next commit by selecting specific file changes.",
+        "Git add automatically commits all changes in the repository, creating a snapshot of the entire project's current state and marking files as permanently tracked.",
+        "Git add merges all current branch modifications into a single changeset, synchronizing local changes with the remote repository and preparing for a global update."
+      ],
+      "correctIndex": 1,
+      "explanation": "The git add command allows developers to selectively choose which file modifications they want to include in the next commit. It provides granular control over version tracking by moving specific changes to the staging area, which acts as a preparation zone before committing. This allows for precise management of which files and modifications will be part of the version control process."
+    },
+    {
+      "id": 14,
+      "question": "How do you create a _commit_ in _Git_?",
+      "options": [
+        "A commit in Git is a process of merging multiple branch changes into a single unified version, creating a comprehensive overview of all project modifications.",
+        "Committing in Git involves automatically archiving all current file states, creating an immutable record of the project's entire structure at that specific moment.",
+        "Creating a commit automatically synchronizes all local changes with the remote repository, generating a comprehensive snapshot of the entire project's current state.",
+        "Creating a commit in Git involves staging changes using git add and then recording those changes permanently in the repository's history with a descriptive message using git commit."
+      ],
+      "correctIndex": 3,
+      "explanation": "Commits are fundamental to Git's version control mechanism, allowing developers to create permanent snapshots of project changes. The process requires intentionally staging desired modifications and providing a meaningful description of those changes. This approach ensures precise tracking of project evolution and enables easy navigation through different versions of the codebase."
+    },
+    {
+      "id": 15,
+      "question": "What information is contained in a _commit object_ in _Git_?",
+      "options": [
+        "A commit object stores complete file contents, comprehensive system configurations, and detailed runtime environment information for each project version.",
+        "Git commit objects capture entire project dependencies, build configurations, and comprehensive system state at the moment of commit creation.",
+        "A Git commit object contains metadata including author and committer information, commit messages, parent commit references, and a unique identifier for tracking changes.",
+        "Commit objects in Git represent a complete backup of the entire project structure, including all executable files and system-level configurations."
+      ],
+      "correctIndex": 2,
+      "explanation": "Commit objects serve as lightweight, efficient records of changes in a Git repository. They provide critical metadata about modifications without storing redundant file contents, instead using a pointer-based system to track incremental changes. This design enables efficient version tracking and allows developers to understand the evolution of their project through concise, informative commit records."
+    }
+  ],
+  "processedAt": "2025-12-18T09:25:04.634Z"
+}

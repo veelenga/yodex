@@ -1,0 +1,197 @@
+{
+  "id": "net-core",
+  "name": ".NET Core",
+  "slug": "net-core-interview-questions",
+  "category": "Backend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _.NET Core_ and how does it differ from the _.NET Framework_?",
+      "options": [
+        ".NET Core is a cross-platform, open-source development framework by Microsoft that supports building modern applications with high performance and flexibility across Windows, macOS, and Linux.",
+        ".NET Core represents a legacy framework primarily used for maintaining older Microsoft application infrastructures with minimal modern development capabilities.",
+        ".NET Core is a specialized Windows-based runtime environment exclusively designed for enterprise-level web applications with limited cross-platform compatibility.",
+        ".NET Core is a cloud-specific deployment framework that exclusively supports microservices architecture with restricted programming language support."
+      ],
+      "correctIndex": 0,
+      "explanation": ".NET Core represents a significant evolution in Microsoft's development ecosystem. It provides developers with a modular, lightweight framework that supports multiple programming languages like C#, F#, and Visual Basic. Unlike traditional .NET Framework, it offers true cross-platform development, enabling applications to run on different operating systems with minimal modifications. Its key strengths include high performance, built-in dependency injection, and support for containerization technologies like Docker."
+    },
+    {
+      "id": 2,
+      "question": "Describe the cross-platform capabilities of _.NET Core_.",
+      "options": [
+        ".NET Core supports cross-platform development by maintaining separate codebases for each target operating system, increasing maintenance complexity.",
+        ".NET Core enables cross-platform functionality through complex runtime translation layers that significantly reduce application performance.",
+        ".NET Core offers cross-platform development by emulating Windows environment standards across different operating systems with limited compatibility.",
+        ".NET Core provides cross-platform capabilities through a modular architecture that allows developers to build applications that run seamlessly on Windows, macOS, and Linux operating systems."
+      ],
+      "correctIndex": 3,
+      "explanation": "Cross-platform capabilities are fundamental to .NET Core's design. The framework achieves this through a runtime environment that abstracts platform-specific details, allowing the same codebase to execute across different operating systems. Developers can leverage shared libraries and APIs that work consistently regardless of the target platform. This approach reduces development overhead and enables more flexible, portable application architectures."
+    },
+    {
+      "id": 3,
+      "question": "What are the main components of the _.NET Core architecture_?",
+      "options": [
+        ".NET Core architecture relies heavily on external third-party frameworks to provide basic runtime and library functionalities.",
+        ".NET Core architecture consists of monolithic components tightly coupled with Windows-specific system libraries and limited extensibility options.",
+        ".NET Core architecture comprises core components like the Base Class Library (BCL), runtime environment, garbage collector, and modular framework libraries that support cross-platform application development.",
+        ".NET Core architecture is primarily a collection of legacy runtime services with minimal support for modern development paradigms."
+      ],
+      "correctIndex": 2,
+      "explanation": "The .NET Core architecture is designed with modularity and flexibility as primary goals. Its core components work together to provide a lightweight, high-performance development environment. The Base Class Library offers fundamental types and functions, while the runtime environment manages memory, handles just-in-time compilation, and provides platform abstraction. The garbage collector ensures efficient memory management, automatically handling memory allocation and deallocation."
+    },
+    {
+      "id": 4,
+      "question": "Explain the _.NET Core CLI_ and its primary functions.",
+      "options": [
+        "The .NET Core CLI is a graphical development environment specifically designed for Windows-based .NET development, providing integrated tools for project management and compilation.",
+        "The .NET Core CLI is a debugging and profiling tool that helps developers analyze performance and trace execution paths in .NET Core applications.",
+        "The .NET Core CLI is a package management system that handles dependency resolution and deployment for .NET applications across different runtime environments.",
+        "The .NET Core CLI is a cross-platform command-line interface for creating, building, publishing, and managing .NET Core projects, offering commands like new, build, publish, run, and test."
+      ],
+      "correctIndex": 3,
+      "explanation": "The .NET Core CLI is a powerful command-line tool that simplifies .NET development workflows. It allows developers to create new projects, compile code, manage dependencies, and deploy applications from the terminal. Developers can use commands like 'dotnet new' to create projects, 'dotnet build' to compile, and 'dotnet publish' to prepare applications for deployment. The CLI supports cross-platform development, working seamlessly on Windows, macOS, and Linux."
+    },
+    {
+      "id": 5,
+      "question": "How do you create a new _.NET Core project_ using the _CLI_?",
+      "options": [
+        "To create a new .NET Core project, use the NuGet package manager to initialize a new project with pre-configured dependency settings and basic scaffolding.",
+        "To create a new .NET Core project, use the 'dotnet new' command followed by a project template type, such as 'dotnet new console' for a console application or 'dotnet new webapi' for a web API project.",
+        "To create a new .NET Core project, navigate to Visual Studio and use the project wizard interface to select and configure your desired project template.",
+        "To create a new .NET Core project, download the specific project template from the .NET Core GitHub repository and manually configure its initial structure."
+      ],
+      "correctIndex": 1,
+      "explanation": "The 'dotnet new' command is the primary method for creating .NET Core projects directly from the command line. It provides numerous built-in templates for different project types. Here's an example of creating a console application: 'dotnet new console -n MyProject'. This command creates a new project directory with a basic project structure, including a Program.cs file and a project file. Developers can specify additional options like target framework or add specific configurations during project creation."
+    },
+    {
+      "id": 6,
+      "question": "Discuss the purpose and use of a `csproj` file in a _.NET Core project_.",
+      "options": [
+        "A .csproj file is an XML-based project configuration file in .NET Core that defines project settings, target frameworks, package references, and build properties for a C# project.",
+        "A .csproj file is a compiled binary that contains intermediate language code for .NET Core applications during the build process.",
+        "A .csproj file is a source code template that provides standard implementation patterns for creating new .NET Core projects.",
+        "A .csproj file is a runtime configuration manifest that dynamically adjusts application behavior based on deployment environment settings."
+      ],
+      "correctIndex": 0,
+      "explanation": "The .csproj file is crucial for .NET Core project management, replacing the more complex project systems of previous .NET versions. It uses a simplified, more readable XML format that makes dependency and configuration management more transparent. Here's an example of a basic .csproj file structure: ```xml\n<Project Sdk=\"Microsoft.NET.Sdk\">\n  <PropertyGroup>\n    <TargetFramework>net6.0</TargetFramework>\n  </PropertyGroup>\n</Project>\n```"
+    },
+    {
+      "id": 7,
+      "question": "What is the _runtime_ and _SDK_ in _.NET Core_?",
+      "options": [
+        "The .NET Core runtime is the execution environment for running .NET Core applications, while the SDK provides the tools, libraries, and compiler for developing and building .NET Core applications.",
+        "The .NET Core SDK is a comprehensive development framework that replaces traditional operating system-specific runtime environments for cross-platform development.",
+        "The .NET Core runtime and SDK are interchangeable components that provide a unified approach to application compilation and execution in cloud environments.",
+        "The .NET Core runtime is a package management system that handles dependency resolution and deployment of applications across different platforms."
+      ],
+      "correctIndex": 0,
+      "explanation": "The .NET Core runtime and SDK serve distinct but complementary roles in application development. The runtime provides the essential execution environment, while the SDK offers development tools like compilers, package managers, and libraries needed to create .NET applications. A typical development workflow involves using the SDK to build and compile applications, which can then be run using the runtime on target machines."
+    },
+    {
+      "id": 8,
+      "question": "How would you manage different versions of the _.NET Core SDK_ on the same machine?",
+      "options": [
+        "The `global.json` file allows developers to specify and control the .NET SDK version for a specific project, ensuring consistent development environments across different machines and build systems.",
+        "The `global.json` file provides runtime-level configuration for managing application security and access control in distributed .NET environments.",
+        "The `global.json` file serves as a centralized dependency management system for tracking and resolving complex library interactions in .NET Core applications.",
+        "The `global.json` file is a configuration mechanism for managing network dependencies and remote package repositories in .NET Core projects."
+      ],
+      "correctIndex": 0,
+      "explanation": "The `global.json` file is a powerful configuration tool that enables precise SDK version control. By specifying a particular SDK version, developers can maintain consistency across different development environments and continuous integration pipelines. This helps prevent unexpected build variations and ensures reproducible builds."
+    },
+    {
+      "id": 9,
+      "question": "What is the purpose of the `global.json` file?",
+      "options": [
+        "The `global.json` file provides a centralized mechanism for managing cross-platform compilation settings and infrastructure-level deployment configurations.",
+        "The `global.json` file is a configuration mechanism in .NET Core that allows developers to specify SDK versions, manage package dependencies, and control project-wide development settings.",
+        "The `global.json` file serves as a comprehensive project metadata repository that tracks application dependencies and version compatibility.",
+        "The `global.json` file is a deployment configuration that defines runtime security policies and application isolation strategies for .NET Core projects."
+      ],
+      "correctIndex": 1,
+      "explanation": "The `global.json` file offers granular control over .NET Core SDK versions and project configurations. It enables developers to specify exact SDK versions, control package management behavior, and ensure consistent development environments across different machines and build systems."
+    },
+    {
+      "id": 10,
+      "question": "Can you explain the _Directory Structure_ of a typical _.NET Core project_?",
+      "options": [
+        ".NET Core projects typically have a standardized directory structure including src for application code, tests for testing projects, docs for documentation, and optional directories like artifacts and build for additional project resources.",
+        ".NET Core projects use a dynamic directory structure where developers can place files anywhere, with no standard organizational conventions or recommended folder layouts.",
+        "The .NET Core project directory structure is determined entirely by Visual Studio's default settings, with minimal customization options for developers.",
+        "Directory structure in .NET Core projects is primarily organized around microservices architecture, with separate folders for each independent service component."
+      ],
+      "correctIndex": 0,
+      "explanation": "The directory structure in .NET Core helps maintain project organization and separation of concerns. It provides a consistent approach for developers to structure their projects, making code more readable and maintainable. The src directory typically contains the main application code, tests house different types of testing projects, and additional directories support build, documentation, and artifact management processes."
+    },
+    {
+      "id": 11,
+      "question": "How do you add and manage _NuGet packages_ in a _.NET Core project_?",
+      "options": [
+        "Adding NuGet packages requires developers to compile each package from source code and manually configure project references through complex XML configurations.",
+        "NuGet packages in .NET Core are manually downloaded from external websites and copied into a project's lib folder, with no centralized package management system.",
+        "NuGet package management in .NET Core is exclusively handled through a specialized standalone application that must be installed separately from Visual Studio.",
+        "NuGet packages can be added to .NET Core projects using the Visual Studio Package Manager, the dotnet CLI command 'dotnet add package', or by directly editing the project file with package references."
+      ],
+      "correctIndex": 3,
+      "explanation": "NuGet is the official package manager for .NET, allowing developers to easily discover, install, and manage third-party libraries and dependencies. Multiple methods exist for adding packages, providing flexibility for different development workflows. A typical package installation might look like this: ```dotnet add package Newtonsoft.Json``` which adds the popular JSON serialization library to a .NET Core project."
+    },
+    {
+      "id": 12,
+      "question": "Explain the role of the _NuGet package manager_.",
+      "options": [
+        "NuGet Package Manager is a comprehensive tool for discovering, installing, updating, and managing external libraries and dependencies in .NET projects, serving as a centralized repository for .NET packages.",
+        "The NuGet Package Manager is an archiving system used exclusively for compressing and distributing .NET project files across development teams.",
+        "NuGet Package Manager is primarily a visual design tool for creating custom UI components and graphical interfaces within .NET applications.",
+        "NuGet Package Manager functions as a build optimization tool that automatically removes unused code and minimizes project dependencies."
+      ],
+      "correctIndex": 0,
+      "explanation": "NuGet simplifies dependency management by providing a standardized mechanism for integrating third-party libraries into .NET projects. It handles complex tasks like version resolution, compatibility checking, and transitive dependency management. Developers can interact with NuGet through multiple interfaces including Visual Studio, command-line tools, and configuration files."
+    },
+    {
+      "id": 13,
+      "question": "Describe the process of _publishing a .NET Core application_.",
+      "options": [
+        "Publishing a .NET Core application is a process of converting source code into a proprietary binary format that can only be run on Windows systems with specific security configurations.",
+        "Publishing a .NET Core application involves creating a cloud-based deployment package that automatically scales and distributes the application across multiple server instances.",
+        "Publishing a .NET Core application means packaging the entire project into a single executable that requires manual runtime installation and configuration on target machines.",
+        "Publishing a .NET Core application involves compiling the application and its dependencies for deployment, with options for framework-dependent or self-contained deployments that determine how runtime dependencies are handled."
+      ],
+      "correctIndex": 3,
+      "explanation": ".NET Core publishing provides flexibility in deployment strategies. Framework-dependent deployments rely on the target system having the appropriate .NET runtime installed, while self-contained deployments include the runtime, making the package larger but more portable. Developers can specify target platforms, runtime versions, and optimization levels during the publishing process.\n\nExample of publishing command:\n```bash\n# Framework-dependent publish\ndotnet publish -c Release\n\n# Self-contained publish for specific runtime\ndotnet publish -c Release -r linux-x64 --self-contained true\n```"
+    },
+    {
+      "id": 14,
+      "question": "What is a _.NET Standard_ and how does it relate to _.NET Core_?",
+      "options": [
+        ".NET Standard is a new programming language developed by Microsoft to replace C# and provide unified syntax across all .NET platforms and development environments.",
+        ".NET Standard represents a cloud-based development framework that abstracts infrastructure deployment and provides standardized microservices architecture.",
+        ".NET Standard is a runtime optimization technique that allows dynamic code compilation and cross-platform binary generation for enterprise applications.",
+        ".NET Standard is a specification of .NET APIs that provides a consistent base library across different .NET implementations, enabling cross-platform compatibility and code sharing between .NET Framework, .NET Core, and Xamarin."
+      ],
+      "correctIndex": 3,
+      "explanation": ".NET Standard emerged to solve the fragmentation problem in .NET ecosystems by defining a set of APIs that are guaranteed to be available across different .NET platforms. It allows developers to write libraries that can be used on multiple .NET implementations without platform-specific modifications.\n\nExample of .NET Standard compatibility:\n```csharp\n// A library targeting .NET Standard 2.0 can be used in:\n// - .NET Framework 4.6.1+\n// - .NET Core 2.0+\n// - Xamarin\n// - Unity\n```"
+    },
+    {
+      "id": 15,
+      "question": "How do you create a _class library_ in _.NET Core_?",
+      "options": [
+        "Creating a class library in .NET Core can be done using Visual Studio by selecting the Class Library project template or via the .NET CLI command `dotnet new classlib` in the desired project directory.",
+        "Creating a class library in .NET Core is accomplished by using a web-based project generator that provisions cloud resources and generates platform-specific bindings.",
+        "Creating a class library in .NET Core involves generating a complex XML configuration file that defines the library's structure and deployment parameters.",
+        "Creating a class library in .NET Core requires manually compiling a set of custom interfaces and abstract classes using a specialized IDE extension and manual configuration."
+      ],
+      "correctIndex": 0,
+      "explanation": "Class libraries in .NET Core are reusable components that encapsulate functionality and can be shared across different projects. The .NET CLI provides a straightforward method to create these libraries, with options to specify target frameworks and project configurations.\n\nExample of creating a class library:\n```bash\n# Create new class library\ndotnet new classlib -n MyLibrary\n\n# Specify target framework\ndotnet new classlib -n MyLibrary -f netstandard2.0\n```"
+    }
+  ],
+  "processedAt": "2025-12-18T09:55:01.543Z"
+}

@@ -1,0 +1,196 @@
+{
+  "id": "dynamic-programming",
+  "name": "Dynamic Programming",
+  "slug": "dynamic-programming-interview-questions",
+  "category": "Algorithms",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Dynamic Programming_ and how does it differ from _recursion_?",
+      "options": [
+        "Dynamic Programming is an advanced recursive algorithm that solves problems by repeatedly calculating the same subproblems without storing previous results, optimizing computational complexity through multiple recursive calls.",
+        "Dynamic Programming (DP) is a problem-solving technique that solves complex problems by breaking them into simpler overlapping subproblems, storing and reusing their solutions to avoid redundant computations, unlike recursion which recalculates solutions multiple times.",
+        "Dynamic Programming is a computational strategy that eliminates subproblem calculations by generating multiple parallel solution paths, focusing on computational efficiency through algorithmic complexity reduction.",
+        "Dynamic Programming is a mathematical approach to solving computational problems by creating complex recursive trees that branch exponentially to explore all potential solution paths simultaneously."
+      ],
+      "correctIndex": 1,
+      "explanation": "The key distinction of Dynamic Programming is its ability to solve each subproblem only once and store the result, preventing redundant calculations. By using techniques like memoization or tabulation, DP significantly reduces time complexity compared to naive recursive approaches, making it particularly effective for optimization problems with overlapping substructures."
+    },
+    {
+      "id": 2,
+      "question": "Can you explain the concept of _overlapping subproblems_?",
+      "options": [
+        "Overlapping subproblems are computational instances where multiple recursive branches create independent solution strategies that prevent direct result sharing.",
+        "Overlapping subproblems describe algorithmic scenarios where complex problem decomposition prevents efficient solution caching and computational optimization.",
+        "Overlapping subproblems represent computational scenarios where each recursive call generates unique solution paths that cannot be reused or cached during algorithm execution.",
+        "Overlapping subproblems occur when a recursive algorithm repeatedly solves the same smaller subproblems, creating opportunities for optimization by storing and reusing previously calculated results."
+      ],
+      "correctIndex": 3,
+      "explanation": "The concept of overlapping subproblems is fundamental to Dynamic Programming. It identifies situations where the same smaller problems are solved multiple times during an algorithm's execution. By recognizing and storing these intermediate results, algorithms can dramatically reduce computational complexity and improve overall performance."
+    },
+    {
+      "id": 3,
+      "question": "Define _memoization_ and how it improves performance in _Dynamic Programming_.",
+      "options": [
+        "Memoization represents an algorithmic approach that randomly caches computational results to potentially improve performance in recursive algorithms.",
+        "Memoization is a dynamic problem-solving technique that creates parallel computational branches to explore multiple solution strategies concurrently.",
+        "Memoization is a top-down Dynamic Programming technique that stores the results of expensive function calls and returns the cached result when the same inputs occur again, reducing redundant computations.",
+        "Memoization is a bottom-up computational strategy that generates multiple solution paths simultaneously, preventing the reuse of previously calculated function results."
+      ],
+      "correctIndex": 2,
+      "explanation": "Memoization is a critical optimization technique in Dynamic Programming that trades memory for speed. By caching function results in a lookup table or data structure, it prevents redundant calculations, transforming exponential time complexity algorithms into polynomial time solutions."
+    },
+    {
+      "id": 4,
+      "question": "What is the difference between _top-down_ and _bottom-up_ approaches in _Dynamic Programming_?",
+      "options": [
+        "Top-down approach requires complete problem understanding upfront, while bottom-up incrementally builds solutions through sequential problem decomposition without prior complete knowledge.",
+        "Top-down uses recursive memoization to cache and reuse subproblem solutions, while bottom-up uses an iterative tabulation approach that builds solutions from smaller subproblems to larger ones.",
+        "Top-down uses static memory allocation to predefine solution spaces, whereas bottom-up dynamically allocates memory during runtime to solve complex computational problems.",
+        "Top-down involves solving the entire problem first and then breaking it down, while bottom-up starts with individual elements and gradually combines them into a complete solution."
+      ],
+      "correctIndex": 1,
+      "explanation": "Dynamic programming approaches differ in their problem-solving strategy. Top-down (memoization) solves problems recursively and stores intermediate results, reducing redundant computations. Bottom-up (tabulation) builds solutions iteratively from smallest subproblems, systematically constructing the final solution by storing and reusing previous computational results."
+    },
+    {
+      "id": 5,
+      "question": "Explain the importance of _state definition_ in _Dynamic Programming_ solutions.",
+      "options": [
+        "State definition represents the computational complexity of a problem, determining the optimal algorithmic approach for solving dynamic programming challenges.",
+        "State definition in dynamic programming identifies the minimal set of parameters needed to uniquely describe a subproblem, enabling efficient recursive or iterative solution strategies.",
+        "State definition provides a comprehensive overview of problem constraints and potential solution spaces in dynamic programming scenarios.",
+        "State definition captures the memory allocation requirements for solving recursive problems, mapping out potential computational pathways."
+      ],
+      "correctIndex": 1,
+      "explanation": "State definition is critical in dynamic programming as it breaks down complex problems into manageable, overlapping subproblems. By precisely defining the parameters that characterize each subproblem, developers can create efficient memoization or tabulation strategies that avoid redundant computations and optimize overall algorithm performance."
+    },
+    {
+      "id": 6,
+      "question": "Compute the _Fibonacci sequence_ using _Dynamic Programming_.",
+      "options": [
+        "Fibonacci computation using dynamic programming involves creating a complex mathematical model that predicts sequence values through advanced statistical interpolation techniques.",
+        "The dynamic programming approach to Fibonacci sequences involves creating recursive branching strategies that minimize computational overhead through intelligent path selection.",
+        "Dynamic programming optimizes Fibonacci calculations by implementing parallel processing techniques that distribute computational load across multiple computational units.",
+        "Dynamic programming solves the Fibonacci sequence by storing and reusing previously computed values, transforming the exponential time complexity of recursive solutions to a linear O(n) approach."
+      ],
+      "correctIndex": 3,
+      "explanation": "Dynamic programming dramatically improves Fibonacci sequence computation by eliminating redundant recursive calls. Instead of repeatedly calculating the same values, the approach stores previously computed results, allowing constant-time access and preventing exponential time complexity typical in naive recursive implementations."
+    },
+    {
+      "id": 7,
+      "question": "Implement a solution to the _Coin Change Problem_ using _DP_.",
+      "options": [
+        "Use dynamic programming to build a table tracking the minimum number of coins needed for each amount from 0 to the target, iteratively filling the table by finding the minimum coins required for each sub-amount.",
+        "Implement a binary search strategy that divides the target amount into progressively smaller segments and calculates coin requirements using a divide-and-conquer method.",
+        "Recursively explore all possible coin combinations using depth-first search, tracking the minimum coin count through backtracking and pruning inefficient paths.",
+        "Apply a greedy approach by always selecting the largest coin possible and iteratively reducing the remaining amount until the target is reached."
+      ],
+      "correctIndex": 0,
+      "explanation": "The coin change problem requires identifying the minimum number of coins to make a specific amount. Dynamic programming solves this by breaking the problem into smaller subproblems, creating a bottom-up solution that systematically computes the minimum coins for each amount by building upon previously computed results."
+    },
+    {
+      "id": 8,
+      "question": "Use _Dynamic Programming_ approach to solve the _0/1 Knapsack problem_.",
+      "options": [
+        "Construct a 2D dynamic programming table where each cell represents the maximum value achievable for a given item subset and weight constraint, building the solution iteratively by comparing inclusion and exclusion of each item.",
+        "Apply a greedy selection strategy by sorting items by value-to-weight ratio and sequentially selecting items until the weight capacity is reached.",
+        "Use a recursive backtracking approach that explores all possible item combinations, maintaining a global maximum value and pruning branches that exceed weight limits.",
+        "Implement a binary search algorithm that partitions the item set and recursively evaluates potential value maximization strategies."
+      ],
+      "correctIndex": 0,
+      "explanation": "The 0/1 Knapsack problem involves selecting items with maximum total value while respecting a weight constraint. Dynamic programming provides an optimal solution by systematically evaluating all possible item combinations and maintaining a comprehensive table of achievable values for different weight and item selections."
+    },
+    {
+      "id": 9,
+      "question": "Implement an algorithm for computing the _longest common subsequence of two sequences_.",
+      "options": [
+        "Create a 2D dynamic programming matrix tracking matching subsequence lengths, where each cell represents the longest common subsequence for prefixes of both input sequences, building the solution by comparing character matches.",
+        "Use a recursive backtracking approach that generates all possible subsequences and compares them to find the longest matching sequence.",
+        "Implement a sliding window technique that shifts across both sequences, tracking the maximum common subsequence length through progressive comparisons.",
+        "Apply a greedy algorithm that sequentially matches characters from both sequences, retaining the longest continuous matching segment."
+      ],
+      "correctIndex": 0,
+      "explanation": "The Longest Common Subsequence problem requires finding the maximum shared sequence between two input sequences. Dynamic programming efficiently solves this by creating a comprehensive matrix that systematically compares character matches and builds increasingly longer subsequences through intelligent comparison and memoization."
+    },
+    {
+      "id": 10,
+      "question": "Solve _matrix chain multiplication problem_ with _Dynamic Programming_.",
+      "options": [
+        "Dynamic Programming approaches matrix chain multiplication by generating all possible permutations and selecting the mathematically optimal multiplication sequence through combinatorial analysis.",
+        "Matrix chain multiplication can be solved through recursive traversal of potential multiplication sequences, using a greedy approach to minimize computational complexity at each step of matrix combination.",
+        "Dynamic Programming solves matrix chain multiplication by creating a table to store minimum multiplication costs for matrix multiplication sequences. The algorithm uses a bottom-up approach to find the most efficient multiplication order by computing optimal costs for subproblems and building towards the complete solution.",
+        "The solution involves creating a recursive dependency graph that tracks multiplication dependencies and selects the lowest-cost path through potential matrix multiplication sequences."
+      ],
+      "correctIndex": 2,
+      "explanation": "Matrix chain multiplication is challenging because the order of matrix multiplication significantly impacts computational complexity. Dynamic Programming efficiently solves this by breaking the problem into smaller subproblems, storing intermediate results, and systematically building the most cost-effective multiplication strategy using a bottom-up tabulation method."
+    },
+    {
+      "id": 11,
+      "question": "What are the trade-offs between _memoization_ and _tabulation_ in _Dynamic Programming_?",
+      "options": [
+        "Memoization is a top-down technique that caches computed results to prevent redundant calculations, while tabulation is a bottom-up approach that fills a table with precomputed results before solving the main problem. Each method offers unique advantages in space and time complexity depending on the specific algorithmic requirements.",
+        "Dynamic Programming techniques differentiate memoization and tabulation primarily through their memory allocation strategies, with memoization using dynamic memory and tabulation relying on static array-based computations.",
+        "Tabulation and memoization are complementary techniques that both aim to optimize algorithmic performance by reducing computational redundancy through different computational paradigms.",
+        "Memoization and tabulation represent two competing optimization strategies where memoization focuses on recursive complexity reduction and tabulation emphasizes iterative problem decomposition through sequential computation."
+      ],
+      "correctIndex": 0,
+      "explanation": "The key distinction between memoization and tabulation lies in their computational approach. Memoization starts with the main problem and recursively solves subproblems on-demand, while tabulation systematically solves all subproblems iteratively before addressing the main problem, each with distinct memory and performance trade-offs."
+    },
+    {
+      "id": 12,
+      "question": "How do you determine the _time complexity_ of a _Dynamic Programming_ algorithm?",
+      "options": [
+        "Time complexity in Dynamic Programming is derived by measuring the computational overhead of state transition functions and their recursive or iterative implementation strategies.",
+        "Dynamic Programming time complexity is typically determined by the number of unique subproblems and the work required to compute each subproblem, resulting in a polynomial time complexity that depends on the problem's dimensionality and state transition complexity.",
+        "Dynamic Programming time complexity is primarily calculated through asymptotic analysis of recursive call trees, examining the exponential growth of potential computation paths.",
+        "Dynamic Programming algorithms calculate time complexity by tracking the maximum depth of problem decomposition and the computational work required at each recursive or iterative step."
+      ],
+      "correctIndex": 1,
+      "explanation": "Time complexity in Dynamic Programming is fundamentally about understanding how the algorithm breaks down problems into subproblems and the computational effort required to solve and combine these subproblems. The goal is to transform exponential-time recursive solutions into polynomial-time efficient algorithms by systematically storing and reusing computed results."
+    },
+    {
+      "id": 13,
+      "question": "Describe techniques to _optimize space complexity_ in Dynamic Programming problems.",
+      "options": [
+        "Dynamic programming space complexity is improved by implementing multi-dimensional tracking mechanisms and parallel computation strategies across different state representations.",
+        "Reducing space complexity involves creating nested recursive calls and expanding computational graph representations to minimize redundant memory allocations.",
+        "Dynamic programming can optimize space complexity by using techniques like rolling arrays, storing only necessary states, and leveraging recursive memoization to minimize memory usage across computation stages.",
+        "Space complexity in dynamic programming can be optimized by increasing matrix dimensions and pre-allocating large memory buffers to accommodate potential computational paths."
+      ],
+      "correctIndex": 2,
+      "explanation": "Space optimization in dynamic programming focuses on minimizing memory consumption while preserving computational accuracy. Key strategies include using minimal state storage, computing only essential subproblems, and avoiding unnecessary memory allocations. Rolling arrays and selective memoization allow algorithms to maintain computational efficiency without excessive memory overhead."
+    },
+    {
+      "id": 14,
+      "question": "What is _state transition_, and how do you _derive state transition relations_?",
+      "options": [
+        "State transition captures the algorithmic progression of computational complexity by mapping hierarchical problem-solving strategies across different computational domains.",
+        "State transition defines the recursive mapping between algorithmic transformations and their corresponding computational representations in problem-solving scenarios.",
+        "State transition represents the strategic framework for translating computational problems into mathematical models with interconnected problem-solving pathways.",
+        "State transition represents the mathematical relationship describing how a problem's state evolves between consecutive computational steps, typically defined by recurrence relations that map current inputs to subsequent computational states."
+      ],
+      "correctIndex": 3,
+      "explanation": "State transition is a fundamental concept in dynamic programming that describes how problem states change during computation. It involves identifying key variables, establishing mathematical relationships, and creating a systematic approach to solving complex problems by breaking them into smaller, manageable subproblems with clear transformation rules."
+    },
+    {
+      "id": 15,
+      "question": "Find the _longest palindromic substring_ in a given _string_.",
+      "options": [
+        "The longest palindromic substring can be determined through systematic character matching and iterative exploration of potential symmetric substring configurations.",
+        "Identifying the longest palindromic substring involves constructing a comprehensive graph representation mapping character relationships and potential symmetrical configurations.",
+        "The longest palindromic substring is resolved by implementing recursive traversal strategies that incrementally expand potential palindrome candidates across different string segments.",
+        "The longest palindromic substring can be solved using dynamic programming by creating a 2D boolean table tracking palindrome possibilities, where table entries indicate whether substring ranges represent valid palindromes."
+      ],
+      "correctIndex": 3,
+      "explanation": "Solving the longest palindromic substring problem requires efficiently identifying and tracking potential palindromic sequences within a given string. Dynamic programming provides an optimal approach by systematically examining substring characteristics, reducing computational complexity, and enabling precise identification of the maximum palindromic subsequence."
+    }
+  ],
+  "processedAt": "2025-12-18T09:18:37.858Z"
+}

@@ -1,0 +1,198 @@
+{
+  "id": "cosmos-db",
+  "name": "Cosmos DB",
+  "slug": "cosmos-db-interview-questions",
+  "category": "Database",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Cosmos DB_ and what are its _core features_?",
+      "options": [
+        "Cosmos DB is an in-memory database platform focused on high-performance analytics and designed specifically for big data processing with minimal global distribution features.",
+        "Cosmos DB is a cloud-based caching system that provides real-time data synchronization and supports only document-based storage with limited global distribution capabilities.",
+        "Azure Cosmos DB is a globally distributed, multi-model database service designed to provide high availability, low-latency access, and elastic scaling across multiple data models including document, key-value, graph, and column-family.",
+        "Cosmos DB is a traditional relational database optimized for complex SQL queries and designed primarily for structured data storage in enterprise environments."
+      ],
+      "correctIndex": 2,
+      "explanation": "Cosmos DB differentiates itself by supporting multiple data models natively, offering global distribution with a single click, and providing guaranteed low-latency access. Its multi-model approach allows developers to use the same database for different data types without compromising performance or scalability."
+    },
+    {
+      "id": 2,
+      "question": "Explain the different _APIs_ provided by _Cosmos DB_. How do you choose the _right one_ for your application?",
+      "options": [
+        "Cosmos DB provides a single proprietary API designed exclusively for JSON document storage, limiting its flexibility and integration with existing database technologies.",
+        "Cosmos DB offers multiple APIs including SQL, MongoDB, Cassandra, Gremlin, and Table API, allowing developers to choose the most suitable interface for their specific application requirements and existing data models.",
+        "Cosmos DB offers a universal API that automatically translates between different database protocols, removing the need for specific interface selection.",
+        "Cosmos DB supports only two APIs: a traditional relational SQL interface and a custom graph-based query language for complex data relationships."
+      ],
+      "correctIndex": 1,
+      "explanation": "The diverse API support in Cosmos DB enables developers to leverage existing skills and code while benefiting from a globally distributed, high-performance database platform. Each API is purpose-built to simulate the behavior of popular database systems while maintaining Cosmos DB's core performance characteristics."
+    },
+    {
+      "id": 3,
+      "question": "What is the _data model_ used by _Cosmos DB_ and how does it differ from _relational databases_?",
+      "options": [
+        "Cosmos DB implements a columnar data model exclusively designed for analytical workloads, with limited support for transactional and operational database scenarios.",
+        "Cosmos DB employs a strict relational data model with predefined schemas and table relationships, similar to traditional SQL databases like MySQL and PostgreSQL.",
+        "Cosmos DB uses a pure key-value data model that stores information as simple attribute-value pairs, providing minimal structural flexibility for complex data representations.",
+        "Cosmos DB uses a document-oriented data model that allows storing semi-structured, hierarchical data as flexible JSON documents, enabling more dynamic and adaptable data representation compared to rigid relational database schemas."
+      ],
+      "correctIndex": 3,
+      "explanation": "The document-oriented model in Cosmos DB provides significant advantages over traditional relational databases by allowing flexible schema design, easier horizontal scaling, and more natural representation of complex, nested data structures without requiring extensive normalization."
+    },
+    {
+      "id": 4,
+      "question": "How does _Cosmos DB_ ensure _data durability_?",
+      "options": [
+        "Cosmos DB protects data durability through strict consistency models and single-region redundancy with automatic failover mechanisms between primary and secondary nodes.",
+        "Cosmos DB ensures data durability through multiple mechanisms like multi-region replication, write-ahead logging (WAL), and continuous data backup across distributed replicas.",
+        "Cosmos DB guarantees data durability by implementing complex encryption protocols and maintaining transaction logs within a localized database cluster.",
+        "Cosmos DB maintains data durability by storing each transaction in memory first and periodically synchronizing with a central storage system using proprietary caching algorithms."
+      ],
+      "correctIndex": 1,
+      "explanation": "Cosmos DB uses several sophisticated techniques to ensure data remains safe and recoverable. Write-ahead logging records all changes before committing them, while multi-region replication creates redundant copies across different geographic locations. This approach prevents data loss by maintaining multiple synchronized copies and providing comprehensive backup strategies."
+    },
+    {
+      "id": 5,
+      "question": "What is the _Request Unit (RU)_ in _Cosmos DB_ and how is it _used_?",
+      "options": [
+        "Request Units measure the network bandwidth and storage allocation consumed by each database transaction in Cosmos DB's distributed architecture.",
+        "Request Units represent Cosmos DB's internal pricing metric that calculates database performance based on transaction complexity and data transfer volume.",
+        "Request Units are computational credits used to manage database throughput and prioritize read/write operations across distributed database clusters.",
+        "Request Units (RUs) are Cosmos DB's standardized measurement of computational resources required to perform database operations, with different actions consuming varying amounts of these units."
+      ],
+      "correctIndex": 3,
+      "explanation": "Request Units quantify the resources needed to process database operations, allowing developers to predict and manage performance costs. Each operation like reading an item, executing a query, or writing data consumes a specific number of RUs, which helps in capacity planning and performance optimization."
+    },
+    {
+      "id": 6,
+      "question": "Can you describe the _multi-model capabilities_ of _Cosmos DB_?",
+      "options": [
+        "Cosmos DB provides multi-model support by allowing simultaneous access to different database engines through complex middleware translation layers.",
+        "Cosmos DB implements multi-model architecture by creating virtual data containers that can be dynamically reconfigured between different storage paradigms.",
+        "Cosmos DB offers multi-model capabilities by supporting multiple data models including document, key-value, graph, and columnar storage within a single, globally distributed database platform.",
+        "Cosmos DB enables multi-model functionality by supporting multiple programming language interfaces and database connection protocols."
+      ],
+      "correctIndex": 2,
+      "explanation": "Multi-model capabilities in Cosmos DB mean developers can work with various data types and access patterns without switching database systems. This approach simplifies complex application architectures by providing a unified platform that supports diverse data modeling requirements across different use cases."
+    },
+    {
+      "id": 7,
+      "question": "Outline the types of _indexing_ available in _Cosmos DB_. How does _indexing_ affect _performance_?",
+      "options": [
+        "Cosmos DB supports only range indexing, which uniformly applies to all document properties and provides consistent query performance across different data access patterns.",
+        "Cosmos DB indexing is primarily focused on hash-based indexing, which ensures uniform data distribution across partitions and minimizes query latency.",
+        "Cosmos DB provides range, spatial, and composite indexing strategies. Different index types optimize query performance by enabling efficient filtering, range queries, and geospatial data retrieval based on specific workload requirements.",
+        "Cosmos DB uses a single default indexing mechanism that automatically covers all query types without requiring manual configuration or performance tuning."
+      ],
+      "correctIndex": 2,
+      "explanation": "Indexing in Cosmos DB is a critical performance optimization technique. Range indexes support complex queries, spatial indexes enable geospatial operations, and composite indexes combine multiple property indexes. The right indexing strategy depends on specific workload characteristics, data model, and query patterns."
+    },
+    {
+      "id": 8,
+      "question": "Discuss the _ACID properties_ in the context of _Cosmos DB transactions_.",
+      "options": [
+        "Cosmos DB provides eventual consistency with limited ACID guarantees, primarily focusing on scalability over strict transactional integrity.",
+        "Cosmos DB implements a relaxed ACID model that prioritizes performance, allowing partial transaction completions in distributed environments.",
+        "ACID transactions in Cosmos DB are limited to read operations and do not support complex multi-document write transactions across different containers.",
+        "Cosmos DB supports full ACID transactions within a single partition key, ensuring atomic, consistent, isolated, and durable operations across document updates and modifications."
+      ],
+      "correctIndex": 3,
+      "explanation": "ACID transactions in Cosmos DB are critical for maintaining data integrity. While transactions are most robust within a single partition, the database provides strong consistency guarantees through careful design. Understanding transaction boundaries and partition key selection is essential for implementing reliable distributed systems."
+    },
+    {
+      "id": 9,
+      "question": "What is a _partition key_ in _Cosmos DB_ and how is it _used_?",
+      "options": [
+        "Partition keys in Cosmos DB are optional metadata used for organizational purposes and have minimal impact on database performance.",
+        "Cosmos DB automatically manages data distribution, rendering partition key selection irrelevant to overall system performance.",
+        "A partition key is primarily a logical identifier that helps categorize documents without affecting the underlying data storage mechanism.",
+        "A partition key in Cosmos DB determines how data is physically distributed across storage partitions, directly influencing query performance, scalability, and data access efficiency."
+      ],
+      "correctIndex": 3,
+      "explanation": "Choosing an effective partition key is crucial in Cosmos DB design. The key impacts data distribution, query routing, and system scalability. An ideal partition key balances data evenly, minimizes hot partitions, and aligns with common query access patterns."
+    },
+    {
+      "id": 10,
+      "question": "Explain the concept of _logical partitions_ vs _physical partitions_ in _Cosmos DB_.",
+      "options": [
+        "Logical partitions represent individual documents, while physical partitions are database-level storage containers that organize data across multiple instances.",
+        "In Cosmos DB, logical partitions are groups of documents with the same partition key, while physical partitions are actual storage units managed by the system that can contain multiple logical partitions.",
+        "Physical partitions are user-defined data segments, and logical partitions are automatic system-generated data allocation mechanisms within Cosmos DB.",
+        "Logical partitions are temporary data caches, while physical partitions represent permanent storage areas for documents with similar characteristics."
+      ],
+      "correctIndex": 1,
+      "explanation": "Cosmos DB uses a hierarchical partitioning strategy where logical partitions are a virtual grouping of documents sharing a common partition key, and physical partitions are the actual backend storage mechanisms managed automatically by Azure. Logical partitions help organize data logically, while physical partitions handle the actual data distribution and storage across system resources."
+    },
+    {
+      "id": 11,
+      "question": "What are the best practices for choosing a _partition key_ in a _Cosmos DB container_?",
+      "options": [
+        "An optimal partition key focuses on maximizing concurrent write operations, minimizing transaction log sizes, and enabling complex join operations across partitions.",
+        "The ideal partition key should maximize query complexity, reduce indexing overhead, and provide advanced security filtering capabilities for document retrieval.",
+        "An effective partition key in Cosmos DB should evenly distribute data, minimize hot partitions, align with frequent query patterns, and support efficient data access and scalability.",
+        "A good partition key must prioritize data encryption, minimize storage costs, and ensure maximum compression of document metadata across the container."
+      ],
+      "correctIndex": 2,
+      "explanation": "Selecting the right partition key is critical for Cosmos DB performance. The key determines how data is distributed across physical partitions, impacts query efficiency, and influences the overall scalability of the database. A well-chosen partition key helps prevent hotspotting, ensures balanced resource utilization, and supports predictable performance."
+    },
+    {
+      "id": 12,
+      "question": "What considerations should be taken into account when _modeling data_ for a _Cosmos DB instance_?",
+      "options": [
+        "Effective Cosmos DB data modeling requires strict normalization, implementing complex foreign key relationships, and maintaining rigid relational database design principles.",
+        "Successful Cosmos DB data modeling emphasizes creating highly normalized schemas, minimizing document size, and implementing advanced data validation constraints.",
+        "Data modeling in Cosmos DB should focus on maximizing storage efficiency, implementing extensive indexing strategies, and creating complex nested document hierarchies.",
+        "Cosmos DB data modeling should prioritize understanding access patterns, designing flexible schema-agnostic structures, balancing data granularity, and optimizing for expected query and transaction requirements."
+      ],
+      "correctIndex": 3,
+      "explanation": "Data modeling in Cosmos DB differs significantly from traditional relational databases. The schema-flexible nature allows for more dynamic document structures, requiring careful consideration of access patterns, query efficiency, and scalability. Successful modeling involves understanding the application's data access needs and designing documents that support efficient retrieval and manipulation."
+    },
+    {
+      "id": 13,
+      "question": "How does _partitioning_ impact the _scalability_ and _performance_ of a _Cosmos DB_ application?",
+      "options": [
+        "Partitioning is a performance optimization technique that pre-allocates storage space and reduces query complexity by clustering related data together.",
+        "Partitioning in Cosmos DB distributes data and workloads across multiple physical partitions, enabling horizontal scalability by allowing automatic and transparent data distribution based on a chosen partition key.",
+        "Partitioning in Cosmos DB creates fixed database segments that limit data growth and require manual intervention to redistribute data across server nodes.",
+        "Cosmos DB partitioning statically divides database resources into predefined segments, which helps maintain consistent read and write latencies across the entire database infrastructure."
+      ],
+      "correctIndex": 1,
+      "explanation": "Partitioning is crucial for Cosmos DB's scalability. By dynamically distributing data and workloads across physical partitions, the database can automatically scale horizontally. The partition key determines how data is distributed, enabling efficient querying and performance. Proper partition key selection ensures even data distribution and prevents hot partitions, which can cause performance bottlenecks."
+    },
+    {
+      "id": 14,
+      "question": "How might you handle _hot partitions_ in _Cosmos DB_?",
+      "options": [
+        "Hot partitions are resolved by increasing the database's storage allocation and manually rebalancing data across predefined database segments.",
+        "Hot partitions can be mitigated by carefully selecting a partition key with high cardinality, designing queries to minimize cross-partition operations, and leveraging Cosmos DB's built-in horizontal scaling capabilities.",
+        "Addressing hot partitions requires implementing custom caching mechanisms and limiting concurrent write operations to prevent resource contention.",
+        "Hot partitions can be eliminated by using static data sharding techniques that redistribute data based on predetermined access patterns."
+      ],
+      "correctIndex": 1,
+      "explanation": "Hot partitions occur when specific partition keys experience disproportionate read or write traffic. To address this, architects must choose partition keys with high selectivity that distribute data and workload evenly. Techniques include selecting keys with high cardinality, designing queries to minimize cross-partition reads, and leveraging Cosmos DB's elastic scaling to dynamically adjust resources."
+    },
+    {
+      "id": 15,
+      "question": "Describe some common _anti-patterns_ in _data modeling_ for _Cosmos DB_.",
+      "options": [
+        "Cosmos DB anti-patterns primarily involve using rigid schema designs, implementing complex join operations, and over-normalizing data across multiple containers.",
+        "Data modeling anti-patterns in Cosmos DB include relying on secondary indexes, creating deeply nested document structures, and using complex aggregation pipelines.",
+        "Key anti-patterns involve using single-tenant database designs, implementing complex transactional boundaries, and manually managing data replication strategies.",
+        "Common Cosmos DB data modeling anti-patterns include using volatile partition keys that change frequently, performing excessive fan-out or cross-partition queries, and embedding large arrays that can impact performance and scalability."
+      ],
+      "correctIndex": 3,
+      "explanation": "Effective Cosmos DB data modeling requires understanding potential pitfalls. Anti-patterns can significantly impact performance and scalability. Volatile partition keys, extensive cross-partition queries, and large embedded arrays can create inefficient data structures. Successful modeling focuses on designing schemas that support natural data access patterns, minimize query complexity, and leverage Cosmos DB's native distribution capabilities."
+    }
+  ],
+  "processedAt": "2025-12-18T09:01:34.383Z"
+}

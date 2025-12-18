@@ -1,0 +1,198 @@
+{
+  "id": "node",
+  "name": "Node.js",
+  "slug": "node-interview-questions",
+  "category": "Backend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is Node.js and why is it used?",
+      "options": [
+        "Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript outside web browsers, built on Chrome's V8 engine and designed for efficient server-side and network applications.",
+        "Node.js is a database management system that provides high-performance data storage and retrieval capabilities using JavaScript as its primary query language.",
+        "Node.js is a client-side JavaScript framework designed to enhance browser-based web interactions and improve frontend performance with lightweight rendering techniques.",
+        "Node.js is a specialized compiler that transforms JavaScript into machine-executable code, optimizing web application performance through direct system-level translations."
+      ],
+      "correctIndex": 0,
+      "explanation": "Node.js revolutionized server-side JavaScript development by allowing developers to use JavaScript for backend programming. Its non-blocking, event-driven architecture enables efficient handling of concurrent connections. The V8 engine, originally developed by Google for Chrome, compiles JavaScript directly to native machine code, providing exceptional performance. Node.js is particularly powerful for building scalable network applications, real-time services, and microservices."
+    },
+    {
+      "id": 2,
+      "question": "How does Node.js handle child threads?",
+      "options": [
+        "Node.js implements child thread management by creating isolated JavaScript contexts that communicate through message passing and distributed computing protocols.",
+        "Node.js uses a single-threaded event loop with non-blocking I/O, but can leverage multi-core systems through worker threads and the libuv library to handle computationally intensive tasks without blocking the main thread.",
+        "Node.js handles child threads by creating multiple synchronized execution contexts that share memory and process tasks in parallel across the entire application.",
+        "Node.js manages child threads through a complex thread pooling mechanism that dynamically allocates system resources based on computational complexity of each task."
+      ],
+      "correctIndex": 1,
+      "explanation": "Node.js's threading model is unique in its approach to concurrency. While primarily single-threaded, it can offload CPU-intensive tasks to worker threads, preventing the main event loop from being blocked. The libuv library provides the underlying mechanism for asynchronous I/O operations and thread pooling. Developers can use the 'worker_threads' module to create parallel processing capabilities.\n\n```javascript\nconst { Worker, isMainThread, parentPort } = require('worker_threads');\n\nif (isMainThread) {\n  const worker = new Worker(__filename);\n  worker.on('message', (result) => console.log(result));\n} else {\n  parentPort.postMessage('Work completed in worker thread');\n}\n```"
+    },
+    {
+      "id": 3,
+      "question": "Describe the event-driven programming in Node.js.",
+      "options": [
+        "Event-driven programming in Node.js implements a reactive stream-based communication protocol where events are transformed and merged through complex pipeline mechanisms.",
+        "Event-driven programming in Node.js relies on a synchronous event propagation model where events are processed sequentially and block execution until each listener completes its task.",
+        "Event-driven programming in Node.js uses an event emitter architecture where objects can register listeners for specific events, allowing asynchronous, non-blocking handling of operations through event triggers and callbacks.",
+        "Event-driven programming in Node.js uses a publish-subscribe pattern that requires explicit registration of global event handlers with strict typing and compile-time validation."
+      ],
+      "correctIndex": 2,
+      "explanation": "Node.js's event-driven model is fundamental to its non-blocking nature. The EventEmitter class allows objects to emit named events that trigger registered listener functions. This approach enables efficient handling of asynchronous operations without blocking the main thread. Developers can create custom event emitters or use built-in Node.js modules that inherit from EventEmitter.\n\n```javascript\nconst EventEmitter = require('events');\nclass MyEmitter extends EventEmitter {}\n\nconst myEmitter = new MyEmitter();\nmyEmitter.on('event', () => {\n  console.log('An event occurred!');\n});\nmyEmitter.emit('event');\n```"
+    },
+    {
+      "id": 4,
+      "question": "What is the event loop in Node.js?",
+      "options": [
+        "The event loop is a processing queue that sequentially executes all JavaScript functions in a Node.js application, ensuring strict linear execution of code and managing resource allocation.",
+        "The event loop is a memory management system in Node.js that automatically allocates and deallocates resources, optimizing application performance by predicting future computational needs.",
+        "The event loop is a runtime synchronization mechanism that coordinates thread execution and manages concurrent operations across multiple CPU cores in a Node.js application.",
+        "The event loop in Node.js is a mechanism for handling asynchronous operations by continuously checking the call stack and callback queue, allowing non-blocking I/O and efficient processing of tasks."
+      ],
+      "correctIndex": 3,
+      "explanation": "The event loop is the core of Node.js's non-blocking I/O model. It enables asynchronous processing by continuously checking for pending tasks in the call stack and callback queue. When the call stack is empty, it processes callbacks from the queue, allowing efficient handling of I/O operations without blocking the main thread. A simple example demonstrates its behavior:"
+    },
+    {
+      "id": 5,
+      "question": "What is the difference between Node.js and traditional web server technologies?",
+      "options": [
+        "Node.js is superior to traditional web servers because it uses multi-threading with advanced task scheduling, enabling more complex parallel processing of web requests and system resources.",
+        "Node.js represents a revolutionary approach to web servers by implementing a distributed computing model that automatically scales across multiple server instances and network nodes.",
+        "Node.js distinguishes itself by implementing a microservice-based architecture that dynamically allocates server resources based on real-time computational demands and traffic patterns.",
+        "Node.js differs from traditional web server technologies by using a single-threaded, event-driven architecture with non-blocking I/O, allowing more efficient handling of concurrent connections compared to thread-per-request models."
+      ],
+      "correctIndex": 3,
+      "explanation": "Traditional web servers typically create a new thread for each incoming request, which can consume significant system resources. Node.js uses an event-driven, non-blocking model that allows a single thread to handle multiple concurrent connections efficiently. This approach reduces overhead and enables better scalability, making it particularly effective for I/O-intensive applications like real-time web services."
+    },
+    {
+      "id": 6,
+      "question": "Explain what \"non-blocking\" means in Node.js.",
+      "options": [
+        "Non-blocking represents a runtime optimization method where Node.js dynamically adjusts thread allocation to maximize concurrent processing across available system resources.",
+        "Non-blocking is a synchronization strategy in Node.js that ensures all asynchronous operations are processed in a strictly ordered, sequential manner to maintain predictable execution flow.",
+        "Non-blocking in Node.js refers to a memory management technique that preemptively allocates system resources to prevent potential computational bottlenecks during application runtime.",
+        "Non-blocking in Node.js means that I/O operations do not halt program execution, allowing the application to continue processing other tasks while waiting for operations like file reads or network requests to complete."
+      ],
+      "correctIndex": 3,
+      "explanation": "Non-blocking I/O is fundamental to Node.js's performance. Instead of waiting for an operation to complete before moving to the next task, Node.js can initiate an operation and immediately proceed with other work. When the operation finishes, a callback is triggered. Here's a simple example demonstrating non-blocking file reading:"
+    },
+    {
+      "id": 7,
+      "question": "How do you update Node.js to the latest version?",
+      "options": [
+        "Update Node.js by downloading the latest installer from the official website and manually replacing the existing installation files.",
+        "Modify the system PATH variable to point to the newest Node.js binary and restart your computer to complete the update process.",
+        "To update Node.js, use the package manager 'n' by first installing it globally with npm, then running 'n latest' to upgrade to the most recent stable version.",
+        "Use the Node.js version manager 'nvm' and execute 'nvm install node' to automatically download and install the most recent release."
+      ],
+      "correctIndex": 2,
+      "explanation": "Package managers like 'n' simplify Node.js version management by providing a straightforward command-line interface. The 'n' utility allows developers to quickly switch between Node.js versions without complex manual installations. Example usage:\n\n```bash\nnpm install -g n\nn latest\n```\n\nThis approach ensures you can easily keep your Node.js environment up-to-date with minimal effort."
+    },
+    {
+      "id": 8,
+      "question": "What is \"npm\" and what is it used for?",
+      "options": [
+        "npm is a built-in Node.js module that provides low-level system interaction and network programming capabilities for JavaScript applications.",
+        "npm is a package manager for Node.js that allows developers to easily install, share, and manage dependencies for JavaScript projects through a centralized registry.",
+        "npm is a runtime environment that compiles JavaScript code into native machine instructions for improved performance in server-side applications.",
+        "npm is a cloud-based development platform that enables collaborative coding and version control for Node.js projects across distributed teams."
+      ],
+      "correctIndex": 1,
+      "explanation": "npm serves as the primary package management ecosystem for Node.js, hosting millions of open-source packages. Developers can use npm to quickly add libraries and tools to their projects. Example of installing a package:\n\n```bash\nnpm install express\n```\n\nThe npm registry contains a vast collection of reusable code modules that dramatically accelerate development workflows."
+    },
+    {
+      "id": 9,
+      "question": "How do you manage packages in a Node.js project?",
+      "options": [
+        "Package management in Node.js is primarily done using npm or Yarn, which handle dependency installation, version tracking, and project configuration through package.json files.",
+        "Node.js uses a centralized package repository where developers must register and authenticate each dependency before manual compilation and linking.",
+        "Package management is accomplished through global system configurations that define library locations and compatibility across different Node.js projects.",
+        "Package management in Node.js involves manually downloading JavaScript libraries and placing them in a project's vendor directory for direct inclusion."
+      ],
+      "correctIndex": 0,
+      "explanation": "Package managers like npm and Yarn streamline dependency management by automatically resolving and installing required libraries. They generate lock files to ensure consistent installations across different environments. Example of package.json configuration:\n\n```json\n{\n  \"dependencies\": {\n    \"express\": \"^4.17.1\",\n    \"lodash\": \"^4.17.21\"\n  }\n}\n```\n\nThis approach allows developers to declaratively specify project requirements and easily reproduce development environments."
+    },
+    {
+      "id": 10,
+      "question": "What is a package.json file?",
+      "options": [
+        "A package.json file is a database configuration that stores runtime environment variables and connection details for Node.js applications.",
+        "A package.json file is a configuration file in Node.js projects that contains metadata, project dependencies, scripts, and version information essential for managing and describing the project's structure and requirements.",
+        "A package.json file is a build configuration document that specifies compilation settings and deployment parameters for Node.js projects.",
+        "A package.json file is a security manifest that defines access permissions and encryption protocols for Node.js project resources."
+      ],
+      "correctIndex": 1,
+      "explanation": "The package.json file is a critical component in Node.js projects that provides comprehensive information about the project. It helps npm (Node Package Manager) understand how to manage and install dependencies, run scripts, and track project metadata. Key sections include project name, version, dependencies, scripts, and configuration settings.\n\nExample structure:\n```json\n{\n  \"name\": \"my-project\",\n  \"version\": \"1.0.0\",\n  \"dependencies\": {\n    \"express\": \"^4.17.1\"\n  },\n  \"scripts\": {\n    \"start\": \"node index.js\"\n  }\n}\n```"
+    },
+    {
+      "id": 11,
+      "question": "Describe some of the core modules of Node.js.",
+      "options": [
+        "Node.js core modules are built-in modules that provide essential functionalities like file system operations, networking, cryptography, and HTTP server management, which can be directly used without additional installation.",
+        "Node.js core modules are experimental extensions designed to enhance performance and provide advanced system-level interactions with custom runtime environments.",
+        "Node.js core modules are third-party libraries pre-packaged with the Node.js runtime that require separate configuration and manual linking.",
+        "Node.js core modules are platform-specific plugin systems that enable dynamic module loading and runtime code generation for different operating systems."
+      ],
+      "correctIndex": 0,
+      "explanation": "Core modules in Node.js are fundamental, built-in modules that come bundled with the Node.js installation. They provide essential functionality across various domains like file system, networking, and system interactions. These modules can be imported directly using the require statement without additional installations.\n\nExample of using a core module:\n```javascript\nconst fs = require('fs'); // File System module\nconst http = require('http'); // HTTP module\n\nfs.readFile('example.txt', 'utf8', (err, data) => {\n  console.log(data);\n});\n```"
+    },
+    {
+      "id": 12,
+      "question": "How do you create a simple server in Node.js using the HTTP module?",
+      "options": [
+        "Creating a server in Node.js requires manually configuring network sockets, implementing low-level protocol handlers, and defining custom request parsing mechanisms.",
+        "To create a server, you must use external middleware frameworks, configure complex routing systems, and implement comprehensive error handling strategies.",
+        "To create a simple server in Node.js using the HTTP module, you need to import the module, create a server using http.createServer(), define a request handler callback, and specify a port to listen on using the listen() method.",
+        "Creating a server involves generating SSL certificates, implementing custom authentication layers, and manually managing connection pooling and request queues."
+      ],
+      "correctIndex": 2,
+      "explanation": "Creating a simple HTTP server in Node.js is straightforward using the built-in http module. The process involves creating a server instance, defining how to handle incoming requests, and starting the server on a specific port.\n\nBasic server example:\n```javascript\nconst http = require('http');\n\nconst server = http.createServer((req, res) => {\n  res.writeHead(200, {'Content-Type': 'text/plain'});\n  res.end('Hello World');\n});\n\nserver.listen(3000, () => {\n  console.log('Server running on port 3000');\n});\n```"
+    },
+    {
+      "id": 13,
+      "question": "Explain the purpose of the File System (fs) module.",
+      "options": [
+        "The File System (fs) module in Node.js is a core module that provides methods for interacting with the file system, enabling developers to read, write, update, delete, and perform other file-related operations efficiently.",
+        "The File System (fs) module is a network management tool in Node.js that allows developers to create and manage remote server connections and file transfer protocols.",
+        "The File System (fs) module is a database interface in Node.js that provides standardized methods for connecting and querying different types of database management systems.",
+        "The File System (fs) module is a security middleware in Node.js that manages file permissions, authentication, and access control for server-side file operations."
+      ],
+      "correctIndex": 0,
+      "explanation": "The fs module is fundamental to Node.js file handling, offering both synchronous and asynchronous methods for file system interactions. It allows developers to work with files and directories directly from JavaScript, supporting operations like reading file contents, creating directories, and modifying file metadata. A typical file reading example would look like this: ```javascript const fs = require('fs'); fs.readFile('example.txt', 'utf8', (err, data) => { if (err) throw err; console.log(data); });```"
+    },
+    {
+      "id": 14,
+      "question": "What is the Buffer class in Node.js?",
+      "options": [
+        "The Buffer class in Node.js is a built-in global class that represents a fixed-length sequence of bytes, used for handling binary data and performing low-level I/O operations efficiently.",
+        "The Buffer class in Node.js is a cryptographic module that provides secure data encoding and encryption mechanisms for sensitive information processing.",
+        "The Buffer class in Node.js is a memory management utility that dynamically allocates and deallocates system resources for complex computational tasks and cache optimization.",
+        "The Buffer class in Node.js is a network communication protocol that manages data transmission and packet segmentation across different network interfaces."
+      ],
+      "correctIndex": 0,
+      "explanation": "Buffers are crucial in Node.js for handling raw binary data, especially when working with streams, file systems, and network operations. They allow direct manipulation of memory outside of V8's heap. Buffers can be created, converted, and manipulated easily, as shown in this example: ```javascript const buf = Buffer.from('Hello, Node.js', 'utf8'); console.log(buf.toString()); // Converts buffer back to string```"
+    },
+    {
+      "id": 15,
+      "question": "What are streams in Node.js and what types are available?",
+      "options": [
+        "Streams in Node.js are advanced caching mechanisms that optimize memory usage by temporarily storing and managing application state across multiple processing cycles.",
+        "Streams in Node.js are parallel processing interfaces that distribute computational tasks across multiple system threads for enhanced performance and scalability.",
+        "Streams in Node.js are data handling mechanisms that allow reading or writing input progressively in chunks, enabling efficient processing of large datasets without consuming excessive memory.",
+        "Streams in Node.js are event-driven communication channels that facilitate real-time data synchronization between different server components and external services."
+      ],
+      "correctIndex": 2,
+      "explanation": "Node.js streams support four primary types: Readable, Writable, Duplex, and Transform streams. They are essential for handling I/O operations efficiently, especially with large files or network communications. A typical stream example demonstrates file reading: ```javascript const fs = require('fs'); const readStream = fs.createReadStream('large-file.txt'); readStream.on('data', (chunk) => { console.log('Received chunk:', chunk); });```"
+    }
+  ],
+  "processedAt": "2025-12-18T09:57:49.745Z"
+}

@@ -1,0 +1,198 @@
+{
+  "id": "redis",
+  "name": "Redis",
+  "slug": "redis-interview-questions",
+  "category": "Database",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Redis_ and what do you use it for?",
+      "options": [
+        "Redis is a traditional relational database management system optimized for complex SQL queries and designed for long-term data storage across multiple server nodes.",
+        "Redis is a document-oriented NoSQL database primarily used for graph-based data modeling and supporting complex transactional workloads across distributed computing environments.",
+        "Redis functions as a distributed file system that provides centralized storage for large-scale enterprise applications, focusing on sequential data access and backup strategies.",
+        "Redis is an in-memory key-value data store designed for high performance and versatility, supporting complex data structures like strings, lists, sets, and hashes while providing optional disk persistence."
+      ],
+      "correctIndex": 3,
+      "explanation": "Redis stands out as an advanced in-memory data store that offers remarkable speed and flexibility. Unlike traditional databases, it stores data primarily in memory for rapid access, supports multiple data structures, and can optionally persist data to disk, making it ideal for caching, real-time analytics, and high-performance scenarios."
+    },
+    {
+      "id": 2,
+      "question": "How does _Redis_ store data?",
+      "options": [
+        "Redis manages data storage using a hierarchical tree-based structure that maps complex relationships between different data points, prioritizing data integrity and referential consistency.",
+        "Redis stores data as key-value pairs in memory, using various data types like strings, lists, sets, and hashes, which enables fast read and write operations with minimal latency.",
+        "Redis stores data through a columnar storage mechanism, organizing information in vertical columns that optimize data compression and enable complex analytical queries.",
+        "Redis employs a distributed storage model where data is fragmented across multiple nodes, ensuring high availability and supporting eventual consistency principles."
+      ],
+      "correctIndex": 1,
+      "explanation": "Redis's unique approach to data storage revolves around keeping data in memory, which dramatically reduces access time compared to disk-based systems. By supporting multiple data structures natively, Redis provides developers with flexible and efficient storage options that can be quickly retrieved and manipulated."
+    },
+    {
+      "id": 3,
+      "question": "What data types can you store in _Redis_?",
+      "options": [
+        "Redis implements a proprietary data type system that focuses on graph-based representations and machine learning-oriented data storage models.",
+        "Redis primarily supports traditional data types like integers, floating-point numbers, and text strings, with limited support for complex nested data structures.",
+        "Redis supports multiple data types including strings, lists, sets, sorted sets, hashes, bitmaps, hyperloglogs, and geospatial indexes, each designed for specific use cases and performance optimization.",
+        "Redis manages data types through a universal binary format that automatically converts between different representation models, prioritizing type abstraction."
+      ],
+      "correctIndex": 2,
+      "explanation": "Redis's diverse data type support is one of its most powerful features, allowing developers to choose the most appropriate structure for their specific use case. Each data type is optimized for different scenarios, from simple caching to complex real-time analytics, providing unprecedented flexibility in data management."
+    },
+    {
+      "id": 4,
+      "question": "What is a _Redis key_ and how should you structure it for best performance?",
+      "options": [
+        "In Redis, a key is a unique identifier for data storage, best structured with consistent naming conventions like 'resource:id' and kept short to optimize memory and lookup performance.",
+        "Redis keys function as global identifiers with mandatory prefixing that indicates data type, requiring extensive namespace management for optimal system architecture.",
+        "A Redis key is a dynamic reference point that can contain nested information and should be designed with maximum descriptive detail to support advanced querying.",
+        "Redis keys are complex data structures representing database objects, typically created with long hierarchical paths to ensure comprehensive metadata tracking."
+      ],
+      "correctIndex": 0,
+      "explanation": "Efficient Redis key design involves creating compact, meaningful identifiers that segment data logically. Short keys reduce memory overhead and improve retrieval speed, while consistent naming (like user:1234) helps organize data and enables more targeted operations."
+    },
+    {
+      "id": 5,
+      "question": "How do you set an expiration on _Redis keys_?",
+      "options": [
+        "Key expiration in Redis is managed through background configuration settings that progressively remove stale data based on system-wide memory pressure thresholds.",
+        "Redis supports key lifecycle management by implementing complex temporal policies that dynamically adjust data retention based on access frequency and system load.",
+        "Expiration in Redis is controlled through intricate caching algorithms that predict and proactively remove keys using machine learning-based predictive models.",
+        "Redis provides expiration mechanisms using commands like EXPIRE and SETEX, allowing developers to automatically remove keys after a specified time interval in seconds or milliseconds."
+      ],
+      "correctIndex": 3,
+      "explanation": "Redis offers flexible key expiration through specific commands that allow precise control over data lifecycle. By setting expiration times, developers can automatically manage temporary data, reduce memory usage, and implement cache-like behaviors without manual intervention."
+    },
+    {
+      "id": 6,
+      "question": "What do the commands `SET` and `GET` do in _Redis_?",
+      "options": [
+        "SET and GET in Redis are complex transactional commands that manage multi-stage data mutations with built-in rollback capabilities for distributed system consistency.",
+        "Redis SET and GET operations function as advanced data transformation methods that automatically normalize and validate data according to predefined schema rules.",
+        "In Redis, SET stores a string value at a specified key, potentially overwriting existing data, while GET retrieves the value associated with a given key, returning null if the key does not exist.",
+        "The SET and GET commands in Redis represent high-level data manipulation interfaces that support complex object serialization and dynamic type conversion."
+      ],
+      "correctIndex": 2,
+      "explanation": "SET and GET are foundational Redis commands for simple key-value operations. SET allows storing data at a specific key, while GET retrieves that data, providing a straightforward mechanism for basic data storage and retrieval in the Redis in-memory database."
+    },
+    {
+      "id": 7,
+      "question": "How does _Redis_ handle data persistence?",
+      "options": [
+        "Redis implements persistence through distributed caching mechanisms that replicate data across multiple nodes in real-time for comprehensive backup strategies.",
+        "Redis handles data persistence through kernel-level journaling techniques that capture every data modification in sequential transaction logs.",
+        "Redis uses memory-mapped file persistence, storing all data directly on disk with continuous synchronization and low latency access patterns.",
+        "Redis uses two primary persistence strategies: RDB and AOF, which enable data durability while maintaining high-performance in-memory operations."
+      ],
+      "correctIndex": 3,
+      "explanation": "Redis offers two key persistence methods: RDB (point-in-time snapshots) and AOF (append-only file logging). RDB creates periodic backups at configured intervals, while AOF logs every write operation. Users can configure these strategies to balance performance and data safety, with options to combine both for maximum durability."
+    },
+    {
+      "id": 8,
+      "question": "Explain the difference between _RDB_ and _AOF persistence strategies_ in _Redis_.",
+      "options": [
+        "RDB represents a write-through caching mechanism that immediately synchronizes data across cluster nodes, while AOF manages transactional rollback procedures.",
+        "RDB focuses on periodic point-in-time snapshots that capture the entire database state, while AOF logs individual write commands to reconstruct database state incrementally.",
+        "RDB maintains continuous write-ahead logging of database changes, whereas AOF creates compressed binary snapshots at predefined intervals for recovery.",
+        "RDB tracks incremental data modifications in real-time, and AOF generates complete database reconstructions using memory-efficient compression algorithms."
+      ],
+      "correctIndex": 1,
+      "explanation": "Redis persistence strategies differ fundamentally in their approach. RDB creates complete database snapshots at specified intervals, which is faster but potentially loses recent changes. AOF logs every write operation sequentially, providing more comprehensive recovery options but with higher storage and performance overhead."
+    },
+    {
+      "id": 9,
+      "question": "How would you implement a simple counter in _Redis_?",
+      "options": [
+        "Counters in Redis use specialized data structures that leverage memory-mapped registers to provide high-performance atomic increment operations.",
+        "Redis supports counter implementation through complex pub/sub mechanisms that synchronize incremental changes across clustered database instances.",
+        "In Redis, you can implement a simple counter using the `INCR` command for standalone counters or `HINCRBY` for hash-based counters, which atomically increment values.",
+        "Redis counters are implemented through distributed transaction logs that track incremental changes across multiple distributed nodes with eventual consistency."
+      ],
+      "correctIndex": 2,
+      "explanation": "Redis provides atomic increment operations that make counter implementation straightforward. The `INCR` command increases a key's integer value, while `HINCRBY` allows incrementing values within hash structures. These operations are thread-safe and performed in a single step, preventing race conditions."
+    },
+    {
+      "id": 10,
+      "question": "What are hashes in _Redis_ and how do you use them?",
+      "options": [
+        "Redis hashes are specialized sorted collections that maintain elements in a strict chronological order, optimized for sequential data processing.",
+        "Redis hashes are map-like data structures that store field-string value pairs, allowing efficient storage and retrieval of related data within a single key.",
+        "Redis hashes are complex nested data structures that support multi-level indexing and advanced query mechanisms for intricate data relationships.",
+        "Redis hashes are distributed key-value stores that enable cross-node synchronization and parallel data management across multiple servers."
+      ],
+      "correctIndex": 1,
+      "explanation": "Hashes in Redis provide a memory-efficient way to represent complex objects or related data fields. They allow direct access and manipulation of individual fields without loading entire structures, making them particularly useful for scenarios requiring granular data management and quick updates."
+    },
+    {
+      "id": 11,
+      "question": "How do you handle atomic operations in _Redis_?",
+      "options": [
+        "Redis ensures atomic operations through single-command execution and transaction support using MULTI/EXEC commands, which guarantee that a series of operations are performed as a single indivisible unit.",
+        "Redis manages atomic operations by implementing a distributed locking mechanism that synchronizes concurrent access across multiple client connections and prevents potential race conditions.",
+        "Redis handles atomic operations by generating unique transaction IDs and using a two-phase commit protocol to guarantee consistency across different data manipulation commands.",
+        "Redis provides atomic operations through its internal cache-coherence protocol, which automatically resolves conflicts and ensures consistent state across distributed storage nodes."
+      ],
+      "correctIndex": 0,
+      "explanation": "Atomic operations in Redis prevent partial updates and ensure data integrity by treating specific command sequences as indivisible units. This mechanism protects against race conditions and maintains data consistency during complex multi-step operations."
+    },
+    {
+      "id": 12,
+      "question": "What are lists in _Redis_ and what are some common operations you can perform on them?",
+      "options": [
+        "Redis lists are dynamic in-memory graph structures that enable complex relationship mapping and sophisticated traversal algorithms for interconnected data elements.",
+        "Redis lists represent immutable sequence containers that provide advanced filtering and transformation capabilities across distributed computing environments.",
+        "Redis lists are ordered, mutable collections that support efficient operations at both ends, allowing fast insertion and retrieval using commands like LPUSH, RPUSH, and indexed access.",
+        "Redis lists are specialized data structures designed for real-time streaming, supporting continuous data ingestion and parallel processing of sequential information."
+      ],
+      "correctIndex": 2,
+      "explanation": "Lists in Redis provide a lightweight, efficient mechanism for managing ordered sequences of elements. They excel at scenarios requiring fast insertion, removal, and iteration, making them ideal for implementing queues, stacks, and other sequential data processing patterns."
+    },
+    {
+      "id": 13,
+      "question": "Can you describe the _Pub/Sub model_ and how it's implemented in _Redis_?",
+      "options": [
+        "Redis Pub/Sub operates as a synchronous communication model where messages are processed sequentially and require immediate response from all subscribed endpoints before transmission.",
+        "Redis Pub/Sub is a messaging pattern where publishers send messages to channels, and subscribers receive messages from those channels without direct point-to-point communication, enabling flexible and decoupled communication between different parts of an application.",
+        "Redis Pub/Sub is a direct messaging system where publishers send messages directly to specific subscribers, requiring predefined connection routes and maintaining persistent communication channels.",
+        "Redis Pub/Sub is a distributed messaging framework that requires explicit acknowledgment from subscribers and maintains message delivery guarantees through a complex routing mechanism."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Redis Pub/Sub model allows message broadcasting without establishing direct connections between publishers and subscribers. Messages are distributed through channels, enabling loose coupling and flexible communication. Publishers send messages to channels without knowing who will receive them, and subscribers can listen to channels without being aware of the publishers."
+    },
+    {
+      "id": 14,
+      "question": "What is pipelining in _Redis_ and when would you use it?",
+      "options": [
+        "Pipelining in Redis allows sending multiple commands to the server in a single network request, reducing network round-trips and significantly improving performance by batching command transmissions.",
+        "Pipelining in Redis is a synchronous command execution technique that ensures sequential processing of commands with guaranteed execution order and immediate response.",
+        "Pipelining in Redis represents a method of compressing network requests to minimize data transfer overhead and optimize memory usage during complex operations.",
+        "Pipelining in Redis is a transaction-like mechanism that provides atomic execution of multiple commands with rollback capabilities in case of partial failure."
+      ],
+      "correctIndex": 0,
+      "explanation": "Redis pipelining is an optimization technique that reduces network latency by sending multiple commands together without waiting for individual responses. This approach is particularly useful in high-throughput scenarios where minimizing network round-trips can dramatically improve application performance."
+    },
+    {
+      "id": 15,
+      "question": "What are the different types of _Redis databases_?",
+      "options": [
+        "Redis supports four fundamental data types: Binary objects, Numeric collections, Hierarchical structures, and Transient memory mappings for efficient data representation.",
+        "Redis implements data types through a dynamic typing system that automatically converts and adapts storage mechanisms based on input complexity and access patterns.",
+        "Redis offers five primary data types: Strings for simple key-value storage, Hashes for complex object representations, Lists for ordered collections, Sets for unique unordered elements, and Sorted Sets for ranked collections with score-based ordering.",
+        "Redis provides three core data types: Primitive types for basic storage, Complex types for nested structures, and Aggregate types for distributed data management."
+      ],
+      "correctIndex": 2,
+      "explanation": "Redis data types are specialized storage mechanisms designed to provide efficient and flexible data management. Each type offers unique capabilities for different use cases, from simple key-value pairs to complex ranked collections, allowing developers to choose the most appropriate structure for their specific requirements."
+    }
+  ],
+  "processedAt": "2025-12-18T10:16:17.819Z"
+}

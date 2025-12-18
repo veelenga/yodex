@@ -1,0 +1,198 @@
+{
+  "id": "web-security",
+  "name": "Web Security",
+  "slug": "web-security-interview-questions",
+  "category": "Security",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _web security_, and why is it important?",
+      "options": [
+        "Web security is primarily a technical process of blocking network traffic and preventing unauthorized access through firewall configurations and basic password protection mechanisms.",
+        "Web security is a reactive methodology focused on detecting and responding to cyber incidents after they occur, using monitoring tools and incident response protocols.",
+        "Web security represents a set of compliance guidelines that organizations follow to meet regulatory requirements for online data management and digital infrastructure protection.",
+        "Web security is a comprehensive approach to protecting internet-connected systems, web applications, and services from various cyber threats by implementing strategies that safeguard data integrity, confidentiality, and availability."
+      ],
+      "correctIndex": 3,
+      "explanation": "Web security is crucial because modern digital ecosystems are constantly exposed to sophisticated cyber threats. It encompasses multiple layers of protection including network security, application security, and user authentication. The goal is proactively preventing unauthorized access, data breaches, and potential system compromises through comprehensive security strategies."
+    },
+    {
+      "id": 2,
+      "question": "Can you explain what _HTTPS_ is and how it differs from _HTTP_?",
+      "options": [
+        "HTTPS is an encrypted version of HTTP that uses SSL/TLS protocols to provide secure, authenticated communication between web browsers and servers, protecting data transmission from interception and tampering.",
+        "HTTPS is an advanced communication standard designed to improve website loading speeds by implementing more efficient data routing mechanisms.",
+        "HTTPS is a standardized web protocol that enables faster data transmission by compressing network packets and optimizing communication routes between clients and servers.",
+        "HTTPS is a specialized networking method that allows websites to track user interactions more efficiently and provide enhanced performance monitoring capabilities."
+      ],
+      "correctIndex": 0,
+      "explanation": "HTTPS adds a critical security layer to standard web communications by encrypting data in transit. It uses SSL/TLS certificates to authenticate server identity and prevent man-in-the-middle attacks. Websites using HTTPS are identifiable by the padlock icon in the browser and provide users with confidence that their data remains private and secure."
+    },
+    {
+      "id": 3,
+      "question": "What are _SSL_ and _TLS_, and what role do they play in web security?",
+      "options": [
+        "SSL and TLS are network management protocols designed to optimize data routing and improve communication efficiency across complex digital infrastructures.",
+        "SSL and TLS are cryptographic protocols that establish secure, encrypted network connections between clients and servers, ensuring data confidentiality, integrity, and authentication during digital communications.",
+        "SSL and TLS are standardized methods for tracking and monitoring internet traffic, providing comprehensive logging and diagnostic capabilities for network administrators.",
+        "SSL and TLS represent advanced data compression technologies that reduce network bandwidth requirements and improve overall transmission speeds."
+      ],
+      "correctIndex": 1,
+      "explanation": "SSL (Secure Sockets Layer) was the original protocol, later succeeded by TLS (Transport Layer Security). These protocols use public key cryptography to create encrypted communication channels, preventing eavesdropping and data manipulation. They are fundamental to secure internet communications, used in everything from website connections to email and messaging services."
+    },
+    {
+      "id": 4,
+      "question": "How do _SSL certificates_ work, and what is the purpose of a Certificate Authority (_CA_)?",
+      "options": [
+        "SSL certificates are digital signatures that encode website content and prevent unauthorized access through a complex encryption protocol managed by global network administrators.",
+        "SSL certificates validate server identity by embedding unique cryptographic tokens that authenticate communication channels and restrict data transmission protocols.",
+        "SSL certificates generate random encryption keys that rotate between servers and clients, creating a dynamic security layer that prevents potential network intrusions.",
+        "SSL certificates use public key cryptography to establish secure, encrypted connections between servers and clients, with Certificate Authorities (CAs) providing trusted verification of digital certificates' authenticity and validity."
+      ],
+      "correctIndex": 3,
+      "explanation": "SSL certificates utilize asymmetric cryptography where public and private keys enable secure data transmission. Certificate Authorities act as trusted third-party entities that validate and sign digital certificates, ensuring the identity of websites and preventing man-in-the-middle attacks by cryptographically verifying the certificate's origin and integrity."
+    },
+    {
+      "id": 5,
+      "question": "What is the difference between _encryption_ and _hashing_?",
+      "options": [
+        "Encryption creates permanent data transformations that prevent any subsequent reconstruction, while hashing allows multiple decryption pathways through advanced cryptographic algorithms.",
+        "Encryption transforms data into an unreadable format using a specific key, allowing authorized parties to decrypt and read the original information, while hashing converts data into a fixed-length string that cannot be reversed to the original input.",
+        "Encryption uses single-direction mathematical models to randomize data sequences, and hashing generates unique identifiers that represent original content through complex computational processes.",
+        "Encryption and hashing are interchangeable security methods that protect data by generating complex mathematical representations designed to obscure sensitive information from unauthorized access."
+      ],
+      "correctIndex": 1,
+      "explanation": "Encryption and hashing serve different security purposes. Encryption is reversible with the correct key, maintaining data confidentiality, while hashing produces a one-way, fixed-length output that cannot be converted back to its original form, typically used for integrity verification and password storage."
+    },
+    {
+      "id": 6,
+      "question": "Define the concept of a _secure session_ and explain how it is established.",
+      "options": [
+        "A secure session is an encrypted communication channel established between a client and server, using session keys to protect data transmission and prevent unauthorized interception or manipulation.",
+        "A secure session generates randomized authentication tokens that continuously validate user credentials and restrict unauthorized access through multi-layered security mechanisms.",
+        "A secure session represents a temporary network connection that dynamically adjusts encryption protocols to maintain continuous communication integrity and prevent external breaches.",
+        "A secure session creates isolated communication environments that use dynamic cryptographic algorithms to monitor and restrict data exchange between networked systems."
+      ],
+      "correctIndex": 0,
+      "explanation": "Secure sessions involve creating an authenticated and encrypted communication pathway, typically using protocols like TLS/SSL. The session establishes a temporary, protected connection with unique session keys that ensure data confidentiality, integrity, and authentication between communicating parties."
+    },
+    {
+      "id": 7,
+      "question": "What are some common web security vulnerabilities?",
+      "options": [
+        "Web security vulnerabilities primarily involve network infrastructure weaknesses, including firewall misconfigurations and outdated routing protocols that create potential entry points for attackers.",
+        "Web security vulnerabilities include SQL injection, Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), security misconfigurations, and broken authentication mechanisms that can compromise application security.",
+        "Web security vulnerabilities focus on database connection limitations, including connection pooling risks, unauthorized connection attempts, and potential memory leakage during database transactions.",
+        "Web security vulnerabilities are predominantly related to client-side scripting errors, involving JavaScript runtime vulnerabilities and browser-specific security limitations that expose potential system weaknesses."
+      ],
+      "correctIndex": 1,
+      "explanation": "Web security vulnerabilities represent potential weaknesses in web applications that attackers can exploit. Understanding these risks helps developers implement robust security measures, protect sensitive data, and prevent unauthorized system access through strategic prevention techniques."
+    },
+    {
+      "id": 8,
+      "question": "Can you explain the _Cross-Site Scripting (XSS)_ attack and how to prevent it?",
+      "options": [
+        "Cross-Site Scripting represents a network-level attack mechanism that intercepts communication protocols, enabling unauthorized packet manipulation and potential data interception between client and server.",
+        "Cross-Site Scripting (XSS) is a security vulnerability where attackers inject malicious scripts into trusted websites, allowing them to execute unauthorized code directly in a victim's browser and potentially steal sensitive user information.",
+        "Cross-Site Scripting involves manipulating server-side rendering processes to identify and neutralize potential script-based vulnerabilities during web application compilation and deployment.",
+        "Cross-Site Scripting is a browser-based security technique that identifies potential script execution risks by monitoring JavaScript runtime environments and preventing potentially dangerous code injections."
+      ],
+      "correctIndex": 1,
+      "explanation": "XSS attacks exploit web application vulnerabilities by injecting malicious scripts that can execute in a user's browser. These attacks can compromise user data, session information, and overall application security by bypassing standard browser security restrictions."
+    },
+    {
+      "id": 9,
+      "question": "What is _SQL Injection_ and how can you defend against it?",
+      "options": [
+        "SQL Injection represents a database connection strategy that identifies potential security weaknesses by simulating unauthorized access attempts and monitoring database transaction integrity.",
+        "SQL Injection involves a server-side security protocol that monitors database transactions, preventing potential data manipulation by implementing strict input validation and connection management strategies.",
+        "SQL Injection is a code injection technique where malicious SQL statements are inserted into application input fields, potentially allowing attackers to read, modify, or delete database information by manipulating backend database queries.",
+        "SQL Injection is a query optimization technique that analyzes database performance by identifying potential bottlenecks and preventing unauthorized data retrieval through advanced query parsing mechanisms."
+      ],
+      "correctIndex": 2,
+      "explanation": "SQL Injection attacks exploit improperly sanitized user inputs to manipulate database queries. By crafting carefully constructed input strings, attackers can potentially bypass authentication, retrieve sensitive data, or modify database contents without authorized access."
+    },
+    {
+      "id": 10,
+      "question": "Describe what _Cross-Site Request Forgery (CSRF)_ is and how to prevent it.",
+      "options": [
+        "Cross-Site Request Forgery (CSRF) is a web security vulnerability where attackers trick authenticated users into performing unintended actions on a trusted site without their consent by exploiting their active browser session.",
+        "Cross-Site Request Forgery is a method of intercepting network traffic to manipulate user credentials and gain unauthorized access to web applications through complex packet manipulation techniques.",
+        "Cross-Site Request Forgery represents a network security protocol designed to prevent unauthorized data transmission between different web domains using advanced encryption strategies.",
+        "CSRF is a browser-based attack that uses JavaScript injection to modify server-side session management and potentially override user authentication mechanisms."
+      ],
+      "correctIndex": 0,
+      "explanation": "CSRF attacks exploit the trust a website has in a user's authenticated session by tricking the browser into sending malicious requests without the user's knowledge. An attacker can create a malicious webpage or link that triggers actions on another site where the user is already logged in, such as changing passwords, making purchases, or transferring funds. Preventive measures include using unique tokens with each request, implementing same-site cookie restrictions, and validating request origins."
+    },
+    {
+      "id": 11,
+      "question": "Explain the _Same-Origin Policy_ and its importance in web security.",
+      "options": [
+        "Same-Origin Policy is a browser-level security protocol that restricts web applications from communicating across different network domains to prevent potential cross-site scripting vulnerabilities.",
+        "The Same-Origin Policy is a computational strategy that manages resource sharing between web applications by implementing strict domain-based access control mechanisms.",
+        "Same-Origin Policy represents a web standard that defines how browser-based applications can interact with external resources through controlled permission frameworks.",
+        "The Same-Origin Policy is a critical web security mechanism that prevents a document or script from one origin from accessing or executing resources from a different origin to protect against unauthorized data access."
+      ],
+      "correctIndex": 3,
+      "explanation": "The Same-Origin Policy is fundamental to web security by defining how web browsers determine whether a web page can interact with resources from another origin. An origin is typically defined by the combination of protocol, domain, and port number. This policy prevents malicious websites from reading sensitive data from other sites, protecting users from potential cross-site scripting and data theft attacks. Exceptions can be made through carefully configured cross-origin resource sharing (CORS) mechanisms."
+    },
+    {
+      "id": 12,
+      "question": "What is _Clickjacking_, and what measures can prevent it?",
+      "options": [
+        "Clickjacking is an advanced web interaction technique that allows dynamic content replacement and user behavior redirection through sophisticated iframe manipulation strategies.",
+        "Clickjacking is a browser-based security vulnerability that manipulates user interaction tracking to generate false web analytics and misrepresent user engagement metrics.",
+        "Clickjacking represents a network security protocol designed to monitor and validate user interaction patterns across different web application interfaces.",
+        "Clickjacking is a malicious web technique where an attacker tricks users into clicking on something different from what they perceive by overlaying transparent elements on a seemingly harmless webpage."
+      ],
+      "correctIndex": 3,
+      "explanation": "Clickjacking is a deceptive user interface technique where attackers create invisible or disguised layers over legitimate web elements to trick users into performing unintended actions. Typically, this is achieved by using transparent iframes or carefully positioned HTML elements that redirect user clicks to hidden targets. Preventive measures include implementing frame-busting scripts, using the X-Frame-Options HTTP header, and employing Content Security Policy (CSP) directives to control frame rendering."
+    },
+    {
+      "id": 13,
+      "question": "How can _web cookies_ compromise security, and how do you safeguard against these risks?",
+      "options": [
+        "Web cookies can compromise security through session hijacking, cross-site scripting, and unauthorized data exposure. Mitigation strategies include using HTTP-only and Secure flags, sanitizing inputs, and implementing robust session management techniques.",
+        "Web cookies function as advanced security tokens that automatically detect and block malicious access attempts without requiring additional security configurations.",
+        "Web cookies enhance security by storing encrypted user credentials and preventing unauthorized access to web applications through automatic authentication mechanisms.",
+        "Cookies are completely secure storage mechanisms that protect user data by isolating session information from potential external threats and network vulnerabilities."
+      ],
+      "correctIndex": 0,
+      "explanation": "Cookies are client-side storage mechanisms that can be exploited if not properly secured. Attackers can potentially steal session information, inject malicious scripts, or access sensitive user data. Proper security measures involve implementing strict cookie attributes, using encryption, and carefully managing session tokens to prevent unauthorized access."
+    },
+    {
+      "id": 14,
+      "question": "What is a _Man-in-the-Middle (MitM) attack_ and how can it be prevented?",
+      "options": [
+        "MitM attacks are advanced network diagnostic tools that help identify potential security weaknesses by temporarily redirecting network traffic through a monitoring point.",
+        "Man-in-the-Middle attacks represent a legitimate network testing methodology used to validate communication protocols and assess potential system vulnerabilities.",
+        "A Man-in-the-Middle attack is a network monitoring technique used by cybersecurity professionals to detect potential communication vulnerabilities in enterprise networks.",
+        "A Man-in-the-Middle (MitM) attack occurs when an attacker secretly intercepts and potentially alters communication between two parties, typically by compromising network infrastructure or creating fake network endpoints."
+      ],
+      "correctIndex": 3,
+      "explanation": "MitM attacks represent a serious security threat where malicious actors position themselves between communication parties to intercept, read, or modify data transmissions. Attackers typically exploit unsecured network connections, particularly on public Wi-Fi networks, to capture sensitive information like login credentials or financial data."
+    },
+    {
+      "id": 15,
+      "question": "Describe the concept of _session management_ in web security.",
+      "options": [
+        "Session management is a client-side rendering technique that optimizes web application performance by caching user interface components and managing browser-side state.",
+        "Session management is a network monitoring strategy that tracks user interactions and generates comprehensive activity logs for security analysis.",
+        "Session management is a critical web security mechanism that tracks user authentication, maintains state between web interactions, and controls access to resources by generating and validating unique session identifiers.",
+        "Session management represents an advanced authentication protocol that generates complex encryption keys to prevent unauthorized network access."
+      ],
+      "correctIndex": 2,
+      "explanation": "Session management ensures secure user authentication and maintains user context throughout web application interactions. It prevents unauthorized access by generating temporary, unique identifiers that validate user permissions and protect sensitive information across different application pages and user requests."
+    }
+  ],
+  "processedAt": "2025-12-18T10:42:43.020Z"
+}

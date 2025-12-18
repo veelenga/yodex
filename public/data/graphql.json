@@ -1,0 +1,196 @@
+{
+  "id": "graphql",
+  "name": "GraphQL",
+  "slug": "graphql-interview-questions",
+  "category": "Architecture",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _GraphQL_ and how does it differ from _REST_?",
+      "options": [
+        "GraphQL is a query language and runtime for APIs that allows clients to request precisely the data they need, minimizing over-fetching and under-fetching of data compared to traditional REST approaches.",
+        "GraphQL is a data visualization tool that helps developers map complex database relationships and generate automated schema documentation for enterprise applications.",
+        "GraphQL is a server-side framework for building microservices that enables complex data transformations and provides advanced caching mechanisms for distributed systems.",
+        "GraphQL is a network protocol designed to optimize real-time communication between web clients and servers using advanced streaming and compression techniques."
+      ],
+      "correctIndex": 0,
+      "explanation": "GraphQL provides a flexible, efficient approach to data fetching by allowing clients to define exactly what data they require. Unlike REST, which returns fixed data structures, GraphQL enables precise data retrieval, reducing unnecessary network overhead and improving application performance. It acts as an intermediate layer between clients and servers, giving developers more control over data interactions."
+    },
+    {
+      "id": 2,
+      "question": "Explain the main components of the _GraphQL architecture_.",
+      "options": [
+        "The GraphQL architecture integrates a load balancing component, a real-time synchronization protocol, and an adaptive querying framework for managing distributed data sources.",
+        "The GraphQL architecture consists of a distributed cache layer, a query optimization engine, and a middleware routing system that manages complex data interactions.",
+        "The GraphQL architecture comprises three primary components: the client (which makes requests), the server (which processes queries), and the schema (which defines the available types and operations).",
+        "The GraphQL architecture includes a data transformation layer, a security authentication module, and a dynamic type inference mechanism for handling varied data structures."
+      ],
+      "correctIndex": 2,
+      "explanation": "GraphQL's architecture provides a standardized way of requesting and delivering data across different systems. The schema acts as a contract defining available data and operations, the server implements resolvers to fetch that data, and clients can construct precise queries against this schema. This approach offers more flexibility and efficiency compared to traditional API architectures."
+    },
+    {
+      "id": 3,
+      "question": "Can you describe the structure of a _GraphQL query_?",
+      "options": [
+        "A GraphQL query is a declarative approach to defining data access patterns that automatically generates comprehensive documentation and type-safe interfaces.",
+        "A GraphQL query is a structured request that specifies exactly which fields should be returned, using a nested syntax that allows clients to retrieve precise data in a single request.",
+        "A GraphQL query is a server-side mechanism for parsing and filtering data streams, enabling advanced caching and real-time synchronization across multiple endpoints.",
+        "A GraphQL query is a complex data transformation protocol that dynamically maps database relationships and generates optimized retrieval strategies for distributed systems."
+      ],
+      "correctIndex": 1,
+      "explanation": "GraphQL queries provide a powerful, flexible method for requesting data by allowing clients to specify exactly what information they need. The query structure mirrors the response shape, enabling precise data fetching and reducing unnecessary network transfer. By supporting nested selections, arguments, and fragments, GraphQL queries offer significant improvements over traditional API request methods."
+    },
+    {
+      "id": 4,
+      "question": "What are the core features of _GraphQL_?",
+      "options": [
+        "GraphQL is fundamentally designed to provide real-time streaming capabilities, implement comprehensive security layers, and manage complex distributed computing environments across multiple service endpoints.",
+        "GraphQL primarily focuses on server-side caching and predefined endpoint structures, enabling rapid data retrieval through standardized database connection protocols and middleware management.",
+        "The primary features of GraphQL revolve around creating complex network architectures with advanced request routing and automatic data transformation between different system interfaces.",
+        "GraphQL's core features include declarative data fetching, allowing clients to request exactly the data they need, a strongly typed schema, and the ability to retrieve multiple resources in a single request, making data communication more efficient and precise."
+      ],
+      "correctIndex": 3,
+      "explanation": "GraphQL was developed by Facebook to solve common API inefficiencies. Its key innovation is giving clients precise control over data retrieval, eliminating over-fetching and under-fetching problems common in traditional REST APIs. By allowing clients to specify exact data requirements and providing a strongly typed schema, GraphQL creates a more flexible and efficient data communication model."
+    },
+    {
+      "id": 5,
+      "question": "What is a _GraphQL schema_ and why is it important?",
+      "options": [
+        "GraphQL schemas are primarily designed to implement complex authentication mechanisms and manage security protocols for inter-service data transmission.",
+        "A GraphQL schema represents a comprehensive network mapping tool that manages server-side data routing and defines internal communication protocols between different system components.",
+        "The GraphQL schema functions as a middleware translation layer that dynamically converts database queries into standardized communication formats across distributed computing environments.",
+        "A GraphQL schema is a type system that defines the structure of data, specifying available types, fields, and relationships, serving as a contract between client and server that enables type-safe and predictable data interactions."
+      ],
+      "correctIndex": 3,
+      "explanation": "The schema is the blueprint of a GraphQL API, defining what queries are possible and what shape the returned data will take. It provides a clear contract that allows clients to understand exactly what data they can request and what format it will be in, enabling type checking and providing a self-documenting interface."
+    },
+    {
+      "id": 6,
+      "question": "Explain the concept of _fields_ in _GraphQL_.",
+      "options": [
+        "Fields represent advanced caching mechanisms that optimize data retrieval by predicting and preemptively loading potential request variations in complex API architectures.",
+        "Fields in GraphQL are individual data points within a type, representing specific pieces of information that can be requested in a query, allowing clients to precisely select the exact data they need from a complex object structure.",
+        "Fields in GraphQL are specialized routing mechanisms that manage data transmission pathways between different system interfaces and handle complex query resolution strategies.",
+        "GraphQL fields function as middleware translation layers that convert raw database information into standardized communication protocols across distributed computing environments."
+      ],
+      "correctIndex": 1,
+      "explanation": "In GraphQL, fields are the fundamental units of data retrieval. They define the specific attributes that can be requested for any given type, allowing granular and precise data selection. Unlike REST, where entire resources are typically fetched, GraphQL fields enable clients to request only the exact information they need, reducing unnecessary data transfer and improving performance."
+    },
+    {
+      "id": 7,
+      "question": "How does _GraphQL_ handle _data types_?",
+      "options": [
+        "GraphQL relies on dynamic typing that allows flexible data representation without strict type constraints, enabling rapid development and schema evolution.",
+        "GraphQL uses a robust type system with Scalar, Object, List, Enum, and Input types to define precise data structures and ensure type safety across API interactions.",
+        "GraphQL manages data types through a runtime type conversion mechanism that dynamically adapts to different programming language type systems.",
+        "GraphQL implements a complex type mapping system that automatically translates between client-side and server-side data representations using advanced type inference."
+      ],
+      "correctIndex": 1,
+      "explanation": "GraphQL's type system provides strong typing and schema validation. Scalar types represent primitive values like strings and numbers, while Object types define structured data. Enums and Input types further enhance type precision, enabling developers to create strongly-typed APIs that ensure data integrity and predictable interactions."
+    },
+    {
+      "id": 8,
+      "question": "In _GraphQL_, what are _queries_ and _mutations_?",
+      "options": [
+        "GraphQL distinguishes queries as server-side computation methods and mutations as client-side data transformation techniques with minimal server interaction.",
+        "Queries in GraphQL represent complex computational tasks, while mutations handle simple data fetching and represent stateless communication protocols.",
+        "In GraphQL, queries are read-only operations for retrieving data, while mutations are write operations that modify server-side data, allowing precise and controlled data interactions.",
+        "GraphQL queries and mutations are identical operations that can be used interchangeably for data retrieval and modification across different API endpoints."
+      ],
+      "correctIndex": 2,
+      "explanation": "Queries and mutations are fundamental GraphQL operation types with distinct purposes. Queries are designed for data retrieval, supporting precise field selection and read-only interactions. Mutations enable data modifications, allowing clients to create, update, or delete resources while maintaining a clear, predictable API contract."
+    },
+    {
+      "id": 9,
+      "question": "Describe how you would fetch data with a _GraphQL query_.",
+      "options": [
+        "GraphQL data fetching involves generating complex data transformation scripts that dynamically map client requirements to server-side data structures.",
+        "Retrieving data in GraphQL requires creating multiple sequential queries that progressively build comprehensive data models through nested requests.",
+        "GraphQL queries are processed by generating abstract syntax trees that interpret client intentions and reconstruct data retrieval strategies dynamically.",
+        "To fetch data with a GraphQL query, developers construct a request specifying exact fields and relationships, send it to the server endpoint, and receive a precisely matched response containing only the requested data."
+      ],
+      "correctIndex": 3,
+      "explanation": "GraphQL queries provide a declarative approach to data fetching, allowing clients to specify exactly what data they need. This approach minimizes over-fetching and under-fetching, enabling efficient and precise data retrieval. The server processes the query and returns only the requested fields, matching the query's structure exactly."
+    },
+    {
+      "id": 10,
+      "question": "What are _scalar types_ in _GraphQL_?",
+      "options": [
+        "GraphQL scalar types are atomic, predefined data types representing singular values like integers, floats, strings, and booleans, which serve as the fundamental building blocks for defining data structures in a GraphQL schema.",
+        "GraphQL scalar types are internal communication protocols that define how different microservices translate and exchange data between distributed system components.",
+        "GraphQL scalar types are complex data structures that enable multi-dimensional data representation and dynamic type conversion across different programming languages.",
+        "Scalar types in GraphQL are advanced object-oriented constructs that provide inheritance and polymorphic behaviors for data modeling and type management."
+      ],
+      "correctIndex": 0,
+      "explanation": "Scalar types in GraphQL represent primitive, indivisible data types that provide the basic foundation for type definitions. Core scalars like Int, Float, String, and Boolean enable precise data modeling, while custom scalars can be created to handle specialized data requirements. They are essential for defining clear, type-safe schemas that facilitate robust data validation and communication between clients and servers."
+    },
+    {
+      "id": 11,
+      "question": "Explain the role of _resolvers_ in _GraphQL_.",
+      "options": [
+        "Resolvers in GraphQL are functions that define how to fetch and transform data for specific schema fields, acting as the critical connection between the schema definition and the actual data sources.",
+        "Resolvers represent abstract data mapping strategies that generate database query translations without direct implementation of data retrieval logic.",
+        "Resolvers are graphical rendering mechanisms that visualize complex data relationships and schema interconnections in GraphQL architecture.",
+        "Resolvers are middleware components that manage authentication and security protocols for GraphQL API interactions, ensuring secure data transmission."
+      ],
+      "correctIndex": 0,
+      "explanation": "Resolvers are fundamental to GraphQL's functionality, responsible for retrieving and processing data for each field in a schema. They determine how data is fetched from various sources like databases, REST APIs, or other services, and can perform transformations before returning results. Each field in a GraphQL schema can have its own resolver, enabling flexible and precise data retrieval."
+    },
+    {
+      "id": 12,
+      "question": "What are the advantages of using _GraphQL_ over other API query languages?",
+      "options": [
+        "GraphQL offers superior API design by allowing clients to request exactly the data they need, reducing over-fetching, minimizing network overhead, and providing a strongly typed, introspective schema that enhances developer experience.",
+        "GraphQL provides advanced caching mechanisms and automatic performance optimization by generating pre-compiled query execution plans for complex data retrieval scenarios.",
+        "GraphQL introduces a revolutionary approach to API design by implementing real-time data synchronization and automatic conflict resolution between distributed systems.",
+        "GraphQL improves API efficiency through its distributed query execution model, enabling parallel processing and automatic load balancing across multiple backend services."
+      ],
+      "correctIndex": 0,
+      "explanation": "GraphQL addresses many limitations of traditional REST APIs by giving clients precise control over data retrieval. Its key advantages include selective data fetching, a single endpoint architecture, and a strongly typed schema that provides clear contract between client and server. By allowing clients to request only required data, GraphQL significantly reduces unnecessary data transfer and improves overall application performance."
+    },
+    {
+      "id": 13,
+      "question": "How do you pass _arguments_ to _fields_ in _GraphQL queries_?",
+      "options": [
+        "GraphQL field arguments are implemented by chaining method-like calls after the field name, using dot notation to specify parameters.",
+        "In GraphQL, arguments are passed to fields by including them in parentheses next to the field name, using a name-value pair separated by a colon.",
+        "GraphQL arguments are defined using square brackets and must be preceded by a type declaration before the field name.",
+        "Arguments in GraphQL are passed through nested query structures, requiring each argument to be wrapped in a separate object literal."
+      ],
+      "correctIndex": 1,
+      "explanation": "Arguments in GraphQL provide a way to dynamically filter, modify, or specify exactly what data you want to retrieve. They act like parameters in function calls, allowing queries to be more flexible and precise by passing specific values directly to fields."
+    },
+    {
+      "id": 14,
+      "question": "What is a _fragment_ in _GraphQL_ and how are they used?",
+      "options": [
+        "A fragment is a server-side caching mechanism in GraphQL that stores intermediate query results to optimize subsequent data fetching.",
+        "A GraphQL fragment is a reusable selection of fields that can be shared across multiple queries, improving code modularity and reducing repetition.",
+        "GraphQL fragments represent isolated database query segments that cannot be combined or shared between different query types.",
+        "Fragments in GraphQL are static data containers that predefine entire object structures before query execution, limiting dynamic data retrieval."
+      ],
+      "correctIndex": 1,
+      "explanation": "Fragments solve the problem of field repetition in GraphQL by allowing developers to define a set of fields once and then reuse them across different queries. They enhance code readability and maintainability by extracting common field selections into named, reusable units."
+    },
+    {
+      "id": 15,
+      "question": "How does _GraphQL_ handle _caching_?",
+      "options": [
+        "GraphQL does not support native caching mechanisms, requiring developers to implement full custom caching strategies for each data retrieval operation.",
+        "Caching in GraphQL is handled exclusively by external middleware that intercepts and stores query results independently of the GraphQL server.",
+        "GraphQL caching occurs at multiple levels, including client-side in-memory caching and server-side resolver caching, to minimize redundant network requests and improve performance.",
+        "GraphQL caching is primarily managed through manual HTTP header configurations that developers must implement for each individual query."
+      ],
+      "correctIndex": 2,
+      "explanation": "Effective caching is crucial in GraphQL to reduce unnecessary network traffic and improve application responsiveness. Client libraries like Apollo provide automatic caching strategies, while resolvers can implement custom caching logic to optimize data retrieval and reduce computational overhead."
+    }
+  ],
+  "processedAt": "2025-12-18T09:29:03.641Z"
+}

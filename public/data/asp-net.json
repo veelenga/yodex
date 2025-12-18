@@ -1,0 +1,198 @@
+{
+  "id": "asp-net",
+  "name": "ASP.NET",
+  "slug": "asp-net-interview-questions",
+  "category": "Backend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _ASP.NET_ and how does it differ from classic _ASP_?",
+      "options": [
+        "ASP.NET is a web framework that primarily uses interpreted scripting languages similar to classic ASP, maintaining the same processing model and limited server-side capabilities.",
+        "ASP.NET represents a legacy web technology that closely mimics classic ASP's scripting approach, with minimal improvements in compilation and server-side processing.",
+        "ASP.NET is a simplified version of classic ASP designed to reduce complexity by maintaining the original scripting paradigm and interpreter-based execution model.",
+        "ASP.NET is a modern web development framework that builds upon classic ASP by offering compiled code execution, object-oriented programming support, and enhanced performance through the .NET framework."
+      ],
+      "correctIndex": 3,
+      "explanation": "ASP.NET fundamentally differs from classic ASP by introducing compiled code execution through .NET languages like C# and VB.NET. While classic ASP used interpreted scripting languages, ASP.NET offers strong typing, object-oriented programming, and better performance. The framework provides more robust error handling, enhanced security features, and comprehensive class libraries that enable more sophisticated web application development.\n\nExample of ASP.NET code structure:\n```csharp\npublic partial class _Default : Page\n{\n    protected void Page_Load(object sender, EventArgs e)\n    {\n        // Compiled, type-safe code execution\n    }\n}\n```"
+    },
+    {
+      "id": 2,
+      "question": "Describe the _ASP.NET page life cycle_.",
+      "options": [
+        "The ASP.NET page life cycle represents a sequence of events that occur from page initialization to rendering, including stages like page request, initialization, loading, postback handling, and final rendering.",
+        "The ASP.NET page life cycle is a rudimentary mechanism that processes web pages through a basic sequence of predefined steps with minimal flexibility for custom event handling.",
+        "The ASP.NET page life cycle involves a simplified rendering approach that focuses primarily on initial page load without supporting complex state management or event interactions.",
+        "The ASP.NET page life cycle is a static process where web pages are processed linearly without dynamic event handling or complex initialization mechanisms."
+      ],
+      "correctIndex": 0,
+      "explanation": "The ASP.NET page life cycle is a complex, event-driven process that manages how web pages are created, processed, and rendered. It provides developers with multiple event hooks to intercept and manipulate page processing at different stages. Key events include PreInit, Init, Load, PostBack, and Render, each offering specific opportunities for custom logic and state management.\n\nExample of life cycle event handling:\n```csharp\nprotected void Page_Init(object sender, EventArgs e)\n{\n    // Initialization logic\n}\n\nprotected void Page_Load(object sender, EventArgs e)\n{\n    if (!IsPostBack)\n    {\n        // Initial page load logic\n    }\n}\n```"
+    },
+    {
+      "id": 3,
+      "question": "What are the different types of _state management_ in _ASP.NET_?",
+      "options": [
+        "ASP.NET's state management is primarily focused on browser-based storage with restricted server-side capabilities and minimal support for complex data preservation.",
+        "ASP.NET implements a simplified state management approach that relies exclusively on client-side mechanisms with negligible server-side state tracking capabilities.",
+        "ASP.NET offers multiple state management techniques including client-side (ViewState, Cookies), server-side (Session, Application state), and distributed caching mechanisms to preserve user and application data across web requests.",
+        "ASP.NET provides limited state management through basic cookie storage and minimal server-side tracking, with few options for maintaining complex application states."
+      ],
+      "correctIndex": 2,
+      "explanation": "State management in ASP.NET is crucial for maintaining context and user-specific information across stateless HTTP requests. The framework provides diverse strategies ranging from client-side techniques like ViewState and Cookies to server-side methods such as Session and Application state. Each approach has specific use cases, performance implications, and security considerations.\n\nExample of session state usage:\n```csharp\n// Storing data in session\nSession['UserID'] = currentUser.ID;\n\n// Retrieving session data\nint userID = (int)Session['UserID'];\n```"
+    },
+    {
+      "id": 4,
+      "question": "Explain the difference between _server-side_ and _client-side code_.",
+      "options": [
+        "Server-side code is a method of compressing web content before transmission, optimizing network performance by reducing data transfer sizes between client and server.",
+        "Server-side code is a client-side rendering technique that allows web browsers to dynamically manipulate page content without server interaction. It uses JavaScript frameworks to create responsive user interfaces.",
+        "Server-side code runs on the web server and is responsible for managing data, processing requests, and generating dynamic content that is sent to the client. This is typically implemented using technologies like ASP.NET, which handle server-side logic and data processing.",
+        "Server-side code refers to the backend infrastructure that manages network connections and handles server hardware configurations. It involves setting up server protocols and managing system resources."
+      ],
+      "correctIndex": 2,
+      "explanation": "Server-side code executes on the web server before sending content to the client's browser. It handles complex processing, database interactions, and business logic that cannot or should not be performed on the client side. Common server-side technologies include ASP.NET, PHP, Ruby on Rails, and Node.js. An example of server-side logic might involve user authentication or retrieving database records.\n\nExample of basic server-side C# method:\n```csharp\npublic ActionResult GetUserProfile(int userId)\n{\n    var user = _userRepository.GetById(userId);\n    return View(user);\n}"
+    },
+    {
+      "id": 5,
+      "question": "What is a _PostBack_ in _ASP.NET_?",
+      "options": [
+        "A PostBack in ASP.NET is a process where a web form is submitted back to the same page on the server, allowing the page to maintain its state and process user interactions without fully reloading the entire page.",
+        "PostBack represents a security protocol in ASP.NET that validates incoming web requests and prevents unauthorized form submissions through complex encryption techniques.",
+        "A PostBack is a client-side event mechanism in ASP.NET that triggers automatic data synchronization between web page elements without server communication.",
+        "A PostBack is a caching strategy in ASP.NET that temporarily stores page rendering data to improve performance and reduce server load during repeated page requests."
+      ],
+      "correctIndex": 0,
+      "explanation": "PostBack is a fundamental mechanism in ASP.NET WebForms that enables stateful web interactions. When a user triggers an event (like button click), the entire page is sent back to the server, processed, and then re-rendered. This allows maintaining page and control states between client-server interactions.\n\nExample of a PostBack event:\n```aspx\n<asp:Button ID='btnSubmit' runat='server' Text='Submit' OnClick='btnSubmit_Click' />\n```"
+    },
+    {
+      "id": 6,
+      "question": "What are _WebForms_ in _ASP.NET_?",
+      "options": [
+        "WebForms are a design pattern in ASP.NET that focuses on creating modular, reusable web interface components with strict separation of presentation and business logic.",
+        "WebForms are a client-side rendering technique in ASP.NET that enables dynamic page updates through JavaScript-based component libraries and real-time data binding.",
+        "WebForms in ASP.NET are a development framework that allows developers to create web applications using a component-based, event-driven model similar to desktop application development, with features like automatic state management and rich server controls.",
+        "WebForms represent a server configuration model in ASP.NET that defines how web applications are deployed and managed across distributed server environments."
+      ],
+      "correctIndex": 2,
+      "explanation": "WebForms provide an abstraction layer over traditional web development, allowing developers to create web applications using a component-based approach similar to Windows Forms. They handle complex web interactions like state management, event handling, and control lifecycle automatically.\n\nExample of a basic WebForm:\n```aspx\n<%@ Page Language='C#' AutoEventWireup='true' CodeBehind='Default.aspx.cs' %>\n<asp:TextBox ID='txtName' runat='server' />\n<asp:Button ID='btnSubmit' runat='server' OnClick='btnSubmit_Click' />"
+    },
+    {
+      "id": 7,
+      "question": "What is _MVC_ in _ASP.NET_ and how does it work?",
+      "options": [
+        "MVC is an architectural pattern that defines a strict hierarchy of application components, where each layer communicates through predefined interfaces and manages specific aspects of web application functionality.",
+        "MVC represents a multi-variant configuration approach in ASP.NET that enables developers to create modular web applications with distributed processing capabilities and enhanced scalability.",
+        "MVC (Model-View-Controller) is a design pattern in ASP.NET that separates an application into three core components: Model (data and business logic), View (user interface), and Controller (handles user interactions and manages communication between Model and View).",
+        "MVC is a web development framework in ASP.NET that combines server-side processing with client-side rendering, allowing developers to create dynamic web applications using integrated programming models."
+      ],
+      "correctIndex": 2,
+      "explanation": "The Model-View-Controller pattern is fundamental to ASP.NET MVC architecture, providing a clean separation of concerns. The Model manages data and business logic, the View handles presentation, and the Controller acts as an intermediary that processes user inputs and updates the Model and View accordingly. This approach enhances code maintainability, testability, and allows for more modular application design.\n\nA simple example of MVC structure in ASP.NET might look like:\n\n```csharp\n// Model\npublic class Product\n{\n    public int Id { get; set; }\n    public string Name { get; set; }\n    public decimal Price { get; set; }\n}\n\n// Controller\npublic class ProductController : Controller\n{\n    public ActionResult Index()\n    {\n        var products = _repository.GetAllProducts();\n        return View(products);\n    }\n}\n```"
+    },
+    {
+      "id": 8,
+      "question": "Describe the role of a _master page_ in _ASP.NET WebForms_.",
+      "options": [
+        "Master Pages represent a specialized markup strategy in web development that allows for nested template inheritance and supports advanced content manipulation techniques in ASP.NET applications.",
+        "Master Pages in ASP.NET WebForms are template pages that define a consistent layout and shared elements for multiple content pages, allowing developers to create a uniform design across an entire web application with centralized styling and structure.",
+        "Master Pages are configuration templates that define application-wide settings and provide a mechanism for managing shared resources and global application properties in WebForms.",
+        "Master Pages are advanced rendering components in ASP.NET that provide dynamic content generation and enable complex user interface transformations through server-side processing mechanisms."
+      ],
+      "correctIndex": 1,
+      "explanation": "Master Pages solve the challenge of maintaining consistent layout and design across multiple web pages in ASP.NET WebForms. They act as a base template where common elements like headers, footers, and navigation can be defined once and then inherited by individual content pages. This approach reduces code duplication and ensures a uniform user experience.\n\nA typical Master Page example:\n\n```aspx\n<%@ Master Language=\"C#\" %>\n<html>\n<head runat=\"server\">\n    <title>Site Master</title>\n</head>\n<body>\n    <div id=\"header\">Site Header</div>\n    <asp:ContentPlaceHolder ID=\"MainContent\" runat=\"server\">\n    </asp:ContentPlaceHolder>\n    <div id=\"footer\">Site Footer</div>\n</body>\n</html>\n```"
+    },
+    {
+      "id": 9,
+      "question": "What is a _web.config file_ and what are its uses?",
+      "options": [
+        "Web.config is a comprehensive system file that manages application deployment strategies, defines inter-component communication protocols, and controls application lifecycle management in ASP.NET.",
+        "The web.config file is an XML configuration file in ASP.NET that provides application-wide settings, including authentication methods, connection strings, compilation settings, and other critical runtime configurations for web applications.",
+        "Web.config is a deployment manifest in ASP.NET that manages application resources, defines server communication protocols, and controls external service integrations for web application environments.",
+        "Web.config represents a centralized configuration mechanism that handles security permissions, module registrations, and runtime environment specifications for distributed web application architectures."
+      ],
+      "correctIndex": 1,
+      "explanation": "The web.config file is crucial for configuring ASP.NET web applications, providing a flexible and hierarchical way to manage application settings. It supports different configuration levels (machine, application, directory) and allows developers to customize various aspects of application behavior without modifying code.\n\nA sample web.config configuration:\n\n```xml\n<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<configuration>\n  <connectionStrings>\n    <add name=\"DefaultConnection\" \n         connectionString=\"Data Source=ServerName;Initial Catalog=Database;Integrated Security=True\" />\n  </connectionStrings>\n  <system.web>\n    <authentication mode=\"Forms\" />\n  </system.web>\n</configuration>\n```"
+    },
+    {
+      "id": 10,
+      "question": "Explain the concept of _ViewState_ in _ASP.NET_.",
+      "options": [
+        "ViewState is an encryption protocol in ASP.NET that secures page state information by encoding control values before transmitting them between server and client.",
+        "ViewState represents a client-side browser storage technique in ASP.NET that enables persistent data tracking across different web pages using JavaScript.",
+        "ViewState is a mechanism in ASP.NET WebForms that enables page-level state preservation by storing control values on the client-side within a hidden form field, allowing data retention across postbacks.",
+        "ViewState is a server-side cache mechanism in ASP.NET that temporarily stores page data in memory to improve performance and reduce database queries."
+      ],
+      "correctIndex": 2,
+      "explanation": "ViewState allows web form controls to maintain their values between page postbacks by serializing and encoding control states into a hidden form field. This enables stateful interactions in stateless HTTP environments. The encoded data is automatically managed by ASP.NET and can be accessed programmatically. There's a performance overhead due to the serialization process, so developers should minimize unnecessary ViewState storage.\n\nExample of ViewState usage:\n```aspx\n<%@ Page Language=\"C#\" %>\n<script runat=\"server\">\n    protected void Page_Load(object sender, EventArgs e) {\n        if(!IsPostBack) {\n            // Initialize ViewState\n            ViewState[\"Counter\"] = 0;\n        }\n    }\n</script>```"
+    },
+    {
+      "id": 11,
+      "question": "What is a _server control_ in _ASP.NET_?",
+      "options": [
+        "Server controls are pre-compiled web components in ASP.NET that generate static HTML markup and cannot interact dynamically with server-side code.",
+        "Server controls represent a client-side rendering technique in ASP.NET that allows direct manipulation of web page elements through JavaScript frameworks.",
+        "Server controls are specialized database connectors in ASP.NET that facilitate data retrieval and transformation between web interfaces and backend databases.",
+        "Server controls in ASP.NET are programmable web interface elements that render HTML on the server, providing automatic state management, event handling, and seamless integration between server-side logic and client-side rendering."
+      ],
+      "correctIndex": 3,
+      "explanation": "Server controls abstract complex web development tasks by providing a high-level, event-driven programming model. They automatically handle rendering, state management, and client-server interactions. ASP.NET offers multiple server control categories including HTML server controls, web server controls, and custom controls, each serving different architectural needs.\n\nExample of a server control:\n```aspx\n<asp:Button ID=\"SubmitButton\" runat=\"server\" \n            Text=\"Click Me\" \n            OnClick=\"SubmitButton_Click\" \n            CssClass=\"btn btn-primary\" />"
+    },
+    {
+      "id": 12,
+      "question": "What are _user controls_ and _custom controls_?",
+      "options": [
+        "User controls are server-side compilation units in ASP.NET that define global application settings and cannot be embedded within individual web pages.",
+        "User controls represent complex database mapping strategies in ASP.NET that enable object-relational transformation across different application layers.",
+        "User controls are reusable ASP.NET components containing both markup and code-behind logic, designed for modular web development within a single website, while custom controls are more broadly applicable, independent components that can be shared across multiple projects.",
+        "User controls are client-side rendering components in ASP.NET that manage browser-specific interaction models without server-side dependencies."
+      ],
+      "correctIndex": 2,
+      "explanation": "User controls provide a way to encapsulate and modularize web interface components within a single web application. They can contain multiple server controls, HTML elements, and custom logic. Unlike custom controls, user controls are compiled at runtime and have limited reusability across different projects.\n\nExample of a user control:\n```aspx\n<!-- ContactForm.ascx -->\n<asp:Panel runat=\"server\">\n    <asp:TextBox ID=\"NameTextBox\" runat=\"server\" />\n    <asp:TextBox ID=\"EmailTextBox\" runat=\"server\" />\n    <asp:Button Text=\"Submit\" runat=\"server\" OnClick=\"SubmitForm\" />\n</asp:Panel>"
+    },
+    {
+      "id": 13,
+      "question": "Explain how to create a _custom control_ in _ASP.NET_.",
+      "options": [
+        "Custom controls are generated automatically by the ASP.NET framework using reflection techniques that analyze existing web form components and generate dynamic control implementations.",
+        "Custom controls in ASP.NET can be created using two primary methods: user controls (.ascx) with a visual and code-behind approach, and programmatically derived controls by inheriting from the base Control class.",
+        "Custom controls in ASP.NET can only be created by extending the WebControl class and implementing complex rendering methods through direct HTML generation mechanisms.",
+        "Custom controls in ASP.NET are exclusively created through XML-based templating, which requires defining control structures using web service configurations and namespace mappings."
+      ],
+      "correctIndex": 1,
+      "explanation": "Creating custom controls allows developers to encapsulate reusable UI and functionality. User controls (.ascx) provide a quick way to build composite controls with visual design, while programmatic controls offer more granular control. When creating a custom control, developers can define properties, events, and rendering logic to create sophisticated, modular web components. A typical custom control might look like this code example:"
+    },
+    {
+      "id": 14,
+      "question": "What are _validation controls_ in _ASP.NET_?",
+      "options": [
+        "Validation controls in ASP.NET are specialized middleware components that intercept HTTP requests and perform complex data transformation using machine learning algorithms.",
+        "Validation controls represent a dynamic parsing mechanism that converts input data into strongly-typed objects using advanced reflection techniques and runtime type inference.",
+        "Validation controls in ASP.NET are server-side mechanisms that provide automatic data validation, supporting both client-side JavaScript and server-side checks to ensure data integrity before form submission.",
+        "Validation controls are advanced security filters that encrypt and decrypt user input using cryptographic hashing methods to prevent potential data manipulation attempts."
+      ],
+      "correctIndex": 2,
+      "explanation": "Validation controls help developers implement robust input validation with minimal code. They handle both client-side validation (using JavaScript) and server-side validation to prevent invalid data submission. These controls can be easily configured in ASP.NET web forms to provide immediate feedback to users. A typical validation control usage looks like this:"
+    },
+    {
+      "id": 15,
+      "question": "Describe the different types of _validation controls_ available in _ASP.NET_.",
+      "options": [
+        "ASP.NET provides several validation controls including RequiredFieldValidator (ensures field is not empty), RangeValidator (checks numeric/date ranges), RegularExpressionValidator (validates input format), and CompareValidator (compares input against another control's value).",
+        "ASP.NET validation controls are specialized data transformation components that dynamically convert input types using advanced type inference and metadata mapping techniques.",
+        "Validation controls represent a comprehensive security framework that implements cryptographic input sanitization and multi-layered authentication protocols for web applications.",
+        "ASP.NET validation controls are complex middleware services that translate user inputs into standardized communication protocols using advanced XML-based transformation engines."
+      ],
+      "correctIndex": 0,
+      "explanation": "Validation controls provide a standardized approach to input validation in ASP.NET web forms. Each control serves a specific validation purpose, allowing developers to implement comprehensive data integrity checks with minimal configuration. These controls can be easily combined to create complex validation scenarios. Here's an example demonstrating multiple validation controls:"
+    }
+  ],
+  "processedAt": "2025-12-18T08:46:13.791Z"
+}

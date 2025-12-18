@@ -1,0 +1,197 @@
+{
+  "id": "concurrency",
+  "name": "Concurrency",
+  "slug": "concurrency-interview-questions",
+  "category": "Concepts",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _concurrency_ in programming and how does it differ from _parallelism_?",
+      "options": [
+        "Concurrency is a programming technique that allows only one task to execute at a time, ensuring strict sequential processing of system resources. It prevents multiple operations from occurring simultaneously to maintain strict order.",
+        "Concurrency describes a system's capability to handle multiple tasks that might start, run, and complete independently, while focusing on task management and interleaving. Parallelism, in contrast, involves executing multiple tasks simultaneously using multiple processors or cores.",
+        "Concurrency is a method of distributing computational load across different hardware components, ensuring that each task is allocated specific resources and executed with minimal overhead and maximum efficiency.",
+        "Concurrency represents a system's ability to prioritize and queue tasks based on computational complexity, with each task waiting for processor availability before execution. It fundamentally controls task scheduling through hierarchical mechanisms."
+      ],
+      "correctIndex": 1,
+      "explanation": "Concurrency and parallelism are related but distinct concepts in computing. Concurrency is about managing and coordinating multiple tasks, potentially interleaving their execution, while parallelism focuses on simultaneous task execution. The key difference lies in how tasks are handled: concurrency manages task progression, whereas parallelism emphasizes simultaneous computation."
+    },
+    {
+      "id": 2,
+      "question": "Can you explain _race conditions_ and provide an example where one might occur?",
+      "options": [
+        "Race conditions represent a system's natural load-balancing mechanism where threads compete for computational resources, dynamically adjusting processing priorities based on current system demands.",
+        "Race conditions describe a programming pattern where multiple threads deliberately create controlled conflicts to test system robustness and validate concurrent processing capabilities.",
+        "Race conditions occur when multiple threads access shared resources concurrently, potentially leading to unpredictable outcomes due to the non-deterministic order of thread execution and potential conflicts in data modification.",
+        "Race conditions are intentional synchronization strategies that allow threads to negotiate and manage resource access through competitive algorithms designed to optimize computational efficiency."
+      ],
+      "correctIndex": 2,
+      "explanation": "Race conditions emerge in concurrent systems when the outcome depends on the sequence of thread execution. They typically involve shared resources being accessed simultaneously, potentially causing data inconsistencies. Understanding and preventing race conditions is crucial for developing reliable multithreaded applications."
+    },
+    {
+      "id": 3,
+      "question": "What is a _critical section_ in the context of _concurrent programming_?",
+      "options": [
+        "A critical section is a computational boundary that limits thread interactions and prevents unauthorized data modifications by implementing strict access control and monitoring mechanisms.",
+        "A critical section is a code segment where shared resources are accessed by multiple threads, requiring synchronization mechanisms to prevent data races and maintain data integrity during concurrent execution.",
+        "A critical section represents a specialized memory allocation zone where threads negotiate resource access through predefined computational protocols and priority-based queuing systems.",
+        "A critical section defines a protected execution environment where threads are isolated and sequentially processed to ensure maximum computational predictability and resource management."
+      ],
+      "correctIndex": 1,
+      "explanation": "Critical sections are essential in concurrent programming for protecting shared resources from simultaneous access. They require synchronization techniques like locks or semaphores to ensure that only one thread can modify shared data at a time, preventing potential data corruption and maintaining system consistency."
+    },
+    {
+      "id": 4,
+      "question": "How does an _operating system_ ensure _mutual exclusion_ in _concurrent processes_?",
+      "options": [
+        "Operating systems ensure mutual exclusion by using mechanisms like locks, semaphores, and critical sections that restrict concurrent access to shared resources, preventing race conditions and maintaining data integrity.",
+        "Operating systems manage mutual exclusion through process scheduling algorithms that prioritize resource allocation and prevent simultaneous access by multiple threads.",
+        "Operating systems prevent concurrent access conflicts by using distributed locking mechanisms that coordinate resource usage across different system layers.",
+        "Mutual exclusion is achieved by implementing complex queuing systems that dynamically manage thread interactions and resource sharing permissions."
+      ],
+      "correctIndex": 0,
+      "explanation": "Mutual exclusion is a fundamental concurrency control technique that prevents multiple processes from simultaneously accessing shared resources. By using synchronization primitives like locks and semaphores, operating systems can create critical sections where only one process can execute at a time. This prevents race conditions and ensures data consistency in multi-threaded or multi-process environments."
+    },
+    {
+      "id": 5,
+      "question": "Can you describe the concept of _atomicity_ in relation to _concurrency_?",
+      "options": [
+        "Atomic operations are computational processes that can automatically restructure themselves to minimize potential conflicts during parallel execution.",
+        "Atomicity in concurrency guarantees that an operation appears to occur instantaneously and completely, ensuring that concurrent processes observe only fully completed or not started states of a transaction.",
+        "In concurrent computing, atomicity refers to the mechanism by which processes synchronize their execution timing and resource allocation strategies.",
+        "Atomicity represents the ability of concurrent systems to dynamically partition computational resources and execute multiple processes simultaneously."
+      ],
+      "correctIndex": 1,
+      "explanation": "Atomicity is a critical property in concurrent systems that ensures complex operations appear to happen in an indivisible, instantaneous manner. This concept prevents partial updates or inconsistent states that could arise from interrupted multi-step transactions, maintaining data integrity across parallel processing environments."
+    },
+    {
+      "id": 6,
+      "question": "How does a _deadlock_ occur and what are _common strategies_ to prevent it?",
+      "options": [
+        "Deadlocks occur when multiple threads are permanently blocked waiting for each other to release resources, typically resulting from circular dependency and improper resource allocation strategies.",
+        "In concurrent systems, deadlocks represent a state of computational gridlock where threads compete for limited processing capabilities.",
+        "Deadlocks are sophisticated synchronization challenges arising from complex resource management and thread interaction patterns.",
+        "Deadlocks emerge when system resources become temporarily saturated, causing processes to pause and create complex synchronization bottlenecks."
+      ],
+      "correctIndex": 0,
+      "explanation": "Deadlocks represent a critical concurrency problem where processes become permanently stuck because each is waiting for a resource held by another. They typically arise from four key conditions: mutual exclusion, hold and wait, no preemption, and circular wait. Understanding and preventing these scenarios is crucial for designing robust multi-threaded systems."
+    },
+    {
+      "id": 7,
+      "question": "What is a _livelock_ and how is it different from a _deadlock_?",
+      "options": [
+        "A livelock happens when multiple processes simultaneously attempt to acquire shared resources, causing persistent mutual blocking conditions.",
+        "A livelock is a rare concurrent state where threads become permanently suspended due to complex resource allocation conflicts.",
+        "Livelocks represent a synchronization state where threads continuously retry operations without successful resolution, similar to infinite recursion.",
+        "A livelock occurs when threads are actively changing state but making no meaningful progress, unlike a deadlock where threads are completely stuck waiting for resources."
+      ],
+      "correctIndex": 3,
+      "explanation": "Livelocks involve active threads repeatedly changing state without making progress, typically caused by complex interactions where threads respond to each other's actions. Unlike deadlocks, threads remain technically active but cannot complete their intended tasks. Common examples include two threads repeatedly yielding to each other or continuously attempting to resolve a conflict without success."
+    },
+    {
+      "id": 8,
+      "question": "Can you explain the _producer-consumer problem_ and how can it be addressed using _concurrency mechanisms_?",
+      "options": [
+        "The producer-consumer problem involves managing a shared buffer where one thread generates data and another consumes it, requiring synchronization to prevent race conditions and buffer overflow or underflow.",
+        "The producer-consumer problem is a synchronization challenge involving thread communication through complex message-passing protocols.",
+        "Producer-consumer interactions represent a parallel processing model where threads dynamically negotiate shared memory access and computational workloads.",
+        "The producer-consumer problem describes a computational scenario where multiple threads compete for limited processing resources with complex priority management."
+      ],
+      "correctIndex": 0,
+      "explanation": "This classic concurrency problem demonstrates the challenges of managing shared resources between generating and consuming threads. Proper synchronization mechanisms like semaphores or mutex locks prevent data inconsistencies, ensuring the buffer remains in a consistent state while allowing efficient data transfer between producer and consumer threads."
+    },
+    {
+      "id": 9,
+      "question": "What is the difference between a _process_ and a _thread_?",
+      "options": [
+        "Processes and threads are identical computational constructs that represent different levels of system-level task execution and resource management.",
+        "A process is an independent program execution unit with its own memory space, while a thread is a lightweight execution unit within a process that shares memory and resources with other threads in the same process.",
+        "Threads and processes are interchangeable execution models that define how computational resources are dynamically allocated and managed.",
+        "A process represents a lightweight computational context, while a thread manages complex memory allocation strategies across multiple execution environments."
+      ],
+      "correctIndex": 1,
+      "explanation": "Processes and threads represent different levels of computational execution. Processes are isolated, memory-independent program instances managed by the operating system, while threads are more lightweight and share the same memory space within a single process. This fundamental difference impacts resource usage, communication overhead, and context switching efficiency."
+    },
+    {
+      "id": 10,
+      "question": "How are _threads_ typically created and managed in _modern operating systems_?",
+      "options": [
+        "Threads are independent computational units that operate completely separately from processes, with each thread having its own isolated memory space and independent execution environment.",
+        "Threads are complex scheduling mechanisms implemented exclusively by kernel-level systems, requiring direct hardware interaction for each thread creation and management.",
+        "Threads are lightweight units of execution within a process, managed by modern operating systems using thread management models like Many-to-Many, One-to-One, and Many-to-One, allowing concurrent task execution and efficient resource sharing.",
+        "Threads represent sequential execution units that can only be managed through static allocation and predefined runtime parameters in modern computing architectures."
+      ],
+      "correctIndex": 2,
+      "explanation": "Thread management is crucial for concurrent programming. Different models distribute kernel and user-level threads to optimize scheduling, resource utilization, and performance. The Many-to-Many model provides the most flexible approach, allowing multiple user threads to be mapped to multiple kernel threads, enabling sophisticated concurrency strategies."
+    },
+    {
+      "id": 11,
+      "question": "What is a _thread pool_ and why might you use one?",
+      "options": [
+        "A thread pool is a resource management technique that pre-creates and maintains a group of reusable threads to execute tasks, reducing thread creation overhead and improving application performance and resource efficiency.",
+        "Thread pools represent a specialized synchronization mechanism designed to limit concurrent execution by serializing all incoming tasks through a centralized queue management system.",
+        "A thread pool is an advanced scheduling algorithm that automatically distributes computational workloads across multiple processing units without manual thread management.",
+        "A thread pool is a dynamic memory allocation strategy that generates new threads on-demand, allowing unlimited parallel processing without considering system resource constraints."
+      ],
+      "correctIndex": 0,
+      "explanation": "Thread pools solve critical performance challenges by minimizing the computational expense of thread creation and destruction. By maintaining a predetermined number of reusable threads, applications can efficiently handle concurrent tasks while preventing resource exhaustion and managing system overhead."
+    },
+    {
+      "id": 12,
+      "question": "Can you explain the concept of a _context switch_ and how it affects _concurrency_?",
+      "options": [
+        "A context switch is the process of storing and restoring a thread or process's execution state, allowing the operating system to create the illusion of simultaneous execution by temporarily suspending and resuming different computational tasks.",
+        "Context switches are specialized memory optimization techniques that permanently relocate computational processes between different hardware registers to improve system responsiveness.",
+        "Context switches are advanced scheduling algorithms that predict and preemptively allocate computational resources based on complex machine learning predictive models.",
+        "A context switch represents a complete memory and state reinitialization process where the operating system completely rebuilds a thread's execution environment from scratch."
+      ],
+      "correctIndex": 0,
+      "explanation": "Context switching is a fundamental mechanism in multitasking operating systems, enabling the appearance of simultaneous execution. By rapidly storing and restoring thread states, the OS can switch between different tasks, creating the illusion of parallel processing while efficiently utilizing available computational resources."
+    },
+    {
+      "id": 13,
+      "question": "What are the benefits and disadvantages of using many _small threads_ vs. a few _large threads_?",
+      "options": [
+        "Thread size primarily impacts application startup time, with smaller threads being slower and larger threads providing faster initialization.",
+        "Small threads offer better resource segregation and work granularity on multi-core systems, while large threads reduce overhead but may create bottlenecks in parallel processing.",
+        "Small threads always consume more system resources and create significant performance overhead across different computing architectures.",
+        "Large threads provide more efficient memory management and reduce context switching complexity compared to multiple smaller threads."
+      ],
+      "correctIndex": 1,
+      "explanation": "Thread size impacts system performance by influencing resource allocation, context switching, and parallel processing capabilities. Small threads enable fine-grained task distribution and better utilize multi-core processors, while large threads minimize synchronization overhead but can create potential performance bottlenecks."
+    },
+    {
+      "id": 14,
+      "question": "What is a _mutex_ and how does it work?",
+      "options": [
+        "A mutex represents a thread communication protocol that enables unrestricted concurrent access to critical system resources.",
+        "Mutexes are advanced locking primitives that automatically resolve thread scheduling conflicts through dynamic priority inheritance.",
+        "A mutex is a synchronization mechanism that allows exclusive access to a shared resource, ensuring only one thread can lock and modify the resource at a time.",
+        "A mutex is a parallel processing technique that allows multiple threads to simultaneously read and modify shared memory segments without coordination."
+      ],
+      "correctIndex": 2,
+      "explanation": "Mutexes provide critical section protection by implementing a lock-based mechanism that prevents race conditions. When a thread acquires a mutex, other threads are blocked from accessing the same resource, ensuring thread-safe operations and preventing data corruption."
+    },
+    {
+      "id": 15,
+      "question": "What are _semaphores_ and how do they differ from _mutexes_?",
+      "options": [
+        "Semaphores are exclusive locking mechanisms that prevent any concurrent thread access and enforce strict sequential processing.",
+        "Semaphores represent thread communication protocols that dynamically redistribute computational workloads across different system cores.",
+        "A semaphore is a specialized mutex that provides complete thread isolation and prevents any potential resource sharing.",
+        "Semaphores are synchronization primitives that control thread access to shared resources by maintaining a counter, allowing multiple threads to access resources simultaneously within defined limits."
+      ],
+      "correctIndex": 3,
+      "explanation": "Unlike mutexes, semaphores can allow multiple threads to access resources concurrently by maintaining a counter. They are more flexible synchronization mechanisms that can control resource access based on available slots, making them useful for managing limited shared resources like connection pools or thread limits."
+    }
+  ],
+  "processedAt": "2025-12-18T09:00:22.707Z"
+}

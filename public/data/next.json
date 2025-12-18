@@ -1,0 +1,198 @@
+{
+  "id": "next",
+  "name": "Next.js",
+  "slug": "next-interview-questions",
+  "category": "Frontend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Next.js_ and what are its main features?",
+      "options": [
+        "Next.js is a production-grade React framework that enables server-side rendering, static site generation, and provides advanced performance optimization features for modern web applications.",
+        "Next.js is a backend framework designed to replace traditional server-side technologies with a React-based microservices architecture.",
+        "Next.js is a static site generator that only supports client-side rendering and does not offer any advanced routing or performance features.",
+        "Next.js is a client-side React library that focuses exclusively on front-end rendering and provides minimal configuration options for web development."
+      ],
+      "correctIndex": 0,
+      "explanation": "Next.js is a powerful React framework developed by Vercel that extends React's capabilities. It provides automatic code splitting, server-side rendering, static site generation, and built-in performance optimizations. Developers can create highly performant and SEO-friendly web applications with minimal configuration. An example of its page routing can be seen in this simple structure:"
+    },
+    {
+      "id": 2,
+      "question": "How does _Next.js_ differ from _Create React App_?",
+      "options": [
+        "Next.js is a subset of Create React App, with fewer features and more restricted development capabilities for React projects.",
+        "Create React App provides more advanced rendering techniques and performance optimizations compared to the limited capabilities of Next.js.",
+        "Next.js is essentially identical to Create React App, offering the same rendering strategies and configuration options for React applications.",
+        "Next.js differs from Create React App by providing built-in server-side rendering, static site generation, and integrated routing, whereas Create React App focuses primarily on client-side rendering."
+      ],
+      "correctIndex": 3,
+      "explanation": "The key distinction between Next.js and Create React App lies in their rendering approaches and built-in features. Next.js offers more out-of-the-box functionality for complex web applications, including automatic code splitting and multiple rendering strategies. A basic Next.js page demonstrates its simplified routing:"
+    },
+    {
+      "id": 3,
+      "question": "What command is used to create a new _Next.js_ app?",
+      "options": [
+        "Creating a Next.js app requires downloading a separate CLI tool and running a multi-step installation wizard to initialize the project.",
+        "The command to create a Next.js app is `npm install next-project folder-name`, which automatically generates a complete project structure.",
+        "To create a new Next.js app, use the command `npx create-next-app folder-name`, which downloads the latest Next.js project template and sets up a new project in the specified directory.",
+        "To create a Next.js app, you must manually clone the Next.js repository and configure all dependencies through a complex setup process."
+      ],
+      "correctIndex": 2,
+      "explanation": "The `create-next-app` command provides a quick and easy way to start a new Next.js project with a pre-configured template. It handles all initial setup, including installing necessary dependencies and creating a basic project structure. Here's an example of the basic command and its typical output:"
+    },
+    {
+      "id": 4,
+      "question": "How does _Next.js_ handle _server-side rendering_ (SSR)?",
+      "options": [
+        "Next.js performs SSR by caching all page requests and serving static HTML versions without regenerating content for each unique request.",
+        "Next.js manages SSR by pre-compiling all pages during build time and serving identical static content regardless of user-specific data requirements.",
+        "Next.js handles Server-Side Rendering (SSR) by generating HTML on the server for each request, allowing dynamic data fetching and rendering before sending the fully rendered page to the client.",
+        "Next.js implements SSR through client-side JavaScript that reconstructs page content after initial page load, simulating server-side rendering dynamically."
+      ],
+      "correctIndex": 2,
+      "explanation": "Server-Side Rendering in Next.js enables dynamic content generation directly on the server, ensuring that each request receives fresh, personalized HTML. The process involves using functions like getServerSideProps() to fetch data server-side before rendering. This approach provides better initial load performance and SEO compared to pure client-side rendering.\n\nExample of SSR data fetching:\n```javascript\nexport async function getServerSideProps(context) {\n  const res = await fetch(`https://api.example.com/data`)\n  const data = await res.json()\n  return { props: { data } }\n}\n```"
+    },
+    {
+      "id": 5,
+      "question": "Can you explain the purpose of the _`pages` directory_ in a _Next.js_ project?",
+      "options": [
+        "The `pages` directory serves as a static asset container for pre-rendered page templates that are compiled during the build process.",
+        "The `pages` directory in Next.js automatically creates routes based on file structure, where each file represents a specific route and enables file-based routing without additional configuration.",
+        "The `pages` directory in Next.js is a configuration folder that manually defines route mappings through a separate routing configuration file.",
+        "The `pages` directory is a legacy feature in Next.js used for organizing component imports and does not directly impact routing mechanisms."
+      ],
+      "correctIndex": 1,
+      "explanation": "Next.js uses a file-system based routing approach where the `pages` directory structure directly translates to application routes. Files like `pages/index.js` become the root route, while `pages/about.js` becomes `/about`. Dynamic routes can be created using bracket notation like `[id].js`.\n\nExample of routing structure:\n```\npages/\n├── index.js        # Maps to / route\n├── about.js        # Maps to /about route\n└── posts/\n    └── [id].js     # Maps to /posts/[dynamic-id] route\n```"
+    },
+    {
+      "id": 6,
+      "question": "In _Next.js_, how do you create a page that is rendered on the server for every request?",
+      "options": [
+        "Server-side rendering for every request is achieved by adding a special middleware that intercepts page generation and triggers manual HTML reconstruction.",
+        "Next.js enables per-request server rendering by implementing a custom webpack configuration that dynamically rebuilds pages during runtime.",
+        "To create a page rendered on the server for every request in Next.js, you implement the `getServerSideProps()` function, which runs on the server for each incoming request and returns props for page rendering.",
+        "To create a server-rendered page in Next.js, you configure a static build flag that forces server-side compilation during the deployment process."
+      ],
+      "correctIndex": 2,
+      "explanation": "Server-side rendering for every request ensures that page content is dynamically generated on each visit, which is crucial for frequently changing data. The `getServerSideProps()` method provides a clean way to fetch data server-side and pass it as props to the page component.\n\nExample implementation:\n```javascript\nexport async function getServerSideProps(context) {\n  const { params } = context\n  const data = await fetchRealtimeData(params.id)\n  return { props: { data } }\n}\n```"
+    },
+    {
+      "id": 7,
+      "question": "What file extensions does _Next.js_ support for pages?",
+      "options": [
+        "Next.js supports page components with multiple file extensions including .js, .jsx, .ts, .tsx, .mdx, and supports CSS files like .css, .module.css, and .scss for styling.",
+        "Next.js uses a proprietary file extension system that requires special compilation for each page component type.",
+        "Next.js only supports JavaScript and TypeScript files with .js and .ts extensions, limiting page component flexibility.",
+        "Next.js requires all page components to be written in pure React with strict .jsx and .tsx extension requirements."
+      ],
+      "correctIndex": 0,
+      "explanation": "Next.js provides extensive file extension support to accommodate different developer preferences and project needs. This flexibility allows developers to use JavaScript, TypeScript, and even markdown (MDX) for creating page components. The framework's build process automatically handles these different file types, enabling developers to choose the most comfortable syntax and tooling for their project."
+    },
+    {
+      "id": 8,
+      "question": "How do _environment variables_ work in _Next.js_?",
+      "options": [
+        "Environment variables in Next.js are exclusively managed through configuration files in the project's settings directory.",
+        "Environment variables are dynamically generated at runtime and cannot be pre-configured in Next.js applications.",
+        "Environment variables in Next.js can be configured in .env.local files, with different variables accessible on server, build, and client sides depending on their prefix.",
+        "Next.js requires manual configuration of each environment variable through complex webpack configurations."
+      ],
+      "correctIndex": 2,
+      "explanation": "Next.js handles environment variables through a straightforward configuration system using .env files. Developers can specify different types of environment variables with specific prefixes like NEXT_PUBLIC_ for client-side access. These variables can be used to manage configuration across different deployment environments without exposing sensitive information."
+    },
+    {
+      "id": 9,
+      "question": "What is _Automatic Static Optimization_ in _Next.js_?",
+      "options": [
+        "Automatic Static Optimization is a performance feature that always requires additional webpack configuration.",
+        "Automatic Static Optimization in Next.js allows pages to be prerendered as static HTML during build time if they do not require server-side data fetching.",
+        "Next.js static optimization only works for pages with minimal JavaScript and no dynamic content.",
+        "Automatic Static Optimization is a manual process where developers must explicitly configure each page for static rendering."
+      ],
+      "correctIndex": 1,
+      "explanation": "Automatic Static Optimization is a powerful Next.js feature that improves performance by automatically generating static HTML for pages that don't require server-side data fetching. During the build process, Next.js analyzes page components and determines which can be statically generated, reducing server load and improving initial page load times."
+    },
+    {
+      "id": 10,
+      "question": "How does _file-based routing_ work in _Next.js_?",
+      "options": [
+        "File-based routing in Next.js uses a webpack plugin to transform file paths into route configurations, requiring additional build-time processing for route generation.",
+        "Next.js routes are generated dynamically at runtime by parsing the application's component structure and creating route definitions based on runtime analysis.",
+        "File-based routing in Next.js requires manual configuration of routes through a central routing configuration file that defines URL mappings for each page component.",
+        "File-based routing in Next.js automatically creates routes based on file structure in the pages directory, where each file becomes a route. The file path directly corresponds to the URL path, with pages like 'pages/about.js' mapping to '/about'."
+      ],
+      "correctIndex": 3,
+      "explanation": "Next.js simplifies routing by automatically creating routes based on the file structure in the pages directory. Each JavaScript or TypeScript file in this directory becomes a route, with the filename determining the URL path. For example, a file at 'pages/products/[id].js' creates a dynamic route that matches '/products/any-value'. This approach eliminates the need for manual route configuration and provides an intuitive way to structure web application navigation.\n\n```javascript\n// pages/about.js\nexport default function About() {\n  return <div>About Page</div>\n}\n// Automatically creates '/about' route\n```"
+    },
+    {
+      "id": 11,
+      "question": "How do you create _dynamic routes_ in _Next.js_?",
+      "options": [
+        "Dynamic routes in Next.js are defined through a special routing configuration object that maps URL patterns to component renderers using regular expression matching.",
+        "Dynamic routing in Next.js requires explicit route registration in a central routing configuration file, where each dynamic segment must be predeclared with its expected type.",
+        "Dynamic routes in Next.js are created by using square brackets in filenames, such as '[param].js', which allow capturing variable segments in the URL path. These dynamic segments can be accessed using the useRouter hook or getServerSideProps.",
+        "Next.js generates dynamic routes by implementing a middleware system that intercepts URL requests and dynamically maps them to appropriate component rendering functions."
+      ],
+      "correctIndex": 2,
+      "explanation": "Next.js implements dynamic routing by using square bracket notation in filenames, which allows for flexible URL parameter handling. When a file like 'pages/post/[id].js' is created, Next.js automatically generates a route that can match '/post/any-value'. The dynamic segment can be accessed using the useRouter hook, providing a straightforward way to create flexible, data-driven routes.\n\n```javascript\n// pages/post/[id].js\nimport { useRouter } from 'next/router'\n\nexport default function Post() {\n  const router = useRouter()\n  const { id } = router.query\n  return <div>Post: {id}</div>\n}\n```"
+    },
+    {
+      "id": 12,
+      "question": "Explain how to access _URL parameters_ in a dynamic route.",
+      "options": [
+        "URL parameters are managed through a context provider that wraps the entire application, requiring explicit parameter registration and access through a specialized routing hook.",
+        "URL parameters in Next.js are extracted through a global routing context that must be initialized in the _app.js file, with parameters accessed via a centralized routing service.",
+        "Next.js retrieves URL parameters by parsing the current window location and manually extracting segments using custom parsing logic implemented in a routing utility.",
+        "URL parameters in Next.js can be accessed using the useRouter hook from 'next/router', which provides a query object containing the dynamic route parameters. The parameter values can be directly destructured from router.query."
+      ],
+      "correctIndex": 3,
+      "explanation": "Next.js simplifies URL parameter access by providing the useRouter hook, which automatically populates a query object with dynamic route segments. This approach allows developers to easily extract and use URL parameters within their components without complex routing logic.\n\n```javascript\nimport { useRouter } from 'next/router'\n\nfunction ProductPage() {\n  const router = useRouter()\n  const { id } = router.query\n  return <div>Product ID: {id}</div>\n}\n```"
+    },
+    {
+      "id": 13,
+      "question": "Describe the functionality of the _`Link`_ component in _Next.js_.",
+      "options": [
+        "The Link component in Next.js provides client-side navigation between pages, enabling seamless and fast page transitions with automatic prefetching of linked pages for improved performance.",
+        "Link is a Next.js utility that manages page-level state management and handles complex navigation patterns through custom routing configurations.",
+        "The Link component is a specialized routing mechanism that replaces traditional anchor tags by generating static HTML links at build time for SEO optimization.",
+        "The Link component creates server-side rendered navigation paths that dynamically update the browser's history without full page reloads."
+      ],
+      "correctIndex": 0,
+      "explanation": "Next.js's Link component enhances navigation by handling client-side transitions without full page reloads. It automatically prefetches linked pages in the background, reducing perceived load times. The component accepts props like 'href' and can be used with custom components. Here's a typical implementation:\n\n```jsx\nimport Link from 'next/link'\n\nfunction Navigation() {\n  return (\n    <Link href='/about'>\n      <a>About Page</a>\n    </Link>\n  )\n}\n```"
+    },
+    {
+      "id": 14,
+      "question": "How do you handle _catch-all routes_ in _Next.js_?",
+      "options": [
+        "Catch-all routes in Next.js use the [...param] syntax to create dynamic routes that can match multiple path segments, allowing flexible and extensible routing strategies.",
+        "Catch-all routes enable programmatic route generation by intercepting and transforming URL segments before rendering the appropriate page component.",
+        "Catch-all routes represent a server-side rendering technique that dynamically generates route configurations during the build process for complex application architectures.",
+        "Catch-all routes are a Next.js routing mechanism that automatically redirects undefined paths to a predefined fallback component based on complex matching algorithms."
+      ],
+      "correctIndex": 0,
+      "explanation": "Catch-all routes provide flexibility in Next.js routing by allowing dynamic path matching. They use square bracket notation with spread syntax to capture variable-length URL segments. A practical example demonstrates their usage:\n\n```jsx\n// pages/posts/[...slug].js\nfunction Post({ slug }) {\n  return <div>Post: {slug.join('/')}</div>\n}\n\n// Matches /posts/2023/05/my-article\n```"
+    },
+    {
+      "id": 15,
+      "question": "What is `getStaticProps` and when would you use it?",
+      "options": [
+        "getStaticProps is an optimization technique that generates static HTML files by extracting content from external APIs and caching them during the deployment process.",
+        "getStaticProps is a caching mechanism in Next.js that stores pre-computed data in memory to reduce database query overhead during page rendering.",
+        "getStaticProps is a server-side rendering method that dynamically generates page content on each request, providing real-time data updates for frequently changing information.",
+        "getStaticProps is a Next.js data fetching method that pre-renders pages at build time by retrieving data during the build process, optimizing performance for static content."
+      ],
+      "correctIndex": 3,
+      "explanation": "getStaticProps enables static site generation by fetching data at build time, making it ideal for content that doesn't change frequently. It runs only on the server-side during build and allows returning props for page rendering. Example implementation:\n\n```jsx\nexport async function getStaticProps() {\n  const res = await fetch('https://api.example.com/data')\n  const data = await res.json()\n\n  return { props: { data } }\n}\n```"
+    }
+  ],
+  "processedAt": "2025-12-18T09:56:25.416Z"
+}

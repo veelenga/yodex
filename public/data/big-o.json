@@ -1,0 +1,160 @@
+{
+  "id": "big-o",
+  "name": "Big O Notation",
+  "slug": "big-o-notation-interview-questions",
+  "category": "Concepts",
+  "totalQuestions": 12,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Big-O Notation_?",
+      "options": [
+        "Big O notation is a mathematical method for describing algorithmic performance, evaluating how an algorithm's runtime or space requirements grow relative to input size as complexity increases.",
+        "Big O notation is a graphical representation of computational efficiency, mapping algorithm performance using visual complexity diagrams and statistical models.",
+        "Big O notation quantifies programming language efficiency by comparing memory allocation and processing speeds across different computational architectures.",
+        "Big O notation represents the precise runtime measurement of an algorithm, calculating exact execution time for different input scenarios with mathematical precision."
+      ],
+      "correctIndex": 0,
+      "explanation": "Big O notation provides a standardized way to analyze algorithmic efficiency by focusing on the dominant growth rate. It abstracts away constant factors and lower-order terms, allowing comparison of algorithms independent of specific hardware or implementation details. The notation helps developers understand how algorithms scale with increasing input size, which is critical for predicting performance in large-scale systems."
+    },
+    {
+      "id": 2,
+      "question": "Explain the difference between _Big-O_, _Big-Theta_, and _Big-Omega_ notations.",
+      "options": [
+        "Big-O notation calculates the average performance of an algorithm by statistically analyzing its execution across multiple input scenarios and computing a median complexity.",
+        "Big-O determines the most efficient implementation of an algorithm by comparing its theoretical performance against standardized computational benchmarks.",
+        "Big-O defines the upper bound of an algorithm's growth rate, representing the worst-case scenario of computational complexity by describing how runtime increases relative to input size.",
+        "Big-O represents the absolute runtime measurement of an algorithm, precisely calculating the total number of operations executed for each input configuration."
+      ],
+      "correctIndex": 2,
+      "explanation": "The key distinction of Big-O notation is its focus on asymptotic behavior, which means analyzing how an algorithm performs as input size approaches infinity. By identifying the dominant term in the algorithm's growth function, developers can understand scalability and make informed decisions about algorithm selection, especially for large-scale data processing."
+    },
+    {
+      "id": 3,
+      "question": "Describe the role of _constants and lower-order terms_ in Big-O analysis.",
+      "options": [
+        "Constants and lower-order terms are simplified in Big-O analysis because they become insignificant as input size grows, allowing focus on the most critical factors influencing algorithmic performance.",
+        "Constants and lower-order terms represent the fundamental building blocks of algorithmic efficiency, determining the core performance characteristics of computational methods.",
+        "Constants and lower-order terms provide precise performance metrics, enabling developers to calculate exact computational requirements for specific input sizes.",
+        "Constants and lower-order terms are critical indicators of an algorithm's absolute performance, revealing minute details about its execution strategy."
+      ],
+      "correctIndex": 0,
+      "explanation": "In Big-O notation, constants and lower-order terms are dropped because they do not significantly impact the algorithm's overall scalability. As input size increases, the highest-order term dominates the growth rate, making smaller terms negligible. This approach allows for a more generalized and meaningful comparison of algorithmic complexity across different problem sizes."
+    },
+    {
+      "id": 4,
+      "question": "Give examples of how _amortized analysis_ can provide a more balanced complexity measure.",
+      "options": [
+        "Amortized analysis demonstrates that some algorithms have consistently high computational costs, making them inefficient for large-scale data processing and reducing overall system performance.",
+        "Amortized complexity represents the worst-case scenario for algorithmic operations, providing a pessimistic view of potential performance bottlenecks in computational systems.",
+        "Amortized analysis calculates the maximum possible time complexity by aggregating the most resource-intensive operations across multiple algorithm executions.",
+        "Amortized analysis reveals that operations like dynamic array insertion have an average time complexity of O(1), despite occasional expensive resizing operations that trigger O(n) performance."
+      ],
+      "correctIndex": 3,
+      "explanation": "Amortized analysis helps understand the true performance of data structures by averaging out occasional expensive operations. In dynamic arrays, while a single resize might take O(n) time, most insertions remain O(1), resulting in a more balanced overall complexity. This technique provides a more nuanced view of algorithmic efficiency beyond worst-case analysis."
+    },
+    {
+      "id": 5,
+      "question": "Describe how the _coefficients of higher-order terms_ affect Big-O Notation in practical scenarios.",
+      "options": [
+        "Coefficients in Big-O notation are completely irrelevant and can be ignored in all algorithmic complexity calculations, regardless of input size or specific computational context.",
+        "Higher-order term coefficients always determine the absolute performance of an algorithm, making them more critical than the fundamental time complexity classification.",
+        "Coefficients in Big-O notation provide a precise measurement of computational efficiency, directly translating to exact runtime predictions for any given algorithm.",
+        "Coefficients in Big-O notation can significantly impact performance for smaller input sizes, even though they become less relevant as the input grows larger and the dominant term takes precedence."
+      ],
+      "correctIndex": 3,
+      "explanation": "While Big-O notation primarily focuses on the dominant term, coefficients can meaningfully affect algorithm performance, especially for smaller input sizes. As n grows larger, the dominant term becomes more significant, but for practical, smaller-scale computations, these coefficients can make a noticeable difference in actual runtime."
+    },
+    {
+      "id": 6,
+      "question": "Explain how _probabilistic algorithms_ can have a different Big-O Notation compared to deterministic ones.",
+      "options": [
+        "Probabilistic algorithms operate with completely random outcomes and cannot be mathematically analyzed or predicted in any meaningful way.",
+        "Probabilistic algorithms are fundamentally less reliable and should never be used in critical computational tasks that require absolute precision.",
+        "Probabilistic algorithms always provide exact solutions with guaranteed accuracy and consistently outperform deterministic approaches across all computational scenarios.",
+        "Probabilistic algorithms can solve certain complex problems in expected polynomial time, offering approximate solutions where deterministic algorithms would require exponential computational resources."
+      ],
+      "correctIndex": 3,
+      "explanation": "Probabilistic algorithms leverage randomization to solve complex computational problems more efficiently than deterministic approaches. They trade absolute certainty for improved performance, providing approximate solutions with provable error bounds in scenarios where traditional algorithms would be computationally infeasible."
+    },
+    {
+      "id": 10,
+      "question": "Evaluate the Big-O _time complexity_ of _binary search_.",
+      "options": [
+        "Binary Search is a divide-and-conquer algorithm that works by randomly sampling elements from a list, potentially achieving logarithmic-like performance with an approximate O(log n) complexity.",
+        "Binary Search is an advanced searching technique that uses multiple parallel search paths to simultaneously explore different sections of a sorted list, targeting O(log n) efficiency.",
+        "Binary Search is a linear search algorithm that iterates through each element sequentially, achieving a moderate search performance with consistent O(n) complexity across different input sizes.",
+        "Binary Search is an efficient search algorithm with O(log n) time complexity, operating on sorted lists by repeatedly dividing the search space in half to locate a target element."
+      ],
+      "correctIndex": 3,
+      "explanation": "Binary Search's logarithmic time complexity stems from its divide-and-conquer approach. By repeatedly halving the search space, it eliminates half of the remaining elements in each iteration, allowing extremely fast searches in sorted collections compared to linear search methods."
+    },
+    {
+      "id": 11,
+      "question": "Determine the Big-O _time and space complexities_ of _hash table_ operations.",
+      "options": [
+        "Hash table operations perform with a variable time complexity between O(1) and O(n), depending on the specific implementation and collision resolution strategy.",
+        "Hash table operations typically have O(1) time complexity for search, insert, and delete, with the hash function providing constant-time element location and manipulation.",
+        "Hash table operations generally require O(n) time complexity, as each operation involves scanning through potential collision lists to locate or modify elements.",
+        "Hash table operations demonstrate logarithmic time complexity O(log n), leveraging advanced indexing techniques to efficiently manage and retrieve elements."
+      ],
+      "correctIndex": 1,
+      "explanation": "Hash tables achieve near-constant time complexity by using a hash function to directly map keys to array indices. While collisions can occasionally introduce slight performance variations, well-designed hash functions minimize these impacts, maintaining consistently fast operation times."
+    },
+    {
+      "id": 12,
+      "question": "Discuss the Big-O complexities of _tree_ operations, including binary search trees and AVL trees.",
+      "options": [
+        "Binary Search Trees consistently maintain O(n) time complexity for all operations, with search and insert performance directly proportional to the total number of elements.",
+        "Binary Search Trees utilize a probabilistic search mechanism that achieves variable time complexity ranging between O(log n) and O(n), depending on tree structure.",
+        "Binary Search Trees (BST) offer O(log n) time complexity for search and insert operations in balanced trees, with worst-case scenarios potentially degrading to O(n) in unbalanced configurations.",
+        "Binary Search Trees implement a dynamic search strategy with average time complexity of O(n log n), adapting to different tree structures and element distributions."
+      ],
+      "correctIndex": 2,
+      "explanation": "The efficiency of Binary Search Trees relies on maintaining a balanced structure where each node effectively divides the search space. Balanced trees ensure logarithmic time complexity by eliminating large portions of the search space with each comparison, while unbalanced trees can degrade to linear search performance."
+    },
+    {
+      "id": 13,
+      "question": "Analyze the Big-O complexity of _graph_ algorithms, including traversal and shortest path algorithms.",
+      "options": [
+        "Graph traversal methods generally exhibit polynomial time complexity around O(V * log E), with space requirements dependent on the specific implementation strategy.",
+        "Graph traversal algorithms are typically characterized by a time complexity of O(E²) and demonstrate quadratic space scaling based on the number of interconnected nodes.",
+        "Graph traversal algorithms vary in complexity, with most approaches having a time complexity of O(V²) and requiring significant memory allocation proportional to graph size.",
+        "Graph traversal algorithms like Depth-First Search (DFS) and Breadth-First Search (BFS) typically have a time complexity of O(V + E), where V represents vertices and E represents edges, with a space complexity of O(V)."
+      ],
+      "correctIndex": 3,
+      "explanation": "Graph traversal algorithms systematically visit nodes and edges in a graph. The standard DFS and BFS algorithms efficiently explore all connected components by visiting each vertex and edge once, making O(V + E) a standard complexity metric. The space complexity reflects the need to track visited nodes and maintain a search frontier."
+    },
+    {
+      "id": 14,
+      "question": "Discuss time and space complexities of various _heap operations_.",
+      "options": [
+        "Heap operations exhibit quadratic time complexity O(n²), requiring extensive computational resources for each structural modification.",
+        "Heap implementations demonstrate near-constant time complexity around O(1), with minimal overhead for maintaining the hierarchical node relationships.",
+        "Heap operations are generally characterized by O(n) time complexity, with each modification requiring a comprehensive restructuring of the entire data structure.",
+        "Heap operations like insertion and deletion typically have O(log n) time complexity, with the heap structure maintaining its balanced tree property through efficient reorganization after modifications."
+      ],
+      "correctIndex": 3,
+      "explanation": "Heaps are specialized tree-based data structures that enable efficient priority queue operations. The logarithmic time complexity comes from the balanced nature of the heap, which allows quick reorganization after insertions or deletions while maintaining the heap's fundamental ordering property."
+    },
+    {
+      "id": 15,
+      "question": "Provide examples of _space-time tradeoffs_ in algorithm design.",
+      "options": [
+        "Space-time tradeoffs primarily focus on maximizing computational efficiency by dedicating additional hardware resources to reduce algorithmic complexity.",
+        "Space-time tradeoffs involve creating redundant data structures to ensure rapid access and minimize potential computational bottlenecks.",
+        "Space-time tradeoffs involve optimizing algorithms by strategically balancing computational resources, such as using compression techniques that reduce memory usage at the cost of increased processing time.",
+        "Space-time tradeoffs represent a strategy of uniformly distributing computational load across multiple processing units to minimize resource consumption."
+      ],
+      "correctIndex": 2,
+      "explanation": "Space-time tradeoffs represent a fundamental algorithmic design principle where developers make strategic choices between memory usage and computational speed. These tradeoffs allow for flexible optimization strategies, enabling solutions that prioritize either resource efficiency or processing performance depending on specific requirements."
+    }
+  ],
+  "processedAt": "2025-12-18T08:52:29.871Z"
+}

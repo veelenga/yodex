@@ -1,0 +1,172 @@
+{
+  "id": "reactive-systems",
+  "name": "Reactive Systems",
+  "slug": "reactive-systems-interview-questions",
+  "category": "Architecture",
+  "totalQuestions": 13,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What are the defining characteristics of a _Reactive System_ according to the _Reactive Manifesto_?",
+      "options": [
+        "Reactive Systems primarily focus on message-driven architectures that prioritize high-performance communication protocols and minimize latency through advanced threading models.",
+        "Reactive Systems are characterized by Responsiveness, Resilience, and Elasticity, which enable them to react efficiently to events, maintain system integrity under failures, and dynamically adjust resource allocation.",
+        "Reactive Systems represent a design paradigm centered on non-blocking I/O operations and leveraging concurrent processing models to maximize computational efficiency.",
+        "Reactive Systems are defined by their ability to implement complex event processing patterns and maintain consistent state across distributed microservices using advanced synchronization techniques."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Reactive Manifesto outlines key principles that distinguish Reactive Systems. Responsiveness ensures quick system reactions, Resilience guarantees system stability during failures, and Elasticity allows dynamic resource scaling. These characteristics enable systems to be more adaptive, robust, and efficient in handling complex computational scenarios."
+    },
+    {
+      "id": 2,
+      "question": "How is _back-pressure_ implemented in _Reactive Systems_ to manage data flow?",
+      "options": [
+        "Back-pressure describes a network communication model where system components dynamically adjust transmission rates to optimize overall system throughput and minimize latency.",
+        "Back-pressure is a flow control mechanism where data consumers signal their processing capacity to producers, preventing overwhelm by regulating the rate of data transmission and avoiding resource exhaustion.",
+        "Back-pressure represents a communication strategy where distributed systems negotiate data transfer rates through dynamic negotiation protocols and adaptive bandwidth allocation.",
+        "Back-pressure is a synchronization technique that enables message queues to prioritize and sequence asynchronous events based on computational complexity and resource availability."
+      ],
+      "correctIndex": 1,
+      "explanation": "Back-pressure ensures that faster data producers do not overwhelm slower consumers by providing a mechanism for signaling processing capacity. This prevents system degradation, memory overflow, and ensures graceful handling of data flow in distributed and concurrent systems."
+    },
+    {
+      "id": 3,
+      "question": "Contrast _Elasticity_ with _Scalability_ with specific examples as they pertain to _Reactive Systems_.",
+      "options": [
+        "Scalability focuses on horizontal resource expansion, while elasticity describes the algorithmic strategies for load balancing and computational workload distribution.",
+        "Elasticity and scalability are synonymous concepts representing a system's capacity to redistribute computational resources across multiple nodes and optimize performance metrics.",
+        "Elasticity represents a system's capability to implement predictive resource allocation models based on historical performance data and anticipated computational requirements.",
+        "Elasticity differs from scalability by dynamically adjusting resources in real-time based on actual demand, whereas scalability represents a system's ability to handle increased workloads through static resource expansion."
+      ],
+      "correctIndex": 3,
+      "explanation": "Elasticity represents dynamic, on-demand resource allocation that can quickly scale up or down, typically in cloud environments. Scalability, by contrast, is a more static concept of increasing system capacity, often through adding more computational nodes or enhancing existing infrastructure."
+    },
+    {
+      "id": 4,
+      "question": "Describe a strategy a _Reactive System_ might use to maintain _responsiveness_ during a component failure.",
+      "options": [
+        "Reactive Systems handle component failures by creating duplicate synchronized instances that can instantly take over processing if the primary component fails.",
+        "Reactive Systems ensure responsiveness during failures through comprehensive error logging and manual intervention protocols that pause system operations.",
+        "Reactive Systems prevent failures by implementing strict sequential processing models that immediately halt all operations when a single component experiences an issue.",
+        "Reactive Systems maintain responsiveness during component failure through techniques like Location Transparency, which allows dynamic message routing and load balancing to redistribute processing across healthy components."
+      ],
+      "correctIndex": 3,
+      "explanation": "Location Transparency is a core resilience strategy where system components are decoupled from their physical location. This approach allows dynamic rerouting of messages and workloads, ensuring that if one component fails, others can seamlessly continue processing without interruption."
+    },
+    {
+      "id": 7,
+      "question": "Why are _non-blocking I/O operations_ a necessity in _Reactive Programming_, and what problems do they solve?",
+      "options": [
+        "Non-blocking I/O operations are crucial in Reactive Programming because they allow continuous data processing without halting system execution, preventing resource starvation and enabling efficient handling of multiple concurrent streams.",
+        "Non-blocking I/O operations improve system performance by reducing memory consumption and automatically managing thread synchronization across complex network interactions.",
+        "Non-blocking I/O operations enable real-time data transformation by creating parallel processing channels that dynamically adapt to changing computational requirements.",
+        "Non-blocking I/O operations facilitate more responsive user interfaces by implementing event-driven architectures that prioritize immediate computational feedback."
+      ],
+      "correctIndex": 0,
+      "explanation": "Blocking I/O traditionally prevents a system from performing other tasks while waiting for input/output operations, which creates inefficient resource utilization. Non-blocking approaches allow systems to continue processing other tasks, making them more responsive and scalable. This is particularly important in reactive systems that must handle multiple data streams simultaneously without getting stuck or consuming excessive system resources."
+    },
+    {
+      "id": 8,
+      "question": "In what ways can _Domain-Driven Design (DDD)_ principles enhance the design of a _Reactive System_?",
+      "options": [
+        "Domain-Driven Design supports Reactive Systems through enhanced message routing protocols that dynamically optimize communication pathways between distributed system components.",
+        "Domain-Driven Design improves Reactive Systems by introducing standardized microservice architectural patterns that automatically manage inter-service communication and state management.",
+        "Domain-Driven Design (DDD) enhances Reactive Systems by providing structured approaches to modeling complex domains, enabling better system decomposition, clear bounded contexts, and more precise event-driven communication strategies.",
+        "Domain-Driven Design facilitates Reactive Systems by implementing sophisticated translation layers that abstract complex business logic into more manageable computational models."
+      ],
+      "correctIndex": 2,
+      "explanation": "The integration of DDD and Reactive Systems creates a powerful paradigm for building complex, adaptive software architectures. By focusing on domain models and clear boundaries, DDD helps reactive systems maintain logical coherence while supporting dynamic, event-driven interactions. This approach allows developers to create more maintainable and scalable systems that closely reflect real-world business processes."
+    },
+    {
+      "id": 9,
+      "question": "Provide an example of a system that is reactive without fulfilling all the _Reactive Manifesto_ traits. Why does it qualify?",
+      "options": [
+        "A partially reactive system could involve a cloud storage service with efficient data streaming but inadequate mechanisms for managing concurrent access and state synchronization.",
+        "A partially reactive system might demonstrate responsiveness and message-driven communication but lack full resilience, such as an email service that handles messages efficiently but cannot gracefully recover from infrastructure failures.",
+        "A partially reactive system might represent a financial trading application with rapid response times but insufficient fault tolerance during network disruptions.",
+        "A partially reactive system could be a social media platform that handles high traffic loads but lacks sophisticated message routing mechanisms between different service components."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Reactive Manifesto defines comprehensive requirements for truly reactive systems, encompassing responsiveness, resilience, elasticity, and message-driven communication. Not all systems perfectly implement every characteristic, which creates nuanced scenarios where applications exhibit some reactive principles while lacking others. Understanding these partial implementations helps architects design more robust, adaptive system architectures."
+    },
+    {
+      "id": 10,
+      "question": "Describe how a _Reactive System_ would differently address a _transient failure_ versus a _network partition_.",
+      "options": [
+        "A Reactive System responds to failures by isolating affected components and creating redundant communication channels that automatically reroute network traffic.",
+        "A Reactive System handles transient failures through quick recovery mechanisms like retry strategies and circuit breakers, while addressing network partitions by implementing robust distributed consensus protocols and maintaining system resilience through decentralized communication.",
+        "A Reactive System mitigates failures through comprehensive logging and manual intervention, allowing system administrators to diagnose and resolve issues systematically.",
+        "A Reactive System manages failures by temporarily suspending all operations and performing a complete system restart, which minimizes potential data corruption during disruptions."
+      ],
+      "correctIndex": 1,
+      "explanation": "Reactive Systems differentiate between transient and persistent failures by employing adaptive strategies. For transient failures, they use short-term recovery mechanisms like retries and circuit breakers that prevent cascading failures. Network partitions require more complex strategies involving distributed consensus, ensuring system components can continue functioning independently while maintaining overall system integrity."
+    },
+    {
+      "id": 11,
+      "question": "Discuss a particular _transport layer technology_ you would recommend for _Reactive Systems' asynchronous communication_ and why.",
+      "options": [
+        "WebSocket technology provides an ideal transport layer for Reactive Systems' asynchronous communication, offering full-duplex, low-latency connections that enable real-time, event-driven interactions with minimal overhead.",
+        "gRPC provides superior asynchronous communication capabilities through its protocol buffer-based binary serialization and lightweight request-response mechanisms.",
+        "HTTP/2 streaming represents the most effective transport layer for Reactive Systems, enabling multiplexed concurrent data transmission with enhanced connection efficiency.",
+        "Server-Sent Events (SSE) offer an optimal solution for unidirectional, real-time communication in Reactive Systems with minimal computational complexity."
+      ],
+      "correctIndex": 0,
+      "explanation": "Transport layer selection in Reactive Systems depends on specific requirements like bidirectional communication, latency, and connection persistence. WebSocket stands out by providing persistent, full-duplex connections that support event-driven architectures, enabling efficient asynchronous communication with reduced network overhead."
+    },
+    {
+      "id": 12,
+      "question": "Explain the role of _Reactive Systems_ in processing _continuous data streams_, providing industry use cases.",
+      "options": [
+        "Continuous data stream processing in Reactive Systems relies primarily on synchronous, blocking communication models that ensure sequential data handling.",
+        "Reactive Systems manage data streams by implementing heavy-weight transactional mechanisms that guarantee strict data consistency at the expense of processing speed.",
+        "Reactive Systems excel in continuous data stream processing by leveraging event-driven architectures that enable real-time data transformation, with applications in financial trading platforms, IoT sensor networks, and streaming media services.",
+        "Reactive Systems process continuous data streams through batch-oriented architectures that periodically aggregate and analyze large volumes of historical information."
+      ],
+      "correctIndex": 2,
+      "explanation": "Processing continuous data streams requires dynamic, non-blocking architectures that can handle high-velocity, unpredictable data sources. Reactive Systems achieve this through event-driven design, enabling real-time data transformation, adaptive scaling, and immediate response to changing input conditions across diverse domains."
+    },
+    {
+      "id": 13,
+      "question": "What is _Event Sourcing_, and how does it benefit _Reactive Systems_?",
+      "options": [
+        "Event Sourcing is a data storage pattern that captures application state changes as a sequence of time-stamped events, enabling comprehensive state reconstruction and historical tracking in reactive systems.",
+        "Event Sourcing is a real-time data synchronization technique that ensures immediate state propagation across distributed system components using message queues.",
+        "Event Sourcing is a transactional logging mechanism that records database mutations as linear append-only logs for potential rollback and recovery purposes.",
+        "Event Sourcing represents a caching strategy where system states are periodically snapshoted and compressed to optimize memory consumption in high-throughput environments."
+      ],
+      "correctIndex": 0,
+      "explanation": "Event Sourcing provides a fundamental approach to state management by storing state changes as immutable events. This enables precise historical reconstruction, supports audit trails, and allows systems to replay events to determine exact system state at any point in time. Unlike traditional database approaches that only store current state, event sourcing maintains a complete chronicle of all transformations."
+    },
+    {
+      "id": 14,
+      "question": "Differentiate between _hot_ and _cold reactive streams_ with examples of use cases.",
+      "options": [
+        "Hot streams produce data independently of subscriptions, allowing multiple subscribers to receive the same ongoing data stream, while cold streams generate unique data for each new subscription.",
+        "Hot streams are unidirectional data flows with fixed emission rates, while cold streams dynamically adapt their data production based on subscriber requirements.",
+        "Hot streams represent continuous data generators with complex routing logic, whereas cold streams are simple, single-use data transmission mechanisms.",
+        "Hot streams represent persistent data connections that require manual initialization, whereas cold streams automatically generate data based on predefined computational rules."
+      ],
+      "correctIndex": 0,
+      "explanation": "The distinction between hot and cold streams is crucial in reactive programming. Hot streams continuously emit data regardless of active subscribers, making them ideal for shared resources like system events or live sensor data. Cold streams, conversely, generate data on-demand for each subscription, ensuring isolated and reproducible data generation."
+    },
+    {
+      "id": 15,
+      "question": "Compare _synchronous request-response_ communication with _reactive message-driven_ communication in terms of _scalability_.",
+      "options": [
+        "Reactive message-driven communication enables superior scalability by decoupling components, supporting asynchronous processing, and allowing dynamic resource allocation compared to synchronous request-response models.",
+        "Reactive message-driven communication increases system complexity by introducing additional message routing layers that can potentially decrease overall system performance.",
+        "Message-driven architectures fundamentally reduce scalability by creating additional communication overhead and introducing potential message processing bottlenecks.",
+        "Reactive communication patterns increase system latency by requiring additional serialization and deserialization steps during message transmission."
+      ],
+      "correctIndex": 0,
+      "explanation": "Reactive message-driven communication represents a paradigm shift from traditional synchronous interactions. By enabling asynchronous, loosely coupled component interactions, these systems can dynamically scale, handle variable workloads, and provide more resilient architectures. The key advantage lies in eliminating blocking operations and supporting event-driven, non-linear processing models."
+    }
+  ],
+  "processedAt": "2025-12-18T10:13:52.779Z"
+}

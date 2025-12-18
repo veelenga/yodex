@@ -1,0 +1,197 @@
+{
+  "id": "vue",
+  "name": "Vue.js",
+  "slug": "vue-interview-questions",
+  "category": "Frontend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Vue.js_ and why would you use it?",
+      "options": [
+        "Vue.js is a mobile-first framework primarily used for developing cross-platform mobile applications with native performance and extensive plugin ecosystems.",
+        "Vue.js is a static site generator that focuses on creating highly optimized websites with minimal JavaScript overhead and maximum SEO compatibility.",
+        "Vue.js is a backend-oriented framework designed to handle complex server-side rendering and data management for enterprise-level applications with strict performance requirements.",
+        "Vue.js is a progressive JavaScript framework for building user interfaces and single-page applications, known for its adaptability, small file size, and gentle learning curve."
+      ],
+      "correctIndex": 3,
+      "explanation": "Vue.js was created by Evan You in 2014 as a lightweight alternative to other JavaScript frameworks like Angular and React. Its core library focuses on the view layer, making it easy to integrate with existing projects and scale incrementally. The framework leverages a virtual DOM for efficient rendering and provides a component-based architecture that promotes reusable and maintainable code."
+    },
+    {
+      "id": 2,
+      "question": "How do you set up a project with _Vue.js_?",
+      "options": [
+        "To initialize a Vue.js project, use the Vue CLI by installing it globally with npm or yarn, then create a new project using the Vue CLI command which sets up a preconfigured development environment.",
+        "To initialize a Vue.js project, download the core library directly from the Vue.js website and manually configure webpack and Babel configurations to ensure proper project structure.",
+        "To initialize a Vue.js project, use a third-party project generator tool that creates boilerplate code and handles dependency management through a custom CLI interface.",
+        "To initialize a Vue.js project, clone the official Vue.js repository from GitHub and manually extract the necessary project files and configuration scripts."
+      ],
+      "correctIndex": 0,
+      "explanation": "The Vue CLI provides a robust project scaffolding tool that streamlines the setup process. It offers project templates, built-in webpack configuration, and easy plugin management. Here's a basic project creation example:"
+    },
+    {
+      "id": 3,
+      "question": "Can you explain the _Vue.js lifecycle hooks_?",
+      "options": [
+        "Vue.js lifecycle hooks are performance optimization techniques that automatically manage memory allocation and garbage collection within component rendering cycles.",
+        "Vue.js lifecycle hooks are security middleware functions that validate and sanitize component data before rendering to prevent potential cross-site scripting vulnerabilities.",
+        "Vue.js lifecycle hooks are special methods that allow developers to run custom logic at specific stages of a component's existence, such as initialization, mounting, updating, and destruction.",
+        "Vue.js lifecycle hooks are event-driven mechanisms for intercepting and modifying HTTP requests and responses during component data synchronization."
+      ],
+      "correctIndex": 2,
+      "explanation": "Lifecycle hooks provide developers granular control over component behavior. They are executed at specific points during a component's lifecycle, allowing for complex initialization, data manipulation, and cleanup operations."
+    },
+    {
+      "id": 4,
+      "question": "What are _Vue.js_ _components_ and how do you use them?",
+      "options": [
+        "Vue.js components are complex object-oriented programming structures that inherit from base classes and require extensive configuration to render basic user interface elements.",
+        "Vue.js components are pre-compiled JavaScript modules that generate static markup, providing limited interactivity and requiring separate state management libraries for dynamic content.",
+        "Vue.js components are reusable, self-contained building blocks that encapsulate template, script, and style, allowing developers to create modular and maintainable web applications by breaking complex interfaces into smaller, manageable pieces.",
+        "Vue.js components are static HTML templates that define the visual structure of an application, requiring manual data management and event handling through traditional JavaScript methods."
+      ],
+      "correctIndex": 2,
+      "explanation": "Components are fundamental to Vue.js architecture, enabling developers to create encapsulated and reusable UI elements. They promote code organization by separating concerns and allowing independent development of interface segments. A typical component combines template rendering, logic, and styling in a single file.\n\nExample of a basic Vue component:\n```vue\n<template>\n  <div>{{ message }}</div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return { message: 'Hello, Vue!' }\n  }\n}\n</script>\n```"
+    },
+    {
+      "id": 5,
+      "question": "How do you _bind data_ to the _view_ in _Vue.js_?",
+      "options": [
+        "Vue.js data binding relies on external state management libraries to propagate changes between data models and visual components, requiring complex configuration.",
+        "Vue.js data binding is a manual synchronization process where developers must explicitly update DOM elements using JavaScript event listeners and direct manipulation methods.",
+        "Vue.js data binding is a compile-time process that generates static HTML templates with predefined data placeholders, limiting runtime interactivity.",
+        "Vue.js data binding connects model data to the view using directives like v-bind and v-model, enabling reactive updates where changes in the application state automatically reflect in the user interface."
+      ],
+      "correctIndex": 3,
+      "explanation": "Data binding is a core reactive mechanism in Vue.js that simplifies synchronization between data models and the view. It eliminates manual DOM manipulation and provides automatic updates when data changes. Two-way and one-way binding options offer flexibility in handling different scenarios.\n\nExample of data binding:\n```vue\n<template>\n  <input v-model=\"username\">\n  <p>Welcome, {{ username }}!</p>\n</template>\n\n<script>\nexport default {\n  data() {\n    return { username: '' }\n  }\n}\n</script>\n```"
+    },
+    {
+      "id": 6,
+      "question": "What is a _Vue instance_ and its purpose?",
+      "options": [
+        "A Vue instance is a low-level rendering engine that requires manual implementation of data synchronization and event handling mechanisms.",
+        "A Vue instance is a middleware layer that intercepts and transforms component interactions, acting as a separate abstraction between components and the DOM.",
+        "A Vue instance is the root component that initializes a Vue application, managing core functionalities like data reactivity, lifecycle management, and serving as the primary configuration point for the entire application.",
+        "A Vue instance is a static configuration object that defines global application settings and provides a basic template rendering mechanism without dynamic capabilities."
+      ],
+      "correctIndex": 2,
+      "explanation": "The Vue instance is the central orchestrator of a Vue.js application, responsible for creating the reactive data system, managing component lifecycle, and providing essential methods for application configuration. It transforms a basic configuration into a fully functional, reactive web application.\n\nExample of a Vue instance:\n```javascript\nnew Vue({\n  el: '#app',\n  data: { message: 'Hello Vue!' },\n  methods: {\n    updateMessage() {\n      this.message = 'Updated!'\n    }\n  }\n})\n```"
+    },
+    {
+      "id": 7,
+      "question": "Explain the _virtual DOM_ in _Vue.js_.",
+      "options": [
+        "The Virtual DOM in Vue.js is a static mapping of component structures that requires manual reconciliation between component states.",
+        "The Virtual DOM in Vue.js is an in-memory representation of the actual DOM that allows efficient updates by comparing changes and minimizing direct DOM manipulation.",
+        "The Virtual DOM in Vue.js is a memory-intensive rendering technique that creates a complete copy of the DOM for each component update.",
+        "The Virtual DOM in Vue.js is a complete replacement for the actual DOM that renders every component independently without any optimization strategies."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Virtual DOM is a lightweight JavaScript representation of the actual Document Object Model. It enables Vue.js to perform efficient updates by comparing the current and previous DOM states and applying only the necessary changes. This approach significantly reduces performance overhead and creates a more responsive user interface. Here's a simple example of how Virtual DOM works:"
+    },
+    {
+      "id": 8,
+      "question": "What are _directives_ in _Vue.js_? Can you give examples?",
+      "options": [
+        "Vue.js directives are custom HTML attributes that create one-way data flow without any reactive capabilities.",
+        "Vue.js directives are template interpolation methods that exclusively handle string transformations within component templates.",
+        "Vue.js directives are special attributes prefixed with 'v-' that provide dynamic behavior to elements by binding values, manipulating the DOM, and enabling reactive interactions.",
+        "Vue.js directives are CSS-like selectors that define static styling rules for component rendering and element positioning."
+      ],
+      "correctIndex": 2,
+      "explanation": "Directives are powerful Vue.js extensions that allow developers to extend HTML with dynamic behaviors. They provide a declarative way to connect component data with DOM elements and enable complex interactions. Directives can modify element attributes, handle events, conditionally render content, and manage component lifecycle."
+    },
+    {
+      "id": 9,
+      "question": "How do you handle user _inputs_ and _form submissions_ in _Vue.js_?",
+      "options": [
+        "In Vue.js, form inputs are managed exclusively through event listeners that manually track and update component states.",
+        "In Vue.js, form inputs are handled by creating separate reactive methods for each form element's state management.",
+        "In Vue.js, form submissions require explicit DOM manipulation methods to transfer input values between template and component logic.",
+        "In Vue.js, form inputs and submissions are handled through two-way data binding using the v-model directive, which synchronizes input values with component data properties."
+      ],
+      "correctIndex": 3,
+      "explanation": "Vue.js provides an elegant solution for form handling through reactive two-way data binding. The v-model directive automatically synchronizes input values with component data, eliminating the need for manual event tracking and state updates. This approach simplifies form management and ensures consistent data flow."
+    },
+    {
+      "id": 10,
+      "question": "Discuss the _methods_ property in a _Vue component_.",
+      "options": [
+        "Methods in Vue are lifecycle hooks that automatically trigger at specific component rendering stages, managing the internal state transformation process.",
+        "Vue methods are static functions that precompile component logic and optimize rendering performance by minimizing direct DOM manipulation.",
+        "The methods property in a Vue component defines custom methods that can interact with component data and handle events, improving code organization and reusability.",
+        "The methods property is a reactive data container that synchronizes component state with external data sources and manages complex state management scenarios."
+      ],
+      "correctIndex": 2,
+      "explanation": "Methods in Vue components are functions defined within the methods object that can be called from templates or used as event handlers. They have direct access to the component's data and can modify the component's state. Methods are always bound to the component instance, ensuring they can access this context.\n\nExample of method definition:\n```javascript\nmethods: {\n  incrementCounter() {\n    this.count++;\n  },\n  handleClick(event) {\n    // Method with event parameter\n  }\n}\n```"
+    },
+    {
+      "id": 11,
+      "question": "Explain the difference between `v-bind` and `v-model`.",
+      "options": [
+        "V-bind is a one-way data binding directive that connects a component's data to an element's attribute, while v-model creates two-way binding between form inputs and component data.",
+        "The v-model directive is a unidirectional data flow mechanism that strictly controls data mutation through predefined component methods.",
+        "V-bind is primarily used for event handling in Vue components, whereas v-model manages complex data transformation between different component layers.",
+        "V-bind and v-model are interchangeable directives that handle data synchronization between template elements and component state with identical binding mechanisms."
+      ],
+      "correctIndex": 0,
+      "explanation": "V-bind and v-model serve different data binding purposes in Vue. V-bind dynamically updates element attributes, while v-model creates automatic two-way data synchronization, particularly useful with form inputs.\n\nExample demonstrating the difference:\n```html\n<!-- V-bind example -->\n<img v-bind:src=\"imageUrl\">\n\n<!-- V-model example -->\n<input v-model=\"username\">\n```"
+    },
+    {
+      "id": 12,
+      "question": "What are _computed properties_ and how are they used?",
+      "options": [
+        "Computed properties create isolated data streams that transform component state through predefined mutation strategies and dependency tracking.",
+        "Computed properties are event-driven methods that trigger recalculations on specific component lifecycle stages, managing complex state transformations.",
+        "Computed properties are reactive functions that derive values based on other data properties, automatically updating when dependencies change and providing cached, efficient calculations.",
+        "Computed properties are static functions that precompute data values during component initialization, optimizing rendering performance through memoization."
+      ],
+      "correctIndex": 2,
+      "explanation": "Computed properties offer a powerful way to create derived values that automatically update when their dependencies change. They are cached and only re-evaluate when needed, providing performance benefits over methods.\n\nExample of computed property usage:\n```javascript\ncomputed: {\n  fullName() {\n    return `${this.firstName} ${this.lastName}`;\n  },\n  isAdult() {\n    return this.age >= 18;\n  }\n}\n```"
+    },
+    {
+      "id": 13,
+      "question": "Can you discuss the difference between _computed properties_ and _methods_?",
+      "options": [
+        "Computed properties are dynamic functions that execute every time they are called, while methods are static data properties that cache their initial calculation. Methods are more efficient for complex data transformations.",
+        "Computed properties are cached data derived from other data based on specific logic, while methods are functions called on demand. Computed properties only re-evaluate when their dependent data changes, offering better performance for complex calculations.",
+        "Computed properties are event-driven reactive calculations that update in real-time, whereas methods are manually triggered functions that require explicit invocation in the template or script.",
+        "Computed properties and methods are essentially the same, both being ways to define reusable logic within a Vue component. They can be used interchangeably without any significant performance differences."
+      ],
+      "correctIndex": 1,
+      "explanation": "In Vue.js, computed properties leverage caching to optimize performance. They only recalculate when their dependent data changes, making them more efficient than methods for repeated calculations. Methods, by contrast, are executed every time they are called, regardless of whether the underlying data has changed. This makes computed properties ideal for derived data that doesn't need constant recalculation. A typical example demonstrates the difference in usage and performance."
+    },
+    {
+      "id": 14,
+      "question": "What are _watchers_ in _Vue.js_?",
+      "options": [
+        "Watchers are advanced data binding mechanisms that create two-way reactive connections between different component properties, ensuring immediate synchronization of related data.",
+        "Watchers are background processes in Vue.js that continuously monitor all component data and generate performance metrics. They help developers understand data flow and component interactions.",
+        "Watchers in Vue.js are reactive methods that observe specific data properties and trigger custom logic when those properties change. They provide a way to respond to data mutations and perform side effects or complex operations.",
+        "Watchers are event listeners that monitor template changes and automatically update the component's data model. They are primarily used for synchronizing UI state with data properties."
+      ],
+      "correctIndex": 2,
+      "explanation": "Vue watchers provide a powerful mechanism for reacting to data changes. They can perform complex asynchronous operations, validate data, or trigger subsequent state updates. Watchers are defined in the 'watch' option and can be configured with various options like deep watching or immediate execution. A typical watcher might look like this: ```javascript watch: { searchQuery(newValue, oldValue) { this.fetchResults(newValue); } }```"
+    },
+    {
+      "id": 15,
+      "question": "How do you _bind inline styles_ in a _Vue template_?",
+      "options": [
+        "Inline styles in Vue are managed through a centralized style management system that requires pre-registering all possible style variations before they can be applied to components.",
+        "Inline styles in Vue are applied using traditional HTML style attributes, with Vue providing no special mechanism for dynamic styling. Developers must manually update styles using JavaScript.",
+        "Vue's inline style binding works exclusively through CSS classes, requiring developers to define complex class mappings to achieve dynamic styling effects.",
+        "Inline styles in Vue can be bound using the `:style` directive, which accepts an object where keys represent CSS properties and values represent their corresponding values. This allows dynamic and reactive styling directly in the template."
+      ],
+      "correctIndex": 3,
+      "explanation": "Vue's style binding provides a flexible and intuitive way to apply dynamic styles. The `:style` directive can accept objects, arrays, or even computed properties, making styling highly dynamic and reactive. Example of style binding: ```vue <div :style=\"{ color: activeColor, fontSize: fontSize + 'px' }\">Dynamic Style</div>```"
+    }
+  ],
+  "processedAt": "2025-12-18T10:41:22.742Z"
+}

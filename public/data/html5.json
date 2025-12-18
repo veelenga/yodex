@@ -1,0 +1,196 @@
+{
+  "id": "html5",
+  "name": "HTML5",
+  "slug": "html5-interview-questions",
+  "category": "Frontend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does _HTML_ stand for and what is its purpose?",
+      "options": [
+        "HTML is a graphic design tool that allows developers to generate visual layouts and create dynamic user interface components for web platforms.",
+        "HTML represents Hyper Transferable Markup Logic, a system for encoding digital information and managing server-side data transmission protocols.",
+        "HTML stands for HyperText Markup Language and is the standard language for creating web pages, defining the structure and content of web documents through semantic markup and layout elements.",
+        "HTML is a programming language used to create interactive web applications and handle complex computational tasks directly in the browser."
+      ],
+      "correctIndex": 2,
+      "explanation": "HTML is a markup language, not a programming language, that provides the fundamental structure for web content. It uses tags to define elements like headings, paragraphs, links, and images, which browsers interpret and render. The language allows web developers to create semantic, accessible, and well-structured web documents that can be styled with CSS and enhanced with JavaScript.\n\nExample of basic HTML structure:\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <title>Sample Page</title>\n  </head>\n  <body>\n    <h1>Welcome</h1>\n    <p>This is a paragraph.</p>\n  </body>\n</html>\n```"
+    },
+    {
+      "id": 2,
+      "question": "Describe the basic structure of an _HTML document_.",
+      "options": [
+        "An HTML document consists of nested containers that represent different programming logic, with separate sections for data processing and visual rendering.",
+        "The HTML document structure is a complex hierarchy of computational nodes that define interaction patterns and manage client-side event handling.",
+        "HTML document structure is primarily a template system for generating dynamic web interfaces with embedded scripting and data binding mechanisms.",
+        "An HTML document's basic structure includes a DOCTYPE declaration, html element with lang attribute, head section for metadata, and body section containing visible page content."
+      ],
+      "correctIndex": 3,
+      "explanation": "The HTML document structure provides a standardized way to organize web content. The DOCTYPE declares the HTML version, the html tag is the root element, the head contains metadata like title and links to stylesheets, and the body holds the visible page content. This structure ensures consistent parsing and rendering across different browsers.\n\nExample of a basic HTML document structure:\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>Page Title</title>\n  </head>\n  <body>\n    <header>Page Header</header>\n    <main>Main Content</main>\n    <footer>Page Footer</footer>\n  </body>\n</html>\n```"
+    },
+    {
+      "id": 3,
+      "question": "What do _DOCTYPE_ and _html lang_ attributes do?",
+      "options": [
+        "DOCTYPE instructs browsers about the HTML version being used, ensuring proper rendering and validation, while the html lang attribute specifies the document's primary language for accessibility and search engines.",
+        "The DOCTYPE defines complex document transmission protocols, while the lang attribute controls multilingual content encryption and translation services.",
+        "DOCTYPE is an advanced parsing mechanism for managing document object model complexity, and lang attributes handle internationalization routing.",
+        "DOCTYPE is a security protocol that prevents cross-site scripting, and the html lang attribute manages browser-specific rendering optimizations."
+      ],
+      "correctIndex": 0,
+      "explanation": "The DOCTYPE declaration helps browsers understand which version of HTML is being used, triggering the correct rendering mode. The lang attribute provides language information to browsers, assistive technologies, and search engines, improving accessibility and search engine optimization.\n\nExample of DOCTYPE and lang usage:\n```html\n<!DOCTYPE html>\n<html lang=\"en-US\">\n  <head>\n    <meta charset=\"UTF-8\">\n  </head>\n  <body>\n    <p>This content is in English (United States).</p>\n  </body>\n</html>\n```"
+    },
+    {
+      "id": 4,
+      "question": "What is the difference between _head_ and _body_ tags?",
+      "options": [
+        "The <head> tag contains metadata about the HTML document like title, scripts, and styles, while the <body> tag contains all visible content that users see and interact with on the webpage.",
+        "The <head> tag represents the top section of visible page content, whereas the <body> tag manages page layout and structural design elements.",
+        "Both <head> and <body> tags are optional in HTML documents and can be used to organize different types of page content without strict requirements.",
+        "The <head> and <body> tags are interchangeable sections of an HTML document that both display content, with the <head> being slightly more prominent."
+      ],
+      "correctIndex": 0,
+      "explanation": "HTML documents require both <head> and <body> tags for proper structure. The <head> section is used for document configuration and metadata, containing elements like <title>, <meta>, and <link> tags that provide information about the page but are not directly displayed. The <body> tag contains all visible page content that users can see and interact with. A typical HTML structure looks like this: ```html <html> <head>...</head> <body>...</body> </html> ```"
+    },
+    {
+      "id": 5,
+      "question": "Can you explain the purpose of _meta tags_ in HTML?",
+      "options": [
+        "Meta tags primarily manage stylesheet connections and script loading processes within an HTML document's internal architecture.",
+        "Meta tags are responsible for creating interactive elements on a webpage, controlling user interface components and dynamic content rendering.",
+        "Meta tags provide metadata about a webpage, offering information for search engines and browser rendering that is not directly visible to users, such as description, character encoding, and viewport settings.",
+        "Meta tags function as hidden navigation elements that help organize page content and define structural relationships between different webpage sections."
+      ],
+      "correctIndex": 2,
+      "explanation": "Meta tags are crucial for providing additional information about a webpage. They help search engines understand page content, enable social media sharing previews, and control browser behavior. Common meta tags include description, keywords, and viewport settings. Example of meta tag usage: ```html <meta name='description' content='A comprehensive guide to web development'> <meta charset='UTF-8'> ```"
+    },
+    {
+      "id": 6,
+      "question": "How do you link a _CSS file_ to an _HTML document_?",
+      "options": [
+        "Linking CSS requires using JavaScript to dynamically import stylesheet resources through complex script configurations.",
+        "CSS connection is achieved by declaring stylesheet references in the HTML document's meta tags with specific encoding parameters.",
+        "To link a CSS file to an HTML document, use the <link> tag within the <head> section, specifying the 'rel' attribute as 'stylesheet' and the 'href' attribute with the path to the CSS file.",
+        "CSS files are linked by embedding the stylesheet directly into the HTML document using internal <style> tags in the document body."
+      ],
+      "correctIndex": 2,
+      "explanation": "Linking external CSS is a standard web development practice that allows separate styling files to be connected to HTML documents. The <link> tag provides a clean, efficient method for integrating stylesheets. Example of correct CSS linking: ```html <head> <link rel='stylesheet' href='styles.css'> </head> ```"
+    },
+    {
+      "id": 7,
+      "question": "How do you link a _JavaScript file_ to an _HTML document_?",
+      "options": [
+        "Include JavaScript files by writing the entire script content inside a special `<javascript>` tag within the HTML document's structure.",
+        "To link a JavaScript file to an HTML document, use the `<script>` tag with the `src` attribute pointing to the external JavaScript file, typically placed in the `<head>` or at the end of the `<body>` tag.",
+        "Use the `<link>` tag with a special `type='javascript'` attribute to import JavaScript files into the HTML document's head section.",
+        "Link JavaScript by adding the file path directly in the HTML body using the `href` attribute, which connects external scripts to the document's content."
+      ],
+      "correctIndex": 1,
+      "explanation": "Linking JavaScript files is crucial for separating code and improving web page performance. The `<script>` tag with the `src` attribute allows browsers to load external JavaScript files efficiently. Typically, scripts are placed either in the head section or at the end of the body to optimize page loading speed. Code example demonstrates the correct implementation:\n\n```html\n<!-- Correct way to link external JavaScript -->\n<script src='script.js'></script>\n```"
+    },
+    {
+      "id": 8,
+      "question": "How do you add a _comment_ in HTML and why would you use them?",
+      "options": [
+        "HTML comments are defined using double forward slashes `//` at the beginning of a line, similar to JavaScript single-line comments.",
+        "In HTML, comments are created by wrapping text between `<!--` and `-->` tags, which allows developers to add explanatory notes that are not rendered in the browser.",
+        "HTML comments are written inside curly braces `{}` and are typically used for inline documentation within element attributes.",
+        "To create comments in HTML, developers use the `<comment>` tag with a special attribute to hide text from page rendering."
+      ],
+      "correctIndex": 1,
+      "explanation": "HTML comments provide a way for developers to include explanatory text or temporarily disable code sections without affecting page rendering. They are invisible to users but can be viewed in the page source. Comments are particularly useful for code documentation, debugging, and collaboration. Example of comment usage:\n\n```html\n<!-- This is a valid HTML comment -->\n<div>Visible content</div>\n```"
+    },
+    {
+      "id": 9,
+      "question": "How do you serve your page in multiple _languages_?",
+      "options": [
+        "Implement language support by embedding language selection dropdown menus that dynamically change page text using client-side JavaScript.",
+        "To serve a page in multiple languages, use the `lang` attribute on the `<html>` tag to specify the primary language, such as `<html lang='en'>`, and provide language-specific content or translations.",
+        "Serve multilingual content by creating separate HTML files for each language and manually redirecting users based on their browser settings.",
+        "Use meta tags with language information to specify page translations, allowing browsers to automatically detect and render appropriate content."
+      ],
+      "correctIndex": 1,
+      "explanation": "The `lang` attribute is crucial for accessibility, search engine optimization, and proper text rendering. It helps screen readers, browsers, and search engines understand the primary language of a web page. Proper language declaration supports internationalization and improves user experience. Example of language declaration:\n\n```html\n<html lang='fr'>\n  <head>\n    <meta charset='UTF-8'>\n    <title>Page en français</title>\n  </head>\n</html>\n```"
+    },
+    {
+      "id": 10,
+      "question": "What are _data-_* attributes and when should they be used?",
+      "options": [
+        "Data attributes are custom HTML attributes prefixed with 'data-' that allow developers to store additional information directly on HTML elements, which can be easily accessed and manipulated using JavaScript's dataset API.",
+        "Data attributes are special CSS selectors that provide advanced styling options for dynamic web page components, enabling complex styling rules based on element metadata.",
+        "Data attributes represent a browser-specific method for creating private object properties within HTML elements, primarily used for performance optimization and memory management.",
+        "Data attributes are a security mechanism in HTML5 that encrypt custom element information and prevent unauthorized access to specific element properties during page rendering."
+      ],
+      "correctIndex": 0,
+      "explanation": "Data attributes provide a standardized way to embed custom data within HTML elements without using non-standard attributes. They are semantically valid and can be accessed via JavaScript's dataset property, making them ideal for storing element-specific information. Developers can easily read and write these attributes without conflicting with standard HTML properties.\n\n```javascript\n// Accessing data attribute\nlet element = document.querySelector('#myElement');\nlet customValue = element.dataset.myCustomAttribute;\n\n// Setting data attribute\nelement.dataset.newAttribute = 'value';\n```"
+    },
+    {
+      "id": 11,
+      "question": "What is the difference between _b_ and _strong_ tags?",
+      "options": [
+        "The `<b>` tag represents bold text with semantic significance, whereas the `<strong>` tag is a generic styling element used primarily for visual text decoration.",
+        "The `<b>` and `<strong>` tags are identical in both presentation and semantic meaning, with no practical difference in modern web development.",
+        "The `<b>` tag is deprecated in HTML5 and should be replaced by CSS styling, while `<strong>` remains a valid semantic element for text emphasis.",
+        "The `<b>` tag is purely presentational and simply makes text bold, while the `<strong>` tag carries semantic importance and indicates that the text has significant meaning or emphasis."
+      ],
+      "correctIndex": 3,
+      "explanation": "Semantic HTML distinguishes between presentational and meaningful text. The `<strong>` tag is interpreted by screen readers and search engines as important content, while `<b>` is merely a visual styling element. Using semantic tags improves accessibility and helps web crawlers understand content hierarchy.\n\n```html\n<!-- Semantic emphasis -->\n<p>This is <strong>very important</strong> information.</p>\n\n<!-- Visual bold without semantic meaning -->\n<p>This is <b>just bold</b> text.</p>\n```"
+    },
+    {
+      "id": 12,
+      "question": "When would you use _em_ over _i_, and vice versa?",
+      "options": [
+        "The `<em>` tag is a deprecated styling element for italics, while `<i>` provides full semantic emphasis for important textual content.",
+        "`<em>` and `<i>` are interchangeable tags with identical semantic and presentational meanings in modern HTML standards.",
+        "The `<em>` tag is exclusively used for mathematical expressions, whereas `<i>` represents general italicized text without any specific semantic context.",
+        "Use `<em>` when you want to semantically emphasize text with italics, indicating vocal stress or importance, while `<i>` should be used for text that is stylistically different, like foreign words or technical terms."
+      ],
+      "correctIndex": 3,
+      "explanation": "Semantic HTML distinguishes between stylistic and emphatic text rendering. The `<em>` tag implies vocal or grammatical emphasis, which screen readers and assistive technologies can interpret, while `<i>` is more about stylistic differentiation without additional semantic weight.\n\n```html\n<!-- Semantic emphasis -->\n<p>I <em>really</em> want this to be clear.</p>\n\n<!-- Stylistic difference -->\n<p>The term <i>caveat emptor</i> means buyer beware.</p>\n```"
+    },
+    {
+      "id": 13,
+      "question": "What is the purpose of _small_, _s_, and _mark_ tags?",
+      "options": [
+        "The `small`, `s`, and `mark` HTML5 tags are used to indicate different text properties: `small` for less important text, `s` for content no longer relevant, and `mark` for highlighting text.",
+        "These HTML5 tags are specialized semantic markers used exclusively for creating footnotes, citations, and text annotations in web documents.",
+        "The `small`, `s`, and `mark` tags are purely decorative HTML5 elements used to change text color and style for visual presentation purposes.",
+        "The `small`, `s`, and `mark` tags are internal browser rendering hints that modify how text is processed and displayed in different rendering engines."
+      ],
+      "correctIndex": 0,
+      "explanation": "HTML5 introduced these semantic tags to provide more meaningful context to text content. The `<small>` tag indicates less important text like copyright notices, `<s>` represents content that is no longer accurate or relevant, and `<mark>` highlights text for reference or emphasis. For example, you might use these tags in different contexts:\n\n```html\n<p>Price: <s>$50.00</s> <mark>$25.00</mark></p>\n<footer><small>© 2023 Company</small></footer>\n```"
+    },
+    {
+      "id": 14,
+      "question": "What are _semantic HTML tags_ and why are they important?",
+      "options": [
+        "Semantic HTML tags provide meaningful structure to web content, improving accessibility, search engine optimization, and content understanding by browsers and assistive technologies.",
+        "Semantic tags are a performance optimization technique used by browsers to preload and render web content more efficiently across different devices.",
+        "Semantic HTML tags are primarily design elements that control the visual layout and styling of web page components for enhanced user interface design.",
+        "Semantic HTML tags are a standardization method for creating cross-browser compatible web applications with consistent rendering capabilities."
+      ],
+      "correctIndex": 0,
+      "explanation": "Semantic HTML goes beyond visual presentation by adding inherent meaning to page structure. These tags help screen readers, search engines, and browsers understand content more accurately. For instance, using `<header>`, `<nav>`, `<article>`, and `<footer>` clearly defines the purpose of different page sections, making the document more readable and accessible.\n\n```html\n<article>\n  <header>\n    <h1>Article Title</h1>\n  </header>\n  <section>Content here</section>\n</article>\n```"
+    },
+    {
+      "id": 15,
+      "question": "How do you create a _paragraph_ or a _line break_ in HTML?",
+      "options": [
+        "In HTML, paragraphs are created using `<p>` tags, which automatically add vertical spacing, while line breaks are inserted with the self-closing `<br>` tag to create a single line break.",
+        "HTML paragraphs are constructed using `<text>` tags with specific paragraph attributes, and line breaks are managed through CSS margin and padding properties.",
+        "Paragraphs are created using `<p>` tags with explicit line height settings, and line breaks are implemented through JavaScript text manipulation functions.",
+        "Paragraphs in HTML are defined using `<div>` tags with special text formatting, and line breaks are created by manually adding extra whitespace between text elements."
+      ],
+      "correctIndex": 0,
+      "explanation": "The `<p>` tag is the standard method for creating paragraphs in HTML, with browsers automatically applying default spacing. The `<br>` tag provides a quick way to force a line break without creating a new paragraph. Here's an example demonstrating their usage:\n\n```html\n<p>This is a complete paragraph with multiple sentences.</p>\nThis is a line<br>with a manual break in the middle.\n```"
+    }
+  ],
+  "processedAt": "2025-12-18T09:34:13.244Z"
+}

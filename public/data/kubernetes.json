@@ -1,0 +1,197 @@
+{
+  "id": "kubernetes",
+  "name": "Kubernetes",
+  "slug": "kubernetes-interview-questions",
+  "category": "Cloud & DevOps",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Kubernetes_, and why is it used for container _orchestration_?",
+      "options": [
+        "Kubernetes serves as a cloud-native monitoring tool that tracks container performance and resource utilization, primarily designed for enterprise logging and analytics infrastructure.",
+        "Kubernetes is an open-source container orchestration platform that automates deployment, scaling, and management of containerized applications across clusters of hosts, providing advanced features like service discovery, load balancing, and self-healing.",
+        "Kubernetes is a specialized networking solution that facilitates secure communication between containerized applications, with emphasis on creating virtual private networks for distributed systems.",
+        "Kubernetes is a container runtime environment that enables direct management of Docker containers through a centralized interface, focusing primarily on local development and single-host deployments."
+      ],
+      "correctIndex": 1,
+      "explanation": "Kubernetes evolved from Google's internal Borg system and has become the standard for container orchestration. It abstracts infrastructure complexities, allowing developers to focus on application logic by handling tasks like automatic scaling, rolling updates, and fault tolerance across multiple computing environments."
+    },
+    {
+      "id": 2,
+      "question": "Describe the roles of _master_ and _worker nodes_ in the _Kubernetes_ architecture.",
+      "options": [
+        "Kubernetes nodes are segregated based on their hardware specifications, with specialized nodes dedicated to specific types of computational tasks and management functions.",
+        "In Kubernetes architecture, master nodes manage cluster operations through core components like API Server, Scheduler, and Controller Manager, while worker nodes execute and host actual containerized applications.",
+        "Master nodes in Kubernetes primarily function as high-performance computing resources that run application workloads, while worker nodes handle cluster configuration.",
+        "Kubernetes architecture consists of identical nodes that dynamically share all cluster responsibilities, with no distinction between management and execution roles."
+      ],
+      "correctIndex": 1,
+      "explanation": "The separation between master and worker nodes ensures clear responsibilities and enhances cluster reliability. Master nodes provide centralized control and decision-making, while worker nodes focus on running actual containers, creating a robust and scalable distributed system architecture."
+    },
+    {
+      "id": 3,
+      "question": "How do _Pods_ facilitate the management of _containers_ in _Kubernetes_?",
+      "options": [
+        "Pods in Kubernetes represent the smallest deployable unit, allowing multiple closely related containers to share network namespace, storage volumes, and operate as a single logical unit with shared resources and communication.",
+        "Pods are lightweight virtual machines that encapsulate entire application environments, providing complete isolation between different containerized components.",
+        "Pods function as standalone container management interfaces that enable direct scheduling and resource allocation for individual microservices.",
+        "Pods represent network configuration templates that define communication protocols and security policies for distributed application architectures."
+      ],
+      "correctIndex": 0,
+      "explanation": "The Pod abstraction enables tightly coupled containers to work together efficiently, solving complex deployment scenarios where containers need intimate communication and shared context. This design supports microservices architectures and simplifies container management by treating related containers as a single, cohesive unit."
+    },
+    {
+      "id": 4,
+      "question": "What types of _Services_ exist in _Kubernetes_, and how do they facilitate _pod communication_?",
+      "options": [
+        "Kubernetes Services are primarily used for internal routing, with only ClusterIP and NodePort types available for pod-to-pod communication within the cluster network.",
+        "Kubernetes Services consist of three main types: InternalIP, ExternalPort, and NetworkBridge, which manage traffic distribution across different network segments.",
+        "Kubernetes provides four primary Service types: ClusterIP (internal cluster communication), NodePort (exposes service on each node's IP), LoadBalancer (external traffic via cloud provider), and ExternalName (maps service to external DNS name).",
+        "Kubernetes Services operate through two core types: DirectConnect (for local pod communication) and GlobalRoute (for cross-cluster networking), enabling flexible traffic management."
+      ],
+      "correctIndex": 2,
+      "explanation": "Services in Kubernetes abstract the underlying network complexity by providing a stable IP and DNS name for accessing a set of pods. They enable dynamic load balancing, service discovery, and consistent network communication regardless of pod lifecycle or scaling changes."
+    },
+    {
+      "id": 5,
+      "question": "Explain the functionality of _Namespaces_ in _Kubernetes_.",
+      "options": [
+        "Namespaces in Kubernetes are primarily used for organizing deployment configurations and managing resource metadata without impacting actual cluster operations.",
+        "Namespaces function as administrative containers that group related configurations and provide basic resource tagging within the cluster infrastructure.",
+        "Kubernetes Namespaces represent network segmentation mechanisms that define communication boundaries between different application environments.",
+        "Kubernetes Namespaces are virtual clusters that provide scope and isolation for resources, enabling multi-tenancy, access control, and logical separation of workloads within a single physical cluster."
+      ],
+      "correctIndex": 3,
+      "explanation": "Namespaces allow organizations to divide cluster resources, implement role-based access controls, and create logical boundaries between teams, projects, or environments while maintaining a unified cluster management approach."
+    },
+    {
+      "id": 6,
+      "question": "Differentiate between _Deployments_, _StatefulSets_, and _DaemonSets_.",
+      "options": [
+        "Deployments represent static workload configurations, StatefulSets handle dynamic scaling, and DaemonSets provide infrastructure-level resource allocation mechanisms.",
+        "Deployments manage stateless applications with easy scaling and rolling updates, StatefulSets handle stateful applications requiring stable network identities and persistent storage, and DaemonSets ensure a pod runs on every node in the cluster.",
+        "Deployments manage stateful applications, StatefulSets handle background system services, and DaemonSets provide scalable, replicated workload management across nodes.",
+        "Deployments focus on network routing, StatefulSets manage persistent connections, and DaemonSets coordinate cross-node communication strategies."
+      ],
+      "correctIndex": 1,
+      "explanation": "These Kubernetes controllers solve different application deployment challenges: Deployments for flexible, stateless apps; StatefulSets for apps needing stable identities; and DaemonSets for system-level, node-specific daemon processes."
+    },
+    {
+      "id": 7,
+      "question": "How do _ReplicaSets_ ensure _pod availability_?",
+      "options": [
+        "ReplicaSets ensure pod availability by maintaining a specified number of identical pod replicas, automatically creating or deleting pods to match the desired state defined in the configuration.",
+        "ReplicaSets maintain pod availability by implementing complex load balancing algorithms that predict and preemptively adjust pod deployment across different cluster nodes.",
+        "ReplicaSets manage pod availability by monitoring network traffic and dynamically scaling pods based on real-time performance metrics and resource consumption patterns.",
+        "ReplicaSets guarantee pod availability through continuous health checks and manual intervention, requiring administrators to manually adjust pod configurations during scaling events."
+      ],
+      "correctIndex": 0,
+      "explanation": "ReplicaSets are core Kubernetes controllers that maintain a stable set of replica pods running at any given time. They work by continuously comparing the current state of pods with the desired state, automatically creating or terminating pods to ensure the specified number of replicas are always available. This self-healing mechanism prevents disruptions in application workloads by replacing failed or deleted pods without manual intervention."
+    },
+    {
+      "id": 8,
+      "question": "What are _Jobs_ in _Kubernetes_, and when is it suitable to use them?",
+      "options": [
+        "Jobs represent stateful application components that manage critical infrastructure services and provide fault-tolerant execution environments for complex workflows.",
+        "Jobs are Kubernetes resources responsible for monitoring cluster health and automatically managing resource allocation for distributed computing tasks.",
+        "Jobs in Kubernetes are designed to run a specific task to completion, executing batch processes or one-time workloads that require guaranteed execution within the cluster.",
+        "Jobs in Kubernetes are long-running services that continuously process background tasks and maintain persistent worker queues across multiple cluster nodes."
+      ],
+      "correctIndex": 2,
+      "explanation": "Jobs are Kubernetes objects specifically created to run finite, time-bound tasks that need to complete successfully. Unlike deployments which manage continuous workloads, Jobs ensure that a specified number of pod completions occur, handling retry mechanisms and tracking task success. They are particularly useful for tasks like data migrations, batch processing, and one-time computational workloads."
+    },
+    {
+      "id": 9,
+      "question": "How do _Labels_ and _Selectors_ work together in _Kubernetes_?",
+      "options": [
+        "Labels represent internal Kubernetes metadata used for system-level monitoring, with selectors providing advanced routing and service discovery mechanisms.",
+        "Labels are key-value metadata pairs attached to Kubernetes resources, while selectors use these labels to logically group and manage resources across the cluster.",
+        "Labels are dynamic resource identifiers that automatically configure network policies, while selectors manage cluster-wide security configurations and access controls.",
+        "Labels are performance metrics collected by the control plane, and selectors aggregate these metrics to optimize resource allocation and workload distribution."
+      ],
+      "correctIndex": 1,
+      "explanation": "Labels and selectors form a powerful mechanism in Kubernetes for logical resource organization and management. Labels are flexible, user-defined metadata attached to objects like pods, services, and deployments. Selectors allow administrators and applications to filter and group these resources based on their labels, enabling sophisticated, dynamic resource management without hardcoding specific resource references."
+    },
+    {
+      "id": 10,
+      "question": "What would you consider when performing a _rolling update_ in _Kubernetes_?",
+      "options": [
+        "A rolling update in Kubernetes uses a random selection method to replace pods, prioritizing rapid deployment over consistent application performance and stability.",
+        "A rolling update in Kubernetes carefully replaces old pods with new ones using a health check mechanism, ensuring zero-downtime deployment by gradually updating pods while maintaining application availability.",
+        "A rolling update in Kubernetes instantly replaces all pods simultaneously, which maximizes deployment speed and minimizes potential service interruptions during the update process.",
+        "A rolling update in Kubernetes freezes all existing pods and creates an entirely new replica set before switching traffic, ensuring complete isolation during the deployment process."
+      ],
+      "correctIndex": 1,
+      "explanation": "Rolling updates are a critical deployment strategy in Kubernetes that allows gradual pod replacement without service interruption. The process involves creating new pods with updated configurations while maintaining the desired number of running instances, using health checks to ensure smooth transition and minimal risk to application availability."
+    },
+    {
+      "id": 11,
+      "question": "How do _Services_ route traffic to _pods_ in _Kubernetes_?",
+      "options": [
+        "Kubernetes Services route traffic based on predefined network configurations that are manually set during service creation, limiting dynamic scaling and adaptability.",
+        "Kubernetes Services route traffic directly to pod IP addresses using a static mapping approach, which provides precise but inflexible network communication between services.",
+        "Kubernetes Services use a round-robin algorithm to distribute traffic randomly across all available pods, ensuring equal load distribution without considering pod characteristics.",
+        "Kubernetes Services route traffic to pods using label selectors that match specific pod labels, creating a dynamic routing mechanism that enables consistent and flexible network connectivity across the cluster."
+      ],
+      "correctIndex": 3,
+      "explanation": "Service routing in Kubernetes is a powerful abstraction that decouples network connectivity from pod implementation. By using label selectors, Services can dynamically discover and route traffic to pods, enabling flexible and scalable application networking without requiring direct IP management."
+    },
+    {
+      "id": 12,
+      "question": "Describe the purpose of _Ingress_ and its key components.",
+      "options": [
+        "Ingress in Kubernetes provides advanced HTTP/HTTPS routing and load balancing for external traffic, acting as a sophisticated entry point that manages external access to services within the cluster.",
+        "Ingress in Kubernetes serves as a basic network filter that only allows predefined traffic patterns, primarily focusing on security restrictions for cluster access.",
+        "Ingress in Kubernetes functions as an internal load balancer that distributes traffic exclusively between cluster nodes, without handling external connectivity.",
+        "Ingress in Kubernetes operates as a static routing mechanism that requires manual configuration for each service endpoint, limiting its dynamic capabilities."
+      ],
+      "correctIndex": 0,
+      "explanation": "Ingress is a critical Kubernetes resource that manages external access to services, providing advanced routing, SSL termination, and load balancing capabilities. Unlike simple service types, Ingress offers a flexible and configurable way to expose applications to external networks with granular control over traffic management."
+    },
+    {
+      "id": 13,
+      "question": "Explain _Kubernetes DNS_ resolution for _services_.",
+      "options": [
+        "Kubernetes implements a distributed DNS architecture where each node maintains its own independent name resolution system, preventing centralized service discovery.",
+        "The Kubernetes DNS system uses traditional DNS servers from cloud providers, relying on external resolution mechanisms for internal cluster communication.",
+        "Kubernetes uses CoreDNS as its default DNS service, providing automatic and scalable service discovery within the cluster through domain name resolution for services and pods.",
+        "Kubernetes employs a custom DNS resolver that manually maps IP addresses to service names, requiring administrators to configure each network connection individually."
+      ],
+      "correctIndex": 2,
+      "explanation": "CoreDNS is the standard DNS service in Kubernetes, automatically creating DNS records for services and pods. It enables automatic service discovery by translating service names to their corresponding cluster IP addresses. The DNS service runs as a deployment in the kube-system namespace and supports dynamic updates as services are created or destroyed, making cluster networking more flexible and easier to manage."
+    },
+    {
+      "id": 14,
+      "question": "What is the _Container Network Interface (CNI)_, and how does it integrate with _Kubernetes_?",
+      "options": [
+        "The Container Network Interface represents a proprietary networking framework developed by Kubernetes to manage internal pod-to-pod communication exclusively.",
+        "CNI is a Kubernetes-specific networking protocol that restricts container communication to predefined network segments within a single cluster infrastructure.",
+        "The Container Network Interface (CNI) is a standardized specification that enables different network solutions to integrate with Kubernetes, allowing flexible and interoperable container networking configurations.",
+        "CNI is an advanced network mapping technique that requires manual configuration of each container's network parameters before deployment."
+      ],
+      "correctIndex": 2,
+      "explanation": "CNI provides a pluggable interface for configuring network connectivity in container runtime environments. It allows different network providers like Calico, Flannel, and Weave to implement their own networking solutions while maintaining a consistent integration method with Kubernetes. The interface handles critical tasks such as allocating IP addresses, setting up network namespaces, and managing container network connections."
+    },
+    {
+      "id": 15,
+      "question": "How do you implement _Network Policies_, and what are their benefits?",
+      "options": [
+        "Kubernetes Network Policies represent a centralized traffic management system that routes all cluster communications through a single, predefined network gateway.",
+        "Network Policies are static firewall configurations that completely block all inter-pod communication by default, requiring explicit whitelisting of every network interaction.",
+        "Kubernetes Network Policies are configuration rules that control traffic flow between pods, enabling granular network segmentation and security within a cluster based on labels and selectors.",
+        "Network Policies are dynamic routing mechanisms that automatically redistribute network traffic based on real-time cluster performance metrics."
+      ],
+      "correctIndex": 2,
+      "explanation": "Network Policies provide a powerful method for controlling network access in Kubernetes clusters. They operate at the pod level, allowing administrators to define precise ingress and egress rules using label selectors. These policies can restrict traffic based on criteria like pod labels, namespaces, and IP block ranges, significantly enhancing cluster security and network isolation."
+    }
+  ],
+  "processedAt": "2025-12-18T09:39:53.429Z"
+}

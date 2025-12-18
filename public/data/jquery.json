@@ -1,0 +1,197 @@
+{
+  "id": "jquery",
+  "name": "jQuery",
+  "slug": "jquery-interview-questions",
+  "category": "Frontend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "async",
+    "basics",
+    "performance",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _jQuery_ and what is it primarily used for?",
+      "options": [
+        "jQuery is a standalone programming language designed specifically for creating interactive web interfaces with enhanced performance and custom scripting capabilities.",
+        "jQuery is a fast, compact JavaScript library that simplifies HTML document manipulation, event handling, and animation by providing an easier syntax for common web development tasks.",
+        "jQuery is a browser extension that provides additional JavaScript methods for advanced web development and dynamic content rendering.",
+        "jQuery is a comprehensive front-end framework that replaces traditional JavaScript and offers complete web application development tools."
+      ],
+      "correctIndex": 1,
+      "explanation": "jQuery is a JavaScript library that abstracts complex JavaScript operations into simpler, more readable methods. It allows developers to write less code while accomplishing more, particularly in areas like DOM manipulation, event handling, and AJAX requests. jQuery works by extending native JavaScript capabilities and providing a consistent, cross-browser compatible interface for web development tasks."
+    },
+    {
+      "id": 2,
+      "question": "How can you include _jQuery_ in a web page?",
+      "options": [
+        "jQuery can be included in a web page through a CDN link, downloading the library directly, or by using a local script reference within the HTML's head or body section.",
+        "jQuery requires a complex installation process involving package managers and specific configuration settings for web browser compatibility.",
+        "jQuery can only be included through official WordPress plugins or specialized web development platforms with explicit integration support.",
+        "jQuery must be downloaded from the official website and manually compiled before being integrated into web projects."
+      ],
+      "correctIndex": 0,
+      "explanation": "Including jQuery is straightforward and can be done through multiple methods. The most common approach is using a Content Delivery Network (CDN), which provides quick, cached access to the library. Local downloads are also possible for offline or controlled development environments."
+    },
+    {
+      "id": 3,
+      "question": "What is the difference between _jQuery_ and _JavaScript_?",
+      "options": [
+        "JavaScript is a subset of jQuery that provides limited web scripting capabilities compared to the more comprehensive jQuery framework.",
+        "JavaScript is a full programming language, while jQuery is a library built on JavaScript that simplifies web development tasks and provides easier syntax for common operations.",
+        "jQuery is a complete replacement for JavaScript with enhanced performance and more robust programming capabilities.",
+        "JavaScript and jQuery are identical technologies with no fundamental differences in their core functionality and implementation."
+      ],
+      "correctIndex": 1,
+      "explanation": "The key difference is that JavaScript is a standalone programming language with broad capabilities, whereas jQuery is a library that extends and simplifies JavaScript. jQuery provides convenient methods for tasks like DOM manipulation, event handling, and AJAX, making web development more efficient."
+    },
+    {
+      "id": 4,
+      "question": "How do you check if the _DOM_ is fully loaded using _jQuery_?",
+      "options": [
+        "jQuery's `ready()` method is used to create event listeners that trigger before DOM elements are completely rendered, allowing for early script execution.",
+        "The `ready()` method in jQuery ensures JavaScript code executes only after the DOM is fully loaded, preventing issues with element manipulation before page rendering is complete.",
+        "The `ready()` method is a performance optimization technique that preloads JavaScript libraries before page initialization, improving overall page load speed.",
+        "The `ready()` method is a cross-browser compatibility function that standardizes DOM loading mechanisms across different web browsers and platforms."
+      ],
+      "correctIndex": 1,
+      "explanation": "The `document.ready()` function is crucial in web development because it guarantees that all HTML elements are available before JavaScript code attempts to interact with them. This prevents potential errors where scripts might try to manipulate elements that haven't yet been loaded. By wrapping code inside this method, developers ensure reliable and predictable DOM interactions.\n\n```javascript\n$(document).ready(function() {\n    // Code here runs after DOM is fully loaded\n    $('#myElement').text('Hello World');\n});\n```"
+    },
+    {
+      "id": 5,
+      "question": "Explain the `$` symbol in _jQuery_.",
+      "options": [
+        "In jQuery, the `$` symbol serves as a universal selector method that automatically detects and prioritizes the most efficient way to query DOM elements.",
+        "The `$` symbol is a global variable in jQuery that represents the current document context, enabling direct manipulation of page elements without explicit selection.",
+        "The `$` symbol in jQuery is a shorthand alias for the jQuery object, allowing developers to write more concise and readable code when selecting and manipulating HTML elements.",
+        "The `$` symbol is a performance optimization technique in jQuery that creates a cached reference to frequently accessed page components."
+      ],
+      "correctIndex": 2,
+      "explanation": "The dollar sign (`$`) is essentially an alternative to typing out the full `jQuery()` function, providing a more streamlined syntax for developers. It allows quick element selection, event binding, and DOM manipulation. This convention was popularized by jQuery to make JavaScript more accessible and readable.\n\n```javascript\n// These are equivalent\n$('#myDiv');\njQuery('#myDiv');\n```"
+    },
+    {
+      "id": 6,
+      "question": "What is the significance of the `document.ready()` function?",
+      "options": [
+        "The `document.ready()` function ensures that JavaScript code runs only after the DOM has completely loaded, preventing errors from attempting to manipulate elements before they are available.",
+        "The `document.ready()` function is a performance optimization technique that preloads JavaScript resources and initializes page components before rendering.",
+        "The `document.ready()` function is a cross-browser method for standardizing page load events and managing script execution priorities.",
+        "In jQuery, `document.ready()` creates a global event listener that monitors page loading states and triggers scripts at specific rendering milestones."
+      ],
+      "correctIndex": 0,
+      "explanation": "The significance of `document.ready()` lies in its ability to solve timing issues in web development. Without this method, scripts might execute before HTML elements are fully rendered, leading to potential errors or undefined behaviors. By waiting for the DOM to be completely loaded, developers can safely interact with page elements.\n\n```javascript\n$(document).ready(function() {\n    // Safe to manipulate DOM elements here\n    $('.user-profile').addClass('active');\n});\n```"
+    },
+    {
+      "id": 7,
+      "question": "How would you select an element with a specific _ID_ using _jQuery_?",
+      "options": [
+        "Selecting an element by ID requires using the `.find()` method in jQuery, where you specify the ID as a string parameter inside the method, like `.find('myElement')`.",
+        "To select an element by ID in jQuery, you must use the `.getElementById()` method similar to vanilla JavaScript, prepending the selector with a dot notation like `.myElement`.",
+        "jQuery selects elements with a specific ID by using a dollar sign and square brackets, written as `$[myElement]`, which creates a direct reference to the unique page element.",
+        "To select an element with a specific ID using jQuery, use the `#` selector followed by the unique ID of the element, such as `$('#myElement')`. This method directly targets an element with a matching ID."
+      ],
+      "correctIndex": 3,
+      "explanation": "jQuery's ID selector is a powerful and straightforward way to target specific HTML elements. The `#` symbol is a direct mapping from CSS selector syntax, allowing instant access to a unique element. When you use `$('#elementId')`, jQuery searches the entire document and returns the first matching element, which can then be manipulated or have events attached to it.\n\n```javascript\n// Example of selecting and modifying an element by ID\n$('#myButton').css('color', 'red').hide();\n```"
+    },
+    {
+      "id": 8,
+      "question": "What is _chaining_ in _jQuery_ and how does it work?",
+      "options": [
+        "Chaining in jQuery allows multiple methods to be applied to the same set of elements in a single statement, enabling concise and readable code that performs multiple actions sequentially.",
+        "Chaining is an advanced jQuery technique that allows developers to create recursive method calls that execute only when a specific condition is met within the DOM.",
+        "jQuery chaining represents a technique where each method in a chain must return a new jQuery object to enable subsequent method calls on the original selection.",
+        "Chaining in jQuery is a complex method of creating nested function calls that require multiple nested selectors to perform complex DOM manipulations in a single line."
+      ],
+      "correctIndex": 0,
+      "explanation": "Method chaining is a core feature of jQuery that simplifies code and reduces the need for repetitive selections. Each method in the chain typically returns the jQuery object, allowing continuous method application. This approach enhances code readability and efficiency.\n\n```javascript\n// Example of method chaining\n$('#myElement')\n  .addClass('highlight')\n  .fadeOut(500)\n  .fadeIn(500)\n  .text('Updated content');\n```"
+    },
+    {
+      "id": 9,
+      "question": "Explain the concept of _selectors_ in _jQuery_. Provide examples.",
+      "options": [
+        "jQuery selectors represent a mapping system that translates CSS-like queries into complex object-oriented representations of page elements, requiring additional parsing.",
+        "Selectors in jQuery are specialized functions that create temporary DOM references by parsing HTML structure and generating dynamic element collections based on computational algorithms.",
+        "Selectors in jQuery are advanced filtering mechanisms that create lightweight proxy objects representing potential DOM interactions, which must be explicitly resolved before use.",
+        "jQuery selectors are methods to target HTML elements using various criteria like tag name, class, ID, attributes, or complex CSS-style queries, enabling precise element selection and manipulation."
+      ],
+      "correctIndex": 3,
+      "explanation": "Selectors are the foundation of jQuery's power, allowing developers to quickly and efficiently target elements. They support multiple selection strategies, from simple tag selection to complex attribute-based queries.\n\n```javascript\n// Various selector examples\n$('div')           // All div elements\n$('.className')    // Elements with specific class\n$('#idName')       // Element with specific ID\n$('input[type=\"text\"]')  // Elements with specific attribute\n```"
+    },
+    {
+      "id": 10,
+      "question": "How do you select elements by _class name_ in _jQuery_?",
+      "options": [
+        "In jQuery, select elements by class name using a dot (.) prefix, such as $('.container') to target all elements with the 'container' class.",
+        "Utilize the CSS class selector within square brackets like $('[class=container]') to select elements by their class name.",
+        "Use the jQuery method .addClass() to dynamically select elements with a specific class name during runtime.",
+        "Select class-based elements in jQuery by using the 'getElementsByClassName()' method wrapped within a jQuery selector."
+      ],
+      "correctIndex": 0,
+      "explanation": "jQuery simplifies element selection with CSS-style selectors. The dot (.) notation directly maps to class selection, allowing quick and efficient targeting of HTML elements. This approach works across all modern browsers and provides a consistent method for selecting elements with specific classes."
+    },
+    {
+      "id": 11,
+      "question": "How would you select all `p` elements inside a `div`?",
+      "options": [
+        "Select nested paragraphs by using jQuery's .children() method specifically targeting paragraph elements within div containers.",
+        "Utilize a recursive DOM traversal method that explicitly checks each div for contained paragraph elements using .find().",
+        "Implement a custom filtering mechanism that checks parent-child relationships for paragraph elements within div structures.",
+        "Use the 'div p' selector in jQuery to select all paragraph elements nested inside div elements, which traverses the DOM and retrieves matching child paragraphs."
+      ],
+      "correctIndex": 3,
+      "explanation": "jQuery's CSS-style selectors allow direct descendant selection using space-separated selectors. The 'div p' selector efficiently searches through the DOM, finding all paragraph elements that are descendants of div elements, regardless of nested depth."
+    },
+    {
+      "id": 12,
+      "question": "How can you select multiple elements with different _IDs_ at once?",
+      "options": [
+        "Implement a custom selector function that iterates through a predefined list of ID values to select matching elements.",
+        "Select multiple elements with different IDs in jQuery by using a comma-separated selector like $('#first, #second, #third'), which targets all specified elements.",
+        "Use jQuery's .map() method to dynamically generate an array of selectors for multiple ID-based elements.",
+        "Utilize jQuery's .filter() method with a complex selector to match multiple unique identifiers across the document."
+      ],
+      "correctIndex": 1,
+      "explanation": "jQuery's powerful selector engine allows multiple element selection using comma-separated ID selectors. This approach provides a concise and readable method to target specific elements with different identifiers in a single statement."
+    },
+    {
+      "id": 13,
+      "question": "Describe how to get and set _attribute_ values using _jQuery_.",
+      "options": [
+        "jQuery attribute handling is accomplished by using native JavaScript methods like `getAttribute()` and `setAttribute()` within the jQuery selection context.",
+        "The `.attr()` method in jQuery only works for custom attributes, requiring explicit type conversion and additional validation before accessing element attributes.",
+        "In jQuery, `.attr()` method is used to get and set HTML attributes. To retrieve an attribute value, pass the attribute name; to set a value, provide the attribute name and new value.",
+        "jQuery attribute manipulation requires direct DOM access through `.prop()` method, which retrieves element properties by passing a predefined selector and attribute reference."
+      ],
+      "correctIndex": 2,
+      "explanation": "The `.attr()` method is a versatile jQuery function for attribute manipulation. It can retrieve values from the first matched element or set values for all selected elements. When setting attributes, you can use a static value or a callback function that returns the new value based on the current attribute state."
+    },
+    {
+      "id": 14,
+      "question": "How can you add, remove, or toggle class names on an element in _jQuery_?",
+      "options": [
+        "jQuery class methods are deprecated, and developers must use pure JavaScript `classList` API for managing element classes in modern web development.",
+        "Class modifications in jQuery require manual DOM manipulation through `className` property, with separate methods for individual class addition and removal.",
+        "jQuery provides `.addClass()`, `.removeClass()`, `.toggleClass()`, and `.hasClass()` methods to dynamically manage CSS classes on elements, allowing flexible class manipulation.",
+        "Class manipulation in jQuery is restricted to predefined CSS frameworks and requires explicit type checking before applying or removing classes."
+      ],
+      "correctIndex": 2,
+      "explanation": "Class manipulation methods in jQuery simplify dynamic styling and state management. These methods can add, remove, or toggle multiple classes simultaneously and support conditional class changes. They are particularly useful for creating interactive user interfaces and responsive design patterns."
+    },
+    {
+      "id": 15,
+      "question": "What are _jQuery_ filters and how do you use them?",
+      "options": [
+        "jQuery filters are specialized CSS selectors that exclusively target layout-based element transformations with strict rendering constraints.",
+        "jQuery filter methods are deprecated browser-specific techniques for element selection, requiring explicit type conversion and compatibility checks.",
+        "jQuery filters are selector methods that help target specific elements based on their state, position, or characteristics, such as `:first`, `:last`, or custom selection criteria.",
+        "Filters in jQuery are primarily used for performance optimization, allowing direct memory manipulation of DOM elements through predefined selection strategies."
+      ],
+      "correctIndex": 2,
+      "explanation": "Filters in jQuery provide powerful, concise ways to select elements with specific attributes or states. They can be used directly in selectors or chained with other jQuery methods to create complex element queries. Filters work across different browsers and simplify DOM traversal and manipulation."
+    }
+  ],
+  "processedAt": "2025-12-18T09:38:35.219Z"
+}

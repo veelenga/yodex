@@ -1,0 +1,197 @@
+{
+  "id": "laravel",
+  "name": "Laravel",
+  "slug": "laravel-interview-questions",
+  "category": "Backend",
+  "totalQuestions": 15,
+  "topics": [
+    "advanced",
+    "basics",
+    "performance",
+    "security",
+    "testing"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is _Laravel_ and why is it used?",
+      "options": [
+        "Laravel is a PHP library exclusively focused on database management and query optimization, offering advanced ORM capabilities for enterprise-level data manipulation.",
+        "Laravel represents a server-side templating engine that focuses on generating dynamic HTML content through complex preprocessor mechanisms and rapid template compilation.",
+        "Laravel is a modern PHP web framework that implements the MVC architecture, providing developers with an elegant and expressive syntax for building robust web applications with powerful features like routing, ORM, and built-in security mechanisms.",
+        "Laravel is a JavaScript framework designed for creating single-page applications with advanced client-side rendering and component-based architecture similar to React and Vue."
+      ],
+      "correctIndex": 2,
+      "explanation": "Laravel simplifies web development by providing a comprehensive ecosystem that abstracts complex programming tasks. It follows the Model-View-Controller pattern, which separates application logic into distinct components. The framework includes features like Eloquent ORM for database interactions, blade templating engine, and built-in authentication systems. \n\nExample of basic Laravel routing:\n```php\nRoute::get('/users', function () {\n    return User::all();\n});\n```"
+    },
+    {
+      "id": 2,
+      "question": "How does _Laravel_ follow the _MVC_ architecture?",
+      "options": [
+        "Laravel implements a modified MVC architecture that integrates middleware as a primary component, allowing direct interaction between models and views through complex routing mechanisms.",
+        "Laravel's MVC implementation focuses primarily on view rendering, with controllers acting as passive data translators and models serving primarily as configuration interfaces.",
+        "Laravel follows the MVC architecture by distinctly separating models (data logic), views (presentation), and controllers (request handling), ensuring clean code organization and maintaining a clear separation of concerns throughout the application development process.",
+        "Laravel uses a decentralized MVC pattern where components can dynamically swap roles, enabling more flexible but less structured application architecture compared to traditional frameworks."
+      ],
+      "correctIndex": 2,
+      "explanation": "The MVC pattern in Laravel ensures that each component has a specific responsibility. Models handle data and business logic, views manage presentation, and controllers coordinate interactions between models and views. This approach promotes code modularity, reusability, and maintainability. \n\nExample of a simple Laravel controller:\n```php\nclass UserController extends Controller {\n    public function index() {\n        $users = User::all();\n        return view('users.index', compact('users'));\n    }\n}"
+    },
+    {
+      "id": 3,
+      "question": "What server requirements does _Laravel_ have?",
+      "options": [
+        "Laravel requires PHP 7.4 or higher, with essential extensions like OpenSSL, PDO, Mbstring, Tokenizer, and XML, and relies on Composer for dependency management and project setup.",
+        "Laravel requires PHP 5.6 with minimal extension support, focusing on lightweight deployment and compatibility with legacy systems through custom configuration modules.",
+        "Laravel has strict server requirements including Node.js runtime, advanced caching mechanisms, and proprietary extension packages for comprehensive web application development.",
+        "Laravel mandates a complex server environment with specific Java runtime dependencies and multiple database connector extensions for enterprise-level deployment."
+      ],
+      "correctIndex": 0,
+      "explanation": "Server requirements ensure Laravel can run efficiently and securely. The PHP version and extensions provide necessary functionality for encryption, database interactions, and core framework operations. Composer manages dependencies and simplifies package installation. \n\nExample of checking PHP requirements:\n```bash\nphp -v\nphp -m  # List installed extensions\ncomposer --version\n```"
+    },
+    {
+      "id": 4,
+      "question": "How would you install or set up a _Laravel_ project?",
+      "options": [
+        "Create a Laravel project by cloning the official repository, manually installing dependencies through npm, and configuring the database connection in the .env file before running the application.",
+        "To set up a Laravel project, use Composer's create-project command by running `composer create-project --prefer-dist laravel/laravel project-name`. Navigate to the project directory and use PHP's built-in server or configure a local web server to run the application.",
+        "Install Laravel by downloading the source code from GitHub and manually copying files into your web directory. Configure dependencies by editing the composer.json file directly and running npm install.",
+        "Set up Laravel by using the Laravel installer package globally with Composer, then initialize a new project using the `laravel new` command and configuring environment variables manually."
+      ],
+      "correctIndex": 1,
+      "explanation": "Laravel provides a streamlined installation process through Composer, which handles dependency management and project scaffolding. The create-project command automatically sets up a new Laravel project with the latest version, including all necessary configuration files and directory structure. After installation, developers can quickly start developing by configuring the environment and running the built-in development server.\n\nExample of project creation:\n```bash\n# Install Laravel via Composer\ncomposer create-project --prefer-dist laravel/laravel myproject\n\n# Navigate to project directory\ncd myproject\n\n# Start built-in server\nphp artisan serve\n```"
+    },
+    {
+      "id": 5,
+      "question": "Explain _routing_ in _Laravel_.",
+      "options": [
+        "Routing in Laravel is managed through a global configuration file that pre-defines all possible URL patterns, which are statically linked to specific response methods without dynamic controller interaction.",
+        "Laravel routing is a process of defining URL patterns that directly connect to view files, using a simple matching system that translates URL segments into template rendering without controller intervention.",
+        "Laravel routing defines how HTTP requests are mapped to specific controller actions using methods like Route::get(), Route::post(), and supports parameters, named routes, and route groups for organizing and structuring application endpoints.",
+        "Laravel's routing mechanism uses a middleware-based approach where each route is essentially a complex filter that determines request handling through a series of predefined validation and transformation steps."
+      ],
+      "correctIndex": 2,
+      "explanation": "Laravel's routing system provides a flexible and expressive way to define application endpoints. Routes can be defined in the routes/web.php or routes/api.php files, supporting various HTTP methods and complex routing strategies.\n\nExample of routing:\n```php\n// Basic route definition\nRoute::get('/users', [UserController::class, 'index']);\n\n// Route with parameter\nRoute::get('/user/{id}', [UserController::class, 'show']);\n\n// Named route\nRoute::get('/profile', [ProfileController::class, 'show'])->name('profile');\n```"
+    },
+    {
+      "id": 6,
+      "question": "What are _middleware_ in _Laravel_?",
+      "options": [
+        "Middleware are Laravel's background processing components that manage asynchronous tasks and handle event-driven communication between different parts of the application infrastructure.",
+        "Middleware represent a security layer in Laravel that exclusively manages user authentication and generates dynamic access tokens for each incoming network request.",
+        "Middleware in Laravel are filters that run before or after HTTP requests, allowing interception and modification of request/response cycles. They can handle tasks like authentication, logging, and request validation.",
+        "Laravel middleware are advanced routing mechanisms that dynamically map incoming requests to specific controller methods based on complex rule-based transformation algorithms."
+      ],
+      "correctIndex": 2,
+      "explanation": "Laravel middleware provide a flexible mechanism for filtering HTTP requests entering the application. They can be applied globally, to specific routes, or groups, and are defined in the app/Http/Kernel.php file.\n\nExample of middleware:\n```php\n// Define middleware\nclass CheckAge\n{\n    public function handle($request, Closure $next)\n    {\n        if ($request->age <= 200) {\n            return $next($request);\n        }\n        return redirect('home');\n    }\n}\n\n// Register middleware\nRoute::middleware(['check.age'])->group(function () {\n    Route::get('/user', [UserController::class, 'index']);\n});\n```"
+    },
+    {
+      "id": 7,
+      "question": "Can you describe the _Laravel_ request lifecycle?",
+      "options": [
+        "Laravel's request lifecycle is managed entirely by the routing component, which immediately translates HTTP requests into database queries without any additional request transformation.",
+        "The request lifecycle in Laravel is a simple pass-through mechanism where incoming requests are automatically converted to responses without any middleware or processing stages.",
+        "The Laravel request lifecycle involves transforming an HTTP request through middleware, routing it to a controller, processing the request, and generating a response using various framework components like the service container and routing system.",
+        "The Laravel request lifecycle is a linear process where each incoming request is directly mapped to a single controller method without any intermediate processing or middleware interactions."
+      ],
+      "correctIndex": 2,
+      "explanation": "Laravel's request lifecycle is a complex sequence of events that begins when an HTTP request enters the application. The request passes through several crucial stages, including middleware filtering, routing, controller processing, and response generation. Middleware allows for request modification and filtering, while the service container manages dependency injection and service resolution. Each stage provides opportunities for customization and intervention in the request handling process.\n\nA simplified example of how middleware might interact with a request:\n```php\nclass VerifyToken\n{\n    public function handle($request, Closure $next)\n    {\n        if (!$this->validateToken($request)) {\n            return redirect('login');\n        }\n        return $next($request);\n    }\n}\n```"
+    },
+    {
+      "id": 8,
+      "question": "What are _Service Providers_ in _Laravel_?",
+      "options": [
+        "Service Providers are standalone middleware components that intercept and modify application requests before they reach the routing system.",
+        "Service Providers in Laravel are central classes that bootstrap components of an application, registering services, bindings, and configurations within the application's service container during the application's initialization process.",
+        "Service Providers are utility classes that exclusively manage dependency injection without any additional configuration or bootstrapping responsibilities.",
+        "Service Providers are static configuration files in Laravel that define application routes and database connections without any dynamic registration capabilities."
+      ],
+      "correctIndex": 1,
+      "explanation": "Service Providers are fundamental to Laravel's dependency injection and application bootstrapping mechanism. They allow developers to centralize service registration, bind interfaces to implementations, and configure various application components before the application starts. The `register()` method is used for binding services, while the `boot()` method runs after all providers have been registered, allowing for more complex initialization logic.\n\nA typical Service Provider example:\n```php\nclass AppServiceProvider extends ServiceProvider\n{\n    public function register()\n    {\n        $this->app->bind(UserRepository::class, EloquentUserRepository::class);\n    }\n\n    public function boot()\n    {\n        // Perform post-registration tasks\n    }\n}\n```"
+    },
+    {
+      "id": 9,
+      "question": "What is _Eloquent ORM_ in _Laravel_?",
+      "options": [
+        "Eloquent ORM is Laravel's active record implementation that provides an elegant, object-oriented approach to database interactions, allowing developers to work with database tables using PHP classes and methods instead of writing raw SQL queries.",
+        "Eloquent ORM is a database abstraction layer that generates SQL queries dynamically without allowing direct model interactions or custom query building.",
+        "Eloquent ORM is primarily a caching mechanism that stores database results in memory without providing actual database interaction capabilities.",
+        "Eloquent ORM is a static database mapping tool in Laravel that strictly enforces predefined database schema without supporting custom relationships or queries."
+      ],
+      "correctIndex": 0,
+      "explanation": "Eloquent ORM simplifies database operations by treating database tables as PHP classes and rows as objects. It supports complex relationships, eager loading, and provides a fluent query interface. Each Eloquent model represents a database table, allowing intuitive data manipulation and relationship management.\n\nA simple Eloquent model example:\n```php\nclass User extends Model\n{\n    public function posts()\n    {\n        return $this->hasMany(Post::class);\n    }\n\n    // Easily retrieve user posts\n    $userPosts = User::find(1)->posts;\n}\n```"
+    },
+    {
+      "id": 10,
+      "question": "How does one perform _validations_ in _Laravel_?",
+      "options": [
+        "Laravel uses form request objects as the primary mechanism for validation, which requires extensive boilerplate code for each validation scenario.",
+        "Laravel provides robust data validation through the `validate()` method in controllers, which automatically checks input against defined rules and handles validation errors seamlessly.",
+        "Data validation in Laravel is managed by creating separate validator classes that must be manually instantiated and configured for each request type.",
+        "Laravel performs data validation exclusively through custom middleware, requiring manual error handling and complex request intercepting mechanisms."
+      ],
+      "correctIndex": 1,
+      "explanation": "Laravel's validation system is built into the framework's core request handling process. Developers can define validation rules directly in controllers using the `validate()` method, which automatically checks input data and returns appropriate error responses. The validation rules can be defined inline or in dedicated request classes for more complex scenarios."
+    },
+    {
+      "id": 11,
+      "question": "What are _Laravel Contracts_?",
+      "options": [
+        "Laravel Contracts are a design pattern that exclusively manages dependency injection through complex configuration mechanisms.",
+        "Contracts in Laravel represent static utility classes that define global method signatures for system-wide service interactions and dependencies.",
+        "Laravel Contracts are concrete implementation classes that provide direct, tightly coupled service implementations for core framework functionalities.",
+        "Laravel Contracts are interface-based abstractions that define core framework service behaviors, promoting loose coupling and enabling flexible, modular application design across different components."
+      ],
+      "correctIndex": 3,
+      "explanation": "Laravel Contracts serve as a key abstraction mechanism in the framework, defining interfaces that specify the behavior of core services. By programming to interfaces rather than concrete implementations, developers can easily swap out components and create more flexible, maintainable applications."
+    },
+    {
+      "id": 12,
+      "question": "Can you describe the directory structure of a _Laravel Framework_?",
+      "options": [
+        "Laravel's directory structure is a monolithic design with all application logic contained within a single root directory, minimizing separation of concerns.",
+        "Laravel's directory organization follows a microservices-oriented approach, with each major component residing in completely isolated directory namespaces.",
+        "Laravel's directory structure is meticulously organized into key folders like app (application code), config (configuration files), database (migrations and seeders), and public (web root), facilitating clean, modular application development.",
+        "The Laravel framework uses a dynamic directory mapping system where folder locations are configurable at runtime, allowing complete developer-defined structures."
+      ],
+      "correctIndex": 2,
+      "explanation": "Laravel's directory structure is designed to provide clear separation of concerns and promote best practices in PHP application development. Each directory serves a specific purpose, making it easy for developers to locate and organize code logically. The standardized structure also helps maintain consistency across different Laravel projects."
+    },
+    {
+      "id": 13,
+      "question": "How do you configure a _database_ in _Laravel_?",
+      "options": [
+        "Laravel automatically detects database settings by scanning the system environment, eliminating the need for manual configuration in most standard development scenarios.",
+        "Database configuration in Laravel is managed entirely through the config/database.php file, which requires manual editing of connection parameters for each database environment.",
+        "Database configuration in Laravel is primarily done through the .env file, where you specify connection details like database type, host, port, username, and password, which Laravel then uses to establish database connections.",
+        "Database connections in Laravel are configured through a global configuration class that must be manually initialized in the bootstrap process of each application."
+      ],
+      "correctIndex": 2,
+      "explanation": "Laravel provides a flexible database configuration system that allows easy connection setup. The .env file acts as the primary configuration source, with the config/database.php file serving as a more advanced configuration mechanism. This approach allows for easy environment-specific database configurations and supports multiple database connections.\n\n```php\n// Example .env database configuration\nDB_CONNECTION=mysql\nDB_HOST=127.0.0.1\nDB_PORT=3306\nDB_DATABASE=laravel\nDB_USERNAME=root\nDB_PASSWORD=secret\n```"
+    },
+    {
+      "id": 14,
+      "question": "Explain _migration_ in _Laravel_ and its purpose.",
+      "options": [
+        "Migrations in Laravel are temporary database caching mechanisms that temporarily store database query results to improve application performance and reduce database load.",
+        "Migrations are Laravel's built-in ORM feature that automatically synchronizes database models with external database management systems without requiring explicit schema definitions.",
+        "Migrations represent a complex database backup and restoration system that tracks and reverts database changes through a comprehensive version control mechanism.",
+        "Migrations in Laravel are version-controlled database schema changes that allow developers to define and modify database structures programmatically, ensuring consistent database schema across different environments."
+      ],
+      "correctIndex": 3,
+      "explanation": "Migrations provide a collaborative and systematic approach to database schema management. They allow developers to define database structure incrementally, track changes, and easily replicate database schemas across different development environments.\n\n```php\n// Example migration file\npublic function up()\n{\n    Schema::create('users', function (Blueprint $table) {\n        $table->id();\n        $table->string('name');\n        $table->string('email')->unique();\n        $table->timestamps();\n    });\n}\n```"
+    },
+    {
+      "id": 15,
+      "question": "What is the command to create a _controller_ in _Laravel_?",
+      "options": [
+        "Laravel generates controllers automatically through a webpack configuration that scans the project structure and dynamically creates controller files based on route definitions.",
+        "Controllers in Laravel are manually created by extending the BaseController class and defining them directly in the application's core controller directory without using any command-line tools.",
+        "In Laravel, you create a controller using the artisan command `php artisan make:controller YourControllerName`, which generates a new controller file in the app/Http/Controllers directory with basic controller structure.",
+        "Controller creation in Laravel requires using the global Artisan::call() method with specific parameters to generate controller files programmatically within the application bootstrap process."
+      ],
+      "correctIndex": 2,
+      "explanation": "Laravel's artisan command provides a quick and standardized way to generate controllers. The command not only creates the controller file but also offers additional options like generating resource or API controllers.\n\n```bash\n# Basic controller generation\nphp artisan make:controller UserController\n\n# Resource controller generation\nphp artisan make:controller UserController --resource\n```"
+    }
+  ],
+  "processedAt": "2025-12-18T09:41:25.906Z"
+}
